@@ -1,0 +1,20 @@
+id: HUAWEI_ViewPoint_8650C_keyword
+info:
+  name: HUAWEI ViewPoint 8650C_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HUAWEI ViewPoint 8650C"
+        words:
+          - "HUAWEI ViewPoint 8650C"
+        condition: and

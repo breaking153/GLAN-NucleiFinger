@@ -1,0 +1,20 @@
+id: wo_ai_kao_qin_yun_ping_tai_keyword
+info:
+  name: 我爱考勤 云平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "我爱考勤 云平台"
+        words:
+          - "我爱考勤 云平台"
+        condition: and

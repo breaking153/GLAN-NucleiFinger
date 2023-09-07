@@ -1,0 +1,20 @@
+id: BEWARD_N100_H_264_keyword
+info:
+  name: BEWARD N100 H.264_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BEWARD N100 H.264"
+        words:
+          - "BEWARD N100 H.264"
+        condition: and

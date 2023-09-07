@@ -1,0 +1,20 @@
+id: D_Link_DAP_2020_keyword
+info:
+  name: D-Link-DAP-2020_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DAP-2020"
+        words:
+          - "<a href=\"http://www.dlink.com.tw\" target=_blank>dap-2020"
+        condition: and

@@ -1,0 +1,21 @@
+id: Quantum_Company_s_product_keyword
+info:
+  name: Quantum-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Quantum-Company's-product"
+        words:
+          - "class=\"loginbodybackground"
+          - "class=\"loginpatent\""
+        condition: and

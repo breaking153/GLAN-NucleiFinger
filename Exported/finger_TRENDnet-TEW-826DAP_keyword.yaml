@@ -1,0 +1,20 @@
+id: TRENDnet_TEW_826DAP_keyword
+info:
+  name: TRENDnet-TEW-826DAP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TEW-826DAP"
+        words:
+          - "var model = \"tew-826dap\""
+        condition: and

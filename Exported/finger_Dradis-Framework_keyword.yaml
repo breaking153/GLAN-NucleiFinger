@@ -1,0 +1,20 @@
+id: Dradis_Framework_keyword
+info:
+  name: Dradis-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dradis-Framework"
+        words:
+          - "<p class=\"copyright\">dradis"
+        condition: and

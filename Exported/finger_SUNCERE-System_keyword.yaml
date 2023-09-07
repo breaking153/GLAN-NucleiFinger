@@ -1,0 +1,20 @@
+id: SUNCERE_System_keyword
+info:
+  name: SUNCERE-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SUNCERE-System"
+        words:
+          - "技术支持：广东旭诚科技有限公司"
+        condition: and

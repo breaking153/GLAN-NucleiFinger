@@ -1,0 +1,20 @@
+id: shen_xin_fu_zhong_duan_jian_ce_xiang_ying_ping_tai_EDR_keyword
+info:
+  name: 深信服终端检测响应平台EDR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服终端检测响应平台EDR"
+        words:
+          - "SANGFOR终端检测响应平台"
+        condition: and

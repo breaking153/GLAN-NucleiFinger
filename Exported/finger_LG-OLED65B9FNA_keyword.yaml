@@ -1,0 +1,20 @@
+id: LG_OLED65B9FNA_keyword
+info:
+  name: LG-OLED65B9FNA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-OLED65B9FNA"
+        words:
+          - "<modelname>oled65b9fna</modelname>"
+        condition: and

@@ -1,0 +1,20 @@
+id: NeuLion_Adaptive_Streaming_Server_keyword
+info:
+  name: NeuLion Adaptive Streaming Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NeuLion Adaptive Streaming Server"
+        words:
+          - "NeuLion Adaptive Streaming Server"
+        condition: and

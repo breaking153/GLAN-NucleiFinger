@@ -1,0 +1,20 @@
+id: thinkive_yun_tou_gu_keyword
+info:
+  name: thinkive云投顾_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "thinkive云投顾"
+        words:
+          - "thinkive云投顾"
+        condition: and

@@ -1,0 +1,27 @@
+id: FileNice_keyword
+info:
+  name: FileNice_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FileNice"
+        words:
+          - "content=\"the fantabulous mechanical eviltwin code machine"
+          - "filenice/filenice.js"
+        condition: and
+      - type: word
+        part: body
+        name: "FileNice"
+        words:
+          - "fileNice/fileNice.js"
+        condition: and

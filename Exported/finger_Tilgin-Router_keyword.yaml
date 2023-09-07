@@ -1,0 +1,23 @@
+id: Tilgin_Router_keyword
+info:
+  name: Tilgin-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tilgin-Router"
+        words:
+          - "href=\"/compressed-control.css\">"
+          - "<a href=\"/status/\" class=\"menuitem\""
+          - "<h1 id=\"title\">welcome to the tilgin router</h1>"
+          - "<a href=\"/wizard/\" class=\"\" title=\"wizard\">"
+        condition: and

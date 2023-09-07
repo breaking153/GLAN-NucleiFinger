@@ -1,0 +1,26 @@
+id: Dedicated_Micros_Device_keyword
+info:
+  name: Dedicated-Micros-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dedicated-Micros-Device"
+        words:
+          - "adh-web"
+        condition: and
+      - type: word
+        part: header
+        name: "Dedicated-Micros-Device"
+        words:
+          - "ADH-Web"
+        condition: and

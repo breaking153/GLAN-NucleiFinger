@@ -1,0 +1,20 @@
+id: ZEBRA_170Xi4_300dpi_ZPL_keyword
+info:
+  name: ZEBRA-170Xi4-300dpi-ZPL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-170Xi4-300dpi-ZPL"
+        words:
+          - "ztc 170xi4-300dpi zpl</h1>"
+        condition: and

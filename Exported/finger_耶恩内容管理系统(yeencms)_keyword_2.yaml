@@ -1,0 +1,26 @@
+id: ye_en_nei_rong_guan_li_xi_tong_yeencms_keyword_1
+info:
+  name: 耶恩内容管理系统(yeencms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "耶恩内容管理系统(yeencms)"
+        words:
+          - "耶恩内容管理系统"
+        condition: and
+      - type: word
+        part: header
+        name: "耶恩内容管理系统(yeencms)"
+        words:
+          - "yeencms"
+        condition: and

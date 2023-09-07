@@ -1,0 +1,20 @@
+id: Canon_Print_or_Copier_keyword
+info:
+  name: Canon-Print-or-Copier_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-Print-or-Copier"
+        words:
+          - "<span id=\"devicename\">ir-adv"
+        condition: and

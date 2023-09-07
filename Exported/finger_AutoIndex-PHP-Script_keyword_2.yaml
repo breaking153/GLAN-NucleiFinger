@@ -1,0 +1,26 @@
+id: AutoIndex_PHP_Script_keyword_1
+info:
+  name: AutoIndex-PHP-Script_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AutoIndex-PHP-Script"
+        words:
+          - "set-cookie: autoindex2"
+        condition: and
+      - type: word
+        part: header
+        name: "AutoIndex-PHP-Script"
+        words:
+          - "AutoIndex2"
+        condition: and

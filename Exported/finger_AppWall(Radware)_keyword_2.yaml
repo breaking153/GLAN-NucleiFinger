@@ -1,0 +1,26 @@
+id: AppWall_Radware_keyword_1
+info:
+  name: AppWall(Radware)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AppWall(Radware)"
+        words:
+          - "AppWall"
+        condition: and
+      - type: word
+        part: header
+        name: "AppWall(Radware)"
+        words:
+          - "X-SL-CompState"
+        condition: and

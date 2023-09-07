@@ -1,0 +1,26 @@
+id: WiiBBS_shou_ji_WAP_lun_tan_xi_tong_keyword
+info:
+  name: WiiBBS(手机WAP论坛系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WiiBBS(手机WAP论坛系统)"
+        words:
+          - "WiiBBS"
+        condition: and
+      - type: word
+        part: body
+        name: "WiiBBS(手机WAP论坛系统)"
+        words:
+          - "手机WAP论坛系统"
+        condition: and

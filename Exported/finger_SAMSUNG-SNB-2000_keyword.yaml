@@ -1,0 +1,20 @@
+id: SAMSUNG_SNB_2000_keyword
+info:
+  name: SAMSUNG-SNB-2000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SAMSUNG-SNB-2000"
+        words:
+          - "digest realm=\"net-i\", nonce"
+        condition: and

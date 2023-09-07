@@ -1,0 +1,20 @@
+id: TechBridge_yun_hui_yi_keyword
+info:
+  name: TechBridge云会议_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TechBridge云会议"
+        words:
+          - "TechBridge云会议"
+        condition: and

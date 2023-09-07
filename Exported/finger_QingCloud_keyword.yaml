@@ -1,0 +1,20 @@
+id: QingCloud_keyword
+info:
+  name: QingCloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QingCloud"
+        words:
+          - "content=\"云之基石，自由计算。qingcloud 青云为您提供按需分配、弹性可伸缩的计算能力。\""
+        condition: and

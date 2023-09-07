@@ -1,0 +1,20 @@
+id: WEBEL_3_fas_Router_keyword
+info:
+  name: WEBEL 3-fas Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WEBEL 3-fas Router"
+        words:
+          - "WEBEL 3-fas Router"
+        condition: and

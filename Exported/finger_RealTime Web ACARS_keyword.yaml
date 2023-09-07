@@ -1,0 +1,26 @@
+id: RealTime_Web_ACARS_keyword_1_1
+info:
+  name: RealTime Web ACARS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RealTime Web ACARS"
+        words:
+          - "content=\"KjM <acarsd@acarsd.org>"
+        condition: and
+      - type: word
+        part: body
+        name: "RealTime Web ACARS"
+        words:
+          - "content=\"Realtime Web ACARS"
+        condition: and

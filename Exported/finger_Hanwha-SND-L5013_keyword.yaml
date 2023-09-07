@@ -1,0 +1,20 @@
+id: Hanwha_SND_L5013_keyword
+info:
+  name: Hanwha-SND-L5013_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-SND-L5013"
+        words:
+          - "var defaultfilename = \"snd-l5013\""
+        condition: and

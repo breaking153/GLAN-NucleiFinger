@@ -1,0 +1,21 @@
+id: laravel_admin_keyword
+info:
+  name: laravel-admin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "laravel-admin"
+        words:
+          - "vendor/laravel-admin/"
+          - "欢迎登录laravel-admin</p>"
+        condition: and

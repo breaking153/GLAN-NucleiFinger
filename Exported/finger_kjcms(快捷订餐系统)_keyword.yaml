@@ -1,0 +1,26 @@
+id: kjcms_kuai_jie_ding_can_xi_tong_keyword
+info:
+  name: kjcms(快捷订餐系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kjcms(快捷订餐系统)"
+        words:
+          - "kjcms"
+        condition: and
+      - type: word
+        part: body
+        name: "kjcms(快捷订餐系统)"
+        words:
+          - "快捷订餐系统"
+        condition: and

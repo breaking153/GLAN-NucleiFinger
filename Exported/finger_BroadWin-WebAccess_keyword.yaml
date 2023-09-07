@@ -1,0 +1,26 @@
+id: BroadWin_WebAccess_keyword
+info:
+  name: BroadWin-WebAccess_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BroadWin-WebAccess"
+        words:
+          - "<!-- #begintemplate \"/templates/bw_templete1.dwt\" -->"
+        condition: and
+      - type: word
+        part: body
+        name: "BroadWin-WebAccess"
+        words:
+          - "<!-- #BeginTemplate \"/Templates/bw_templete1.dwt\" -->"
+        condition: and

@@ -1,0 +1,27 @@
+id: Yonyou_Seeyon_OA_keyword
+info:
+  name: Yonyou-Seeyon-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yonyou-Seeyon-OA"
+        words:
+          - "/seeyon/user-data/images/login/login.gif"
+          - "a6-v5企业版"
+          - "seeyon"
+          - "seeyonproductid"
+          - "/seeyon/common/"
+          - "var _ctxpath = '/seeyon'"
+          - "a8-v5企业版"
+          - "/seeyon/"
+        condition: and

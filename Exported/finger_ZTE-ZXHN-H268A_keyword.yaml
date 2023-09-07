@@ -1,0 +1,20 @@
+id: ZTE_ZXHN_H268A_keyword
+info:
+  name: ZTE-ZXHN-H268A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-ZXHN-H268A"
+        words:
+          - "logintitle\">welcome to &#72;&#50;&#54;&#56;&#65;. please login"
+        condition: and

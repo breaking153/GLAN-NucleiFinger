@@ -1,0 +1,20 @@
+id: D_Link_DAP_1350_keyword
+info:
+  name: D-Link-DAP-1350_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DAP-1350"
+        words:
+          - "lang_obj.write('product_page'"
+        condition: and

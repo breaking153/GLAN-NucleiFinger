@@ -1,0 +1,21 @@
+id: ramptel_SansCord_Router_keyword
+info:
+  name: ramptel-SansCord-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ramptel-SansCord-Router"
+        words:
+          - "name=username value=\"ywrtaw4=\""
+          - "href=\"http://www.ramptel.com/\""
+        condition: and

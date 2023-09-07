@@ -1,0 +1,26 @@
+id: ke_lai_RAS_keyword
+info:
+  name: 科来RAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "科来RAS"
+        words:
+          - "科来软件 版权所有"
+        condition: and
+      - type: word
+        part: body
+        name: "科来RAS"
+        words:
+          - "i18ninit.min.js"
+        condition: and

@@ -1,0 +1,21 @@
+id: CWP_ControlPanel_keyword
+info:
+  name: CWP-ControlPanel_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CWP-ControlPanel"
+        words:
+          - "href=\"/login/cwp_theme/original/img/ico/favicon.ico\""
+          - "src=\"/login/cwp_theme/original/img/new_logo_small.png\""
+        condition: and

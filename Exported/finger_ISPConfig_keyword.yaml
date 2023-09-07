@@ -1,0 +1,26 @@
+id: ISPConfig_keyword
+info:
+  name: ISPConfig_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ISPConfig"
+        words:
+          - "powered by <a href=\"http://www.ispconfig.org"
+        condition: and
+      - type: word
+        part: body
+        name: "ISPConfig"
+        words:
+          - "powered by <a HREF=\"http://www.ispconfig.org"
+        condition: and

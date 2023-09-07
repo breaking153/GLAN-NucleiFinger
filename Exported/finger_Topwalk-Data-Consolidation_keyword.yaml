@@ -1,0 +1,20 @@
+id: Topwalk_Data_Consolidation_keyword
+info:
+  name: Topwalk-Data-Consolidation_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topwalk-Data-Consolidation"
+        words:
+          - "window.location.href=\"top_dti-debug/top_dtisingle.html"
+        condition: and

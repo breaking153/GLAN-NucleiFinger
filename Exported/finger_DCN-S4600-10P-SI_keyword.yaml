@@ -1,0 +1,20 @@
+id: DCN_S4600_10P_SI_keyword
+info:
+  name: DCN-S4600-10P-SI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DCN-S4600-10P-SI"
+        words:
+          - "<b>s4600-10p-si</b>"
+        condition: and

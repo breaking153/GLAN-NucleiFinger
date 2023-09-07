@@ -1,0 +1,21 @@
+id: LifeSize_Video_Conferencing_keyword
+info:
+  name: LifeSize-Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LifeSize-Video-Conferencing"
+        words:
+          - "src=\"js/swfobject.js"
+          - "src=\"js/lsjavascript.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: unknown_cms_rcms_keyword
+info:
+  name: unknown_cms_rcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "unknown_cms_rcms"
+        words:
+          - "r/cms/www"
+        condition: and

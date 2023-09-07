@@ -1,0 +1,21 @@
+id: hai_na_CMS_HituxCMS_keyword
+info:
+  name: 海纳CMS-HituxCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "海纳CMS-HituxCMS"
+        words:
+          - "Powered By HituxCMS"
+          - "ServiceCenter.js"
+        condition: and

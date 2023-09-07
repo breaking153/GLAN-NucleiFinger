@@ -1,0 +1,26 @@
+id: GMArticle_hao_wen_ben_yi_dong_wang_zhan_wen_zhang_guan_li_xi_tong_keyword
+info:
+  name: GMArticle(好文本移动网站文章管理系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GMArticle(好文本移动网站文章管理系统)"
+        words:
+          - "GMArticle"
+        condition: and
+      - type: word
+        part: body
+        name: "GMArticle(好文本移动网站文章管理系统)"
+        words:
+          - "好文本移动网站文章管理系统"
+        condition: and

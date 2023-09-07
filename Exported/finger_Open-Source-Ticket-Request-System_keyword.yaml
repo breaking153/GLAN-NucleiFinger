@@ -1,0 +1,21 @@
+id: Open_Source_Ticket_Request_System_keyword
+info:
+  name: Open-Source-Ticket-Request-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Open-Source-Ticket-Request-System"
+        words:
+          - "href=\"mailto:otrs@bearingpoint.com"
+          - "src=\"/otrs-web/images/"
+        condition: and

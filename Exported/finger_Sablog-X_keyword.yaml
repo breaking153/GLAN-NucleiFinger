@@ -1,0 +1,20 @@
+id: Sablog_X_keyword
+info:
+  name: Sablog-X_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sablog-X"
+        words:
+          - "Sablog-X"
+        condition: and

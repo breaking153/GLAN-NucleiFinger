@@ -1,0 +1,20 @@
+id: BitrixSiteManager_keyword
+info:
+  name: BitrixSiteManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BitrixSiteManager"
+        words:
+          - "X-Powered-Cms:Bitrix Site Manager"
+        condition: and

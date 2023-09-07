@@ -1,0 +1,21 @@
+id: Digital_Signage_keyword
+info:
+  name: Digital-Signage_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Digital-Signage"
+        words:
+          - "pages/login.action"
+          - "skins/default/images/loginerror.png"
+        condition: and

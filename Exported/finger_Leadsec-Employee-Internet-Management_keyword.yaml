@@ -1,0 +1,21 @@
+id: Leadsec_Employee_Internet_Management_keyword
+info:
+  name: Leadsec-Employee-Internet-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leadsec-Employee-Internet-Management"
+        words:
+          - "asdf</div>-->"
+          - "txtmac"
+        condition: and

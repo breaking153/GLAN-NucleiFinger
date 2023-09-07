@@ -1,0 +1,20 @@
+id: NetComm_Wireless_Route_keyword
+info:
+  name: NetComm-Wireless-Route_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetComm-Wireless-Route"
+        words:
+          - "powered by netcomm"
+        condition: and

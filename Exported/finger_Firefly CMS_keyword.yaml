@@ -1,0 +1,20 @@
+id: Firefly_CMS_keyword
+info:
+  name: Firefly CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Firefly CMS"
+        words:
+          - "Firefly CMS"
+        condition: and

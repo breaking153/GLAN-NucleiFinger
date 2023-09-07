@@ -1,0 +1,20 @@
+id: AMPLESKY_Company_s_product_keyword
+info:
+  name: AMPLESKY-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AMPLESKY-Company's-product"
+        words:
+          - "var fullmessage = \"天地阳光通信科技（北京）有限公司"
+        condition: and

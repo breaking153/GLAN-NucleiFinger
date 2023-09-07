@@ -1,0 +1,20 @@
+id: UFIDA_NC_keyword
+info:
+  name: UFIDA_NC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UFIDA_NC"
+        words:
+          - "logo/images/ufida_nc.png"
+        condition: and

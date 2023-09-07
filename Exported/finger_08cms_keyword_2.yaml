@@ -1,0 +1,26 @@
+id: 08cms_keyword
+info:
+  name: 08cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "08cms"
+        words:
+          - "content=\"08CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "08cms"
+        words:
+          - "typeof(_08cms)"
+        condition: and

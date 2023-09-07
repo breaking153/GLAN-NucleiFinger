@@ -1,0 +1,20 @@
+id: TP_LINK_TD_VG3511_keyword
+info:
+  name: TP-LINK TD-VG3511_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK TD-VG3511"
+        words:
+          - "TP-LINK TD-VG3511"
+        condition: and

@@ -1,0 +1,20 @@
+id: 135topCMS_keyword
+info:
+  name: 135topCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "135topCMS"
+        words:
+          - "135topCMS"
+        condition: and

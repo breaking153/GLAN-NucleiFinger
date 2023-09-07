@@ -1,0 +1,20 @@
+id: KesionCMS_ke_xun_keyword
+info:
+  name: KesionCMS(科讯)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KesionCMS(科讯)"
+        words:
+          - "kesioncms"
+        condition: and

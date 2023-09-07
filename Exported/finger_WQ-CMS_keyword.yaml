@@ -1,0 +1,21 @@
+id: WQ_CMS_keyword
+info:
+  name: WQ-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WQ-CMS"
+        words:
+          - "powered by <a href='http://www.wqcms.com"
+          - "style/wangqi/style.css"
+        condition: and

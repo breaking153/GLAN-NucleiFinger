@@ -1,0 +1,20 @@
+id: LINKSYS_PLANTA_keyword
+info:
+  name: LINKSYS-PLANTA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LINKSYS-PLANTA"
+        words:
+          - "LINKSYS-PLANTA"
+        condition: and

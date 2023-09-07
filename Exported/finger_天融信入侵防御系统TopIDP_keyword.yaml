@@ -1,0 +1,20 @@
+id: tian_rong_xin_ru_qin_fang_yu_xi_tong_TopIDP_keyword
+info:
+  name: 天融信入侵防御系统TopIDP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信入侵防御系统TopIDP"
+        words:
+          - "天融信入侵防御系统TopIDP"
+        condition: and

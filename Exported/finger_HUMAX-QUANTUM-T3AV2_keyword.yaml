@@ -1,0 +1,21 @@
+id: HUMAX_QUANTUM_T3AV2_keyword
+info:
+  name: HUMAX-QUANTUM-T3AV2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUMAX-QUANTUM-T3AV2"
+        words:
+          - "id=\"product_model\"><script>dw(mdl_name"
+          - "dw(\"t3atv2\" : dw(\"t3av2\""
+        condition: and

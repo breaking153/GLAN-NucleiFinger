@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -18,5 +18,13 @@ http:
         words:
           - "eYou"
           - "q=login"
+          - "tpl/user"
+        condition: and
+      - type: word
+        part: body
+        name: "亿邮邮件系统"
+        words:
+          - "eYou"
+          - "q=help"
           - "tpl/user"
         condition: and

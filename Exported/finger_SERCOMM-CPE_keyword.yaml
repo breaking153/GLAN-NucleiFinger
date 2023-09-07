@@ -1,0 +1,20 @@
+id: SERCOMM_CPE_keyword
+info:
+  name: SERCOMM-CPE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SERCOMM-CPE"
+        words:
+          - "realm=\"sercomm cpe authentication"
+        condition: and

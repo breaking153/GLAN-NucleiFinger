@@ -1,0 +1,20 @@
+id: AfterLogic_WebMail_Lite_keyword
+info:
+  name: AfterLogic WebMail Lite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AfterLogic WebMail Lite"
+        words:
+          - "AfterLogic WebMail Lite"
+        condition: and

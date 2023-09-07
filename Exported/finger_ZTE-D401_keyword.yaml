@@ -1,0 +1,20 @@
+id: ZTE_D401_keyword
+info:
+  name: ZTE-D401_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-D401"
+        words:
+          - "d401</font></div>"
+        condition: and

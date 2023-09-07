@@ -1,0 +1,32 @@
+id: easysite_keyword
+info:
+  name: easysite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "easysite"
+        words:
+          - "GENERATOR\" content=\"EasySite"
+        condition: and
+      - type: word
+        part: body
+        name: "easysite"
+        words:
+          - "Copyright 2009 by Huilan"
+        condition: and
+      - type: word
+        part: body
+        name: "easysite"
+        words:
+          - "_DesktopModules_PictureNews"
+        condition: and

@@ -1,0 +1,26 @@
+id: MSVOD_mei_si_CMS_keyword
+info:
+  name: MSVOD(魅思CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MSVOD(魅思CMS)"
+        words:
+          - "MSVOD"
+        condition: and
+      - type: word
+        part: body
+        name: "MSVOD(魅思CMS)"
+        words:
+          - "魅思CMS"
+        condition: and

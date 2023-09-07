@@ -1,0 +1,20 @@
+id: MAC1200R_keyword
+info:
+  name: MAC1200R_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MAC1200R"
+        words:
+          - "MAC1200R"
+        condition: and

@@ -1,0 +1,20 @@
+id: Cisco_Video_conferencing_keyword
+info:
+  name: Cisco-Video-conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-Video-conferencing"
+        words:
+          - "<frame src=\"framemiddle.htm\" name=\"no name\" noresize marginheight=\"0\">"
+        condition: and

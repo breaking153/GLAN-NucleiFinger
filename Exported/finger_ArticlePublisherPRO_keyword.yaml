@@ -1,0 +1,21 @@
+id: ArticlePublisherPRO_keyword
+info:
+  name: ArticlePublisherPRO_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ArticlePublisherPRO"
+        words:
+          - "www.articlepublisherpro.com"
+          - "content=\"article publisher pro"
+        condition: and

@@ -1,0 +1,20 @@
+id: hercules_Logistics_keyword
+info:
+  name: hercules-Logistics_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hercules-Logistics"
+        words:
+          - "document.cookie=\"4pl07username=\"+arraystr"
+        condition: and

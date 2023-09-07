@@ -1,0 +1,22 @@
+id: JBoss_EAP_keyword
+info:
+  name: JBoss EAP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JBoss EAP"
+        words:
+          - "title>EAP"
+          - "eap.css"
+          - "JBoss"
+        condition: and

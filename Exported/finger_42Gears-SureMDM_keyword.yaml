@@ -1,0 +1,21 @@
+id: 42Gears_SureMDM_keyword
+info:
+  name: 42Gears-SureMDM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "42Gears-SureMDM"
+        words:
+          - "suremdm"
+          - "astrocontacts"
+        condition: and

@@ -1,0 +1,20 @@
+id: TP_COUPON_mian_fei_kai_yuan_de_PHP_you_hui_quan_xi_tong_keyword
+info:
+  name: TP-COUPON_免费开源的PHP优惠券系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-COUPON_免费开源的PHP优惠券系统"
+        words:
+          - "TP-COUPON_免费开源的PHP优惠券系统"
+        condition: and

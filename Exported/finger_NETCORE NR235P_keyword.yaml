@@ -1,0 +1,20 @@
+id: NETCORE_NR235P_keyword
+info:
+  name: NETCORE NR235P_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETCORE NR235P"
+        words:
+          - "NETCORE NR235P"
+        condition: and

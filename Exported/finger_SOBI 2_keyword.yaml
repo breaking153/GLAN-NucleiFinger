@@ -1,0 +1,20 @@
+id: SOBI_2_keyword
+info:
+  name: SOBI 2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SOBI 2"
+        words:
+          - "SOBI 2"
+        condition: and

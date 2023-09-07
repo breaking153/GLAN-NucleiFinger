@@ -1,0 +1,22 @@
+id: Landray_OA_keyword
+info:
+  name: Landray-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Landray-OA"
+        words:
+          - "lui_login_message_td"
+          - "蓝凌软件 版权所有"
+          - "url : Com_Parameter.ResPath+\"jsp/clearSsoCookie.jsp\""
+        condition: and

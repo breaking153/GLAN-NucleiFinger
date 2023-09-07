@@ -1,0 +1,23 @@
+id: D_Link_DIR_815_keyword
+info:
+  name: D_Link-DIR-815_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-DIR-815"
+        words:
+          - "target=\"_blank\">dir-815</a>"
+          - "<div class='model'>dir-815</div>"
+          - "content=\"dir-815\""
+          - "class='title'>dir-815/ac"
+        condition: and

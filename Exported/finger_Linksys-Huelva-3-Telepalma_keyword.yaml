@@ -1,0 +1,20 @@
+id: Linksys_Huelva_3_Telepalma_keyword
+info:
+  name: Linksys-Huelva-3-Telepalma_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys-Huelva-3-Telepalma"
+        words:
+          - "Linksys-Huelva-3-Telepalma"
+        condition: and

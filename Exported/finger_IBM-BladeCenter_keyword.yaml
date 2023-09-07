@@ -1,0 +1,22 @@
+id: IBM_BladeCenter_keyword
+info:
+  name: IBM-BladeCenter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-BladeCenter"
+        words:
+          - "/shared/ibmbch.png"
+          - "/shared/ibmbcs.png"
+          - "alt=\"ibm bladecenter"
+        condition: and

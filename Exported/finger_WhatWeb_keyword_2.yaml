@@ -1,0 +1,21 @@
+id: WhatWeb_keyword_1
+info:
+  name: WhatWeb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WhatWeb"
+        words:
+          - "file-created wed, 14 jul 1999 04:00:00 gmt"
+          - "xcd web admin"
+        condition: and

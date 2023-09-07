@@ -1,0 +1,27 @@
+id: VMware_Workspace_ONE_Access_keyword
+info:
+  name: VMware Workspace ONE Access_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMware Workspace ONE Access"
+        words:
+          - "VMware Workspace ONE Access"
+        condition: and
+      - type: word
+        part: body
+        name: "VMware Workspace ONE Access"
+        words:
+          - "VMware Workspace"
+          - "Assist"
+        condition: and

@@ -1,0 +1,20 @@
+id: SONY_SNC_WR630_keyword
+info:
+  name: SONY-SNC-WR630_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SONY-SNC-WR630"
+        words:
+          - "realm=\"snc-wr630"
+        condition: and

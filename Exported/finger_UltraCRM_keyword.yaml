@@ -1,0 +1,20 @@
+id: UltraCRM_keyword
+info:
+  name: UltraCRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UltraCRM"
+        words:
+          - "&nbsp;tonethink.soft&nbsp;&nbsp;all rights reserved"
+        condition: and

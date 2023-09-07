@@ -1,0 +1,26 @@
+id: phpdisk_keyword
+info:
+  name: phpdisk_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpdisk"
+        words:
+          - "Powered by PHPDisk"
+        condition: and
+      - type: word
+        part: body
+        name: "phpdisk"
+        words:
+          - "content=\"PHPDisk"
+        condition: and

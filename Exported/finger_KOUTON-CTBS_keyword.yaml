@@ -1,0 +1,20 @@
+id: KOUTON_CTBS_keyword
+info:
+  name: KOUTON-CTBS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KOUTON-CTBS"
+        words:
+          - "欢迎使用 kouton ctbs advanced web client 系统!"
+        condition: and

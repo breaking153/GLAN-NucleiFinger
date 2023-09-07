@@ -1,0 +1,20 @@
+id: Hikvision_shi_pin_bian_ma_she_bei_jie_ru_wang_guan_keyword
+info:
+  name: Hikvision视频编码设备接入网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Hikvision视频编码设备接入网关"
+        words:
+          - "Hikvision视频编码设备接入网关"
+        condition: and

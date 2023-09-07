@@ -1,0 +1,22 @@
+id: cgit_keyword
+info:
+  name: cgit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cgit"
+        words:
+          - "<div id='cgit'>"
+          - "href='/cgit.css'/>"
+          - "content='cgit"
+        condition: and

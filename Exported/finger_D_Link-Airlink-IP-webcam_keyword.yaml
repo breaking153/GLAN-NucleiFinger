@@ -1,0 +1,20 @@
+id: D_Link_Airlink_IP_webcam_keyword
+info:
+  name: D_Link-Airlink-IP-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-Airlink-IP-webcam"
+        words:
+          - "bv = navigator.appversion"
+        condition: and

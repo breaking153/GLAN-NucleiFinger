@@ -1,0 +1,20 @@
+id: lei_ke_chan_pin_keyword
+info:
+  name: 磊科产品_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "磊科产品"
+        words:
+          - "netcore"
+        condition: and

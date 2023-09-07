@@ -1,0 +1,21 @@
+id: Fanwe_keyword
+info:
+  name: Fanwe_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Fanwe"
+        words:
+          - "app/tpl/fanwe_1/images/lazy_loading.gif"
+          - "index.php?ctl=article_cate"
+        condition: and

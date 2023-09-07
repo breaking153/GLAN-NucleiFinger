@@ -1,0 +1,20 @@
+id: Signalway_PCC200_keyword
+info:
+  name: Signalway-PCC200_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Signalway-PCC200"
+        words:
+          - "<span class=\"bannertextcompany\">pcc200</span>"
+        condition: and

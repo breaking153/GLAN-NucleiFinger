@@ -1,0 +1,20 @@
+id: Public_security_checkpoint_document_verification_system_keyword
+info:
+  name: Public-security-checkpoint-document-verification-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Public-security-checkpoint-document-verification-system"
+        words:
+          - "content=\"公安检查站人脸/证件合一核录系统"
+        condition: and

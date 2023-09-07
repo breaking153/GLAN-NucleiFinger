@@ -1,0 +1,21 @@
+id: RAPID_Browser_keyword
+info:
+  name: RAPID-Browser_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RAPID-Browser"
+        words:
+          - "<!-- ### bullet table ### -->"
+          - "images/login_button.gif\" alt=\"login to rapid browser"
+        condition: and

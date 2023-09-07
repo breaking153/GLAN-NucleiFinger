@@ -1,0 +1,20 @@
+id: lu_hua_RuvarHRM_keyword
+info:
+  name: 璐华RuvarHRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "璐华RuvarHRM"
+        words:
+          - "璐华RuvarHRM"
+        condition: and

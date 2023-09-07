@@ -1,0 +1,26 @@
+id: Keil_Embedded_WEB_Server_keyword
+info:
+  name: Keil-Embedded-WEB-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Keil-Embedded-WEB-Server"
+        words:
+          - "server: keil-eweb"
+        condition: and
+      - type: word
+        part: header
+        name: "Keil-Embedded-WEB-Server"
+        words:
+          - "Keil-EWEB"
+        condition: and

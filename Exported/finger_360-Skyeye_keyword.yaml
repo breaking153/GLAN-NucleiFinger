@@ -1,0 +1,21 @@
+id: 360_Skyeye_keyword
+info:
+  name: 360-Skyeye_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-Skyeye"
+        words:
+          - "/index.bundle.872998a4.js"
+          - "src=\"/static/img/skyeye-logo-big.png\">"
+        condition: and

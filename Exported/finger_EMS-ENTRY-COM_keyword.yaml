@@ -1,0 +1,26 @@
+id: EMS_ENTRY_COM_keyword
+info:
+  name: EMS-ENTRY-COM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EMS-ENTRY-COM"
+        words:
+          - "EMS-Entry"
+        condition: and
+      - type: word
+        part: header
+        name: "EMS-ENTRY-COM"
+        words:
+          - "ZENT5"
+        condition: and

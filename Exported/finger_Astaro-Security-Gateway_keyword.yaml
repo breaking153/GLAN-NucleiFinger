@@ -1,0 +1,38 @@
+id: Astaro_Security_Gateway_keyword
+info:
+  name: Astaro-Security-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Astaro-Security-Gateway"
+        words:
+          - "/acc_aggregated_reporting.js"
+        condition: and
+      - type: word
+        part: body
+        name: "Astaro-Security-Gateway"
+        words:
+          - "wfe/asg/js/app_selector.js?t="
+        condition: and
+      - type: word
+        part: body
+        name: "Astaro-Security-Gateway"
+        words:
+          - "/doc/astaro-license.txt"
+        condition: and
+      - type: word
+        part: body
+        name: "Astaro-Security-Gateway"
+        words:
+          - "/js/_variables_from_backend.js?t="
+        condition: and

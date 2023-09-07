@@ -1,0 +1,20 @@
+id: IPB_IP_Board_keyword
+info:
+  name: IPB_IP.Board_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IPB_IP.Board"
+        words:
+          - "IPB_IP.Board"
+        condition: and

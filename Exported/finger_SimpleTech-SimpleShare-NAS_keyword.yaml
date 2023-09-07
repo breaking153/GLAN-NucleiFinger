@@ -1,0 +1,20 @@
+id: SimpleTech_SimpleShare_NAS_keyword
+info:
+  name: SimpleTech-SimpleShare-NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SimpleTech-SimpleShare-NAS"
+        words:
+          - "default user name is admin and password is simple"
+        condition: and

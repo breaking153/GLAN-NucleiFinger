@@ -1,0 +1,19 @@
+id: iDste_rong_he_xi_tong_zhi_cheng_ping_tai_keyword
+info:
+  name: iDste融合系统支撑平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iDste融合系统支撑平台"
+        words:
+          - "<title>iDste融合系统支撑平台"

@@ -1,0 +1,20 @@
+id: cradlepoint_IBR600LP3_keyword
+info:
+  name: cradlepoint-IBR600LP3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-IBR600LP3"
+        words:
+          - "cplogin.model = \"ibr600lp3\";"
+        condition: and

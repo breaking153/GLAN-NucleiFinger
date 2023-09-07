@@ -1,0 +1,21 @@
+id: BOSCH_DIVAR_IP_keyword
+info:
+  name: BOSCH-DIVAR-IP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BOSCH-DIVAR-IP"
+        words:
+          - "vrmchunk.sethelpname('vrm_monitor'"
+          - "the requested url '/' was not found on the divar"
+        condition: and

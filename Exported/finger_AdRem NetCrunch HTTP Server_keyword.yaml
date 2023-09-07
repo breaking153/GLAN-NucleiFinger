@@ -1,0 +1,20 @@
+id: AdRem_NetCrunch_HTTP_Server_keyword
+info:
+  name: AdRem NetCrunch HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AdRem NetCrunch HTTP Server"
+        words:
+          - "AdRem NetCrunch HTTP Server"
+        condition: and

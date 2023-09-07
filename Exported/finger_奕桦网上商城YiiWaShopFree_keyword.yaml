@@ -1,0 +1,20 @@
+id: yi_hua_wang_shang_shang_cheng_YiiWaShopFree_keyword
+info:
+  name: 奕桦网上商城YiiWaShopFree_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "奕桦网上商城YiiWaShopFree"
+        words:
+          - "奕桦网上商城YiiWaShopFree"
+        condition: and

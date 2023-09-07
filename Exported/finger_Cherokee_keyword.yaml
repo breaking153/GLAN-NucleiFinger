@@ -1,0 +1,26 @@
+id: Cherokee_keyword
+info:
+  name: Cherokee_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cherokee"
+        words:
+          - "server: cherokee"
+        condition: and
+      - type: word
+        part: header
+        name: "Cherokee"
+        words:
+          - "Cherokee"
+        condition: and

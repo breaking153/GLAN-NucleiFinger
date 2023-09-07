@@ -1,0 +1,27 @@
+id: openSUSE_keyword
+info:
+  name: openSUSE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "openSUSE"
+        words:
+          - "opensuse"
+          - "suse"
+        condition: and
+      - type: word
+        part: header
+        name: "openSUSE"
+        words:
+          - "openSUSE"
+        condition: and

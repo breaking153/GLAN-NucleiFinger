@@ -1,0 +1,21 @@
+id: ke_mai_RAS_keyword
+info:
+  name: 科迈 RAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "科迈 RAS"
+        words:
+          - "科迈RAS"
+          - "CmxGoUrl.php"
+        condition: and

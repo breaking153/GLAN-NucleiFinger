@@ -1,0 +1,20 @@
+id: de_xun_ke_ji_shu_ju_zhong_xin_keyword
+info:
+  name: 德讯科技数据中心_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "德讯科技数据中心"
+        words:
+          - "德讯科技数据中心"
+        condition: and

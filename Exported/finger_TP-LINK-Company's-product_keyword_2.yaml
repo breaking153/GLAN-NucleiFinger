@@ -1,0 +1,21 @@
+id: TP_LINK_Company_s_product_keyword_1
+info:
+  name: TP-LINK-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK-Company's-product"
+        words:
+          - "realm=\"tp-link"
+          - "server: tp-link"
+        condition: and

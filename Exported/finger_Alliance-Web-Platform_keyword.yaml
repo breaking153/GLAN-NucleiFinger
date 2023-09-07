@@ -1,0 +1,20 @@
+id: Alliance_Web_Platform_keyword
+info:
+  name: Alliance-Web-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alliance-Web-Platform"
+        words:
+          - "window.location = \"/swp/group/admin\";"
+        condition: and

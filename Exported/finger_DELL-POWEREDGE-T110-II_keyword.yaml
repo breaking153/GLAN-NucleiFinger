@@ -1,0 +1,20 @@
+id: DELL_POWEREDGE_T110_II_keyword
+info:
+  name: DELL-POWEREDGE-T110-II_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DELL-POWEREDGE-T110-II"
+        words:
+          - "poweredge-t110-ii"
+        condition: and

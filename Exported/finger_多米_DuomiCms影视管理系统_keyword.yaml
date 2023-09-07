@@ -1,0 +1,20 @@
+id: duo_mi_DuomiCms_ying_shi_guan_li_xi_tong_keyword
+info:
+  name: 多米_DuomiCms影视管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "多米_DuomiCms影视管理系统"
+        words:
+          - "多米_DuomiCms影视管理系统"
+        condition: and

@@ -1,0 +1,20 @@
+id: dlink_DSL_320B_keyword
+info:
+  name: dlink_DSL_320B_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "dlink_DSL_320B"
+        words:
+          - "DSL-320B"
+        condition: and

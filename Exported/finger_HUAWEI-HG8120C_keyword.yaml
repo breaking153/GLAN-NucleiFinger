@@ -1,0 +1,20 @@
+id: HUAWEI_HG8120C_keyword
+info:
+  name: HUAWEI-HG8120C_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-HG8120C"
+        words:
+          - "var productname = 'hg8120c'"
+        condition: and

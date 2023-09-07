@@ -1,0 +1,20 @@
+id: JiTon_Server_Room_environment_monitoring_system_keyword
+info:
+  name: JiTon-Server-Room-environment-monitoring-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JiTon-Server-Room-environment-monitoring-system"
+        words:
+          - " var ierrorcode = args.errorcode"
+        condition: and

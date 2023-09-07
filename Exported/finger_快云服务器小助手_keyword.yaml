@@ -1,0 +1,19 @@
+id: kuai_yun_fu_wu_qi_xiao_zhu_shou_keyword
+info:
+  name: 快云服务器小助手_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "快云服务器小助手"
+        words:
+          - "<title>快云服务器助手"

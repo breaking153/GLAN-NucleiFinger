@@ -1,0 +1,22 @@
+id: hua_shi_si_yun_CDN_zhi_bo_jia_su_fu_wu_qi_keyword
+info:
+  name: 化视私云CDN直播加速服务器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "化视私云CDN直播加速服务器"
+        words:
+          - "img/dl.gif"
+          - "华视美达"
+          - "login.php"
+        condition: and

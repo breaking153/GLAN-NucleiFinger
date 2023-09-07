@@ -1,0 +1,20 @@
+id: SMC_WBR14S_N5_keyword
+info:
+  name: SMC WBR14S-N5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SMC WBR14S-N5"
+        words:
+          - "SMCWBR14S-N5"
+        condition: and

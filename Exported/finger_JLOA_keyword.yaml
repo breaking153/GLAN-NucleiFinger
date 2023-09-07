@@ -1,0 +1,22 @@
+id: JLOA_keyword
+info:
+  name: JLOA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JLOA"
+        words:
+          - "selectcss"
+          - "toptitleimg"
+          - "logintable"
+        condition: and

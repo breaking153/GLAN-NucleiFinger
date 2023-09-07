@@ -1,0 +1,21 @@
+id: Colasoft_Network_Information_Comprehensive_Detection_and_Processing_Platform_keyword
+info:
+  name: Colasoft-Network-Information-Comprehensive-Detection-and-Processing-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Colasoft-Network-Information-Comprehensive-Detection-and-Processing-Platform"
+        words:
+          - "<meta name=\"colasoft\""
+          - "科来网络信息综合检测处理平台"
+        condition: and

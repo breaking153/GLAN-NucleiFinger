@@ -1,0 +1,21 @@
+id: G01_keyword
+info:
+  name: G01_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "G01"
+        words:
+          - "href=\"http://bbs.yunsuo.com.cn"
+          - "<img class=\"yunsuologo\""
+        condition: and

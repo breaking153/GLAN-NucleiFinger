@@ -1,0 +1,26 @@
+id: IBM_Internet_Connection_Server_keyword
+info:
+  name: IBM-Internet-Connection-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM-Internet-Connection-Server"
+        words:
+          - "server: ibm internet connection server"
+        condition: and
+      - type: word
+        part: header
+        name: "IBM-Internet-Connection-Server"
+        words:
+          - "IBM Internet Connection Server"
+        condition: and

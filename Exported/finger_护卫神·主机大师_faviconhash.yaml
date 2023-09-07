@@ -1,0 +1,19 @@
+id: hu_wei_shen_zhu_ji_da_shi_faviconhash
+info:
+  name: 护卫神·主机大师_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "护卫神·主机大师"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1188645141\""
+        condition: or

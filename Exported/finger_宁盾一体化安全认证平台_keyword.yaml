@@ -1,0 +1,21 @@
+id: ning_dun_yi_ti_hua_an_quan_ren_zheng_ping_tai_keyword
+info:
+  name: 宁盾一体化安全认证平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "宁盾一体化安全认证平台"
+        words:
+          - "am/ndkey.ico"
+          - "zhLanguagePng"
+        condition: and

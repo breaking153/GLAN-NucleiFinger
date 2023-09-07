@@ -1,0 +1,26 @@
+id: guan_li_yi_keyword
+info:
+  name: 管理易_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "管理易"
+        words:
+          - "管理易"
+        condition: and
+      - type: word
+        part: body
+        name: "管理易"
+        words:
+          - "minierp"
+        condition: and

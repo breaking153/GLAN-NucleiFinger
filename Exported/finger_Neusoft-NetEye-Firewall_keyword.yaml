@@ -1,0 +1,20 @@
+id: Neusoft_NetEye_Firewall_keyword
+info:
+  name: Neusoft-NetEye-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Neusoft-NetEye-Firewall"
+        words:
+          - "name=\"login_form\" action=\"/fwm4/fwm.cgi/usrlgin\" "
+        condition: and

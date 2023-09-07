@@ -1,0 +1,23 @@
+id: kubernetes_keyword
+info:
+  name: kubernetes_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kubernetes"
+        words:
+          - "href=\"assets/images/kubernetes-logo.png"
+          - "<article class=\"post kubernetes"
+          - "<b>kubernetes</b> listening"
+          - "value=\"kubernetes"
+        condition: and

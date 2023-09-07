@@ -1,0 +1,20 @@
+id: Venustech_TianTina_IDS_keyword
+info:
+  name: Venustech-TianTina-IDS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Venustech-TianTina-IDS"
+        words:
+          - "<div class=\"login_name\">天阗入侵检测与管理系统v7.0</div>"
+        condition: and

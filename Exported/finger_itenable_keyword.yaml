@@ -1,0 +1,22 @@
+id: itenable_keyword
+info:
+  name: itenable_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "itenable"
+        words:
+          - "/enableq.css"
+          - "js/checkquestion.js.php"
+          - "/images/enableq.ico"
+        condition: and

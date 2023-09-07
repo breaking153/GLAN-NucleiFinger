@@ -1,0 +1,23 @@
+id: Uniview_Data_management_server_keyword
+info:
+  name: Uniview-Data-management-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Uniview-Data-management-server"
+        words:
+          - "/webui/switch.php"
+          - "cur_type=\"devtype_ms8500\";"
+          - "value=devtype_dm8500 selected>dm8500"
+          - "cur_type=\"devtype_dm8500"
+        condition: and

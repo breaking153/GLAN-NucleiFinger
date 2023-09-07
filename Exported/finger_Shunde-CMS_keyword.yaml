@@ -1,0 +1,20 @@
+id: Shunde_CMS_keyword
+info:
+  name: Shunde-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Shunde-CMS"
+        words:
+          - "for=\"ctl00_cph_l_login_username\">crm帐号"
+        condition: and

@@ -1,0 +1,27 @@
+id: Apache_Struts2_keyword
+info:
+  name: Apache-Struts2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-Struts2"
+        words:
+          - "struts problem report"
+          - "there is no action mapped for namespace"
+          - "no result defined for action and result input"
+          - "<a href=(.*\\.action(.*</a>"
+          - "<form id=(.*\\.action(.*"
+          - "<a href=(.*\\.do(.*</a>"
+          - "(.*\\.action"
+          - "(.*\\.do"
+        condition: and

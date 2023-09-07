@@ -1,0 +1,35 @@
+id: Avaya_Aura_Utility_Server_keyword
+info:
+  name: Avaya-Aura-Utility-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Avaya-Aura-Utility-Server"
+        words:
+          - "vmstitle\">avaya aura&#8482;&nbsp;utility server"
+          - "/webhelp/base/utility_toc.htm"
+          - "avaya aura&reg;&nbsp;utility services"
+          - "avaya inc. all rights reserved"
+        condition: and
+      - type: word
+        part: body
+        name: "Avaya-Aura-Utility-Server"
+        words:
+          - "vmsTitle\">Avaya Aura&#8482;&nbsp;Utility Server"
+        condition: and
+      - type: word
+        part: body
+        name: "Avaya-Aura-Utility-Server"
+        words:
+          - "/webhelp/Base/Utility_toc.htm"
+        condition: and

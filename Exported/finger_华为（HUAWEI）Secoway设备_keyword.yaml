@@ -1,0 +1,20 @@
+id: hua_wei_HUAWEI_Secoway_she_bei_keyword
+info:
+  name: 华为（HUAWEI）Secoway设备_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "华为（HUAWEI）Secoway设备"
+        words:
+          - "Secoway"
+        condition: and

@@ -1,0 +1,20 @@
+id: qi_ming_tian_jing_cui_ruo_xing_sao_miao_keyword
+info:
+  name: 启明天镜脆弱性扫描_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "启明天镜脆弱性扫描"
+        words:
+          - "启明天镜脆弱性扫描"
+        condition: and

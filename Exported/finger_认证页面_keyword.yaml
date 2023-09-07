@@ -1,0 +1,20 @@
+id: ren_zheng_ye_mian_keyword
+info:
+  name: 认证页面_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "认证页面"
+        words:
+          - "Www-Authenticate"
+        condition: and

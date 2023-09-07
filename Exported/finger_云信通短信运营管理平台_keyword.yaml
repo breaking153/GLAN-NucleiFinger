@@ -1,0 +1,22 @@
+id: yun_xin_tong_duan_xin_yun_ying_guan_li_ping_tai_keyword
+info:
+  name: 云信通短信运营管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "云信通短信运营管理平台"
+        words:
+          - "短信"
+          - "Simpla"
+          - "chklogin.aspx"
+        condition: and

@@ -1,0 +1,20 @@
+id: Special_Device_Testing_Risk_Assessment_System_keyword
+info:
+  name: Special-Device-Testing-Risk-Assessment-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Special-Device-Testing-Risk-Assessment-System"
+        words:
+          - "var unitid = getpagerequestvalue(\"unitid\""
+        condition: and

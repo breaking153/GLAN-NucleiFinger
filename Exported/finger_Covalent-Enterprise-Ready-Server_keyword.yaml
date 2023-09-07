@@ -1,0 +1,26 @@
+id: Covalent_Enterprise_Ready_Server_keyword
+info:
+  name: Covalent-Enterprise-Ready-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Covalent-Enterprise-Ready-Server"
+        words:
+          - "covalentsnmp"
+        condition: and
+      - type: word
+        part: header
+        name: "Covalent-Enterprise-Ready-Server"
+        words:
+          - "CovalentSNMP"
+        condition: and

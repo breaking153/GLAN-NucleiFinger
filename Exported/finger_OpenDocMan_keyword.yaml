@@ -1,0 +1,21 @@
+id: OpenDocMan_keyword
+info:
+  name: OpenDocMan_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenDocMan"
+        words:
+          - "welcome to opendocman"
+          - "target=\"_new\">opendocman"
+        condition: and

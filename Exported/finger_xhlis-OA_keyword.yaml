@@ -1,0 +1,20 @@
+id: xhlis_OA_keyword
+info:
+  name: xhlis-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "xhlis-OA"
+        words:
+          - "<title>杏和区域检验业务协同平台登录界面</title>"
+        condition: and

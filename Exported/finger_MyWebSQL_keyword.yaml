@@ -1,0 +1,21 @@
+id: MyWebSQL_keyword
+info:
+  name: MyWebSQL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MyWebSQL"
+        words:
+          - "target=\"_blank\" href=\"http://mywebsql.net"
+          - "method=\"post\" action=\"\" name=\"dbform\" "
+        condition: and

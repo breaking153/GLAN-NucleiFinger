@@ -1,0 +1,32 @@
+id: AvantFAX_keyword
+info:
+  name: AvantFAX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AvantFAX"
+        words:
+          - "src=\"images/avantfax-big.png\" border=\"0\" alt=\"avantfax"
+        condition: and
+      - type: word
+        part: body
+        name: "AvantFAX"
+        words:
+          - "content=\"Web 2.0 HylaFAX"
+        condition: and
+      - type: word
+        part: body
+        name: "AvantFAX"
+        words:
+          - "images/avantfax-big.png"
+        condition: and

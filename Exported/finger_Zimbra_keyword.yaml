@@ -1,0 +1,21 @@
+id: Zimbra_keyword
+info:
+  name: Zimbra_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zimbra"
+        words:
+          - "window._zimbramail"
+          - "content=\"zimbra"
+        condition: and

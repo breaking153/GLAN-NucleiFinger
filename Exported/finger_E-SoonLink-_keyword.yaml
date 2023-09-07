@@ -1,0 +1,21 @@
+id: E_SoonLink_keyword
+info:
+  name: E-SoonLink-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "E-SoonLink-"
+        words:
+          - "document.writeln(companymail"
+          - "志高易联"
+        condition: and

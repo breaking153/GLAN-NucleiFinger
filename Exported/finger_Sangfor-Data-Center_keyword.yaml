@@ -1,0 +1,20 @@
+id: Sangfor_Data_Center_keyword
+info:
+  name: Sangfor-Data-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sangfor-Data-Center"
+        words:
+          - "acloglogin.php"
+        condition: and

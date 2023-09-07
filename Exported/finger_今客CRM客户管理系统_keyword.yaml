@@ -1,0 +1,20 @@
+id: jin_ke_CRM_ke_hu_guan_li_xi_tong_keyword
+info:
+  name: 今客CRM客户管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "今客CRM客户管理系统"
+        words:
+          - "今客CRM客户管理系统"
+        condition: and

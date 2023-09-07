@@ -1,0 +1,26 @@
+id: Calypso_ION_8r_Device_keyword_1
+info:
+  name: Calypso-ION-8r-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Calypso-ION-8r-Device"
+        words:
+          - "calypso ion8r device"
+        condition: and
+      - type: word
+        part: header
+        name: "Calypso-ION-8r-Device"
+        words:
+          - "Calypso ION8r Device"
+        condition: and

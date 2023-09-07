@@ -1,0 +1,20 @@
+id: paloalto_PA_820_keyword
+info:
+  name: paloalto-PA-820_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "paloalto-PA-820"
+        words:
+          - "id=\"heading\">globalprotect portal</div>"
+        condition: and

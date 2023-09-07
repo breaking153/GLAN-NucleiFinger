@@ -1,0 +1,23 @@
+id: raysharp_Camera_keyword
+info:
+  name: raysharp-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "raysharp-Camera"
+        words:
+          - "window.location.href = \"html/webplugin.html\";"
+          - "userloginevent(msgid, chnumber, userpagert, userpreviewrt, userrecrt"
+          - "<body onload=\"\" onselectstart=\"return fbd(;\" onunload=\"closewnd(\" onresize=\"resetmasklayer\">"
+          - "rsvideoocx.cab"
+        condition: and

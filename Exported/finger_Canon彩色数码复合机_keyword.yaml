@@ -1,0 +1,20 @@
+id: Canon_cai_se_shu_ma_fu_he_ji_keyword
+info:
+  name: Canon彩色数码复合机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Canon彩色数码复合机"
+        words:
+          - "Canon彩色数码复合机"
+        condition: and

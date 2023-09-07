@@ -1,0 +1,26 @@
+id: ValleyPlatform_shan_gu_tong_yi_kai_fa_ping_tai_keyword
+info:
+  name: ValleyPlatform(山谷统一开发平台)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ValleyPlatform(山谷统一开发平台)"
+        words:
+          - "ValleyPlatform"
+        condition: and
+      - type: word
+        part: body
+        name: "ValleyPlatform(山谷统一开发平台)"
+        words:
+          - "山谷统一开发平台"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_wnr2000v4_keyword
+info:
+  name: NETGEAR wnr2000v4_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR wnr2000v4"
+        words:
+          - "NETGEAR wnr2000v4"
+        condition: and

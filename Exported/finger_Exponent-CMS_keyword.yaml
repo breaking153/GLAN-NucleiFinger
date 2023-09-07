@@ -1,0 +1,33 @@
+id: Exponent_CMS_keyword
+info:
+  name: Exponent-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Exponent-CMS"
+        words:
+          - "content=\"exponent content management system"
+          - "powered by exponent cms"
+        condition: and
+      - type: word
+        part: body
+        name: "Exponent-CMS"
+        words:
+          - "content=\"Exponent Content Management System"
+        condition: and
+      - type: word
+        part: body
+        name: "Exponent-CMS"
+        words:
+          - "Powered by Exponent CMS"
+        condition: and

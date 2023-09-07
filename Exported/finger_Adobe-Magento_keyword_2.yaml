@@ -1,0 +1,20 @@
+id: Adobe_Magento_keyword_1
+info:
+  name: Adobe-Magento_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Adobe-Magento"
+        words:
+          - "redkiwi-cloud"
+        condition: and

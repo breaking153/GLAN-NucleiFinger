@@ -1,0 +1,26 @@
+id: Fidion_CMS_keyword
+info:
+  name: Fidion-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Fidion-CMS"
+        words:
+          - "<!-- fcms-template head.tpl begins"
+        condition: and
+      - type: word
+        part: body
+        name: "Fidion-CMS"
+        words:
+          - "<!-- fCMS-Template head.tpl begins"
+        condition: and

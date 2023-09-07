@@ -1,0 +1,26 @@
+id: Http_Explorer_keyword
+info:
+  name: Http-Explorer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Http-Explorer"
+        words:
+          - "http explorer"
+        condition: and
+      - type: word
+        part: header
+        name: "Http-Explorer"
+        words:
+          - "Http explorer"
+        condition: and

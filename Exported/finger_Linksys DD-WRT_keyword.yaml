@@ -1,0 +1,20 @@
+id: Linksys_DD_WRT_keyword
+info:
+  name: Linksys DD-WRT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys DD-WRT"
+        words:
+          - "Linksys DD-WRT"
+        condition: and

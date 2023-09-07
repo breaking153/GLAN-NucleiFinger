@@ -1,0 +1,20 @@
+id: iGaming_CMS_keyword
+info:
+  name: iGaming-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iGaming-CMS"
+        words:
+          - "http://www.igamingcms.com/"
+        condition: and

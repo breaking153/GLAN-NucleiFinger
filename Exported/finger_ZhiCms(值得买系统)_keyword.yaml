@@ -1,0 +1,26 @@
+id: ZhiCms_zhi_de_mai_xi_tong_keyword
+info:
+  name: ZhiCms(值得买系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZhiCms(值得买系统)"
+        words:
+          - "ZhiCms"
+        condition: and
+      - type: word
+        part: body
+        name: "ZhiCms(值得买系统)"
+        words:
+          - "值得买系统"
+        condition: and

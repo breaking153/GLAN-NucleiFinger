@@ -1,0 +1,20 @@
+id: Cetc_IFW_XI502_keyword
+info:
+  name: Cetc-IFW-XI502_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cetc-IFW-XI502"
+        words:
+          - "/webgui/scripts/dd_belatedpng.js"
+        condition: and

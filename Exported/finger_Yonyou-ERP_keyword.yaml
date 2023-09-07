@@ -1,0 +1,21 @@
+id: Yonyou_ERP_keyword
+info:
+  name: Yonyou-ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yonyou-ERP"
+        words:
+          - "login_main_bg"
+          - "login_owner"
+        condition: and

@@ -1,0 +1,33 @@
+id: Zotonic_keyword
+info:
+  name: Zotonic_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zotonic"
+        words:
+          - "powered by: zotonic"
+          - "/internal/js/apps/zotonic-1.0"
+        condition: and
+      - type: word
+        part: body
+        name: "Zotonic"
+        words:
+          - "powered by: Zotonic"
+        condition: and
+      - type: word
+        part: body
+        name: "Zotonic"
+        words:
+          - "/lib/js/apps/zotonic-1.0"
+        condition: and

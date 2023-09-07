@@ -1,0 +1,26 @@
+id: Hanwei_Integrated_Business_Platform_keyword
+info:
+  name: Hanwei-Integrated-Business-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwei-Integrated-Business-Platform"
+        words:
+          - "系统需要.net框架2.0，请点击安装!"
+          - "onclick=\"window.navigate(this.fname;enablesetup(;\""
+          - "东营汉威石油技术开发有限公司"
+          - "content=\"microsoft visual studio .net 7.1\""
+          - "id=\"loginpwdcontiner\""
+          - "window.location.href=\"/源头数据资源管理/default/default.aspx\""
+          - "directlink = \"programstartup.application\""
+        condition: and

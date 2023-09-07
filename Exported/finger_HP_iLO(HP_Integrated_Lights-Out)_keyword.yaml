@@ -1,0 +1,20 @@
+id: HP_iLO_HP_Integrated_Lights_Out_keyword
+info:
+  name: HP_iLO(HP_Integrated_Lights-Out)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP_iLO(HP_Integrated_Lights-Out)"
+        words:
+          - "js/iLO.js"
+        condition: and

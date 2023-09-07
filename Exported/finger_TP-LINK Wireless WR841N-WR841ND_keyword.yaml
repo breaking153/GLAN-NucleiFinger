@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_WR841N_WR841ND_keyword
+info:
+  name: TP-LINK Wireless WR841N-WR841ND_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless WR841N-WR841ND"
+        words:
+          - "TP-LINK Wireless WR841N/WR841ND"
+        condition: and

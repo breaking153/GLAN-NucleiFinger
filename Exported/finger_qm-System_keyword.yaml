@@ -1,0 +1,21 @@
+id: qm_System_keyword
+info:
+  name: qm-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "qm-System"
+        words:
+          - "assets/css/fdb.css"
+          - "src=\"polyfills.js"
+        condition: and

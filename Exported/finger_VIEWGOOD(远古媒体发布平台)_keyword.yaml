@@ -1,0 +1,26 @@
+id: VIEWGOOD_yuan_gu_mei_ti_fa_bu_ping_tai_keyword
+info:
+  name: VIEWGOOD(远古媒体发布平台)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VIEWGOOD(远古媒体发布平台)"
+        words:
+          - "VIEWGOOD"
+        condition: and
+      - type: word
+        part: body
+        name: "VIEWGOOD(远古媒体发布平台)"
+        words:
+          - "远古媒体发布平台"
+        condition: and

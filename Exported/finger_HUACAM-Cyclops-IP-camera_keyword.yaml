@@ -1,0 +1,20 @@
+id: HUACAM_Cyclops_IP_camera_keyword
+info:
+  name: HUACAM-Cyclops-IP-camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUACAM-Cyclops-IP-camera"
+        words:
+          - "please update your documents to reflect the new location"
+        condition: and

@@ -1,0 +1,20 @@
+id: guo_jia_shu_zi_hua_xue_xi_zi_yuan_zhong_xin_xi_tong_keyword
+info:
+  name: 国家数字化学习资源中心系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "国家数字化学习资源中心系统"
+        words:
+          - "FrontEnd"
+        condition: and

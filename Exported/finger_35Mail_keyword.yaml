@@ -1,0 +1,22 @@
+id: 35Mail_keyword
+info:
+  name: 35Mail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "35Mail"
+        words:
+          - "switchingserverpopup"
+          - "images/mail/35pushmail.app.png"
+          - "class=\"user_define_img_btn6\" href=\"http://help.mail.35.com/mailman/81.html"
+        condition: and

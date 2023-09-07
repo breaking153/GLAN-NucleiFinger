@@ -1,0 +1,20 @@
+id: Microsoft_Ajax_CDN_keyword_1
+info:
+  name: Microsoft-Ajax-CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Microsoft-Ajax-CDN"
+        words:
+          - "ajax.aspnetcdn.com/ajax"
+        condition: and

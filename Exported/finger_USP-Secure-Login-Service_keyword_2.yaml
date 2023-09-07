@@ -1,0 +1,21 @@
+id: USP_Secure_Login_Service_keyword_1
+info:
+  name: USP-Secure-Login-Service_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "USP-Secure-Login-Service"
+        words:
+          - "slsstatus"
+          - "set-cookie scdid_s"
+        condition: and

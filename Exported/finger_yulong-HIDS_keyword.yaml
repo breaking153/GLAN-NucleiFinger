@@ -1,0 +1,21 @@
+id: yulong_HIDS_keyword
+info:
+  name: yulong-HIDS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yulong-HIDS"
+        words:
+          - "<h1>驭龙</h1>"
+          - "<h2>yulong - a cool hids system.</h2>"
+        condition: and

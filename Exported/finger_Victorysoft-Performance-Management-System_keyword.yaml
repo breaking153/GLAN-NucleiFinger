@@ -1,0 +1,21 @@
+id: Victorysoft_Performance_Management_System_keyword
+info:
+  name: Victorysoft-Performance-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Victorysoft-Performance-Management-System"
+        words:
+          - "class=\"row fl-controls-left"
+          - "casui/themes/siam/login.css"
+        condition: and

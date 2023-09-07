@@ -1,0 +1,20 @@
+id: NETCORE_NR255G_keyword
+info:
+  name: NETCORE NR255G_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETCORE NR255G"
+        words:
+          - "NETCORE NR255G"
+        condition: and

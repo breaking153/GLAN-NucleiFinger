@@ -1,0 +1,20 @@
+id: Pandora_FMS_keyword_1
+info:
+  name: Pandora FMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Pandora FMS"
+        words:
+          - "Pandora FMS"
+        condition: and

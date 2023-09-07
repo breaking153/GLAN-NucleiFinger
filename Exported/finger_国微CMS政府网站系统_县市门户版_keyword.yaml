@@ -1,0 +1,20 @@
+id: guo_wei_CMS_zheng_fu_wang_zhan_xi_tong_xian_shi_men_hu_ban_keyword
+info:
+  name: 国微CMS政府网站系统_县市门户版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "国微CMS政府网站系统_县市门户版"
+        words:
+          - "国微CMS政府网站系统_县市门户版"
+        condition: and

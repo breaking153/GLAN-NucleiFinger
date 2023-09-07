@@ -1,0 +1,19 @@
+id: ding_xun_ke_ji_yi_bao_OA_xi_tong_keyword
+info:
+  name: 顶讯科技-易宝OA系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "顶讯科技-易宝OA系统"
+        words:
+          - "<title>欢迎登录易宝OA系统"

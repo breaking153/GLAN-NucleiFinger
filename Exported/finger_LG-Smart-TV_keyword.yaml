@@ -1,0 +1,22 @@
+id: LG_Smart_TV_keyword
+info:
+  name: LG-Smart-TV_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-Smart-TV"
+        words:
+          - "<modelname>lg smart tv</modelname>"
+          - "<friendlyname>lg smart tv</friendlyname>"
+          - "<friendlyname>[lg] smart tv"
+        condition: and

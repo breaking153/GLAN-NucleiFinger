@@ -1,0 +1,22 @@
+id: opsview_Product_keyword
+info:
+  name: opsview-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "opsview-Product"
+        words:
+          - "/images/opsview_logo_large.gif"
+          - "/images/opsviewcommunitylogo-large.png"
+          - "follow @opsview"
+        condition: and

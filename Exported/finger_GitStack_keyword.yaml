@@ -1,0 +1,20 @@
+id: GitStack_keyword
+info:
+  name: GitStack_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "GitStack"
+        words:
+          - "GitStack"
+        condition: and

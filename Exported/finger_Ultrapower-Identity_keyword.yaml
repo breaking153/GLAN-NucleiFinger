@@ -1,0 +1,20 @@
+id: Ultrapower_Identity_keyword
+info:
+  name: Ultrapower-Identity_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ultrapower-Identity"
+        words:
+          - "<li><p>欢迎进入身份与安全管控系统</p></li>"
+        condition: and

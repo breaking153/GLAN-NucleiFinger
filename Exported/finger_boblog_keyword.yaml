@@ -1,0 +1,20 @@
+id: boblog_keyword
+info:
+  name: boblog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "boblog"
+        words:
+          - "boblog_ajax"
+        condition: and

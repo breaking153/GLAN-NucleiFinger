@@ -1,0 +1,21 @@
+id: Buffalo_TeraStation_keyword
+info:
+  name: Buffalo-TeraStation_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Buffalo-TeraStation"
+        words:
+          - "value=\"view terastation manual"
+          - "value=\"terastation handbuch lesen"
+        condition: and

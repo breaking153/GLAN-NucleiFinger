@@ -1,0 +1,21 @@
+id: DLink_Storage_keyword
+info:
+  name: DLink-Storage-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DLink-Storage-"
+        words:
+          - "document.cookie = \"m_language=\"+v+\"; path=/\";"
+          - "<img src=\"/web/images/storage.jpg"
+        condition: and

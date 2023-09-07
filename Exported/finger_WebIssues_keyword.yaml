@@ -1,0 +1,21 @@
+id: WebIssues_keyword
+info:
+  name: WebIssues_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebIssues"
+        words:
+          - "<div id=\"header-right\">webissues"
+          - "<div><input type=\"hidden\" name=\"__formid\" id=\"field-login-__formid\" value=\"login\" />"
+        condition: and

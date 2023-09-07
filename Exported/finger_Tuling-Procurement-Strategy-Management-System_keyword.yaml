@@ -1,0 +1,21 @@
+id: Tuling_Procurement_Strategy_Management_System_keyword
+info:
+  name: Tuling-Procurement-Strategy-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tuling-Procurement-Strategy-Management-System"
+        words:
+          - "长沙图灵科技有限公司"
+          - "src=\"/login/main_body_bg.jpg\""
+        condition: and

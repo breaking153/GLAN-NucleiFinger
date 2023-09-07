@@ -1,0 +1,27 @@
+id: 3dcart_keyword
+info:
+  name: 3dcart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "3dcart"
+        words:
+          - "powered by 3dcart"
+          - "<!--start: 3dcart stats-->"
+        condition: and
+      - type: word
+        part: body
+        name: "3dcart"
+        words:
+          - "<!--START: 3dcart stats-->"
+        condition: and

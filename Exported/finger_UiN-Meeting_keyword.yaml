@@ -1,0 +1,20 @@
+id: UiN_Meeting_keyword
+info:
+  name: UiN-Meeting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UiN-Meeting"
+        words:
+          - "uin.plist"
+        condition: and

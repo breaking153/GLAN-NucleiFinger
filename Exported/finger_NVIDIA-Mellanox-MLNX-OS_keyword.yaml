@@ -1,0 +1,23 @@
+id: NVIDIA_Mellanox_MLNX_OS_keyword
+info:
+  name: NVIDIA-Mellanox-MLNX-OS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NVIDIA-Mellanox-MLNX-OS"
+        words:
+          - "<div style='display: none;' id=\"setstatusiconstatediv\"></div>"
+          - "/mlx-default.css"
+          - "'/admin/launch?script="
+          - "url=/admin/launch?script="
+        condition: and

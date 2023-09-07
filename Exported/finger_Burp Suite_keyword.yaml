@@ -1,0 +1,20 @@
+id: Burp_Suite_keyword
+info:
+  name: Burp Suite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Burp Suite"
+        words:
+          - "<title>Burp Suite Professional</title>"
+        condition: and

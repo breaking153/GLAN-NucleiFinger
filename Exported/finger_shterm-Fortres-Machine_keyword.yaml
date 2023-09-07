@@ -1,0 +1,21 @@
+id: shterm_Fortres_Machine_keyword
+info:
+  name: shterm-Fortres-Machine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shterm-Fortres-Machine"
+        words:
+          - "class=\"forget_pwd hide\" href=\"#\" onclick=\"forgot_pwd(;"
+          - "var driver = dllregistered(\"xectrl13.xfpauthenexportx\";"
+        condition: and

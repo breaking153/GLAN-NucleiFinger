@@ -1,0 +1,21 @@
+id: Axis_Cameras_and_Surveillance_keyword
+info:
+  name: Axis-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Axis-Cameras-and-Surveillance"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0; url=/view/viewer_index.shtml?id=0\" />"
+          - "content=\"axis communications ab"
+        condition: and

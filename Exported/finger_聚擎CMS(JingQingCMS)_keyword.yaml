@@ -1,0 +1,26 @@
+id: ju_qing_CMS_JingQingCMS_keyword
+info:
+  name: 聚擎CMS(JingQingCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "聚擎CMS(JingQingCMS)"
+        words:
+          - "聚擎CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "聚擎CMS(JingQingCMS)"
+        words:
+          - "JingQingCMS"
+        condition: and

@@ -1,0 +1,24 @@
+id: ZKTECO_Security_Management_System_keyword
+info:
+  name: ZKTECO-Security-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZKTECO-Security-Management-System"
+        words:
+          - "百傲瑞达"
+          - "src='/login/images/zksecurity.png'"
+          - "id=\"password_hidden\""
+          - "class=\"login-finger-btn disabled\""
+          - "$(\".copyright\".text(\"copyright ? \" + server_current_year + \" zkteco co., ltd. all rights reserved\";"
+        condition: and

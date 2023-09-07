@@ -1,0 +1,20 @@
+id: dahua_WP_keyword
+info:
+  name: dahua-WP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "dahua-WP"
+        words:
+          - "src=\"/wpms/asset/common/js/jsencrypt.min.js\""
+        condition: and

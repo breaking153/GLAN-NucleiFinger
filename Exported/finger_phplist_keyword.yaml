@@ -1,0 +1,22 @@
+id: phplist_keyword
+info:
+  name: phplist_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phplist"
+        words:
+          - "content=\"michiel dethmers - http://www.phplist.com"
+          - "content=\"phplist version"
+          - "&copy; <a href=\"http://phplist.com\" target"
+        condition: and

@@ -1,0 +1,23 @@
+id: Ruijie_EG_keyword
+info:
+  name: Ruijie-EG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie-EG"
+        words:
+          - "锐捷网络有限公司 eg易网关"
+          - "webchat.ruijie.com.cn"
+          - "4008 111 000"
+          - "www.ruijie.com.cn/service/know.aspx"
+        condition: and

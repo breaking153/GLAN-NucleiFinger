@@ -1,0 +1,20 @@
+id: rosewill_RNX_N300RT_keyword
+info:
+  name: rosewill RNX-N300RT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "rosewill RNX-N300RT"
+        words:
+          - "RNX-N300RT"
+        condition: and

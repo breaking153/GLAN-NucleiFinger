@@ -1,0 +1,20 @@
+id: Piwigo_kai_yuan_xiang_ce_xi_tong_keyword
+info:
+  name: Piwigo_开源相册系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Piwigo_开源相册系统"
+        words:
+          - "Piwigo_开源相册系统"
+        condition: and

@@ -1,0 +1,21 @@
+id: poMMo_keyword
+info:
+  name: poMMo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "poMMo"
+        words:
+          - "powered by <a href=\"http://www.pommo.org/"
+          - "pommo.confirmmsg = "
+        condition: and

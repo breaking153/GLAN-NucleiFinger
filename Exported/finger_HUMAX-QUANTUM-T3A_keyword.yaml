@@ -1,0 +1,20 @@
+id: HUMAX_QUANTUM_T3A_keyword
+info:
+  name: HUMAX-QUANTUM-T3A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUMAX-QUANTUM-T3A"
+        words:
+          - "class=\"pro-model\" align=\"left\""
+        condition: and

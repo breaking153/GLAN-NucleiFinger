@@ -1,0 +1,20 @@
+id: Linksys_BEFSR41_BEFSR11_BEFSRU31_keyword
+info:
+  name: Linksys BEFSR41-BEFSR11-BEFSRU31_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys BEFSR41-BEFSR11-BEFSRU31"
+        words:
+          - "Linksys BEFSR41/BEFSR11/BEFSRU31"
+        condition: and

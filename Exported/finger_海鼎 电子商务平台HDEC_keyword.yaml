@@ -1,0 +1,20 @@
+id: hai_ding_dian_zi_shang_wu_ping_tai_HDEC_keyword
+info:
+  name: 海鼎 电子商务平台HDEC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "海鼎 电子商务平台HDEC"
+        words:
+          - "海鼎 电子商务平台HDEC"
+        condition: and

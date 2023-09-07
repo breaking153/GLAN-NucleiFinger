@@ -1,0 +1,21 @@
+id: Pro_Chat_Rooms_keyword
+info:
+  name: Pro-Chat-Rooms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Pro-Chat-Rooms"
+        words:
+          - "border=\"0\" alt=\"pro chat rooms"
+          - "href='http://prochatrooms.com'>pro chat rooms</a>"
+        condition: and

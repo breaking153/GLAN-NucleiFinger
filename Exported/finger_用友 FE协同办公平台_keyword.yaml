@@ -1,0 +1,20 @@
+id: yong_you_FE_xie_tong_ban_gong_ping_tai_keyword
+info:
+  name: 用友 FE协同办公平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "用友 FE协同办公平台"
+        words:
+          - "用友 FE协同办公平台"
+        condition: and

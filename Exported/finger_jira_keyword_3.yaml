@@ -1,0 +1,32 @@
+id: jira_keyword
+info:
+  name: jira_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "jira"
+        words:
+          - "jira.webresources"
+        condition: and
+      - type: word
+        part: body
+        name: "jira"
+        words:
+          - "ams-build-number"
+        condition: and
+      - type: word
+        part: body
+        name: "jira"
+        words:
+          - "com.atlassian.plugins"
+        condition: and

@@ -1,0 +1,20 @@
+id: H3C_Magic_R2_Pro_keyword
+info:
+  name: H3C-Magic-R2+Pro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-Magic-R2+Pro"
+        words:
+          - "var product_type = \"r2+pro\""
+        condition: and

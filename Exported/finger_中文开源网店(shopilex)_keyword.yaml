@@ -1,0 +1,26 @@
+id: zhong_wen_kai_yuan_wang_dian_shopilex_keyword
+info:
+  name: 中文开源网店(shopilex)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中文开源网店(shopilex)"
+        words:
+          - "中文开源网店"
+        condition: and
+      - type: word
+        part: body
+        name: "中文开源网店(shopilex)"
+        words:
+          - "shopilex"
+        condition: and

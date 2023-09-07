@@ -1,0 +1,22 @@
+id: bai_zhuo_Smart_duo_ye_wu_an_quan_wang_guan_keyword
+info:
+  name: 百卓 Smart 多业务安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "百卓 Smart 多业务安全网关"
+        words:
+          - "writeCustomBgImg.jsp"
+          - "baseajax"
+          - "LoginLogo"
+        condition: and

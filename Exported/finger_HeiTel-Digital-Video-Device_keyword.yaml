@@ -1,0 +1,26 @@
+id: HeiTel_Digital_Video_Device_keyword
+info:
+  name: HeiTel-Digital-Video-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HeiTel-Digital-Video-Device"
+        words:
+          - "server: heitel gmbh web server"
+        condition: and
+      - type: word
+        part: header
+        name: "HeiTel-Digital-Video-Device"
+        words:
+          - "HeiTel GmbH Web Server"
+        condition: and

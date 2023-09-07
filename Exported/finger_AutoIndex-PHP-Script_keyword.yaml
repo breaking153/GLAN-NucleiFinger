@@ -1,0 +1,26 @@
+id: AutoIndex_PHP_Script_keyword
+info:
+  name: AutoIndex-PHP-Script_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AutoIndex-PHP-Script"
+        words:
+          - "title=\"autoindex default"
+        condition: and
+      - type: word
+        part: body
+        name: "AutoIndex-PHP-Script"
+        words:
+          - "autoindex.sourceforge.net/"
+        condition: and

@@ -1,0 +1,21 @@
+id: HuaWei_SmartAX_keyword
+info:
+  name: HuaWei-SmartAX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HuaWei-SmartAX"
+        words:
+          - "basic realm=\"huawei smartax\""
+          - "smartax"
+        condition: and

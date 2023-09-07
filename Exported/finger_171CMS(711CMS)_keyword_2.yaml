@@ -1,0 +1,20 @@
+id: 171CMS_711CMS_keyword_1
+info:
+  name: 171CMS(711CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "171CMS(711CMS)"
+        words:
+          - "171CMS"
+        condition: and

@@ -1,0 +1,26 @@
+id: nitc_qi_ye_mo_ban_mian_fei_xia_zai_keyword
+info:
+  name: nitc企业模版免费下载_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "nitc企业模版免费下载"
+        words:
+          - "NITC Web Marketing Service"
+        condition: and
+      - type: word
+        part: body
+        name: "nitc企业模版免费下载"
+        words:
+          - "/images/nitc1.png"
+        condition: and

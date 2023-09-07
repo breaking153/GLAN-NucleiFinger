@@ -1,0 +1,20 @@
+id: CherryPy_WSGI_Server_keyword
+info:
+  name: CherryPy WSGI Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CherryPy WSGI Server"
+        words:
+          - "CherryPy WSGI Server"
+        condition: and

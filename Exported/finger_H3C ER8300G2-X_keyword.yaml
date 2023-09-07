@@ -1,0 +1,23 @@
+id: H3C_ER8300G2_X_keyword
+info:
+  name: H3C ER8300G2-X_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C ER8300G2-X"
+        words:
+          - "H3C"
+          - "vld.bmp"
+          - "dis_login"
+          - "ER8300G2"
+        condition: and

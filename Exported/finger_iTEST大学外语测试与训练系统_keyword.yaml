@@ -1,0 +1,20 @@
+id: iTEST_da_xue_wai_yu_ce_shi_yu_xun_lian_xi_tong_keyword
+info:
+  name: iTEST大学外语测试与训练系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "iTEST大学外语测试与训练系统"
+        words:
+          - "iTEST大学外语测试与训练系统"
+        condition: and

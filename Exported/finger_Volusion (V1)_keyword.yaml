@@ -1,0 +1,20 @@
+id: Volusion_V1_keyword
+info:
+  name: Volusion (V1)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Volusion (V1)"
+        words:
+          - "Volusion (V1)"
+        condition: and

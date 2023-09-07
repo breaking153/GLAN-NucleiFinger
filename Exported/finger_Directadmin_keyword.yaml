@@ -1,0 +1,33 @@
+id: Directadmin_keyword
+info:
+  name: Directadmin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Directadmin"
+        words:
+          - "x-directadmin"
+          - "directadmin daemon"
+        condition: and
+      - type: word
+        part: header
+        name: "Directadmin"
+        words:
+          - "X-Directadmin"
+        condition: and
+      - type: word
+        part: header
+        name: "Directadmin"
+        words:
+          - "DirectAdmin Daemon"
+        condition: and

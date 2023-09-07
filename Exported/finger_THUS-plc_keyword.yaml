@@ -1,0 +1,21 @@
+id: THUS_plc_keyword
+info:
+  name: THUS-plc_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "THUS-plc"
+        words:
+          - "copyright (c 2003 thus plc"
+          - "<img src=\"thuslogo.gif\" width="
+        condition: and

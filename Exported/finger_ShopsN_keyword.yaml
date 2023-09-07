@@ -1,0 +1,22 @@
+id: ShopsN_keyword
+info:
+  name: ShopsN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ShopsN"
+        words:
+          - "content=\"shopsn"
+          - "href=\"http://www.shopsn.net\">商城系统</a>&nbsp;提供技术支持"
+          - "<span>shopsn全网开源<a style=\"padding: 0px\" href=\"http://www.shopsn.net"
+        condition: and

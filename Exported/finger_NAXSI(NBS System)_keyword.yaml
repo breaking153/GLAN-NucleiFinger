@@ -1,0 +1,26 @@
+id: NAXSI_NBS_System_keyword
+info:
+  name: NAXSI(NBS System)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NAXSI(NBS System)"
+        words:
+          - "NAXSI"
+        condition: and
+      - type: word
+        part: body
+        name: "NAXSI(NBS System)"
+        words:
+          - "NBS System"
+        condition: and

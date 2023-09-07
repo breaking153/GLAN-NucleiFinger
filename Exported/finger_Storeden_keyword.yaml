@@ -1,0 +1,20 @@
+id: Storeden_keyword
+info:
+  name: Storeden_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Storeden"
+        words:
+          - "Storeden"
+        condition: and

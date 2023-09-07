@@ -1,0 +1,21 @@
+id: AdiMoney_keyword
+info:
+  name: AdiMoney_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AdiMoney"
+        words:
+          - "<img src=\"/img/logo.png\" alt=\"adimoney\"/>"
+          - "content=\"adimoney.com mobile advertisement network. "
+        condition: and

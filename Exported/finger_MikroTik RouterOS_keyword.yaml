@@ -1,0 +1,20 @@
+id: MikroTik_RouterOS_keyword
+info:
+  name: MikroTik RouterOS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MikroTik RouterOS"
+        words:
+          - "mikrotik"
+        condition: and

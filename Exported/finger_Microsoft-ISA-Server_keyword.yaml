@@ -1,0 +1,21 @@
+id: Microsoft_ISA_Server_keyword
+info:
+  name: Microsoft-ISA-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Microsoft-ISA-Server"
+        words:
+          - "the isa server denied the specified uniform resource locator"
+          - "the server denied the specified uniform resource locator (url. contact the server administrator"
+        condition: and

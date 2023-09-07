@@ -1,0 +1,20 @@
+id: Handlink_Wireless_Route_keyword
+info:
+  name: Handlink-Wireless-Route_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Handlink-Wireless-Route"
+        words:
+          - "handlink technologies inc."
+        condition: and

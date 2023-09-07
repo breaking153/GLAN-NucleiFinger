@@ -1,0 +1,26 @@
+id: EasyConsole_CMS_keyword
+info:
+  name: EasyConsole-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EasyConsole-CMS"
+        words:
+          - "Powered by EasyConsole CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "EasyConsole-CMS"
+        words:
+          - "Powered by <a href=\"http://www.easyconsole.com"
+        condition: and

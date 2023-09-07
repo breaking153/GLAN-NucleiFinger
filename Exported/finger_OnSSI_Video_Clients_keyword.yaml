@@ -1,0 +1,26 @@
+id: OnSSI_Video_Clients_keyword
+info:
+  name: OnSSI_Video_Clients_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OnSSI_Video_Clients"
+        words:
+          - "x-value=\"on-net surveillance systems inc.\""
+        condition: and
+      - type: word
+        part: body
+        name: "OnSSI_Video_Clients"
+        words:
+          - "x-value=\"On-Net Surveillance Systems Inc.\""
+        condition: and

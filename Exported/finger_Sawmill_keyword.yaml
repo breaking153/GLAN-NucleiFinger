@@ -1,0 +1,21 @@
+id: Sawmill_keyword
+info:
+  name: Sawmill_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sawmill"
+        words:
+          - "<div id=\"password:error"
+          - "src=\"/picts/sawmill_logo.png"
+        condition: and

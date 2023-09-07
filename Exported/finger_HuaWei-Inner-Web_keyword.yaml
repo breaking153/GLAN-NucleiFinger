@@ -1,0 +1,20 @@
+id: HuaWei_Inner_Web_keyword
+info:
+  name: HuaWei-Inner-Web_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-Inner-Web"
+        words:
+          - "hidden_frame.html"
+        condition: and

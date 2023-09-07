@@ -1,0 +1,20 @@
+id: NETGEAR_SRX5308_keyword
+info:
+  name: NETGEAR-SRX5308_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-SRX5308"
+        words:
+          - "gigabit quad wan ssl vpn firewall srx5308"
+        condition: and

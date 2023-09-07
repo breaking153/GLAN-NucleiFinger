@@ -1,0 +1,20 @@
+id: Ymhome_OA_keyword
+info:
+  name: Ymhome-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ymhome-OA"
+        words:
+          - "/yimioa.apk"
+        condition: and

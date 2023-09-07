@@ -1,0 +1,20 @@
+id: yunec_keyword
+info:
+  name: yunec_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yunec"
+        words:
+          - "href=\"/17rec.html\""
+        condition: and

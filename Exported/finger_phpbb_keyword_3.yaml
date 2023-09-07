@@ -1,0 +1,26 @@
+id: phpbb_keyword_1
+info:
+  name: phpbb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "phpbb"
+        words:
+          - "Set-Cookie:phpbb3_"
+        condition: and
+      - type: word
+        part: header
+        name: "phpbb"
+        words:
+          - "HttpOnly, phpbb3_"
+        condition: and

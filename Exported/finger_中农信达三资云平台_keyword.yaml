@@ -1,0 +1,20 @@
+id: zhong_nong_xin_da_san_zi_yun_ping_tai_keyword
+info:
+  name: 中农信达三资云平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中农信达三资云平台"
+        words:
+          - "技术支持：北京中农信达信息技术有限公司"
+        condition: and

@@ -1,0 +1,20 @@
+id: WirelessHART_Gateway_Access_Control_keyword
+info:
+  name: WirelessHART-Gateway-Access-Control_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WirelessHART-Gateway-Access-Control"
+        words:
+          - "realm=\"wirelesshart gateway access control"
+        condition: and

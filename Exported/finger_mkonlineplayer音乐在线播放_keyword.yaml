@@ -1,0 +1,20 @@
+id: mkonlineplayer_yin_le_zai_xian_bo_fang_keyword
+info:
+  name: mkonlineplayer音乐在线播放_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "mkonlineplayer音乐在线播放"
+        words:
+          - "mkonlineplayer音乐在线播放"
+        condition: and

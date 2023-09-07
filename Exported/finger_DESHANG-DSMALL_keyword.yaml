@@ -1,0 +1,20 @@
+id: DESHANG_DSMALL_keyword
+info:
+  name: DESHANG-DSMALL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DESHANG-DSMALL"
+        words:
+          - "/static/plugins/js/dialog/dialog.js\" id=\"dialog_js\""
+        condition: and

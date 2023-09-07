@@ -1,0 +1,22 @@
+id: Citadel_Servers_keyword
+info:
+  name: Citadel-Servers_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citadel-Servers"
+        words:
+          - "citadel server - powered by"
+          - "/styles/webcit.css"
+          - "<div class=\"boxlabel\">citadel server - powered by"
+        condition: and

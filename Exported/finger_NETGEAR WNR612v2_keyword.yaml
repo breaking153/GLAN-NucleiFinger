@@ -1,0 +1,20 @@
+id: NETGEAR_WNR612v2_keyword
+info:
+  name: NETGEAR WNR612v2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR WNR612v2"
+        words:
+          - "NETGEAR WNR612v2"
+        condition: and

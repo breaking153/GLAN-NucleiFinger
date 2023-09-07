@@ -1,0 +1,34 @@
+id: Advantech_WebAccess_keyword
+info:
+  name: Advantech-WebAccess_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Advantech-WebAccess"
+        words:
+          - "/bw_templete1.dwt"
+          - "/broadweb/webaccessclientsetup.exe"
+          - "/broadweb/bwuconfig.asp"
+        condition: and
+      - type: word
+        part: body
+        name: "Advantech-WebAccess"
+        words:
+          - "/broadweb/WebAccessClientSetup.exe"
+        condition: and
+      - type: word
+        part: body
+        name: "Advantech-WebAccess"
+        words:
+          - "/broadWeb/bwuconfig.asp"
+        condition: and

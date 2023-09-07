@@ -1,0 +1,21 @@
+id: EMC_Cluster_storage_keyword
+info:
+  name: EMC-Cluster-storage-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EMC-Cluster-storage-"
+        words:
+          - "isilon systems llc. all rights reserved"
+          - "id=\"dialog_title\">isilon administration</div>"
+        condition: and

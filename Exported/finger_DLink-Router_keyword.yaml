@@ -1,0 +1,21 @@
+id: DLink_Router_keyword
+info:
+  name: DLink-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DLink-Router"
+        words:
+          - "d-link systems"
+          - "/image/mobile_dlinklogo_login.png\""
+        condition: and

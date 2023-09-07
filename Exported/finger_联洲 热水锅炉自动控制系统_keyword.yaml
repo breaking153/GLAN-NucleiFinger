@@ -1,0 +1,20 @@
+id: lian_zhou_re_shui_guo_lu_zi_dong_kong_zhi_xi_tong_keyword
+info:
+  name: 联洲 热水锅炉自动控制系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "联洲 热水锅炉自动控制系统"
+        words:
+          - "联洲 热水锅炉自动控制系统"
+        condition: and

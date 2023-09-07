@@ -1,0 +1,22 @@
+id: DnP_Firewall_keyword
+info:
+  name: DnP-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DnP-Firewall"
+        words:
+          - "name=\"dnp_firewall_redirect"
+          - "<form name=dnp_firewall"
+          - "dnp_firewall_redirect"
+        condition: and

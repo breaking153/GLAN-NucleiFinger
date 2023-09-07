@@ -1,0 +1,21 @@
+id: PHP_CSL_keyword
+info:
+  name: PHP-CSL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHP-CSL"
+        words:
+          - "content=\"php code snippet"
+          - "title=\"php-csl\">php-csl"
+        condition: and

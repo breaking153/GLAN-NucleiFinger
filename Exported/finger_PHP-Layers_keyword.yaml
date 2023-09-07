@@ -1,0 +1,22 @@
+id: PHP_Layers_keyword
+info:
+  name: PHP-Layers_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHP-Layers"
+        words:
+          - "alt=\"powered by php layers menu"
+          - "<!-- end of menu header - php layers menu"
+          - "<!-- beginning of menu header - php layers menu"
+        condition: and

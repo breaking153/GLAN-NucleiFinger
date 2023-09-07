@@ -1,0 +1,26 @@
+id: FluxBB_keyword
+info:
+  name: FluxBB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FluxBB"
+        words:
+          - "powered by <a href=\"http://fluxbb.org/"
+        condition: and
+      - type: word
+        part: body
+        name: "FluxBB"
+        words:
+          - "Powered by <a href=\"http://fluxbb.org/"
+        condition: and

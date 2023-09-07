@@ -1,0 +1,23 @@
+id: zhong_qing_bai_ding_bai_ding_OA_keyword
+info:
+  name: 重庆佰鼎-佰鼎OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "重庆佰鼎-佰鼎OA"
+        words:
+          - "default.aspx"
+          - "Style/Style.css"
+          - "Skin2017"
+          - "TxtUserPwd"
+        condition: and

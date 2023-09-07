@@ -1,0 +1,20 @@
+id: xiang_ri_kui_SunLogin_keyword
+info:
+  name: 向日葵-SunLogin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "向日葵-SunLogin"
+        words:
+          - "{\"success\":false,\"msg\":\"Verification failure\"}"
+        condition: and

@@ -1,0 +1,20 @@
+id: WSO2_Carbon_Server_keyword
+info:
+  name: WSO2-Carbon-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WSO2-Carbon-Server"
+        words:
+          - "server: wso2 carbon server"
+        condition: and

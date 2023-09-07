@@ -1,0 +1,26 @@
+id: ThinkSAAS_keyword
+info:
+  name: ThinkSAAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ThinkSAAS"
+        words:
+          - "href=\"https://www.thinksaas.cn/app/home/skins/default/style.css\""
+        condition: and
+      - type: word
+        part: body
+        name: "ThinkSAAS"
+        words:
+          - "/app/home/skins/default/style.css"
+        condition: and

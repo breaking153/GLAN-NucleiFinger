@@ -1,0 +1,23 @@
+id: 360_Enterprise_security_keyword
+info:
+  name: 360-Enterprise-security_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-Enterprise-security"
+        words:
+          - "360entinst"
+          - "关于全网部署360私有云的通知"
+          - "私有云控制中心"
+          - "/download/360inst.exe"
+        condition: and

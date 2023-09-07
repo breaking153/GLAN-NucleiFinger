@@ -1,0 +1,21 @@
+id: D_LINK_DIR_816L_keyword
+info:
+  name: D-LINK-DIR-816L_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-LINK-DIR-816L"
+        words:
+          - "<div class=\"modelname\">dir-816l"
+          - ">product page : dir-816l<a href=\"javascript:check_is_modified('http://support.dlink.com/'\">"
+        condition: and

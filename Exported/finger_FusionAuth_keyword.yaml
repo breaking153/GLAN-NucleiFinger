@@ -1,0 +1,20 @@
+id: FusionAuth_keyword
+info:
+  name: FusionAuth_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FusionAuth"
+        words:
+          - "FusionAuth"
+        condition: and

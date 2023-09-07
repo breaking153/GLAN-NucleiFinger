@@ -1,0 +1,20 @@
+id: jiang_su_hui_wen_ruan_jian_tu_shu_guan_OPAC_xi_tong_keyword
+info:
+  name: 江苏汇文软件 图书馆OPAC系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "江苏汇文软件 图书馆OPAC系统"
+        words:
+          - "江苏汇文软件 图书馆OPAC系统"
+        condition: and

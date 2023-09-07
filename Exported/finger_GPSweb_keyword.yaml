@@ -1,0 +1,20 @@
+id: GPSweb_keyword
+info:
+  name: GPSweb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GPSweb"
+        words:
+          - "src=\"/gpsweb/js/add_string_prototype.js\""
+        condition: and

@@ -1,0 +1,20 @@
+id: yao_zhi_DBMail_you_jian_keyword
+info:
+  name: 遥志DBMail邮件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "遥志DBMail邮件"
+        words:
+          - "遥志DBMail邮件"
+        condition: and

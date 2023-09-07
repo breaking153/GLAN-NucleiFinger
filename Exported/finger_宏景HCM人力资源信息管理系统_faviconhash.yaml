@@ -1,0 +1,19 @@
+id: hong_jing_HCM_ren_li_zi_yuan_xin_xi_guan_li_xi_tong_faviconhash
+info:
+  name: 宏景HCM人力资源信息管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "宏景HCM人力资源信息管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"947874108\""
+        condition: or

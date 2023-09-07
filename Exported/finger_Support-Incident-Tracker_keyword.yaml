@@ -1,0 +1,21 @@
+id: Support_Incident_Tracker_keyword
+info:
+  name: Support-Incident-Tracker_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Support-Incident-Tracker"
+        words:
+          - "<div class='windowtitle'>sit! - login</div>"
+          - "content=\"sit! support incident tracker"
+        condition: and

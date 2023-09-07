@@ -1,0 +1,20 @@
+id: kang_tong_dian_zi_yun_guang_bo_xi_tong_keyword
+info:
+  name: 康通电子云广播系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "康通电子云广播系统"
+        words:
+          - "static/download/JSET99Setup.exe"
+        condition: and

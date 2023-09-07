@@ -1,0 +1,20 @@
+id: Adobe_Flex_keyword
+info:
+  name: Adobe-Flex_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Adobe-Flex"
+        words:
+          - "learn more about flex at http://flex.org"
+        condition: and

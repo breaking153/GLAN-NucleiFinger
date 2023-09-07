@@ -1,0 +1,26 @@
+id: Buddy_Zone_keyword
+info:
+  name: Buddy-Zone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Buddy-Zone"
+        words:
+          - "Powered By <a href=\"http://www.vastal.com"
+        condition: and
+      - type: word
+        part: body
+        name: "Buddy-Zone"
+        words:
+          - ">Buddy Zone</a>"
+        condition: and

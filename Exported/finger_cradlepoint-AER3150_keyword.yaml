@@ -1,0 +1,20 @@
+id: cradlepoint_AER3150_keyword
+info:
+  name: cradlepoint-AER3150_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-AER3150"
+        words:
+          - "cplogin.model = \"aer3150\";"
+        condition: and

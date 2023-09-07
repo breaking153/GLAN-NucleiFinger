@@ -1,0 +1,23 @@
+id: Leadsec_SSL_VPN_keyword
+info:
+  name: Leadsec-SSL-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leadsec-SSL-VPN"
+        words:
+          - "欢迎使用leadsec网御ssl vpn"
+          - "/ssl/down/usbkey.exe"
+          - "content=\"ssl,vpn,sslvpn"
+          - "/ssl/down/images_pc/"
+        condition: and

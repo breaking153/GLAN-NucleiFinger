@@ -1,0 +1,20 @@
+id: APPEX_LotWAN_keyword
+info:
+  name: APPEX LotWAN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "APPEX LotWAN"
+        words:
+          - "APPEX LotWAN"
+        condition: and

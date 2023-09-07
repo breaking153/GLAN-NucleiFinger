@@ -1,0 +1,20 @@
+id: chang_cheng_ruan_jian_zeng_zhi_shui_fa_piao_zong_he_fu_wu_ping_tai_keyword
+info:
+  name: 长城软件 增值税发票综合服务平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "长城软件 增值税发票综合服务平台"
+        words:
+          - "长城软件 增值税发票综合服务平台"
+        condition: and

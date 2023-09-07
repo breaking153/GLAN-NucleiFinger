@@ -1,0 +1,26 @@
+id: WordPress_Plugin_All_in_one_SEO_Pack_keyword
+info:
+  name: WordPress-Plugin All-in-one-SEO-Pack_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WordPress-Plugin All-in-one-SEO-Pack"
+        words:
+          - "content=\"WordPress"
+        condition: and
+      - type: word
+        part: body
+        name: "WordPress-Plugin All-in-one-SEO-Pack"
+        words:
+          - "/wp-includes/"
+        condition: and

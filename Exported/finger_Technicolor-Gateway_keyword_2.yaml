@@ -1,0 +1,21 @@
+id: Technicolor_Gateway_keyword_1
+info:
+  name: Technicolor-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Technicolor-Gateway"
+        words:
+          - "xauth_session_id"
+          - "technicolor gateway"
+        condition: and

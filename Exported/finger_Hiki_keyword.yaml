@@ -1,0 +1,27 @@
+id: Hiki_keyword
+info:
+  name: Hiki_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hiki"
+        words:
+          - "/hiki_base.css"
+          - "by <a href=\"http://hikiwiki.org/"
+        condition: and
+      - type: word
+        part: body
+        name: "Hiki"
+        words:
+          - "content=\"Hiki"
+        condition: and

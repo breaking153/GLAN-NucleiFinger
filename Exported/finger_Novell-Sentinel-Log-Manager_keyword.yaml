@@ -1,0 +1,21 @@
+id: Novell_Sentinel_Log_Manager_keyword
+info:
+  name: Novell-Sentinel-Log-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Novell-Sentinel-Log-Manager"
+        words:
+          - "title=\"novell sentinel log manager"
+          - "content=\"0;url=/novelllogmanager\">"
+        condition: and

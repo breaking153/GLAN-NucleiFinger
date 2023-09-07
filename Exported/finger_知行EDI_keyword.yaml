@@ -1,0 +1,20 @@
+id: zhi_xing_EDI_keyword
+info:
+  name: 知行EDI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "知行EDI"
+        words:
+          - "知行EDI"
+        condition: and

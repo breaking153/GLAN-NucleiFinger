@@ -1,0 +1,20 @@
+id: Google_Hosted_Libraries_keyword
+info:
+  name: Google-Hosted-Libraries_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Google-Hosted-Libraries"
+        words:
+          - "ajax.googleapis.com/ajax/libs"
+        condition: and

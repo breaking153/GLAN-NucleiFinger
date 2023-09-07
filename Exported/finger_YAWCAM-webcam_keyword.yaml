@@ -1,0 +1,21 @@
+id: YAWCAM_webcam_keyword
+info:
+  name: YAWCAM-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YAWCAM-webcam"
+        words:
+          - "div.menu"
+          - "it's a webcam!"
+        condition: and

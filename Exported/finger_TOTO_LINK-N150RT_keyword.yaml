@@ -1,0 +1,22 @@
+id: TOTO_LINK_N150RT_keyword
+info:
+  name: TOTO_LINK-N150RT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOTO_LINK-N150RT"
+        words:
+          - "src =\"/images/login_back_zn150rt.gif"
+          - "totolink n150rt"
+          - "totolink n150rt"
+        condition: and

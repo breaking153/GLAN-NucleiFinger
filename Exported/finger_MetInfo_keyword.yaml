@@ -1,0 +1,28 @@
+id: MetInfo_keyword
+info:
+  name: MetInfo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MetInfo"
+        words:
+          - "content=\"metinfo"
+          - "powered_by_metinfo"
+          - "/images/css/metinfo.css"
+        condition: and
+      - type: word
+        part: body
+        name: "MetInfo"
+        words:
+          - "content=\"MetInfo"
+        condition: and

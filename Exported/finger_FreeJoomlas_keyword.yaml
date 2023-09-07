@@ -1,0 +1,20 @@
+id: FreeJoomlas_keyword
+info:
+  name: FreeJoomlas_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FreeJoomlas"
+        words:
+          - "<a title=\"free joomla hosting\" href=\"http://freejoomlas.com"
+        condition: and

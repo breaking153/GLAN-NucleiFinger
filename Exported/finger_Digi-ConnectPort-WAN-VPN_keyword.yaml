@@ -1,0 +1,20 @@
+id: Digi_ConnectPort_WAN_VPN_keyword
+info:
+  name: Digi-ConnectPort-WAN-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Digi-ConnectPort-WAN-VPN"
+        words:
+          - "realm=\"connectport wan vpn"
+        condition: and

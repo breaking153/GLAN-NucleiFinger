@@ -1,0 +1,20 @@
+id: Canon_Printer_keyword
+info:
+  name: Canon-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Canon-Printer"
+        words:
+          - "Canon Http Server"
+        condition: and

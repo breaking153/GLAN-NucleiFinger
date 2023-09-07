@@ -1,0 +1,33 @@
+id: eMeeting_Online_Dating_Software_keyword
+info:
+  name: eMeeting-Online-Dating-Software_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "eMeeting-Online-Dating-Software"
+        words:
+          - "emeeting dating software"
+          - "/_emeetingglobals.js"
+        condition: and
+      - type: word
+        part: body
+        name: "eMeeting-Online-Dating-Software"
+        words:
+          - "eMeeting Dating Software"
+        condition: and
+      - type: word
+        part: body
+        name: "eMeeting-Online-Dating-Software"
+        words:
+          - "/_eMeetingGlobals.js"
+        condition: and

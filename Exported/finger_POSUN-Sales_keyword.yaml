@@ -1,0 +1,21 @@
+id: POSUN_Sales_keyword
+info:
+  name: POSUN-Sales_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "POSUN-Sales"
+        words:
+          - "src=\"/view/static/js/eidpcommon.min.js\""
+          - "<p>快易销公众号</p>"
+        condition: and

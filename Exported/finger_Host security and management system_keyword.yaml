@@ -1,0 +1,20 @@
+id: Host_security_and_management_system_keyword
+info:
+  name: Host security and management system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Host security and management system"
+        words:
+          - "href=./static/css/app.edb681c84a53277f9336fc297ebca96e.css"
+        condition: and

@@ -1,0 +1,20 @@
+id: Projesoft_keyword
+info:
+  name: Projesoft_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Projesoft"
+        words:
+          - "Projesoft"
+        condition: and

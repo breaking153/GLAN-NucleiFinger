@@ -1,0 +1,20 @@
+id: ZTE_ZXV10_W300B_keyword
+info:
+  name: ZTE-ZXV10-W300B_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-ZXV10-W300B"
+        words:
+          - "<modelname>zxv10 w300b</modelname>"
+        condition: and

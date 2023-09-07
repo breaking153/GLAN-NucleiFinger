@@ -1,0 +1,20 @@
+id: OrderManagementSystem_keyword
+info:
+  name: OrderManagementSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OrderManagementSystem"
+        words:
+          - "联系新订单系统开发同事进行修改。</div>"
+        condition: and

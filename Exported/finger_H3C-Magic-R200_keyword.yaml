@@ -1,0 +1,21 @@
+id: H3C_Magic_R200_keyword
+info:
+  name: H3C-Magic-R200_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-Magic-R200"
+        words:
+          - "var product_type = \"r200\""
+          - "var product_type = \"r200g\""
+        condition: and

@@ -1,0 +1,26 @@
+id: Cyn_in_keyword
+info:
+  name: Cyn_in_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cyn_in"
+        words:
+          - "content=\"cyn.in"
+        condition: and
+      - type: word
+        part: body
+        name: "Cyn_in"
+        words:
+          - "Powered by cyn.in"
+        condition: and

@@ -1,0 +1,20 @@
+id: chang_xiang_zhi_xing_fei_shu_zi_yuan_guan_li_ping_tai_keyword
+info:
+  name: 畅想之星 非书资源管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "畅想之星 非书资源管理平台"
+        words:
+          - "畅想之星 非书资源管理平台"
+        condition: and

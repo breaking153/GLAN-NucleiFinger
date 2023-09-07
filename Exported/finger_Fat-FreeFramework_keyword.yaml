@@ -1,0 +1,26 @@
+id: Fat_FreeFramework_keyword
+info:
+  name: Fat-FreeFramework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Fat-FreeFramework"
+        words:
+          - "fat-free framework"
+        condition: and
+      - type: word
+        part: header
+        name: "Fat-FreeFramework"
+        words:
+          - "Fat-Free Framework"
+        condition: and

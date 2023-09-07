@@ -1,0 +1,24 @@
+id: lkpowerOA_keyword
+info:
+  name: lkpowerOA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "lkpowerOA"
+        words:
+          - "/lksys_windowcontrolscript.js"
+          - "onload=\"lksys_pubmaxwin("
+          - "id=\"lkblogin\" href=\"javascript:__dopostback('lkblogin',''"
+          - "identityvalidator"
+          - "hhctrlmax"
+        condition: and

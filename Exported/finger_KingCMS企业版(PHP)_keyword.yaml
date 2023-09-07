@@ -1,0 +1,26 @@
+id: KingCMS_qi_ye_ban_PHP_keyword
+info:
+  name: KingCMS企业版(PHP)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KingCMS企业版(PHP)"
+        words:
+          - "content=\"KingCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "KingCMS企业版(PHP)"
+        words:
+          - "Powered by KingCMS"
+        condition: and

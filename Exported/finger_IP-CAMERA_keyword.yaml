@@ -1,0 +1,22 @@
+id: IP_CAMERA_keyword
+info:
+  name: IP-CAMERA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IP-CAMERA"
+        words:
+          - "classid='clsid:67f77f18-5272-4875-b983-c7e8af5517e4' codebase='/ocxctrlsvac.cab"
+          - "#max{background:url(svac.png;width:121px;float:right}"
+          - "clientbin/vimicro.silverlight.video.xap"
+        condition: and

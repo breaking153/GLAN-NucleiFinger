@@ -1,0 +1,32 @@
+id: Horde_keyword_1
+info:
+  name: Horde_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Horde"
+        words:
+          - "horde3"
+        condition: and
+      - type: word
+        part: header
+        name: "Horde"
+        words:
+          - "Horde3"
+        condition: and
+      - type: word
+        part: header
+        name: "Horde"
+        words:
+          - "Set-Cookie:Horde"
+        condition: and

@@ -1,0 +1,22 @@
+id: URP_Integrated_educational_system_keyword
+info:
+  name: URP-Integrated-educational-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "URP-Integrated-educational-system"
+        words:
+          - "<input name=\"j_captcha_response\" type=\"hidden"
+          - "北京清元优软科技有限公司"
+          - "教务系统"
+        condition: and

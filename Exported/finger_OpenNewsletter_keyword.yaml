@@ -1,0 +1,21 @@
+id: OpenNewsletter_keyword
+info:
+  name: OpenNewsletter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenNewsletter"
+        words:
+          - "href=\"http://netmeans.net\">netmeans.net"
+          - "this software is based on the opennewsletter project"
+        condition: and

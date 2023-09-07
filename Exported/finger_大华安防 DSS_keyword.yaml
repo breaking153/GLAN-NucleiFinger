@@ -1,0 +1,21 @@
+id: da_hua_an_fang_DSS_keyword
+info:
+  name: 大华安防 DSS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "大华安防 DSS"
+        words:
+          - "User"
+          - "<meta http-equiv=\"refresh\" content=\"1;URL='/admin'\"/>"
+        condition: and

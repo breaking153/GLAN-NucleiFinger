@@ -1,0 +1,22 @@
+id: WIFISKY_7_ceng_liu_kong_lu_you_qi_keyword
+info:
+  name: WIFISKY-7层流控路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WIFISKY-7层流控路由器"
+        words:
+          - "WIFISKY"
+          - "adminusr"
+          - "深圳市领空技术"
+        condition: and

@@ -1,0 +1,20 @@
+id: SDCMS_wei_xin_gong_zhong_ping_tai_guan_li_xi_tong_keyword
+info:
+  name: SDCMS微信公众平台管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SDCMS微信公众平台管理系统"
+        words:
+          - "SDCMS微信公众平台管理系统"
+        condition: and

@@ -1,0 +1,20 @@
+id: JUNIPer_SRX550_keyword
+info:
+  name: JUNIPer-SRX550_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JUNIPer-SRX550"
+        words:
+          - "class=\"jweb-title uppercase\"> - srx550"
+        condition: and

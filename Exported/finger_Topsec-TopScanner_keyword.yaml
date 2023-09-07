@@ -1,0 +1,20 @@
+id: Topsec_TopScanner_keyword
+info:
+  name: Topsec-TopScanner_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topsec-TopScanner"
+        words:
+          - "/js/report/horizontalreportpanel.js"
+        condition: and

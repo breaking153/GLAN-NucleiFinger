@@ -1,0 +1,21 @@
+id: shui_kong_fu_wu_qi_guan_li_xi_tong_keyword
+info:
+  name: 税控服务器管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "税控服务器管理系统"
+        words:
+          - "sys/login.do"
+          - "resources/css/login_yzm.css"
+        condition: and

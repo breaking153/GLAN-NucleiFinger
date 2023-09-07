@@ -1,0 +1,20 @@
+id: M2Soft_RDServer_keyword
+info:
+  name: M2Soft-RDServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "M2Soft-RDServer"
+        words:
+          - "server: rdserver"
+        condition: and

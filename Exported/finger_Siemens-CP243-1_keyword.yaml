@@ -1,0 +1,20 @@
+id: Siemens_CP243_1_keyword
+info:
+  name: Siemens-CP243-1_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Siemens-CP243-1"
+        words:
+          - "cp243-1 it"
+        condition: and

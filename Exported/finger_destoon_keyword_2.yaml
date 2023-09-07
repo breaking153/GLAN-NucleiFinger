@@ -1,0 +1,26 @@
+id: destoon_keyword
+info:
+  name: destoon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "destoon"
+        words:
+          - "<meta name=\"generator\" content=\"Destoon"
+        condition: and
+      - type: word
+        part: body
+        name: "destoon"
+        words:
+          - "destoon_moduleid"
+        condition: and

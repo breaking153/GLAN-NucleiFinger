@@ -1,0 +1,20 @@
+id: Linksys_LCAB03VLNOD_keyword
+info:
+  name: Linksys LCAB03VLNOD_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys LCAB03VLNOD"
+        words:
+          - "Linksys LCAB03VLNOD"
+        condition: and

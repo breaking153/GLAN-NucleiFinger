@@ -1,0 +1,20 @@
+id: guahao_AppointmentRegistrationSystem_keyword
+info:
+  name: guahao-AppointmentRegistrationSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "guahao-AppointmentRegistrationSystem"
+        words:
+          - "var title    = \"预约挂号系统\";"
+        condition: and

@@ -1,0 +1,20 @@
+id: Communication_Service_Management_System_keyword
+info:
+  name: Communication-Service-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Communication-Service-Management-System"
+        words:
+          - "苏州优亚利电子科技有限公司"
+        condition: and

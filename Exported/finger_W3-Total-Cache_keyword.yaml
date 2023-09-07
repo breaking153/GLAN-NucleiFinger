@@ -1,0 +1,20 @@
+id: W3_Total_Cache_keyword
+info:
+  name: W3-Total-Cache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "W3-Total-Cache"
+        words:
+          - "<!-- performance optimized by w3 total cache. learn more: http://www.w3-edge.com/wordpress-plugins/"
+        condition: and

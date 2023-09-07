@@ -1,0 +1,21 @@
+id: Hingesoft_HZCMS_keyword
+info:
+  name: Hingesoft-HZCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hingesoft-HZCMS"
+        words:
+          - "produced by"
+          - "网站群内容管理系统"
+        condition: and

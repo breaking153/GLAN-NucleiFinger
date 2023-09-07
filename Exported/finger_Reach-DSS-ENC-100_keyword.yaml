@@ -1,0 +1,20 @@
+id: Reach_DSS_ENC_100_keyword
+info:
+  name: Reach-DSS-ENC-100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Reach-DSS-ENC-100"
+        words:
+          - "深圳市锐取软件技术有限公司"
+        condition: and

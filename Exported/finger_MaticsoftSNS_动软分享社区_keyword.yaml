@@ -1,0 +1,32 @@
+id: MaticsoftSNS_dong_ruan_fen_xiang_she_qu_keyword
+info:
+  name: MaticsoftSNS_动软分享社区_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MaticsoftSNS_动软分享社区"
+        words:
+          - "MaticsoftSNS"
+        condition: and
+      - type: word
+        part: body
+        name: "MaticsoftSNS_动软分享社区"
+        words:
+          - "maticsoft"
+        condition: and
+      - type: word
+        part: body
+        name: "MaticsoftSNS_动软分享社区"
+        words:
+          - "/Areas/SNS/"
+        condition: and

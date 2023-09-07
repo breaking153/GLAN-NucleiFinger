@@ -1,0 +1,21 @@
+id: LanyEye_keyword
+info:
+  name: LanyEye_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LanyEye"
+        words:
+          - "<font>兰眼下一代威胁感知系统</font>"
+          - "/skin/admin/img/login/laneye.png"
+        condition: and

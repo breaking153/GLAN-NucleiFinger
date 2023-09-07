@@ -1,0 +1,20 @@
+id: wygxcms_keyword
+info:
+  name: wygxcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "wygxcms"
+        words:
+          - "blue_tit{color:#000;font-size:12px;font-weight:bold; }"
+        condition: and

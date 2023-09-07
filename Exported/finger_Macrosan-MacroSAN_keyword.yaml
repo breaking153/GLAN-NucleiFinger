@@ -1,0 +1,20 @@
+id: Macrosan_MacroSAN_keyword
+info:
+  name: Macrosan-MacroSAN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Macrosan-MacroSAN"
+        words:
+          - "macrosan数据存储设备"
+        condition: and

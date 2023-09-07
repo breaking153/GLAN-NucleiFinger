@@ -1,0 +1,20 @@
+id: RAISECOM_ISCOM3024GF_keyword
+info:
+  name: RAISECOM-ISCOM3024GF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RAISECOM-ISCOM3024GF"
+        words:
+          - "color=\"#000000\">iscom3024gf"
+        condition: and

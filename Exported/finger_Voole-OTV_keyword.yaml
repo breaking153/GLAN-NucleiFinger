@@ -1,0 +1,20 @@
+id: Voole_OTV_keyword
+info:
+  name: Voole-OTV_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Voole-OTV"
+        words:
+          - "server: voole_cdn1.0"
+        condition: and

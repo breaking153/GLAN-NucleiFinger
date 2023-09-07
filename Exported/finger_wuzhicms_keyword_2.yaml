@@ -1,0 +1,26 @@
+id: wuzhicms_keyword
+info:
+  name: wuzhicms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "wuzhicms"
+        words:
+          - "Powered by wuzhicms"
+        condition: and
+      - type: word
+        part: body
+        name: "wuzhicms"
+        words:
+          - "content=\"wuzhicms"
+        condition: and

@@ -1,0 +1,20 @@
+id: TrendMicro_Product_keyword
+info:
+  name: TrendMicro-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TrendMicro-Product"
+        words:
+          - "deep security</h4>"
+        condition: and

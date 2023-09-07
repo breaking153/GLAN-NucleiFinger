@@ -1,0 +1,20 @@
+id: zhong_an_wei_shi_shu_ju_ku_shen_ji_xi_tong_keyword
+info:
+  name: 中安威士数据库审计系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "中安威士数据库审计系统"
+        words:
+          - "中安威士数据库审计系统"
+        condition: and

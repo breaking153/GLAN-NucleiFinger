@@ -1,0 +1,20 @@
+id: Fusion_Ads_keyword
+info:
+  name: Fusion Ads_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Fusion Ads"
+        words:
+          - "Fusion Ads"
+        condition: and

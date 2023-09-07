@@ -1,0 +1,20 @@
+id: jing_teng_cms_keyword
+info:
+  name: 景腾cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "景腾cms"
+        words:
+          - "景腾cms"
+        condition: and

@@ -1,0 +1,20 @@
+id: bai_wei_zhi_neng_liu_kong_lu_you_qi_keyword
+info:
+  name: 百为智能流控路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "百为智能流控路由器"
+        words:
+          - "<a href=\"http://www.bytevalue.com/\" target=\"_blank\">"
+        condition: and

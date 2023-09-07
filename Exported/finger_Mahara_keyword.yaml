@@ -1,0 +1,22 @@
+id: Mahara_keyword
+info:
+  name: Mahara_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mahara"
+        words:
+          - "this site is powered by mahara"
+          - "id=\"powered-by\"><a href=\"http://mahara.org/"
+          - "{\"namedfieldempty\":"
+        condition: and

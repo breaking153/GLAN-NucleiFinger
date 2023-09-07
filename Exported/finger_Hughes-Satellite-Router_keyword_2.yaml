@@ -1,0 +1,26 @@
+id: Hughes_Satellite_Router_keyword_1
+info:
+  name: Hughes-Satellite-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Hughes-Satellite-Router"
+        words:
+          - "hughes terminal"
+        condition: and
+      - type: word
+        part: header
+        name: "Hughes-Satellite-Router"
+        words:
+          - "HUGHES Terminal"
+        condition: and

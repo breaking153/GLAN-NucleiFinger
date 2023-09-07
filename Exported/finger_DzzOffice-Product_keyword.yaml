@@ -1,0 +1,23 @@
+id: DzzOffice_Product_keyword
+info:
+  name: DzzOffice-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DzzOffice-Product"
+        words:
+          - "dzz/system/scripts/jquery.jstree.min.js"
+          - "dzz/scripts/dzz_min.js"
+          - "<a href=\"http://www.dzzoffice.com\""
+          - "misc.php?mod=sendmail"
+        condition: and

@@ -1,0 +1,20 @@
+id: LaySNS_keyword
+info:
+  name: LaySNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LaySNS"
+        words:
+          - "LaySNS"
+        condition: and

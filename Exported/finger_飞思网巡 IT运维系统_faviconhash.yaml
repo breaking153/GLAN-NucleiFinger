@@ -1,0 +1,19 @@
+id: fei_si_wang_xun_IT_yun_wei_xi_tong_faviconhash
+info:
+  name: 飞思网巡 IT运维系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "飞思网巡 IT运维系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1622043013\""
+        condition: or

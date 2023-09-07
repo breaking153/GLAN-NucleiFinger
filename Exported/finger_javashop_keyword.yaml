@@ -1,0 +1,32 @@
+id: javashop_keyword
+info:
+  name: javashop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "javashop"
+        words:
+          - "易族智汇javashop"
+        condition: and
+      - type: word
+        part: body
+        name: "javashop"
+        words:
+          - "javashop微信公众号"
+        condition: and
+      - type: word
+        part: body
+        name: "javashop"
+        words:
+          - "content=\"JavaShop"
+        condition: and

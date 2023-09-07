@@ -1,0 +1,20 @@
+id: hhdigital_Cameras_and_Surveillance_keyword
+info:
+  name: hhdigital-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hhdigital-Cameras-and-Surveillance"
+        words:
+          - "<meta name=\"author\" content=\"hhdigital"
+        condition: and

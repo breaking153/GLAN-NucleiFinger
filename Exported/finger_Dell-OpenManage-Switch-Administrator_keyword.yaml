@@ -1,0 +1,21 @@
+id: Dell_OpenManage_Switch_Administrator_keyword
+info:
+  name: Dell-OpenManage-Switch-Administrator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dell-OpenManage-Switch-Administrator"
+        words:
+          - "window.top.location.href = \"dell_login.html"
+          - "progressgraphicnone"
+        condition: and

@@ -1,0 +1,20 @@
+id: YiChao_CRMReporting_keyword
+info:
+  name: YiChao-CRMReporting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YiChao-CRMReporting"
+        words:
+          - "href=\"/css/vendors~index.acfeb.css\""
+        condition: and

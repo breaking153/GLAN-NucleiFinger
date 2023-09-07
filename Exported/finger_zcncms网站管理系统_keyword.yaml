@@ -1,0 +1,20 @@
+id: zcncms_wang_zhan_guan_li_xi_tong_keyword
+info:
+  name: zcncms网站管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "zcncms网站管理系统"
+        words:
+          - "zcncms网站管理系统"
+        condition: and

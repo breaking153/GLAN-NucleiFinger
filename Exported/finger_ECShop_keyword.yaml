@@ -1,0 +1,33 @@
+id: ECShop_keyword
+info:
+  name: ECShop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ECShop"
+        words:
+          - "content=\"ECSHOP"
+        condition: and
+      - type: word
+        part: body
+        name: "ECShop"
+        words:
+          - "content=\"ecshop"
+          - "id=\"ecs_cartinfo\""
+        condition: and
+      - type: word
+        part: body
+        name: "ECShop"
+        words:
+          - "/api/cron.php"
+        condition: and

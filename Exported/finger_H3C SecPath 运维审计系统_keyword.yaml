@@ -1,0 +1,20 @@
+id: H3C_SecPath_yun_wei_shen_ji_xi_tong_keyword
+info:
+  name: H3C SecPath 运维审计系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C SecPath 运维审计系统"
+        words:
+          - "H3C SecPath 运维审计系统"
+        condition: and

@@ -1,0 +1,23 @@
+id: Cisco_Wireless_LAN_Controller_keyword
+info:
+  name: Cisco-Wireless-LAN-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-Wireless-LAN-Controller"
+        words:
+          - "action=\"/main_login.html"
+          - "cisco systems"
+          - "onclick=\"loginaction("
+          - "cisco systems login"
+        condition: and

@@ -1,0 +1,20 @@
+id: tian_rong_xin_cui_ruo_xing_sao_miao_yu_guan_li_xi_tong_keyword
+info:
+  name: 天融信脆弱性扫描与管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信脆弱性扫描与管理系统"
+        words:
+          - "/js/report/horizontalReportPanel.js"
+        condition: and

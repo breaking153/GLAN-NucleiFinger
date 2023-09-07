@@ -1,0 +1,20 @@
+id: HP_ML310e_Gen8_keyword
+info:
+  name: HP-ML310e-Gen8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP-ML310e-Gen8"
+        words:
+          - "ml310e-gen8"
+        condition: and

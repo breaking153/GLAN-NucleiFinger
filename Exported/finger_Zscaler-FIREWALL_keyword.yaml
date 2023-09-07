@@ -1,0 +1,20 @@
+id: Zscaler_FIREWALL_keyword
+info:
+  name: Zscaler-FIREWALL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Zscaler-FIREWALL"
+        words:
+          - "set-cookie: _sm_au_d"
+        condition: and

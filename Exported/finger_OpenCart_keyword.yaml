@@ -1,0 +1,26 @@
+id: OpenCart_keyword
+info:
+  name: OpenCart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenCart"
+        words:
+          - "Powered By OpenCart"
+        condition: and
+      - type: word
+        part: body
+        name: "OpenCart"
+        words:
+          - "catalog/view/theme"
+        condition: and

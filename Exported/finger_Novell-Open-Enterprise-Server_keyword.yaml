@@ -1,0 +1,21 @@
+id: Novell_Open_Enterprise_Server_keyword
+info:
+  name: Novell-Open-Enterprise-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Novell-Open-Enterprise-Server"
+        words:
+          - "<!-- this is all just a super-duper redirect to the welcome page"
+          - "href=\"http://www.novell.com/products/openenterpriseserver"
+        condition: and

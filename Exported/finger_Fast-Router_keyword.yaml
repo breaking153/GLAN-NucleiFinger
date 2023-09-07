@@ -1,0 +1,20 @@
+id: Fast_Router_keyword
+info:
+  name: Fast-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Fast-Router"
+        words:
+          - "<a href=\"http://www.fastcom.com.cn\"><img src=\"../img/login/logo.gif"
+        condition: and

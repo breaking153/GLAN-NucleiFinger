@@ -1,0 +1,21 @@
+id: JYMUSiC_keyword
+info:
+  name: JYMUSiC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JYMUSiC"
+        words:
+          - "content=\"jymusic音乐管理系统"
+          - "public/static/libs/jymusic/css"
+        condition: and

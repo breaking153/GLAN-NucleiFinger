@@ -1,0 +1,20 @@
+id: SuperMap_GIS_keyword
+info:
+  name: SuperMap-GIS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SuperMap-GIS"
+        words:
+          - "北京超图软件股份有限公司"
+        condition: and

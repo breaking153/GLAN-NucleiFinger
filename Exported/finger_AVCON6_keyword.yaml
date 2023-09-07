@@ -1,0 +1,33 @@
+id: AVCON6_keyword
+info:
+  name: AVCON6_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AVCON6"
+        words:
+          - "filename=avcon6setup.exe"
+          - "language_dispose.action"
+        condition: and
+      - type: word
+        part: body
+        name: "AVCON6"
+        words:
+          - "filename=AVCON6Setup.exe"
+        condition: and
+      - type: word
+        part: body
+        name: "AVCON6"
+        words:
+          - "avcon"
+        condition: and

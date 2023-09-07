@@ -1,0 +1,20 @@
+id: Alcatel_Lucent_OS9900_keyword
+info:
+  name: Alcatel_Lucent-OS9900_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alcatel_Lucent-OS9900"
+        words:
+          - "<span>device os9900"
+        condition: and

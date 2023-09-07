@@ -1,0 +1,21 @@
+id: Symfony_keyword
+info:
+  name: Symfony_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Symfony"
+        words:
+          - "powered by symfony"
+          - "powered by <a href=\"http://www.symfony-project.org/\">"
+        condition: and

@@ -1,0 +1,27 @@
+id: GeoNode_keyword
+info:
+  name: GeoNode_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GeoNode"
+        words:
+          - "powered by <a href=\"http://geonode.org"
+          - "href=\"/catalogue/opensearch\" title=\"geonode search"
+        condition: and
+      - type: word
+        part: body
+        name: "GeoNode"
+        words:
+          - "Powered by <a href=\"http://geonode.org"
+        condition: and

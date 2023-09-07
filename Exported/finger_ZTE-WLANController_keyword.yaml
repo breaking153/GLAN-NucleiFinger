@@ -1,0 +1,23 @@
+id: ZTE_WLANController_keyword
+info:
+  name: ZTE-WLANController_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-WLANController"
+        words:
+          - "background:transparent;border:0px;color=#de0108;font-weight:"
+          - "中兴通讯"
+          - "var url=\"resetwebsvr.php?act=reset\";"
+          - "中兴通讯 - wlan无线接入控制器"
+        condition: and

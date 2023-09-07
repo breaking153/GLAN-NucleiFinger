@@ -1,0 +1,20 @@
+id: yong_you_E_HR_keyword
+info:
+  name: 用友 E-HR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "用友 E-HR"
+        words:
+          - "用友 E-HR"
+        condition: and

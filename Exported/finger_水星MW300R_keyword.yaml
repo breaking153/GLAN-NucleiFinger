@@ -1,0 +1,20 @@
+id: shui_xing_MW300R_keyword
+info:
+  name: 水星MW300R_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "水星MW300R"
+        words:
+          - "MW300R"
+        condition: and

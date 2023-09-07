@@ -1,0 +1,26 @@
+id: ICEshop_keyword
+info:
+  name: ICEshop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ICEshop"
+        words:
+          - "Powered by ICEshop"
+        condition: and
+      - type: word
+        part: body
+        name: "ICEshop"
+        words:
+          - "<div id=\"iceshop\">"
+        condition: and

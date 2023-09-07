@@ -1,0 +1,20 @@
+id: H3C_ICG1000_keyword
+info:
+  name: H3C-ICG1000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C-ICG1000"
+        words:
+          - "h3c icg 1000"
+        condition: and

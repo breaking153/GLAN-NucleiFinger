@@ -1,0 +1,21 @@
+id: EasySCP_keyword
+info:
+  name: EasySCP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EasySCP"
+        words:
+          - "content='easyscp"
+          - "/css/easyscp.login.css"
+        condition: and

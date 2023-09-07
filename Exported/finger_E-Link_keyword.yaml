@@ -1,0 +1,20 @@
+id: E_Link_keyword
+info:
+  name: E-Link_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "E-Link"
+        words:
+          - "温馨提示：此处为志高美萍分支机构联系方式，志高美萍总部联系方式请点击<a href='javascript:var"
+        condition: and

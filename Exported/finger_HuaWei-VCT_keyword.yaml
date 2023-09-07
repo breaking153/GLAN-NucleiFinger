@@ -1,0 +1,21 @@
+id: HuaWei_VCT_keyword
+info:
+  name: HuaWei-VCT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-VCT"
+        words:
+          - "src=\"system/ressrv/zh-cn.js"
+          - "<frame name=\"hidden_frame\" id=\"hidden_frame\" src=\"hidden_frame.html\" noresize=\"noresize"
+        condition: and

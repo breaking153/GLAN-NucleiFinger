@@ -1,0 +1,23 @@
+id: LiveZilla_keyword
+info:
+  name: LiveZilla_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LiveZilla"
+        words:
+          - "thank you for using livezilla!"
+          - "content=\"livezilla"
+          - "href=\"http://www.livezilla.net\" target=\"_blank"
+          - "livezilla is a registered trademark of livezilla gmbh</div>"
+        condition: and

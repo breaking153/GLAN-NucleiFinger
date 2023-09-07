@@ -1,0 +1,26 @@
+id: DataflexViNE_VoIP_IAD_keyword
+info:
+  name: DataflexViNE-VoIP-IAD_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DataflexViNE-VoIP-IAD"
+        words:
+          - "server: dataflexvine-webserver"
+        condition: and
+      - type: word
+        part: header
+        name: "DataflexViNE-VoIP-IAD"
+        words:
+          - "DataflexViNE-Webserver"
+        condition: and

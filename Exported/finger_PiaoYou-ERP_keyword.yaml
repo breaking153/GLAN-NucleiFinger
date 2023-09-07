@@ -1,0 +1,21 @@
+id: PiaoYou_ERP_keyword
+info:
+  name: PiaoYou-ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PiaoYou-ERP"
+        words:
+          - "css/sexybuttons.css"
+          - "ajax/confirm.ashx"
+        condition: and

@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -41,17 +41,4 @@ http:
         name: "Weblogic"
         words:
           - "<i>Hypertext Transfer Protocol -- HTTP/1.1</i>"
-        condition: and
-      - type: word
-        part: body
-        name: "Weblogic"
-        words:
-          - "<TITLE>Error 404--Not Found</TITLE>"
-          - "<i>Hypertext Transfer Protocol -- HTTP/1.1</i>"
-        condition: and
-      - type: word
-        part: body
-        name: "Weblogic"
-        words:
-          - "<title>Oracle WebLogic Server 管理控制台</title>"
         condition: and

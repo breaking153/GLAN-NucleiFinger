@@ -1,0 +1,21 @@
+id: Web_Crossing_Server_keyword
+info:
+  name: Web-Crossing-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Web-Crossing-Server"
+        words:
+          - "server: web crossing"
+          - "set-cookie: webxsess"
+        condition: and

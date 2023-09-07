@@ -1,0 +1,20 @@
+id: Linksys_WAG160Nv2B_keyword
+info:
+  name: Linksys WAG160Nv2B_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys WAG160Nv2B"
+        words:
+          - "Linksys WAG160Nv2B"
+        condition: and

@@ -1,0 +1,21 @@
+id: WeBid_keyword
+info:
+  name: WeBid_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WeBid"
+        words:
+          - "powered by <a href=\"http://www.webidsupport.com/\">webid"
+          - "<meta name=\"generator\" content=\"webid\">"
+        condition: and

@@ -1,0 +1,20 @@
+id: TOTO_LINK_N500RDG_keyword
+info:
+  name: TOTO_LINK-N500RDG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOTO_LINK-N500RDG"
+        words:
+          - "src =\"/images/login_back_n500rdg.gif\""
+        condition: and

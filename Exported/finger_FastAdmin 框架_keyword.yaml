@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -19,14 +19,6 @@ http:
           - "assets/img/favicon.ico"
           - "bootstrap.min.css"
           - "navbar-toggle"
-        condition: and
-      - type: word
-        part: body
-        name: "FastAdmin 框架"
-        words:
-          - "ajax/upload"
-          - "assets/img/favicon.ico"
-          - "fastadmin"
         condition: and
       - type: word
         part: body

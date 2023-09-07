@@ -1,0 +1,20 @@
+id: Juniper_Networks_Web_Management_keyword
+info:
+  name: Juniper Networks Web Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Juniper Networks Web Management"
+        words:
+          - "Juniper Networks Web Management"
+        condition: and

@@ -1,0 +1,20 @@
+id: DedeCMS_zhi_meng_keyword
+info:
+  name: DedeCMS(织梦)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DedeCMS(织梦)"
+        words:
+          - "dedecms"
+        condition: and

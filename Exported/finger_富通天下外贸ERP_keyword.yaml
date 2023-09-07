@@ -1,0 +1,19 @@
+id: fu_tong_tian_xia_wai_mao_ERP_keyword
+info:
+  name: 富通天下外贸ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "富通天下外贸ERP"
+        words:
+          - "<title>用户登录_富通天下外贸ERP"

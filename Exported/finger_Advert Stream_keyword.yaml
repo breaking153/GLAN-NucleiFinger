@@ -1,0 +1,20 @@
+id: Advert_Stream_keyword
+info:
+  name: Advert Stream_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Advert Stream"
+        words:
+          - "Advert Stream"
+        condition: and

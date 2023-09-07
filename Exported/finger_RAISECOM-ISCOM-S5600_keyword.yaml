@@ -1,0 +1,20 @@
+id: RAISECOM_ISCOM_S5600_keyword
+info:
+  name: RAISECOM-ISCOM-S5600_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RAISECOM-ISCOM-S5600"
+        words:
+          - "color=\"#000000\">iscom s5600"
+        condition: and

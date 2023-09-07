@@ -1,0 +1,26 @@
+id: AM4SS_keyword
+info:
+  name: AM4SS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AM4SS"
+        words:
+          - "Powered by am4ss"
+        condition: and
+      - type: word
+        part: body
+        name: "AM4SS"
+        words:
+          - "am4ss.css"
+        condition: and

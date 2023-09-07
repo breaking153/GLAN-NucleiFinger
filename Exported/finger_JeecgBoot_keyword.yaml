@@ -7,11 +7,17 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
     matchers:
+      - type: word
+        part: body
+        name: "JeecgBoot"
+        words:
+          - "jeecg-boot"
+        condition: and
       - type: word
         part: body
         name: "JeecgBoot"

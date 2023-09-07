@@ -1,0 +1,20 @@
+id: OBM_keyword
+info:
+  name: OBM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OBM"
+        words:
+          - "home_obm.png\" alt=\"obm"
+        condition: and

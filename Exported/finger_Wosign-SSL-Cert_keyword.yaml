@@ -1,0 +1,21 @@
+id: Wosign_SSL_Cert_keyword
+info:
+  name: Wosign-SSL-Cert_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wosign-SSL-Cert"
+        words:
+          - "https://seal.wosign.com/tws.js"
+          - "https://seal.wosign.com/signature"
+        condition: and

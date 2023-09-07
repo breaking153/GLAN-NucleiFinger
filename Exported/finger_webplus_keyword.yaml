@@ -1,0 +1,26 @@
+id: webplus_keyword
+info:
+  name: webplus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "webplus"
+        words:
+          - "webplus"
+        condition: and
+      - type: word
+        part: body
+        name: "webplus"
+        words:
+          - "高校网站群管理平台"
+        condition: and

@@ -1,0 +1,20 @@
+id: FLIR_Brickstream_1100_keyword
+info:
+  name: FLIR-Brickstream-1100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FLIR-Brickstream-1100"
+        words:
+          - "<h1>brickstream 1100 basic configuration</h1>"
+        condition: and

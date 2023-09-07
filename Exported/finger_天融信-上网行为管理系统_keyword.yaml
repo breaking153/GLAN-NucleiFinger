@@ -1,0 +1,22 @@
+id: tian_rong_xin_shang_wang_xing_wei_guan_li_xi_tong_keyword
+info:
+  name: 天融信-上网行为管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信-上网行为管理系统"
+        words:
+          - "images/logo3.gif"
+          - "dkey_activex_download.php"
+          - "login_commit.php"
+        condition: and

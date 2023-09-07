@@ -1,0 +1,20 @@
+id: Cisco_TANDBERG_Codian_MCU_keyword
+info:
+  name: Cisco TANDBERG Codian MCU_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco TANDBERG Codian MCU"
+        words:
+          - "Cisco TANDBERG Codian MCU"
+        condition: and

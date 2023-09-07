@@ -1,0 +1,21 @@
+id: xinhaisoft_System_keyword
+info:
+  name: xinhaisoft-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "xinhaisoft-System"
+        words:
+          - "../regist.asp?school="
+          - "北京心海导航教育科技股份有限公司-中国心理网版权所有<br>"
+        condition: and

@@ -1,0 +1,32 @@
+id: shopbuilder_keyword
+info:
+  name: shopbuilder_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shopbuilder"
+        words:
+          - "content=\"ShopBuilder"
+        condition: and
+      - type: word
+        part: body
+        name: "shopbuilder"
+        words:
+          - "Powered by ShopBuilder"
+        condition: and
+      - type: word
+        part: body
+        name: "shopbuilder"
+        words:
+          - "ShopBuilder版权所有"
+        condition: and

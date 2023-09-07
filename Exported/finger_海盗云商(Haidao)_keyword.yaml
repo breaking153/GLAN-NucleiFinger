@@ -1,0 +1,32 @@
+id: hai_dao_yun_shang_Haidao_keyword
+info:
+  name: 海盗云商(Haidao)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "海盗云商(Haidao)"
+        words:
+          - "haidao.web.general.js"
+        condition: and
+      - type: word
+        part: body
+        name: "海盗云商(Haidao)"
+        words:
+          - "海盗云商"
+        condition: and
+      - type: word
+        part: body
+        name: "海盗云商(Haidao)"
+        words:
+          - "Haidao"
+        condition: and

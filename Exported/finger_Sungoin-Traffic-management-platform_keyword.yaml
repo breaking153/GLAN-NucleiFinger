@@ -1,0 +1,20 @@
+id: Sungoin_Traffic_management_platform_keyword
+info:
+  name: Sungoin-Traffic-management-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sungoin-Traffic-management-platform"
+        words:
+          - "尚景流量管理平台"
+        condition: and

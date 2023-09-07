@@ -1,0 +1,21 @@
+id: Betasoft_PDM_Data_Acquisition_keyword
+info:
+  name: Betasoft-PDM-Data-Acquisition_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Betasoft-PDM-Data-Acquisition"
+        words:
+          - "align=\"center\" class=\"login_pdm\">"
+          - "background: no-repeat url(../images/login/pdmdenglu1_28.png;"
+        condition: and

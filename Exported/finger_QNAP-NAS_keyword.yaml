@@ -1,0 +1,23 @@
+id: QNAP_NAS_keyword
+info:
+  name: QNAP-NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QNAP-NAS"
+        words:
+          - "redirect_suffix"
+          - "/css/qnap-default.css"
+          - "/redirect.html?count=\"+math.random("
+          - "/indexnas.cgi?counter="
+        condition: and

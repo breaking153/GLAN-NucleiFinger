@@ -1,0 +1,21 @@
+id: EMERSON_XWEB_EVO_keyword
+info:
+  name: EMERSON-XWEB-EVO_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EMERSON-XWEB-EVO"
+        words:
+          - "src=\"img/xweb-logo.png\""
+          - "src=\"/css/images/logo_xweb_alpha.png\""
+        condition: and

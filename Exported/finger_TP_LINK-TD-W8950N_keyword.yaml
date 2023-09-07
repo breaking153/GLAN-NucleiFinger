@@ -1,0 +1,20 @@
+id: TP_LINK_TD_W8950N_keyword
+info:
+  name: TP_LINK-TD-W8950N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TP_LINK-TD-W8950N"
+        words:
+          - "model no. td-w8950n"
+        condition: and

@@ -1,0 +1,21 @@
+id: ZyXEL_PMG2005_T20B_keyword
+info:
+  name: ZyXEL-PMG2005-T20B_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-PMG2005-T20B"
+        words:
+          - "pmg2005-t20b"
+          - "xpon onu</font>"
+        condition: and

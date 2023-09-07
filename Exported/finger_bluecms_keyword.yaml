@@ -1,0 +1,26 @@
+id: bluecms_keyword
+info:
+  name: bluecms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bluecms"
+        words:
+          - "power by bcms"
+        condition: and
+      - type: word
+        part: body
+        name: "bluecms"
+        words:
+          - "bcms_plugin"
+        condition: and

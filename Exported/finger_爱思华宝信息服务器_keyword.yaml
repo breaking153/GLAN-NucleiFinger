@@ -1,0 +1,20 @@
+id: ai_si_hua_bao_xin_xi_fu_wu_qi_keyword
+info:
+  name: 爱思华宝信息服务器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "爱思华宝信息服务器"
+        words:
+          - "Powered by <a href=\"http://www.icewarp.com"
+        condition: and

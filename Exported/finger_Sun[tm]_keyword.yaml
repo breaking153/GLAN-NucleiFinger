@@ -1,0 +1,20 @@
+id: Sun_tm_keyword
+info:
+  name: Sun[tm]_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sun[tm]"
+        words:
+          - "Server:Sun-ONE-Web-Server"
+        condition: and

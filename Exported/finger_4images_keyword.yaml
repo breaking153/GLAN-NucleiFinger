@@ -1,0 +1,27 @@
+id: 4images_keyword
+info:
+  name: 4images_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "4images"
+        words:
+          - "Powered by <b>4images"
+          - "4homepages"
+        condition: and
+      - type: word
+        part: body
+        name: "4images"
+        words:
+          - "powered by 4images"
+        condition: and

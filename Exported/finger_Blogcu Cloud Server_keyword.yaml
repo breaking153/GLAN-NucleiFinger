@@ -1,0 +1,20 @@
+id: Blogcu_Cloud_Server_keyword
+info:
+  name: Blogcu Cloud Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Blogcu Cloud Server"
+        words:
+          - "Blogcu Cloud Server"
+        condition: and

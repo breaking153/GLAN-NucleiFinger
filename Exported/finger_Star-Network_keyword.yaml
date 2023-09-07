@@ -1,0 +1,23 @@
+id: Star_Network_keyword
+info:
+  name: Star-Network_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Star-Network"
+        words:
+          - ">star network &amp; promotion ltd"
+          - ">star network and promotion ltd"
+          - "<a href=\"http://www.s4u.co.il "
+          - "<a href=\"http://www.starltd.net"
+        condition: and

@@ -1,0 +1,20 @@
+id: LG_Network_Storage_keyword
+info:
+  name: LG-Network-Storage_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-Network-Storage"
+        words:
+          - "style=\"background:url('../images/login/form_bg_lg_nas_storage.gif'; background-repeat:no-repeat;\">"
+        condition: and

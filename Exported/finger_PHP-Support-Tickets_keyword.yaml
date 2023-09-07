@@ -1,0 +1,21 @@
+id: PHP_Support_Tickets_keyword
+info:
+  name: PHP-Support-Tickets_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHP-Support-Tickets"
+        words:
+          - "title=\"php support tickets\">php support tickets"
+          - "content=\"triangle solutions ltd"
+        condition: and

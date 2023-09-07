@@ -1,0 +1,20 @@
+id: UBNT_UniFi_xi_lie_lu_you_keyword
+info:
+  name: UBNT_UniFi系列路由_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UBNT_UniFi系列路由"
+        words:
+          - "<div class=\"appGlobalHeader\">"
+        condition: and

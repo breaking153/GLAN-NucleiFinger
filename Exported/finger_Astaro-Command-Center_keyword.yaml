@@ -1,0 +1,27 @@
+id: Astaro_Command_Center_keyword
+info:
+  name: Astaro-Command-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Astaro-Command-Center"
+        words:
+          - "/js/_variables_from_backend.js?"
+          - "commandcenter"
+        condition: and
+      - type: word
+        part: body
+        name: "Astaro-Command-Center"
+        words:
+          - "/acc_aggregated_reporting.js"
+        condition: and

@@ -1,0 +1,21 @@
+id: H3C_S1626_keyword
+info:
+  name: H3C-S1626_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-S1626"
+        words:
+          - "var devicename =  \"h3c s1626\""
+          - "h3c s1626\""
+        condition: and

@@ -1,0 +1,20 @@
+id: TP_LINK_Omada_Controller_keyword
+info:
+  name: TP_LINK-Omada-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TP_LINK-Omada-Controller"
+        words:
+          - "content=\"width=1300,initial-scale=1,minimal-ui\""
+        condition: and

@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}/"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -16,17 +16,6 @@ http:
         part: body
         name: "用友NC"
         words:
-          - "src=\"logo/images/img_nc.png\""
-  - method: GET
-    path:
-      - "{{RootURL}}/index.jsp"
-    cookie-reuse: true
-    matchers-condition: or
-    redirects: true
-    matchers:
-      - type: word
-        part: body
-        name: "用友NC index.jsp"
-        words:
-          - "findNCApplet"
-    
+          - "logo/images/ufida_nc.png"
+          - "用友NC"
+        condition: and

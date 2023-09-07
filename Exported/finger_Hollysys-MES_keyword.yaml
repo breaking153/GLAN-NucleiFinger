@@ -1,0 +1,20 @@
+id: Hollysys_MES_keyword
+info:
+  name: Hollysys-MES_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hollysys-MES"
+        words:
+          - "resource=\"title_sub\""
+        condition: and

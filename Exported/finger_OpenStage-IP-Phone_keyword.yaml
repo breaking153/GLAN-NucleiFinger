@@ -1,0 +1,20 @@
+id: OpenStage_IP_Phone_keyword
+info:
+  name: OpenStage-IP-Phone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenStage-IP-Phone"
+        words:
+          - "name='webm_main_banner'"
+        condition: and

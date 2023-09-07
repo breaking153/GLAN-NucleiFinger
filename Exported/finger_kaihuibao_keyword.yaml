@@ -1,0 +1,20 @@
+id: kaihuibao_keyword
+info:
+  name: kaihuibao_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kaihuibao"
+        words:
+          - "<a href=\"/admin/index/home\" class=\"header-home-link\">开会宝</a>"
+        condition: and

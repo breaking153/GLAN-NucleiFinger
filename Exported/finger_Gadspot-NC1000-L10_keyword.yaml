@@ -1,0 +1,22 @@
+id: Gadspot_NC1000_L10_keyword
+info:
+  name: Gadspot-NC1000-L10_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gadspot-NC1000-L10"
+        words:
+          - "content=\"chenxiaohui\""
+          - "src=\"/jpeg/camimg.jpg\""
+          - "<nobr>video server"
+        condition: and

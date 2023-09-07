@@ -1,0 +1,22 @@
+id: Cisco_Prime_Infrastructure_keyword
+info:
+  name: Cisco-Prime-Infrastructure_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-Prime-Infrastructure"
+        words:
+          - "<div class=\"xwtproductname\" >cisco prime infrastructure"
+          - "/webacs/internal/xwt/themes/prime/prime-xwt.css"
+          - "webacs/welcomeaction.do"
+        condition: and

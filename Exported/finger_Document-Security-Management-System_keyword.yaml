@@ -1,0 +1,22 @@
+id: Document_Security_Management_System_keyword
+info:
+  name: Document-Security-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Document-Security-Management-System"
+        words:
+          - "href=\"/drm/template/css/login.css\""
+          - "action=\"/drm/login.do\""
+          - "src=\"/drm/encjs/barrett.js\""
+        condition: and

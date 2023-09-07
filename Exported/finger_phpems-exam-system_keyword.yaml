@@ -1,0 +1,20 @@
+id: phpems_exam_system_keyword
+info:
+  name: phpems-exam-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpems-exam-system"
+        words:
+          - "content=\"phpems"
+        condition: and

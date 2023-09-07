@@ -1,0 +1,20 @@
+id: URP_jiao_wu_xi_tong_keyword
+info:
+  name: URP教务系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "URP教务系统"
+        words:
+          - "北京清元优软科技有限公司"
+        condition: and

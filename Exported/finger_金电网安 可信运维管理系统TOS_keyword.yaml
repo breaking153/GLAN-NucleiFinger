@@ -1,0 +1,20 @@
+id: jin_dian_wang_an_ke_xin_yun_wei_guan_li_xi_tong_TOS_keyword
+info:
+  name: 金电网安 可信运维管理系统TOS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "金电网安 可信运维管理系统TOS"
+        words:
+          - "金电网安 可信运维管理系统TOS"
+        condition: and

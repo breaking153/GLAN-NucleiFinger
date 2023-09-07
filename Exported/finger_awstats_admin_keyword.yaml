@@ -1,0 +1,26 @@
+id: awstats_admin_keyword
+info:
+  name: awstats_admin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "awstats_admin"
+        words:
+          - "generator\" content=\"AWStats"
+        condition: and
+      - type: word
+        part: body
+        name: "awstats_admin"
+        words:
+          - "<frame name=\"mainleft\" src=\"awstats.pl?config="
+        condition: and

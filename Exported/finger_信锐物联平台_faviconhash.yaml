@@ -1,0 +1,19 @@
+id: xin_rui_wu_lian_ping_tai_faviconhash
+info:
+  name: 信锐物联平台_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "信锐物联平台"
+        dsl:
+          - "mmh3(base64_py(body)) == \"147973611\""
+        condition: or

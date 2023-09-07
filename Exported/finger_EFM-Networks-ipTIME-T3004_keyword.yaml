@@ -1,0 +1,20 @@
+id: EFM_Networks_ipTIME_T3004_keyword
+info:
+  name: EFM-Networks-ipTIME-T3004_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-T3004"
+        words:
+          - "src =\"/images2/login_title.t3004.gif\""
+        condition: and

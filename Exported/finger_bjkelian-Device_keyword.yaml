@@ -1,0 +1,20 @@
+id: bjkelian_Device_keyword
+info:
+  name: bjkelian-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bjkelian-Device"
+        words:
+          - "hw_type=\"imx100ag"
+        condition: and

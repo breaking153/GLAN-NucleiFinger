@@ -1,0 +1,22 @@
+id: Dell_OpenManage_keyword
+info:
+  name: Dell-OpenManage_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dell-OpenManage"
+        words:
+          - "alt=\"openmanage\""
+          - "src=\"/oem//data/images/logo.gif\""
+          - "url=/servlet/omsalogin?msgstatus='"
+        condition: and

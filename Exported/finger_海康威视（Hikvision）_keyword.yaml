@@ -1,0 +1,32 @@
+id: hai_kang_wei_shi_Hikvision_keyword
+info:
+  name: 海康威视（Hikvision）_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "海康威视（Hikvision）"
+        words:
+          - "Hikvision"
+        condition: and
+      - type: word
+        part: header
+        name: "海康威视（Hikvision）"
+        words:
+          - "_goaheadwebSessionId"
+        condition: and
+      - type: word
+        part: header
+        name: "海康威视（Hikvision）"
+        words:
+          - "DVRDVS-Webs"
+        condition: and

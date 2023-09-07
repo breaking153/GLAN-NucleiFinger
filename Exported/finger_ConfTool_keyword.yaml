@@ -1,0 +1,21 @@
+id: ConfTool_keyword
+info:
+  name: ConfTool_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ConfTool"
+        words:
+          - "<h2 align=center>conftool conference administration"
+          - "<a href='http://www.conftool.net'>conference management software"
+        condition: and

@@ -1,0 +1,22 @@
+id: Movable_Type_keyword
+info:
+  name: Movable-Type_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Movable-Type"
+        words:
+          - "movable type version"
+          - "content=\"movable type"
+          - "rel=\"generator\">movable type"
+        condition: and

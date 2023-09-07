@@ -1,0 +1,20 @@
+id: rui_jie_PowerCache_nei_rong_jia_su_xi_tong_keyword
+info:
+  name: 锐捷 PowerCache内容加速系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "锐捷 PowerCache内容加速系统"
+        words:
+          - "锐捷 PowerCache内容加速系统"
+        condition: and

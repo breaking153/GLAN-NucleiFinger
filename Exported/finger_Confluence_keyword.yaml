@@ -1,0 +1,28 @@
+id: Confluence_keyword
+info:
+  name: Confluence_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Confluence"
+        words:
+          - "name=\"confluence-base-url\""
+          - "id=\"com-atlassian-confluence"
+        condition: and
+      - type: word
+        part: body
+        name: "Confluence"
+        words:
+          - "x-confluence-"
+          - "tp-link router upnp"
+        condition: and

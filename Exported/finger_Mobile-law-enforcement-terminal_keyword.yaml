@@ -1,0 +1,21 @@
+id: Mobile_law_enforcement_terminal_keyword
+info:
+  name: Mobile-law-enforcement-terminal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mobile-law-enforcement-terminal"
+        words:
+          - "src=\"images/login/badgezh_cn.png"
+          - "huadean. all rights "
+        condition: and

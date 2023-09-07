@@ -1,0 +1,20 @@
+id: xin_wang_qi_ye_you_keyword
+info:
+  name: 新网企业邮_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "新网企业邮"
+        words:
+          - "新网企业邮"
+        condition: and

@@ -1,0 +1,20 @@
+id: FAST_Search_for_SharePoint_keyword
+info:
+  name: FAST Search for SharePoint_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FAST Search for SharePoint"
+        words:
+          - "FAST Search for SharePoint"
+        condition: and

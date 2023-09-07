@@ -1,0 +1,32 @@
+id: suo_zi_yu_fang_huo_qiang_Barracuda_keyword
+info:
+  name: 梭子鱼防火墙(Barracuda)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "梭子鱼防火墙(Barracuda)"
+        words:
+          - "Barracuda"
+        condition: and
+      - type: word
+        part: body
+        name: "梭子鱼防火墙(Barracuda)"
+        words:
+          - "http://www.barracudanetworks.com?a=bsf_product\" class=\"transbutton"
+        condition: and
+      - type: word
+        part: body
+        name: "梭子鱼防火墙(Barracuda)"
+        words:
+          - "/cgi-mod/header_logo.cgi"
+        condition: and

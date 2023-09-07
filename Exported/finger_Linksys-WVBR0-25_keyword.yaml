@@ -1,0 +1,20 @@
+id: Linksys_WVBR0_25_keyword
+info:
+  name: Linksys-WVBR0-25_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Linksys-WVBR0-25"
+        words:
+          - "wvbr0-25 model region code"
+        condition: and

@@ -1,0 +1,21 @@
+id: DELL_POWEREDGE_T620_keyword
+info:
+  name: DELL-POWEREDGE-T620_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-POWEREDGE-T620"
+        words:
+          - "id=\"serverinfo\"> poweredge t620"
+          - "serverinfo\"> t620, dbe"
+        condition: and

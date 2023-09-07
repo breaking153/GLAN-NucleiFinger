@@ -1,0 +1,20 @@
+id: Superred_Management_system_keyword
+info:
+  name: Superred-Management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Superred-Management-system"
+        words:
+          - "class=\"style8\">北京万里红科技股份有限公司</span>"
+        condition: and

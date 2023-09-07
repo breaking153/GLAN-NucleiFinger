@@ -1,0 +1,20 @@
+id: Apabi_Digital_resource_platform_keyword
+info:
+  name: Apabi-Digital-resource-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apabi-Digital-resource-platform"
+        words:
+          - "<link href=\"http://apabi"
+        condition: and

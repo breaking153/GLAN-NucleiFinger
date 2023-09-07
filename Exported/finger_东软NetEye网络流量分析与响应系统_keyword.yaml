@@ -1,0 +1,20 @@
+id: dong_ruan_NetEye_wang_luo_liu_liang_fen_xi_yu_xiang_ying_xi_tong_keyword
+info:
+  name: 东软NetEye网络流量分析与响应系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "东软NetEye网络流量分析与响应系统"
+        words:
+          - "东软NetEye网络流量分析与响应系统"
+        condition: and

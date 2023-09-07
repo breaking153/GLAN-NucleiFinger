@@ -1,0 +1,21 @@
+id: Colasoft_TSA_keyword
+info:
+  name: Colasoft-TSA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Colasoft-TSA"
+        words:
+          - "data-i18n=\"[html]username\">#username&nbsp;&nbsp;</td>"
+          - "nfr=\"true\""
+        condition: and

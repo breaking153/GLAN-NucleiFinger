@@ -1,0 +1,20 @@
+id: rbsoft_Software_keyword
+info:
+  name: rbsoft-Software_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "rbsoft-Software"
+        words:
+          - "name=\"redirectto\" value=\"/zym/rbkj.nsf\""
+        condition: and

@@ -1,0 +1,21 @@
+id: Yinhe_Cameras_and_Surveillance_keyword
+info:
+  name: Yinhe-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yinhe-Cameras-and-Surveillance"
+        words:
+          - "psd.innerhtml = '<embed id=\"pcclient\" type=\"application/webdvrctrl/' + ctl_version"
+          - "webdvrctrl.setdvrip(window.location.host;"
+        condition: and

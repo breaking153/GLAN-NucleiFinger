@@ -1,0 +1,21 @@
+id: Open_Realty_keyword
+info:
+  name: Open-Realty_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Open-Realty"
+        words:
+          - "content=\"open-realty"
+          - "href=\"http://www.open-realty.org\" title=\"powered by open-realty"
+        condition: and

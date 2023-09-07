@@ -1,0 +1,21 @@
+id: mingdekeji_System_keyword
+info:
+  name: mingdekeji-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mingdekeji-System"
+        words:
+          - "href=\"imges/zgsh.ico\""
+          - "荆州明德科技"
+        condition: and

@@ -1,0 +1,26 @@
+id: AOLserver_keyword
+info:
+  name: AOLserver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AOLserver"
+        words:
+          - "aolserver"
+        condition: and
+      - type: word
+        part: header
+        name: "AOLserver"
+        words:
+          - "AOLserver"
+        condition: and

@@ -1,0 +1,26 @@
+id: Hsycms_hao_sheng_yi_CMS_keyword
+info:
+  name: Hsycms(好生意CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hsycms(好生意CMS)"
+        words:
+          - "Hsycms"
+        condition: and
+      - type: word
+        part: body
+        name: "Hsycms(好生意CMS)"
+        words:
+          - "好生意CMS"
+        condition: and

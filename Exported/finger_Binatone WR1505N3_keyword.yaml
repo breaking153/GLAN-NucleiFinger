@@ -1,0 +1,20 @@
+id: Binatone_WR1505N3_keyword
+info:
+  name: Binatone WR1505N3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Binatone WR1505N3"
+        words:
+          - "WR1505N3"
+        condition: and

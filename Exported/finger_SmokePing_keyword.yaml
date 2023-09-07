@@ -1,0 +1,21 @@
+id: SmokePing_keyword
+info:
+  name: SmokePing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SmokePing"
+        words:
+          - "<a href=\"http://oss.oetiker.ch/smokeping/counter.cgi/"
+          - "<tr><td class=\"menuitem\" colspan=\"2\">&nbsp;-&nbsp;<a class=\"menulink\" href=\"?target="
+        condition: and

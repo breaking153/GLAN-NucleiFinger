@@ -1,0 +1,23 @@
+id: w7_OfficialAccounts_keyword
+info:
+  name: w7-OfficialAccounts_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "w7-OfficialAccounts"
+        words:
+          - "class=\"copyright\">powered by <a href=\"http://www.we7.cc\"><b>微擎</b>"
+          - "onsubmit=\"return formcheck(;\" class=\"we7-form\">"
+          - "content=\"微擎,微信"
+          - "powered by we7.cc"
+        condition: and

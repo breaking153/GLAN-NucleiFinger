@@ -1,0 +1,21 @@
+id: TeamDoc_FileSystem_keyword
+info:
+  name: TeamDoc-FileSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TeamDoc-FileSystem"
+        words:
+          - "id=\"labellink\""
+          - "id=\"table_01\""
+        condition: and

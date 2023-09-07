@@ -1,0 +1,20 @@
+id: Varbase_keyword
+info:
+  name: Varbase_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Varbase"
+        words:
+          - "Varbase"
+        condition: and

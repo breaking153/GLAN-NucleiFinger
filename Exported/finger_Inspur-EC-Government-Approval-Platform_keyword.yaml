@@ -1,0 +1,21 @@
+id: Inspur_EC_Government_Approval_Platform_keyword
+info:
+  name: Inspur-EC-Government-Approval-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Inspur-EC-Government-Approval-Platform"
+        words:
+          - "onlinequery/querylist.aspx"
+          - "langchao.ecgap.outportal"
+        condition: and

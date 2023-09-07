@@ -1,0 +1,22 @@
+id: qin_chuan_ran_qi_zong_he_guan_li_xi_tong_keyword
+info:
+  name: 秦川燃气综合管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "秦川燃气综合管理系统"
+        words:
+          - "系统登录"
+          - "res/icon/key.png"
+          - "login"
+        condition: and

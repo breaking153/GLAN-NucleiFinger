@@ -1,0 +1,26 @@
+id: tian_bai_zai_xian_pei_xun_kao_shi_xi_tong_keyword
+info:
+  name: 天柏在线培训-考试系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天柏在线培训-考试系统"
+        words:
+          - "App_Image/PXSystem"
+        condition: and
+      - type: word
+        part: body
+        name: "天柏在线培训-考试系统"
+        words:
+          - "App_Image/System"
+        condition: and

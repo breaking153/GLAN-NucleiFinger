@@ -1,0 +1,21 @@
+id: spring_boot_keyword
+info:
+  name: spring-boot_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "spring-boot"
+        words:
+          - "No message available"
+          - "status"
+        condition: and

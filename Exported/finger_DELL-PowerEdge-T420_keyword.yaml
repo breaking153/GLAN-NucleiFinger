@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_T420_keyword
+info:
+  name: DELL-PowerEdge-T420_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PowerEdge-T420"
+        words:
+          - "id=\"serverinfo\"> poweredge t420"
+        condition: and

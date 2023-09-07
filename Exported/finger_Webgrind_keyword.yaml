@@ -1,0 +1,20 @@
+id: Webgrind_keyword
+info:
+  name: Webgrind_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Webgrind"
+        words:
+          - "<span id=\"invocation_sum\"></span> different functions called in <span id=\"runtime_sum"
+        condition: and

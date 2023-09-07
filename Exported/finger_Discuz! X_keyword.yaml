@@ -1,0 +1,26 @@
+id: Discuz_X_keyword
+info:
+  name: Discuz! X_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Discuz! X"
+        words:
+          - "<meta name=\"generator\" content=\"Discuz!"
+        condition: and
+      - type: word
+        part: body
+        name: "Discuz! X"
+        words:
+          - "<script src=\".*?logging.js"
+        condition: and

@@ -7,13 +7,15 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
     matchers:
       - type: word
         part: body
-        name: "Citrix Gateway"
+        name: "Citrix Access Gateway"
         words:
-          - "class=\"citrixCopyright"
+          - "Citrix Access Gateway"
+          - "login"
+        condition: and

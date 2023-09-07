@@ -1,0 +1,22 @@
+id: Techbridge_Cloud_Conference_keyword
+info:
+  name: Techbridge-Cloud-Conference_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Techbridge-Cloud-Conference"
+        words:
+          - "href=\"http://www.techbridge-inc.com/\" target=\"_blank\"></a></span>"
+          - "/images/web_meeting/tool_bg.jpg"
+          - "/joinmeeting.js"
+        condition: and

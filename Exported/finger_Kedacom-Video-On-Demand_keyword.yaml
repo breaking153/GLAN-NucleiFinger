@@ -1,0 +1,21 @@
+id: Kedacom_Video_On_Demand_keyword
+info:
+  name: Kedacom-Video-On-Demand_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kedacom-Video-On-Demand"
+        words:
+          - "<param name=\"conpwd\" value=\"kdc\">"
+          - "clsid:da6a00a4-fa81-43ad-a686-ff8ad342395e"
+        condition: and

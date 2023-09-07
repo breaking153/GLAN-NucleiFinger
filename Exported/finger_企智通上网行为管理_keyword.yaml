@@ -1,0 +1,20 @@
+id: qi_zhi_tong_shang_wang_xing_wei_guan_li_keyword
+info:
+  name: 企智通上网行为管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "企智通上网行为管理"
+        words:
+          - "企智通上网行为管理"
+        condition: and

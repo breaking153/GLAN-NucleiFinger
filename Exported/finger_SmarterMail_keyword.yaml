@@ -1,0 +1,20 @@
+id: SmarterMail_keyword
+info:
+  name: SmarterMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SmarterMail"
+        words:
+          - "<a href='http://www.smartertools.com/smartermail/mail-server-software.aspx' target='_blank>smartermail"
+        condition: and

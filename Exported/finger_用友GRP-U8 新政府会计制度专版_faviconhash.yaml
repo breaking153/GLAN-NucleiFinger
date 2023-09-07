@@ -1,0 +1,19 @@
+id: yong_you_GRP_U8_xin_zheng_fu_hui_ji_zhi_du_zhuan_ban_faviconhash
+info:
+  name: 用友GRP-U8 新政府会计制度专版_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "用友GRP-U8 新政府会计制度专版"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-299520369\""
+        condition: or

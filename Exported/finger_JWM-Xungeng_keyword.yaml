@@ -1,0 +1,20 @@
+id: JWM_Xungeng_keyword
+info:
+  name: JWM-Xungeng_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JWM-Xungeng"
+        words:
+          - "id=\"removeietoolbar\" classid=\"clsid:2646205b-878c-11d1-b07c-0000c040bcdb\" codebase=\"dll/nskey.dll"
+        condition: and

@@ -1,0 +1,20 @@
+id: bei_jing_ge_er_guo_xin_qian_ming_yan_zheng_guan_li_xi_tong_keyword
+info:
+  name: 北京格尔国信 签名验证管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "北京格尔国信 签名验证管理系统"
+        words:
+          - "北京格尔国信 签名验证管理系统"
+        condition: and

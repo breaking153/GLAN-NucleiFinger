@@ -1,0 +1,23 @@
+id: Join_Cheer_General_financial_system_keyword
+info:
+  name: Join-Cheer-General-financial-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Join-Cheer-General-financial-system"
+        words:
+          - "北京久其软件股份有限公司 版权所有"
+          - "/netrep/intf"
+          - "/netrep/message2/"
+          - "<meta http-equiv=\"refresh\" content=\"0\";url=\"../netrep\">"
+        condition: and

@@ -1,0 +1,21 @@
+id: Ncast_Product_keyword
+info:
+  name: Ncast-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ncast-Product"
+        words:
+          - "广州盈可视电子科技有限公司（ncast）"
+          - "content=\"盈可视ncast"
+        condition: and

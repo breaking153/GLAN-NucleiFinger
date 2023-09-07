@@ -1,0 +1,20 @@
+id: soeasy_wang_zhan_ji_qun_xi_tong_keyword
+info:
+  name: soeasy网站集群系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "soeasy网站集群系统"
+        words:
+          - "EGSS_User"
+        condition: and

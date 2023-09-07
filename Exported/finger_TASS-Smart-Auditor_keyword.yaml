@@ -1,0 +1,21 @@
+id: TASS_Smart_Auditor_keyword
+info:
+  name: TASS-Smart-Auditor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TASS-Smart-Auditor"
+        words:
+          - "灵志日志审计系统"
+          - "北京江南天安科技有限公司"
+        condition: and

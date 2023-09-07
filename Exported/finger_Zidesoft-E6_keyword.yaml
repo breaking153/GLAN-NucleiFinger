@@ -1,0 +1,20 @@
+id: Zidesoft_E6_keyword
+info:
+  name: Zidesoft-E6_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zidesoft-E6"
+        words:
+          - "src=\"/static/images/login/btn-login.gif\""
+        condition: and

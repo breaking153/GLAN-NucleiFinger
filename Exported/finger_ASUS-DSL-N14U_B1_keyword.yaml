@@ -1,0 +1,20 @@
+id: ASUS_DSL_N14U_B1_keyword
+info:
+  name: ASUS-DSL-N14U_B1_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ASUS-DSL-N14U_B1"
+        words:
+          - "realm=\"dsl-n14u_b1"
+        condition: and

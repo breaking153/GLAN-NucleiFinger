@@ -1,0 +1,26 @@
+id: FormMail_keyword
+info:
+  name: FormMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FormMail"
+        words:
+          - "href=\"http://www.worldwidemart.com/scripts/formmail.shtml"
+        condition: and
+      - type: word
+        part: body
+        name: "FormMail"
+        words:
+          - "/FormMail.pl"
+        condition: and

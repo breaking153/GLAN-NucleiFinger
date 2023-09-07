@@ -1,0 +1,20 @@
+id: Sophos_Email_Appliance_keyword_1_1
+info:
+  name: Sophos Email Appliance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sophos Email Appliance"
+        words:
+          - "Sophos Email Appliance"
+        condition: and

@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -16,4 +16,12 @@ http:
         part: body
         name: "MinIO"
         words:
-          - "<title>MinIO Browser"
+          - "MinIO Console"
+        condition: and
+      - type: word
+        part: body
+        name: "MinIO"
+        words:
+          - "<img src=\"/minio/logo.svg\" alt=\"\">"
+          - "<title>Minio Browser</title>"
+        condition: and

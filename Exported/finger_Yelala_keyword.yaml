@@ -1,0 +1,21 @@
+id: Yelala_keyword
+info:
+  name: Yelala_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yelala"
+        words:
+          - "/public/js/knockout-3.4.1.debug.js"
+          - "<form action=\"/index.php/home/login/login.html\" method=\"post\" id=\"login\" class=\"form\" data-bind=\"submit: submitform\">"
+        condition: and

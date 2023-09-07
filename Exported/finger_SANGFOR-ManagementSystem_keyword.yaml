@@ -1,0 +1,22 @@
+id: SANGFOR_ManagementSystem_keyword
+info:
+  name: SANGFOR-ManagementSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SANGFOR-ManagementSystem"
+        words:
+          - "/cgi-bin/login.cgi?requestname="
+          - "var msg = '对不起，集中管理平台暂不支持您当前使用的浏览器"
+          - "var msg = '对不起, '+str+'暂不支持您当前使用的浏览器"
+        condition: and

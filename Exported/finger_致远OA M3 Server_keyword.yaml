@@ -1,0 +1,19 @@
+id: zhi_yuan_OA_M3_Server_keyword
+info:
+  name: 致远OA M3 Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "致远OA M3 Server"
+        words:
+          - "<title>M3 Server"

@@ -1,0 +1,20 @@
+id: da_han_wang_luo_da_han_ban_tong_fa_bu_xi_tong_keyword
+info:
+  name: 大汉网络 大汉版通发布系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "大汉网络 大汉版通发布系统"
+        words:
+          - "大汉网络 大汉版通发布系统"
+        condition: and

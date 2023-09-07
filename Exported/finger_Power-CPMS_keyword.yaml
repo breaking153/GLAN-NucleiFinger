@@ -1,0 +1,20 @@
+id: Power_CPMS_keyword
+info:
+  name: Power-CPMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Power-CPMS"
+        words:
+          - "post(\"/ssosaml/saml2signonhandler.ashx\""
+        condition: and

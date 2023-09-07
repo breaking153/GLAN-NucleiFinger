@@ -1,0 +1,20 @@
+id: Intellex_Http_Server_keyword
+info:
+  name: Intellex-Http Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Intellex-Http Server"
+        words:
+          - "Intellex-Http Server"
+        condition: and

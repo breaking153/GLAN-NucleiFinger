@@ -1,0 +1,21 @@
+id: Dell_Remote_Access_Device_keyword
+info:
+  name: Dell-Remote-Access-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dell-Remote-Access-Device"
+        words:
+          - "setemclientinfo"
+          - "src=\"/initparams?emclientinfo"
+        condition: and

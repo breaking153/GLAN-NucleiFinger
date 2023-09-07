@@ -1,0 +1,20 @@
+id: Yandex_Direct_keyword
+info:
+  name: Yandex.Direct_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Yandex.Direct"
+        words:
+          - "Yandex.Direct"
+        condition: and

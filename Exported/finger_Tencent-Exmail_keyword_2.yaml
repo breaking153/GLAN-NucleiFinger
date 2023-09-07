@@ -1,0 +1,29 @@
+id: Tencent_Exmail_keyword_1
+info:
+  name: Tencent-Exmail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tencent-Exmail"
+        words:
+          - "cgi-bin/getinvestigate?flowid="
+          - "cgi-bin/bizmail_portal"
+        condition: and
+      - type: word
+        part: body
+        name: "Tencent-Exmail"
+        words:
+          - "/cgi-bin/getinvestigate?flowid="
+          - "/cgi-bin/bizmail_portal"
+          - "content=\"登录腾讯企业邮箱"
+        condition: and

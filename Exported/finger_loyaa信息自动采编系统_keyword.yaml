@@ -1,0 +1,20 @@
+id: loyaa_xin_xi_zi_dong_cai_bian_xi_tong_keyword
+info:
+  name: loyaa信息自动采编系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "loyaa信息自动采编系统"
+        words:
+          - "/Loyaa/common.lib.js"
+        condition: and

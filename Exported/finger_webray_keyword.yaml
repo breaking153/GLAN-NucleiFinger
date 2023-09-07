@@ -1,0 +1,26 @@
+id: webray_keyword
+info:
+  name: webray_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "webray"
+        words:
+          - "Rayengine"
+        condition: and
+      - type: word
+        part: header
+        name: "webray"
+        words:
+          - "Drivedby:RaySrv"
+        condition: and

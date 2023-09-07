@@ -1,0 +1,20 @@
+id: DELTA_enteliTOUCH_keyword
+info:
+  name: DELTA-enteliTOUCH_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELTA-enteliTOUCH"
+        words:
+          - "id=\"loginform\" action=\"hmi_login.asp?target="
+        condition: and

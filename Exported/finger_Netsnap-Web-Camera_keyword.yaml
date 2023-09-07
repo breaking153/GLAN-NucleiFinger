@@ -1,0 +1,21 @@
+id: Netsnap_Web_Camera_keyword
+info:
+  name: Netsnap-Web-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netsnap-Web-Camera"
+        words:
+          - "color=\"#008080\">live-webcam"
+          - "<small>netsnap is a registered trademark"
+        condition: and

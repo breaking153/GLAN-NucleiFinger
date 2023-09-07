@@ -1,0 +1,34 @@
+id: DokuWiki_keyword
+info:
+  name: DokuWiki_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DokuWiki"
+        words:
+          - "powered by dokuwiki"
+          - "content=\"dokuwiki"
+          - "<div id=\"dokuwiki"
+        condition: and
+      - type: word
+        part: body
+        name: "DokuWiki"
+        words:
+          - "powered by DokuWiki"
+        condition: and
+      - type: word
+        part: body
+        name: "DokuWiki"
+        words:
+          - "content=\"DokuWiki"
+        condition: and

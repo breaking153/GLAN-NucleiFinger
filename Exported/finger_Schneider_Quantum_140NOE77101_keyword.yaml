@@ -1,0 +1,26 @@
+id: Schneider_Quantum_140NOE77101_keyword_1
+info:
+  name: Schneider_Quantum_140NOE77101_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Schneider_Quantum_140NOE77101"
+        words:
+          - "indexLanguage"
+        condition: and
+      - type: word
+        part: body
+        name: "Schneider_Quantum_140NOE77101"
+        words:
+          - "html/config.js"
+        condition: and

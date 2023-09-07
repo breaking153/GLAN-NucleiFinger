@@ -1,0 +1,20 @@
+id: Intelbras_IWR_3000N_keyword
+info:
+  name: Intelbras-IWR-3000N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Intelbras-IWR-3000N"
+        words:
+          - "class='bg-image blur'"
+        condition: and

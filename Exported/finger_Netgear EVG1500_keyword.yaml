@@ -1,0 +1,20 @@
+id: Netgear_EVG1500_keyword
+info:
+  name: Netgear EVG1500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Netgear EVG1500"
+        words:
+          - "Netgear EVG1500"
+        condition: and

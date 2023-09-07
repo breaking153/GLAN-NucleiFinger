@@ -1,0 +1,20 @@
+id: Alcatel_Lucent_OmniVista_Cirrus_keyword
+info:
+  name: Alcatel_Lucent-OmniVista-Cirrus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alcatel_Lucent-OmniVista-Cirrus"
+        words:
+          - "/help/en-us/others/ov-cirrus_cookiepolicy.html"
+        condition: and

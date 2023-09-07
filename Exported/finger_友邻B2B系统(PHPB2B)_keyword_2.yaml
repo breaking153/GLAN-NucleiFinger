@@ -1,0 +1,20 @@
+id: you_lin_B2B_xi_tong_PHPB2B_keyword_1
+info:
+  name: 友邻B2B系统(PHPB2B)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "友邻B2B系统(PHPB2B)"
+        words:
+          - "友邻B2B系统"
+        condition: and

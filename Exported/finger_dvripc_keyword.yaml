@@ -1,0 +1,21 @@
+id: dvripc_keyword
+info:
+  name: dvripc_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "dvripc"
+        words:
+          - "title=\"download android\" href=\"http://www.dvripc.net/common/download/"
+          - "<p><a href=\"nvocx_setup.exe\">click here to download and install the activex packet mannually.</a></p>"
+        condition: and

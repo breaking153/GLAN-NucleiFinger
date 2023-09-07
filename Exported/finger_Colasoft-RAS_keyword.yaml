@@ -1,0 +1,22 @@
+id: Colasoft_RAS_keyword
+info:
+  name: Colasoft-RAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Colasoft-RAS"
+        words:
+          - "科来软件 版权所有"
+          - "i18ninit.min.js"
+          - "nfr=\"true\""
+        condition: and

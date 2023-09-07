@@ -1,0 +1,20 @@
+id: DIGI_PortServer_TS_Products_keyword
+info:
+  name: DIGI-PortServer-TS-Products_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DIGI-PortServer-TS-Products"
+        words:
+          - "realm=\"portserver ts"
+        condition: and

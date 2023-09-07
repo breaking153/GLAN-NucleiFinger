@@ -1,0 +1,20 @@
+id: H3C_an_bo_tong_ren_zi_xing_OEM_xi_lie_an_quan_chan_pin_keyword
+info:
+  name: H3C-安博通-任子行-OEM系列安全产品_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-安博通-任子行-OEM系列安全产品"
+        words:
+          - "webui/js/jquerylib/jquery-1.7.2.min.js"
+        condition: and

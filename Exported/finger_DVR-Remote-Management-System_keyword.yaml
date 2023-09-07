@@ -1,0 +1,21 @@
+id: DVR_Remote_Management_System_keyword
+info:
+  name: DVR-Remote-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DVR-Remote-Management-System"
+        words:
+          - "<title>dvr remote management system</title>"
+          - "src=\"/js/web_homecache.js\""
+        condition: and

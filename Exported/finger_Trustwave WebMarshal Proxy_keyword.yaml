@@ -1,0 +1,20 @@
+id: Trustwave_WebMarshal_Proxy_keyword
+info:
+  name: Trustwave WebMarshal Proxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Trustwave WebMarshal Proxy"
+        words:
+          - "Trustwave WebMarshal Proxy"
+        condition: and

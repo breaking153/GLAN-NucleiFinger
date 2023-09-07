@@ -1,0 +1,20 @@
+id: DHC_OA_keyword
+info:
+  name: DHC-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DHC-OA"
+        words:
+          - "src=\"/extcomponent/security/image/dhc.png\""
+        condition: and

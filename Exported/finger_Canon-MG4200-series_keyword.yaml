@@ -1,0 +1,20 @@
+id: Canon_MG4200_series_keyword
+info:
+  name: Canon-MG4200-series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-MG4200-series"
+        words:
+          - "nowrap>canon mg4200 series</td>"
+        condition: and

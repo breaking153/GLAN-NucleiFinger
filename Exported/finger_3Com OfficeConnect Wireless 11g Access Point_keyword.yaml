@@ -1,0 +1,20 @@
+id: 3Com_OfficeConnect_Wireless_11g_Access_Point_keyword
+info:
+  name: 3Com OfficeConnect Wireless 11g Access Point_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "3Com OfficeConnect Wireless 11g Access Point"
+        words:
+          - "3Com OfficeConnect Wireless 11g Access Point"
+        condition: and

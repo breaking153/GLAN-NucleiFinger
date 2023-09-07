@@ -1,0 +1,33 @@
+id: ASProxy_keyword
+info:
+  name: ASProxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASProxy"
+        words:
+          - "surf the web invisibly using asproxy power"
+          - "btnasproxydisplaybutton"
+        condition: and
+      - type: word
+        part: body
+        name: "ASProxy"
+        words:
+          - "Surf the web invisibly using ASProxy power"
+        condition: and
+      - type: word
+        part: body
+        name: "ASProxy"
+        words:
+          - "btnASProxyDisplayButton"
+        condition: and

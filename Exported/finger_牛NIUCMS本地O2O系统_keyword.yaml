@@ -1,0 +1,20 @@
+id: niu_NIUCMS_ben_di_O2O_xi_tong_keyword
+info:
+  name: 牛NIUCMS本地O2O系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "牛NIUCMS本地O2O系统"
+        words:
+          - "牛NIUCMS本地O2O系统"
+        condition: and

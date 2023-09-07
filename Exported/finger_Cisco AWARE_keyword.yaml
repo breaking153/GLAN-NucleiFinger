@@ -1,0 +1,20 @@
+id: Cisco_AWARE_keyword_1
+info:
+  name: Cisco AWARE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco AWARE"
+        words:
+          - "Cisco AWARE"
+        condition: and

@@ -1,0 +1,22 @@
+id: ASUS_GT_AC5300_keyword
+info:
+  name: ASUS-GT-AC5300_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-GT-AC5300"
+        words:
+          - "<div class=\"prod_madelname\">gt-ac5300"
+          - "var based_modelid = 'gt-ac5300'"
+          - "document.getelementsbyclassname(\"model-name\"[0].innerhtml = \"gt-ac5300\""
+        condition: and

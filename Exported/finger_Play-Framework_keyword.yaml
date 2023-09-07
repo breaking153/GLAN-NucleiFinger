@@ -1,0 +1,26 @@
+id: Play_Framework_keyword
+info:
+  name: Play-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Play-Framework"
+        words:
+          - "play! framework"
+        condition: and
+      - type: word
+        part: header
+        name: "Play-Framework"
+        words:
+          - "Play! Framework"
+        condition: and

@@ -1,0 +1,20 @@
+id: Linksys_EA2700_keyword
+info:
+  name: Linksys EA2700_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys EA2700"
+        words:
+          - "Linksys EA2700"
+        condition: and

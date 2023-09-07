@@ -1,0 +1,19 @@
+id: Richmail_you_jian_xi_tong_keyword
+info:
+  name: Richmail 邮件系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Richmail 邮件系统"
+        words:
+          - "<title>RichMail"

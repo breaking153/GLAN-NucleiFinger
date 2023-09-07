@@ -1,0 +1,20 @@
+id: IP_COM_shen_du_shang_wang_xing_wei_guan_li_keyword
+info:
+  name: IP-COM 深度上网行为管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IP-COM 深度上网行为管理"
+        words:
+          - "IP-COM 深度上网行为管理"
+        condition: and

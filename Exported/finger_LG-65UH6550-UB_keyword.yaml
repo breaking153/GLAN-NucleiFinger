@@ -1,0 +1,20 @@
+id: LG_65UH6550_UB_keyword
+info:
+  name: LG-65UH6550-UB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-65UH6550-UB"
+        words:
+          - "<modelnumber>65uh6550-ub</modelnumber>"
+        condition: and

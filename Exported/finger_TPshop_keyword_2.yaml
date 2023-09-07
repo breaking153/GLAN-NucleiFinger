@@ -1,0 +1,26 @@
+id: TPshop_keyword
+info:
+  name: TPshop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TPshop"
+        words:
+          - "/index.php/Mobile/Index/index.html"
+        condition: and
+      - type: word
+        part: body
+        name: "TPshop"
+        words:
+          - ">TPshop开源商城<"
+        condition: and

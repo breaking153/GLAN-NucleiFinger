@@ -1,0 +1,21 @@
+id: Subrion_CMS_keyword
+info:
+  name: Subrion-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Subrion-CMS"
+        words:
+          - "href=\"http://www.subrion.com"
+          - "content=\"subrion cms"
+        condition: and

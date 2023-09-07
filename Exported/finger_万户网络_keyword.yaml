@@ -1,0 +1,20 @@
+id: wan_hu_wang_luo_keyword
+info:
+  name: 万户网络_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "万户网络"
+        words:
+          - "css/css_whir.css"
+        condition: and

@@ -1,0 +1,20 @@
+id: ASUS_ZenWiFi_AX_keyword
+info:
+  name: ASUS-ZenWiFi-AX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-ZenWiFi-AX"
+        words:
+          - "class=\"prod_madelname\">zenwifi ax"
+        condition: and

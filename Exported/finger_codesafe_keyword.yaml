@@ -1,0 +1,20 @@
+id: codesafe_keyword
+info:
+  name: codesafe_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "codesafe"
+        words:
+          - "baseurl : 'app',        //配置模块根路径到静态资源根目录。"
+        condition: and

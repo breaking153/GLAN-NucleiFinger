@@ -1,0 +1,20 @@
+id: IBM_SPID_HTTP_Server_keyword
+info:
+  name: IBM-SPID-HTTP-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM-SPID-HTTP-Server"
+        words:
+          - "spid http server"
+        condition: and

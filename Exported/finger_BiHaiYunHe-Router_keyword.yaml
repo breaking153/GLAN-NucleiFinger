@@ -1,0 +1,21 @@
+id: BiHaiYunHe_Router_keyword
+info:
+  name: BiHaiYunHe-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BiHaiYunHe-Router"
+        words:
+          - "src=\"internal/ext-lang-zh_cn.js\""
+          - "<h4>欢迎登录碧海云盒</h4>"
+        condition: and

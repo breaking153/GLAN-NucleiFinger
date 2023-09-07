@@ -1,0 +1,21 @@
+id: Siqura_Cameras_and_Surveillance_keyword
+info:
+  name: Siqura-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siqura-Cameras-and-Surveillance"
+        words:
+          - "class=\"small\">powered by siqura"
+          - "<img src='../common/logo_siqura.jpg'"
+        condition: and

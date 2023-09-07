@@ -1,0 +1,27 @@
+id: eLitius_keyword
+info:
+  name: eLitius_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "eLitius"
+        words:
+          - "content=\"elitius"
+          - "target=\"_blank\" title=\"affiliate"
+        condition: and
+      - type: word
+        part: body
+        name: "eLitius"
+        words:
+          - "content=\"eLitius"
+        condition: and

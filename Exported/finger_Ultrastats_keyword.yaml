@@ -1,0 +1,20 @@
+id: Ultrastats_keyword
+info:
+  name: Ultrastats_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ultrastats"
+        words:
+          - "<img src=\"./images/main/ultrastatslogo.png\" width=\"300\" height=\"200\" name=\"ultrastats_logo\" align=\"center\">"
+        condition: and

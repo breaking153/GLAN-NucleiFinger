@@ -1,0 +1,27 @@
+id: EnterCRM_keyword
+info:
+  name: EnterCRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EnterCRM"
+        words:
+          - "杭州恩软"
+          - "Ent.base.js"
+        condition: and
+      - type: word
+        part: body
+        name: "EnterCRM"
+        words:
+          - "EnterCRM"
+        condition: and

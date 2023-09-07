@@ -1,0 +1,20 @@
+id: qi_shuo_ke_ji_nong_yong_tong_jian_kong_yun_ping_tai_keyword
+info:
+  name: 旗硕科技农用通监控云平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "旗硕科技农用通监控云平台"
+        words:
+          - "旗硕科技农用通监控云平台"
+        condition: and

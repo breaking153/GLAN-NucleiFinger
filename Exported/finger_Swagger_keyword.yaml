@@ -1,0 +1,27 @@
+id: Swagger_keyword
+info:
+  name: Swagger_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Swagger"
+        words:
+          - "<div id=\"swagger-ui\"></div>"
+        condition: and
+      - type: word
+        part: body
+        name: "Swagger"
+        words:
+          - "swagger-ui.css"
+          - "swagger-ui.js"
+        condition: and

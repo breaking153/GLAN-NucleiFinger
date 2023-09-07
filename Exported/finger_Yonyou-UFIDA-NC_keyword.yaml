@@ -1,0 +1,25 @@
+id: Yonyou_UFIDA_NC_keyword
+info:
+  name: Yonyou-UFIDA-NC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yonyou-UFIDA-NC"
+        words:
+          - "ufida"
+          - "logo/images/"
+          - "logo/images/ufida_nc.png"
+          - "<div id=\"nc_text\">"
+          - "<div id=\"nc_img\" onmouseover=\"overimage('nc';"
+          - "ufida nc"
+        condition: and

@@ -1,0 +1,20 @@
+id: HP_ProLiant_ML350_keyword
+info:
+  name: HP-ProLiant-ML350_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP-ProLiant-ML350"
+        words:
+          - "proliant-ml350"
+        condition: and

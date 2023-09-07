@@ -1,0 +1,21 @@
+id: cBSS_System_keyword
+info:
+  name: cBSS System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cBSS System"
+        words:
+          - "</a>登录cbss系统</p>"
+          - "<li>com.cbss.xss.filter.xssfilter.dofilter"
+        condition: and

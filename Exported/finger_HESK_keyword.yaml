@@ -1,0 +1,40 @@
+id: HESK_keyword
+info:
+  name: HESK_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HESK"
+        words:
+          - "hesk_javascript.js"
+          - "powered by <a href=\"http://www.hesk.com"
+          - "powered by <a href=\"https://www.hesk.com"
+        condition: and
+      - type: word
+        part: body
+        name: "HESK"
+        words:
+          - "hesk_style.css"
+        condition: and
+      - type: word
+        part: body
+        name: "HESK"
+        words:
+          - "Powered by <a href=\"http://www.hesk.com"
+        condition: and
+      - type: word
+        part: body
+        name: "HESK"
+        words:
+          - "Powered by <a href=\"https://www.hesk.com"
+        condition: and

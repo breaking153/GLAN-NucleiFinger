@@ -1,0 +1,26 @@
+id: LabVIEW_keyword
+info:
+  name: LabVIEW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LabVIEW"
+        words:
+          - "server: labview"
+        condition: and
+      - type: word
+        part: header
+        name: "LabVIEW"
+        words:
+          - "LabVIEW"
+        condition: and

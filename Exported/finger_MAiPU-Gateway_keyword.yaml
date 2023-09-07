@@ -1,0 +1,20 @@
+id: MAiPU_Gateway_keyword
+info:
+  name: MAiPU-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MAiPU-Gateway"
+        words:
+          - "/webui/images/maipu/login/login_adminbg_a.gif"
+        condition: and

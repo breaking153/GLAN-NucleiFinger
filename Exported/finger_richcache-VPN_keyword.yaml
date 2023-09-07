@@ -1,0 +1,21 @@
+id: richcache_VPN_keyword
+info:
+  name: richcache-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "richcache-VPN"
+        words:
+          - "class=\"col-md-12 col-xs-12 col-lg-12 external_signin_links\""
+          - "class=\"no-js\">请先启用javascript"
+        condition: and

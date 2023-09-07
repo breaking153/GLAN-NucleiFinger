@@ -1,0 +1,20 @@
+id: Comcast_Business_keyword
+info:
+  name: Comcast-Business_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Comcast-Business"
+        words:
+          - "cmn/css/common-min.css"
+        condition: and

@@ -1,0 +1,20 @@
+id: WAF_Reverse_Proxy_keyword
+info:
+  name: WAF Reverse Proxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WAF Reverse Proxy"
+        words:
+          - "WAF Reverse Proxy"
+        condition: and

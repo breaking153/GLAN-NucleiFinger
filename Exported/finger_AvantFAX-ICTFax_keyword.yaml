@@ -1,0 +1,20 @@
+id: AvantFAX_ICTFax_keyword
+info:
+  name: AvantFAX-ICTFax_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AvantFAX-ICTFax"
+        words:
+          - "<img src=\"images/avantfax-big.png\" border=\"0\" alt=\"ictfax"
+        condition: and

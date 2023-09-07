@@ -1,0 +1,20 @@
+id: ZTE_ZXSEC_US_keyword
+info:
+  name: ZTE-ZXSEC-US_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-ZXSEC-US"
+        words:
+          - "class=\"login_main_text\">zxsec us"
+        condition: and

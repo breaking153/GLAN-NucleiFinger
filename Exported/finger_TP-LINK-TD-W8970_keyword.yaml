@@ -1,0 +1,20 @@
+id: TP_LINK_TD_W8970_keyword
+info:
+  name: TP-LINK-TD-W8970_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK-TD-W8970"
+        words:
+          - "tp-link 300mbps wireless n gigabit adsl2+ modem router td-w8970"
+        condition: and

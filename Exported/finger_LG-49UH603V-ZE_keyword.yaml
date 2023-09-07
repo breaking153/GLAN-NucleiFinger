@@ -1,0 +1,20 @@
+id: LG_49UH603V_ZE_keyword
+info:
+  name: LG-49UH603V-ZE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-49UH603V-ZE"
+        words:
+          - "<modelnumber>49uh603v-ze</modelnumber>"
+        condition: and

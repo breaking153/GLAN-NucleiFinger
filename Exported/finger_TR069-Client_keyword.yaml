@@ -1,0 +1,21 @@
+id: TR069_Client_keyword
+info:
+  name: TR069-Client_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TR069-Client"
+        words:
+          - "realm=\"tr069 client"
+          - "server: tr069"
+        condition: and

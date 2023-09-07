@@ -1,0 +1,20 @@
+id: zhe_jiang_yu_shi_ke_ji_uniview_shi_pin_jian_kong_xi_tong_keyword
+info:
+  name: 浙江宇视科技uniview视频监控系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "浙江宇视科技uniview视频监控系统"
+        words:
+          - "浙江宇视科技uniview视频监控系统"
+        condition: and

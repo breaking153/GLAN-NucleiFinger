@@ -1,0 +1,26 @@
+id: STAR_CMS_keyword
+info:
+  name: STAR CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "STAR CMS"
+        words:
+          - "content=\"STARCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "STAR CMS"
+        words:
+          - "<img alt=\"STAR CMS"
+        condition: and

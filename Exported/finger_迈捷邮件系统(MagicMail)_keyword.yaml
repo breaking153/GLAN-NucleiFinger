@@ -1,0 +1,20 @@
+id: mai_jie_you_jian_xi_tong_MagicMail_keyword
+info:
+  name: 迈捷邮件系统(MagicMail)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "迈捷邮件系统(MagicMail)"
+        words:
+          - "/aboutus/magicmail.gif"
+        condition: and

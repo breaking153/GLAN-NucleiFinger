@@ -1,0 +1,21 @@
+id: Bitrix_Site_Manager_keyword_1
+info:
+  name: Bitrix-Site-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Bitrix-Site-Manager"
+        words:
+          - "x-powered-cms: bitrix site manager"
+          - "policyref=\"/bitrix/p3p.xml"
+        condition: and

@@ -1,0 +1,20 @@
+id: XuanNiao_Traffic_management_platform_keyword
+info:
+  name: XuanNiao-Traffic-management-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "XuanNiao-Traffic-management-platform"
+        words:
+          - "玄鸟流量管理平台"
+        condition: and

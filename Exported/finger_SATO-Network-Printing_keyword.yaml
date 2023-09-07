@@ -1,0 +1,20 @@
+id: SATO_Network_Printing_keyword
+info:
+  name: SATO-Network-Printing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SATO-Network-Printing"
+        words:
+          - "welcome to sato network printing</legend>"
+        condition: and

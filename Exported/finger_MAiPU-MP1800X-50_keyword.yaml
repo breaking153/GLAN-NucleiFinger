@@ -1,0 +1,21 @@
+id: MAiPU_MP1800X_50_keyword
+info:
+  name: MAiPU-MP1800X-50_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MAiPU-MP1800X-50"
+        words:
+          - "/assets/css/ui-dialog.css"
+          - "/form/formuserlogin"
+        condition: and

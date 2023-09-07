@@ -1,0 +1,20 @@
+id: bei_jing_shu_zi_ren_zheng_TSS_shi_jian_chuo_fu_wu_qi_keyword
+info:
+  name: 北京数字认证 TSS时间戳服务器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "北京数字认证 TSS时间戳服务器"
+        words:
+          - "北京数字认证 TSS时间戳服务器"
+        condition: and

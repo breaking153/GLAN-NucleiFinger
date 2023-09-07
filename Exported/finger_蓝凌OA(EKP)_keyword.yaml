@@ -1,0 +1,26 @@
+id: lan_ling_OA_EKP_keyword
+info:
+  name: 蓝凌OA(EKP)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "蓝凌OA(EKP)"
+        words:
+          - "蓝凌OA"
+        condition: and
+      - type: word
+        part: body
+        name: "蓝凌OA(EKP)"
+        words:
+          - "EKP"
+        condition: and

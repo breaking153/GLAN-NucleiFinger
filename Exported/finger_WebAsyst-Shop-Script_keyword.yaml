@@ -1,0 +1,21 @@
+id: WebAsyst_Shop_Script_keyword
+info:
+  name: WebAsyst-Shop-Script_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebAsyst-Shop-Script"
+        words:
+          - "<a href=\"http://www.shop-script.com"
+          - "powered by webasyst shop-script <a href=\"http://www.shop-script.com/\" style=\"font-weight: normal\">shopping cart software</a>"
+        condition: and

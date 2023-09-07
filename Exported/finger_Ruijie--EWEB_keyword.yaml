@@ -1,0 +1,21 @@
+id: Ruijie_EWEB_keyword
+info:
+  name: Ruijie--EWEB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie--EWEB"
+        words:
+          - "<span class=\"resource\" mark=\"login.copyright\">锐捷网络</span>"
+          - "login.getdeviceinfo"
+        condition: and

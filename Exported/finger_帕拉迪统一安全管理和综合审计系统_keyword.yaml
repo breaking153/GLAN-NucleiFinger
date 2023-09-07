@@ -1,0 +1,20 @@
+id: pa_la_di_tong_yi_an_quan_guan_li_he_zong_he_shen_ji_xi_tong_keyword
+info:
+  name: 帕拉迪统一安全管理和综合审计系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "帕拉迪统一安全管理和综合审计系统"
+        words:
+          - "module/image/pldsec.css"
+        condition: and

@@ -1,0 +1,26 @@
+id: v5shop_keyword
+info:
+  name: v5shop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "v5shop"
+        words:
+          - "content=\"V5shop"
+        condition: and
+      - type: word
+        part: body
+        name: "v5shop"
+        words:
+          - "Powered by V5Shop"
+        condition: and

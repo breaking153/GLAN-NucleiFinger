@@ -1,0 +1,21 @@
+id: VA_xu_ni_ying_yong_guan_li_ping_tai_keyword
+info:
+  name: VA 虚拟应用管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VA 虚拟应用管理平台"
+        words:
+          - "Res/Images/logo_va.png"
+          - "panel_login"
+        condition: and

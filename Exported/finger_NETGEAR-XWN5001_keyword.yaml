@@ -1,0 +1,20 @@
+id: NETGEAR_XWN5001_keyword
+info:
+  name: NETGEAR-XWN5001_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR-XWN5001"
+        words:
+          - "netgear xwn5001"
+        condition: and

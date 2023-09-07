@@ -1,0 +1,20 @@
+id: Firehose_SERVICE_MONITORING_keyword
+info:
+  name: Firehose_SERVICE_MONITORING_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Firehose_SERVICE_MONITORING"
+        words:
+          - "<h1>firehose_service_monitoring status</h1>"
+        condition: and

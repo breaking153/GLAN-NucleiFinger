@@ -1,0 +1,20 @@
+id: NETGEAR_ProSafe_VPN_Firewall_FVS336GV3_keyword
+info:
+  name: NETGEAR-ProSafe-VPN-Firewall-FVS336GV3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-ProSafe-VPN-Firewall-FVS336GV3"
+        words:
+          - "gigabit dual wan ssl vpn firewall fvs336gv3</div>"
+        condition: and

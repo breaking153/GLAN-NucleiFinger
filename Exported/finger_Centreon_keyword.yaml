@@ -1,0 +1,26 @@
+id: Centreon_keyword
+info:
+  name: Centreon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Centreon"
+        words:
+          - "generator\" content=\"centreon - copyright"
+        condition: and
+      - type: word
+        part: body
+        name: "Centreon"
+        words:
+          - "Generator\" content=\"Centreon - Copyright"
+        condition: and

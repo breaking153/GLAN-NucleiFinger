@@ -1,0 +1,20 @@
+id: Sun_Web_Server_keyword
+info:
+  name: Sun-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sun-Web-Server"
+        words:
+          - "server: sun-web-server"
+        condition: and

@@ -1,0 +1,21 @@
+id: Cloodie_HIS_keyword
+info:
+  name: Cloodie-HIS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cloodie-HIS"
+        words:
+          - "src=\"/design/common/his.logo.white.svg\" alt=\"his logo"
+          - "href=\"/design/design/cloodie.css"
+        condition: and

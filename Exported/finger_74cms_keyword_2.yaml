@@ -1,0 +1,32 @@
+id: 74cms_keyword
+info:
+  name: 74cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "74cms"
+        words:
+          - "content=\"74cms.com"
+        condition: and
+      - type: word
+        part: body
+        name: "74cms"
+        words:
+          - "content=\"骑士CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "74cms"
+        words:
+          - "Powered by <a href=\"http://www.74cms.com/\""
+        condition: and

@@ -1,0 +1,21 @@
+id: acsoft_Cloud_keyword
+info:
+  name: acsoft-Cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "acsoft-Cloud"
+        words:
+          - "sdiyun.com, all rights reserved"
+          - "onrememberpasswordclick"
+        condition: and

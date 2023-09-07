@@ -1,0 +1,20 @@
+id: TP_LINK_AC750_keyword
+info:
+  name: TP-LINK AC750_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK AC750"
+        words:
+          - "TP-LINK AC750"
+        condition: and

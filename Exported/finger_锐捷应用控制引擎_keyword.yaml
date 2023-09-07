@@ -1,0 +1,21 @@
+id: rui_jie_ying_yong_kong_zhi_yin_qing_keyword
+info:
+  name: 锐捷应用控制引擎_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "锐捷应用控制引擎"
+        words:
+          - "window.open(\"/login.do"
+          - "airWin"
+        condition: and

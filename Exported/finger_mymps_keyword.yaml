@@ -1,0 +1,26 @@
+id: mymps_keyword
+info:
+  name: mymps_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mymps"
+        words:
+          - "/css/mymps.css"
+        condition: and
+      - type: word
+        part: body
+        name: "mymps"
+        words:
+          - "content=\"mymps"
+        condition: and

@@ -1,0 +1,23 @@
+id: Samsung_Printer_keyword
+info:
+  name: Samsung-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Samsung-Printer"
+        words:
+          - "href=\"css/sws-all.css\""
+          - "sws_loading_wait"
+          - "redirecttosws"
+          - "location = \"/sws/index.html\";"
+        condition: and

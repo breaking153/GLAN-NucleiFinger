@@ -1,0 +1,21 @@
+id: pcitc_RemoteSystem_keyword
+info:
+  name: pcitc-RemoteSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "pcitc-RemoteSystem"
+        words:
+          - "src=\"validatecode.aspx\""
+          - "class=\"f-loading-mask ui-widget ui-widget-content\""
+        condition: and

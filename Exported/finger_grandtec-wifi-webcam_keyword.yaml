@@ -1,0 +1,20 @@
+id: grandtec_wifi_webcam_keyword
+info:
+  name: grandtec-wifi-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "grandtec-wifi-webcam"
+        words:
+          - "basic realm=\"welcome to ipcam !\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Remoting_SDK_keyword
+info:
+  name: Remoting SDK_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Remoting SDK"
+        words:
+          - "Remoting SDK"
+        condition: and

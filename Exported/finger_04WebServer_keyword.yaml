@@ -1,0 +1,20 @@
+id: 04WebServer_keyword
+info:
+  name: 04WebServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "04WebServer"
+        words:
+          - "04WebServer"
+        condition: and

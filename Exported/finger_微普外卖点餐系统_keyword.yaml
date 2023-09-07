@@ -1,0 +1,32 @@
+id: wei_pu_wai_mai_dian_can_xi_tong_keyword
+info:
+  name: 微普外卖点餐系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "微普外卖点餐系统"
+        words:
+          - "Author\" content=\"微普外卖点餐系统"
+        condition: and
+      - type: word
+        part: body
+        name: "微普外卖点餐系统"
+        words:
+          - "Powered By 点餐系统"
+        condition: and
+      - type: word
+        part: body
+        name: "微普外卖点餐系统"
+        words:
+          - "userfiles/shoppics/"
+        condition: and

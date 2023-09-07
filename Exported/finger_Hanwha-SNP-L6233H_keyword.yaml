@@ -1,0 +1,20 @@
+id: Hanwha_SNP_L6233H_keyword
+info:
+  name: Hanwha-SNP-L6233H_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-SNP-L6233H"
+        words:
+          - "var defaultfilename = \"snp-l6233h\""
+        condition: and

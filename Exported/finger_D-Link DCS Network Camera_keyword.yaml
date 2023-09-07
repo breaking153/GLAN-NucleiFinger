@@ -1,0 +1,20 @@
+id: D_Link_DCS_Network_Camera_keyword
+info:
+  name: D-Link DCS Network Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D-Link DCS Network Camera"
+        words:
+          - "D-Link DCS Network Camera"
+        condition: and

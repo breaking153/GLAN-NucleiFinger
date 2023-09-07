@@ -1,0 +1,20 @@
+id: iPECS_UCP_keyword
+info:
+  name: iPECS-UCP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iPECS-UCP"
+        words:
+          - "src=\"img/ipecs_logo_white.png\""
+        condition: and

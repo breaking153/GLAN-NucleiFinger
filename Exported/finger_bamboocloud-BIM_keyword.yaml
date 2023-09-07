@@ -1,0 +1,20 @@
+id: bamboocloud_BIM_keyword
+info:
+  name: bamboocloud-BIM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bamboocloud-BIM"
+        words:
+          - "bim 开发配置与运维控制台"
+        condition: and

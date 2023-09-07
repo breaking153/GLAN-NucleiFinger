@@ -1,0 +1,26 @@
+id: bitweaver_keyword
+info:
+  name: bitweaver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bitweaver"
+        words:
+          - "content=\"bitweaver"
+        condition: and
+      - type: word
+        part: body
+        name: "bitweaver"
+        words:
+          - "href=\"http://www.bitweaver.org\">Powered by"
+        condition: and

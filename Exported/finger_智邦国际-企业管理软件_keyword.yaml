@@ -1,0 +1,22 @@
+id: zhi_bang_guo_ji_qi_ye_guan_li_ruan_jian_keyword
+info:
+  name: 智邦国际-企业管理软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "智邦国际-企业管理软件"
+        words:
+          - "index2.asp"
+          - "update/exec.asp"
+          - "images/full.gif"
+        condition: and

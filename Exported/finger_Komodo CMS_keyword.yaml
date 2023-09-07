@@ -1,0 +1,20 @@
+id: Komodo_CMS_keyword
+info:
+  name: Komodo CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Komodo CMS"
+        words:
+          - "Komodo CMS"
+        condition: and

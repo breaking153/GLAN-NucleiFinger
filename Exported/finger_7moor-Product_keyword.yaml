@@ -1,0 +1,21 @@
+id: 7moor_Product_keyword
+info:
+  name: 7moor-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "7moor-Product"
+        words:
+          - "class=\"ds_do_action domain_aboutus\""
+          - "/javascripts/qiniu/qiniu.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_JWNR2000v5_keyword_1_1
+info:
+  name: NETGEAR JWNR2000v5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR JWNR2000v5"
+        words:
+          - "NETGEAR JWNR2000v5"
+        condition: and

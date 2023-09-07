@@ -1,0 +1,21 @@
+id: Topsec_Web_application_security_protection_system_keyword
+info:
+  name: Topsec-Web-application-security-&-protection-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topsec-Web-application-security-&-protection-system"
+        words:
+          - "class=\"logintop\""
+          - "href=\"login_html_files/loginstyle.css\""
+        condition: and

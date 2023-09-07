@@ -1,0 +1,21 @@
+id: Belkin_N150_keyword
+info:
+  name: Belkin-N150_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Belkin-N150"
+        words:
+          - "src=\"setup_top.htm\""
+          - "src=\"status.stm\""
+        condition: and

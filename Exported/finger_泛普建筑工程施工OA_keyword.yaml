@@ -1,0 +1,20 @@
+id: fan_pu_jian_zhu_gong_cheng_shi_gong_OA_keyword
+info:
+  name: 泛普建筑工程施工OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "泛普建筑工程施工OA"
+        words:
+          - "/dwr/interface/LoginService.js"
+        condition: and

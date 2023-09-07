@@ -1,0 +1,22 @@
+id: TRENDnet_TEW_828DRU_keyword
+info:
+  name: TRENDnet-TEW-828DRU_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TEW-828DRU"
+        words:
+          - "var wanport"
+          - "capture(status_router.sys_model</script></div>trendnet tew828dru"
+          - "tew-828dru"
+        condition: and

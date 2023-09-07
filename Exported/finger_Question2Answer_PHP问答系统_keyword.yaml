@@ -1,0 +1,20 @@
+id: Question2Answer_PHP_wen_da_xi_tong_keyword
+info:
+  name: Question2Answer_PHP问答系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Question2Answer_PHP问答系统"
+        words:
+          - "Question2Answer_PHP问答系统"
+        condition: and

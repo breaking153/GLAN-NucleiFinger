@@ -1,0 +1,21 @@
+id: EFM_Networks_ipTIME_G104A_keyword
+info:
+  name: EFM-Networks-ipTIME-G104A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-G104A"
+        words:
+          - "src =\"/images2/login_title.g104a.gif\""
+          - "src =\"/images/login_back_g104a.gif\""
+        condition: and

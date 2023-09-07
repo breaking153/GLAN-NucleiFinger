@@ -1,0 +1,20 @@
+id: zknet_kao_qin_guan_li_keyword
+info:
+  name: zknet考勤管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "zknet考勤管理"
+        words:
+          - "zknet考勤管理"
+        condition: and

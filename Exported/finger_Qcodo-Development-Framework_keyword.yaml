@@ -1,0 +1,21 @@
+id: Qcodo_Development_Framework_keyword
+info:
+  name: Qcodo-Development-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Qcodo-Development-Framework"
+        words:
+          - "zend engine version:</b>"
+          - "<b>qcodo version:"
+        condition: and

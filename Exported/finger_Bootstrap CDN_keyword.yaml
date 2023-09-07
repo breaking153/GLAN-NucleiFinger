@@ -1,0 +1,20 @@
+id: Bootstrap_CDN_keyword
+info:
+  name: Bootstrap CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Bootstrap CDN"
+        words:
+          - "cdn.bootcss.com"
+        condition: and

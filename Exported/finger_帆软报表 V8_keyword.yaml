@@ -1,0 +1,20 @@
+id: fan_ruan_bao_biao_V8_keyword
+info:
+  name: 帆软报表 V8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "帆软报表 V8"
+        words:
+          - "isSupportForgetPwd"
+        condition: and

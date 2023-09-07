@@ -1,0 +1,21 @@
+id: BROADCOM_CA_PAM_keyword
+info:
+  name: BROADCOM-CA-PAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BROADCOM-CA-PAM"
+        words:
+          - "ispamclient = false"
+          - "/cspm/cleansession.jsp"
+        condition: and

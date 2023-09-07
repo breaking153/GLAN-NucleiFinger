@@ -1,0 +1,20 @@
+id: xi_mo_zhi_neng_DNS_keyword
+info:
+  name: 西默智能DNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "西默智能DNS"
+        words:
+          - "西默智能DNS"
+        condition: and

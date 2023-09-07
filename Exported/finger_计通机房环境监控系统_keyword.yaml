@@ -1,0 +1,20 @@
+id: ji_tong_ji_fang_huan_jing_jian_kong_xi_tong_keyword
+info:
+  name: 计通机房环境监控系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "计通机房环境监控系统"
+        words:
+          - "计通机房环境监控系统"
+        condition: and

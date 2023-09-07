@@ -1,0 +1,21 @@
+id: Grandnode_keyword_1
+info:
+  name: Grandnode_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Grandnode"
+        words:
+          - "x-powered-by: grandnode"
+          - " .grand.antiforgery"
+        condition: and

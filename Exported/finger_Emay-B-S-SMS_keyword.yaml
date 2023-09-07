@@ -1,0 +1,20 @@
+id: Emay_B_S_SMS_keyword
+info:
+  name: Emay-B-S-SMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Emay-B-S-SMS"
+        words:
+          - "亿美满意通"
+        condition: and

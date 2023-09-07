@@ -1,0 +1,25 @@
+id: Wireless_Access_Point_Controller_keyword
+info:
+  name: Wireless-Access-Point-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wireless-Access-Point-Controller"
+        words:
+          - "var oemproductname = \"mvc_howay6000\""
+          - "<select id = \"selclangswitch\" class=\"langswitch\" onchange = \"switchpagelanguage(\">"
+          - "苏州汉明科技有限公司"
+          - "var oemproductname = \"mvc_howay6100\""
+          - "src=\"images/acchtext.png\""
+          - "版权所有 &copy 2009-2017</div>"
+        condition: and

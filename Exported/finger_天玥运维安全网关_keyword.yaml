@@ -1,0 +1,22 @@
+id: tian_yue_yun_wei_an_quan_wang_guan_keyword
+info:
+  name: 天玥运维安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天玥运维安全网关"
+        words:
+          - "css/fw/full.css"
+          - "js/p/login.js"
+          - "login"
+        condition: and

@@ -1,0 +1,20 @@
+id: Traffic_Inspector_keyword
+info:
+  name: Traffic-Inspector_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Traffic-Inspector"
+        words:
+          - "<title>error</title></head><body><h1>403 - forbidden</h1><hr"
+        condition: and

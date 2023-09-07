@@ -1,0 +1,21 @@
+id: JUNIPer_HDR_keyword
+info:
+  name: JUNIPer-HDR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JUNIPer-HDR"
+        words:
+          - "/stylesheet/juniper.css"
+          - "/hdr_logo.gif"
+        condition: and

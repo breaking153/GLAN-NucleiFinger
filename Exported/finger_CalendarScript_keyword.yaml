@@ -1,0 +1,26 @@
+id: CalendarScript_keyword
+info:
+  name: CalendarScript_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CalendarScript"
+        words:
+          - "powered by <a href=\"http://www.calendarscript.com"
+        condition: and
+      - type: word
+        part: body
+        name: "CalendarScript"
+        words:
+          - "Powered by <A HREF=\"http://www.CalendarScript.com"
+        condition: and

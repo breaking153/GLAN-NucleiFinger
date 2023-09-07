@@ -1,0 +1,21 @@
+id: Tuling_Code_Filing_System_keyword
+info:
+  name: Tuling-Code-Filing-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tuling-Code-Filing-System"
+        words:
+          - "编码申报系统"
+          - "长沙图灵科技有限公司"
+        condition: and

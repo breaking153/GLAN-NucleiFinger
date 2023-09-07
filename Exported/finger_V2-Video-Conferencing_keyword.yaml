@@ -1,0 +1,21 @@
+id: V2_Video_Conferencing_keyword
+info:
+  name: V2-Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "V2-Video-Conferencing"
+        words:
+          - "<frame src=\"../conference/currentconfaction.do"
+          - "src=\"content.jsp\""
+        condition: and

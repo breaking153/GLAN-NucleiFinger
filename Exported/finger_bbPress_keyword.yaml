@@ -1,0 +1,27 @@
+id: bbPress_keyword
+info:
+  name: bbPress_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bbPress"
+        words:
+          - "<!-- if you like showing off the fact that your server rocks -->"
+          - "is proudly powered by <a href=\"http://bbpress.org"
+        condition: and
+      - type: word
+        part: body
+        name: "bbPress"
+        words:
+          - "<!-- If you like showing off the fact that your server rocks -->"
+        condition: and

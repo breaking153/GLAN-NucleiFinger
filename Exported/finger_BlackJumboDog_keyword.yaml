@@ -1,0 +1,26 @@
+id: BlackJumboDog_keyword
+info:
+  name: BlackJumboDog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BlackJumboDog"
+        words:
+          - "server: blackjumbodog"
+        condition: and
+      - type: word
+        part: header
+        name: "BlackJumboDog"
+        words:
+          - "BlackJumboDog"
+        condition: and

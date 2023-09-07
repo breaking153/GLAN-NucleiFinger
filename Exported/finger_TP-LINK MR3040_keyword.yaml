@@ -1,0 +1,20 @@
+id: TP_LINK_MR3040_keyword
+info:
+  name: TP-LINK MR3040_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK MR3040"
+        words:
+          - "TP-LINK MR3040"
+        condition: and

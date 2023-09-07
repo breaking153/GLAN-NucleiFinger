@@ -1,0 +1,20 @@
+id: Tenda_W20E_keyword
+info:
+  name: Tenda-W20E_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda-W20E"
+        words:
+          - "var sys_target = \"w20e\""
+        condition: and

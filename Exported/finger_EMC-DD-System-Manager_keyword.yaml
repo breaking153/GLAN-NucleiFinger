@@ -1,0 +1,22 @@
+id: EMC_DD_System_Manager_keyword
+info:
+  name: EMC-DD-System-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EMC-DD-System-Manager"
+        words:
+          - "emc-favicon.ico"
+          - "dd system manager"
+          - "datadomain enterprise manager"
+        condition: and

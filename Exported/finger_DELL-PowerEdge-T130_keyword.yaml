@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_T130_keyword
+info:
+  name: DELL-PowerEdge-T130_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DELL-PowerEdge-T130"
+        words:
+          - "poweredge-t130"
+        condition: and

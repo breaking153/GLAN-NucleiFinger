@@ -1,0 +1,21 @@
+id: GPON_Home_Gateway_keyword
+info:
+  name: GPON-Home-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GPON-Home-Gateway"
+        words:
+          - "/gponform/loginform"
+          - "xwebpagename"
+        condition: and

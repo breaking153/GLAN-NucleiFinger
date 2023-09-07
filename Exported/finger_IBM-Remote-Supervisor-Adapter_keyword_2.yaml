@@ -1,0 +1,20 @@
+id: IBM_Remote_Supervisor_Adapter_keyword_1
+info:
+  name: IBM-Remote-Supervisor-Adapter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM-Remote-Supervisor-Adapter"
+        words:
+          - "/private/testcookie.ssi?sessid="
+        condition: and

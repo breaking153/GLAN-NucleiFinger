@@ -1,0 +1,21 @@
+id: tong_xin_T9eHR_xin_xi_hua_guan_li_xi_tong_keyword
+info:
+  name: 同鑫T9eHR信息化管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "同鑫T9eHR信息化管理系统"
+        words:
+          - "T9eHR-iconfont"
+          - "Authentication/Login"
+        condition: and

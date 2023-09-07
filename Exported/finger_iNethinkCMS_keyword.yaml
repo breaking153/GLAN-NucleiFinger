@@ -1,0 +1,20 @@
+id: iNethinkCMS_keyword
+info:
+  name: iNethinkCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iNethinkCMS"
+        words:
+          - "iNethinkCMS"
+        condition: and

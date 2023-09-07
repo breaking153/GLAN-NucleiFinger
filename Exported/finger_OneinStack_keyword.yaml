@@ -1,0 +1,20 @@
+id: OneinStack_keyword
+info:
+  name: OneinStack_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OneinStack"
+        words:
+          - "<a class=\"nav-link\" href=\"https://oneinstack.com\" target=\"_blank\">OneinStack"
+        condition: and

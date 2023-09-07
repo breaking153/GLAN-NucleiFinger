@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -18,11 +18,4 @@ http:
         words:
           - "ReportServer"
           - "=fs"
-        condition: and
-      - type: word
-        part: body
-        name: "帆软报表-FineReport"
-        words:
-          - "<iframe id=\"reportFrame\""
-          - "name=\"itemslist\""
         condition: and

@@ -1,0 +1,20 @@
+id: Quest_DR_keyword_1
+info:
+  name: Quest DR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Quest DR"
+        words:
+          - "Quest DR"
+        condition: and

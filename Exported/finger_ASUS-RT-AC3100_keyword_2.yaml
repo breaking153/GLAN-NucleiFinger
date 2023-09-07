@@ -1,0 +1,20 @@
+id: ASUS_RT_AC3100_keyword_1
+info:
+  name: ASUS-RT-AC3100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ASUS-RT-AC3100"
+        words:
+          - "realm=\"rt-ac3100"
+        condition: and

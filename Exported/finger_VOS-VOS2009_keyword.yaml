@@ -1,0 +1,20 @@
+id: VOS_VOS2009_keyword
+info:
+  name: VOS-VOS2009_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VOS-VOS2009"
+        words:
+          - "content=\"vos2009, voip, voip运营支撑系统, 软交换\""
+        condition: and

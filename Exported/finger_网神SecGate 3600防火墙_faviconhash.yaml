@@ -1,0 +1,19 @@
+id: wang_shen_SecGate_3600_fang_huo_qiang_faviconhash
+info:
+  name: 网神SecGate 3600防火墙_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "网神SecGate 3600防火墙"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1385513933\""
+        condition: or

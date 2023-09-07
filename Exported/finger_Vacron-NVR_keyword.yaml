@@ -1,0 +1,21 @@
+id: Vacron_NVR_keyword
+info:
+  name: Vacron-NVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Vacron-NVR"
+        words:
+          - "name=\"vacron nvr login"
+          - "<strong>vacron</strong>"
+        condition: and

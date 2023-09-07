@@ -1,0 +1,32 @@
+id: discuz_keyword
+info:
+  name: discuz_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "discuz"
+        words:
+          - "content=\"Discuz"
+        condition: and
+      - type: word
+        part: body
+        name: "discuz"
+        words:
+          - "discuz_uid"
+        condition: and
+      - type: word
+        part: body
+        name: "discuz"
+        words:
+          - "Powered by <strong><a href=\"http://www.discuz.net"
+        condition: and

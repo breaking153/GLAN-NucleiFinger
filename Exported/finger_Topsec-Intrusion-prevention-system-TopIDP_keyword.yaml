@@ -1,0 +1,20 @@
+id: Topsec_Intrusion_prevention_system_TopIDP_keyword
+info:
+  name: Topsec-Intrusion-prevention-system-TopIDP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topsec-Intrusion-prevention-system-TopIDP"
+        words:
+          - "天融信入侵防御系统topidp"
+        condition: and

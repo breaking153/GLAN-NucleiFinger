@@ -1,0 +1,34 @@
+id: rui_you_tian_yi_ying_yong_xu_ni_hua_xi_tong_keyword_1
+info:
+  name: 瑞友天翼应用虚拟化系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "瑞友天翼应用虚拟化系统"
+        words:
+          - "瑞友天翼－应用虚拟化系统"
+        condition: and
+      - type: word
+        part: body
+        name: "瑞友天翼应用虚拟化系统"
+        words:
+          - "href=\"static/css/font-awesome.min.css"
+        condition: and
+      - type: word
+        part: body
+        name: "瑞友天翼应用虚拟化系统"
+        words:
+          - "瑞友信息技术资讯有限公司"
+          - "href=\"http://www.realor.cn\""
+          - "瑞友天翼－应用虚拟化系统编码格式"
+        condition: and

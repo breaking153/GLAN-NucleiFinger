@@ -1,0 +1,20 @@
+id: Hanwha_XRN_2010_keyword
+info:
+  name: Hanwha-XRN-2010_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-XRN-2010"
+        words:
+          - "$.nvr.model_name=\"xrn-2010\""
+        condition: and

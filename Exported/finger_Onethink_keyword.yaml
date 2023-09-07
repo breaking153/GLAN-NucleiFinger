@@ -1,0 +1,20 @@
+id: Onethink_keyword
+info:
+  name: Onethink_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Onethink"
+        words:
+          - "<a href=\"http://www.onethink.cn\" target=\"_blank\">onethink</a>"
+        condition: and

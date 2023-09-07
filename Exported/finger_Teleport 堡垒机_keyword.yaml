@@ -1,0 +1,30 @@
+id: Teleport_bao_lei_ji_keyword
+info:
+  name: Teleport 堡垒机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Teleport 堡垒机"
+        words:
+          - "TELEPORT"
+          - "teleport.js"
+          - "login-account"
+        condition: and
+      - type: word
+        part: body
+        name: "Teleport 堡垒机"
+        words:
+          - "teleport.js"
+          - "login-type-oath"
+          - "bind-oath"
+        condition: and

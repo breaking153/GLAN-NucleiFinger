@@ -1,0 +1,20 @@
+id: bai_zhuo_Smart_keyword
+info:
+  name: 百卓 Smart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "百卓 Smart"
+        words:
+          - "百卓 Smart"
+        condition: and

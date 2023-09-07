@@ -1,0 +1,21 @@
+id: Sina_CDN_keyword
+info:
+  name: Sina-CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sina-CDN"
+        words:
+          - "x-via-cdn"
+          - "sina-"
+        condition: and

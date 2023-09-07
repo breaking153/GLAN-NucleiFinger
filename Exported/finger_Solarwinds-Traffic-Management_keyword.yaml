@@ -1,0 +1,21 @@
+id: Solarwinds_Traffic_Management_keyword
+info:
+  name: Solarwinds-Traffic-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Solarwinds-Traffic-Management"
+        words:
+          - "solarwinds"
+          - "solarwinds.css"
+        condition: and

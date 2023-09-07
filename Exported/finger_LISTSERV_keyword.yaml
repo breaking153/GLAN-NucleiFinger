@@ -1,0 +1,21 @@
+id: LISTSERV_keyword
+info:
+  name: LISTSERV_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LISTSERV"
+        words:
+          - "powered by the listserv email list manager"
+          - "<title>welcome to listserv"
+        condition: and

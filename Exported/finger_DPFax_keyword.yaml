@@ -1,0 +1,21 @@
+id: DPFax_keyword
+info:
+  name: DPFax_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DPFax"
+        words:
+          - "content=\"dpfax - minifaxserver "
+          - "<img src=\"images/dpfax-big.png\" border=\"0\" alt=\"dpfax"
+        condition: and

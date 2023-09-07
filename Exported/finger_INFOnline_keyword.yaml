@@ -1,0 +1,20 @@
+id: INFOnline_keyword
+info:
+  name: INFOnline_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "INFOnline"
+        words:
+          - "INFOnline"
+        condition: and

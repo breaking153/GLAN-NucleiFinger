@@ -1,0 +1,27 @@
+id: VRV_NAC_keyword
+info:
+  name: VRV-NAC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VRV-NAC"
+        words:
+          - "id=\"modal_delay\""
+        condition: and
+      - type: word
+        part: body
+        name: "VRV-NAC"
+        words:
+          - "欢迎登录北信源网络接入控制系统"
+          - "localstorage.setitem('doctitle','北信源网络接入控制系统'"
+        condition: and

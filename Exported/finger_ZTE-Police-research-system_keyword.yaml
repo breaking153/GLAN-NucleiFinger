@@ -1,0 +1,21 @@
+id: ZTE_Police_research_system_keyword
+info:
+  name: ZTE-Police-research-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-Police-research-system"
+        words:
+          - "深圳市中兴信息技术有限公司版权所有"
+          - "src=\"img/gonanlogo.jpg"
+        condition: and

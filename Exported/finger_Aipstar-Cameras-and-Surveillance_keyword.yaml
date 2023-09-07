@@ -1,0 +1,20 @@
+id: Aipstar_Cameras_and_Surveillance_keyword
+info:
+  name: Aipstar-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Aipstar-Cameras-and-Surveillance"
+        words:
+          - "window.location.href = \"login.html\";"
+        condition: and

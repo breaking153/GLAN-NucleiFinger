@@ -1,0 +1,20 @@
+id: qibosoft_MicroSite_keyword
+info:
+  name: qibosoft-MicroSite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "qibosoft-MicroSite"
+        words:
+          - "powered by qibosoft v1.0"
+        condition: and

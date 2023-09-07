@@ -1,0 +1,22 @@
+id: Simbix_Framework_keyword
+info:
+  name: Simbix-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Simbix-Framework"
+        words:
+          - "content=\"simbix framework v"
+          - "logo-lpage-owner.png"
+          - "<div class=\"image\"><img src=\"/logo-lpage.png\" width=\"40\" height=\"40\" alt=\"simbix framework\" /></div>"
+        condition: and

@@ -1,0 +1,26 @@
+id: HotelCMS_bookingeCMS_keyword
+info:
+  name: HotelCMS(bookingeCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HotelCMS(bookingeCMS)"
+        words:
+          - "HotelCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "HotelCMS(bookingeCMS)"
+        words:
+          - "bookingeCMS"
+        condition: and

@@ -1,0 +1,21 @@
+id: SurDoc_keyword
+info:
+  name: SurDoc_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SurDoc"
+        words:
+          - "<h1>欢迎使用360书生云盘！</h1>"
+          - "<p>copyright@2016 pan.surdoc.net all rights</p>"
+        condition: and

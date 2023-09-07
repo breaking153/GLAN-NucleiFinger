@@ -1,0 +1,21 @@
+id: qi_ming_mou_VPN_she_bei_keyword
+info:
+  name: 启明某VPN设备_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "启明某VPN设备"
+        words:
+          - "cover_admin.css"
+          - "SSLVPN LOGIN"
+        condition: and

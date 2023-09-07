@@ -1,0 +1,20 @@
+id: MizuVoIPServer_keyword
+info:
+  name: MizuVoIPServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MizuVoIPServer"
+        words:
+          - "MizuVoIPServer"
+        condition: and

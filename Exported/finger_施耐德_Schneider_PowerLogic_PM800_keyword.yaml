@@ -1,0 +1,20 @@
+id: shi_nai_de_Schneider_PowerLogic_PM800_keyword
+info:
+  name: 施耐德_Schneider_PowerLogic_PM800_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "施耐德_Schneider_PowerLogic_PM800"
+        words:
+          - "PM800"
+        condition: and

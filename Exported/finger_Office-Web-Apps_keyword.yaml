@@ -1,0 +1,20 @@
+id: Office_Web_Apps_keyword
+info:
+  name: Office-Web-Apps_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Office-Web-Apps"
+        words:
+          - "var generatedviewurlelementid"
+        condition: and

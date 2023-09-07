@@ -1,0 +1,20 @@
+id: linksys_linux_keyword
+info:
+  name: linksys-linux_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "linksys-linux"
+        words:
+          - "linksys-linux"
+        condition: and

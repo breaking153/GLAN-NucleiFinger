@@ -1,0 +1,20 @@
+id: fei_yu_xing_ke_ji_lu_you_qi_keyword
+info:
+  name: 飞鱼星科技路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "飞鱼星科技路由器"
+        words:
+          - "飞鱼星科技路由器"
+        condition: and

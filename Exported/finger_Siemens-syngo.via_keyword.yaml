@@ -1,0 +1,20 @@
+id: Siemens_syngo_via_keyword
+info:
+  name: Siemens-syngo.via_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-syngo.via"
+        words:
+          - "class=\"backgr\" src=\"syngo-installation_1024x768.png"
+        condition: and

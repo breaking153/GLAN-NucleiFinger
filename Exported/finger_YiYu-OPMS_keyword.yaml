@@ -1,0 +1,22 @@
+id: YiYu_OPMS_keyword
+info:
+  name: YiYu-OPMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YiYu-OPMS"
+        words:
+          - "903561702@qq.com"
+          - "opms"
+          - "opms管理系统,织蝶-企业应用系统为您的企业保驾护航"
+        condition: and

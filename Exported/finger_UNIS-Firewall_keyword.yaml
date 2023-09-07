@@ -1,0 +1,21 @@
+id: UNIS_Firewall_keyword
+info:
+  name: UNIS-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UNIS-Firewall"
+        words:
+          - "name=\"adminlogin\" action=\"/cgi-bin/manageaccount\">"
+          - "<b><nobr>紫光防火墙"
+        condition: and

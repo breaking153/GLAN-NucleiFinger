@@ -1,0 +1,21 @@
+id: HPE_ADSL_Wireless_Firewall_Router_keyword
+info:
+  name: HPE-ADSL-Wireless-Firewall-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HPE-ADSL-Wireless-Firewall-Router"
+        words:
+          - "<meta http-equiv=\"3cnumber\" content=\"3crwdr200a-75\">"
+          - "<meta http-equiv=\"sysobjectid\" content=\"1.3.6.1.4.1.43.1.19.14\">"
+        condition: and

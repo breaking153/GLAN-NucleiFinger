@@ -1,0 +1,20 @@
+id: N2WS_keyword
+info:
+  name: N2WS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "N2WS"
+        words:
+          - "static/style/cpm_style.css"
+        condition: and

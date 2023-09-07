@@ -1,0 +1,22 @@
+id: 8cms_keyword
+info:
+  name: 8cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "8cms"
+        words:
+          - "http://www.itf4.cn"
+          - "liangjing.org"
+          - "/tpl/templets"
+        condition: and

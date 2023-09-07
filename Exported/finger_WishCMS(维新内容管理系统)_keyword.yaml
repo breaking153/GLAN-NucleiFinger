@@ -1,0 +1,26 @@
+id: WishCMS_wei_xin_nei_rong_guan_li_xi_tong_keyword
+info:
+  name: WishCMS(维新内容管理系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WishCMS(维新内容管理系统)"
+        words:
+          - "WishCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "WishCMS(维新内容管理系统)"
+        words:
+          - "维新内容管理系统"
+        condition: and

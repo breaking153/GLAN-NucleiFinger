@@ -1,0 +1,23 @@
+id: IBM_WebSphere_keyword
+info:
+  name: IBM-WebSphere_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-WebSphere"
+        words:
+          - "<br><i>ibm websphere application server</i>"
+          - "websphere"
+          - "com.ibm.websphere.ihs.doc"
+          - "content=\"websphere application server"
+        condition: and

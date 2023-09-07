@@ -1,0 +1,20 @@
+id: TRENDnet_TV_IP551WI_keyword
+info:
+  name: TRENDnet-TV-IP551WI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TV-IP551WI"
+        words:
+          - "(tv-ip551wi</title>"
+        condition: and

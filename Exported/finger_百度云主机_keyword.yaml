@@ -1,0 +1,20 @@
+id: bai_du_yun_zhu_ji_keyword
+info:
+  name: 百度云主机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "百度云主机"
+        words:
+          - "百度云主机"
+        condition: and

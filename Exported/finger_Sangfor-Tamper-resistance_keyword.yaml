@@ -1,0 +1,21 @@
+id: Sangfor_Tamper_resistance_keyword
+info:
+  name: Sangfor-Tamper-resistance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sangfor-Tamper-resistance"
+        words:
+          - "<li style=\"color:#999999;margin-left:6px;list-style:circle inside;\">如忘记密码，请与防火墙管理员联系</li>"
+          - "href=\"tamper/style/control.css\""
+        condition: and

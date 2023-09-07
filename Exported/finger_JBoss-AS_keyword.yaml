@@ -1,0 +1,20 @@
+id: JBoss_AS_keyword
+info:
+  name: JBoss-AS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JBoss-AS"
+        words:
+          - "manage this jboss as instance"
+        condition: and

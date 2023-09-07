@@ -1,0 +1,20 @@
+id: Gemtek_Router_keyword
+info:
+  name: Gemtek-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gemtek-Router"
+        words:
+          - "alt=\"歡迎使用中保無限路由器\""
+        condition: and

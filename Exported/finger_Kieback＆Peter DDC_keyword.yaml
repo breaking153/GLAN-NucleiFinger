@@ -1,0 +1,20 @@
+id: Kieback_Peter_DDC_keyword
+info:
+  name: Kieback＆Peter DDC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kieback＆Peter DDC"
+        words:
+          - "Kieback＆Peter DDC"
+        condition: and

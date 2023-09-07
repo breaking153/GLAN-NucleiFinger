@@ -1,0 +1,21 @@
+id: ShoreTel_Converged_Conferencing_keyword
+info:
+  name: ShoreTel-Converged-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ShoreTel-Converged-Conferencing"
+        words:
+          - "<script src=\"/ics?action=get_branding_js\" charset=\"utf-8\"></script>"
+          - "<div style=\"visibility:hidden;display:none\" id=\"text_opening_product\">opening *brand_product_name*</div>"
+        condition: and

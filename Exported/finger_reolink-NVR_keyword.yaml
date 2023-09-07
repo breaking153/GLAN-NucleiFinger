@@ -1,0 +1,20 @@
+id: reolink_NVR_keyword
+info:
+  name: reolink-NVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "reolink-NVR"
+        words:
+          - "<a id=\"preview_play_balancestream\">balanced"
+        condition: and

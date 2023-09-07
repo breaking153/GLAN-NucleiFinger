@@ -1,0 +1,26 @@
+id: shan_shi_wang_ke_HillstoneNetworks_keyword
+info:
+  name: 山石网科(HillstoneNetworks)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "山石网科(HillstoneNetworks)"
+        words:
+          - "山石网科"
+        condition: and
+      - type: word
+        part: body
+        name: "山石网科(HillstoneNetworks)"
+        words:
+          - "HillstoneNetworks"
+        condition: and

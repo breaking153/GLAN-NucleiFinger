@@ -1,0 +1,20 @@
+id: Mi_Router_keyword_1_1
+info:
+  name: Mi Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Mi Router"
+        words:
+          - "Mi Router"
+        condition: and

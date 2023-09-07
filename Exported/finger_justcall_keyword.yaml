@@ -1,0 +1,24 @@
+id: justcall_keyword
+info:
+  name: justcall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "justcall"
+        words:
+          - "justadmin"
+          - "form.action=\"/justadmin/index.html\";"
+          - "<a href=\"http://www.justcall.cn\" target=\"_blank\">"
+          - "userweb/index.php?module=user&action=login"
+          - "justadmin"
+        condition: and

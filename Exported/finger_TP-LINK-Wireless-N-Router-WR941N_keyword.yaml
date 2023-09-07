@@ -1,0 +1,21 @@
+id: TP_LINK_Wireless_N_Router_WR941N_keyword
+info:
+  name: TP-LINK-Wireless-N-Router-WR941N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK-Wireless-N-Router-WR941N"
+        words:
+          - "realm=\"tp-link wireless n router wr941n"
+          - "tp-link wireless wr941n"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_FVS318Gv2_keyword
+info:
+  name: NETGEAR-FVS318Gv2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-FVS318Gv2"
+        words:
+          - "gigabit 8 port vpn firewall fvs318gv2"
+        condition: and

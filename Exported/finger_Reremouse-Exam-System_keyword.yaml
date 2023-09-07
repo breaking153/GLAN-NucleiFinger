@@ -1,0 +1,22 @@
+id: Reremouse_Exam_System_keyword
+info:
+  name: Reremouse-Exam-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Reremouse-Exam-System"
+        words:
+          - "蝙蝠在线考试系统"
+          - "博库医学在线考试系统，技术支持：杭州博库科技有限公司"
+          - "src=\"/resources/js/upscroll.js\""
+        condition: and

@@ -1,0 +1,22 @@
+id: AWStats_keyword
+info:
+  name: AWStats_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AWStats"
+        words:
+          - "generator\" content=\"awstats"
+          - "<frame name=\"mainleft\" src=\"awstats.pl?configs="
+          - "<a href=\"http://www.awstats.org\" target=\"awstatshome\">created by awstats "
+        condition: and

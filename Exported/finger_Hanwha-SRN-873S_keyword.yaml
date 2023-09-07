@@ -1,0 +1,20 @@
+id: Hanwha_SRN_873S_keyword
+info:
+  name: Hanwha-SRN-873S_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-SRN-873S"
+        words:
+          - "$.nvr.model_name=\"srn-873s\""
+        condition: and

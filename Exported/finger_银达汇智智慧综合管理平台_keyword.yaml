@@ -1,0 +1,21 @@
+id: yin_da_hui_zhi_zhi_hui_zong_he_guan_li_ping_tai_keyword
+info:
+  name: 银达汇智智慧综合管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "银达汇智智慧综合管理平台"
+        words:
+          - "福州银达云创信息科技有限公司"
+          - "miniui/crypto/CodeManage.js"
+        condition: and

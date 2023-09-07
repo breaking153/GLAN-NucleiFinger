@@ -1,0 +1,20 @@
+id: Open_Blog_keyword
+info:
+  name: Open-Blog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Open-Blog"
+        words:
+          - "target=\"_blank\">open blog"
+        condition: and

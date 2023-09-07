@@ -1,0 +1,21 @@
+id: 365xxy_Examing_keyword
+info:
+  name: 365xxy-Examing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "365xxy-Examing"
+        words:
+          - "href=https://unpkg.com/element-ui/internal/theme-chalk/index.css"
+          - "<title>云时政在线考试系统</title>"
+        condition: and

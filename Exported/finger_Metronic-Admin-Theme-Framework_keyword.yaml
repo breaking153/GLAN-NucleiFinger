@@ -1,0 +1,20 @@
+id: Metronic_Admin_Theme_Framework_keyword
+info:
+  name: Metronic-Admin-Theme-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Metronic-Admin-Theme-Framework"
+        words:
+          - "metronic. admin dashboard template."
+        condition: and

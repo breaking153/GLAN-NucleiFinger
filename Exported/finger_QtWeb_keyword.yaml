@@ -1,0 +1,20 @@
+id: QtWeb_keyword
+info:
+  name: QtWeb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QtWeb"
+        words:
+          - "url=gqrtweb"
+        condition: and

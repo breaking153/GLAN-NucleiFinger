@@ -1,0 +1,20 @@
+id: NETGEAR_R6250_keyword
+info:
+  name: NETGEAR R6250_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR R6250"
+        words:
+          - "NETGEAR R6250"
+        condition: and

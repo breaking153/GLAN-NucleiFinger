@@ -1,0 +1,21 @@
+id: NetMizer_Log_Management_System_keyword
+info:
+  name: NetMizer-Log-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetMizer-Log-Management-System"
+        words:
+          - "var mywindows = ext.create"
+          - "window.location.href=\"main.html\";"
+        condition: and

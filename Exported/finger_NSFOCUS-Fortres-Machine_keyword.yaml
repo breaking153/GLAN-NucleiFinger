@@ -1,0 +1,20 @@
+id: NSFOCUS_Fortres_Machine_keyword
+info:
+  name: NSFOCUS-Fortres-Machine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-Fortres-Machine"
+        words:
+          - "/login_logo_sas_h_zh_cn.png"
+        condition: and

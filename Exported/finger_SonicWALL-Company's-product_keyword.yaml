@@ -1,0 +1,20 @@
+id: SonicWALL_Company_s_product_keyword
+info:
+  name: SonicWALL-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SonicWALL-Company's-product"
+        words:
+          - "server: sonicwall"
+        condition: and

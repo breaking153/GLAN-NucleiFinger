@@ -1,0 +1,21 @@
+id: HuaWei_Server_keyword
+info:
+  name: HuaWei-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-Server"
+        words:
+          - "src=\"custom/logo.gif\""
+          - "control/images/about.gif"
+        condition: and

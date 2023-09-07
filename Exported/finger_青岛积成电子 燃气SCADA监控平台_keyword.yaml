@@ -1,0 +1,20 @@
+id: qing_dao_ji_cheng_dian_zi_ran_qi_SCADA_jian_kong_ping_tai_keyword
+info:
+  name: 青岛积成电子 燃气SCADA监控平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "青岛积成电子 燃气SCADA监控平台"
+        words:
+          - "青岛积成电子 燃气SCADA监控平台"
+        condition: and

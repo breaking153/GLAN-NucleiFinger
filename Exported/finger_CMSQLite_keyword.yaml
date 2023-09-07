@@ -1,0 +1,26 @@
+id: CMSQLite_keyword
+info:
+  name: CMSQLite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CMSQLite"
+        words:
+          - "powered by CMSQLite"
+        condition: and
+      - type: word
+        part: body
+        name: "CMSQLite"
+        words:
+          - "content=\"www.CMSQLite.net"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_R8000P_keyword_1
+info:
+  name: NETGEAR-R8000P_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR-R8000P"
+        words:
+          - "realm=\"netgear r8000p"
+        condition: and

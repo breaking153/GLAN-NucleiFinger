@@ -1,0 +1,20 @@
+id: NETGEAR_GS108T_keyword
+info:
+  name: NETGEAR-GS108T_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-GS108T"
+        words:
+          - "class=\"gs108timage spacer50percent topalign righthalign\""
+        condition: and

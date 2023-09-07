@@ -1,0 +1,26 @@
+id: yu_you_ruan_jian_keyword
+info:
+  name: 育友软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "育友软件"
+        words:
+          - "http://www.yuysoft.com/"
+        condition: and
+      - type: word
+        part: body
+        name: "育友软件"
+        words:
+          - "技术支持"
+        condition: and

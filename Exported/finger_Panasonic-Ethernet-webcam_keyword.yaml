@@ -1,0 +1,20 @@
+id: Panasonic_Ethernet_webcam_keyword
+info:
+  name: Panasonic-Ethernet-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Panasonic-Ethernet-webcam"
+        words:
+          - "content=\"ncs g 2062\""
+        condition: and

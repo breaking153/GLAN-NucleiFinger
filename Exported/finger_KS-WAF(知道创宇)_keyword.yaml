@@ -1,0 +1,26 @@
+id: KS_WAF_zhi_dao_chuang_yu_keyword
+info:
+  name: KS-WAF(知道创宇)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KS-WAF(知道创宇)"
+        words:
+          - "KS-WAF"
+        condition: and
+      - type: word
+        part: body
+        name: "KS-WAF(知道创宇)"
+        words:
+          - "知道创宇"
+        condition: and

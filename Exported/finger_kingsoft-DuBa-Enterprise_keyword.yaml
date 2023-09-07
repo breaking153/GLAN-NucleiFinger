@@ -1,0 +1,20 @@
+id: kingsoft_DuBa_Enterprise_keyword
+info:
+  name: kingsoft-DuBa-Enterprise_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kingsoft-DuBa-Enterprise"
+        words:
+          - "class=\"title\">关于全网部署金山毒霸企业版"
+        condition: and

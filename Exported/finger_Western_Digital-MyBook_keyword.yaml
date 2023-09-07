@@ -1,0 +1,20 @@
+id: Western_Digital_MyBook_keyword
+info:
+  name: Western_Digital-MyBook_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Western_Digital-MyBook"
+        words:
+          - "src=\"/img/headernav_separator.gif\""
+        condition: and

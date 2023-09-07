@@ -1,0 +1,21 @@
+id: F5_TrafficShield_keyword
+info:
+  name: F5-TrafficShield_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "F5-TrafficShield"
+        words:
+          - "asinfo="
+          - "f5-trafficshield"
+        condition: and

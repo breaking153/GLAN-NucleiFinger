@@ -1,0 +1,26 @@
+id: Cimplicity_WebView_keyword_1
+info:
+  name: Cimplicity-WebView_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cimplicity-WebView"
+        words:
+          - "server: cimplicity-httpsvr"
+        condition: and
+      - type: word
+        part: header
+        name: "Cimplicity-WebView"
+        words:
+          - "CIMPLICITY-HttpSvr"
+        condition: and

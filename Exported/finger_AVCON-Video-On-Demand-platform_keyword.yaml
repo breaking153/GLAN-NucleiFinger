@@ -1,0 +1,20 @@
+id: AVCON_Video_On_Demand_platform_keyword
+info:
+  name: AVCON-Video-On-Demand-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AVCON-Video-On-Demand-platform"
+        words:
+          - "<form action=\"./avcon.action\" method"
+        condition: and

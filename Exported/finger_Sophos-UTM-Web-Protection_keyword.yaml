@@ -1,0 +1,20 @@
+id: Sophos_UTM_Web_Protection_keyword
+info:
+  name: Sophos-UTM-Web-Protection_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sophos-UTM-Web-Protection"
+        words:
+          - "powered by utm web protection"
+        condition: and

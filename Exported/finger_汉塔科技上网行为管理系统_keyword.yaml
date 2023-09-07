@@ -1,0 +1,20 @@
+id: han_ta_ke_ji_shang_wang_xing_wei_guan_li_xi_tong_keyword
+info:
+  name: 汉塔科技上网行为管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "汉塔科技上网行为管理系统"
+        words:
+          - "汉塔科技上网行为管理系统"
+        condition: and

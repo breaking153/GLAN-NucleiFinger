@@ -1,0 +1,20 @@
+id: Raychat_keyword
+info:
+  name: Raychat_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Raychat"
+        words:
+          - "Raychat"
+        condition: and

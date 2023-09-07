@@ -1,0 +1,21 @@
+id: wiserice_System_keyword
+info:
+  name: wiserice-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "wiserice-System"
+        words:
+          - "/resources/metronic/scripts/hz-tools.js"
+          - "<h4>请在下框里画图形来提交登录"
+        condition: and

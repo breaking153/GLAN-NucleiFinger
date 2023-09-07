@@ -1,0 +1,25 @@
+id: SuiteCRM_keyword
+info:
+  name: SuiteCRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SuiteCRM"
+        words:
+          - "sugar.themes.theme_name = 'suitep'"
+          - "sugar.themes.theme_name      = 'suiter'"
+          - "src=\"img/suitecrm.png\" alt=\"bitnami suitecrm stack\""
+          - "supercharged by suitecrm"
+          - "src=\"custom/themes/default/images/company_logo.png"
+          - "alt=\"suitecrm\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Wise_Education_Cloud_Masters_keyword
+info:
+  name: Wise-Education-Cloud-Masters_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wise-Education-Cloud-Masters"
+        words:
+          - "ctl00_contentplaceholder1_dlttopvideos"
+        condition: and

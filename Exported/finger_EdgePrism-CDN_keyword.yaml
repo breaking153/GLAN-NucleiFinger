@@ -1,0 +1,21 @@
+id: EdgePrism_CDN_keyword
+info:
+  name: EdgePrism-CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EdgePrism-CDN"
+        words:
+          - "edgeprism"
+          - "edgeprismssl"
+        condition: and

@@ -1,0 +1,26 @@
+id: Victorysoft_keyword
+info:
+  name: Victorysoft_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Victorysoft"
+        words:
+          - "href=\"webstyles/webstyle1/style1/css.css\""
+        condition: and
+      - type: word
+        part: body
+        name: "Victorysoft"
+        words:
+          - "value=\"style2012/style1/scripts/expressinstall.swf\""
+        condition: and

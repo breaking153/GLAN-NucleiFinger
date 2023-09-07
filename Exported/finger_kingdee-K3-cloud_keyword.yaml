@@ -1,0 +1,22 @@
+id: kingdee_K3_cloud_keyword
+info:
+  name: kingdee-K3-cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kingdee-K3-cloud"
+        words:
+          - "金蝶国际软件集团有限公司版权所有"
+          - "var formidafterlogin = '\"bos_mainconsolesutra\""
+          - "class=\"kd-div-loading-ct\""
+        condition: and

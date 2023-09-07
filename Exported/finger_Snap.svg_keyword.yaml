@@ -1,0 +1,20 @@
+id: Snap_svg_keyword
+info:
+  name: Snap.svg_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Snap.svg"
+        words:
+          - "Snap.svg"
+        condition: and

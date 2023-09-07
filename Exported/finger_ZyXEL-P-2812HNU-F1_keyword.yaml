@@ -1,0 +1,20 @@
+id: ZyXEL_P_2812HNU_F1_keyword
+info:
+  name: ZyXEL-P-2812HNU-F1_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-P-2812HNU-F1"
+        words:
+          - "welcome to p-2812hnu-f1 configuration interface"
+        condition: and

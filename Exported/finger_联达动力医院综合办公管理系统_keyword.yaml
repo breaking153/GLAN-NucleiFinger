@@ -1,0 +1,21 @@
+id: lian_da_dong_li_yi_yuan_zong_he_ban_gong_guan_li_xi_tong_keyword
+info:
+  name: 联达动力医院综合办公管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "联达动力医院综合办公管理系统"
+        words:
+          - "login.aspx?Method=AJAX&UserName="
+          - "Login_Return_XML.aspx"
+        condition: and

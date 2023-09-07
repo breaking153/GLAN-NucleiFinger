@@ -1,0 +1,20 @@
+id: yong_you_GRP_U8_cai_wu_xi_tong_keyword
+info:
+  name: 用友GRP-U8(财务系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "用友GRP-U8(财务系统)"
+        words:
+          - "用友GRP-U8(财务系统)"
+        condition: and

@@ -1,0 +1,20 @@
+id: Mitel_Aastra_IP_telephone_keyword
+info:
+  name: Mitel-Aastra-IP-telephone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mitel-Aastra-IP-telephone"
+        words:
+          - "<frame src=\"m_bar.asp\" name=\"sidemenu"
+        condition: and

@@ -1,0 +1,20 @@
+id: Web_Data_Administrator_keyword
+info:
+  name: Web-Data-Administrator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Web-Data-Administrator"
+        words:
+          - "<form name=\"webform1\" method=\"post\" action=\"default.aspx\" onsubmit=\"javascript:return webform_onsubmit(;\" id=\"webform1"
+        condition: and

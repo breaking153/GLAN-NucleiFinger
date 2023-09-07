@@ -1,0 +1,22 @@
+id: PHPOA_xie_tong_ban_gong_ruan_jian_keyword
+info:
+  name: PHPOA 协同办公软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHPOA 协同办公软件"
+        words:
+          - "login.php"
+          - "提示信息"
+          - "showMsg"
+        condition: and

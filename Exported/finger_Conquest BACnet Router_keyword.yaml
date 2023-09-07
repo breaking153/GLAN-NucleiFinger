@@ -1,0 +1,20 @@
+id: Conquest_BACnet_Router_keyword
+info:
+  name: Conquest BACnet Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Conquest BACnet Router"
+        words:
+          - "Conquest BACnet Router"
+        condition: and

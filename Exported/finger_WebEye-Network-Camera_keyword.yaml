@@ -1,0 +1,21 @@
+id: WebEye_Network_Camera_keyword
+info:
+  name: WebEye-Network-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebEye-Network-Camera"
+        words:
+          - "<p>click <a href=\"./login.ml?form_method=get"
+          - "<meta name=\"generator\" content=\"webgateinc\">"
+        condition: and

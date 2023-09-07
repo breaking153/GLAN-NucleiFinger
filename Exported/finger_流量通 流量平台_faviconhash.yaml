@@ -1,0 +1,19 @@
+id: liu_liang_tong_liu_liang_ping_tai_faviconhash
+info:
+  name: 流量通 流量平台_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "流量通 流量平台"
+        dsl:
+          - "mmh3(base64_py(body)) == \"325583172\""
+        condition: or

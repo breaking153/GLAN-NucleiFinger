@@ -1,0 +1,20 @@
+id: cheng_shi_wu_qu_guan_li_xi_tong_CMSPHP_keyword
+info:
+  name: 程氏舞曲管理系统CMSPHP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "程氏舞曲管理系统CMSPHP"
+        words:
+          - "程氏舞曲管理系统CMSPHP"
+        condition: and

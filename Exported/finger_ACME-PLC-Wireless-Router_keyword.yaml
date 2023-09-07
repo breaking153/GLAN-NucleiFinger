@@ -1,0 +1,21 @@
+id: ACME_PLC_Wireless_Router_keyword
+info:
+  name: ACME-PLC-Wireless-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ACME-PLC-Wireless-Router"
+        words:
+          - "plc systems, inc."
+          - "lang_firmwarelogin"
+        condition: and

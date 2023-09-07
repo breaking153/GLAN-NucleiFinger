@@ -1,0 +1,22 @@
+id: Siemens_SIMATIC_NET_keyword
+info:
+  name: Siemens-SIMATIC-NET_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-SIMATIC-NET"
+        words:
+          - "/home/siemens.gif"
+          - "server information</title></head>"
+          - "<table border=2><tr><td><b>device-name: </b></td><td>"
+        condition: and

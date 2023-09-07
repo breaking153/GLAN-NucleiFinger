@@ -1,0 +1,24 @@
+id: Leadsec_Security_gateway_keyword
+info:
+  name: Leadsec-Security-gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leadsec-Security-gateway"
+        words:
+          - "var cookiename = \"sagloginfailtimes\";"
+          - "<img src=\"securitycodeservlet"
+          - "href=\"leadsec.cer"
+          - "www.leadsec.com.cn</a>"
+          - "content=\"北京启明星辰信息安全技术有限公司\""
+        condition: and

@@ -1,0 +1,22 @@
+id: Npoint_keyword
+info:
+  name: Npoint_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Npoint"
+        words:
+          - "content=\"n点虚拟主机管理系统"
+          - "js/ajax_x.js"
+          - "/inc/usercode.asp?npoint="
+        condition: and

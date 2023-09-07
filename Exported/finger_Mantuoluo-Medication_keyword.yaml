@@ -1,0 +1,20 @@
+id: Mantuoluo_Medication_keyword
+info:
+  name: Mantuoluo-Medication_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mantuoluo-Medication"
+        words:
+          - "<h2>曼陀罗医疗</h2>"
+        condition: and

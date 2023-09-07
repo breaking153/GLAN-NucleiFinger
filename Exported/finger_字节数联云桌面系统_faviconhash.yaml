@@ -1,0 +1,19 @@
+id: zi_jie_shu_lian_yun_zhuo_mian_xi_tong_faviconhash
+info:
+  name: 字节数联云桌面系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "字节数联云桌面系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1142582922\""
+        condition: or

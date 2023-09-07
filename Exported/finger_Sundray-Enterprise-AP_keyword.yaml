@@ -1,0 +1,21 @@
+id: Sundray_Enterprise_AP_keyword
+info:
+  name: Sundray-Enterprise-AP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sundray-Enterprise-AP"
+        words:
+          - "url = '/cgi-bin/dispatcher.cgi?cmd=0&login_language='+idx"
+          - "/login-btn.png"
+        condition: and

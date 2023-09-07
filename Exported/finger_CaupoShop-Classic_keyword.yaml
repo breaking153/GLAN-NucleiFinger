@@ -1,0 +1,32 @@
+id: CaupoShop_Classic_keyword
+info:
+  name: CaupoShop-Classic_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CaupoShop-Classic"
+        words:
+          - "Powered by CaupoShop"
+        condition: and
+      - type: word
+        part: body
+        name: "CaupoShop-Classic"
+        words:
+          - "<!-- CaupoShop Classic"
+        condition: and
+      - type: word
+        part: body
+        name: "CaupoShop-Classic"
+        words:
+          - "<a href=\"http://www.caupo.net\" target=\"_blank\">CaupoNet"
+        condition: and

@@ -1,0 +1,20 @@
+id: Company_s_product_keyword
+info:
+  name: Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Company's-product"
+        words:
+          - "辽宁瑞思科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有"
+        condition: and

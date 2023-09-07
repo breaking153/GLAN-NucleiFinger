@@ -1,0 +1,20 @@
+id: su_da_V3_NET_cai_wu_keyword
+info:
+  name: 速达V3.NET财务_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "速达V3.NET财务"
+        words:
+          - "速达V3.NET财务"
+        condition: and

@@ -1,0 +1,20 @@
+id: wang_yi_qi_ye_you_xiang_keyword
+info:
+  name: 网易企业邮箱_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "网易企业邮箱"
+        words:
+          - "frmvalidator"
+        condition: and

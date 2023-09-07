@@ -1,0 +1,27 @@
+id: Diaspora_keyword
+info:
+  name: Diaspora_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Diaspora"
+        words:
+          - "_diaspora_session"
+          - "x-git-revision"
+        condition: and
+      - type: word
+        part: header
+        name: "Diaspora"
+        words:
+          - "x-git-update"
+        condition: and

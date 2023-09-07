@@ -1,0 +1,21 @@
+id: yong_you_chang_jie_tong_OEM_keyword
+info:
+  name: 用友-畅捷通OEM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "用友-畅捷通OEM"
+        words:
+          - "GNRemote.dll"
+          - "Web_sc/login.gn"
+        condition: and

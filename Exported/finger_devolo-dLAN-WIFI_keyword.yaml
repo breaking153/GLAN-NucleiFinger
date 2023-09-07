@@ -1,0 +1,20 @@
+id: devolo_dLAN_WIFI_keyword
+info:
+  name: devolo-dLAN-WIFI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "devolo-dLAN-WIFI"
+        words:
+          - "href=\"customization.css\""
+        condition: and

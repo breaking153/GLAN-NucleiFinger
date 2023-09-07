@@ -1,4 +1,4 @@
-id: jin_he_OA_keyword
+id: jin_he_OA_keyword_1
 info:
   name: 金合OA_keyword
   author: GLAN
@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true

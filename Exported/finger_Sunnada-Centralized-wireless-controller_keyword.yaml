@@ -1,0 +1,20 @@
+id: Sunnada_Centralized_wireless_controller_keyword
+info:
+  name: Sunnada-Centralized-wireless-controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sunnada-Centralized-wireless-controller"
+        words:
+          - "三元达通讯 - 集中无线控制器'"
+        condition: and

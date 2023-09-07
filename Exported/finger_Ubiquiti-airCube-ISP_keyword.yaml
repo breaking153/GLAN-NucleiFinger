@@ -1,0 +1,22 @@
+id: Ubiquiti_airCube_ISP_keyword
+info:
+  name: Ubiquiti-airCube-ISP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ubiquiti-airCube-ISP"
+        words:
+          - "href=\"main.90b93d4e91.css\""
+          - "href=\"main.3bd1a14e0b.css\""
+          - "href=\"main.c3c0eeb2ed.css\""
+        condition: and

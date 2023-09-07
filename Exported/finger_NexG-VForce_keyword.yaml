@@ -1,0 +1,20 @@
+id: NexG_VForce_keyword
+info:
+  name: NexG-VForce_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NexG-VForce"
+        words:
+          - "var lurl = \"vos.shtml\""
+        condition: and

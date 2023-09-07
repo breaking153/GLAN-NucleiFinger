@@ -1,0 +1,20 @@
+id: Tenda_W1800R_keyword
+info:
+  name: Tenda-W1800R_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda-W1800R"
+        words:
+          - "var sys_target = \"w1800r\""
+        condition: and

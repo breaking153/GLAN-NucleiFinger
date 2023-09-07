@@ -1,0 +1,20 @@
+id: CS_Cart_keyword
+info:
+  name: CS Cart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CS Cart"
+        words:
+          - "CS Cart"
+        condition: and

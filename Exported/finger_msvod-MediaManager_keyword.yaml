@@ -1,0 +1,22 @@
+id: msvod_MediaManager_keyword
+info:
+  name: msvod-MediaManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "msvod-MediaManager"
+        words:
+          - "$('.sign-btn'.addclass(\"completion\";"
+          - "static/js/meisicms.js"
+          - "content=\"魅思cms"
+        condition: and

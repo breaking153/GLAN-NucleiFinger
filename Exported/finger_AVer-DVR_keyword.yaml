@@ -1,0 +1,20 @@
+id: AVer_DVR_keyword
+info:
+  name: AVer-DVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AVer-DVR"
+        words:
+          - "var isexist = get_cookie(\"ocx\""
+        condition: and

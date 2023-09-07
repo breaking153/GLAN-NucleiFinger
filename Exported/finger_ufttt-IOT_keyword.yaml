@@ -1,0 +1,20 @@
+id: ufttt_IOT_keyword
+info:
+  name: ufttt-IOT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ufttt-IOT"
+        words:
+          - "src=\"sdkjs/uftttsdk2.js\""
+        condition: and

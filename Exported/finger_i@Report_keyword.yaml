@@ -1,0 +1,23 @@
+id: i_Report_keyword
+info:
+  name: i@Report_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "i@Report"
+        words:
+          - "esensoft_ireport_server"
+          - "com.sanlink.server.login"
+          - "ireportclient"
+          - "css/ireport.css"
+        condition: and

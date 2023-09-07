@@ -1,0 +1,26 @@
+id: rcms_keyword
+info:
+  name: rcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "rcms"
+        words:
+          - "/r/cms/www/"
+        condition: and
+      - type: word
+        part: body
+        name: "rcms"
+        words:
+          - "jhtml"
+        condition: and

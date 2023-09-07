@@ -1,0 +1,20 @@
+id: eYou_Email_Defender_keyword
+info:
+  name: eYou Email Defender_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "eYou Email Defender"
+        words:
+          - "eYou Email Defender"
+        condition: and

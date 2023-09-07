@@ -1,0 +1,20 @@
+id: Maipu_RM1800_keyword
+info:
+  name: Maipu-RM1800_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Maipu-RM1800"
+        words:
+          - "realm=\"rm1800"
+        condition: and

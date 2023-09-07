@@ -1,0 +1,21 @@
+id: D_Link_DIR_842_keyword
+info:
+  name: D_Link-DIR-842_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-DIR-842"
+        words:
+          - "<td><script>i18n(\"h\", \"model name\";</script> : dir-842"
+          - "<h1>dir-842 login</h1>"
+        condition: and

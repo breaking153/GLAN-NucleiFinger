@@ -1,0 +1,27 @@
+id: phpmps_keyword
+info:
+  name: phpmps_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpmps"
+        words:
+          - "powered by phpmps"
+          - "templates/phpmps/style/index.css"
+        condition: and
+      - type: word
+        part: body
+        name: "phpmps"
+        words:
+          - "Powered by Phpmps"
+        condition: and

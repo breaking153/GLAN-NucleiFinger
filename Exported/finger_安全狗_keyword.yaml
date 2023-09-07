@@ -1,0 +1,20 @@
+id: an_quan_gou_keyword
+info:
+  name: 安全狗_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "安全狗"
+        words:
+          - "WAF/2.0"
+        condition: and

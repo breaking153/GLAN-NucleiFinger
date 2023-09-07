@@ -1,0 +1,20 @@
+id: xi_gu_ruan_jian_vlcms_shou_you_ping_tai_cheng_xu_keyword
+info:
+  name: 溪谷软件vlcms手游平台程序_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "溪谷软件vlcms手游平台程序"
+        words:
+          - "溪谷软件vlcms手游平台程序"
+        condition: and

@@ -1,0 +1,20 @@
+id: CISCO_M600V_keyword
+info:
+  name: CISCO-M600V_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-M600V"
+        words:
+          - "alt=\"cisco m600v\""
+        condition: and

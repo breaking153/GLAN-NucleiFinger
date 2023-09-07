@@ -1,0 +1,27 @@
+id: Dell_Remote_Access_Controller_keyword_1
+info:
+  name: Dell-Remote-Access-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dell-Remote-Access-Controller"
+        words:
+          - "server: rac_one_http"
+          - "embedthis"
+        condition: and
+      - type: word
+        part: header
+        name: "Dell-Remote-Access-Controller"
+        words:
+          - "RAC_ONE_HTTP"
+        condition: and

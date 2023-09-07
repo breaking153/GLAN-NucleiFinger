@@ -1,0 +1,20 @@
+id: Goldencis_NACP_keyword
+info:
+  name: Goldencis-NACP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Goldencis-NACP"
+        words:
+          - "<div class=\"tit_b\"> 通过管理员分配的密码使用紧急入口。</div>"
+        condition: and

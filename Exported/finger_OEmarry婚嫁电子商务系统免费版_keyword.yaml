@@ -1,0 +1,20 @@
+id: OEmarry_hun_jia_dian_zi_shang_wu_xi_tong_mian_fei_ban_keyword
+info:
+  name: OEmarry婚嫁电子商务系统免费版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "OEmarry婚嫁电子商务系统免费版"
+        words:
+          - "OEmarry婚嫁电子商务系统免费版"
+        condition: and

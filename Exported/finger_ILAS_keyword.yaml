@@ -1,0 +1,21 @@
+id: ILAS_keyword
+info:
+  name: ILAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ILAS"
+        words:
+          - "<iframe name=\"content\"  src=\"index_middle.html\" frameborder=\"auto"
+          - "<select id=\"selprovince\"   onchange=\"getcity(this.options[this.selectedindex].value\">"
+        condition: and

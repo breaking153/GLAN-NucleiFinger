@@ -1,0 +1,20 @@
+id: Stulz_Klimatechnik_keyword
+info:
+  name: Stulz-Klimatechnik_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Stulz-Klimatechnik"
+        words:
+          - "<img src=\"logo.png\" alt=\"stulz gmbh klimatechnik"
+        condition: and

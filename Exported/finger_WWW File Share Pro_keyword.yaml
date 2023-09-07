@@ -1,0 +1,20 @@
+id: WWW_File_Share_Pro_keyword
+info:
+  name: WWW File Share Pro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WWW File Share Pro"
+        words:
+          - "WWW File Share Pro"
+        condition: and

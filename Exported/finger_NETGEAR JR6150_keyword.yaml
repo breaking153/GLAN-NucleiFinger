@@ -1,0 +1,20 @@
+id: NETGEAR_JR6150_keyword
+info:
+  name: NETGEAR JR6150_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR JR6150"
+        words:
+          - "NETGEAR JR6150"
+        condition: and

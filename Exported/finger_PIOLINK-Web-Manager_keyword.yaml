@@ -1,0 +1,20 @@
+id: PIOLINK_Web_Manager_keyword
+info:
+  name: PIOLINK-Web-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PIOLINK-Web-Manager"
+        words:
+          - "<td class=col_head>login - piolink web manager</td>"
+        condition: and

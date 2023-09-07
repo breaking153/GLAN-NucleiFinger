@@ -1,0 +1,20 @@
+id: TopSec_TopApp_keyword
+info:
+  name: TopSec TopApp_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TopSec TopApp"
+        words:
+          - "TopSec TopApp"
+        condition: and

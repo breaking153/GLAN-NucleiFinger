@@ -1,0 +1,21 @@
+id: YunKeMail_keyword
+info:
+  name: YunKeMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YunKeMail"
+        words:
+          - "action=\"/alimail/error/browserlog"
+          - "content=\"阿里企业邮箱"
+        condition: and

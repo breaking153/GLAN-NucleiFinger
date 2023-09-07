@@ -1,0 +1,21 @@
+id: sapido_router_keyword
+info:
+  name: sapido-router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sapido-router"
+        words:
+          - "/etop_home_menu_style.css"
+          - "/b28n.js"
+        condition: and

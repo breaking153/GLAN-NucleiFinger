@@ -1,0 +1,21 @@
+id: MOXA_AWK_3121_keyword
+info:
+  name: MOXA-AWK-3121_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MOXA-AWK-3121"
+        words:
+          - "var http_req ="
+          - "awk-3121"
+        condition: and

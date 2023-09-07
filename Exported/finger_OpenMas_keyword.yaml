@@ -1,0 +1,26 @@
+id: OpenMas_keyword
+info:
+  name: OpenMas_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenMas"
+        words:
+          - "loginhead\"><link href=\"app_themes"
+        condition: and
+      - type: word
+        part: body
+        name: "OpenMas"
+        words:
+          - "loginHead\"><link href=\"App_Themes"
+        condition: and

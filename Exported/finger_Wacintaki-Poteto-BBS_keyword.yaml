@@ -1,0 +1,21 @@
+id: Wacintaki_Poteto_BBS_keyword
+info:
+  name: Wacintaki-Poteto-BBS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wacintaki-Poteto-BBS"
+        words:
+          - "<a href=\"http://www.ninechime.com/products/\" title=\"get your own free bbs!\">wacintaki"
+          - "by <a href=\"http://suteki.nu\">ranmaguy</a> and <a href=\"http://www.cellosoft.com\">marcello</a>"
+        condition: and

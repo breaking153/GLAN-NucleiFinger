@@ -1,0 +1,22 @@
+id: Citrix_Receiver_keyword
+info:
+  name: Citrix-Receiver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citrix-Receiver"
+        words:
+          - "href=\"clients/html5client/src/receiverthirdpartynotices.html\""
+          - "logonbelt-topshadow"
+          - "upgradeavailable-already-installed-separator bar-separator"
+        condition: and

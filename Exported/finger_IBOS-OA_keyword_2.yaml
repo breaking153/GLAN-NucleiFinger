@@ -1,0 +1,20 @@
+id: IBOS_OA_keyword_1
+info:
+  name: IBOS-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBOS-OA"
+        words:
+          - "Set-Cookie: 8uxd_saltkey="
+        condition: and

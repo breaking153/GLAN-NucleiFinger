@@ -1,0 +1,20 @@
+id: Shop7z_keyword_1
+info:
+  name: Shop7z_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Shop7z"
+        words:
+          - "sitekeyword"
+        condition: and

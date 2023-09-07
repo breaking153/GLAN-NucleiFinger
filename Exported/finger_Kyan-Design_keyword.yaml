@@ -1,0 +1,23 @@
+id: Kyan_Design_keyword
+info:
+  name: Kyan-Design_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kyan-Design"
+        words:
+          - "<h1 id='bluesky_education_login' "
+          - "<meta name='author' content='http://www.kyanmedia.com'>"
+          - "platform - login"
+          - "content='http://www.kyanmedia.com'>"
+        condition: and

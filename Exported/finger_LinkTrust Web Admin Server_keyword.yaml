@@ -1,0 +1,20 @@
+id: LinkTrust_Web_Admin_Server_keyword
+info:
+  name: LinkTrust Web Admin Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LinkTrust Web Admin Server"
+        words:
+          - "LinkTrust Web Admin Server"
+        condition: and

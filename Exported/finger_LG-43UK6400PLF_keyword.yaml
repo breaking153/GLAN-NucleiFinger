@@ -1,0 +1,20 @@
+id: LG_43UK6400PLF_keyword
+info:
+  name: LG-43UK6400PLF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-43UK6400PLF"
+        words:
+          - "<modelname>43uk6400plf</modelname>"
+        condition: and

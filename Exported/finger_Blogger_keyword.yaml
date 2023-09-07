@@ -1,0 +1,21 @@
+id: Blogger_keyword
+info:
+  name: Blogger_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Blogger"
+        words:
+          - "content='blogger"
+          - "powered by blogger"
+        condition: and

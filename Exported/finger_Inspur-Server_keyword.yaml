@@ -1,0 +1,22 @@
+id: Inspur_Server_keyword
+info:
+  name: Inspur-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Inspur-Server"
+        words:
+          - "img/inspur_logo.png"
+          - "<!-- add by zhchhong"
+          - "<frame src=\"./page/blank.html\" name=\"mainframe\" id=\"mainframe\" scrolling=\"no\" noresize=\"false\"></frame>"
+        condition: and

@@ -1,0 +1,20 @@
+id: Volans_VOLANS_Router_keyword
+info:
+  name: Volans-VOLANS-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Volans-VOLANS-Router"
+        words:
+          - "飞鱼星科技volans"
+        condition: and

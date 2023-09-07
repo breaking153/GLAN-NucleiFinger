@@ -1,0 +1,22 @@
+id: momeeting_MOVISION_keyword
+info:
+  name: momeeting-MOVISION_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "momeeting-MOVISION"
+        words:
+          - "class=\"meeting movision\""
+          - "document.title=\"登录-摩云视讯\""
+          - "<!-- 科达视讯云 摩云视讯 电信有区别 -->"
+        condition: and

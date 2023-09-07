@@ -1,0 +1,21 @@
+id: IDC_server_keyword
+info:
+  name: IDC_server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IDC_server"
+        words:
+          - "location: https://54.79.99.238:2087/"
+          - "location: https://www.belleproperty.com/lane-cove/"
+        condition: and

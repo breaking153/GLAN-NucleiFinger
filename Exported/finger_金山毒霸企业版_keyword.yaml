@@ -1,0 +1,20 @@
+id: jin_shan_du_ba_qi_ye_ban_keyword
+info:
+  name: 金山毒霸企业版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "金山毒霸企业版"
+        words:
+          - "金山毒霸企业版"
+        condition: and

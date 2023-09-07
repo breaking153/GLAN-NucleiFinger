@@ -1,0 +1,26 @@
+id: FrontPage_Personal_Web_Server_keyword
+info:
+  name: FrontPage-Personal-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FrontPage-Personal-Web-Server"
+        words:
+          - "fpws"
+        condition: and
+      - type: word
+        part: header
+        name: "FrontPage-Personal-Web-Server"
+        words:
+          - "FPWS"
+        condition: and

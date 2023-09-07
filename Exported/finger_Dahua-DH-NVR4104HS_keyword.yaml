@@ -1,0 +1,20 @@
+id: Dahua_DH_NVR4104HS_keyword
+info:
+  name: Dahua-DH-NVR4104HS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dahua-DH-NVR4104HS"
+        words:
+          - "nvr4104hs"
+        condition: and

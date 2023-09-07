@@ -1,0 +1,21 @@
+id: CollectionSystem_keyword
+info:
+  name: CollectionSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CollectionSystem"
+        words:
+          - "class=\"s_container_left\""
+          - "upgrade/ocx/ccdmsshell.cab#version"
+        condition: and

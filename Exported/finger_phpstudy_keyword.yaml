@@ -1,0 +1,21 @@
+id: phpstudy_keyword
+info:
+  name: phpstudy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpstudy"
+        words:
+          - "<a href=\"https://www.xp.cn\" target=\"_blank\">www.xp.cn</a>"
+          - "1：新建站点、数据库、FTP可在phpstudy面板操作，数据库可在环境中下载数据库管理软件等；"
+        condition: and

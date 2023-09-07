@@ -1,0 +1,26 @@
+id: Apabi_shu_zi_zi_yuan_ping_tai_keyword
+info:
+  name: Apabi数字资源平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apabi数字资源平台"
+        words:
+          - "Default/apabi.css"
+        condition: and
+      - type: word
+        part: body
+        name: "Apabi数字资源平台"
+        words:
+          - "<link href=\"HTTP://apabi"
+        condition: and

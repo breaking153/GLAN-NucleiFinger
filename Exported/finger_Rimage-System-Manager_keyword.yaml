@@ -1,0 +1,20 @@
+id: Rimage_System_Manager_keyword
+info:
+  name: Rimage-System-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Rimage-System-Manager"
+        words:
+          - "style=\"color:#330066;font-size:18pt;font-weight:bold;\">rimage system manager</span>"
+        condition: and

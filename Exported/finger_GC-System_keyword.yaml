@@ -1,0 +1,20 @@
+id: GC_System_keyword
+info:
+  name: GC-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GC-System"
+        words:
+          - " href='统一支付平台学生使用说明.doc'"
+        condition: and

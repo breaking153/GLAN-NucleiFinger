@@ -1,0 +1,20 @@
+id: bei_jing_jin_pan_peng_tu_ruan_jian_keyword
+info:
+  name: 北京金盘鹏图软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "北京金盘鹏图软件"
+        words:
+          - "SpeakIntertScarch.aspx"
+        condition: and

@@ -1,0 +1,21 @@
+id: Cipafilter_keyword
+info:
+  name: Cipafilter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cipafilter"
+        words:
+          - "realm=\"cipafilter web management"
+          - "realm=\"cipafilter web administration"
+        condition: and

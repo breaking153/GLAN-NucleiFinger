@@ -1,0 +1,19 @@
+id: ji_hui_tong_qi_ye_ban_LiveUC_shi_pin_hui_yi_faviconhash
+info:
+  name: 即会通企业版(LiveUC)-视频会议_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "即会通企业版(LiveUC)-视频会议"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-637931821\""
+        condition: or

@@ -1,0 +1,24 @@
+id: Site_Meter_keyword
+info:
+  name: Site-Meter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Site-Meter"
+        words:
+          - "sitemeter.com/meter.asp?site="
+          - "sitemeter"
+          - "<!-- site meter -->"
+          - "site meter -->"
+          - "sitemeter.com/js/counter.js?site="
+        condition: and

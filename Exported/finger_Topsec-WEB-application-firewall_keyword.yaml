@@ -1,0 +1,20 @@
+id: Topsec_WEB_application_firewall_keyword
+info:
+  name: Topsec-WEB-application-firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topsec-WEB-application-firewall"
+        words:
+          - "evpng.fix('div, ul, img, li, input'; //evpng.fix('pngid1, pngid2'"
+        condition: and

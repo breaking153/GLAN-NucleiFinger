@@ -1,0 +1,22 @@
+id: PHPnow_keyword
+info:
+  name: PHPnow_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHPnow"
+        words:
+          - "href=\"http://phpnow.org/go.php?id=1005\">"
+          - "content=\"yinzcn@gmail.com"
+          - "by <a href=\"http://phpnow.org\">phpnow.org"
+        condition: and

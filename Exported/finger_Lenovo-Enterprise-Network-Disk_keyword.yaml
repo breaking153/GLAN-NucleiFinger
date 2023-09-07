@@ -1,0 +1,21 @@
+id: Lenovo_Enterprise_Network_Disk_keyword
+info:
+  name: Lenovo-Enterprise-Network-Disk_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Lenovo-Enterprise-Network-Disk"
+        words:
+          - "client/android/bin/lenovobox.apk"
+          - "alt=\"联想企业网盘android客户端下载\""
+        condition: and

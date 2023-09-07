@@ -1,0 +1,21 @@
+id: Leadsec_VPN_keyword
+info:
+  name: Leadsec-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leadsec-VPN"
+        words:
+          - "/js/leadsec.js"
+          - "src=\"/vpn/user/common/"
+        condition: and

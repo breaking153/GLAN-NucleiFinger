@@ -1,0 +1,20 @@
+id: Cloudsee_Cameras_and_Surveillance_keyword
+info:
+  name: Cloudsee-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cloudsee-Cameras-and-Surveillance"
+        words:
+          - "data-i18n-l=\"jovision"
+        condition: and

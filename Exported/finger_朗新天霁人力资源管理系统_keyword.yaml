@@ -1,0 +1,22 @@
+id: lang_xin_tian_ji_ren_li_zi_yuan_guan_li_xi_tong_keyword
+info:
+  name: 朗新天霁人力资源管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "朗新天霁人力资源管理系统"
+        words:
+          - "hrsoft.com.cn"
+          - "chkLogindiv"
+          - "CustStyle"
+        condition: and

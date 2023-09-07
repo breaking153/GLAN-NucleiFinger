@@ -1,0 +1,21 @@
+id: FOHO_DVR_keyword
+info:
+  name: FOHO-DVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FOHO-DVR"
+        words:
+          - "server: fuho-dvr"
+          - "realm=\"dvr manager"
+        condition: and

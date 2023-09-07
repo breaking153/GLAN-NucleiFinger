@@ -1,0 +1,21 @@
+id: jiu_dian_zhi_hui_ying_xiao_IPTV_xi_tong_keyword
+info:
+  name: 酒店智慧营销IPTV系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "酒店智慧营销IPTV系统"
+        words:
+          - "xsiptvp"
+          - "IPTV"
+        condition: and

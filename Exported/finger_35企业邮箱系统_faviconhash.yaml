@@ -1,0 +1,19 @@
+id: 35_qi_ye_you_xiang_xi_tong_faviconhash
+info:
+  name: 35企业邮箱系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "35企业邮箱系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1676919780\""
+        condition: or

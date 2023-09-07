@@ -1,0 +1,20 @@
+id: tong_wei_shu_ma_wang_luo_she_xiang_tou_keyword
+info:
+  name: 同为数码网络摄像头_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "同为数码网络摄像头"
+        words:
+          - "同为数码网络摄像头"
+        condition: and

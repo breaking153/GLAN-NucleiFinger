@@ -1,0 +1,21 @@
+id: teradici_PCoIP_Zero_Client_keyword
+info:
+  name: teradici-PCoIP-Zero-Client_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "teradici-PCoIP-Zero-Client"
+        words:
+          - "pcoip&#174 zero client"
+          - "password_value"
+        condition: and

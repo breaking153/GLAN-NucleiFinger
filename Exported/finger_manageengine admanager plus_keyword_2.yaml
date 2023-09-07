@@ -1,0 +1,20 @@
+id: manageengine_admanager_plus_keyword
+info:
+  name: manageengine admanager plus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "manageengine admanager plus"
+        words:
+          - "manageengine admanager plus"
+        condition: and

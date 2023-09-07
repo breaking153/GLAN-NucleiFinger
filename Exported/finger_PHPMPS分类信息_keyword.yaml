@@ -1,0 +1,26 @@
+id: PHPMPS_fen_lei_xin_xi_keyword
+info:
+  name: PHPMPS分类信息_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHPMPS分类信息"
+        words:
+          - "Powered by Phpmps"
+        condition: and
+      - type: word
+        part: body
+        name: "PHPMPS分类信息"
+        words:
+          - "templates/phpmps/style/index.css"
+        condition: and

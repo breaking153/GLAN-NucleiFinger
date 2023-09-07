@@ -1,0 +1,40 @@
+id: Infomaster_keyword
+info:
+  name: Infomaster_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Infomaster"
+        words:
+          - "/masterview.css"
+          - "/masterview.js"
+          - "/masterview/mpleftnavstyle/panelbar.mpifma.css"
+        condition: and
+      - type: word
+        part: body
+        name: "Infomaster"
+        words:
+          - "/MasterView.css"
+        condition: and
+      - type: word
+        part: body
+        name: "Infomaster"
+        words:
+          - "/masterView.js"
+        condition: and
+      - type: word
+        part: body
+        name: "Infomaster"
+        words:
+          - "/MasterView/MPLeftNavStyle/PanelBar.MPIFMA.css"
+        condition: and

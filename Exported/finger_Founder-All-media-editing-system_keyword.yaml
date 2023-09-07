@@ -1,0 +1,20 @@
+id: Founder_All_media_editing_system_keyword
+info:
+  name: Founder-All-media-editing-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Founder-All-media-editing-system"
+        words:
+          - "/newsedit/newsedit/css/login_1.css"
+        condition: and

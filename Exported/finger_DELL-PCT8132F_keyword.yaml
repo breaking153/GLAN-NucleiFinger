@@ -1,0 +1,20 @@
+id: DELL_PCT8132F_keyword
+info:
+  name: DELL-PCT8132F_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PCT8132F"
+        words:
+          - "class=\"login_server_default\">pct8132f"
+        condition: and

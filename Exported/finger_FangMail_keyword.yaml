@@ -1,0 +1,28 @@
+id: FangMail_keyword
+info:
+  name: FangMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FangMail"
+        words:
+          - "fangmail/default/css/em_css.css"
+          - "fangmail/cgi/index.cgi"
+        condition: and
+      - type: word
+        part: body
+        name: "FangMail"
+        words:
+          - "/fangmail/default/css/em_css.css"
+          - "/fangmail/cgi/index.cgi"
+        condition: and

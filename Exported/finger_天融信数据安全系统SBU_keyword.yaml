@@ -1,0 +1,20 @@
+id: tian_rong_xin_shu_ju_an_quan_xi_tong_SBU_keyword
+info:
+  name: 天融信数据安全系统SBU_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "天融信数据安全系统SBU"
+        words:
+          - "天融信数据安全系统SBU"
+        condition: and

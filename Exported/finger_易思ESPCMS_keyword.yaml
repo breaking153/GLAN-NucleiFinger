@@ -1,0 +1,20 @@
+id: yi_si_ESPCMS_keyword
+info:
+  name: 易思ESPCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "易思ESPCMS"
+        words:
+          - "易思ESPCMS"
+        condition: and

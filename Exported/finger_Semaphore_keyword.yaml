@@ -1,0 +1,21 @@
+id: Semaphore_keyword
+info:
+  name: Semaphore_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Semaphore"
+        words:
+          - "www.smartlogic.com"
+          - "alt=\"powered by semaphore\""
+        condition: and

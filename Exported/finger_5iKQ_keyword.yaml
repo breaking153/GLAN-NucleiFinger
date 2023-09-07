@@ -1,0 +1,22 @@
+id: 5iKQ_keyword
+info:
+  name: 5iKQ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "5iKQ"
+        words:
+          - "content=\"我爱考勤云平台"
+          - "我爱考勤云平台</span>"
+          - "<input type=\"text\" class=\"form-control\" name=\"mobilenumber\" value=\"\" placeholder=\"手机号码\" />"
+        condition: and

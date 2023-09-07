@@ -1,0 +1,24 @@
+id: OURPHP_keyword
+info:
+  name: OURPHP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OURPHP"
+        words:
+          - "content=\"ourphp"
+          - "powered by ourphp"
+          - "<div class=\"nav_ourphp\">"
+          - "/function/plugs/layer/layer.min.js"
+          - "/templates/default/images/erweima.png"
+        condition: and

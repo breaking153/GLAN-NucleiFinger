@@ -1,0 +1,20 @@
+id: MULTIABNLE_M18_keyword
+info:
+  name: MULTIABNLE-M18_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MULTIABNLE-M18"
+        words:
+          - "<label>打开m18 app， 扫描二维码</label>"
+        condition: and

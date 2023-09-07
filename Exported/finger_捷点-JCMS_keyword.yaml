@@ -1,0 +1,20 @@
+id: jie_dian_JCMS_keyword_1
+info:
+  name: 捷点-JCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "捷点-JCMS"
+        words:
+          - "捷点-JCMS"
+        condition: and

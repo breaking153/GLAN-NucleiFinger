@@ -1,0 +1,21 @@
+id: TomatoCart_keyword
+info:
+  name: TomatoCart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TomatoCart"
+        words:
+          - "content=\"tomatocart open source shopping cart solutions\" />"
+          - "powered by <a href=\"http://www.tomatocart.com\" target=\"_blank\">tomatocart</a>"
+        condition: and

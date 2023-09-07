@@ -1,0 +1,20 @@
+id: SANGFOR_S5100_keyword
+info:
+  name: SANGFOR-S5100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SANGFOR-S5100"
+        words:
+          - "id=\"ver_title\">s5100"
+        condition: and

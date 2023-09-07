@@ -1,0 +1,21 @@
+id: hai_kang_wei_shi_zong_he_an_fang_ping_tai_keyword
+info:
+  name: 海康威视综合安防平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "海康威视综合安防平台"
+        words:
+          - "dist/jquery.js"
+          - "home/locationIndex.action"
+        condition: and

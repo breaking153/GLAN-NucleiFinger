@@ -1,0 +1,28 @@
+id: easypanel_keyword
+info:
+  name: easypanel_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "easypanel"
+        words:
+          - "easypanel"
+          - "vhost"
+          - "login"
+        condition: and
+      - type: word
+        part: body
+        name: "easypanel"
+        words:
+          - "/vhost/view/default/style/login.css"
+        condition: and

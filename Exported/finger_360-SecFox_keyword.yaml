@@ -1,0 +1,24 @@
+id: 360_SecFox_keyword
+info:
+  name: 360-SecFox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-SecFox"
+        words:
+          - "id=mtokenplugin width=0 height=0 style=\"position: absolute;left: 0px; top: 0px\""
+          - "type=application/x-xtx-axhost"
+          - "document.getelementbyid('pic'.src"
+          - "class=\"secfox-login-browser-continue\""
+          - "<p>欢迎您使用网神secfox日志收集与分析系统"
+        condition: and

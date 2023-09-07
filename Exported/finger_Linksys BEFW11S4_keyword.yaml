@@ -1,0 +1,20 @@
+id: Linksys_BEFW11S4_keyword
+info:
+  name: Linksys BEFW11S4_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys BEFW11S4"
+        words:
+          - "Linksys BEFW11S4"
+        condition: and

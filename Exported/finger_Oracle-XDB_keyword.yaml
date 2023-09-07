@@ -1,0 +1,21 @@
+id: Oracle_XDB_keyword
+info:
+  name: Oracle-XDB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Oracle-XDB"
+        words:
+          - "server: oracle xml db"
+          - "oracle"
+        condition: and

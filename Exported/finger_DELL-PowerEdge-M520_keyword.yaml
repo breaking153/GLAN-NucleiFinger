@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_M520_keyword
+info:
+  name: DELL-PowerEdge-M520_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PowerEdge-M520"
+        words:
+          - "id=\"serverinfo\"> poweredge m520"
+        condition: and

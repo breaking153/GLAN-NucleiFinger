@@ -1,0 +1,21 @@
+id: Schneider_PowerLogic_ION_keyword
+info:
+  name: Schneider-PowerLogic-ION_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Schneider-PowerLogic-ION"
+        words:
+          - "allegro-software-rompager"
+          - "6200 ion"
+        condition: and

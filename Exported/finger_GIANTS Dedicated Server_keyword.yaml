@@ -1,0 +1,20 @@
+id: GIANTS_Dedicated_Server_keyword
+info:
+  name: GIANTS Dedicated Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "GIANTS Dedicated Server"
+        words:
+          - "GIANTS Dedicated Server"
+        condition: and

@@ -1,0 +1,20 @@
+id: DELL_PCM6348_keyword
+info:
+  name: DELL-PCM6348_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PCM6348"
+        words:
+          - "class=\"login_server_default\">pcm6348"
+        condition: and

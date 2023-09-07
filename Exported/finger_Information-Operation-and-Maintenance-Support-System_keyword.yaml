@@ -1,0 +1,20 @@
+id: Information_Operation_and_Maintenance_Support_System_keyword
+info:
+  name: Information-Operation-and-Maintenance-Support-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Information-Operation-and-Maintenance-Support-System"
+        words:
+          - "placeholder=\"ad域账号 / 系统账号\""
+        condition: and

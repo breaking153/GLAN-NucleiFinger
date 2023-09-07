@@ -1,0 +1,33 @@
+id: ClipShare_keyword
+info:
+  name: ClipShare_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ClipShare"
+        words:
+          - "<!--!!!!!!!!!!!!!!!!!!!!!!!!! processing script"
+          - "powered by <a href=\"http://www.clip-share.com"
+        condition: and
+      - type: word
+        part: body
+        name: "ClipShare"
+        words:
+          - "<!--!!!!!!!!!!!!!!!!!!!!!!!!! Processing SCRIPT"
+        condition: and
+      - type: word
+        part: body
+        name: "ClipShare"
+        words:
+          - "Powered By <a href=\"http://www.clip-share.com"
+        condition: and

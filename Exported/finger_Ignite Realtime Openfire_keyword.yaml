@@ -1,0 +1,20 @@
+id: Ignite_Realtime_Openfire_keyword
+info:
+  name: Ignite Realtime Openfire_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Ignite Realtime Openfire"
+        words:
+          - "Ignite Realtime Openfire"
+        condition: and

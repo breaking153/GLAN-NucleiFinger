@@ -1,0 +1,22 @@
+id: da_han_ban_tong_Hanweb_system_keyword
+info:
+  name: 大汉版通-Hanweb-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "大汉版通-Hanweb-system"
+        words:
+          - "大汉版通"
+          - "大汉网络"
+          - "hanweb.com' style='display:none'"
+        condition: and

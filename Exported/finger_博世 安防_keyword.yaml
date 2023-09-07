@@ -1,0 +1,20 @@
+id: bo_shi_an_fang_keyword
+info:
+  name: 博世 安防_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "博世 安防"
+        words:
+          - "博世 安防"
+        condition: and

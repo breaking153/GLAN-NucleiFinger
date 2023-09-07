@@ -1,0 +1,21 @@
+id: zxoa_keyword
+info:
+  name: zxoa_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zxoa"
+        words:
+          - "obj.src = \"createcheckcode.aspx?id\"+strmath;"
+          - "name=\"button1\" value=\"\" onclick=\"javascript:return checkfrom(;\" id=\"button1\" class=\"loginbtn\" />"
+        condition: and

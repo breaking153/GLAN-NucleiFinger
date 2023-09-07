@@ -1,0 +1,20 @@
+id: DoubleClick_for_Publishers_DFP_keyword
+info:
+  name: DoubleClick for Publishers (DFP)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DoubleClick for Publishers (DFP)"
+        words:
+          - "DoubleClick for Publishers (DFP)"
+        condition: and

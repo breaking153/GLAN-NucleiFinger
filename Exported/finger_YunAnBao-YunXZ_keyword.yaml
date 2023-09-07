@@ -1,0 +1,21 @@
+id: YunAnBao_YunXZ_keyword
+info:
+  name: YunAnBao-YunXZ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YunAnBao-YunXZ"
+        words:
+          - "id=mtokenplugin width=0 height=0 style=\"position: absolute;left: 0px; top: 0px\""
+          - "type=application/x-xtx-axhost"
+        condition: and

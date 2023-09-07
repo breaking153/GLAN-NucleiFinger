@@ -1,0 +1,20 @@
+id: IECMS_keyword
+info:
+  name: IECMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IECMS"
+        words:
+          - "IECMS"
+        condition: and

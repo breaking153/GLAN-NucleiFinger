@@ -1,0 +1,26 @@
+id: OpenCart_zhong_wen_mian_fei_ban_keyword
+info:
+  name: OpenCart_中文免费版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenCart_中文免费版"
+        words:
+          - "Powered By OpenCart"
+        condition: and
+      - type: word
+        part: body
+        name: "OpenCart_中文免费版"
+        words:
+          - "catalog/view/theme"
+        condition: and

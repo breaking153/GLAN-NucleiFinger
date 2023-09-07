@@ -1,0 +1,20 @@
+id: he_jia_ke_ji_PEMS_keyword
+info:
+  name: 和嘉科技 PEMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "和嘉科技 PEMS"
+        words:
+          - "和嘉科技 PEMS"
+        condition: and

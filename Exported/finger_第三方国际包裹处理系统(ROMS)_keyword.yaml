@@ -1,0 +1,26 @@
+id: di_san_fang_guo_ji_bao_guo_chu_li_xi_tong_ROMS_keyword
+info:
+  name: 第三方国际包裹处理系统(ROMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "第三方国际包裹处理系统(ROMS)"
+        words:
+          - "第三方国际包裹处理系统"
+        condition: and
+      - type: word
+        part: body
+        name: "第三方国际包裹处理系统(ROMS)"
+        words:
+          - "ROMS"
+        condition: and

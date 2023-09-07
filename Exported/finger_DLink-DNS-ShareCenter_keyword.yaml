@@ -1,0 +1,21 @@
+id: DLink_DNS_ShareCenter_keyword
+info:
+  name: DLink-DNS-ShareCenter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DLink-DNS-ShareCenter"
+        words:
+          - "/cgi-bin/login_mgr.cgi"
+          - "sharecenter"
+        condition: and

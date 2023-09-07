@@ -1,0 +1,20 @@
+id: Mockup_Studio_keyword
+info:
+  name: Mockup Studio_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Mockup Studio"
+        words:
+          - "Mockup Studio"
+        condition: and

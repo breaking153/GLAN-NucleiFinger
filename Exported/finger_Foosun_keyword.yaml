@@ -1,0 +1,45 @@
+id: Foosun_keyword
+info:
+  name: Foosun_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Foosun"
+        words:
+          - "created by dotnetcms"
+          - "powered by www.foosun.net,products:foosun content manage system"
+        condition: and
+      - type: word
+        part: body
+        name: "Foosun"
+        words:
+          - "Created by DotNetCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "Foosun"
+        words:
+          - "For Foosun"
+        condition: and
+      - type: word
+        part: body
+        name: "Foosun"
+        words:
+          - "Powered by www.Foosun.net,Products:Foosun Content Manage system"
+        condition: and
+      - type: word
+        part: body
+        name: "Foosun"
+        words:
+          - "foosun"
+        condition: and

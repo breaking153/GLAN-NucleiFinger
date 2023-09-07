@@ -1,0 +1,20 @@
+id: RAIDEN_Mail_keyword
+info:
+  name: RAIDEN-Mail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RAIDEN-Mail"
+        words:
+          - "/webimages/raidenmaild.jpg"
+        condition: and

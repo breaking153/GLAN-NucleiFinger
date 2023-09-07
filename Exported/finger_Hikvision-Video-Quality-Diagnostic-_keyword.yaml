@@ -1,0 +1,21 @@
+id: Hikvision_Video_Quality_Diagnostic_keyword
+info:
+  name: Hikvision-Video-Quality-Diagnostic-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-Video-Quality-Diagnostic-"
+        words:
+          - "id =\"helpdoc\" class=\"help\" href=\"common/helpdoc/vqd system user manual(v2.4.pdf"
+          - "<meta http-equiv=\"refresh\" content=\"0;url=vqd.workbench.aspx\" /> "
+        condition: and

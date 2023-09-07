@@ -1,0 +1,20 @@
+id: Kerio_WinRout_Firewall_keyword_1
+info:
+  name: Kerio-WinRout-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kerio-WinRout-Firewall"
+        words:
+          - "kerio winroute firewall"
+        condition: and

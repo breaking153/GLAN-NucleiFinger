@@ -1,0 +1,20 @@
+id: aviatek_server_keyword
+info:
+  name: aviatek-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "aviatek-server"
+        words:
+          - "aviatek-server"
+        condition: and

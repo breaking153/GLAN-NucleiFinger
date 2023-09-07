@@ -1,0 +1,28 @@
+id: b2evolution_keyword
+info:
+  name: b2evolution_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "b2evolution"
+        words:
+          - "/powered-by-b2evolution-150t.gif"
+          - "powered by b2evolution"
+          - "content=\"b2evolution"
+        condition: and
+      - type: word
+        part: body
+        name: "b2evolution"
+        words:
+          - "Powered by b2evolution"
+        condition: and

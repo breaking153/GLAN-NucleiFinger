@@ -1,0 +1,20 @@
+id: BoWen_Providence_Car_Loading_Reservation_System_keyword
+info:
+  name: BoWen-Providence-Car-Loading-Reservation-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BoWen-Providence-Car-Loading-Reservation-System"
+        words:
+          - "/public/base/js/plugins/crypto/rsa.js"
+        condition: and

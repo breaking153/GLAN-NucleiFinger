@@ -1,0 +1,20 @@
+id: Rainier_Internet_product_keyword
+info:
+  name: Rainier-Internet-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Rainier-Internet-product"
+        words:
+          - "<a href=\"http://www.rainier.net.cn\">北京润尼尔网络科技有限公司"
+        condition: and

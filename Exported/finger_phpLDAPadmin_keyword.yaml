@@ -1,0 +1,21 @@
+id: phpLDAPadmin_keyword
+info:
+  name: phpLDAPadmin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpLDAPadmin"
+        words:
+          - "href=\"http://phpldapadmin.sourceforge.net/documentation\" onclick"
+          - "src=\"images/default/logo.png\" title=\"phpldapadmin logo"
+        condition: and

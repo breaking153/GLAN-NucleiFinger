@@ -1,0 +1,20 @@
+id: CMS_Made_Simple_keyword_1_1
+info:
+  name: CMS Made Simple_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CMS Made Simple"
+        words:
+          - "CMS Made Simple"
+        condition: and

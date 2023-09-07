@@ -1,0 +1,22 @@
+id: Moodle_keyword
+info:
+  name: Moodle_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Moodle"
+        words:
+          - "title=\"moodle\" href=\"http://moodle.org/"
+          - "moodle"
+          - "moodle\":"
+        condition: and

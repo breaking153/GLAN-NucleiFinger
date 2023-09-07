@@ -1,0 +1,26 @@
+id: beecms_keyword
+info:
+  name: beecms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "beecms"
+        words:
+          - "BEESCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "beecms"
+        words:
+          - "template/default/images/slides.min.jquery.js"
+        condition: and

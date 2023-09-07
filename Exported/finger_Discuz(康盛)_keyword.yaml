@@ -1,0 +1,26 @@
+id: Discuz_kang_sheng_keyword
+info:
+  name: Discuz(康盛)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Discuz(康盛)"
+        words:
+          - "Powered by Discuz!"
+        condition: and
+      - type: word
+        part: body
+        name: "Discuz(康盛)"
+        words:
+          - "discuz"
+        condition: and

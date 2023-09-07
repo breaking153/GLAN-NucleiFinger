@@ -1,0 +1,21 @@
+id: Generic_VoIP_Gateway_keyword
+info:
+  name: Generic-VoIP-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Generic-VoIP-Gateway"
+        words:
+          - "voip gateway configuration web server"
+          - "digest realm=\" voip gateway"
+        condition: and

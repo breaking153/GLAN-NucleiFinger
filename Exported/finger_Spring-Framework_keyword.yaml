@@ -1,0 +1,21 @@
+id: Spring_Framework_keyword
+info:
+  name: Spring-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Spring-Framework"
+        words:
+          - "org.springframework.web.servlet.i18n.cookielocaleresolver.locale="
+          - "<h1>whitelabel error page</h1>"
+        condition: and

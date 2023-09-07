@@ -1,0 +1,20 @@
+id: LG_43UM7800BNA_keyword
+info:
+  name: LG-43UM7800BNA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-43UM7800BNA"
+        words:
+          - "<modelnumber>43um7800bna</modelnumber>"
+        condition: and

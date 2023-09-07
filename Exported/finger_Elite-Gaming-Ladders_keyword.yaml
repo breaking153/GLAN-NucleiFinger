@@ -1,0 +1,20 @@
+id: Elite_Gaming_Ladders_keyword
+info:
+  name: Elite-Gaming-Ladders_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Elite-Gaming-Ladders"
+        words:
+          - "Powered by Elite"
+        condition: and

@@ -1,0 +1,21 @@
+id: zmodo_camera_keyword
+info:
+  name: zmodo-camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zmodo-camera"
+        words:
+          - "top.frames.frmresource.location = getxmlurl"
+          - "name=\"mainframe\" frameborder=\"0\"  src=\"play.html\""
+        condition: and

@@ -1,0 +1,20 @@
+id: D_Link_TM_G5240_keyword
+info:
+  name: D_Link-TM-G5240_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D_Link-TM-G5240"
+        words:
+          - "realm=\"tm-g5240"
+        condition: and

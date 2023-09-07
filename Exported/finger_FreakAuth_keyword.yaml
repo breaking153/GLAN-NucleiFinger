@@ -1,0 +1,26 @@
+id: FreakAuth_keyword
+info:
+  name: FreakAuth_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FreakAuth"
+        words:
+          - "set-cookie: freakauth"
+        condition: and
+      - type: word
+        part: header
+        name: "FreakAuth"
+        words:
+          - "FreakAuth"
+        condition: and

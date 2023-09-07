@@ -1,0 +1,21 @@
+id: Visec_ViGate_keyword
+info:
+  name: Visec-ViGate_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Visec-ViGate"
+        words:
+          - "src='/themes/visec/images/"
+          - "name=\"passwordfld"
+        condition: and

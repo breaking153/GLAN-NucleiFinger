@@ -1,0 +1,21 @@
+id: GROWATT_xi_tong_keyword
+info:
+  name: GROWATT 系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GROWATT 系统"
+        words:
+          - "login"
+          - "v3/js/odm/odm.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: kun_shi_wang_luo_VOS2009_keyword
+info:
+  name: 昆石网络 VOS2009_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "昆石网络 VOS2009"
+        words:
+          - "昆石网络 VOS2009"
+        condition: and

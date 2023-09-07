@@ -1,0 +1,20 @@
+id: Bad_debt_management_system_keyword
+info:
+  name: Bad-debt-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bad-debt-management-system"
+        words:
+          - "登录密码错误次数超过5次，帐号被锁定。请联系省坏账系统管理员，或发邮件解锁"
+        condition: and

@@ -1,0 +1,32 @@
+id: Jirafe_keyword
+info:
+  name: Jirafe_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jirafe"
+        words:
+          - "jira.webresources"
+        condition: and
+      - type: word
+        part: body
+        name: "Jirafe"
+        words:
+          - "ams-build-number"
+        condition: and
+      - type: word
+        part: body
+        name: "Jirafe"
+        words:
+          - "com.atlassian.plugins"
+        condition: and

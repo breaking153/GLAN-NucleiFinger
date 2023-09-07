@@ -1,0 +1,21 @@
+id: WebEngine_Site_keyword
+info:
+  name: WebEngine-Site_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebEngine-Site"
+        words:
+          - "href=\"/webengine/images/common.css"
+          - "location.href = \"/webengine/web/\";"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_WNR2000v5_keyword
+info:
+  name: NETGEAR-WNR2000v5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-WNR2000v5"
+        words:
+          - "class=\"router_name_div\">wnr2000v5</div>"
+        condition: and

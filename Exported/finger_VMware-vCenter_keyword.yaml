@@ -1,0 +1,22 @@
+id: VMware_vCenter_keyword_1
+info:
+  name: VMware-vCenter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMware-vCenter"
+        words:
+          - "/converter/vmware-converter-client.exe"
+          - "content=\"vmware vcenter"
+          - "/vmw_nsx_logo-black-triangle-500w.png"
+        condition: and

@@ -1,0 +1,26 @@
+id: yun_you_CMS_YUNUCMS_keyword
+info:
+  name: 云优CMS(YUNUCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "云优CMS(YUNUCMS)"
+        words:
+          - "云优CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "云优CMS(YUNUCMS)"
+        words:
+          - "YUNUCMS"
+        condition: and

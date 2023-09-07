@@ -1,0 +1,20 @@
+id: ZyXEL_ES_3124PWR_keyword
+info:
+  name: ZyXEL ES-3124PWR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL ES-3124PWR"
+        words:
+          - "ZyXEL ES-3124PWR"
+        condition: and

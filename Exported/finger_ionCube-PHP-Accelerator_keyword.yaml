@@ -1,0 +1,20 @@
+id: ionCube_PHP_Accelerator_keyword
+info:
+  name: ionCube-PHP-Accelerator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ionCube-PHP-Accelerator"
+        words:
+          - "x-accelerated-by"
+        condition: and

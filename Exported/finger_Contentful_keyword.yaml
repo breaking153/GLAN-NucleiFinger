@@ -1,0 +1,20 @@
+id: Contentful_keyword
+info:
+  name: Contentful_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Contentful"
+        words:
+          - "Contentful"
+        condition: and

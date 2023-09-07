@@ -1,0 +1,20 @@
+id: BMR_HC64_kong_zhi_dan_yuan_keyword
+info:
+  name: BMR HC64控制单元_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BMR HC64控制单元"
+        words:
+          - "BMR HC64控制单元"
+        condition: and

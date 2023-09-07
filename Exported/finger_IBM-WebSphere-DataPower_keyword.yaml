@@ -1,0 +1,21 @@
+id: IBM_WebSphere_DataPower_keyword
+info:
+  name: IBM-WebSphere-DataPower_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM-WebSphere-DataPower"
+        words:
+          - "x-backside-transport"
+          - "360 web server"
+        condition: and

@@ -1,0 +1,20 @@
+id: Walle_wa_li_ping_tai_keyword
+info:
+  name: Walle瓦力平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Walle瓦力平台"
+        words:
+          - "Walle瓦力平台"
+        condition: and

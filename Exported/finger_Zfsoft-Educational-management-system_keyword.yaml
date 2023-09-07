@@ -1,0 +1,21 @@
+id: Zfsoft_Educational_management_system_keyword
+info:
+  name: Zfsoft-Educational-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zfsoft-Educational-management-system"
+        words:
+          - "style/base/jw.css"
+          - "content=\"站点介绍\""
+        condition: and

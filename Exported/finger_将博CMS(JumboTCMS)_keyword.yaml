@@ -1,0 +1,26 @@
+id: jiang_bo_CMS_JumboTCMS_keyword
+info:
+  name: 将博CMS(JumboTCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "将博CMS(JumboTCMS)"
+        words:
+          - "将博CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "将博CMS(JumboTCMS)"
+        words:
+          - "JumboTCMS"
+        condition: and

@@ -1,0 +1,21 @@
+id: Leadsec_SOC_keyword
+info:
+  name: Leadsec-SOC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leadsec-SOC"
+        words:
+          - "/leadsec-soc"
+          - "action=\"/leadsec-soc/signin"
+        condition: and

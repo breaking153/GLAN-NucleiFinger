@@ -1,0 +1,21 @@
+id: byzoro_NFW_keyword
+info:
+  name: byzoro-NFW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "byzoro-NFW"
+        words:
+          - "var title_zh = '下一代防火墙'"
+          - "class=\"login_main_text\">下一代防火墙</div>"
+        condition: and

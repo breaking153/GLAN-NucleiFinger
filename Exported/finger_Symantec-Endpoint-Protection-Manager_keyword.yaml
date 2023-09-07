@@ -1,0 +1,23 @@
+id: Symantec_Endpoint_Protection_Manager_keyword
+info:
+  name: Symantec-Endpoint-Protection-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Symantec-Endpoint-Protection-Manager"
+        words:
+          - "<div style=\"font-family: tahoma, verdana, arial, helvetica, sans-serif; font-size:11px;\">version"
+          - "/portal/about.jsp"
+          - "<!-- now, if it is ie on windows platform, we check to see which version of jws is installed -->"
+          - "<tr><td align=\"left\" style=\"font-family:arial; font-size:18pt\"><b>symantec endpoint protection manager<br>web access</b></td></tr>"
+        condition: and

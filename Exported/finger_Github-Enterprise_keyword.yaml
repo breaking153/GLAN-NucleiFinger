@@ -1,0 +1,20 @@
+id: Github_Enterprise_keyword
+info:
+  name: Github-Enterprise_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Github-Enterprise"
+        words:
+          - "_gh_manage"
+        condition: and

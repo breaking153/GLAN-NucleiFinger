@@ -1,0 +1,21 @@
+id: Chinaiwb_Intelligent_Firewal_keyword
+info:
+  name: Chinaiwb-Intelligent-Firewal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Chinaiwb-Intelligent-Firewal"
+        words:
+          - " <body bgcolor=#ddeeff onload=\"document.all.user.focus(\">"
+          - "style=\"background:url(images/login.gif no-repeat center\""
+        condition: and

@@ -1,0 +1,20 @@
+id: LS_Research_ModFLEX_Mini_Gateway_keyword
+info:
+  name: LS Research ModFLEX Mini Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LS Research ModFLEX Mini Gateway"
+        words:
+          - "LS Research ModFLEX Mini Gateway"
+        condition: and

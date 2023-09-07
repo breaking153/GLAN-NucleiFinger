@@ -1,0 +1,20 @@
+id: Oracle_Recommendations_On_Demand_keyword
+info:
+  name: Oracle Recommendations On Demand_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Oracle Recommendations On Demand"
+        words:
+          - "Oracle Recommendations On Demand"
+        condition: and

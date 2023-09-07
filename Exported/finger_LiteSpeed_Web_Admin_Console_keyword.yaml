@@ -1,0 +1,20 @@
+id: LiteSpeed_Web_Admin_Console_keyword_1
+info:
+  name: LiteSpeed_Web_Admin_Console_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LiteSpeed_Web_Admin_Console"
+        words:
+          - "LSWSWEBUI"
+        condition: and

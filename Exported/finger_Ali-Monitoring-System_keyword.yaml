@@ -1,0 +1,21 @@
+id: Ali_Monitoring_System_keyword
+info:
+  name: Ali-Monitoring-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ali-Monitoring-System"
+        words:
+          - "/monitor/css/monitor.css"
+          - "href=\"/monitor/monitoritem/monitoritemlist.htm"
+        condition: and

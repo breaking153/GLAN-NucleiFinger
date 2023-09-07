@@ -1,0 +1,26 @@
+id: AWStats_wang_zhan_ri_zhi_fen_xi_gong_ju_keyword
+info:
+  name: AWStats网站日志分析工具_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AWStats网站日志分析工具"
+        words:
+          - "content=\"AWStats"
+        condition: and
+      - type: word
+        part: body
+        name: "AWStats网站日志分析工具"
+        words:
+          - "Created by awstats"
+        condition: and

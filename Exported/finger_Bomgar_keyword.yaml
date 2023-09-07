@@ -1,0 +1,27 @@
+id: Bomgar_keyword
+info:
+  name: Bomgar_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bomgar"
+        words:
+          - "alt=\"remote support by bomgar"
+          - "<a href=\"http://www.bomgar.com/products\" class=\"inverse"
+        condition: and
+      - type: word
+        part: body
+        name: "Bomgar"
+        words:
+          - "alt=\"Remote Support by BOMGAR"
+        condition: and

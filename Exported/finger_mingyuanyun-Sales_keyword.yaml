@@ -1,0 +1,21 @@
+id: mingyuanyun_Sales_keyword
+info:
+  name: mingyuanyun-Sales_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mingyuanyun-Sales"
+        words:
+          - "value=\"明源售楼管理系统v5.0\""
+          - "<img id=\"erp\" src=\"/_imgs/login/zs_erp.png"
+        condition: and

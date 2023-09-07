@@ -1,0 +1,20 @@
+id: MHG_450_keyword
+info:
+  name: MHG-450_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MHG-450"
+        words:
+          - "realm=\"mhg-450"
+        condition: and

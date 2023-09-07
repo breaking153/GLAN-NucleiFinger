@@ -1,0 +1,20 @@
+id: Cisco_8600_lu_you_qi_keyword
+info:
+  name: Cisco 8600路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco 8600路由器"
+        words:
+          - "Cisco 8600"
+        condition: and

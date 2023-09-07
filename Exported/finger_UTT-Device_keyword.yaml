@@ -1,0 +1,20 @@
+id: UTT_Device_keyword
+info:
+  name: UTT-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UTT-Device"
+        words:
+          - "class=\"utt-inline-block\" src=\"./images/login_btmlogo.png\""
+        condition: and

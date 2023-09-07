@@ -1,0 +1,20 @@
+id: Cachecloud_keyword
+info:
+  name: Cachecloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cachecloud"
+        words:
+          - "alert(\"系统不存在该用户名，请确认该用户申请了cachecloud权限!\";"
+        condition: and

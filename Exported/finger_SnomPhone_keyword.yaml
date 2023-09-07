@@ -1,0 +1,22 @@
+id: SnomPhone_keyword
+info:
+  name: SnomPhone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SnomPhone"
+        words:
+          - "<a href=\"http://snom.com\">snom ag</a><br>"
+          - "<tr><td class=\"flyoutlink\" colspan=\"2\"><b><a href=http://"
+          - "you can enter a simple telephone number (e.g. 0114930398330 or uri like info@snom.com."
+        condition: and

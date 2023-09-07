@@ -1,0 +1,20 @@
+id: Kronos_Workforce_Planner_keyword
+info:
+  name: Kronos Workforce Planner_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kronos Workforce Planner"
+        words:
+          - "Kronos Workforce Planner"
+        condition: and

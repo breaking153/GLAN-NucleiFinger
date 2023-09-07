@@ -1,0 +1,21 @@
+id: GETSIMPLE_CMS_keyword
+info:
+  name: GETSIMPLE-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GETSIMPLE-CMS"
+        words:
+          - "content=\"getsimple"
+          - "powered by getsimple"
+        condition: and

@@ -1,0 +1,20 @@
+id: PIX_LINK_WiFi_Repeater_keyword
+info:
+  name: PIX_LINK-WiFi-Repeater_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PIX_LINK-WiFi-Repeater"
+        words:
+          - "_t(pg_login.user"
+        condition: and

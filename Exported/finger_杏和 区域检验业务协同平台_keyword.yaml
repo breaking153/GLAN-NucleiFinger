@@ -1,0 +1,20 @@
+id: xing_he_qu_yu_jian_yan_ye_wu_xie_tong_ping_tai_keyword
+info:
+  name: 杏和 区域检验业务协同平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "杏和 区域检验业务协同平台"
+        words:
+          - "杏和 区域检验业务协同平台"
+        condition: and

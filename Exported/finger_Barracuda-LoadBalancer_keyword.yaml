@@ -1,0 +1,21 @@
+id: Barracuda_LoadBalancer_keyword
+info:
+  name: Barracuda-LoadBalancer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Barracuda-LoadBalancer"
+        words:
+          - "barracuda_lb_cookie"
+          - "bni_persistence="
+        condition: and

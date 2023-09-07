@@ -1,0 +1,26 @@
+id: zhong_wang_OA_keyword
+info:
+  name: 中望OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中望OA"
+        words:
+          - "/app_qjuserinfo/qjuserinfoadd.jsp"
+        condition: and
+      - type: word
+        part: body
+        name: "中望OA"
+        words:
+          - "/IMAGES/default/first/xtoa_logo.png"
+        condition: and

@@ -1,0 +1,20 @@
+id: OpenGSE_keyword
+info:
+  name: OpenGSE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "OpenGSE"
+        words:
+          - "OpenGSE"
+        condition: and

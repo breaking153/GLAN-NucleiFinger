@@ -1,0 +1,21 @@
+id: PhotoPost_PHP_keyword
+info:
+  name: PhotoPost-PHP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PhotoPost-PHP"
+        words:
+          - "src=\"adm-misc.php?admact=mainmenu"
+          - "href=\"http://www.photopost.com\">photopost"
+        condition: and

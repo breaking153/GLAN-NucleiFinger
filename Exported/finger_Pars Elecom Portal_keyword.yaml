@@ -1,0 +1,20 @@
+id: Pars_Elecom_Portal_keyword
+info:
+  name: Pars Elecom Portal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Pars Elecom Portal"
+        words:
+          - "Pars Elecom Portal"
+        condition: and

@@ -1,0 +1,33 @@
+id: Hikvision_Cameras_and_Surveillance_keyword
+info:
+  name: Hikvision-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-Cameras-and-Surveillance"
+        words:
+          - "updatetips"
+          - "doc/page/login.asp"
+          - "hcnetvideoactivex.cab"
+          - "/ui/css/ui.css?version=\" + new date(.gettime"
+          - "ng-bind=\"olan.anonymous\" ng-click=\"login('anonymous'\""
+          - "css/login.css?version=\" + new date("
+          - "var syslanguage= navigator.browserlanguage.tolowercase("
+          - "var szlanguage = syslanguage.substring(0,2"
+          - "ng-bind=\"olan.anonymous\" ng-click=\"login('anonymous'\">"
+          - "class=\"btn btn-primary login-btn\""
+          - "id=\"divanonymous\""
+          - "id=\"divpswstrength\""
+          - "<form action=\"/goform/formcobralogin"
+          - "去除edge下将数字处理成电话的错误"
+        condition: and

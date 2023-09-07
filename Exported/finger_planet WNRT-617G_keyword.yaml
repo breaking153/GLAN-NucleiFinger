@@ -1,0 +1,20 @@
+id: planet_WNRT_617G_keyword
+info:
+  name: planet WNRT-617G_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "planet WNRT-617G"
+        words:
+          - "WNRT-617G"
+        condition: and

@@ -1,0 +1,20 @@
+id: Flow_Framework_keyword
+info:
+  name: Flow Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Flow Framework"
+        words:
+          - "Flow Framework"
+        condition: and

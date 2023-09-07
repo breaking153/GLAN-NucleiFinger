@@ -1,0 +1,20 @@
+id: xun_bo_NG_xi_lie_VPN_Firewall_keyword
+info:
+  name: 迅博NG系列VPN-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "迅博NG系列VPN-Firewall"
+        words:
+          - "迅博NG系列VPN-Firewall"
+        condition: and

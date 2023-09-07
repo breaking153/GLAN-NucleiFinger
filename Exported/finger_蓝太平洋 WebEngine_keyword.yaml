@@ -1,0 +1,20 @@
+id: lan_tai_ping_yang_WebEngine_keyword
+info:
+  name: 蓝太平洋 WebEngine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "蓝太平洋 WebEngine"
+        words:
+          - "蓝太平洋 WebEngine"
+        condition: and

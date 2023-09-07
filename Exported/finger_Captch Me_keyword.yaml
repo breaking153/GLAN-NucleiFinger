@@ -1,0 +1,20 @@
+id: Captch_Me_keyword
+info:
+  name: Captch Me_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Captch Me"
+        words:
+          - "Captch Me"
+        condition: and

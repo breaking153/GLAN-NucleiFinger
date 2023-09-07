@@ -1,0 +1,20 @@
+id: ZmCMS_tong_yong_xing_qi_ye_wang_zhan_jian_she_guan_li_xi_tong_keyword
+info:
+  name: ZmCMS通用性企业网站建设管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZmCMS通用性企业网站建设管理系统"
+        words:
+          - "ZmCMS通用性企业网站建设管理系统"
+        condition: and

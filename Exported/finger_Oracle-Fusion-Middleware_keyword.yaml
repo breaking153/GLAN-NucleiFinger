@@ -1,0 +1,20 @@
+id: Oracle_Fusion_Middleware_keyword
+info:
+  name: Oracle-Fusion-Middleware_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Oracle-Fusion-Middleware"
+        words:
+          - "href=\"css/fmw_bottom_area.css"
+        condition: and

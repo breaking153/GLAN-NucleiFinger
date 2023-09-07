@@ -1,0 +1,21 @@
+id: Grandstream_IP_Phone_keyword
+info:
+  name: Grandstream-IP-Phone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Grandstream-IP-Phone"
+        words:
+          - "__gwt_historyframe"
+          - "webapp/webapp.nocache.js"
+        condition: and

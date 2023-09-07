@@ -1,0 +1,20 @@
+id: Zyxel_USG20W_keyword
+info:
+  name: Zyxel-USG20W_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zyxel-USG20W"
+        words:
+          - " class=\"usg_icon\""
+        condition: and

@@ -1,0 +1,20 @@
+id: ai_di_ke_sen_wang_shang_bao_gao_ting_keyword
+info:
+  name: 爱迪科森网上报告厅_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "爱迪科森网上报告厅"
+        words:
+          - "爱迪科森网上报告厅"
+        condition: and

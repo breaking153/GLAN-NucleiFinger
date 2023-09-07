@@ -1,0 +1,20 @@
+id: jcg_wu_xian_lu_you_qi_keyword
+info:
+  name: jcg无线路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "jcg无线路由器"
+        words:
+          - "http://www.jcgcn.com"
+        condition: and

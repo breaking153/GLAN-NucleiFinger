@@ -1,0 +1,20 @@
+id: TP_LINK_SMB_TL_ER6520G_keyword
+info:
+  name: TP_LINK-SMB-TL-ER6520G_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP_LINK-SMB-TL-ER6520G"
+        words:
+          - "server: tp-link smb tl-er6520g"
+        condition: and

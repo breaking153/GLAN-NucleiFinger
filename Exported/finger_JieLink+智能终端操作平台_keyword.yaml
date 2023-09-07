@@ -1,0 +1,20 @@
+id: JieLink_zhi_neng_zhong_duan_cao_zuo_ping_tai_keyword
+info:
+  name: JieLink+智能终端操作平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JieLink+智能终端操作平台"
+        words:
+          - "JieLink<sup>+</sup>"
+        condition: and

@@ -1,0 +1,21 @@
+id: chnitc_System_keyword
+info:
+  name: chnitc-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "chnitc-System"
+        words:
+          - "<a href=\"http://www.chnitc.com\" style=\"text-decoration:none;color:#fff;\">"
+          - "科业开发团队出品"
+        condition: and

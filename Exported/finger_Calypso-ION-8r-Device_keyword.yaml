@@ -1,0 +1,26 @@
+id: Calypso_ION_8r_Device_keyword
+info:
+  name: Calypso-ION-8r-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Calypso-ION-8r-Device"
+        words:
+          - "/a/cfg/entercmd.stm"
+        condition: and
+      - type: word
+        part: body
+        name: "Calypso-ION-8r-Device"
+        words:
+          - "/A/cfg/entercmd.stm"
+        condition: and

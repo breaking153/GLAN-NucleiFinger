@@ -1,0 +1,20 @@
+id: Citywide_VOIP_keyword
+info:
+  name: Citywide-VOIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citywide-VOIP"
+        words:
+          - "document.write(\"<div id='web_bottom'><h2>\" + copy_right.voip + \"</h2></div>\";"
+        condition: and

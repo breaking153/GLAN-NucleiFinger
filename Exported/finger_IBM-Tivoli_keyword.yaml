@@ -1,0 +1,21 @@
+id: IBM_Tivoli_keyword
+info:
+  name: IBM-Tivoli_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Tivoli"
+        words:
+          - "tivoli netview uses an open source web server"
+          - "banner/tivoli/tv_icbanner.html"
+        condition: and

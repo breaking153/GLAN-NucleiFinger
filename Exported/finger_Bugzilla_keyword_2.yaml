@@ -1,0 +1,26 @@
+id: Bugzilla_keyword_1
+info:
+  name: Bugzilla_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Bugzilla"
+        words:
+          - "bugzilla_login_request_cookie"
+        condition: and
+      - type: word
+        part: header
+        name: "Bugzilla"
+        words:
+          - "Bugzilla_login_request_cookie"
+        condition: and

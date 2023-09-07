@@ -1,0 +1,20 @@
+id: zhi_hui_fang_huo_wu_lian_wang_yun_ping_tai_keyword
+info:
+  name: 智慧防火物联网云平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "智慧防火物联网云平台"
+        words:
+          - "智慧防火物联网云平台"
+        condition: and

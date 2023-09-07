@@ -1,0 +1,19 @@
+id: hua_tian_dong_li_OA_faviconhash
+info:
+  name: 华天动力OA_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "华天动力OA"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2482608335\""
+        condition: or

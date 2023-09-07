@@ -1,0 +1,32 @@
+id: seacms_hai_yang_CMS_keyword
+info:
+  name: seacms(海洋CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "seacms(海洋CMS)"
+        words:
+          - "seacms"
+        condition: and
+      - type: word
+        part: body
+        name: "seacms(海洋CMS)"
+        words:
+          - "Powered by SeaCms"
+        condition: and
+      - type: word
+        part: body
+        name: "seacms(海洋CMS)"
+        words:
+          - "content=\"seacms"
+        condition: and

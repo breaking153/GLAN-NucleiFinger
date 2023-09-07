@@ -1,0 +1,27 @@
+id: Cisco_IP_Phone_keyword
+info:
+  name: Cisco-IP-Phone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-IP-Phone"
+        words:
+          - "cisco unified wireless ip phone"
+          - "<font color='#ffffff' size='4'>cisco ip phone"
+        condition: and
+      - type: word
+        part: body
+        name: "Cisco-IP-Phone"
+        words:
+          - "Cisco Unified Wireless IP Phone"
+        condition: and

@@ -1,0 +1,32 @@
+id: kingcms_keyword
+info:
+  name: kingcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kingcms"
+        words:
+          - "content=\"KingCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "kingcms"
+        words:
+          - "Powered by KingCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "kingcms"
+        words:
+          - "kingcms"
+        condition: and

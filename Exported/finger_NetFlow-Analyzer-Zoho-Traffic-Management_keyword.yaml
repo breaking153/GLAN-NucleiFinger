@@ -1,0 +1,21 @@
+id: NetFlow_Analyzer_Zoho_Traffic_Management_keyword
+info:
+  name: NetFlow-Analyzer-Zoho-Traffic-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetFlow-Analyzer-Zoho-Traffic-Management"
+        words:
+          - "netflow analyzer"
+          - "href=\"/netflow/css/netflow.css"
+        condition: and

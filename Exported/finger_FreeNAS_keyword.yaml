@@ -1,0 +1,21 @@
+id: FreeNAS_keyword
+info:
+  name: FreeNAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FreeNAS"
+        words:
+          - "title=\"welcome to freenas"
+          - "/images/ui/freenas-logo.png"
+        condition: and

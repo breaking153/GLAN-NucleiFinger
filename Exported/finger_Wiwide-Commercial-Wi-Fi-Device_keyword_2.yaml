@@ -1,0 +1,20 @@
+id: Wiwide_Commercial_Wi_Fi_Device_keyword_1
+info:
+  name: Wiwide-Commercial-Wi-Fi-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Wiwide-Commercial-Wi-Fi-Device"
+        words:
+          - "tx-server: mixr"
+        condition: and

@@ -1,0 +1,26 @@
+id: di_lian_CDN_keyword
+info:
+  name: 帝联CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "帝联CDN"
+        words:
+          - "Server:DNION"
+        condition: and
+      - type: word
+        part: header
+        name: "帝联CDN"
+        words:
+          - "fastcdn.com"
+        condition: and

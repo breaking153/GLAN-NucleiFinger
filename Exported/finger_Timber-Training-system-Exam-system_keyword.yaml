@@ -1,0 +1,21 @@
+id: Timber_Training_system_Exam_system_keyword
+info:
+  name: Timber-Training-system-Exam-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Timber-Training-system-Exam-system"
+        words:
+          - "app_image/pxsystem"
+          - "app_image/system"
+        condition: and

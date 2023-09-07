@@ -1,0 +1,22 @@
+id: Apache_Guacamole_keyword
+info:
+  name: Apache-Guacamole_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-Guacamole"
+        words:
+          - "images/guacamole-logo"
+          - "guacamole - clientless remote desktop"
+          - "scripts/guac-ui.js"
+        condition: and

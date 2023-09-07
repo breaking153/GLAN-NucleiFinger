@@ -1,0 +1,20 @@
+id: Seagull_PHP_Framework_keyword
+info:
+  name: Seagull-PHP-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Seagull-PHP-Framework"
+        words:
+          - "var sgl_js_sessid"
+        condition: and

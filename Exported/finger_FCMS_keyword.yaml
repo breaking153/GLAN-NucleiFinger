@@ -1,0 +1,26 @@
+id: FCMS_keyword
+info:
+  name: FCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FCMS"
+        words:
+          - "content=\"Ryan Haudenschilt"
+        condition: and
+      - type: word
+        part: body
+        name: "FCMS"
+        words:
+          - "Powered by Family Connections"
+        condition: and

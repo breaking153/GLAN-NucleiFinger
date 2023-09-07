@@ -1,0 +1,26 @@
+id: ZoneMinder_keyword
+info:
+  name: ZoneMinder_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZoneMinder"
+        words:
+          - "zoneminder login"
+        condition: and
+      - type: word
+        part: body
+        name: "ZoneMinder"
+        words:
+          - "ZoneMinder Login"
+        condition: and

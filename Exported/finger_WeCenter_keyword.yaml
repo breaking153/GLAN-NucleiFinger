@@ -1,0 +1,22 @@
+id: WeCenter_keyword
+info:
+  name: WeCenter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WeCenter"
+        words:
+          - "aw_template.js"
+          - "content=\"wecenter"
+          - "powered by <a href=\"http://www.wecenter.com/?copyright"
+        condition: and

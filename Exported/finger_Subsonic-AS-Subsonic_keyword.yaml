@@ -1,0 +1,21 @@
+id: Subsonic_AS_Subsonic_keyword
+info:
+  name: Subsonic-AS-Subsonic_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Subsonic-AS-Subsonic"
+        words:
+          - "onload=\"document.getelementbyid('j_username'.focus(\""
+          - "parent.frames.upper.keyboardshortcut(\"showindex\", index.touppercase(;"
+        condition: and

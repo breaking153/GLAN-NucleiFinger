@@ -1,0 +1,22 @@
+id: HJSoft_HCM_keyword
+info:
+  name: HJSoft-HCM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HJSoft-HCM"
+        words:
+          - "src=\"/images/hcm/copyright.gif\""
+          - "src=\"/images/hcm/themes/default/login/login_banner2.png?v=12334\""
+          - "src=\"/general/sys/hjaxmanage.js\""
+        condition: and

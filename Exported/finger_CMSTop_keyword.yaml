@@ -1,0 +1,30 @@
+id: CMSTop_keyword
+info:
+  name: CMSTop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CMSTop"
+        words:
+          - "css/cmstop-common.css"
+          - "js/cmstop-common.js"
+        condition: and
+      - type: word
+        part: body
+        name: "CMSTop"
+        words:
+          - "/css/cmstop-common.css"
+          - "/js/cmstop-common.js"
+          - "cmstop-list-text.css"
+          - "<a class=\"poweredby\" href=\"http://www.cmstop.com\""
+        condition: and

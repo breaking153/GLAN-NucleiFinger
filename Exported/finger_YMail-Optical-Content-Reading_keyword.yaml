@@ -1,0 +1,20 @@
+id: YMail_Optical_Content_Reading_keyword
+info:
+  name: YMail-Optical-Content-Reading_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YMail-Optical-Content-Reading"
+        words:
+          - "/ymail/default/js/menu.js"
+        condition: and

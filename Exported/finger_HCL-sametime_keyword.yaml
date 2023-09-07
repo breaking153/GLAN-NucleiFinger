@@ -1,0 +1,20 @@
+id: HCL_sametime_keyword
+info:
+  name: HCL-sametime_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HCL-sametime"
+        words:
+          - "href=\"/chat/sametime192x192.png"
+        condition: and

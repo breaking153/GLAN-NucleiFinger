@@ -1,0 +1,20 @@
+id: D_Link_ADSL_Router_keyword
+info:
+  name: D-Link ADSL Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D-Link ADSL Router"
+        words:
+          - "D-Link ADSL Router"
+        condition: and

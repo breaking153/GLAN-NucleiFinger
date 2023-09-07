@@ -1,0 +1,20 @@
+id: Hikvision_iVMS_8700_keyword
+info:
+  name: Hikvision-iVMS-8700_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-iVMS-8700"
+        words:
+          - "src=\"/portal/common/js/commonvar.js"
+        condition: and

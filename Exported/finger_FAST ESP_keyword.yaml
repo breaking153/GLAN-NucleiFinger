@@ -1,0 +1,20 @@
+id: FAST_ESP_keyword
+info:
+  name: FAST ESP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FAST ESP"
+        words:
+          - "FAST ESP"
+        condition: and

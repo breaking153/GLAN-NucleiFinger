@@ -1,0 +1,21 @@
+id: D_Link_DSL_2890AL_keyword
+info:
+  name: D-Link-DSL-2890AL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DSL-2890AL"
+        words:
+          - "product page : dsl-2890al"
+          - "<a href=\"http://support.dlink.com\" target=\"_blank\">dsl-2890al"
+        condition: and

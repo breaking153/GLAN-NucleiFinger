@@ -1,0 +1,38 @@
+id: BugFree_Bug_gen_zong_guan_li_xi_tong_keyword
+info:
+  name: BugFree(Bug跟踪管理系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BugFree(Bug跟踪管理系统)"
+        words:
+          - "Bug跟踪管理系统"
+        condition: and
+      - type: word
+        part: body
+        name: "BugFree(Bug跟踪管理系统)"
+        words:
+          - "id=\"logo\" alt=BugFree"
+        condition: and
+      - type: word
+        part: body
+        name: "BugFree(Bug跟踪管理系统)"
+        words:
+          - "class=\"loginBgImage\" alt=\"BugFree"
+        condition: and
+      - type: word
+        part: body
+        name: "BugFree(Bug跟踪管理系统)"
+        words:
+          - "name=\"BugUserPWD"
+        condition: and

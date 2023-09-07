@@ -1,0 +1,20 @@
+id: Hejia_Modularized_environment_Monitoring_system_of_Data_Center_keyword
+info:
+  name: Hejia-Modularized&environment-Monitoring-system-of-Data-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hejia-Modularized&environment-Monitoring-system-of-Data-Center"
+        words:
+          - "content=\"www.hejia-tech.com"
+        condition: and

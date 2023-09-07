@@ -1,0 +1,28 @@
+id: ruo_yi_keyword
+info:
+  name: 若依_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "若依"
+        words:
+          - "ruoyi"
+          - "若依"
+          - "login"
+        condition: and
+      - type: word
+        part: body
+        name: "若依"
+        words:
+          - "ruoyi/login.js"
+        condition: and

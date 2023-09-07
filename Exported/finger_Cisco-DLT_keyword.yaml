@@ -1,0 +1,26 @@
+id: Cisco_DLT_keyword
+info:
+  name: Cisco-DLT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-DLT"
+        words:
+          - "system name: cisco dlt"
+        condition: and
+      - type: word
+        part: body
+        name: "Cisco-DLT"
+        words:
+          - "System name: Cisco DLT"
+        condition: and

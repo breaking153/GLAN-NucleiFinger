@@ -1,0 +1,20 @@
+id: EarlyImpact_ProductCart_keyword
+info:
+  name: EarlyImpact-ProductCart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EarlyImpact-ProductCart"
+        words:
+          - "fpassword.asp?redirectUrl=&frURL=Custva.asp"
+        condition: and

@@ -1,0 +1,20 @@
+id: nan_hao_wang_shang_yue_juan_xi_tong_keyword
+info:
+  name: 南昊网上阅卷系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "南昊网上阅卷系统"
+        words:
+          - "南昊网上阅卷系统"
+        condition: and

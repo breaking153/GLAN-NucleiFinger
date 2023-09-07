@@ -1,0 +1,26 @@
+id: yi_pu_la_ge_ke_yan_guan_li_xi_tong_keyword
+info:
+  name: 易普拉格科研管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "易普拉格科研管理系统"
+        words:
+          - "lan12-jingbian-hong"
+        condition: and
+      - type: word
+        part: body
+        name: "易普拉格科研管理系统"
+        words:
+          - "科研管理系统，北京易普拉格科技"
+        condition: and

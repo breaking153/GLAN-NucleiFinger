@@ -1,0 +1,20 @@
+id: E_Manage_MySchool_keyword
+info:
+  name: E-Manage-MySchool_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "E-Manage-MySchool"
+        words:
+          - "E-Manage All Rights Reserved MySchool Version"
+        condition: and

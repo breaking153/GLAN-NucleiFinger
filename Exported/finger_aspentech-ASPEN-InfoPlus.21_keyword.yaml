@@ -1,0 +1,20 @@
+id: aspentech_ASPEN_InfoPlus_21_keyword
+info:
+  name: aspentech-ASPEN-InfoPlus.21_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "aspentech-ASPEN-InfoPlus.21"
+        words:
+          - "src=\"/aspencui/css/appstyles.js"
+        condition: and

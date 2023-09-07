@@ -1,0 +1,21 @@
+id: Runpu_Embedded_telephone_recording_system_keyword_1
+info:
+  name: Runpu-Embedded-telephone-recording-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Runpu-Embedded-telephone-recording-system"
+        words:
+          - "/login.lgi?orgurl=/"
+          - "set-cookie: orgurl=/"
+        condition: and

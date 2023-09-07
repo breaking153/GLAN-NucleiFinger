@@ -1,0 +1,31 @@
+id: Uniview_Cameras_and_Surveillance_keyword
+info:
+  name: Uniview-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Uniview-Cameras-and-Surveillance"
+        words:
+          - "to=\"href_version_div\">版本<"
+          - "<a href=\"#\" onclick=\"pophelp(varhelpancvalue;\">"
+          - "classid=\"clsid:0796c71f-aa80-4921-b6d1-aa4252d097ae\" id=\"recordmanager_activex"
+          - "<meta http-equiv=\"refresh\" content=\"0; url=cgi-bin/main.cgi?webid=1\" />"
+          - "recordmanager_activex"
+          - "pophelp(varhelpancvalue;"
+          - "<label for='autologin' class=\"login_autologinlabel\">"
+          - "text.videomanagesystem"
+          - "wanlanswitch"
+          - "gjs_producttype"
+          - "uniview"
+          - "宇视"
+        condition: and

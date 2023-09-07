@@ -1,0 +1,27 @@
+id: EverFocus_CCTV_keyword
+info:
+  name: EverFocus-CCTV_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EverFocus-CCTV"
+        words:
+          - "server: http server/everfocus"
+          - "realm=\"everfocus"
+        condition: and
+      - type: word
+        part: header
+        name: "EverFocus-CCTV"
+        words:
+          - "http server/everfocus"
+        condition: and

@@ -1,0 +1,26 @@
+id: kuai_fan_CMS_KuaiFanCMS_kuai_fan_CMS_shou_ji_jian_zhan_xi_tong_keyword
+info:
+  name: 快范CMS(KuaiFanCMS(快范CMS)手机建站系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "快范CMS(KuaiFanCMS(快范CMS)手机建站系统)"
+        words:
+          - "快范CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "快范CMS(KuaiFanCMS(快范CMS)手机建站系统)"
+        words:
+          - "KuaiFanCMS(快范CMS)手机建站系统"
+        condition: and

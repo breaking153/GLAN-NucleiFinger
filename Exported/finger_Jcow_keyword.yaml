@@ -1,0 +1,32 @@
+id: Jcow_keyword
+info:
+  name: Jcow_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jcow"
+        words:
+          - "content=\"Jcow"
+        condition: and
+      - type: word
+        part: body
+        name: "Jcow"
+        words:
+          - "content=\"Powered by Jcow"
+        condition: and
+      - type: word
+        part: body
+        name: "Jcow"
+        words:
+          - "end jcow_application_box"
+        condition: and

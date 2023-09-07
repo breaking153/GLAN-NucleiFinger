@@ -1,0 +1,20 @@
+id: hua_wei_HUAWEI_SRG3250_keyword
+info:
+  name: 华为_HUAWEI_SRG3250_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "华为_HUAWEI_SRG3250"
+        words:
+          - "HUAWEI SRG3250"
+        condition: and

@@ -1,0 +1,20 @@
+id: EDLM_zi_zhu_ti_qia_xi_tong_keyword
+info:
+  name: EDLM自助提卡系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EDLM自助提卡系统"
+        words:
+          - "EDLM自助提卡系统"
+        condition: and

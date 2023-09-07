@@ -1,0 +1,20 @@
+id: RuvarHRM_keyword
+info:
+  name: RuvarHRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RuvarHRM"
+        words:
+          - "src=\"/ruvarhrm/web_login/login.aspx"
+        condition: and

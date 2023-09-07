@@ -1,0 +1,20 @@
+id: RAISECOM_iVoice8000_keyword
+info:
+  name: RAISECOM-iVoice8000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RAISECOM-iVoice8000"
+        words:
+          - "id=\"com_raisecom_ums_aos_portal_login_domain"
+        condition: and

@@ -1,0 +1,21 @@
+id: Hisense_WebPos_keyword
+info:
+  name: Hisense-WebPos_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hisense-WebPos"
+        words:
+          - "<legend><img src=\"../../content/images/hisense.bmp\" style=\"height:20px; padding-left:-10px\"/>webpos登录</legend>"
+          - "content/images/hisense.bmp"
+        condition: and

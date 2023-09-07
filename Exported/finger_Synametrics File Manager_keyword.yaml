@@ -1,0 +1,20 @@
+id: Synametrics_File_Manager_keyword
+info:
+  name: Synametrics File Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Synametrics File Manager"
+        words:
+          - "Synametrics File Manager"
+        condition: and

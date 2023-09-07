@@ -1,0 +1,22 @@
+id: sangfor_sip_keyword
+info:
+  name: sangfor-sip_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sangfor-sip"
+        words:
+          - "window.sessionstorage.removeitem('serialcheckobj'"
+          - "src=\"/apps/secvisual/static/js/runtime.js?"
+          - "url: '../auth_manage/auth_manage/on_login'"
+        condition: and

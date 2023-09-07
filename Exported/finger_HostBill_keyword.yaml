@@ -1,0 +1,21 @@
+id: HostBill_keyword
+info:
+  name: HostBill_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HostBill"
+        words:
+          - "powered by <a href=\"http://hostbillapp.com"
+          - "<strong>hostbill"
+        condition: and

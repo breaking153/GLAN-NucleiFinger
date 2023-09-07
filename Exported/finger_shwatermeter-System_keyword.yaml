@@ -1,0 +1,20 @@
+id: shwatermeter_System_keyword
+info:
+  name: shwatermeter-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shwatermeter-System"
+        words:
+          - "关于正则表达式的内容在本书的第10章中有较详细的讨论"
+        condition: and

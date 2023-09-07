@@ -1,0 +1,22 @@
+id: Tiger_IP_Connect_keyword
+info:
+  name: Tiger-IP-Connect_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tiger-IP-Connect"
+        words:
+          - "<link rel=\"stylesheet\" href=\"/include/firedigit.css\">"
+          - "<link rel=\"stylesheet\" href=\"/include/tms.css\">"
+          - "/include/tiger.css"
+        condition: and

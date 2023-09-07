@@ -1,0 +1,19 @@
+id: hao_feng_fang_huo_qiang_keyword
+info:
+  name: 皓峰防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "皓峰防火墙"
+        words:
+          - "<title>皓峰防火墙系统登录"

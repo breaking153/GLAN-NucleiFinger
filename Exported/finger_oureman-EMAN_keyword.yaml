@@ -1,0 +1,20 @@
+id: oureman_EMAN_keyword
+info:
+  name: oureman-EMAN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "oureman-EMAN"
+        words:
+          - "<span i18n=\"1\">益模模具智能制造系统</span>"
+        condition: and

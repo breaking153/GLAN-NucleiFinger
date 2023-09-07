@@ -1,0 +1,22 @@
+id: Maticsoft_SNS_keyword
+info:
+  name: Maticsoft-SNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Maticsoft-SNS"
+        words:
+          - "maticsoftsns"
+          - "maticsoft"
+          - "/areas/sns/"
+        condition: and

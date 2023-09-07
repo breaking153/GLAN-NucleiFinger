@@ -1,0 +1,20 @@
+id: Xinnet_Enterprise_mail_keyword
+info:
+  name: Xinnet-Enterprise-mail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Xinnet-Enterprise-mail"
+        words:
+          - "北京新网数码信息技术有限公司 版权所有"
+        condition: and

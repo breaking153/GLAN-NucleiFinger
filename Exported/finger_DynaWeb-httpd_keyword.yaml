@@ -1,0 +1,26 @@
+id: DynaWeb_httpd_keyword
+info:
+  name: DynaWeb-httpd_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DynaWeb-httpd"
+        words:
+          - "server: dwhttpd"
+        condition: and
+      - type: word
+        part: header
+        name: "DynaWeb-httpd"
+        words:
+          - "dwhttpd"
+        condition: and

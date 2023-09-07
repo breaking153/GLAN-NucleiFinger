@@ -1,0 +1,19 @@
+id: hong_fan_ioffice_OA_keyword
+info:
+  name: 红帆-ioffice OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "红帆-ioffice OA"
+        words:
+          - "<title>iOffice.net"

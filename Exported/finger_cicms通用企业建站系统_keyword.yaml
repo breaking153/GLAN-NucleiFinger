@@ -1,0 +1,20 @@
+id: cicms_tong_yong_qi_ye_jian_zhan_xi_tong_keyword
+info:
+  name: cicms通用企业建站系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "cicms通用企业建站系统"
+        words:
+          - "cicms通用企业建站系统"
+        condition: and

@@ -1,0 +1,20 @@
+id: Airpoint_Embed_Web_Server_keyword
+info:
+  name: Airpoint Embed Web Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Airpoint Embed Web Server"
+        words:
+          - "Airpoint Embed Web Server"
+        condition: and

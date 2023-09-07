@@ -1,0 +1,21 @@
+id: NSFOCUS_RSAS_keyword
+info:
+  name: NSFOCUS-RSAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-RSAS"
+        words:
+          - "/login_logo_rsas_zh_cn.png"
+          - "nsfocus rsas"
+        condition: and

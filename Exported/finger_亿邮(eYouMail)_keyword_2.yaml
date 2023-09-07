@@ -1,0 +1,26 @@
+id: yi_you_eYouMail_keyword_1
+info:
+  name: 亿邮(eYouMail)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "亿邮(eYouMail)"
+        words:
+          - "eYouWS"
+        condition: and
+      - type: word
+        part: header
+        name: "亿邮(eYouMail)"
+        words:
+          - "EMPHPSID"
+        condition: and

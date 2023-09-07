@@ -1,0 +1,21 @@
+id: ji_tong_EWEBS_ying_yong_xu_ni_hua_keyword
+info:
+  name: 极通 EWEBS 应用虚拟化_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "极通 EWEBS 应用虚拟化"
+        words:
+          - "NewSoft"
+          - "xajax05/xajax_js/xajax_core.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: VAA_Embedded_telephone_recording_system_keyword
+info:
+  name: VAA-Embedded-telephone-recording-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VAA-Embedded-telephone-recording-system"
+        words:
+          - "content=\"先锋易讯"
+        condition: and

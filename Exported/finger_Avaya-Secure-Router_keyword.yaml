@@ -1,0 +1,33 @@
+id: Avaya_Secure_Router_keyword
+info:
+  name: Avaya-Secure-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Avaya-Secure-Router"
+        words:
+          - "<b>about avaya secure router</b>"
+          - "<span id=\"guiname\">avaya secure router"
+        condition: and
+      - type: word
+        part: body
+        name: "Avaya-Secure-Router"
+        words:
+          - "<b>About Avaya Secure Router</b>"
+        condition: and
+      - type: word
+        part: body
+        name: "Avaya-Secure-Router"
+        words:
+          - "<span id=\"guiname\">Avaya Secure Router"
+        condition: and

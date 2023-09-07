@@ -1,0 +1,20 @@
+id: D_Link_WebServer_keyword
+info:
+  name: D-Link WebServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D-Link WebServer"
+        words:
+          - "D-Link WebServer"
+        condition: and

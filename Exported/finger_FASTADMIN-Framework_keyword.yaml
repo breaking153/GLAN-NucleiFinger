@@ -1,0 +1,24 @@
+id: FASTADMIN_Framework_keyword
+info:
+  name: FASTADMIN-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FASTADMIN-Framework"
+        words:
+          - "copyright © fastadmin.net"
+          - "class=\"navbar-brand\">fastadmin</a>"
+          - "<a href=\"/\" class=\"navbar-brand\">fastadmin</a>"
+          - "<h1>fastadmin</h1>"
+          - "fastadmin.net"
+        condition: and

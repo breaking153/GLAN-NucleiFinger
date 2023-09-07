@@ -1,0 +1,21 @@
+id: yi_sai_tong_DLP_keyword
+info:
+  name: 亿赛通(DLP)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "亿赛通(DLP)"
+        words:
+          - "CDGServer3"
+          - "welcomebg.jpg"
+        condition: and

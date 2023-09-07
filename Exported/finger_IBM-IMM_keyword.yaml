@@ -1,0 +1,23 @@
+id: IBM_IMM_keyword
+info:
+  name: IBM-IMM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-IMM"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0;url=/designs/imm/noscript/noscript_en.php\" />"
+          - "ibm.stg.inlinemessage.messagetypes.msg_critical"
+          - "<meta http-equiv=\"refresh\" content=\"0;url=/designs/imm/noscript/noscript_en.php\" />"
+          - "/ibmdojo/"
+        condition: and

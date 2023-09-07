@@ -1,0 +1,20 @@
+id: wang_kang_hu_lian_wang_kong_zhi_wang_guan_keyword
+info:
+  name: 网康互联网控制网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "网康互联网控制网关"
+        words:
+          - "网康互联网控制网关"
+        condition: and

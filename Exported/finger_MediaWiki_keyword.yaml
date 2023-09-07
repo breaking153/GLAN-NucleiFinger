@@ -1,0 +1,32 @@
+id: MediaWiki_keyword
+info:
+  name: MediaWiki_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MediaWiki"
+        words:
+          - "generator\" content=\"MediaWiki"
+        condition: and
+      - type: word
+        part: body
+        name: "MediaWiki"
+        words:
+          - "/wiki/images/6/64/Favicon.ico"
+        condition: and
+      - type: word
+        part: body
+        name: "MediaWiki"
+        words:
+          - "Powered by MediaWiki"
+        condition: and

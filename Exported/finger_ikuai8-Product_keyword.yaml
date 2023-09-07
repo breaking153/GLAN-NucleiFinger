@@ -1,0 +1,20 @@
+id: ikuai8_Product_keyword
+info:
+  name: ikuai8-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ikuai8-Product"
+        words:
+          - "fc tc y_bg prompt-head-div"
+        condition: and

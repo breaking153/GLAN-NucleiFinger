@@ -1,0 +1,20 @@
+id: Meteor_keyword
+info:
+  name: Meteor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Meteor"
+        words:
+          - "Meteor"
+        condition: and

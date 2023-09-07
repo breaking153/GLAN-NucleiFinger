@@ -1,0 +1,19 @@
+id: 360_tian_qing_keyword
+info:
+  name: 360天擎_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360天擎"
+        words:
+          - "<title>360天擎"

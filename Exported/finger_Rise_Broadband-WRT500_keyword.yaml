@@ -1,0 +1,21 @@
+id: Rise_Broadband_WRT500_keyword
+info:
+  name: Rise_Broadband-WRT500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Rise_Broadband-WRT500"
+        words:
+          - "floatkiller"
+          - "/style/g800_readynet_jab.png"
+        condition: and

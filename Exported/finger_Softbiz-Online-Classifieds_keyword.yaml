@@ -1,0 +1,20 @@
+id: Softbiz_Online_Classifieds_keyword
+info:
+  name: Softbiz-Online-Classifieds_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Softbiz-Online-Classifieds"
+        words:
+          - "http://www.softbizscripts.com/classified-ads-plus-script-features.php"
+        condition: and

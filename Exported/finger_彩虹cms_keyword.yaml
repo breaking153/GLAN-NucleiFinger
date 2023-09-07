@@ -1,0 +1,20 @@
+id: cai_hong_cms_keyword
+info:
+  name: 彩虹cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "彩虹cms"
+        words:
+          - "彩虹cms"
+        condition: and

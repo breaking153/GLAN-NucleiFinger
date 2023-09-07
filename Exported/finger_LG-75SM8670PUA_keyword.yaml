@@ -1,0 +1,20 @@
+id: LG_75SM8670PUA_keyword
+info:
+  name: LG-75SM8670PUA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-75SM8670PUA"
+        words:
+          - "<modelname>75sm8670pua</modelname>"
+        condition: and

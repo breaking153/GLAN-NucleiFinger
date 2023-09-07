@@ -1,0 +1,21 @@
+id: Haitian_OA_keyword
+info:
+  name: Haitian-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Haitian-OA"
+        words:
+          - "images/myjs.js"
+          - "mshtml 8.00.6001.19298"
+        condition: and

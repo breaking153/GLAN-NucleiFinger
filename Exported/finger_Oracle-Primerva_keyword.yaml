@@ -1,0 +1,22 @@
+id: Oracle_Primerva_keyword
+info:
+  name: Oracle-Primerva_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Oracle-Primerva"
+        words:
+          - "primavera systems, inc"
+          - "class=\"introareabuildid"
+          - "com.primavera.detectplugin.detectpluginapplet.class"
+        condition: and

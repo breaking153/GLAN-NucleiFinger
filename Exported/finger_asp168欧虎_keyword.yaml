@@ -1,0 +1,26 @@
+id: asp168_ou_hu_keyword
+info:
+  name: asp168欧虎_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "asp168欧虎"
+        words:
+          - "upload/moban/images/style.css"
+        condition: and
+      - type: word
+        part: body
+        name: "asp168欧虎"
+        words:
+          - "default.php?mod=article&do=detail&tid"
+        condition: and

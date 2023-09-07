@@ -1,0 +1,20 @@
+id: Linksys_USB_HDD_keyword
+info:
+  name: Linksys-USB-HDD_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Linksys-USB-HDD"
+        words:
+          - "href=\"management/setup.cgi?next_file=lan.htm"
+        condition: and

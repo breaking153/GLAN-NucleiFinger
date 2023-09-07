@@ -1,0 +1,32 @@
+id: Bobo_keyword
+info:
+  name: Bobo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Bobo"
+        words:
+          - "bobo-exception-line"
+        condition: and
+      - type: word
+        part: header
+        name: "Bobo"
+        words:
+          - "Bobo-Exception-Line"
+        condition: and
+      - type: word
+        part: header
+        name: "Bobo"
+        words:
+          - "x-ksscommands"
+        condition: and

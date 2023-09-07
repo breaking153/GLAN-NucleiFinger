@@ -1,0 +1,21 @@
+id: dahua_DH_NVR2108HS_keyword
+info:
+  name: dahua-DH-NVR2108HS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "dahua-DH-NVR2108HS"
+        words:
+          - "id=dhi-nvr2108hs"
+          - "id=dh-nvr2108hs"
+        condition: and

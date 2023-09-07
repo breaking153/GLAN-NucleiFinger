@@ -1,0 +1,26 @@
+id: fang_qia_zai_xian_Isite_keyword
+info:
+  name: 方卡在线(Isite)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "方卡在线(Isite)"
+        words:
+          - "方卡在线"
+        condition: and
+      - type: word
+        part: body
+        name: "方卡在线(Isite)"
+        words:
+          - "Isite"
+        condition: and

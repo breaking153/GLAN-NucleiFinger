@@ -1,0 +1,22 @@
+id: NeXpose_Security_Console_keyword
+info:
+  name: NeXpose-Security-Console_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NeXpose-Security-Console"
+        words:
+          - "/nexpose-dark.min.css"
+          - "nexposeccpassword"
+          - "/nexpose-features.js"
+        condition: and

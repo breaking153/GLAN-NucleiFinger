@@ -1,0 +1,20 @@
+id: fu_sai_te_she_bei_jian_kong_xi_tong_keyword
+info:
+  name: 弗赛特 设备监控系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "弗赛特 设备监控系统"
+        words:
+          - "弗赛特 设备监控系统"
+        condition: and

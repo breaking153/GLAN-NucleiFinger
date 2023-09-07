@@ -1,0 +1,32 @@
+id: BT_Linux_Control_Pane_keyword
+info:
+  name: BT-Linux-Control-Pane_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BT-Linux-Control-Pane"
+        words:
+          - "<img src=\"https://app.bt.cn/static/app.png\">"
+          - "href=\"http://www.bt.cn/bbs/thread-1172-1-1.html"
+          - "宝塔linux面板"
+          - "src=\"/static/js/validform_v5.3.2_min.js"
+          - "请使用正确的入口登录面板"
+          - "rm -f /www/server/panel/data/admin_path.pl"
+        condition: and
+      - type: word
+        part: body
+        name: "BT-Linux-Control-Pane"
+        words:
+          - "set-cookie: bt_panel="
+          - "Set-Cookie: BT_COLL="
+        condition: and

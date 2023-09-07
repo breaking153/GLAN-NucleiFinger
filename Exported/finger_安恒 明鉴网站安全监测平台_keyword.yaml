@@ -1,0 +1,20 @@
+id: an_heng_ming_jian_wang_zhan_an_quan_jian_ce_ping_tai_keyword
+info:
+  name: 安恒 明鉴网站安全监测平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "安恒 明鉴网站安全监测平台"
+        words:
+          - "安恒 明鉴网站安全监测平台"
+        condition: and

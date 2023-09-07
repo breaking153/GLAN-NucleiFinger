@@ -1,0 +1,20 @@
+id: sentry_cloud_keyword
+info:
+  name: sentry-cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sentry-cloud"
+        words:
+          - "src: url(/static/fonts/lcdd.eot format(\"truetype\", url(/static/fonts/lcdd.ttf format(\"truetype\";"
+        condition: and

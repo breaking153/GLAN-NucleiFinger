@@ -1,0 +1,20 @@
+id: Maipu_ISG1000_Security_gateway_keyword
+info:
+  name: Maipu--ISG1000-Security-gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Maipu--ISG1000-Security-gateway"
+        words:
+          - "/php/common/checknum_creat.php?module=config_authnum"
+        condition: and

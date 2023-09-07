@@ -1,0 +1,20 @@
+id: yu_fu_CMS_keyword
+info:
+  name: 鱼福CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "鱼福CMS"
+        words:
+          - "鱼福CMS"
+        condition: and

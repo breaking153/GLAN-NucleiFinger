@@ -1,0 +1,20 @@
+id: Siemens_SIMATIC_keyword
+info:
+  name: Siemens_SIMATIC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens_SIMATIC"
+        words:
+          - "/S7Web.css"
+        condition: and

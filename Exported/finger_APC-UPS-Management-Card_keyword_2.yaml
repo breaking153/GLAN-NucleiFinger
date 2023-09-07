@@ -1,0 +1,27 @@
+id: APC_UPS_Management_Card_keyword_1
+info:
+  name: APC-UPS-Management-Card_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "APC-UPS-Management-Card"
+        words:
+          - "apc management card"
+          - "network management card"
+        condition: and
+      - type: word
+        part: header
+        name: "APC-UPS-Management-Card"
+        words:
+          - "APC Management Card"
+        condition: and

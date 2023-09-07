@@ -1,0 +1,20 @@
+id: ZyXEL_NBG5615_keyword
+info:
+  name: ZyXEL-NBG5615_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-NBG5615"
+        words:
+          - "<li class=\"modelname\">nbg5615</li>"
+        condition: and

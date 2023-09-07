@@ -1,0 +1,20 @@
+id: Hisilicon_keyword
+info:
+  name: Hisilicon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hisilicon"
+        words:
+          - "<manufacturer>hisilicon technologies"
+        condition: and

@@ -1,0 +1,20 @@
+id: AirLive_ARM_204_keyword
+info:
+  name: AirLive-ARM-204_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AirLive-ARM-204"
+        words:
+          - "realm=\"airlive arm-204"
+        condition: and

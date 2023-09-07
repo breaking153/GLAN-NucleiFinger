@@ -1,0 +1,22 @@
+id: quan_xi_AI_ruo_dian_wang_luo_zong_he_yun_wei_ping_tai_keyword
+info:
+  name: 全息AI弱电网络综合运维平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "全息AI弱电网络综合运维平台"
+        words:
+          - "全息AI"
+          - "g_is_hk"
+          - "login"
+        condition: and

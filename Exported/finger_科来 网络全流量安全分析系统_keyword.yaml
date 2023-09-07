@@ -1,0 +1,20 @@
+id: ke_lai_wang_luo_quan_liu_liang_an_quan_fen_xi_xi_tong_keyword
+info:
+  name: 科来 网络全流量安全分析系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "科来 网络全流量安全分析系统"
+        words:
+          - "科来 网络全流量安全分析系统"
+        condition: and

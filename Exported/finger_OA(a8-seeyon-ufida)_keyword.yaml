@@ -1,0 +1,20 @@
+id: OA_a8_seeyon_ufida_keyword
+info:
+  name: OA(a8-seeyon-ufida)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OA(a8-seeyon-ufida)"
+        words:
+          - "/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"
+        condition: and

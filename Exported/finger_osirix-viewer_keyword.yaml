@@ -1,0 +1,20 @@
+id: osirix_viewer_keyword
+info:
+  name: osirix-viewer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "osirix-viewer"
+        words:
+          - "service provided by <a href=\"https://www.osirix-viewer.com\""
+        condition: and

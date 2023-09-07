@@ -1,0 +1,26 @@
+id: Horde_keyword
+info:
+  name: Horde_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Horde"
+        words:
+          - "imp: copyright 2001-2009 the horde project"
+        condition: and
+      - type: word
+        part: body
+        name: "Horde"
+        words:
+          - "IMP: Copyright 2001-2009 The Horde Project"
+        condition: and

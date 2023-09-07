@@ -1,0 +1,20 @@
+id: VisualRoute_NOC_Edition_keyword
+info:
+  name: VisualRoute NOC Edition_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "VisualRoute NOC Edition"
+        words:
+          - "VisualRoute NOC Edition"
+        condition: and

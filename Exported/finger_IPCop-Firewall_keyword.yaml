@@ -1,0 +1,22 @@
+id: IPCop_Firewall_keyword
+info:
+  name: IPCop-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IPCop-Firewall"
+        words:
+          - "<!-- ipcop logo row -->"
+          - "href='https://sourceforge.net/projects/ipcop/"
+          - "href='http://sf.net/projects/ipcop/"
+        condition: and

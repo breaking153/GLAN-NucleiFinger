@@ -1,0 +1,20 @@
+id: linkSYS_hollos_keyword
+info:
+  name: linkSYS-hollos_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "linkSYS-hollos"
+        words:
+          - "linkSYS-hollos"
+        condition: and

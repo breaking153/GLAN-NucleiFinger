@@ -1,0 +1,21 @@
+id: zikula_framework_keyword
+info:
+  name: zikula-framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "zikula-framework"
+        words:
+          - "zikulasid1"
+          - "zikulasid3"
+        condition: and

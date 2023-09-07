@@ -1,0 +1,20 @@
+id: WHOLETON_NGFW_keyword
+info:
+  name: WHOLETON-NGFW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WHOLETON-NGFW"
+        words:
+          - "/base/img/login_logo_ngaf.jpg"
+        condition: and

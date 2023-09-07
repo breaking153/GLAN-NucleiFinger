@@ -1,0 +1,20 @@
+id: epoint_zheng_wu_fu_wu_xi_tong_keyword
+info:
+  name: epoint政务服务系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "epoint政务服务系统"
+        words:
+          - "epoint-web-zwdt"
+        condition: and

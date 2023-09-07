@@ -1,0 +1,26 @@
+id: ke_mai_RAS_xi_tong_keyword
+info:
+  name: 科迈RAS系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "科迈RAS系统"
+        words:
+          - "type=\"application/npRas"
+        condition: and
+      - type: word
+        part: body
+        name: "科迈RAS系统"
+        words:
+          - "远程技术支持请求:<a href=\"http://www.comexe.cn"
+        condition: and

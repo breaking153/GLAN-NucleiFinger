@@ -1,0 +1,21 @@
+id: LG_webOS_TV_keyword
+info:
+  name: LG-webOS-TV_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-webOS-TV"
+        words:
+          - "<friendlyname>lg webos tv</friendlyname>"
+          - "<friendlyname>[lg] webos tv "
+        condition: and

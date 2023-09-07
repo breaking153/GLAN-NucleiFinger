@@ -1,0 +1,21 @@
+id: Chart_js_keyword
+info:
+  name: Chart.js_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Chart.js"
+        words:
+          - "chart.js"
+          - "chart.min.js"
+        condition: and

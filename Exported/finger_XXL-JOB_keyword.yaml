@@ -1,21 +1,21 @@
-id: XXL_JOB_keyword
+id: xxl_job_keyword
 info:
-  name: XXL-JOB_keyword
+  name: xxl-job_keyword
   author: GLAN
   severity: info
   tags: tech
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
     matchers:
       - type: word
         part: body
-        name: "XXL-JOB"
+        name: "xxl-job"
         words:
-          - "static/js/login.1.js"
-          - "任务调度中心"
+          - "/static/adminlte/dist/css/AdminLTE.min.css"
+          - "bower_components/PACE/pace.min.js"
         condition: and

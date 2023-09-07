@@ -1,0 +1,22 @@
+id: Micool_Management_System_keyword
+info:
+  name: Micool-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Micool-Management-System"
+        words:
+          - "米酷影视 版权所有"
+          - "name=\"keywords\" content=\"电影,视频大全,在线高清电影,付费电影,免费电影,剧集,电影,在线观看,vip高清电影直播\""
+          - "bplay.php?play="
+        condition: and

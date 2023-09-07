@@ -1,0 +1,19 @@
+id: H2_Database_Console_faviconhash
+info:
+  name: H2 Database Console_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "H2 Database Console"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-525659379\""
+        condition: or

@@ -1,0 +1,26 @@
+id: ASPCMS_kai_yuan_qi_ye_wang_zhan_guan_li_xi_tong_UTF8_keyword
+info:
+  name: ASPCMS开源企业网站管理系统_UTF8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASPCMS开源企业网站管理系统_UTF8"
+        words:
+          - "content=\"ASPCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "ASPCMS开源企业网站管理系统_UTF8"
+        words:
+          - "/inc/AspCms_AdvJs.asp"
+        condition: and

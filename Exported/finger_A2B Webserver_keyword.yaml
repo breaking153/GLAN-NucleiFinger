@@ -1,0 +1,20 @@
+id: A2B_Webserver_keyword
+info:
+  name: A2B Webserver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "A2B Webserver"
+        words:
+          - "A2B Webserver"
+        condition: and

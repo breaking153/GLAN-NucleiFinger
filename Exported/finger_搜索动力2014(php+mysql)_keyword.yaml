@@ -1,0 +1,20 @@
+id: sou_suo_dong_li_2014_php_mysql_keyword
+info:
+  name: 搜索动力2014(php+mysql)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "搜索动力2014(php+mysql)"
+        words:
+          - "搜索动力2014(php+mysql)"
+        condition: and

@@ -1,0 +1,20 @@
+id: wei_hong_OA_keyword
+info:
+  name: 微宏 OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "微宏 OA"
+        words:
+          - "wh/servlet/MainServer"
+        condition: and

@@ -1,0 +1,21 @@
+id: YiRui_IRAS_keyword
+info:
+  name: YiRui-IRAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YiRui-IRAS"
+        words:
+          - "/authjsp/login.jsp"
+          - "fe0174bb-f093-42af-ab20-7ec621d10488"
+        condition: and

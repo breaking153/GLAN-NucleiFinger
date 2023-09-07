@@ -1,0 +1,20 @@
+id: intelligent_cloud_keyword
+info:
+  name: intelligent cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "intelligent cloud"
+        words:
+          - "handlexpapplycontact"
+        condition: and

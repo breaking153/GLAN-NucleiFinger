@@ -1,0 +1,21 @@
+id: NSFOCUS_Enterprise_Security_Center_keyword
+info:
+  name: NSFOCUS-Enterprise-Security-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-Enterprise-Security-Center"
+        words:
+          - "/login_logo_espc_zh_cn.png"
+          - "/login_logo_espc_zh_cn.png"
+        condition: and

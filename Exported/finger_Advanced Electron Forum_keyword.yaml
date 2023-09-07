@@ -1,0 +1,26 @@
+id: Advanced_Electron_Forum_keyword_1
+info:
+  name: Advanced Electron Forum_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Advanced Electron Forum"
+        words:
+          - "Powered By AEF"
+        condition: and
+      - type: word
+        part: body
+        name: "Advanced Electron Forum"
+        words:
+          - "content=\"aef"
+        condition: and

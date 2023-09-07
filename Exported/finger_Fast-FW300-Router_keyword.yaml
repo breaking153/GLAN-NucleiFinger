@@ -1,0 +1,20 @@
+id: Fast_FW300_Router_keyword
+info:
+  name: Fast-FW300-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Fast-FW300-Router"
+        words:
+          - "fw300r"
+        condition: and

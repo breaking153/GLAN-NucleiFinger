@@ -1,0 +1,20 @@
+id: CISCO_SA520_keyword
+info:
+  name: CISCO-SA520_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-SA520"
+        words:
+          - "class=\"h3login\">small business pro"
+        condition: and

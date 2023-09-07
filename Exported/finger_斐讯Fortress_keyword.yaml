@@ -1,0 +1,20 @@
+id: fei_xun_Fortress_keyword
+info:
+  name: 斐讯Fortress_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "斐讯Fortress"
+        words:
+          - "<meta name=\"author\" content=\"上海斐讯数据通信技术有限公司\" />"
+        condition: and

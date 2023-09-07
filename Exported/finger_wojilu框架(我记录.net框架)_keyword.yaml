@@ -1,0 +1,26 @@
+id: wojilu_kuang_jia_wo_ji_lu_net_kuang_jia_keyword
+info:
+  name: wojilu框架(我记录.net框架)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "wojilu框架(我记录.net框架)"
+        words:
+          - "我记录.net框架"
+        condition: and
+      - type: word
+        part: body
+        name: "wojilu框架(我记录.net框架)"
+        words:
+          - "content=\"Visual Basic .NET 7.1"
+        condition: and

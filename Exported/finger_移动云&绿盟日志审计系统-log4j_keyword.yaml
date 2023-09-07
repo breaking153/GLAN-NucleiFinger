@@ -1,0 +1,20 @@
+id: yi_dong_yun_lv_meng_ri_zhi_shen_ji_xi_tong_log4j_keyword
+info:
+  name: 移动云&绿盟日志审计系统-log4j_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "移动云&绿盟日志审计系统-log4j"
+        words:
+          - "/pisces/login/"
+        condition: and

@@ -1,0 +1,21 @@
+id: ZhiMin_Law_enforcement_information_management_system_keyword
+info:
+  name: ZhiMin-Law-enforcement-information-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZhiMin-Law-enforcement-information-management-system"
+        words:
+          - "action=\"/?_a=login&_c=index&_m=index"
+          - "北京智敏科技发展有限公司·版权所有"
+        condition: and

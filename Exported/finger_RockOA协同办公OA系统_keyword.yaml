@@ -1,0 +1,20 @@
+id: RockOA_xie_tong_ban_gong_OA_xi_tong_keyword
+info:
+  name: RockOA协同办公OA系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "RockOA协同办公OA系统"
+        words:
+          - "RockOA协同办公OA系统"
+        condition: and

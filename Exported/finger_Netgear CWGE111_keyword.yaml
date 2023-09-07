@@ -1,0 +1,20 @@
+id: Netgear_CWGE111_keyword
+info:
+  name: Netgear CWGE111_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Netgear CWGE111"
+        words:
+          - "Netgear CWGE111"
+        condition: and

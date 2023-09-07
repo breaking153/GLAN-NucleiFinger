@@ -1,0 +1,19 @@
+id: hai_xiang_D8_yao_ye_yun_ping_tai_keyword
+info:
+  name: 海翔D8药业云平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "海翔D8药业云平台"
+        words:
+          - "<title>登录海翔"

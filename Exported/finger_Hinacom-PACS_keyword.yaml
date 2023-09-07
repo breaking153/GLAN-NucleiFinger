@@ -1,0 +1,20 @@
+id: Hinacom_PACS_keyword
+info:
+  name: Hinacom-PACS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hinacom-PACS"
+        words:
+          - "var iconbaseurl = baseurl + 'content/site/icons/';"
+        condition: and

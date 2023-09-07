@@ -1,0 +1,25 @@
+id: DCN_Router_keyword
+info:
+  name: DCN-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DCN-Router"
+        words:
+          - "content=\"dcn-utm-web-management"
+          - "/script/dcn_common.js"
+          - "src=\"/function/classes/class.checkcode.php"
+          - "/dcn_ui.css"
+          - "web management"
+          - "'www.dcnetworks.com.cn'"
+        condition: and

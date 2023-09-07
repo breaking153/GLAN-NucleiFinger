@@ -1,0 +1,22 @@
+id: bi_hai_yun_he_keyword
+info:
+  name: 碧海云盒_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "碧海云盒"
+        words:
+          - "碧海云盒"
+          - "mt_login"
+          - "login.php"
+        condition: and

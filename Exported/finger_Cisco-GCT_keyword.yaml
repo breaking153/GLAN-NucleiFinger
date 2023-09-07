@@ -1,0 +1,20 @@
+id: Cisco_GCT_keyword
+info:
+  name: Cisco-GCT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco-GCT"
+        words:
+          - "cisco gct"
+        condition: and

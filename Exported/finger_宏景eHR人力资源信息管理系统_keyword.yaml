@@ -1,0 +1,21 @@
+id: hong_jing_eHR_ren_li_zi_yuan_xin_xi_guan_li_xi_tong_keyword
+info:
+  name: 宏景eHR人力资源信息管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "宏景eHR人力资源信息管理系统"
+        words:
+          - "人力资源信息管理系统"
+          - "hrlogon"
+        condition: and

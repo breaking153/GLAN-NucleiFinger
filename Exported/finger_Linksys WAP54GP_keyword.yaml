@@ -1,0 +1,20 @@
+id: Linksys_WAP54GP_keyword
+info:
+  name: Linksys WAP54GP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys WAP54GP"
+        words:
+          - "Linksys WAP54GP"
+        condition: and

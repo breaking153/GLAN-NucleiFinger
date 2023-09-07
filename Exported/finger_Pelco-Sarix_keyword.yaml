@@ -1,0 +1,23 @@
+id: Pelco_Sarix_keyword
+info:
+  name: Pelco-Sarix_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Pelco-Sarix"
+        words:
+          - "/content/javascripts/scriptaculous.js?load=effects,slider,controls,dragdrop"
+          - "/content/javascripts/tooltip.js"
+          - "/content/javascripts/prototype.js"
+          - "function pegfootertobottom"
+        condition: and

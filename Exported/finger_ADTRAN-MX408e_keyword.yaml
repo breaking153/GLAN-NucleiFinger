@@ -1,0 +1,20 @@
+id: ADTRAN_MX408e_keyword
+info:
+  name: ADTRAN-MX408e_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ADTRAN-MX408e"
+        words:
+          - "realm=\"adtran mx408e"
+        condition: and

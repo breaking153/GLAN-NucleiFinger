@@ -1,0 +1,20 @@
+id: MakeShopKorea_keyword
+info:
+  name: MakeShopKorea_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MakeShopKorea"
+        words:
+          - "MakeShopKorea"
+        condition: and

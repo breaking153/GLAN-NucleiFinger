@@ -1,0 +1,21 @@
+id: ZyXEL_NBG_416N_keyword
+info:
+  name: ZyXEL-NBG-416N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL-NBG-416N"
+        words:
+          - "nbg-416n n-lite home router"
+          - "nbg-418n n home router"
+        condition: and

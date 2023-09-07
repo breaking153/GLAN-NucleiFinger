@@ -1,0 +1,19 @@
+id: NUUO_she_xiang_tou_keyword
+info:
+  name: NUUO 摄像头_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NUUO 摄像头"
+        words:
+          - "<title>Network Video Recorder Login"

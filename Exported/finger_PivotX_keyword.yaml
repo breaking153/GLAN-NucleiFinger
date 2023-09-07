@@ -1,0 +1,22 @@
+id: PivotX_keyword
+info:
+  name: PivotX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PivotX"
+        words:
+          - "src=\"includes/js/pivotx.js"
+          - "templates_internal/assets/pivotx.png\" alt=\"pivotx"
+          - "content=\"pivotx"
+        condition: and

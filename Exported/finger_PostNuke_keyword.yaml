@@ -1,0 +1,20 @@
+id: PostNuke_keyword
+info:
+  name: PostNuke_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PostNuke"
+        words:
+          - "PostNuke"
+        condition: and

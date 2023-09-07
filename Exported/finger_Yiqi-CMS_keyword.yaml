@@ -1,0 +1,20 @@
+id: Yiqi_CMS_keyword
+info:
+  name: Yiqi-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yiqi-CMS"
+        words:
+          - "content=\"yiqicms"
+        condition: and

@@ -1,0 +1,21 @@
+id: Infogo_ASM6000_keyword
+info:
+  name: Infogo-ASM6000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Infogo-ASM6000"
+        words:
+          - "判断是否为特殊项目??石化项目"
+          - "中石化统一认证项目的跳转地址"
+        condition: and

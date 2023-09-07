@@ -1,0 +1,20 @@
+id: ZyXEL_USG1100_keyword
+info:
+  name: ZyXEL-USG1100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-USG1100"
+        words:
+          - "usg_icon"
+        condition: and

@@ -1,0 +1,20 @@
+id: wei_shi_xie_tong_guan_li_ruan_jian_WishOA_keyword
+info:
+  name: 威实协同管理软件 WishOA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "威实协同管理软件 WishOA"
+        words:
+          - "威实协同管理软件 WishOA"
+        condition: and

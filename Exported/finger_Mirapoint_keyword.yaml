@@ -1,0 +1,20 @@
+id: Mirapoint_keyword
+info:
+  name: Mirapoint_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mirapoint"
+        words:
+          - "/wm/mail/login.html"
+        condition: and

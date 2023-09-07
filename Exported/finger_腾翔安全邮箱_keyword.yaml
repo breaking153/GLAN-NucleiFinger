@@ -1,0 +1,20 @@
+id: teng_xiang_an_quan_you_xiang_keyword
+info:
+  name: 腾翔安全邮箱_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "腾翔安全邮箱"
+        words:
+          - "腾翔安全邮箱"
+        condition: and

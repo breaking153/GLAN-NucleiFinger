@@ -1,0 +1,20 @@
+id: MinyooCMS_keyword
+info:
+  name: MinyooCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MinyooCMS"
+        words:
+          - "MinyooCMS"
+        condition: and

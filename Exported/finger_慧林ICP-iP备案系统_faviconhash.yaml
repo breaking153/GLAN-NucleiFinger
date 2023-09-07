@@ -1,0 +1,19 @@
+id: hui_lin_ICP_iP_bei_an_xi_tong_faviconhash
+info:
+  name: 慧林ICP-iP备案系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "慧林ICP-iP备案系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-556918553\""
+        condition: or

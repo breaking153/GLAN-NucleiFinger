@@ -1,0 +1,21 @@
+id: Founder_Operation_management_and_decision_support_system_keyword
+info:
+  name: Founder-Operation-management-and-decision-support-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Founder-Operation-management-and-decision-support-system"
+        words:
+          - "src=\"/portal/img/logo.png\""
+          - "src=\"/desktop/ui/custom/getimage?img=iphoneview.png\""
+        condition: and

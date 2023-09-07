@@ -1,0 +1,20 @@
+id: Lenovo_Printer_keyword
+info:
+  name: Lenovo-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Lenovo-Printer"
+        words:
+          - "<frame name=lower  src=\"index.files/user.files/index.htm\">"
+        condition: and

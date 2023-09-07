@@ -1,0 +1,20 @@
+id: Pwithe_Company_s_product_keyword
+info:
+  name: Pwithe-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Pwithe-Company's-product"
+        words:
+          - "<p>技术支持 深圳警翼数码科技有限公司"
+        condition: and

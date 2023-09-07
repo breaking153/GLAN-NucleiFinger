@@ -1,0 +1,20 @@
+id: 360_tian_di_xin_yi_dai_zhi_hui_fang_huo_qiang_keyword_1
+info:
+  name: 360天堤新一代智慧防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "360天堤新一代智慧防火墙"
+        words:
+          - "360天堤新一代智慧防火墙"
+        condition: and

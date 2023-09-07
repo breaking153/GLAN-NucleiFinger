@@ -1,0 +1,20 @@
+id: SMF_lun_tan_Simple_Machines_Forum_keyword
+info:
+  name: SMF论坛_Simple_Machines_Forum_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SMF论坛_Simple_Machines_Forum"
+        words:
+          - "SMF论坛_Simple_Machines_Forum"
+        condition: and

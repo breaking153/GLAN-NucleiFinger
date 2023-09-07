@@ -1,0 +1,20 @@
+id: ZyXEL_EMG3425_Q10A_keyword
+info:
+  name: ZyXEL-EMG3425-Q10A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-EMG3425-Q10A"
+        words:
+          - "class=\"modelname\">emg3425-q10a<"
+        condition: and

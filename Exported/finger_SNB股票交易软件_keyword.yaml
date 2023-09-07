@@ -1,0 +1,20 @@
+id: SNB_gu_piao_jiao_yi_ruan_jian_keyword
+info:
+  name: SNB股票交易软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SNB股票交易软件"
+        words:
+          - "Copyright 2005–2009 <a href=\"http://www.s-mo.com\">"
+        condition: and

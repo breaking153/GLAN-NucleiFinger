@@ -1,0 +1,20 @@
+id: ZyXEL_ES_2024PWR_keyword
+info:
+  name: ZyXEL-ES-2024PWR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL-ES-2024PWR"
+        words:
+          - "realm=\"es-2024pwr"
+        condition: and

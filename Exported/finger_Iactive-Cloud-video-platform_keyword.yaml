@@ -1,0 +1,21 @@
+id: Iactive_Cloud_video_platform_keyword
+info:
+  name: Iactive-Cloud-video-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Iactive-Cloud-video-platform"
+        words:
+          - "/js/roomheight.js"
+          - "meetingshow!show.action"
+        condition: and

@@ -1,0 +1,21 @@
+id: Perfectone_VOIP_Phone_keyword
+info:
+  name: Perfectone-VOIP-Phone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Perfectone-VOIP-Phone"
+        words:
+          - "color=\"#ffffff\"><b>login voip"
+          - "onload=\"javascript:document.loginform.user.focus("
+        condition: and

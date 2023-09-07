@@ -1,0 +1,20 @@
+id: E_TILLER_qi_kan_cai_bian_xi_tong_keyword
+info:
+  name: E-TILLER期刊采编系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "E-TILLER期刊采编系统"
+        words:
+          - "E-TILLER期刊采编系统"
+        condition: and

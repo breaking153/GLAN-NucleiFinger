@@ -1,0 +1,20 @@
+id: HUAWEI_Operation_Maintenance_System_keyword
+info:
+  name: HUAWEI Operation & Maintenance System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HUAWEI Operation & Maintenance System"
+        words:
+          - "HUAWEI Operation & Maintenance System"
+        condition: and

@@ -1,0 +1,19 @@
+id: Elib_tu_shu_guan_ji_qun_guan_li_xi_tong_faviconhash
+info:
+  name: Elib 图书馆集群管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Elib 图书馆集群管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"478149598\""
+        condition: or

@@ -1,0 +1,21 @@
+id: APD_Cameras_and_Surveillance_keyword
+info:
+  name: APD-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "APD-Cameras-and-Surveillance"
+        words:
+          - "var listenport = 6002;"
+          - "lg_body_iptpsw"
+        condition: and

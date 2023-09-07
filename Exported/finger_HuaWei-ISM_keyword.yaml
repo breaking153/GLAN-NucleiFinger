@@ -1,0 +1,23 @@
+id: HuaWei_ISM_keyword
+info:
+  name: HuaWei-ISM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-ISM"
+        words:
+          - "<link href=\"ismb014.css\""
+          - "class=\"contextgray\">oceanstor"
+          - "document.location.href=thisurl + \"index_cn.cgi\";"
+          - "//begin h90005710  redirect http to https"
+        condition: and

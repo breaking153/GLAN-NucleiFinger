@@ -1,0 +1,26 @@
+id: zhu_lang_zoomla_keyword
+info:
+  name: 逐浪zoomla_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "逐浪zoomla"
+        words:
+          - "script src=\"http://code.zoomla.cn/"
+        condition: and
+      - type: word
+        part: body
+        name: "逐浪zoomla"
+        words:
+          - "/style/images/win8_symbol_140x140.png"
+        condition: and

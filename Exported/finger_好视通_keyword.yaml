@@ -1,0 +1,22 @@
+id: hao_shi_tong_keyword
+info:
+  name: 好视通_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "好视通"
+        words:
+          - "fsmeeting"
+          - "loginCheck.do"
+          - "app.result"
+        condition: and

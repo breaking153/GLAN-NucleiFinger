@@ -1,0 +1,19 @@
+id: hua_ce_jian_ce_yu_jing_xi_tong_faviconhash
+info:
+  name: 华测监测预警系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "华测监测预警系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-628229493\""
+        condition: or

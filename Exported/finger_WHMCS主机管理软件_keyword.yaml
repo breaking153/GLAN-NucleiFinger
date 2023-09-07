@@ -1,0 +1,20 @@
+id: WHMCS_zhu_ji_guan_li_ruan_jian_keyword
+info:
+  name: WHMCS主机管理软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WHMCS主机管理软件"
+        words:
+          - "WHMCS主机管理软件"
+        condition: and

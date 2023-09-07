@@ -1,0 +1,20 @@
+id: ManageEngine_OpManager_keyword_1
+info:
+  name: ManageEngine OpManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ManageEngine OpManager"
+        words:
+          - "ManageEngine OpManager"
+        condition: and

@@ -1,0 +1,21 @@
+id: SierraWireless_AirLinkManager_keyword
+info:
+  name: SierraWireless-AirLinkManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SierraWireless-AirLinkManager"
+        words:
+          - "brander/acemanager.css"
+          - "redir=redir+\"/admin/acemanager\""
+        condition: and

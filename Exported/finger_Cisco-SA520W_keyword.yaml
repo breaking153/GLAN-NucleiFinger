@@ -1,0 +1,21 @@
+id: Cisco_SA520W_keyword
+info:
+  name: Cisco-SA520W_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-SA520W"
+        words:
+          - "id=\"hdboardname\" value=\"sa520w\""
+          - "class=\"h3login\">small business pro"
+        condition: and

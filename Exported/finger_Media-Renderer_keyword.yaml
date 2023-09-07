@@ -1,0 +1,20 @@
+id: Media_Renderer_keyword
+info:
+  name: Media-Renderer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Media-Renderer"
+        words:
+          - "<friendlyname>客厅电视-dlna<"
+        condition: and

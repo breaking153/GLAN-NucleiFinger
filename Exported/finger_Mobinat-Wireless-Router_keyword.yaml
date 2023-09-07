@@ -1,0 +1,21 @@
+id: Mobinat_Wireless_Router_keyword
+info:
+  name: Mobinat-Wireless-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mobinat-Wireless-Router"
+        words:
+          - "http://mobinnet.ir/faq"
+          - "http://mobinnet.ir/coverage"
+        condition: and

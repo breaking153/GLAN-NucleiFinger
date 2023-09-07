@@ -1,0 +1,21 @@
+id: iWebSNS_keyword
+info:
+  name: iWebSNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iWebSNS"
+        words:
+          - "/jooyea/images/sns_idea1.jpg"
+          - "/jooyea/images/snslogo.gif"
+        condition: and

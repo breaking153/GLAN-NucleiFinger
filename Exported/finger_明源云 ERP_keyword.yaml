@@ -1,0 +1,29 @@
+id: ming_yuan_yun_ERP_keyword_1
+info:
+  name: 明源云 ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "明源云 ERP"
+        words:
+          - "PubPlatform"
+          - "明源云"
+          - "LoginHandler"
+        condition: and
+      - type: word
+        part: body
+        name: "明源云 ERP"
+        words:
+          - "#153290"
+          - "明源软件"
+        condition: and

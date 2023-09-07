@@ -1,0 +1,21 @@
+id: Meraki_Network_Device_keyword
+info:
+  name: Meraki-Network-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Meraki-Network-Device"
+        words:
+          - "alt=\"cisco meraki\" src=\"img/cisco-meraki.png\""
+          - "src=\"images/cisco-meraki.png\""
+        condition: and

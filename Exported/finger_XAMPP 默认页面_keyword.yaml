@@ -1,0 +1,19 @@
+id: XAMPP_mo_ren_ye_mian_keyword
+info:
+  name: XAMPP 默认页面_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "XAMPP 默认页面"
+        words:
+          - "<title>Welcome to XAMPP"

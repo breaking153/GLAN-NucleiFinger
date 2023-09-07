@@ -1,0 +1,20 @@
+id: SatLink_keyword
+info:
+  name: SatLink_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SatLink"
+        words:
+          - "<form id =\"statussatellite"
+        condition: and

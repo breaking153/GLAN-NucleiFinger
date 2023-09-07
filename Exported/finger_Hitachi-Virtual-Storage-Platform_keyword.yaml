@@ -1,0 +1,20 @@
+id: Hitachi_Virtual_Storage_Platform_keyword
+info:
+  name: Hitachi-Virtual-Storage-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hitachi-Virtual-Storage-Platform"
+        words:
+          - "src=\"/cgismryset/smryset.cgi/clk\""
+        condition: and

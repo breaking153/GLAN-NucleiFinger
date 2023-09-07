@@ -1,0 +1,24 @@
+id: Secworld_VPN_keyword
+info:
+  name: Secworld-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Secworld-VPN"
+        words:
+          - "admin/js/virtual_keyboard.js"
+          - "src=\"images/login_logo.gif\""
+          - "/images/sslvpnportallogo.jpg"
+          - "证书认证"
+          - "secworld"
+        condition: and

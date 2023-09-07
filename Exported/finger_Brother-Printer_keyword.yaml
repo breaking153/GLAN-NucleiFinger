@@ -1,0 +1,33 @@
+id: Brother_Printer_keyword
+info:
+  name: Brother-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Brother-Printer"
+        words:
+          - "<frame src=\"/printer/inc_head.html"
+          - "<img src=\"/common/image/hl4040cn"
+        condition: and
+      - type: word
+        part: body
+        name: "Brother-Printer"
+        words:
+          - "<FRAME SRC=\"/printer/inc_head.html"
+        condition: and
+      - type: word
+        part: body
+        name: "Brother-Printer"
+        words:
+          - "<IMG src=\"/common/image/HL4040CN"
+        condition: and

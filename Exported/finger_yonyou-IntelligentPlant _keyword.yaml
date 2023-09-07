@@ -1,0 +1,20 @@
+id: yonyou_IntelligentPlant_keyword
+info:
+  name: yonyou-IntelligentPlant _keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yonyou-IntelligentPlant "
+        words:
+          - "/modules/core/client/views/sidemenu.client.view.html"
+        condition: and

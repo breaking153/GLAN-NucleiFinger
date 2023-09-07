@@ -1,0 +1,20 @@
+id: Kooboo_CMS_keyword
+info:
+  name: Kooboo CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kooboo CMS"
+        words:
+          - "Kooboo CMS"
+        condition: and

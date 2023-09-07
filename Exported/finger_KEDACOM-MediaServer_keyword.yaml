@@ -1,0 +1,21 @@
+id: KEDACOM_MediaServer_keyword
+info:
+  name: KEDACOM-MediaServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KEDACOM-MediaServer"
+        words:
+          - "/grid/propsgrid.js"
+          - "src=\"js/ext/adapter/ext/ext-base.js\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Kedacom_Redundant_Arrays_of_Independent_Drives_keyword
+info:
+  name: Kedacom-Redundant-Arrays-of-Independent-Drives_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kedacom-Redundant-Arrays-of-Independent-Drives"
+        words:
+          - "<meta name=\"kedacom\" content=\"true\">"
+        condition: and

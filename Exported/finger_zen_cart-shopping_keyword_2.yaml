@@ -1,0 +1,21 @@
+id: zen_cart_shopping_keyword_1
+info:
+  name: zen_cart-shopping_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "zen_cart-shopping"
+        words:
+          - "set-cookie: zenid="
+          - "shoppingcartsession="
+        condition: and

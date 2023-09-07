@@ -1,0 +1,20 @@
+id: yidacms_keyword
+info:
+  name: yidacms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yidacms"
+        words:
+          - "yidacms.css"
+        condition: and

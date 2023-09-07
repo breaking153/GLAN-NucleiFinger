@@ -1,0 +1,20 @@
+id: cnrdm_Product_keyword
+info:
+  name: cnrdm-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cnrdm-Product"
+        words:
+          - "登录青铜器rdm</b></div>"
+        condition: and

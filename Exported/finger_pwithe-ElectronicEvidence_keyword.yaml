@@ -1,0 +1,20 @@
+id: pwithe_ElectronicEvidence_keyword
+info:
+  name: pwithe-ElectronicEvidence_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "pwithe-ElectronicEvidence"
+        words:
+          - "深圳市警翼数码科技有限公司"
+        condition: and

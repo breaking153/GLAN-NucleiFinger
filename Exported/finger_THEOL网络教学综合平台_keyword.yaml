@@ -1,0 +1,20 @@
+id: THEOL_wang_luo_jiao_xue_zong_he_ping_tai_keyword
+info:
+  name: THEOL网络教学综合平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "THEOL网络教学综合平台"
+        words:
+          - "THEOL网络教学综合平台"
+        condition: and

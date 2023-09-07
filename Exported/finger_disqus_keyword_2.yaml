@@ -1,0 +1,20 @@
+id: disqus_keyword
+info:
+  name: disqus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "disqus"
+        words:
+          - "disqus_thread"
+        condition: and

@@ -1,0 +1,20 @@
+id: NLNETLABS_NLnet_NSD_keyword
+info:
+  name: NLNETLABS-NLnet-NSD_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NLNETLABS-NLnet-NSD"
+        words:
+          - "basic realm=\"nsd\""
+        condition: and

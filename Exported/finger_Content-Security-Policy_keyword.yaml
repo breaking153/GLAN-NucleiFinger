@@ -1,0 +1,26 @@
+id: Content_Security_Policy_keyword
+info:
+  name: Content-Security-Policy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Content-Security-Policy"
+        words:
+          - "x-content-security-policy"
+        condition: and
+      - type: word
+        part: header
+        name: "Content-Security-Policy"
+        words:
+          - "x-webkit-csp"
+        condition: and

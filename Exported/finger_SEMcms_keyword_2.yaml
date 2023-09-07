@@ -1,0 +1,26 @@
+id: SEMcms_keyword
+info:
+  name: SEMcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SEMcms"
+        words:
+          - "semcms PHP"
+        condition: and
+      - type: word
+        part: body
+        name: "SEMcms"
+        words:
+          - "sc_mid_c_left_c sc_mid_left_bt"
+        condition: and

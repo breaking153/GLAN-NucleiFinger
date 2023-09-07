@@ -1,0 +1,20 @@
+id: axTLS_Embad_Httpd_keyword
+info:
+  name: axTLS-Embad-Httpd_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "axTLS-Embad-Httpd"
+        words:
+          - "server: axhttpd"
+        condition: and

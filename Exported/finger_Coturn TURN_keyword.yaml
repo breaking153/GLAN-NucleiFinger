@@ -1,0 +1,20 @@
+id: Coturn_TURN_keyword
+info:
+  name: Coturn TURN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Coturn TURN"
+        words:
+          - "Coturn TURN"
+        condition: and

@@ -1,0 +1,20 @@
+id: DCN_S5750E_28X_SI_keyword
+info:
+  name: DCN-S5750E-28X-SI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DCN-S5750E-28X-SI"
+        words:
+          - "<b>s5750e-28x-si</b>"
+        condition: and

@@ -1,0 +1,21 @@
+id: hai_kang_wei_shi_lian_wang_wang_guan_keyword
+info:
+  name: 海康威视联网网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "海康威视联网网关"
+        words:
+          - "独立运行(无平台)"
+          - "login_form"
+        condition: and

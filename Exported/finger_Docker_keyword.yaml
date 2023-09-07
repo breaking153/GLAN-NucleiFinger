@@ -1,0 +1,21 @@
+id: Docker_keyword
+info:
+  name: Docker_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Docker"
+        words:
+          - "x-docker-registry-version"
+          - "x-docker-container: nginx"
+        condition: and

@@ -1,0 +1,26 @@
+id: Topsec_Intrusion_detection_system_TopSentry_keyword
+info:
+  name: Topsec-Intrusion-detection-system-TopSentry_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topsec-Intrusion-detection-system-TopSentry"
+        words:
+          - "天融信入侵检测系统TopSentry"
+        condition: and
+      - type: word
+        part: body
+        name: "Topsec-Intrusion-detection-system-TopSentry"
+        words:
+          - "天融信入侵检测系统topsentry"
+        condition: and

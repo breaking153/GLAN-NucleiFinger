@@ -1,0 +1,22 @@
+id: a_mu_rui_te_zhi_neng_DNS_keyword
+info:
+  name: 阿姆瑞特智能DNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "阿姆瑞特智能DNS"
+        words:
+          - "DNS"
+          - "main.php?mod=member"
+          - "DNS_"
+        condition: and

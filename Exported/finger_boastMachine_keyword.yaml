@@ -1,0 +1,33 @@
+id: boastMachine_keyword
+info:
+  name: boastMachine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "boastMachine"
+        words:
+          - "powered by boastmachine"
+          - "powered by <a href=\"http://boastology.com"
+        condition: and
+      - type: word
+        part: body
+        name: "boastMachine"
+        words:
+          - "powered by boastMachine"
+        condition: and
+      - type: word
+        part: body
+        name: "boastMachine"
+        words:
+          - "Powered by <a href=\"http://boastology.com"
+        condition: and

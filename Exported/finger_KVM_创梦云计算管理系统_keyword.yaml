@@ -1,0 +1,20 @@
+id: KVM_chuang_meng_yun_ji_suan_guan_li_xi_tong_keyword
+info:
+  name: KVM_创梦云计算管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KVM_创梦云计算管理系统"
+        words:
+          - "<title>KVM_创梦云计算管理系统</title>"
+        condition: and

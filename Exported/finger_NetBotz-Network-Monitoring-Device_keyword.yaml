@@ -1,0 +1,23 @@
+id: NetBotz_Network_Monitoring_Device_keyword
+info:
+  name: NetBotz-Network-Monitoring-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetBotz-Network-Monitoring-Device"
+        words:
+          - "href=\"/netbotz.css"
+          - "netbotz appliance"
+          - "href=\"http://www.netbotz.com\" target"
+          - "netbotz appliance"
+        condition: and

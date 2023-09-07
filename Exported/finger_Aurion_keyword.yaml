@@ -1,0 +1,32 @@
+id: Aurion_keyword
+info:
+  name: Aurion_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Aurion"
+        words:
+          - "<!-- aurion teal will be used as the login-time default"
+        condition: and
+      - type: word
+        part: body
+        name: "Aurion"
+        words:
+          - "<!-- Aurion Teal will be used as the login-time default"
+        condition: and
+      - type: word
+        part: body
+        name: "Aurion"
+        words:
+          - "/aurion.js"
+        condition: and

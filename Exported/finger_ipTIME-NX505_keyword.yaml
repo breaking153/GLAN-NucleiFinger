@@ -1,0 +1,20 @@
+id: ipTIME_NX505_keyword
+info:
+  name: ipTIME-NX505_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-NX505"
+        words:
+          - "src =\"/images2/login_title.nx505.gif\""
+        condition: and

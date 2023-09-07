@@ -1,0 +1,20 @@
+id: NETPAS_Traffic_management_system_keyword
+info:
+  name: NETPAS-Traffic-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETPAS-Traffic-management-system"
+        words:
+          - "版权所有 <a href=\"http://www.netpas.cc"
+        condition: and

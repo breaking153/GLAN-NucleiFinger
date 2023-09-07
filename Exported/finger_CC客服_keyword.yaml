@@ -1,0 +1,20 @@
+id: CC_ke_fu_keyword
+info:
+  name: CC客服_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CC客服"
+        words:
+          - "<script src=\"http://kefu.qycn.com/"
+        condition: and

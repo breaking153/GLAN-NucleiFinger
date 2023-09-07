@@ -1,0 +1,22 @@
+id: ikuai_flow_control_router_keyword
+info:
+  name: ikuai-flow-control-router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ikuai-flow-control-router"
+        words:
+          - "/resources/images/land_prompt_ico01.gif"
+          - "<li><a href=\"http://www.ikuai8.com\" target=\"_blank\">官网</a></li>"
+          - "src=/static/js/manifest.6513b08df486af67396b.js>"
+        condition: and

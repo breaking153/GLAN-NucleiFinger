@@ -1,0 +1,22 @@
+id: ChinaMobile_JX01_keyword
+info:
+  name: ChinaMobile-JX01_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ChinaMobile-JX01"
+        words:
+          - "action=\"/loginaction.do"
+          - "name=\"org.apache.struts.taglib.html.token\""
+          - "background=\"/images/loginbg.gif\""
+        condition: and

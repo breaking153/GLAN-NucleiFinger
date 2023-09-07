@@ -1,0 +1,26 @@
+id: Esvon_Classifieds_keyword
+info:
+  name: Esvon-Classifieds_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Esvon-Classifieds"
+        words:
+          - "powered by esvon"
+        condition: and
+      - type: word
+        part: body
+        name: "Esvon-Classifieds"
+        words:
+          - "Powered by Esvon"
+        condition: and

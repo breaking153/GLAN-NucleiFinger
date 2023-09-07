@@ -1,0 +1,21 @@
+id: RenWoXing_CRM_keyword
+info:
+  name: RenWoXing-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RenWoXing-CRM"
+        words:
+          - "/resources/imgs/defaultannex/loginpictures/"
+          - "欢迎使用任我行crm"
+        condition: and

@@ -1,0 +1,20 @@
+id: Koala_Web_Server_keyword
+info:
+  name: Koala-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Koala-Web-Server"
+        words:
+          - "server: koala web server"
+        condition: and

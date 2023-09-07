@@ -1,0 +1,20 @@
+id: Percona_XtraDB_Cluster_keyword
+info:
+  name: Percona-XtraDB-Cluster_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Percona-XtraDB-Cluster"
+        words:
+          - "percona xtradb cluster node"
+        condition: and

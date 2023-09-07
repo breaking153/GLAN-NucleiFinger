@@ -1,0 +1,21 @@
+id: Webbased_PEAR_Package_Manager_keyword
+info:
+  name: Webbased-PEAR-Package-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Webbased-PEAR-Package-Manager"
+        words:
+          - "pear_frontend_web"
+          - "<img src=\"?img=pear\" width=\"104\" height=\"50\" vspace=\"2\" hspace=\"5\" alt=\"pear\">"
+        condition: and

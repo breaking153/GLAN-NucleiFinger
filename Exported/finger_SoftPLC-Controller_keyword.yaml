@@ -1,0 +1,21 @@
+id: SoftPLC_Controller_keyword
+info:
+  name: SoftPLC-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SoftPLC-Controller"
+        words:
+          - "syswww"
+          - "softplc"
+        condition: and

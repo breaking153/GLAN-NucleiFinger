@@ -1,0 +1,21 @@
+id: Colasoft_MDP_keyword
+info:
+  name: Colasoft-MDP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Colasoft-MDP"
+        words:
+          - "科来 版权所有 保留所有权利"
+          - "<div id=\"processtime\" time=\"0.000033\" >#processtime</div>"
+        condition: and

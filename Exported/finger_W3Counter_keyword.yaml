@@ -1,0 +1,20 @@
+id: W3Counter_keyword
+info:
+  name: W3Counter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "W3Counter"
+        words:
+          - "W3Counter"
+        condition: and

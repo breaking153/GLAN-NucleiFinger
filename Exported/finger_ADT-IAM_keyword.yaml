@@ -1,0 +1,20 @@
+id: ADT_IAM_keyword
+info:
+  name: ADT-IAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ADT-IAM"
+        words:
+          - "content=\"tpn,vpn,内网安全,内网控制,主机防护\""
+        condition: and

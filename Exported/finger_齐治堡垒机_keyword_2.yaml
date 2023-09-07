@@ -1,0 +1,20 @@
+id: qi_zhi_bao_lei_ji_keyword_1
+info:
+  name: 齐治堡垒机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "齐治堡垒机"
+        words:
+          - "齐治堡垒机"
+        condition: and

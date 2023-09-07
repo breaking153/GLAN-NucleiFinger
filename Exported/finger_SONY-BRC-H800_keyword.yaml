@@ -1,0 +1,20 @@
+id: SONY_BRC_H800_keyword
+info:
+  name: SONY-BRC-H800_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SONY-BRC-H800"
+        words:
+          - "realm=\"brc-h800"
+        condition: and

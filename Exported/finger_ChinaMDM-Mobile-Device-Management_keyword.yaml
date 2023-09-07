@@ -1,0 +1,21 @@
+id: ChinaMDM_Mobile_Device_Management_keyword
+info:
+  name: ChinaMDM-Mobile-Device-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ChinaMDM-Mobile-Device-Management"
+        words:
+          - "innerhtml=\"chinamdm移动终端管理系统"
+          - "justsy/user/searchmenusbyusername/"
+        condition: and

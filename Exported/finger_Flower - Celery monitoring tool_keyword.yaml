@@ -1,0 +1,20 @@
+id: Flower_Celery_monitoring_tool_keyword
+info:
+  name: Flower - Celery monitoring tool_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Flower - Celery monitoring tool"
+        words:
+          - "<a class=\"brand\" href=\"/\">flower</a>"
+        condition: and

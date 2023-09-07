@@ -1,0 +1,32 @@
+id: Jira_keyword
+info:
+  name: Jira_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jira"
+        words:
+          - "jira.webresources"
+          - "com.atlassian.plugins"
+        condition: and
+      - type: word
+        part: body
+        name: "Jira"
+        words:
+          - "jira.webresources"
+          - "ams-build-number"
+          - "com.atlassian.plugins"
+          - "content=\"jira"
+          - "href=\"/secure/AboutPage.jspa\">About JIRA</a>"
+          - "<meta name=\"stp-license-product-name\" content=\"JIRA\"/>"
+        condition: and

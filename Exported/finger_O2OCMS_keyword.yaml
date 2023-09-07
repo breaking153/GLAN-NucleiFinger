@@ -1,0 +1,20 @@
+id: O2OCMS_keyword
+info:
+  name: O2OCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "O2OCMS"
+        words:
+          - "/index.php/clasify/showone/gtitle/"
+        condition: and

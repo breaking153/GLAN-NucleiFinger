@@ -1,0 +1,39 @@
+id: Drupal_keyword_1
+info:
+  name: Drupal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Drupal"
+        words:
+          - "href=\"https://www.drupal.org\""
+          - "data-drupal-link-system-path="
+        condition: and
+      - type: word
+        part: body
+        name: "Drupal"
+        words:
+          - "content=\"Drupal"
+        condition: and
+      - type: word
+        part: body
+        name: "Drupal"
+        words:
+          - "jQuery.extend(Drupal.settings"
+        condition: and
+      - type: word
+        part: body
+        name: "Drupal"
+        words:
+          - "/sites/all/modules/"
+        condition: and

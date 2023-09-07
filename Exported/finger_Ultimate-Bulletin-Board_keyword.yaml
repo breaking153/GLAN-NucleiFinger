@@ -1,0 +1,21 @@
+id: Ultimate_Bulletin_Board_keyword
+info:
+  name: Ultimate-Bulletin-Board_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ultimate-Bulletin-Board"
+        words:
+          - "<meta name=\"generator\" content=\"ubb.threads"
+          - "<a href=\"http://www.groupee.com/landing/goto.php?a=ubb.classic\">powered by ubb.classic&trade"
+        condition: and

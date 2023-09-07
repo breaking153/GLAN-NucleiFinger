@@ -1,0 +1,20 @@
+id: SONY_SNC_CX600W_keyword
+info:
+  name: SONY-SNC-CX600W_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SONY-SNC-CX600W"
+        words:
+          - "realm=\"snc-cx600w"
+        condition: and

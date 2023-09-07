@@ -1,0 +1,20 @@
+id: HuaWei_S12708_keyword
+info:
+  name: HuaWei-S12708_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HuaWei-S12708"
+        words:
+          - "s12708 "
+        condition: and

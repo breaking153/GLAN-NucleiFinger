@@ -1,0 +1,20 @@
+id: 21grid_keyword
+info:
+  name: 21grid_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "21grid"
+        words:
+          - "技术支持：网格（福建）智能科技有限公司"
+        condition: and

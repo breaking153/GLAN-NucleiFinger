@@ -1,0 +1,21 @@
+id: DELL_Unisphere_keyword
+info:
+  name: DELL-Unisphere_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-Unisphere"
+        words:
+          - "用于 sc 系列的 unisphere"
+          - "unisphere for sc series"
+        condition: and

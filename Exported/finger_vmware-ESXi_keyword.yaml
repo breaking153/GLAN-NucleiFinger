@@ -1,0 +1,21 @@
+id: vmware_ESXi_keyword
+info:
+  name: vmware-ESXi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "vmware-ESXi"
+        words:
+          - "ng-app=\"esxuiapp\""
+          - "<title ng-bind=\"$root.title\">"
+        condition: and

@@ -1,0 +1,21 @@
+id: Mibew_Messenger_keyword
+info:
+  name: Mibew-Messenger_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mibew-Messenger"
+        words:
+          - "class=\"empty_inner"
+          - "class=\"flink\">mibew messenger"
+        condition: and

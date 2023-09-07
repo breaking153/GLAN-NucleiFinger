@@ -1,0 +1,20 @@
+id: yadongsoft_FS3_keyword
+info:
+  name: yadongsoft-FS3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yadongsoft-FS3"
+        words:
+          - "神盾fs<sup>3</sup>文档安全共享系统v2.0</div>"
+        condition: and

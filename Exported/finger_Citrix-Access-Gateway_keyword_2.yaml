@@ -1,0 +1,27 @@
+id: Citrix_Access_Gateway_keyword_1_1
+info:
+  name: Citrix-Access-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Citrix-Access-Gateway"
+        words:
+          - "ezisneercsresu="
+          - "pwcount"
+        condition: and
+      - type: word
+        part: header
+        name: "Citrix-Access-Gateway"
+        words:
+          - "Cyms-SecS"
+        condition: and

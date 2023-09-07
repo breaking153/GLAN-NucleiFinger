@@ -1,0 +1,20 @@
+id: wang_kang_fu_zai_jun_heng_keyword
+info:
+  name: 网康负载均衡_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "网康负载均衡"
+        words:
+          - "网康负载均衡"
+        condition: and

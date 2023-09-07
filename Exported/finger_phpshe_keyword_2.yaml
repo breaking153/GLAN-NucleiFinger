@@ -1,0 +1,32 @@
+id: phpshe_keyword
+info:
+  name: phpshe_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpshe"
+        words:
+          - "Powered by phpshe"
+        condition: and
+      - type: word
+        part: body
+        name: "phpshe"
+        words:
+          - "content=\"phpshe"
+        condition: and
+      - type: word
+        part: body
+        name: "phpshe"
+        words:
+          - "phpshe"
+        condition: and

@@ -1,0 +1,20 @@
+id: gzcstec_Exam_keyword
+info:
+  name: gzcstec-Exam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "gzcstec-Exam"
+        words:
+          - "placeholder=\"请输入凭据\""
+        condition: and

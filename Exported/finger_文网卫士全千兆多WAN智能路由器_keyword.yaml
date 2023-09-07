@@ -1,0 +1,20 @@
+id: wen_wang_wei_shi_quan_qian_zhao_duo_WAN_zhi_neng_lu_you_qi_keyword
+info:
+  name: 文网卫士全千兆多WAN智能路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "文网卫士全千兆多WAN智能路由器"
+        words:
+          - "文网卫士全千兆多WAN智能路由器"
+        condition: and

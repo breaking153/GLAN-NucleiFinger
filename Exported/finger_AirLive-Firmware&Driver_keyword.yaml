@@ -1,0 +1,21 @@
+id: AirLive_Firmware_Driver_keyword
+info:
+  name: AirLive-Firmware&Driver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AirLive-Firmware&Driver"
+        words:
+          - "airlive airmax5"
+          - "airlive airmax2"
+        condition: and

@@ -1,0 +1,26 @@
+id: Mbedthis_Appweb_keyword
+info:
+  name: Mbedthis-Appweb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Mbedthis-Appweb"
+        words:
+          - "server: mbedthis-appweb"
+        condition: and
+      - type: word
+        part: header
+        name: "Mbedthis-Appweb"
+        words:
+          - "Mbedthis-Appweb"
+        condition: and

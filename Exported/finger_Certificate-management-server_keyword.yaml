@@ -1,0 +1,21 @@
+id: Certificate_management_server_keyword
+info:
+  name: Certificate-management-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Certificate-management-server"
+        words:
+          - "name=\"spring-security-redirect\" value=\"/loginbycert\""
+          - "证书管理服务器"
+        condition: and

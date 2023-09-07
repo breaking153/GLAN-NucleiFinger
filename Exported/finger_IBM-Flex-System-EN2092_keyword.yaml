@@ -1,0 +1,20 @@
+id: IBM_Flex_System_EN2092_keyword
+info:
+  name: IBM-Flex-System-EN2092_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Flex-System-EN2092"
+        words:
+          - "ibm flex system en2092"
+        condition: and

@@ -1,0 +1,20 @@
+id: Adcon_Telemetry_Gateway_keyword_1_1_1
+info:
+  name: Adcon Telemetry Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Adcon Telemetry Gateway"
+        words:
+          - "addUPI"
+        condition: and

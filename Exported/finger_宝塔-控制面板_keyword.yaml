@@ -1,0 +1,20 @@
+id: bao_ta_kong_zhi_mian_ban_keyword
+info:
+  name: 宝塔-控制面板_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "宝塔-控制面板"
+        words:
+          - "宝塔-控制面板"
+        condition: and

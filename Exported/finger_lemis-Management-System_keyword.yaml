@@ -1,0 +1,20 @@
+id: lemis_Management_System_keyword
+info:
+  name: lemis-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "lemis-Management-System"
+        words:
+          - "lemis.web_app_name"
+        condition: and

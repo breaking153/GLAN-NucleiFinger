@@ -1,0 +1,20 @@
+id: Siemens_Building_Technologies_keyword
+info:
+  name: Siemens-Building-Technologies_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-Building-Technologies"
+        words:
+          - "<br><i>siemens building technologies"
+        condition: and

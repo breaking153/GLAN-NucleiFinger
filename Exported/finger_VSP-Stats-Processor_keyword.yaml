@@ -1,0 +1,22 @@
+id: VSP_Stats_Processor_keyword
+info:
+  name: VSP-Stats-Processor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VSP-Stats-Processor"
+        words:
+          - "<a href=\"http://www.clanavl.com/vsp/\">vsp</a> v"
+          - "<body>error: cannot establish database connection or database database_name does not exist"
+          - "&nbsp;theme:bismarck by <a href=\"#\" title=\"myrddin8 <at> gmail <dot> com\">myrddin</a>&nbsp;"
+        condition: and

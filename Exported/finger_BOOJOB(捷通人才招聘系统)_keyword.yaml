@@ -1,0 +1,26 @@
+id: BOOJOB_jie_tong_ren_cai_zhao_pin_xi_tong_keyword
+info:
+  name: BOOJOB(捷通人才招聘系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BOOJOB(捷通人才招聘系统)"
+        words:
+          - "BOOJOB"
+        condition: and
+      - type: word
+        part: body
+        name: "BOOJOB(捷通人才招聘系统)"
+        words:
+          - "捷通人才招聘系统"
+        condition: and

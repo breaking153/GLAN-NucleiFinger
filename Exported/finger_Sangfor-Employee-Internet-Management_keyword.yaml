@@ -1,0 +1,25 @@
+id: Sangfor_Employee_Internet_Management_keyword
+info:
+  name: Sangfor-Employee-Internet-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sangfor-Employee-Internet-Management"
+        words:
+          - "content=\"must-revalidate\""
+          - " = function(str, key"
+          - "document.cookie = 'sangfor_session_hash=0'"
+          - "上网优化管理"
+          - "href=\"http://sec.sangfor.com.cn/events/89.html\""
+          - "internet authentication system"
+        condition: and

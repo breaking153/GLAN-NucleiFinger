@@ -1,0 +1,26 @@
+id: BeeS_CMS_keyword
+info:
+  name: BeeS-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BeeS-CMS"
+        words:
+          - "powerd by"
+          - "beescms"
+          - "template/default/images/slides.min.jquery.js"
+          - "/default/images/xslider.js"
+          - "/default/images/search_btn.gif"
+          - "powerd by beescms"
+          - "mx_form/mx_form.php"
+        condition: and

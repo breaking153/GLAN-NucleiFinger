@@ -1,0 +1,20 @@
+id: HUAWEI_S7700_keyword
+info:
+  name: HUAWEI-S7700_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HUAWEI-S7700"
+        words:
+          - "s7700"
+        condition: and

@@ -1,0 +1,20 @@
+id: hispider_Router_keyword
+info:
+  name: hispider-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hispider-Router"
+        words:
+          - "action=\"login.pl\" method=\"post\"  onsubmit=\"encryptpasswd("
+        condition: and

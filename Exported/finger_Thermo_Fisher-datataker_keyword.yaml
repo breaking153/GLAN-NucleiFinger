@@ -1,0 +1,22 @@
+id: Thermo_Fisher_datataker_keyword
+info:
+  name: Thermo_Fisher-datataker_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Thermo_Fisher-datataker"
+        words:
+          - "htmljavascript/multibox/multibox.css"
+          - "htmljavascript/mootools.js"
+          - "htmlimages/mainbackground.png"
+        condition: and

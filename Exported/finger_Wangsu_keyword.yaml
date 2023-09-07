@@ -1,0 +1,21 @@
+id: Wangsu_keyword
+info:
+  name: Wangsu_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Wangsu"
+        words:
+          - "cdn cache server"
+          - "ws cdn server"
+        condition: and

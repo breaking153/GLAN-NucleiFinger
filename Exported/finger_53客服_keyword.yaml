@@ -1,0 +1,20 @@
+id: 53_ke_fu_keyword
+info:
+  name: 53客服_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "53客服"
+        words:
+          - "tb.53kf.com/code/"
+        condition: and

@@ -1,0 +1,20 @@
+id: WPB_5000_AP_keyword
+info:
+  name: WPB-5000-AP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WPB-5000-AP"
+        words:
+          - "window.location = \"./ap/login.html\";"
+        condition: and

@@ -1,0 +1,20 @@
+id: Kerio_WinRoute_Firewall_keyword_1_1_1
+info:
+  name: Kerio-WinRoute-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kerio-WinRoute-Firewall"
+        words:
+          - "Kerio WinRoute Firewall Embedded Web Server"
+        condition: and

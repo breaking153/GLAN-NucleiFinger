@@ -1,0 +1,21 @@
+id: ipTIME_G504_keyword
+info:
+  name: ipTIME G504_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME G504"
+        words:
+          - "src =\"/images/login_back_g504.gif\""
+          - "src =\"/images2/login_title.g504.gif\""
+        condition: and

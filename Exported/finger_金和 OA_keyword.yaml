@@ -1,0 +1,21 @@
+id: jin_he_OA_keyword
+info:
+  name: 金和 OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金和 OA"
+        words:
+          - "金和网络"
+          - "Jinher Software"
+        condition: and

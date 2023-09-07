@@ -1,0 +1,20 @@
+id: sq580_System_keyword
+info:
+  name: sq580-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sq580-System"
+        words:
+          - "3cspan id='cnzz_stat_icon_1274142628"
+        condition: and

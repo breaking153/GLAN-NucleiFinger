@@ -1,0 +1,20 @@
+id: HuaWei_Video_Conferencing_keyword
+info:
+  name: HuaWei-Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-Video-Conferencing"
+        words:
+          - "window.location.replace(pathname + \"login.html\";"
+        condition: and

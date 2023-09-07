@@ -1,0 +1,21 @@
+id: Shop_Builder_MallBuilder_keyword
+info:
+  name: Shop_Builder-MallBuilder_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Shop_Builder-MallBuilder"
+        words:
+          - "content=\"mallbuilder"
+          - "powered by mallbuilder"
+        condition: and

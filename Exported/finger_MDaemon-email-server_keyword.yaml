@@ -1,0 +1,21 @@
+id: MDaemon_email_server_keyword
+info:
+  name: MDaemon-email-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MDaemon-email-server"
+        words:
+          - "/worldclient.dll?view=main"
+          - "<strong>mdaemon/worldclient"
+        condition: and

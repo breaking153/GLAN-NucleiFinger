@@ -1,0 +1,20 @@
+id: guan_li_hou_tai_deng_lu_keyword
+info:
+  name: 管理后台登录_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "管理后台登录"
+        words:
+          - "<title>管理员"
+          - "<title>登录"

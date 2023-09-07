@@ -1,0 +1,26 @@
+id: Catfish_nian_yu_CMS_keyword
+info:
+  name: Catfish(鲶鱼CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Catfish(鲶鱼CMS)"
+        words:
+          - "Catfish"
+        condition: and
+      - type: word
+        part: body
+        name: "Catfish(鲶鱼CMS)"
+        words:
+          - "鲶鱼CMS"
+        condition: and

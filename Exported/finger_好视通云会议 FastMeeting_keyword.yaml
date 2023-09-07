@@ -1,0 +1,20 @@
+id: hao_shi_tong_yun_hui_yi_FastMeeting_keyword
+info:
+  name: 好视通云会议 FastMeeting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "好视通云会议 FastMeeting"
+        words:
+          - "好视通云会议 FastMeeting"
+        condition: and

@@ -1,0 +1,20 @@
+id: FIRERP_SOFT_keyword
+info:
+  name: FIRERP-SOFT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FIRERP-SOFT"
+        words:
+          - "images/bt/bt_login_b.gif"
+        condition: and

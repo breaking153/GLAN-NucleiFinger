@@ -1,0 +1,20 @@
+id: NETGEAR_GS748TR_keyword
+info:
+  name: NETGEAR-GS748TR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-GS748TR"
+        words:
+          - "gs748trimage spacer50percent topalign righthalign"
+        condition: and

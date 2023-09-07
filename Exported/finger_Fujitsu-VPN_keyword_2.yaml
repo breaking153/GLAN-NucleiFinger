@@ -1,0 +1,26 @@
+id: Fujitsu_VPN_keyword_1
+info:
+  name: Fujitsu-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Fujitsu-VPN"
+        words:
+          - "sslvpnlang"
+        condition: and
+      - type: word
+        part: header
+        name: "Fujitsu-VPN"
+        words:
+          - "Fujitsu-VPN"
+        condition: and

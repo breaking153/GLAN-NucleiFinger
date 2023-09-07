@@ -1,0 +1,21 @@
+id: Novell_NetWare_keyword
+info:
+  name: Novell-NetWare_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Novell-NetWare"
+        words:
+          - "code=\"nwshealth.class"
+          - "<b>novell netware"
+        condition: and

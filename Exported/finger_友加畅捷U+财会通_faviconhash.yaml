@@ -1,0 +1,19 @@
+id: you_jia_chang_jie_U_cai_hui_tong_faviconhash
+info:
+  name: 友加畅捷U+财会通_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "友加畅捷U+财会通"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2049187099\""
+        condition: or

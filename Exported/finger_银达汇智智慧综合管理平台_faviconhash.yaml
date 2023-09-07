@@ -1,0 +1,19 @@
+id: yin_da_hui_zhi_zhi_hui_zong_he_guan_li_ping_tai_faviconhash
+info:
+  name: 银达汇智智慧综合管理平台_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "银达汇智智慧综合管理平台"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1170487960\""
+        condition: or

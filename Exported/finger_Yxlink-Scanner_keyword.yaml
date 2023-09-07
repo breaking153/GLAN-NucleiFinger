@@ -1,0 +1,20 @@
+id: Yxlink_Scanner_keyword
+info:
+  name: Yxlink-Scanner_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yxlink-Scanner"
+        words:
+          - "content=\"铱迅漏洞扫描系统"
+        condition: and

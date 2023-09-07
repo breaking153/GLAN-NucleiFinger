@@ -1,0 +1,20 @@
+id: Nowayer_FTP_keyword
+info:
+  name: Nowayer-FTP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nowayer-FTP"
+        words:
+          - "content=\"nowayer\""
+        condition: and

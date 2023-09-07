@@ -1,0 +1,20 @@
+id: INDAS_WEB_SCADA_keyword
+info:
+  name: INDAS WEB SCADA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "INDAS WEB SCADA"
+        words:
+          - "INDAS WEB SCADA"
+        condition: and

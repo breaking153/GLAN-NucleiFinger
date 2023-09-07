@@ -1,0 +1,20 @@
+id: AdRem_WebApp_Server_keyword
+info:
+  name: AdRem WebApp Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AdRem WebApp Server"
+        words:
+          - "AdRem WebApp Server"
+        condition: and

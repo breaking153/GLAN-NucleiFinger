@@ -1,0 +1,20 @@
+id: Bluedon_WebGuard_Tamper_Resistance_keyword
+info:
+  name: Bluedon-WebGuard-Tamper-Resistance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bluedon-WebGuard-Tamper-Resistance"
+        words:
+          - "background: url(images/loginbg.jpg #e5f1fc"
+        condition: and

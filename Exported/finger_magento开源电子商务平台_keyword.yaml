@@ -1,0 +1,20 @@
+id: magento_kai_yuan_dian_zi_shang_wu_ping_tai_keyword
+info:
+  name: magento开源电子商务平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "magento开源电子商务平台"
+        words:
+          - "magento开源电子商务平台"
+        condition: and

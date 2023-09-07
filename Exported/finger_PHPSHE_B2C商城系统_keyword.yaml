@@ -1,0 +1,26 @@
+id: PHPSHE_B2C_shang_cheng_xi_tong_keyword
+info:
+  name: PHPSHE_B2C商城系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHPSHE_B2C商城系统"
+        words:
+          - "Powered by phpshe"
+        condition: and
+      - type: word
+        part: body
+        name: "PHPSHE_B2C商城系统"
+        words:
+          - "content=\"phpshe"
+        condition: and

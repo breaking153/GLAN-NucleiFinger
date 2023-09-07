@@ -1,0 +1,20 @@
+id: oracle_tns_keyword
+info:
+  name: oracle-tns_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "oracle-tns"
+        words:
+          - "oracle-tns"
+        condition: and

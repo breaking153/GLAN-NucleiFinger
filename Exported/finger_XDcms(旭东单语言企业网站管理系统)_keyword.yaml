@@ -1,0 +1,26 @@
+id: XDcms_xu_dong_dan_yu_yan_qi_ye_wang_zhan_guan_li_xi_tong_keyword
+info:
+  name: XDcms(旭东单语言企业网站管理系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "XDcms(旭东单语言企业网站管理系统)"
+        words:
+          - "XDcms"
+        condition: and
+      - type: word
+        part: body
+        name: "XDcms(旭东单语言企业网站管理系统)"
+        words:
+          - "旭东单语言企业网站管理系统"
+        condition: and

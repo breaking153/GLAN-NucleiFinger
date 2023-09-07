@@ -1,0 +1,20 @@
+id: da_hua_DSS_keyword
+info:
+  name: 大华DSS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "大华DSS"
+        words:
+          - "大华DSS"
+        condition: and

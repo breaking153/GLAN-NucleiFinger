@@ -1,0 +1,20 @@
+id: lei_feng_cms_keyword
+info:
+  name: 雷风cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "雷风cms"
+        words:
+          - "雷风cms"
+        condition: and

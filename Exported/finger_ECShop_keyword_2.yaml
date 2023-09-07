@@ -1,0 +1,26 @@
+id: ECShop_keyword_1
+info:
+  name: ECShop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ECShop"
+        words:
+          - "ecs_id"
+        condition: and
+      - type: word
+        part: header
+        name: "ECShop"
+        words:
+          - "ECS_ID"
+        condition: and

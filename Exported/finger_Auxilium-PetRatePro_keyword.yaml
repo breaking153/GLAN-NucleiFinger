@@ -1,0 +1,20 @@
+id: Auxilium_PetRatePro_keyword
+info:
+  name: Auxilium-PetRatePro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Auxilium-PetRatePro"
+        words:
+          - "index.php?cmd=11"
+        condition: and

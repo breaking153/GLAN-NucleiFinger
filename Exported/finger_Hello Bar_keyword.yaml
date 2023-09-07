@@ -1,0 +1,20 @@
+id: Hello_Bar_keyword
+info:
+  name: Hello Bar_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Hello Bar"
+        words:
+          - "Hello Bar"
+        condition: and

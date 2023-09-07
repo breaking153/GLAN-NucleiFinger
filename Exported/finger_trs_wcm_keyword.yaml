@@ -1,0 +1,50 @@
+id: trs_wcm_keyword
+info:
+  name: trs_wcm_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "trs_wcm"
+        words:
+          - "/wcm/app/js"
+        condition: and
+      - type: word
+        part: body
+        name: "trs_wcm"
+        words:
+          - "0;URL=/wcm"
+        condition: and
+      - type: word
+        part: body
+        name: "trs_wcm"
+        words:
+          - "window.location.href = \"/wcm\";"
+        condition: and
+      - type: word
+        part: body
+        name: "trs_wcm"
+        words:
+          - "/wcm\" target=\"_blank\">网站管理"
+        condition: and
+      - type: word
+        part: body
+        name: "trs_wcm"
+        words:
+          - "/wcm\" target=\"_blank\">管理"
+        condition: and
+      - type: word
+        part: body
+        name: "trs_wcm"
+        words:
+          - "WCM_VERSION"
+        condition: and

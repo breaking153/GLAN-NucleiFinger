@@ -1,0 +1,20 @@
+id: M_R_Inc_Webserver_keyword
+info:
+  name: M.R. Inc Webserver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "M.R. Inc Webserver"
+        words:
+          - "M.R. Inc Webserver"
+        condition: and

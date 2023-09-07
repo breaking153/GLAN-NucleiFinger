@@ -1,0 +1,21 @@
+id: sxzrouter_Caching_keyword
+info:
+  name: sxzrouter-Caching_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sxzrouter-Caching"
+        words:
+          - "src=\"/public/sec/assets/js/libs/jquery.placeholder.min.js\">"
+          - " href=\"http://www.dwcache.com\""
+        condition: and

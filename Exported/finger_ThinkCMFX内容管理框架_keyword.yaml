@@ -1,0 +1,20 @@
+id: ThinkCMFX_nei_rong_guan_li_kuang_jia_keyword
+info:
+  name: ThinkCMFX内容管理框架_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ThinkCMFX内容管理框架"
+        words:
+          - "ThinkCMFX内容管理框架"
+        condition: and

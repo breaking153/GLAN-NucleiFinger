@@ -1,0 +1,20 @@
+id: ai_kuai_liu_kong_lu_you_keyword
+info:
+  name: 爱快流控路由_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "爱快流控路由"
+        words:
+          - "/resources/images/land_prompt_ico01.gif"
+        condition: and

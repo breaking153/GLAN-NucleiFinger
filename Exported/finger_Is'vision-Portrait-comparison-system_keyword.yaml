@@ -1,0 +1,21 @@
+id: Is_vision_Portrait_comparison_system_keyword
+info:
+  name: Is'vision-Portrait-comparison-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Is'vision-Portrait-comparison-system"
+        words:
+          - "上海银晨"
+          - "人像比对系统"
+        condition: and

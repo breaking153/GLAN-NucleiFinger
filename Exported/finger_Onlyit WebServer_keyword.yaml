@@ -1,0 +1,20 @@
+id: Onlyit_WebServer_keyword
+info:
+  name: Onlyit WebServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Onlyit WebServer"
+        words:
+          - "Onlyit WebServer"
+        condition: and

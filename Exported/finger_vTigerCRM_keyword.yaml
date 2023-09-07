@@ -1,0 +1,25 @@
+id: vTigerCRM_keyword
+info:
+  name: vTigerCRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "vTigerCRM"
+        words:
+          - "/images/vtigercrm_icon.ico"
+          - "<div class=\"poweredby\">powered by vtiger crm - "
+          - "src=\"themes/images/vtigername.gif\" alt=\"vtiger crm"
+          - "vtiger crm </span>"
+          - "<img src='http://stats.vtiger.com/stats.php?uid="
+          - "<a href='http://www.vtiger.com' target='_blank'>vtiger.com</a>"
+        condition: and

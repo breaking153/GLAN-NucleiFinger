@@ -1,0 +1,20 @@
+id: HP_Blade_Switch_keyword
+info:
+  name: HP-Blade-Switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP-Blade-Switch"
+        words:
+          - "realm=\"ethernet blade switch for hp"
+        condition: and

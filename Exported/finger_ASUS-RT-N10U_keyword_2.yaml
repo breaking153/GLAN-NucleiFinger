@@ -1,0 +1,21 @@
+id: ASUS_RT_N10U_keyword_1
+info:
+  name: ASUS-RT-N10U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ASUS-RT-N10U"
+        words:
+          - "asus rt-n10u"
+          - "asus_rt-n10u"
+        condition: and

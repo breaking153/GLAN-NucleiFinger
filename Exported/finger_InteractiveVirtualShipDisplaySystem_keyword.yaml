@@ -1,0 +1,20 @@
+id: InteractiveVirtualShipDisplaySystem_keyword
+info:
+  name: InteractiveVirtualShipDisplaySystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "InteractiveVirtualShipDisplaySystem"
+        words:
+          - "交互式虚拟船舶展示系统</a>"
+        condition: and

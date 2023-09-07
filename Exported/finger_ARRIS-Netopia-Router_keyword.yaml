@@ -1,0 +1,21 @@
+id: ARRIS_Netopia_Router_keyword
+info:
+  name: ARRIS-Netopia-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ARRIS-Netopia-Router"
+        words:
+          - "realm=\"netopia-"
+          - "netopia-payments."
+        condition: and

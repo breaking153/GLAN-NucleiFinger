@@ -1,0 +1,38 @@
+id: phpBB_phpbb_keyword
+info:
+  name: phpBB(phpbb)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpBB(phpbb)"
+        words:
+          - "phpBB"
+        condition: and
+      - type: word
+        part: body
+        name: "phpBB(phpbb)"
+        words:
+          - "http://www.longluntan.com/zh/phpbb/"
+        condition: and
+      - type: word
+        part: body
+        name: "phpBB(phpbb)"
+        words:
+          - "phpBB Group\" />"
+        condition: and
+      - type: word
+        part: body
+        name: "phpBB(phpbb)"
+        words:
+          - "START QUICK HACK - phpBB Statistics MOD"
+        condition: and

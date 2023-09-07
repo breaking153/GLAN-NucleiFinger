@@ -1,0 +1,20 @@
+id: ai_xin_nuo_kai_piao_fu_wu_qi_keyword
+info:
+  name: 爱信诺开票服务器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "爱信诺开票服务器"
+        words:
+          - "aisino.kps.console"
+        condition: and

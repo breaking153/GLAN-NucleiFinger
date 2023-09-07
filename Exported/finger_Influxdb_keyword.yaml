@@ -1,0 +1,20 @@
+id: Influxdb_keyword
+info:
+  name: Influxdb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Influxdb"
+        words:
+          - "X-Influxdb"
+        condition: and

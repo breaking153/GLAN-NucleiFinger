@@ -1,0 +1,20 @@
+id: We7_zhan_qun_xi_tong_keyword
+info:
+  name: We7站群系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "We7站群系统"
+        words:
+          - "We7站群系统"
+        condition: and

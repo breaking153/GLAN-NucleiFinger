@@ -1,0 +1,21 @@
+id: H3C_CAS_keyword
+info:
+  name: H3C-CAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-CAS"
+        words:
+          - "href=\"cas.css"
+          - "<iframe src=\"javascript:''\" id=\"__gwt_historyframe\" tabindex='-1' style=\"position:absolute;width:0;height:0;border:0\"></iframe>"
+        condition: and

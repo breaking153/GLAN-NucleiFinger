@@ -1,0 +1,20 @@
+id: OSTD_Cloud_keyword
+info:
+  name: OSTD-Cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OSTD-Cloud"
+        words:
+          - "class=\"sys-title-right\">智联云服务"
+        condition: and

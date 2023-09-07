@@ -1,0 +1,20 @@
+id: Ananyoo_CMS_keyword
+info:
+  name: Ananyoo-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ananyoo-CMS"
+        words:
+          - "content=\"http://www.ananyoo.com"
+        condition: and

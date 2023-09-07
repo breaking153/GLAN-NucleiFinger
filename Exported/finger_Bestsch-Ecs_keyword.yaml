@@ -1,0 +1,21 @@
+id: Bestsch_Ecs_keyword
+info:
+  name: Bestsch-Ecs_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bestsch-Ecs"
+        words:
+          - "/userfiles/admin/customskin"
+          - "src=\"/include/ecsserverapi.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETCMS_keyword
+info:
+  name: NETCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETCMS"
+        words:
+          - "NETCMS"
+        condition: and

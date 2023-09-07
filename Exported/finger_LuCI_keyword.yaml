@@ -1,0 +1,24 @@
+id: LuCI_keyword
+info:
+  name: LuCI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LuCI"
+        words:
+          - "/luci-static/openwrt.org/cascade.css"
+          - "luci - lua configuration interface"
+          - "powered by luci"
+          - "href=\"/cgi-bin/luci\"></a>"
+          - "<head> <meta http-equiv=\"refresh\" content=\"0; url=/cgi-bin/luci\" /> </head>"
+        condition: and

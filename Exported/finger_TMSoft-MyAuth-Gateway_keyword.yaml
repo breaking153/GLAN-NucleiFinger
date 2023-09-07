@@ -1,0 +1,21 @@
+id: TMSoft_MyAuth_Gateway_keyword
+info:
+  name: TMSoft-MyAuth-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TMSoft-MyAuth-Gateway"
+        words:
+          - "tmsoft solucoes (www.tmsoft.com.br"
+          - "set-cookie myauth"
+        condition: and

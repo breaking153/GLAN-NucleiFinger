@@ -1,0 +1,20 @@
+id: Huawei_user_login_keyword
+info:
+  name: Huawei user-login_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Huawei user-login"
+        words:
+          - "Huawei Auth-Http"
+        condition: and

@@ -1,0 +1,20 @@
+id: BJB_EDSIP_keyword
+info:
+  name: BJB-EDSIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BJB-EDSIP"
+        words:
+          - "content=\"同辉eds多媒体信息发布系统"
+        condition: and

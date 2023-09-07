@@ -1,0 +1,24 @@
+id: OrangeHRM_keyword
+info:
+  name: OrangeHRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OrangeHRM"
+        words:
+          - "welcome to the orangehrm ver"
+          - "name=\"hdnusertimezoneoffset"
+          - "orangehrm"
+          - "/js/orangehrm.validate.js"
+          - "href=\"http://www.orangehrm.com\" target="
+        condition: and

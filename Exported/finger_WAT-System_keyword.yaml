@@ -1,0 +1,20 @@
+id: WAT_System_keyword
+info:
+  name: WAT-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WAT-System"
+        words:
+          - "生产经营计划统计一体化管理信息系统安装程序"
+        condition: and

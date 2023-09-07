@@ -1,0 +1,20 @@
+id: Sina_SAE_keyword
+info:
+  name: Sina-SAE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sina-SAE"
+        words:
+          - "internal.sinaapp.com"
+        condition: and

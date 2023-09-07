@@ -1,0 +1,20 @@
+id: CLIPCOMM_KWS_1040N_keyword
+info:
+  name: CLIPCOMM-KWS-1040N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CLIPCOMM-KWS-1040N"
+        words:
+          - "kws-1040n"
+        condition: and

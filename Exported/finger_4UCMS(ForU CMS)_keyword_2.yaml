@@ -1,0 +1,26 @@
+id: 4UCMS_ForU_CMS_keyword_1
+info:
+  name: 4UCMS(ForU CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "4UCMS(ForU CMS)"
+        words:
+          - "4UCMS"
+        condition: and
+      - type: word
+        part: header
+        name: "4UCMS(ForU CMS)"
+        words:
+          - "ForU CMS"
+        condition: and

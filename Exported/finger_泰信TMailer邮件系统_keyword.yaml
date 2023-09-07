@@ -1,0 +1,26 @@
+id: tai_xin_TMailer_you_jian_xi_tong_keyword
+info:
+  name: 泰信TMailer邮件系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "泰信TMailer邮件系统"
+        words:
+          - "content=\"Tmailer"
+        condition: and
+      - type: word
+        part: body
+        name: "泰信TMailer邮件系统"
+        words:
+          - "href=\"/tmailer/img/logo/favicon.ico"
+        condition: and

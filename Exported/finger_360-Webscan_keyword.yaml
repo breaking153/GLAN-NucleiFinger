@@ -1,0 +1,20 @@
+id: 360_Webscan_keyword
+info:
+  name: 360-Webscan_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-Webscan"
+        words:
+          - "webscan.360.cn/status/pai/hash"
+        condition: and

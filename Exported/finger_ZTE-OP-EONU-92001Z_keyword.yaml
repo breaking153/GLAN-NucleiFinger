@@ -1,0 +1,20 @@
+id: ZTE_OP_EONU_92001Z_keyword
+info:
+  name: ZTE-OP-EONU-92001Z_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-OP-EONU-92001Z"
+        words:
+          - "op-eonu 92001z</font></div>"
+        condition: and

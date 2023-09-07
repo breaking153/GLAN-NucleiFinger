@@ -1,0 +1,20 @@
+id: Toshiba_Cable_Modem_keyword
+info:
+  name: Toshiba-Cable-Modem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Toshiba-Cable-Modem"
+        words:
+          - "<font color=\"#980040\">"
+        condition: and

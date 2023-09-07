@@ -1,0 +1,34 @@
+id: Citrix_Access_Gateway_keyword_1
+info:
+  name: Citrix-Access-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citrix-Access-Gateway"
+        words:
+          - "href=\"/vpn/images/accessgateway.ico"
+          - "/vpn/images/accessgateway.ico"
+          - "href=\"/vpn/images/accessgateway.ico"
+          - "class=\"citrixreceiverlogoaboutbox\""
+          - "/vpn/js/gateway_login_view.js?"
+          - "cloud.ottoworkfroce.eu/vpn/index.html"
+          - "vpn/js/lsgateway_login_view.js"
+          - "class=\"_ctxstxt_netscalergateway\""
+          - "receiver/images/common/icon_vpn.ico"
+        condition: and
+      - type: word
+        part: body
+        name: "Citrix-Access-Gateway"
+        words:
+          - "href=\"/vpn/images/AccessGateway.ico"
+        condition: and

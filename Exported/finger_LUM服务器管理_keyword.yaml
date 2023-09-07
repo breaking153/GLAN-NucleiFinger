@@ -1,0 +1,20 @@
+id: LUM_fu_wu_qi_guan_li_keyword
+info:
+  name: LUM服务器管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LUM服务器管理"
+        words:
+          - "LUM_SESSION"
+        condition: and

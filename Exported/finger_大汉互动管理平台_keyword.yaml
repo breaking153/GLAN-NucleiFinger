@@ -1,0 +1,20 @@
+id: da_han_hu_dong_guan_li_ping_tai_keyword
+info:
+  name: 大汉互动管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "大汉互动管理平台"
+        words:
+          - "大汉互动管理平台"
+        condition: and

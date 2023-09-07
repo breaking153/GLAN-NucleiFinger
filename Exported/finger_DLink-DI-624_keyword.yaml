@@ -1,0 +1,20 @@
+id: DLink_DI_624_keyword
+info:
+  name: DLink-DI-624_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DLink-DI-624"
+        words:
+          - "realm=\"di-624"
+        condition: and

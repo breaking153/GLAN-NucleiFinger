@@ -1,0 +1,20 @@
+id: SOMANSA_DLP_Center_keyword
+info:
+  name: SOMANSA-DLP+Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SOMANSA-DLP+Center"
+        words:
+          - "<a href=\"/dlpcenter/\" class=\"btn dlpcenter\">"
+        condition: and

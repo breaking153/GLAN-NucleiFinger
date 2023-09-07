@@ -1,0 +1,21 @@
+id: Hanming_Video_Conferencing_keyword
+info:
+  name: Hanming-Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanming-Video-Conferencing"
+        words:
+          - "class=\"win_introduce"
+          - "/resources/fmweb/other/js/login.js"
+        condition: and

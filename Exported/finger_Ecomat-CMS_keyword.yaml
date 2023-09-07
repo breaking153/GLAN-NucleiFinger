@@ -1,0 +1,20 @@
+id: Ecomat_CMS_keyword
+info:
+  name: Ecomat-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ecomat-CMS"
+        words:
+          - "content=\"ECOMAT CMS"
+        condition: and

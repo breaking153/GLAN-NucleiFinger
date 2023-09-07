@@ -1,0 +1,26 @@
+id: DIYWAP_keyword
+info:
+  name: DIYWAP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DIYWAP"
+        words:
+          - "web980"
+        condition: and
+      - type: word
+        part: body
+        name: "DIYWAP"
+        words:
+          - "bannerNum"
+        condition: and

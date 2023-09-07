@@ -1,0 +1,20 @@
+id: paraview_UAMS_keyword
+info:
+  name: paraview-UAMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "paraview-UAMS"
+        words:
+          - "<!-- <title>派拉统一身份管理系统</title> -->"
+        condition: and

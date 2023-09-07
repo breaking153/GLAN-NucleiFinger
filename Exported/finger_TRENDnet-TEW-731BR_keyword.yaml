@@ -1,0 +1,20 @@
+id: TRENDnet_TEW_731BR_keyword
+info:
+  name: TRENDnet-TEW-731BR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TEW-731BR"
+        words:
+          - "<font size=4><b>tew-731br"
+        condition: and

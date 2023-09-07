@@ -1,0 +1,20 @@
+id: Hexabyte_ADSL_keyword
+info:
+  name: Hexabyte-ADSL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Hexabyte-ADSL"
+        words:
+          - "realm=\"hexabyte adsl"
+        condition: and

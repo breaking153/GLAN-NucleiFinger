@@ -1,0 +1,20 @@
+id: DLink_NVR_keyword
+info:
+  name: DLink-NVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DLink-NVR"
+        words:
+          - "realm=\"dnr-"
+        condition: and

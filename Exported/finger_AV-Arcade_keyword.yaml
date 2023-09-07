@@ -1,0 +1,26 @@
+id: AV_Arcade_keyword
+info:
+  name: AV-Arcade_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AV-Arcade"
+        words:
+          - "powered by <a href=\"http://www.avscripts.net/avarcade/"
+        condition: and
+      - type: word
+        part: body
+        name: "AV-Arcade"
+        words:
+          - "Powered by <a href=\"http://www.avscripts.net/avarcade/"
+        condition: and

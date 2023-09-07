@@ -1,0 +1,20 @@
+id: Launch_Cameras_and_Surveillance_keyword
+info:
+  name: Launch-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Launch-Cameras-and-Surveillance"
+        words:
+          - "action=\"webs/loginhandle"
+        condition: and

@@ -1,0 +1,20 @@
+id: chao_liu_wang_luo_UCM_keyword
+info:
+  name: 潮流网络UCM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "潮流网络UCM"
+        words:
+          - "潮流网络UCM"
+        condition: and

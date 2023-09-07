@@ -1,0 +1,20 @@
+id: DCN_S4600_28P_SI_keyword
+info:
+  name: DCN-S4600-28P-SI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DCN-S4600-28P-SI"
+        words:
+          - "<b>s4600-28p-si</b>"
+        condition: and

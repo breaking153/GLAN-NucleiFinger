@@ -1,0 +1,35 @@
+id: FineCMS_keyword
+info:
+  name: FineCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FineCMS"
+        words:
+          - "powered by finecms"
+          - "dayrui@gmail.com"
+          - "copyright\" content=\"finecms"
+          - "/statics/js/dayrui.js"
+        condition: and
+      - type: word
+        part: body
+        name: "FineCMS"
+        words:
+          - "Powered by FineCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "FineCMS"
+        words:
+          - "Copyright\" content=\"FineCMS"
+        condition: and

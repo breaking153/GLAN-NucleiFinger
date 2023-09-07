@@ -1,0 +1,21 @@
+id: Tenda_4G_Router_keyword
+info:
+  name: Tenda-4G-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda-4G-Router"
+        words:
+          - "3g/4g router"
+          - "id=\"tendaimg\""
+        condition: and

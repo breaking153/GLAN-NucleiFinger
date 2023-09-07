@@ -1,0 +1,22 @@
+id: xiao_huang_dou_CRM_keyword
+info:
+  name: 小黄豆CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "小黄豆CRM"
+        words:
+          - "xhdcrm"
+          - "JS/XHD.js"
+          - "login.check.xhd"
+        condition: and

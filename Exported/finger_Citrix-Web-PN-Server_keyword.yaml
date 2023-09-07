@@ -1,0 +1,26 @@
+id: Citrix_Web_PN_Server_keyword
+info:
+  name: Citrix-Web-PN-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Citrix-Web-PN-Server"
+        words:
+          - "server: citrix web pn server"
+        condition: and
+      - type: word
+        part: header
+        name: "Citrix-Web-PN-Server"
+        words:
+          - "Citrix Web PN Server"
+        condition: and

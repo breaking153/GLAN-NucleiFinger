@@ -1,0 +1,20 @@
+id: SENSEFACE_keyword
+info:
+  name: SENSEFACE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SENSEFACE"
+        words:
+          - "class=\"copyright\" href=\"http://www.sensetime.com"
+        condition: and

@@ -1,0 +1,20 @@
+id: NSFOCUS_Aurora_self_service_scanning_Agent_keyword
+info:
+  name: NSFOCUS-Aurora-self-service-scanning-Agent_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-Aurora-self-service-scanning-Agent"
+        words:
+          - "/aurora_nsfocus.png"
+        condition: and

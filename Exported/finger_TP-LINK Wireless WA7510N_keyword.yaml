@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_WA7510N_keyword
+info:
+  name: TP-LINK Wireless WA7510N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless WA7510N"
+        words:
+          - "TP-LINK Wireless WA7510N"
+        condition: and

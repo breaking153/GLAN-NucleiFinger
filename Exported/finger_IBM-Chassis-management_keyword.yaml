@@ -1,0 +1,20 @@
+id: IBM_Chassis_management_keyword
+info:
+  name: IBM-Chassis-management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Chassis-management"
+        words:
+          - ",\"chassis_name\":"
+        condition: and

@@ -1,0 +1,20 @@
+id: ZEBRA_ZM400_300dpi_ZPL_keyword
+info:
+  name: ZEBRA-ZM400-300dpi-ZPL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-ZM400-300dpi-ZPL"
+        words:
+          - "ztc zm400-300dpi zpl</h1>"
+        condition: and

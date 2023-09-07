@@ -1,0 +1,21 @@
+id: an_heng_shu_ju_da_nao_API_wang_guan_keyword
+info:
+  name: 安恒数据大脑API网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "安恒数据大脑API网关"
+        words:
+          - "mssp-fe"
+          - "/static/imgs/logo.png"
+        condition: and

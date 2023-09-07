@@ -1,0 +1,20 @@
+id: Samsung_DVR_keyword
+info:
+  name: Samsung-DVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Samsung-DVR"
+        words:
+          - "samsung dvr"
+        condition: and

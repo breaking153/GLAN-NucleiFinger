@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_T320_keyword
+info:
+  name: DELL-PowerEdge-T320_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PowerEdge-T320"
+        words:
+          - "id=\"serverinfo\"> poweredge t320"
+        condition: and

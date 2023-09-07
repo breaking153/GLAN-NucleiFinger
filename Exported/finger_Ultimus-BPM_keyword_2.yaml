@@ -1,0 +1,20 @@
+id: Ultimus_BPM_keyword
+info:
+  name: Ultimus-BPM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ultimus-BPM"
+        words:
+          - "url=iportal/login.aspx"
+        condition: and

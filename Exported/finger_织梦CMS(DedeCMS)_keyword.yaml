@@ -1,0 +1,44 @@
+id: zhi_meng_CMS_DedeCMS_keyword
+info:
+  name: 织梦CMS(DedeCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "织梦CMS(DedeCMS)"
+        words:
+          - "Powered by <a target=\"_blank\" href=\"http://www.dedecms.com/\">DedeCMS</a>"
+        condition: and
+      - type: word
+        part: body
+        name: "织梦CMS(DedeCMS)"
+        words:
+          - "Power by DedeCms"
+        condition: and
+      - type: word
+        part: body
+        name: "织梦CMS(DedeCMS)"
+        words:
+          - "http://www.dedecms.com/"
+        condition: and
+      - type: word
+        part: body
+        name: "织梦CMS(DedeCMS)"
+        words:
+          - "DedeCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "织梦CMS(DedeCMS)"
+        words:
+          - "/templets/default/style/dedecms.css"
+        condition: and

@@ -1,0 +1,21 @@
+id: GM_Electronic_security_document_management_system_keyword
+info:
+  name: GM-Electronic-security-document-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GM-Electronic-security-document-management-system"
+        words:
+          - "</span>国迈安全私有云部. <span>all rights reserved"
+          - "国迈安全私有云部 all rights reserved"
+        condition: and

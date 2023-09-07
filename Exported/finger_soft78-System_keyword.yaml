@@ -1,0 +1,21 @@
+id: soft78_System_keyword
+info:
+  name: soft78-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "soft78-System"
+        words:
+          - "offlineservice/showdownloadmessage.aspx"
+          - "add by sll"
+        condition: and

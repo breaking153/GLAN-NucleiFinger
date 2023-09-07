@@ -1,0 +1,20 @@
+id: PY_SOFTWARE_Active_WebCam_keyword
+info:
+  name: PY_SOFTWARE-Active-WebCam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PY_SOFTWARE-Active-WebCam"
+        words:
+          - "basic realm=\"py software active webcam\""
+        condition: and

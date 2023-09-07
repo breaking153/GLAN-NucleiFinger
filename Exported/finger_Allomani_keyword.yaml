@@ -1,0 +1,26 @@
+id: Allomani_keyword
+info:
+  name: Allomani_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Allomani"
+        words:
+          - "content=\"Allomani"
+        condition: and
+      - type: word
+        part: body
+        name: "Allomani"
+        words:
+          - "Programmed By Allomani"
+        condition: and

@@ -1,0 +1,20 @@
+id: shan_dao_zentao_keyword_1
+info:
+  name: 禅道 zentao_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "禅道 zentao"
+        words:
+          - "/js/all.js?v=16.5"
+        condition: and

@@ -1,0 +1,26 @@
+id: Datum_TymServe_keyword
+info:
+  name: Datum-TymServe_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Datum-TymServe"
+        words:
+          - "<h2 align=center>datum tymserve"
+        condition: and
+      - type: word
+        part: body
+        name: "Datum-TymServe"
+        words:
+          - "<H2 ALIGN=CENTER>Datum TymServe"
+        condition: and

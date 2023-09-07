@@ -1,0 +1,20 @@
+id: Kedacom_phoenix_keyword
+info:
+  name: Kedacom-phoenix_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kedacom-phoenix"
+        words:
+          - "id=\"cuocx\" classid=\"clsid:a7ff7a36-3eef-4139-bfc0-faeb4c8eba08"
+        condition: and

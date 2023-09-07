@@ -1,0 +1,21 @@
+id: Jiusi_OA_keyword
+info:
+  name: Jiusi-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jiusi-OA"
+        words:
+          - "九思软件"
+          - "办公系统"
+        condition: and

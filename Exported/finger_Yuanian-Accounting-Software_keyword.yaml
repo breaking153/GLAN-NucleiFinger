@@ -1,0 +1,21 @@
+id: Yuanian_Accounting_Software_keyword
+info:
+  name: Yuanian-Accounting-Software_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yuanian-Accounting-Software"
+        words:
+          - "yuannian.css"
+          - "/image/logo/yuannian.gif"
+        condition: and

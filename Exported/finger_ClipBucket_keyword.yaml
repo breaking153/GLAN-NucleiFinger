@@ -1,0 +1,47 @@
+id: ClipBucket_keyword
+info:
+  name: ClipBucket_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ClipBucket"
+        words:
+          - "content=\"clipbucket"
+          - "<!-- clipbucket"
+          - "<!-- forged by clipbucket"
+          - "href=\"http://clip-bucket.com/\">clipbucket"
+        condition: and
+      - type: word
+        part: body
+        name: "ClipBucket"
+        words:
+          - "content=\"ClipBucket"
+        condition: and
+      - type: word
+        part: body
+        name: "ClipBucket"
+        words:
+          - "<!-- ClipBucket"
+        condition: and
+      - type: word
+        part: body
+        name: "ClipBucket"
+        words:
+          - "<!-- Forged by ClipBucket"
+        condition: and
+      - type: word
+        part: body
+        name: "ClipBucket"
+        words:
+          - "href=\"http://clip-bucket.com/\">ClipBucket"
+        condition: and

@@ -1,0 +1,26 @@
+id: sui_yi_liu_yan_ban_syguestbook_keyword
+info:
+  name: 随意留言板(syguestbook)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "随意留言板(syguestbook)"
+        words:
+          - "随意留言板"
+        condition: and
+      - type: word
+        part: body
+        name: "随意留言板(syguestbook)"
+        words:
+          - "syguestbook"
+        condition: and

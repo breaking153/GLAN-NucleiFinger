@@ -1,0 +1,26 @@
+id: OpenResty_keyword
+info:
+  name: OpenResty_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenResty"
+        words:
+          - "<center>openresty/"
+        condition: and
+      - type: word
+        part: body
+        name: "OpenResty"
+        words:
+          - "Thank you for flying OpenResty"
+        condition: and

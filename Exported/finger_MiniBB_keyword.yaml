@@ -1,0 +1,21 @@
+id: MiniBB_keyword
+info:
+  name: MiniBB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MiniBB"
+        words:
+          - "<!--minibb copyright link"
+          - "powered by <a href=\"http://www.minibb."
+        condition: and

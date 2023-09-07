@@ -1,0 +1,20 @@
+id: Speed_Test_keyword
+info:
+  name: Speed-Test_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Speed-Test"
+        words:
+          - "classid=\"clsid:53028063-426b-446d-85f9-62e9e3dc5501\""
+        condition: and

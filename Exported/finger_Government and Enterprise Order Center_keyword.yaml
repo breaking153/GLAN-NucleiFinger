@@ -1,0 +1,20 @@
+id: Government_and_Enterprise_Order_Center_keyword
+info:
+  name: Government and Enterprise Order Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Government and Enterprise Order Center"
+        words:
+          - "content=\"政企订单中心"
+        condition: and

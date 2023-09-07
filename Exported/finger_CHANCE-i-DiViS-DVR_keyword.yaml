@@ -1,0 +1,26 @@
+id: CHANCE_i_DiViS_DVR_keyword
+info:
+  name: CHANCE-i-DiViS-DVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CHANCE-i-DiViS-DVR"
+        words:
+          - "techno vision security system ver"
+        condition: and
+      - type: word
+        part: header
+        name: "CHANCE-i-DiViS-DVR"
+        words:
+          - "Techno Vision Security System Ver"
+        condition: and

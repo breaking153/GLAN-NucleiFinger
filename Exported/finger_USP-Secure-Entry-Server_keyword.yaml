@@ -1,0 +1,20 @@
+id: USP_Secure_Entry_Server_keyword
+info:
+  name: USP-Secure-Entry-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "USP-Secure-Entry-Server"
+        words:
+          - "secure entry server"
+        condition: and

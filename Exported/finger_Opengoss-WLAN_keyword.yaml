@@ -1,0 +1,21 @@
+id: Opengoss_WLAN_keyword
+info:
+  name: Opengoss-WLAN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Opengoss-WLAN"
+        words:
+          - "/stylesheets/themes/wifi2/ui.theme.css"
+          - "content=\"wlan综合网管系统\""
+        condition: and

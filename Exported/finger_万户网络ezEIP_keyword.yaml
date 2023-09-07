@@ -1,0 +1,21 @@
+id: wan_hu_wang_luo_ezEIP_keyword
+info:
+  name: 万户网络ezEIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "万户网络ezEIP"
+        words:
+          - "Powered By wanhu - www.wanhu.com.cn"
+          - "ezEip"
+        condition: and

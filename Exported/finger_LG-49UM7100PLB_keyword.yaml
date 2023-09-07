@@ -1,0 +1,20 @@
+id: LG_49UM7100PLB_keyword
+info:
+  name: LG-49UM7100PLB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-49UM7100PLB"
+        words:
+          - "<modelname>49um7100plb</modelname>"
+        condition: and

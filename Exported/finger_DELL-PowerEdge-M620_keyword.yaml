@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_M620_keyword
+info:
+  name: DELL-PowerEdge-M620_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PowerEdge-M620"
+        words:
+          - "id=\"serverinfo\"> poweredge m620"
+        condition: and

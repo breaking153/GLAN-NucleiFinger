@@ -1,0 +1,21 @@
+id: VMware_Horizon_keyword_1_1
+info:
+  name: VMware-Horizon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMware-Horizon"
+        words:
+          - "href='https://www.vmware.com/go/viewclients'"
+          - "alt=\"vmware horizon\">"
+        condition: and

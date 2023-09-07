@@ -1,0 +1,26 @@
+id: Zentao_System_keyword
+info:
+  name: Zentao-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zentao-System"
+        words:
+          - "<a id='zentaopro' href='/pro/'"
+          - "$('#zentaopro'.addclass"
+          - "powered by <a href='http://www.zentao.net' target='_blank'>zentaopms"
+          - "welcome to use zentao!"
+          - "href='/zentao/favicon.ico"
+          - "server: netvox z206-webs"
+          - "server: cpws"
+        condition: and

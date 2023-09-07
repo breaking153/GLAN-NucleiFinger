@@ -1,0 +1,22 @@
+id: HIMS_Hotel_Cloud_Computing_Service_keyword
+info:
+  name: HIMS-Hotel-Cloud-Computing-Service_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HIMS-Hotel-Cloud-Computing-Service"
+        words:
+          - "gb_root_dir"
+          - "maincontent.css"
+          - "hims酒店云计算服务"
+        condition: and

@@ -1,0 +1,20 @@
+id: portainer_keyword
+info:
+  name: portainer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "portainer"
+        words:
+          - "href=\"ico/safari-pinned-tab.svg\""
+        condition: and

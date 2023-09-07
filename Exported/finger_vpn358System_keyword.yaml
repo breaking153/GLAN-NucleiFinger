@@ -1,0 +1,21 @@
+id: vpn358System_keyword
+info:
+  name: vpn358System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "vpn358System"
+        words:
+          - "class=\"form-actions j_add_ip_actions\""
+          - "href=\"/internal/bootstrap/ico/favicon.ico\""
+        condition: and

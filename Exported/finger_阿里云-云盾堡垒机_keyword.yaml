@@ -1,0 +1,20 @@
+id: a_li_yun_yun_dun_bao_lei_ji_keyword
+info:
+  name: 阿里云-云盾堡垒机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "阿里云-云盾堡垒机"
+        words:
+          - "阿里云-云盾堡垒机"
+        condition: and

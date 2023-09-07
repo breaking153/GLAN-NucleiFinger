@@ -1,0 +1,20 @@
+id: dasannetworks_keyword
+info:
+  name: dasannetworks_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "dasannetworks"
+        words:
+          - "clear_cookie(\"login\");"
+        condition: and

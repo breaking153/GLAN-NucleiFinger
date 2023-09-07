@@ -1,0 +1,20 @@
+id: Justsy_Product_keyword
+info:
+  name: Justsy-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Justsy-Product"
+        words:
+          - "嘉兴嘉赛信息技术有限公司. all rights reserved."
+        condition: and

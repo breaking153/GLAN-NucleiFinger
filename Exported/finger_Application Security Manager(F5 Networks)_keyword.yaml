@@ -1,0 +1,26 @@
+id: Application_Security_Manager_F5_Networks_keyword
+info:
+  name: Application Security Manager(F5 Networks)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Application Security Manager(F5 Networks)"
+        words:
+          - "Application Security Manager"
+        condition: and
+      - type: word
+        part: body
+        name: "Application Security Manager(F5 Networks)"
+        words:
+          - "F5 Networks"
+        condition: and

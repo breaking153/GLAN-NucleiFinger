@@ -1,0 +1,21 @@
+id: Pivotal_CRM_keyword
+info:
+  name: Pivotal-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Pivotal-CRM"
+        words:
+          - "<frame name=\"hidden\" src=\"xmlloader.asp?type=portal"
+          - "title=\"hidden\" src=\"xmlloader.asp?type=portal"
+        condition: and

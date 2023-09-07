@@ -1,0 +1,20 @@
+id: PowerMTA_keyword
+info:
+  name: PowerMTA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PowerMTA"
+        words:
+          - "<html><body>access denied.  please consult the http-access directive in the user's guide for more information.</body>"
+        condition: and

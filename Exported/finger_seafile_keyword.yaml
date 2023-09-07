@@ -1,0 +1,22 @@
+id: seafile_keyword
+info:
+  name: seafile_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "seafile"
+        words:
+          - "css/seahub.min.css"
+          - "seafile_global"
+          - "seafile"
+        condition: and

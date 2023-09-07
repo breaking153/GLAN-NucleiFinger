@@ -1,0 +1,26 @@
+id: ASP_Nuke_keyword
+info:
+  name: ASP-Nuke_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASP-Nuke"
+        words:
+          - "CONTENT=\"ASP-Nuke"
+        condition: and
+      - type: word
+        part: body
+        name: "ASP-Nuke"
+        words:
+          - "content=\"ASPNUKE"
+        condition: and

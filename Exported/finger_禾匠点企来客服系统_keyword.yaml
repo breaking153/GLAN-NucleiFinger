@@ -1,0 +1,21 @@
+id: he_jiang_dian_qi_lai_ke_fu_xi_tong_keyword
+info:
+  name: 禾匠点企来客服系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "禾匠点企来客服系统"
+        words:
+          - "const _scriptUrl"
+          - "login_logo"
+        condition: and

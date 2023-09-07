@@ -1,0 +1,26 @@
+id: chuang_xing_wei_ye_xiao_yuan_wang_qun_keyword
+info:
+  name: 创星伟业校园网群_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "创星伟业校园网群"
+        words:
+          - "javascripts/float.js"
+        condition: and
+      - type: word
+        part: body
+        name: "创星伟业校园网群"
+        words:
+          - "vcxvcxv"
+        condition: and

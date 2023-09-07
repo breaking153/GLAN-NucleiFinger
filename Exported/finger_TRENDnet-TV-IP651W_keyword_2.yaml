@@ -1,0 +1,20 @@
+id: TRENDnet_TV_IP651W_keyword_1
+info:
+  name: TRENDnet-TV-IP651W_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TRENDnet-TV-IP651W"
+        words:
+          - "realm=\"tv-ip651w"
+        condition: and

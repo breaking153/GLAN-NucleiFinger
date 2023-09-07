@@ -1,0 +1,26 @@
+id: Citrix_ConfProxy_keyword
+info:
+  name: Citrix-ConfProxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Citrix-ConfProxy"
+        words:
+          - "server: confproxy"
+        condition: and
+      - type: word
+        part: header
+        name: "Citrix-ConfProxy"
+        words:
+          - "confproxy"
+        condition: and

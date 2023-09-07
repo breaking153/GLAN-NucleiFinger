@@ -1,0 +1,20 @@
+id: Algolia_Realtime_Search_keyword
+info:
+  name: Algolia Realtime Search_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Algolia Realtime Search"
+        words:
+          - "Algolia Realtime Search"
+        condition: and

@@ -1,0 +1,21 @@
+id: Surfilter_NET110_keyword
+info:
+  name: Surfilter-NET110_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Surfilter-NET110"
+        words:
+          - "net110网络安全审计系统"
+          - "simplemodal.1.4.1.min.js"
+        condition: and

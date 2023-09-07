@@ -1,0 +1,21 @@
+id: ThinkCMF_keyword
+info:
+  name: ThinkCMF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ThinkCMF"
+        words:
+          - "content=\"thinkcmf"
+          - "http://www.thinkcmf.com\" target=\"_blank\">thinkcmf</a>"
+        condition: and

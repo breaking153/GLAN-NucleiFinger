@@ -1,0 +1,32 @@
+id: jiu_qi_tong_yong_cai_biao_xi_tong_keyword
+info:
+  name: 久其通用财表系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "久其通用财表系统"
+        words:
+          - "<nobr>北京久其软件股份有限公司"
+        condition: and
+      - type: word
+        part: body
+        name: "久其通用财表系统"
+        words:
+          - "/netrep/intf"
+        condition: and
+      - type: word
+        part: body
+        name: "久其通用财表系统"
+        words:
+          - "/netrep/message2/"
+        condition: and

@@ -1,0 +1,20 @@
+id: SafetyVision_NVR_keyword
+info:
+  name: SafetyVision NVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SafetyVision NVR"
+        words:
+          - "SafetyVision NVR"
+        condition: and

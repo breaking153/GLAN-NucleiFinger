@@ -1,0 +1,26 @@
+id: 80CMS_ba_ling_CMS_keyword
+info:
+  name: 80CMS(八零CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "80CMS(八零CMS)"
+        words:
+          - "80CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "80CMS(八零CMS)"
+        words:
+          - "八零CMS"
+        condition: and

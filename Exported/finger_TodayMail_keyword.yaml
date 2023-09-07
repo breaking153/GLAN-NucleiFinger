@@ -1,0 +1,22 @@
+id: TodayMail_keyword
+info:
+  name: TodayMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TodayMail"
+        words:
+          - "todaynic.com,inc."
+          - "todaymail anti-spam police"
+          - "['company']=\"todaymail"
+        condition: and

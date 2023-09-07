@@ -1,0 +1,21 @@
+id: HuaWei_Enterprise_proxy_server_keyword
+info:
+  name: HuaWei-Enterprise-proxy-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-Enterprise-proxy-server"
+        words:
+          - "huawei technologies co., ltd."
+          - "<form name=\"frmlogon\" id=\"frmlogon\" method=\"post\"  action=\"/operatorlogin\" onsubmit=\"return check(\">"
+        condition: and

@@ -1,0 +1,20 @@
+id: DBShop_kai_yuan_dian_zi_shang_wu_wang_dian_xi_tong_keyword
+info:
+  name: DBShop开源电子商务网店系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DBShop开源电子商务网店系统"
+        words:
+          - "content=\"dbshop"
+        condition: and

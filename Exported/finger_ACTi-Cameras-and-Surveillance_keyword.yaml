@@ -1,0 +1,21 @@
+id: ACTi_Cameras_and_Surveillance_keyword
+info:
+  name: ACTi-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ACTi-Cameras-and-Surveillance"
+        words:
+          - "acti corporation all rights reserved"
+          - "url=/cgi-bin/videoconfiguration.cgi"
+        condition: and

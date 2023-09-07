@@ -1,0 +1,20 @@
+id: shang_pin_fang_wang_shang_qian_yue_ji_bei_an_xi_tong_keyword
+info:
+  name: 商品房网上签约及备案系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "商品房网上签约及备案系统"
+        words:
+          - "商品房网上签约及备案系统"
+        condition: and

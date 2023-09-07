@@ -1,0 +1,20 @@
+id: Gigabit_Color_IP_Phone_keyword
+info:
+  name: Gigabit-Color-IP-Phone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Gigabit-Color-IP-Phone"
+        words:
+          - "realm=\"gigabit color ip phone"
+        condition: and

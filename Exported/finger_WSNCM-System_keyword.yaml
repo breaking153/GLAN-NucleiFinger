@@ -1,0 +1,20 @@
+id: WSNCM_System_keyword
+info:
+  name: WSNCM-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WSNCM-System"
+        words:
+          - "class=\"login\">wsncm动态仓单系统"
+        condition: and

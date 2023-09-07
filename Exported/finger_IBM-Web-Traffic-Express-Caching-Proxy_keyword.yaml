@@ -1,0 +1,20 @@
+id: IBM_Web_Traffic_Express_Caching_Proxy_keyword
+info:
+  name: IBM-Web-Traffic-Express-Caching-Proxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Web-Traffic-Express-Caching-Proxy"
+        words:
+          - "/admin-bin/webexec/wte.html"
+        condition: and

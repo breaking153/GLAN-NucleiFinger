@@ -1,0 +1,20 @@
+id: zfsoft_Leaingrn_keyword
+info:
+  name: zfsoft-Leaingrn_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zfsoft-Leaingrn"
+        words:
+          - "href=\"/jwglxt/logo/favicon.ico\""
+        condition: and

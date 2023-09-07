@@ -1,0 +1,20 @@
+id: Citrix_Netscaler_keyword_1_1
+info:
+  name: Citrix_Netscaler_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Citrix_Netscaler"
+        words:
+          - "ns_af"
+        condition: and

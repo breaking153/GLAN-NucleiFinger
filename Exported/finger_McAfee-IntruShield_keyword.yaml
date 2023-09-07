@@ -1,0 +1,21 @@
+id: McAfee_IntruShield_keyword
+info:
+  name: McAfee-IntruShield_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "McAfee-IntruShield"
+        words:
+          - "intrushield"
+          - "intruvert"
+        condition: and

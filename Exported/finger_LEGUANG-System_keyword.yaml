@@ -1,0 +1,21 @@
+id: LEGUANG_System_keyword
+info:
+  name: LEGUANG-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LEGUANG-System"
+        words:
+          - "class=\"btn btn-zx btn-modal\""
+          - "class=\"capslock\""
+        condition: and

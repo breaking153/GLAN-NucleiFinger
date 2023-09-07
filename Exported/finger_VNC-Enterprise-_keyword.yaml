@@ -1,0 +1,20 @@
+id: VNC_Enterprise_keyword
+info:
+  name: VNC-Enterprise-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "VNC-Enterprise-"
+        words:
+          - "server: vnc server enterprise edition"
+        condition: and

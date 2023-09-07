@@ -1,0 +1,20 @@
+id: ChinaTelecomArrearsRecoveryManagementSystem_keyword
+info:
+  name: ChinaTelecomArrearsRecoveryManagementSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ChinaTelecomArrearsRecoveryManagementSystem"
+        words:
+          - "id=\"v_login_container\""
+        condition: and

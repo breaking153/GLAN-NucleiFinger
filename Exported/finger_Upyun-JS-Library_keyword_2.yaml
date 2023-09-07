@@ -1,0 +1,20 @@
+id: Upyun_JS_Library_keyword_1
+info:
+  name: Upyun-JS-Library_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Upyun-JS-Library"
+        words:
+          - "b0.upaiyun.com"
+        condition: and

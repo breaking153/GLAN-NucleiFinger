@@ -1,0 +1,30 @@
+id: testlink_keyword
+info:
+  name: testlink_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "testlink"
+        words:
+          - "testlink_library.js"
+          - "content=\"martin havlat\" />"
+          - "testlink project <a href=\"http://testlink.sourceforge.net/docs/testlink.php\">home</a><br />"
+        condition: and
+      - type: word
+        part: body
+        name: "testlink"
+        words:
+          - "testlink_library.js"
+          - "content=\"martin havlat\" />"
+          - "testlink project <a href=\"http://testlink.sourceforge.net/docs/testlink.php"
+        condition: and

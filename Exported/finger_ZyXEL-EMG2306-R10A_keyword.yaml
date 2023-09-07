@@ -1,0 +1,20 @@
+id: ZyXEL_EMG2306_R10A_keyword
+info:
+  name: ZyXEL-EMG2306-R10A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-EMG2306-R10A"
+        words:
+          - "class=\"modelname\">emg2306-r10a"
+        condition: and

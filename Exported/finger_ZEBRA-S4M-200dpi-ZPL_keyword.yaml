@@ -1,0 +1,20 @@
+id: ZEBRA_S4M_200dpi_ZPL_keyword
+info:
+  name: ZEBRA-S4M-200dpi-ZPL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-S4M-200dpi-ZPL"
+        words:
+          - "ztc s4m-200dpi zpl</h1>"
+        condition: and

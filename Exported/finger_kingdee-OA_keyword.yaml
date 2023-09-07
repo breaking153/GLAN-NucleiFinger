@@ -1,0 +1,21 @@
+id: kingdee_OA_keyword
+info:
+  name: kingdee-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kingdee-OA"
+        words:
+          - "location.href=\"/kingdee/index.jsp\""
+          - "logo-kingdee.png"
+        condition: and

@@ -1,0 +1,21 @@
+id: guang_lian_da_Glodon_keyword
+info:
+  name: 广联达 Glodon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "广联达 Glodon"
+        words:
+          - "/ConsoleCommon/Content/weebox.css"
+          - "广联达"
+        condition: and

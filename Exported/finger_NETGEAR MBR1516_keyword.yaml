@@ -1,0 +1,20 @@
+id: NETGEAR_MBR1516_keyword
+info:
+  name: NETGEAR MBR1516_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR MBR1516"
+        words:
+          - "NETGEAR MBR1516"
+        condition: and

@@ -1,0 +1,20 @@
+id: Orange_Pi_keyword
+info:
+  name: Orange Pi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Orange Pi"
+        words:
+          - "<a href=\"index.jsp\" class=\"navbar-brand\">orangepi 控制台</a>"
+        condition: and

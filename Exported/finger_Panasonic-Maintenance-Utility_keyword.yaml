@@ -1,0 +1,20 @@
+id: Panasonic_Maintenance_Utility_keyword
+info:
+  name: Panasonic-Maintenance-Utility_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Panasonic-Maintenance-Utility"
+        words:
+          - "panasonic_logo.gif"
+        condition: and

@@ -1,0 +1,25 @@
+id: OLAT_keyword
+info:
+  name: OLAT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OLAT"
+        words:
+          - "title=\"homepage of open source lms olat"
+          - "content=\"olat"
+          - "content=\"olat 是一个学习内容管理系统 (lcms."
+          - "content=\"olat - online learning and training"
+          - "o_info.uriprefix=\"/olat/dmz/\";"
+          - "href=\"/olat/raw/"
+        condition: and

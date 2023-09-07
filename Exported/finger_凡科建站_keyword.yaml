@@ -1,0 +1,26 @@
+id: fan_ke_jian_zhan_keyword
+info:
+  name: 凡科建站_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "凡科建站"
+        words:
+          - "凡科互联网科技股份有限公司"
+        condition: and
+      - type: word
+        part: body
+        name: "凡科建站"
+        words:
+          - "content=\"凡科"
+        condition: and

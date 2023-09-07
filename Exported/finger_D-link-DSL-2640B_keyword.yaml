@@ -1,0 +1,20 @@
+id: D_link_DSL_2640B_keyword
+info:
+  name: D-link-DSL-2640B_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-link-DSL-2640B"
+        words:
+          - "product : dsl-2640b"
+        condition: and

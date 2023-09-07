@@ -1,0 +1,21 @@
+id: FIAMM_Camera_keyword
+info:
+  name: FIAMM-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FIAMM-Camera"
+        words:
+          - "fiamm. all rights reserved."
+          - "vb.htm?authority3="
+        condition: and

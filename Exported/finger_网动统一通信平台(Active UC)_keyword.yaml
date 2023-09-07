@@ -1,0 +1,19 @@
+id: wang_dong_tong_yi_tong_xin_ping_tai_Active_UC_keyword
+info:
+  name: 网动统一通信平台(Active UC)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "网动统一通信平台(Active UC)"
+        words:
+          - "<title>网动统一通信平台(Active UC)"

@@ -1,0 +1,20 @@
+id: ASUS_RT_AX88U_keyword_1
+info:
+  name: ASUS-RT-AX88U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ASUS-RT-AX88U"
+        words:
+          - "realm=\"rt-ax88u"
+        condition: and

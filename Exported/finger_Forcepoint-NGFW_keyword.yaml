@@ -1,0 +1,21 @@
+id: Forcepoint_NGFW_keyword
+info:
+  name: Forcepoint-NGFW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Forcepoint-NGFW"
+        words:
+          - "<div class=\"ngfwformfield\">"
+          - "id=\"software_name\">ngfw security management center"
+        condition: and

@@ -1,0 +1,29 @@
+id: iWebShop_keyword
+info:
+  name: iWebShop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iWebShop"
+        words:
+          - "_skinpath"
+          - "_themepath"
+          - "_weburl"
+          - "class=\"pro_title\">iwebshop支付测试"
+        condition: and
+      - type: word
+        part: body
+        name: "iWebShop"
+        words:
+          - "/runtime/default/systemjs"
+        condition: and

@@ -1,0 +1,19 @@
+id: shen_zhen_rui_ming_xing_shi_ji_lu_yi_keyword
+info:
+  name: 深圳锐明行驶记录仪_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深圳锐明行驶记录仪"
+        words:
+          - "<title>登录您的MDVR"

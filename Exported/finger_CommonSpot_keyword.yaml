@@ -1,0 +1,26 @@
+id: CommonSpot_keyword
+info:
+  name: CommonSpot_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CommonSpot"
+        words:
+          - "content=\"commonspot"
+        condition: and
+      - type: word
+        part: body
+        name: "CommonSpot"
+        words:
+          - "content=\"CommonSpot"
+        condition: and

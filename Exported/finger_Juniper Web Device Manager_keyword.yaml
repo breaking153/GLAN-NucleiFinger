@@ -1,0 +1,20 @@
+id: Juniper_Web_Device_Manager_keyword
+info:
+  name: Juniper Web Device Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Juniper Web Device Manager"
+        words:
+          - "Juniper Web Device Manager"
+        condition: and

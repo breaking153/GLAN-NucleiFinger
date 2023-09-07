@@ -1,0 +1,21 @@
+id: Polycom_IPPBX_keyword
+info:
+  name: Polycom-IPPBX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Polycom-IPPBX"
+        words:
+          - "src=\"cgi-bin/ippbx.cgi?module=showlogin\""
+          - "src=\"cgi-bin/httptohttps.cgi\""
+        condition: and

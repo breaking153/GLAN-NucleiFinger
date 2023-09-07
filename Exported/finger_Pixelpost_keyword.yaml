@@ -1,0 +1,22 @@
+id: Pixelpost_keyword
+info:
+  name: Pixelpost_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Pixelpost"
+        words:
+          - "title=\"powered by pixelpost"
+          - "powered by <a href=\"http://www.pixelpost.org"
+          - "title=\"pixelpost - "
+        condition: and

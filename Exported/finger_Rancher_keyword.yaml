@@ -1,0 +1,21 @@
+id: Rancher_keyword
+info:
+  name: Rancher_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Rancher"
+        words:
+          - "Welcome to Rancher"
+          - "<meta name=\"ui/configs/asset-manifest\" content="
+        condition: and

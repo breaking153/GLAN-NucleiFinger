@@ -1,0 +1,20 @@
+id: wavlink_WN579X3_keyword
+info:
+  name: wavlink-WN579X3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "wavlink-WN579X3"
+        words:
+          - "var model=\"wn579x3\""
+        condition: and

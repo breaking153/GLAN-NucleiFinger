@@ -1,0 +1,20 @@
+id: huawei_auth_server_keyword
+info:
+  name: huawei_auth_server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "huawei_auth_server"
+        words:
+          - "75718C9A-F029-11d1-A1AC-00C04FB6C223"
+        condition: and

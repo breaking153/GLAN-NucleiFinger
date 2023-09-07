@@ -1,0 +1,26 @@
+id: FortiGuard_keyword
+info:
+  name: FortiGuard_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FortiGuard"
+        words:
+          - "FortiGuard Web Filtering"
+        condition: and
+      - type: word
+        part: body
+        name: "FortiGuard"
+        words:
+          - "/XX/YY/ZZ/CI/MGPGHGPGPFGHCDPFGGOGFGEH"
+        condition: and

@@ -1,0 +1,20 @@
+id: Melis_CMS_V2_keyword
+info:
+  name: Melis CMS V2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Melis CMS V2"
+        words:
+          - "Melis CMS V2"
+        condition: and

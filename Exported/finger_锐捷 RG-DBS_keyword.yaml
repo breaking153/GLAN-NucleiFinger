@@ -1,0 +1,26 @@
+id: rui_jie_RG_DBS_keyword
+info:
+  name: 锐捷 RG-DBS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "锐捷 RG-DBS"
+        words:
+          - "/css/impl-security.css"
+        condition: and
+      - type: word
+        part: body
+        name: "锐捷 RG-DBS"
+        words:
+          - "/dbaudit/authenticate"
+        condition: and

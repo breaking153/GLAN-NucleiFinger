@@ -1,0 +1,21 @@
+id: Dr_Rui_Cloud_office_system_keyword
+info:
+  name: Dr.Rui-Cloud-office-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dr.Rui-Cloud-office-system"
+        words:
+          - "/studentsign/tologin.di"
+          - "/user/toupdatepasswordpage.di"
+        condition: and

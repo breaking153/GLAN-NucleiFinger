@@ -1,0 +1,26 @@
+id: xin_da_OA_keyword
+info:
+  name: 信达OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "信达OA"
+        words:
+          - "http://www.xdoa.cn</a>"
+        condition: and
+      - type: word
+        part: body
+        name: "信达OA"
+        words:
+          - "北京创信达科技有限公司"
+        condition: and

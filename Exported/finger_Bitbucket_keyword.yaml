@@ -1,0 +1,21 @@
+id: Bitbucket_keyword
+info:
+  name: Bitbucket_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bitbucket"
+        words:
+          - "/j_atl_security_check"
+          - "bitbucket.page.login"
+        condition: and

@@ -1,0 +1,28 @@
+id: Apache_Tomcat_keyword
+info:
+  name: Apache-Tomcat_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-Tomcat"
+        words:
+          - "href=\"tomcat.css"
+          - "tomcat.apache.org"
+          - "this is the default tomcat home page"
+          - "<h3>apache tomcat"
+          - "<a href=\"/docs/setup.html\">Tomcat Setup</a>"
+          - "If you're seeing this, you've successfully installed Tomcat. Congratulations!"
+          - "this is the default tomcat home page"
+          - "tomcat.apache.org"
+          - "href=\"tomcat.css"
+        condition: and

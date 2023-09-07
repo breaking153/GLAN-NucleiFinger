@@ -1,0 +1,20 @@
+id: Lussumo_Vanilla_keyword
+info:
+  name: Lussumo-Vanilla_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Lussumo-Vanilla"
+        words:
+          - "x-powered-by: lussumo vanilla"
+        condition: and

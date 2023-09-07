@@ -1,0 +1,20 @@
+id: IBM_DL_MONITOR_keyword
+info:
+  name: IBM-DL_MONITOR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM-DL_MONITOR"
+        words:
+          - "dl_monitor"
+        condition: and

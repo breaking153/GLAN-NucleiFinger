@@ -1,0 +1,21 @@
+id: ASP168_OHO_keyword
+info:
+  name: ASP168-OHO_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASP168-OHO"
+        words:
+          - "upload/moban/images/style.css"
+          - "default.php?mod=article&do=detail&tid"
+        condition: and

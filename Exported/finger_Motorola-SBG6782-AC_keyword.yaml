@@ -1,0 +1,20 @@
+id: Motorola_SBG6782_AC_keyword
+info:
+  name: Motorola-SBG6782-AC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Motorola-SBG6782-AC"
+        words:
+          - "id=\"thismodelnumberis\">sbg6782-ac"
+        condition: and

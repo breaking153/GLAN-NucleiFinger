@@ -1,0 +1,32 @@
+id: Atmail_WebMail_keyword
+info:
+  name: Atmail-WebMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Atmail-WebMail"
+        words:
+          - "Powered by Atmail"
+        condition: and
+      - type: word
+        part: body
+        name: "Atmail-WebMail"
+        words:
+          - "/index.php/mail/auth/processlogin"
+        condition: and
+      - type: word
+        part: body
+        name: "Atmail-WebMail"
+        words:
+          - "<input id=\"Mailserverinput"
+        condition: and

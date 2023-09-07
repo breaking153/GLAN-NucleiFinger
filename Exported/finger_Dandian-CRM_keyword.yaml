@@ -1,0 +1,22 @@
+id: Dandian_CRM_keyword
+info:
+  name: Dandian-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dandian-CRM"
+        words:
+          - "url=general/erp/login/"
+          - "content=\"单点crm系统"
+          - "客户关系管理-crm"
+        condition: and

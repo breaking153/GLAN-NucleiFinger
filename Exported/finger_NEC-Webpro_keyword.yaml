@@ -1,0 +1,21 @@
+id: NEC_Webpro_keyword
+info:
+  name: NEC-Webpro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NEC-Webpro"
+        words:
+          - "javascript/signal.js"
+          - "banner.htm"
+        condition: and

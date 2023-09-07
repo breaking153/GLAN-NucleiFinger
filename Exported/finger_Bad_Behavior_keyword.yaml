@@ -1,0 +1,20 @@
+id: Bad_Behavior_keyword
+info:
+  name: Bad_Behavior_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Bad_Behavior"
+        words:
+          - "bb2_screener_"
+        condition: and

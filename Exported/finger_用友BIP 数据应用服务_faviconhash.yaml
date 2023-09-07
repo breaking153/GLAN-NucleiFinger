@@ -1,0 +1,19 @@
+id: yong_you_BIP_shu_ju_ying_yong_fu_wu_faviconhash
+info:
+  name: 用友BIP 数据应用服务_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "用友BIP 数据应用服务"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1183274548\""
+        condition: or

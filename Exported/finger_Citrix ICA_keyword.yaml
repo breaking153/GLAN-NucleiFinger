@@ -1,0 +1,20 @@
+id: Citrix_ICA_keyword
+info:
+  name: Citrix ICA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Citrix ICA"
+        words:
+          - "Citrix ICA"
+        condition: and

@@ -1,0 +1,22 @@
+id: YunHeZi_keyword
+info:
+  name: YunHeZi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YunHeZi"
+        words:
+          - "ui/js/seaconfig.js"
+          - "ui/skins/black/style.css"
+          - "class=\"client-list dm-clear\">"
+        condition: and

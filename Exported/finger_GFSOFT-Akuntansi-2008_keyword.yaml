@@ -1,0 +1,20 @@
+id: GFSOFT_Akuntansi_2008_keyword
+info:
+  name: GFSOFT-Akuntansi-2008_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GFSOFT-Akuntansi-2008"
+        words:
+          - "src=\"images/box%20akuntansi%202008.png\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Extron_DMP_Device_keyword
+info:
+  name: Extron-DMP-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Extron-DMP-Device"
+        words:
+          - "<title>\"+xmodel+\" default web pages</title>\""
+        condition: and

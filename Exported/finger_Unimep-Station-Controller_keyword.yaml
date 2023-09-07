@@ -1,0 +1,21 @@
+id: Unimep_Station_Controller_keyword
+info:
+  name: Unimep-Station-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Unimep-Station-Controller"
+        words:
+          - "<a href=\"cgi-bin/log.log.cgi"
+          - "<meta name=\"description\" content=\"unimep station controller\">"
+        condition: and

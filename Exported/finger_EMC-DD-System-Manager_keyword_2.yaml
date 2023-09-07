@@ -1,0 +1,20 @@
+id: EMC_DD_System_Manager_keyword_1
+info:
+  name: EMC-DD-System-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EMC-DD-System-Manager"
+        words:
+          - "/ddem"
+        condition: and

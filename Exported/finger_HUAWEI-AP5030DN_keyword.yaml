@@ -1,0 +1,20 @@
+id: HUAWEI_AP5030DN_keyword
+info:
+  name: HUAWEI-AP5030DN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-AP5030DN"
+        words:
+          - "<span class=\"medium\" >本设备支持fat模式（fat模式下可单独工作）"
+        condition: and

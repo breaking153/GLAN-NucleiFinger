@@ -1,0 +1,26 @@
+id: File_Upload_Manager_keyword
+info:
+  name: File-Upload-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "File-Upload-Manager"
+        words:
+          - "<img src=\"/images/header.jpg\" alt=\"file upload manager\">"
+        condition: and
+      - type: word
+        part: body
+        name: "File-Upload-Manager"
+        words:
+          - "<IMG SRC=\"/images/header.jpg\" ALT=\"File Upload Manager\">"
+        condition: and

@@ -1,0 +1,20 @@
+id: Sun_Java_System_Calendar_Express_keyword
+info:
+  name: Sun-Java-System-Calendar-Express_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sun-Java-System-Calendar-Express"
+        words:
+          - "<img src=\"imx/login-logo.gif\" width=\"186\" height=\"79\" alt=\"sun microsystems, inc.\">"
+        condition: and

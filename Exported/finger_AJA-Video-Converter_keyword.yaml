@@ -1,0 +1,26 @@
+id: AJA_Video_Converter_keyword
+info:
+  name: AJA-Video-Converter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AJA-Video-Converter"
+        words:
+          - "eparamid_swversion"
+        condition: and
+      - type: word
+        part: body
+        name: "AJA-Video-Converter"
+        words:
+          - "eParamID_SWVersion"
+        condition: and

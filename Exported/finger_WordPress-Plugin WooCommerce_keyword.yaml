@@ -1,0 +1,26 @@
+id: WordPress_Plugin_WooCommerce_keyword
+info:
+  name: WordPress-Plugin WooCommerce_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WordPress-Plugin WooCommerce"
+        words:
+          - "<meta name=\"generator\" content=\"WordPress"
+        condition: and
+      - type: word
+        part: body
+        name: "WordPress-Plugin WooCommerce"
+        words:
+          - "\"[^\"]+/wp-content/[^\"]+\""
+        condition: and

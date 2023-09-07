@@ -1,0 +1,22 @@
+id: D_link_850L_keyword
+info:
+  name: D-link-850L_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-link-850L"
+        words:
+          - "target=\"_blank\">dir-850l"
+          - "modelname\">dir-850l"
+          - ">產品頁面 : dir-850l<a href=\"javascript:check_is_modified('http://support.dlink.com/'\">"
+        condition: and

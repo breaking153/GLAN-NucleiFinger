@@ -1,0 +1,38 @@
+id: HFS_keyword_1
+info:
+  name: HFS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HFS"
+        words:
+          - "hfs_sid_="
+        condition: and
+      - type: word
+        part: header
+        name: "HFS"
+        words:
+          - "HFS_SID_="
+        condition: and
+      - type: word
+        part: header
+        name: "HFS"
+        words:
+          - "Server:FHFS"
+        condition: and
+      - type: word
+        part: header
+        name: "HFS"
+        words:
+          - "Server:HFS"
+        condition: and

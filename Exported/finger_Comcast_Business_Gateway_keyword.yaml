@@ -1,0 +1,20 @@
+id: Comcast_Business_Gateway_keyword
+info:
+  name: Comcast_Business_Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Comcast_Business_Gateway"
+        words:
+          - "Comcast Business Gateway"
+        condition: and

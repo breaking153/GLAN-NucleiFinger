@@ -1,0 +1,20 @@
+id: wang_tai_tao_pai_CMS_TaoPaiCMS_keyword
+info:
+  name: 网钛淘拍CMS_TaoPaiCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "网钛淘拍CMS_TaoPaiCMS"
+        words:
+          - "网钛淘拍CMS_TaoPaiCMS"
+        condition: and

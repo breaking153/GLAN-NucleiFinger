@@ -1,0 +1,20 @@
+id: rong_zhi_xing_hua_wu_lian_wang_wang_guan_keyword
+info:
+  name: 融智兴华 物联网网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "融智兴华 物联网网关"
+        words:
+          - "融智兴华 物联网网关"
+        condition: and

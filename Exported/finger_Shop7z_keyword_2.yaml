@@ -1,0 +1,21 @@
+id: Shop7z_keyword
+info:
+  name: Shop7z_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Shop7z"
+        words:
+          - "id=\"www_zzjs_net_loding\""
+          - "function www_zzjs_net_change"
+        condition: and

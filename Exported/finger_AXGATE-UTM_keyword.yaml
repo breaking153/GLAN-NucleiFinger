@@ -1,0 +1,20 @@
+id: AXGATE_UTM_keyword
+info:
+  name: AXGATE-UTM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AXGATE-UTM"
+        words:
+          - "class=\"axgate\" ng-controller=\"logincontroller\""
+        condition: and

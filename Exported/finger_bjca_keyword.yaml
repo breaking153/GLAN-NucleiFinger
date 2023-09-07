@@ -1,0 +1,20 @@
+id: bjca_keyword
+info:
+  name: bjca_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bjca"
+        words:
+          - "<li><a href=\"/install/certapp_bd.exe\">下载证书应用环境</a></li>"
+        condition: and

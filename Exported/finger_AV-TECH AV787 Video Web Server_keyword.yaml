@@ -1,0 +1,20 @@
+id: AV_TECH_AV787_Video_Web_Server_keyword
+info:
+  name: AV-TECH AV787 Video Web Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AV-TECH AV787 Video Web Server"
+        words:
+          - "AV-TECH AV787 Video Web Server"
+        condition: and

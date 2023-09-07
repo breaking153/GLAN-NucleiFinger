@@ -1,0 +1,33 @@
+id: BrowserCMS_keyword
+info:
+  name: BrowserCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BrowserCMS"
+        words:
+          - "powered by browsercms"
+          - "content=\"browsercms"
+        condition: and
+      - type: word
+        part: body
+        name: "BrowserCMS"
+        words:
+          - "Powered by BrowserCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "BrowserCMS"
+        words:
+          - "content=\"BrowserCMS"
+        condition: and

@@ -1,0 +1,20 @@
+id: GoAccess_Log_keyword
+info:
+  name: GoAccess-Log_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GoAccess-Log"
+        words:
+          - "by <a href=\"https://goaccess.io/\">goaccess</a>"
+        condition: and

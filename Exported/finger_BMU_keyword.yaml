@@ -1,0 +1,20 @@
+id: BMU_keyword
+info:
+  name: BMU_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BMU"
+        words:
+          - "版本： espace ecs"
+        condition: and

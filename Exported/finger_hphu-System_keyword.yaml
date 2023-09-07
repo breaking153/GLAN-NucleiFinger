@@ -1,0 +1,21 @@
+id: hphu_System_keyword
+info:
+  name: hphu-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hphu-System"
+        words:
+          - "id='psssdiv'"
+          - "src='kss_inc/js/jquery.1.3.2.pack.js'"
+        condition: and

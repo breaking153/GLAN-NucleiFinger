@@ -1,0 +1,21 @@
+id: Kayako_SupportSuite_keyword
+info:
+  name: Kayako-SupportSuite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kayako-SupportSuite"
+        words:
+          - "powered by kayako esupport"
+          - "help desk software by kayako esupport"
+        condition: and

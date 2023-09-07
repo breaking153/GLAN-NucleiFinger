@@ -1,0 +1,20 @@
+id: AIOT_jie_gou_jian_kang_jian_ce_xi_tong_keyword
+info:
+  name: AIOT结构健康监测系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AIOT结构健康监测系统"
+        words:
+          - "AIOT结构健康监测系统"
+        condition: and

@@ -1,0 +1,26 @@
+id: SQ_WEBCAM_keyword
+info:
+  name: SQ-WEBCAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SQ-WEBCAM"
+        words:
+          - "server: sq-webcam"
+        condition: and
+      - type: word
+        part: header
+        name: "SQ-WEBCAM"
+        words:
+          - "SQ-WEBCAM"
+        condition: and

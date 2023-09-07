@@ -1,0 +1,26 @@
+id: HP_OfficeJet_Printer_keyword
+info:
+  name: HP-OfficeJet-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-OfficeJet-Printer"
+        words:
+          - "align=\"center\">hp officejet"
+        condition: and
+      - type: word
+        part: body
+        name: "HP-OfficeJet-Printer"
+        words:
+          - "align=\"center\">HP Officejet"
+        condition: and

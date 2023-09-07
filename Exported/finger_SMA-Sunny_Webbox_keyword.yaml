@@ -1,0 +1,20 @@
+id: SMA_Sunny_Webbox_keyword
+info:
+  name: SMA-Sunny_Webbox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SMA-Sunny_Webbox"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0; url=/culture/index.dml\">"
+        condition: and

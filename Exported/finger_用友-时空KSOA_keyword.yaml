@@ -1,0 +1,20 @@
+id: yong_you_shi_kong_KSOA_keyword
+info:
+  name: 用友-时空KSOA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "用友-时空KSOA"
+        words:
+          - "/images_index/productKSOA.jpg"
+        condition: and

@@ -1,0 +1,33 @@
+id: Blackboard_keyword
+info:
+  name: Blackboard_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Blackboard"
+        words:
+          - "x-blackboard-product"
+          - "x-blackboard-appserver"
+        condition: and
+      - type: word
+        part: header
+        name: "Blackboard"
+        words:
+          - "X-Blackboard-Product"
+        condition: and
+      - type: word
+        part: header
+        name: "Blackboard"
+        words:
+          - "X-Blackboard-Appserver"
+        condition: and

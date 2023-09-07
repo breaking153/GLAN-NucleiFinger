@@ -1,0 +1,21 @@
+id: Gztxsoft_Company_s_product_keyword
+info:
+  name: Gztxsoft-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gztxsoft-Company's-product"
+        words:
+          - "src=\"/aaa/ipweb/scripts/zngc-login-style.js\""
+          - "src=\"/aaa/ipweb/scripts/showoperationresult.js\""
+        condition: and

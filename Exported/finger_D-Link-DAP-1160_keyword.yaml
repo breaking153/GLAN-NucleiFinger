@@ -1,0 +1,21 @@
+id: D_Link_DAP_1160_keyword
+info:
+  name: D-Link-DAP-1160_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DAP-1160"
+        words:
+          - "<a href=\"http://www.dlink.com.tw\" target=_blank>dap-1160"
+          - "<a href=\"http://support.dlink.com.tw/\">dap-1160"
+        condition: and

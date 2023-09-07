@@ -1,0 +1,21 @@
+id: Eureka_Server_keyword
+info:
+  name: Eureka-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Eureka-Server"
+        words:
+          - "eureka/css/wro.css"
+          - "<td><b>apollo-adminservice</b></td>"
+        condition: and

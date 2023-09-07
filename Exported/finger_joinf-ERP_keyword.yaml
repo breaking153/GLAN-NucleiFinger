@@ -1,0 +1,20 @@
+id: joinf_ERP_keyword
+info:
+  name: joinf-ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "joinf-ERP"
+        words:
+          - "<h1>富通天下erp</h1>"
+        condition: and

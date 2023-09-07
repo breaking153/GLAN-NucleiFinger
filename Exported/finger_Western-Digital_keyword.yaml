@@ -1,0 +1,20 @@
+id: Western_Digital_keyword
+info:
+  name: Western-Digital_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Western-Digital"
+        words:
+          - "wt263cdn"
+        condition: and

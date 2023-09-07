@@ -1,0 +1,21 @@
+id: Willfar_Interface_Management_Tool_keyword
+info:
+  name: Willfar-Interface-Management-Tool_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Willfar-Interface-Management-Tool"
+        words:
+          - "the wasion software foundation"
+          - "alt=\"接口应用管理工具\""
+        condition: and

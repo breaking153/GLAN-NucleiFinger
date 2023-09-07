@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -19,4 +19,28 @@ http:
           - "Powered by DouPHP"
           - "DouPHP"
           - "theme"
+        condition: and
+      - type: word
+        part: body
+        name: "DouPHP"
+        words:
+          - "content=\"douphp "
+        condition: and
+      - type: word
+        part: body
+        name: "DouPHP"
+        words:
+          - "indexLeft"
+        condition: and
+      - type: word
+        part: body
+        name: "DouPHP"
+        words:
+          - "dou_callback"
+        condition: and
+      - type: word
+        part: body
+        name: "DouPHP"
+        words:
+          - "douco"
         condition: and

@@ -1,0 +1,26 @@
+id: exchange_keyword_1
+info:
+  name: exchange_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "exchange"
+        words:
+          - "owa"
+        condition: and
+      - type: word
+        part: header
+        name: "exchange"
+        words:
+          - "OutlookSession"
+        condition: and

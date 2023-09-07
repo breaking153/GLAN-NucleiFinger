@@ -1,0 +1,20 @@
+id: O2Security_VPN_keyword
+info:
+  name: O2Security-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "O2Security-VPN"
+        words:
+          - "client_param=install_active"
+        condition: and

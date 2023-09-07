@@ -1,0 +1,21 @@
+id: 263_Meeting_keyword
+info:
+  name: 263-Meeting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "263-Meeting"
+        words:
+          - "<frame src=\"/jsp/conference/meetinglist.jsp\" name=\"mainframe\"/>"
+          - "263电话会议"
+        condition: and

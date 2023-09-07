@@ -1,0 +1,20 @@
+id: shan_dao_xiang_mu_guan_li_ruan_jian_keyword
+info:
+  name: 禅道项目管理软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "禅道项目管理软件"
+        words:
+          - "禅道项目管理软件"
+        condition: and

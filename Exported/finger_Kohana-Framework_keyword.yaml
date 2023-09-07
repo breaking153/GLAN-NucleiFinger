@@ -1,0 +1,27 @@
+id: Kohana_Framework_keyword
+info:
+  name: Kohana-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kohana-Framework"
+        words:
+          - "kohana framework"
+          - "kohanasession_data"
+        condition: and
+      - type: word
+        part: header
+        name: "Kohana-Framework"
+        words:
+          - "Kohana Framework"
+        condition: and

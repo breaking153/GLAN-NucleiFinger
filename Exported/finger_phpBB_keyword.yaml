@@ -1,0 +1,21 @@
+id: phpBB_keyword
+info:
+  name: phpBB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "phpBB"
+        words:
+          - "set-cookie: phpbb3_"
+          - "httponly, phpbb3_"
+        condition: and

@@ -1,0 +1,20 @@
+id: 1039_jia_xiao_tong_keyword
+info:
+  name: 1039家校通_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "1039家校通"
+        words:
+          - "1039家校通"
+        condition: and

@@ -1,0 +1,20 @@
+id: Twitter_Flight_keyword
+info:
+  name: Twitter Flight_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Twitter Flight"
+        words:
+          - "Twitter Flight"
+        condition: and

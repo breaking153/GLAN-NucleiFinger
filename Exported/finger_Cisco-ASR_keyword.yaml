@@ -1,0 +1,21 @@
+id: Cisco_ASR_keyword
+info:
+  name: Cisco-ASR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco-ASR"
+        words:
+          - "cisco asr"
+          - "cisco 8600"
+        condition: and

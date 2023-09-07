@@ -1,0 +1,20 @@
+id: 30san_Email_keyword
+info:
+  name: 30san-Email_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "30san-Email"
+        words:
+          - "30san.all rights reserved.</div>"
+        condition: and

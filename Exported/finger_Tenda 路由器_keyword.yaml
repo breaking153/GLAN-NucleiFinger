@@ -1,0 +1,20 @@
+id: Tenda_lu_you_qi_keyword
+info:
+  name: Tenda 路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda 路由器"
+        words:
+          - "<title>Tenda"
+        condition: and

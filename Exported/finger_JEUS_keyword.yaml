@@ -1,0 +1,20 @@
+id: JEUS_keyword
+info:
+  name: JEUS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "JEUS"
+        words:
+          - "Jeus WebContainer"
+        condition: and

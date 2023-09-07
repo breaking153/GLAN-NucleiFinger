@@ -1,0 +1,20 @@
+id: sou_yi_ci_CMS_dian_ying_cheng_xu_PHP_ban_keyword
+info:
+  name: 搜一次CMS电影程序PHP版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "搜一次CMS电影程序PHP版"
+        words:
+          - "搜一次CMS电影程序PHP版"
+        condition: and

@@ -1,0 +1,22 @@
+id: SONY_Camera_keyword
+info:
+  name: SONY-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SONY-Camera"
+        words:
+          - "inquiry.cgi?inqjs=system"
+          - "name=\"jsvframe"
+          - "setwindowvar = window.open(\"/adm/file.cgi?next_file=setting.htm\", \"adminwin\", setwinoptions;"
+        condition: and

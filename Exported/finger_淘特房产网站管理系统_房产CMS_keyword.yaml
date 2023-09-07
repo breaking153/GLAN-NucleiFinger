@@ -1,0 +1,20 @@
+id: tao_te_fang_chan_wang_zhan_guan_li_xi_tong_fang_chan_CMS_keyword
+info:
+  name: 淘特房产网站管理系统_房产CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "淘特房产网站管理系统_房产CMS"
+        words:
+          - "淘特房产网站管理系统_房产CMS"
+        condition: and

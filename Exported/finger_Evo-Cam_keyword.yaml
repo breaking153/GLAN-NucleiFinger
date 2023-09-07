@@ -1,0 +1,21 @@
+id: Evo_Cam_keyword
+info:
+  name: Evo-Cam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Evo-Cam"
+        words:
+          - "value=\"evocam.jar"
+          - "<applet archive=\"evocam.jar"
+        condition: and

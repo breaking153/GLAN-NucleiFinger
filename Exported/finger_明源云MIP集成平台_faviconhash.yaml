@@ -1,0 +1,19 @@
+id: ming_yuan_yun_MIP_ji_cheng_ping_tai_faviconhash
+info:
+  name: 明源云MIP集成平台_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "明源云MIP集成平台"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-834208471\""
+        condition: or

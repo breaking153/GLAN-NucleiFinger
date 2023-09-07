@@ -1,0 +1,26 @@
+id: DT_Centrepiece_keyword
+info:
+  name: DT-Centrepiece_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DT-Centrepiece"
+        words:
+          - "content=\"DT Centrepiece"
+        condition: and
+      - type: word
+        part: body
+        name: "DT-Centrepiece"
+        words:
+          - "Powered By DT Centrepiece"
+        condition: and

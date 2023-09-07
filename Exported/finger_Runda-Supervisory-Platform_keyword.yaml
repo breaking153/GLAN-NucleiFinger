@@ -1,0 +1,20 @@
+id: Runda_Supervisory_Platform_keyword
+info:
+  name: Runda-Supervisory-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Runda-Supervisory-Platform"
+        words:
+          - "class=\"log_rbox\""
+        condition: and

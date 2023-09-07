@@ -1,0 +1,21 @@
+id: HP_LaserJet_Printer_keyword
+info:
+  name: HP-LaserJet-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-LaserJet-Printer"
+        words:
+          - "<FORM method=\"post\" ACTION=\"/hp/device/supplies_status.html\">"
+          - "<h1>HP LaserJet"
+        condition: and

@@ -1,0 +1,20 @@
+id: SHARP_XG_C435X_L_keyword
+info:
+  name: SHARP-XG-C435X-L_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SHARP-XG-C435X-L"
+        words:
+          - "realm=\"xg-c435x-l"
+        condition: and

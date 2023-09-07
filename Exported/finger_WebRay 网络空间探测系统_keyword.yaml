@@ -1,0 +1,20 @@
+id: WebRay_wang_luo_kong_jian_tan_ce_xi_tong_keyword
+info:
+  name: WebRay 网络空间探测系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WebRay 网络空间探测系统"
+        words:
+          - "WebRay 网络空间探测系统"
+        condition: and

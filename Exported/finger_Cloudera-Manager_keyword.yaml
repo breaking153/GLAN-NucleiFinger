@@ -1,0 +1,20 @@
+id: Cloudera_Manager_keyword
+info:
+  name: Cloudera-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cloudera-Manager"
+        words:
+          - "set-cookie: cloudera_manager_sessionid="
+        condition: and

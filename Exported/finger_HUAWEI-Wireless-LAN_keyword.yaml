@@ -1,0 +1,21 @@
+id: HUAWEI_Wireless_LAN_keyword
+info:
+  name: HUAWEI-Wireless-LAN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-Wireless-LAN"
+        words:
+          - "cloud access point"
+          - "access controller"
+        condition: and

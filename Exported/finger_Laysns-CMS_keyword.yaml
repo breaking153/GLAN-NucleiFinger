@@ -1,0 +1,21 @@
+id: Laysns_CMS_keyword
+info:
+  name: Laysns-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Laysns-CMS"
+        words:
+          - "title=\"laysns\""
+          - "href=\"http://www.laysns.com/\"> laysns"
+        condition: and

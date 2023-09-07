@@ -1,0 +1,21 @@
+id: PHP_Server_Monitor_keyword
+info:
+  name: PHP-Server-Monitor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHP-Server-Monitor"
+        words:
+          - "target=\"_blank\">php server monitor"
+          - "powered by <a href=\"http://www.phpservermonitor.org/"
+        condition: and

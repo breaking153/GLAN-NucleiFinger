@@ -1,0 +1,32 @@
+id: Magento_keyword
+info:
+  name: Magento_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Magento"
+        words:
+          - "Magento, Varien, E-commerce"
+        condition: and
+      - type: word
+        part: body
+        name: "Magento"
+        words:
+          - "magento/tree"
+        condition: and
+      - type: word
+        part: body
+        name: "Magento"
+        words:
+          - "magento"
+        condition: and

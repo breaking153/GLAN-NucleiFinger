@@ -1,0 +1,20 @@
+id: BlognPlus_keyword
+info:
+  name: BlognPlus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BlognPlus"
+        words:
+          - "href=\"http://www.blogn.org"
+        condition: and

@@ -1,0 +1,21 @@
+id: QNO_GQF500_Router_keyword
+info:
+  name: QNO-GQF500-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "QNO-GQF500-Router"
+        words:
+          - "realm=\"gqf500"
+          - "realm=\"gqf500_4wan_gigabit_router"
+        condition: and

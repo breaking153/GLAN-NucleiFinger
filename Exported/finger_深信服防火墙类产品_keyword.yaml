@@ -1,0 +1,20 @@
+id: shen_xin_fu_fang_huo_qiang_lei_chan_pin_keyword
+info:
+  name: 深信服防火墙类产品_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服防火墙类产品"
+        words:
+          - "SANGFOR FW"
+        condition: and

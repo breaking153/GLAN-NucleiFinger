@@ -1,0 +1,21 @@
+id: Raytheon_DSP_2_keyword
+info:
+  name: Raytheon-DSP-2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Raytheon-DSP-2"
+        words:
+          - "<b>unit name: dsp-2</b></center>"
+          - "raytheon corporation"
+        condition: and

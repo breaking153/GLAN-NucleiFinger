@@ -1,0 +1,20 @@
+id: jquery_ui_keyword
+info:
+  name: jquery ui_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "jquery ui"
+        words:
+          - "jquery ui"
+        condition: and

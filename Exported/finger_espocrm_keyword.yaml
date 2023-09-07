@@ -1,0 +1,20 @@
+id: espocrm_keyword
+info:
+  name: espocrm_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "espocrm"
+        words:
+          - "espocrm"
+        condition: and

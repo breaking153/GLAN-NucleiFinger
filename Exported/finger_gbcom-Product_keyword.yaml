@@ -1,0 +1,20 @@
+id: gbcom_Product_keyword
+info:
+  name: gbcom-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "gbcom-Product"
+        words:
+          - "src=\"/cgi-bin/snmpmanager.cgi?cgimodule=login\""
+        condition: and

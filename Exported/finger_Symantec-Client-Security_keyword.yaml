@@ -1,0 +1,20 @@
+id: Symantec_Client_Security_keyword
+info:
+  name: Symantec-Client-Security_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Symantec-Client-Security"
+        words:
+          - "<!-- symantec client security web based installation -->"
+        condition: and

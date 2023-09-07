@@ -1,0 +1,21 @@
+id: Serendipity_php_architecture_keyword_1
+info:
+  name: Serendipity-php-architecture_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Serendipity-php-architecture"
+        words:
+          - "x-serendipity-contentlang"
+          - "x-serendipity-interfacelang"
+        condition: and

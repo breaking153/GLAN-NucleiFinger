@@ -1,0 +1,20 @@
+id: NSFOCUS_WSM_keyword
+info:
+  name: NSFOCUS WSM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NSFOCUS WSM"
+        words:
+          - "NSFOCUS WSM"
+        condition: and

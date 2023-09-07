@@ -1,0 +1,20 @@
+id: a_li_CDN_keyword
+info:
+  name: 阿里CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "阿里CDN"
+        words:
+          - "阿里CDN"
+        condition: and

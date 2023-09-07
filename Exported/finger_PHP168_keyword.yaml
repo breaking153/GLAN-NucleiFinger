@@ -1,0 +1,20 @@
+id: PHP168_keyword
+info:
+  name: PHP168_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PHP168"
+        words:
+          - "PHP168"
+        condition: and

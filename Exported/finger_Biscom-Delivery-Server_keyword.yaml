@@ -1,0 +1,27 @@
+id: Biscom_Delivery_Server_keyword
+info:
+  name: Biscom-Delivery-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Biscom-Delivery-Server"
+        words:
+          - "/bds/stylesheets/fds.css"
+          - "/bds/includes/fdsjavascript.do"
+        condition: and
+      - type: word
+        part: body
+        name: "Biscom-Delivery-Server"
+        words:
+          - "/bds/includes/fdsJavascript.do"
+        condition: and

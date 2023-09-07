@@ -1,0 +1,20 @@
+id: Linksys_EA6500v2_keyword
+info:
+  name: Linksys EA6500v2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys EA6500v2"
+        words:
+          - "Linksys EA6500v2"
+        condition: and

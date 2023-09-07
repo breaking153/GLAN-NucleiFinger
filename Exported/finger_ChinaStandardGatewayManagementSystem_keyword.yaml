@@ -1,0 +1,20 @@
+id: ChinaStandardGatewayManagementSystem_keyword
+info:
+  name: ChinaStandardGatewayManagementSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ChinaStandardGatewayManagementSystem"
+        words:
+          - "title>国标网关管理系统</title"
+        condition: and

@@ -1,0 +1,26 @@
+id: BlueQuartz_keyword
+info:
+  name: BlueQuartz_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BlueQuartz"
+        words:
+          - "value=\"copyright (c 2000, cobalt networks"
+        condition: and
+      - type: word
+        part: body
+        name: "BlueQuartz"
+        words:
+          - "VALUE=\"Copyright (C) 2000, Cobalt Networks"
+        condition: and

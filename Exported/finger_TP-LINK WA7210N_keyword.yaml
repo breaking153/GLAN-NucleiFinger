@@ -1,0 +1,20 @@
+id: TP_LINK_WA7210N_keyword
+info:
+  name: TP-LINK WA7210N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK WA7210N"
+        words:
+          - "TP-LINK WA7210N"
+        condition: and

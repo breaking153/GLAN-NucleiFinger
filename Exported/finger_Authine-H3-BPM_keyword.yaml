@@ -1,0 +1,20 @@
+id: Authine_H3_BPM_keyword
+info:
+  name: Authine-H3-BPM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Authine-H3-BPM"
+        words:
+          - "h3 bpm suite信息化的最佳实践"
+        condition: and

@@ -1,0 +1,26 @@
+id: Flyspray_keyword
+info:
+  name: Flyspray_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Flyspray"
+        words:
+          - "powered by flyspray"
+        condition: and
+      - type: word
+        part: body
+        name: "Flyspray"
+        words:
+          - "Powered by Flyspray"
+        condition: and

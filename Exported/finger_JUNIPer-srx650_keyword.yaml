@@ -1,0 +1,20 @@
+id: JUNIPer_srx650_keyword
+info:
+  name: JUNIPer-srx650_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JUNIPer-srx650"
+        words:
+          - "class=\"jweb-title uppercase\"> - srx650"
+        condition: and

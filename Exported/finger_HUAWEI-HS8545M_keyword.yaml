@@ -1,0 +1,22 @@
+id: HUAWEI_HS8545M_keyword
+info:
+  name: HUAWEI-HS8545M_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-HS8545M"
+        words:
+          - "var productname = 'hs8545m'"
+          - "window.location=\"https://\" + sslhostip + \":\" + sslport"
+          - "var sslhostip ='170.79.114.90'"
+        condition: and

@@ -1,0 +1,20 @@
+id: Mashery_Proxy_keyword_1
+info:
+  name: Mashery Proxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Mashery Proxy"
+        words:
+          - "Mashery Proxy"
+        condition: and

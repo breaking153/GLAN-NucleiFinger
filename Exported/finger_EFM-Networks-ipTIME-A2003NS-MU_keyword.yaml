@@ -1,0 +1,20 @@
+id: EFM_Networks_ipTIME_A2003NS_MU_keyword
+info:
+  name: EFM-Networks-ipTIME-A2003NS-MU_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-A2003NS-MU"
+        words:
+          - "src=\"/images2/login_title.a2003nm.gif\""
+        condition: and

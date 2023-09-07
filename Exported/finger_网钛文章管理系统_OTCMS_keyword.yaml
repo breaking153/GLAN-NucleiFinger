@@ -1,0 +1,20 @@
+id: wang_tai_wen_zhang_guan_li_xi_tong_OTCMS_keyword
+info:
+  name: 网钛文章管理系统_OTCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "网钛文章管理系统_OTCMS"
+        words:
+          - "网钛文章管理系统_OTCMS"
+        condition: and

@@ -1,0 +1,20 @@
+id: fycms_wang_zhan_guan_li_xi_tong_utf_8_keyword
+info:
+  name: fycms网站管理系统__utf-8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "fycms网站管理系统__utf-8"
+        words:
+          - "fycms网站管理系统__utf-8"
+        condition: and

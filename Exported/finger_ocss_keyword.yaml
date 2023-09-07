@@ -1,0 +1,22 @@
+id: ocss_keyword
+info:
+  name: ocss_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ocss"
+        words:
+          - "content=\"爱施德移动渠道管理系统"
+          - "<option value=\"age_sys\">代理商内部员工</option>"
+          - "爱施德 aisidi.com"
+        condition: and

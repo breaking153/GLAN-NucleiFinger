@@ -1,0 +1,25 @@
+id: Business_System_keyword
+info:
+  name: Business-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Business-System"
+        words:
+          - "onsubmit=\"return checksubmit("
+          - "function hiddenpass(e"
+          - "window.location=contextpath+\"/work/index.jsp\""
+          - "function omiga_window(url"
+          - "images/login_d.png"
+          - "function updatapipeline(pipelinename"
+        condition: and

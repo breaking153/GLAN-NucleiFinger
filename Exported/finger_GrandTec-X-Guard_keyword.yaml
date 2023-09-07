@@ -1,0 +1,26 @@
+id: GrandTec_X_Guard_keyword
+info:
+  name: GrandTec-X-Guard_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "GrandTec-X-Guard"
+        words:
+          - "realm=\"walkguard"
+        condition: and
+      - type: word
+        part: header
+        name: "GrandTec-X-Guard"
+        words:
+          - "WalkGuard"
+        condition: and

@@ -1,0 +1,21 @@
+id: Tencent_CDN_keyword
+info:
+  name: Tencent-CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Tencent-CDN"
+        words:
+          - "server: nwss"
+          - "server: tencent-cdn"
+        condition: and

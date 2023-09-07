@@ -1,0 +1,20 @@
+id: Canon_MG6100_series_keyword
+info:
+  name: Canon-MG6100-series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-MG6100-series"
+        words:
+          - "nowrap>canon mg6100 series</td>"
+        condition: and

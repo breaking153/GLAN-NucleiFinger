@@ -1,0 +1,20 @@
+id: AVTech_Video_Web_Server_keyword_1
+info:
+  name: AVTech-Video-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AVTech-Video-Web-Server"
+        words:
+          - "Server:AV-TECH"
+        condition: and

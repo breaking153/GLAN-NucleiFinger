@@ -1,0 +1,20 @@
+id: jiao_zhi_chu_zai_xian_kao_shi_xi_tong_keyword
+info:
+  name: 教之初在线考试系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "教之初在线考试系统"
+        words:
+          - "教之初在线考试系统"
+        condition: and

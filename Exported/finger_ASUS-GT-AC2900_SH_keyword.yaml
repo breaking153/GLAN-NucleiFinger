@@ -1,0 +1,20 @@
+id: ASUS_GT_AC2900_SH_keyword
+info:
+  name: ASUS-GT-AC2900_SH_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-GT-AC2900_SH"
+        words:
+          - "document.getelementsbyclassname(\"model-name\"[0].innerhtml = \"gt-ac2900_sh\""
+        condition: and

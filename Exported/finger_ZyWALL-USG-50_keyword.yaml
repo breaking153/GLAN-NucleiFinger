@@ -1,0 +1,22 @@
+id: ZyWALL_USG_50_keyword
+info:
+  name: ZyWALL-USG-50_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyWALL-USG-50"
+        words:
+          - "<div class=\"model\" id=\"model\" name=\"model\">zywall usg 50"
+          - "multi_lingual"
+          - "model\">zywall usg 50"
+        condition: and

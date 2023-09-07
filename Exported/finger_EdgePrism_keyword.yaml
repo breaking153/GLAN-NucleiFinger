@@ -1,0 +1,26 @@
+id: EdgePrism_keyword
+info:
+  name: EdgePrism_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EdgePrism"
+        words:
+          - "EdgePrism"
+        condition: and
+      - type: word
+        part: header
+        name: "EdgePrism"
+        words:
+          - "EdgePrismSSL"
+        condition: and

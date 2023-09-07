@@ -1,0 +1,26 @@
+id: Cimplicity_WebView_keyword
+info:
+  name: Cimplicity-WebView_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cimplicity-WebView"
+        words:
+          - "<applet name=\"prowlerclientappletobject\" archive=\"/prowlerclient.jar"
+        condition: and
+      - type: word
+        part: body
+        name: "Cimplicity-WebView"
+        words:
+          - "<APPLET NAME=\"ProwlerClientAppletObject\" ARCHIVE=\"/ProwlerClient.jar"
+        condition: and

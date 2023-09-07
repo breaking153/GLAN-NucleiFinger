@@ -1,0 +1,21 @@
+id: ZTE_BAVO_Multimedia_Business_Center_keyword
+info:
+  name: ZTE-BAVO-Multimedia-Business-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-BAVO-Multimedia-Business-Center"
+        words:
+          - "bavo 多媒体业务中心"
+          - "/zxms80css.css"
+        condition: and

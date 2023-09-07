@@ -1,0 +1,21 @@
+id: Dell_KVM_switch_keyword
+info:
+  name: Dell-KVM-switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dell-KVM-switch"
+        words:
+          - "src=\"/avct.js"
+          - "/dell/"
+        condition: and

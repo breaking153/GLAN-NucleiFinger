@@ -1,0 +1,21 @@
+id: NetModule_NB1600_keyword
+info:
+  name: NetModule-NB1600_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetModule-NB1600"
+        words:
+          - "content=\"netmodule ag, switzerland\""
+          - "nb1600 netmodule router<br>"
+        condition: and

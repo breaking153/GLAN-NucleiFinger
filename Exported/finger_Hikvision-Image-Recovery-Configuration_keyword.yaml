@@ -1,0 +1,20 @@
+id: Hikvision_Image_Recovery_Configuration_keyword
+info:
+  name: Hikvision-Image-Recovery-Configuration_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-Image-Recovery-Configuration"
+        words:
+          - "杭州海康威视数字技术股份有限公司"
+        condition: and

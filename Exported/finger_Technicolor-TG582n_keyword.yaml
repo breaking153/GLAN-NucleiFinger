@@ -1,0 +1,21 @@
+id: Technicolor_TG582n_keyword
+info:
+  name: Technicolor-TG582n_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Technicolor-TG582n"
+        words:
+          - "var headertext = 'technicolor&nbsp;tg582n'"
+          - "var headertext = 'technicolor tg582n'"
+        condition: and

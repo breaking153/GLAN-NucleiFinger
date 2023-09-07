@@ -1,0 +1,20 @@
+id: Hikvision_Video_retrieval_keyword
+info:
+  name: Hikvision-Video-retrieval_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-Video-retrieval"
+        words:
+          - "海康威视"
+        condition: and

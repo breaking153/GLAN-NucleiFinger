@@ -1,0 +1,20 @@
+id: Jxj_Cameras_and_Surveillance_keyword
+info:
+  name: Jxj-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jxj-Cameras-and-Surveillance"
+        words:
+          - "classid=\"clsid:a90f043b-7fa7-44cd-99ae-f058629cf7aa\" codebase='javolede.cab#version"
+        condition: and

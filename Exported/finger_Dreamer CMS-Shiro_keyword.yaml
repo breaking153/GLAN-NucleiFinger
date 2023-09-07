@@ -1,0 +1,20 @@
+id: Dreamer_CMS_Shiro_keyword
+info:
+  name: Dreamer CMS-Shiro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dreamer CMS-Shiro"
+        words:
+          - "dreamer-"
+        condition: and

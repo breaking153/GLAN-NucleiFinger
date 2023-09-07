@@ -1,0 +1,20 @@
+id: bai_hu_wei_xin_gong_zhong_hao_zhu_shou_CMS_keyword
+info:
+  name: 白狐微信公众号助手CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "白狐微信公众号助手CMS"
+        words:
+          - "白狐微信公众号助手CMS"
+        condition: and

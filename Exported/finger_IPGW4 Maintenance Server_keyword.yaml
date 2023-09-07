@@ -1,0 +1,20 @@
+id: IPGW4_Maintenance_Server_keyword
+info:
+  name: IPGW4 Maintenance Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IPGW4 Maintenance Server"
+        words:
+          - "IPGW4 Maintenance Server"
+        condition: and

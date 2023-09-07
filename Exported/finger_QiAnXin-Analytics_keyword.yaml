@@ -1,0 +1,20 @@
+id: QiAnXin_Analytics_keyword
+info:
+  name: QiAnXin-Analytics_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QiAnXin-Analytics"
+        words:
+          - "href=\"/static/build/animate_nprogress_timepiacker_tooltipster.min.css"
+        condition: and

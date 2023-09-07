@@ -1,0 +1,26 @@
+id: H3C_Switch_keyword
+info:
+  name: H3C-Switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-Switch"
+        words:
+          - "nlanguagesupported"
+          - "window.location = \"/wcn/banner?lang="
+          - "style=\"background-color: #e1e9f5;\" onload=\"onbodyload"
+          - "window.location = slang + \"/login.html\";"
+          - "window.location = \"en/login.html\";"
+          - "window.location = \"/web/device/login?lang=\"+slang;"
+          - "<h2>web网管中"
+        condition: and

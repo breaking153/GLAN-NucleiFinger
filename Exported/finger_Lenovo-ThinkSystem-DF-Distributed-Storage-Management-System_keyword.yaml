@@ -1,0 +1,20 @@
+id: Lenovo_ThinkSystem_DF_Distributed_Storage_Management_System_keyword
+info:
+  name: Lenovo-ThinkSystem-DF-Distributed-Storage-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Lenovo-ThinkSystem-DF-Distributed-Storage-Management-System"
+        words:
+          - "lenovo thinksystem df系列分布式存储管理系统"
+        condition: and

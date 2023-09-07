@@ -1,0 +1,21 @@
+id: NC_LINK_300M_11N_Wireless_Router_keyword
+info:
+  name: NC-LINK-300M-11N-Wireless-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NC-LINK-300M-11N-Wireless-Router"
+        words:
+          - "href='img/amtc_logo.png'"
+          - "href=\"http://www.nc-link.cn/\""
+        condition: and

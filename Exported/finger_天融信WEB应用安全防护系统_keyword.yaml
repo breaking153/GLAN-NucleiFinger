@@ -1,0 +1,22 @@
+id: tian_rong_xin_WEB_ying_yong_an_quan_fang_hu_xi_tong_keyword
+info:
+  name: 天融信WEB应用安全防护系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信WEB应用安全防护系统"
+        words:
+          - "module=login"
+          - "topsec"
+          - "login"
+        condition: and

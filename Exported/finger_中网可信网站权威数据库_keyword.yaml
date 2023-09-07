@@ -1,0 +1,20 @@
+id: zhong_wang_ke_xin_wang_zhan_quan_wei_shu_ju_ku_keyword
+info:
+  name: 中网可信网站权威数据库_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中网可信网站权威数据库"
+        words:
+          - "https://ss.knet.cn/verifyseal.dll"
+        condition: and

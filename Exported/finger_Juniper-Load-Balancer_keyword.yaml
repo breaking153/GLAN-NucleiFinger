@@ -1,0 +1,33 @@
+id: Juniper_Load_Balancer_keyword
+info:
+  name: Juniper-Load-Balancer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Juniper-Load-Balancer"
+        words:
+          - "set-cookie: rl-sticky-key"
+          - "juniper networks application acceleration platform"
+        condition: and
+      - type: word
+        part: header
+        name: "Juniper-Load-Balancer"
+        words:
+          - "rl-sticky-key"
+        condition: and
+      - type: word
+        part: header
+        name: "Juniper-Load-Balancer"
+        words:
+          - "Juniper Networks Application Acceleration Platform"
+        condition: and

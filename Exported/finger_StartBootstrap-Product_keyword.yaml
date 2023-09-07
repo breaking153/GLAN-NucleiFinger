@@ -1,0 +1,21 @@
+id: StartBootstrap_Product_keyword
+info:
+  name: StartBootstrap-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "StartBootstrap-Product"
+        words:
+          - "src=\"img/portfolio/thumbnails/4.jpg\""
+          - "we've got what you need!</h2>"
+        condition: and

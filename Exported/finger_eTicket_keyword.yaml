@@ -1,0 +1,28 @@
+id: eTicket_keyword
+info:
+  name: eTicket_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "eTicket"
+        words:
+          - "powered by eticket"
+          - "<a href=\"http://www.eticketsupport.com\" target=\"_blank\">"
+          - "/eticket/eticket.css"
+        condition: and
+      - type: word
+        part: body
+        name: "eTicket"
+        words:
+          - "Powered by eTicket"
+        condition: and

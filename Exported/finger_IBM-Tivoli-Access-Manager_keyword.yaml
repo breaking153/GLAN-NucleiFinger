@@ -1,0 +1,23 @@
+id: IBM_Tivoli_Access_Manager_keyword
+info:
+  name: IBM-Tivoli-Access-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Tivoli-Access-Manager"
+        words:
+          - "<!--- do not translate or modify any part of the hidden parameter(s --->"
+          - "access manager for e-business"
+          - "var warningstring = \"<b>warning:</b> to maintain your login session, make sure that your browser is configured to accept cookies.\";"
+          - "<!-- copyright (c 2000 tivoli systems, inc. -->"
+        condition: and

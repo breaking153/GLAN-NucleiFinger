@@ -1,0 +1,26 @@
+id: iGuard_Security_System_keyword_1
+info:
+  name: iGuard-Security-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "iGuard-Security-System"
+        words:
+          - "realm=\"iguard embedded web server"
+        condition: and
+      - type: word
+        part: header
+        name: "iGuard-Security-System"
+        words:
+          - "iGuard Embedded Web Server"
+        condition: and

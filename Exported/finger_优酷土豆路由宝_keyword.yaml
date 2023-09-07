@@ -1,0 +1,20 @@
+id: you_ku_tu_dou_lu_you_bao_keyword
+info:
+  name: 优酷土豆路由宝_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "优酷土豆路由宝"
+        words:
+          - "优酷土豆路由宝"
+        condition: and

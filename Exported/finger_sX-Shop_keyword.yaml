@@ -1,0 +1,21 @@
+id: sX_Shop_keyword
+info:
+  name: sX-Shop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sX-Shop"
+        words:
+          - "alert(\"ihr suchbegriff muss mind. aus 3 zeichen bestehen.\";"
+          - "content=\"source worx - software development\">"
+        condition: and

@@ -1,0 +1,21 @@
+id: Hikvision_V2_3_Control_keyword
+info:
+  name: Hikvision--V2.3-Control_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision--V2.3-Control"
+        words:
+          - "hikvision v2.3控件网页demo"
+          - "杭州海康威视数字技术股份有限公司"
+        condition: and

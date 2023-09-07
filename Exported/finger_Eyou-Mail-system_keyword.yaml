@@ -1,0 +1,23 @@
+id: Eyou_Mail_system_keyword
+info:
+  name: Eyou-Mail-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Eyou-Mail-system"
+        words:
+          - "cr\">eyoumail"
+          - "content=\"亿邮电子邮件系统"
+          - "/tpl/login/user/images/dbg.png"
+          - "var loginssl = document.form_login.login_ssl.value;"
+        condition: and

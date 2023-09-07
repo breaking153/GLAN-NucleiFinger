@@ -1,0 +1,21 @@
+id: Wisedu_SC_keyword
+info:
+  name: Wisedu-SC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wisedu-SC"
+        words:
+          - "portal/js/plugins/changeskin.js"
+          - "前端配置文件"
+        condition: and

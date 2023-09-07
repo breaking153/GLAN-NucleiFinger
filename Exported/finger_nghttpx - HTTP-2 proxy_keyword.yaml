@@ -1,0 +1,20 @@
+id: nghttpx_HTTP_2_proxy_keyword
+info:
+  name: nghttpx - HTTP-2 proxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "nghttpx - HTTP-2 proxy"
+        words:
+          - "nghttpx - HTTP/2 proxy"
+        condition: and

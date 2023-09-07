@@ -1,0 +1,26 @@
+id: BlueOnyx_keyword
+info:
+  name: BlueOnyx_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BlueOnyx"
+        words:
+          - "thank you for using the blueonyx"
+        condition: and
+      - type: word
+        part: body
+        name: "BlueOnyx"
+        words:
+          - "Thank you for using the BlueOnyx"
+        condition: and

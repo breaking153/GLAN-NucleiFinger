@@ -1,0 +1,20 @@
+id: ZKAccess_men_jin_guan_li_xi_tong_keyword
+info:
+  name: ZKAccess 门禁管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZKAccess 门禁管理系统"
+        words:
+          - "/logoZKAccess_zh-cn.jpg"
+        condition: and

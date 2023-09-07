@@ -1,0 +1,25 @@
+id: IBM_Lotus_keyword
+info:
+  name: IBM-Lotus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Lotus"
+        words:
+          - "href='/domcfg.nsf/csslogin?readform'>"
+          - "action=\"/names.nsf?login\" name=\"_dominoform"
+          - "软标科技"
+          - "domcfg.nsf"
+          - "login.nsf"
+          - "main.nsf"
+        condition: and

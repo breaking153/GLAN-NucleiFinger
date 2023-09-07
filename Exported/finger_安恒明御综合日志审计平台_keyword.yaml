@@ -1,0 +1,20 @@
+id: an_heng_ming_yu_zong_he_ri_zhi_shen_ji_ping_tai_keyword
+info:
+  name: 安恒明御综合日志审计平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "安恒明御综合日志审计平台"
+        words:
+          - "安恒明御综合日志审计平台"
+        condition: and

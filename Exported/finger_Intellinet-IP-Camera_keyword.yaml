@@ -1,0 +1,33 @@
+id: Intellinet_IP_Camera_keyword
+info:
+  name: Intellinet-IP-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Intellinet-IP-Camera"
+        words:
+          - "copyright &copy;  intellinet network solutions"
+          - "http://www.intellinet-network.com/driver/netcam.exe"
+        condition: and
+      - type: word
+        part: body
+        name: "Intellinet-IP-Camera"
+        words:
+          - "Copyright &copy;  INTELLINET NETWORK SOLUTIONS"
+        condition: and
+      - type: word
+        part: body
+        name: "Intellinet-IP-Camera"
+        words:
+          - "http://www.intellinet-network.com/driver/NetCam.exe"
+        condition: and

@@ -1,0 +1,21 @@
+id: imo_cloud_office_keyword
+info:
+  name: imo-cloud-office_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "imo-cloud-office"
+        words:
+          - "download/imo_setup.exe"
+          - "title=\"imo云办公室\" href=\"http://imoffice.com"
+        condition: and

@@ -1,0 +1,32 @@
+id: FoosunCMS_keyword
+info:
+  name: FoosunCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FoosunCMS"
+        words:
+          - "Created by DotNetCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "FoosunCMS"
+        words:
+          - "For Foosun"
+        condition: and
+      - type: word
+        part: body
+        name: "FoosunCMS"
+        words:
+          - "Powered by www.Foosun.net,Products:Foosun Content Manage system"
+        condition: and

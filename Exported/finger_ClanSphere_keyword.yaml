@@ -1,0 +1,26 @@
+id: ClanSphere_keyword
+info:
+  name: ClanSphere_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ClanSphere"
+        words:
+          - "content=\"ClanSphere"
+        condition: and
+      - type: word
+        part: body
+        name: "ClanSphere"
+        words:
+          - "index.php?mod=clansphere&amp;action=about"
+        condition: and

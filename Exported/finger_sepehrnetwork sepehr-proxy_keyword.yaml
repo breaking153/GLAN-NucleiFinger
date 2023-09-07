@@ -1,0 +1,20 @@
+id: sepehrnetwork_sepehr_proxy_keyword
+info:
+  name: sepehrnetwork sepehr-proxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "sepehrnetwork sepehr-proxy"
+        words:
+          - "sepehrnetwork sepehr-proxy"
+        condition: and

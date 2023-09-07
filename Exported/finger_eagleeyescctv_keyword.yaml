@@ -1,0 +1,33 @@
+id: eagleeyescctv_keyword
+info:
+  name: eagleeyescctv_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "eagleeyescctv"
+        words:
+          - "ip surveillance for your life"
+          - "/nobody/logindevice.js"
+        condition: and
+      - type: word
+        part: body
+        name: "eagleeyescctv"
+        words:
+          - "IP Surveillance for Your Life"
+        condition: and
+      - type: word
+        part: body
+        name: "eagleeyescctv"
+        words:
+          - "/nobody/loginDevice.js"
+        condition: and

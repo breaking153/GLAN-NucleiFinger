@@ -1,0 +1,22 @@
+id: Jive_SBS_keyword
+info:
+  name: Jive-SBS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jive-SBS"
+        words:
+          - "/jive-icons.css"
+          - "class=\"jive-body-formpage"
+          - "jive.rte.defaultstyles"
+        condition: and

@@ -1,0 +1,20 @@
+id: Winiis_ISP_Access_Resource_Management_System_keyword
+info:
+  name: Winiis-ISP-Access-Resource-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Winiis-ISP-Access-Resource-Management-System"
+        words:
+          - "winisp.gif"
+        condition: and

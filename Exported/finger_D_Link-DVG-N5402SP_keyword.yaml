@@ -1,0 +1,22 @@
+id: D_Link_DVG_N5402SP_keyword
+info:
+  name: D_Link-DVG-N5402SP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-DVG-N5402SP"
+        words:
+          - "welcome to dvg-n5402sp-r"
+          - "welcome to dvg-n5402sp"
+          - "lang_firmwarelogin"
+        condition: and

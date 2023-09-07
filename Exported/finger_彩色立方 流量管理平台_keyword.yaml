@@ -1,0 +1,20 @@
+id: cai_se_li_fang_liu_liang_guan_li_ping_tai_keyword
+info:
+  name: 彩色立方 流量管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "彩色立方 流量管理平台"
+        words:
+          - "彩色立方 流量管理平台"
+        condition: and

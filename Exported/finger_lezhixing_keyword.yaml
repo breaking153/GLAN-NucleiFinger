@@ -1,0 +1,23 @@
+id: lezhixing_keyword
+info:
+  name: lezhixing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "lezhixing"
+        words:
+          - "action=\"/datacenter/authentication/login.do\" method=\"post"
+          - "location.href=contextpath+\"/login/password/password.jsp"
+          - "var contextpath = \"/datacenter"
+          - "/static/thirdparty/jquery/"
+        condition: and

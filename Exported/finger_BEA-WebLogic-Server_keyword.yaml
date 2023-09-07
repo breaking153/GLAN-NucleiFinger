@@ -1,0 +1,35 @@
+id: BEA_WebLogic_Server_keyword
+info:
+  name: BEA-WebLogic-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BEA-WebLogic-Server"
+        words:
+          - "<h1>bea weblogic server"
+          - "weblogic server"
+          - "<h1>welcome to weblogic application"
+          - "<h1>bea weblogic server"
+        condition: and
+      - type: word
+        part: body
+        name: "BEA-WebLogic-Server"
+        words:
+          - "<h1>BEA WebLogic Server"
+        condition: and
+      - type: word
+        part: body
+        name: "BEA-WebLogic-Server"
+        words:
+          - "WebLogic"
+        condition: and

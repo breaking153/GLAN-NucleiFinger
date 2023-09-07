@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -19,4 +19,10 @@ http:
           - "TOPSEC"
           - "image/aaa.png"
           - "username"
+        condition: and
+      - type: word
+        part: body
+        name: "天融信防火墙"
+        words:
+          - "WEB User Interface"
         condition: and

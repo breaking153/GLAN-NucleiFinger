@@ -1,0 +1,19 @@
+id: jin_jing_yun_hua_gao_ji_wei_xie_jian_ce_xi_tong_faviconhash
+info:
+  name: 金睛云华高级威胁检测系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "金睛云华高级威胁检测系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1747722638\""
+        condition: or

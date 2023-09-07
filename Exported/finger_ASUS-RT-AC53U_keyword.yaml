@@ -1,0 +1,20 @@
+id: ASUS_RT_AC53U_keyword
+info:
+  name: ASUS-RT-AC53U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-RT-AC53U"
+        words:
+          - "<div class=\"prod_madelname\">rt-ac53u"
+        condition: and

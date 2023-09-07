@@ -1,0 +1,20 @@
+id: Yonyou_GRP_U8_keyword
+info:
+  name: Yonyou-GRP-U8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yonyou-GRP-U8"
+        words:
+          - "window.location.replace(\"login.jsp?up=1\""
+        condition: and

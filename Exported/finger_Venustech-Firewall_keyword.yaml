@@ -1,0 +1,21 @@
+id: Venustech_Firewall_keyword
+info:
+  name: Venustech-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Venustech-Firewall"
+        words:
+          - "var title_zh = '天清汉马usg防火墙';"
+          - "venusense fw"
+        condition: and

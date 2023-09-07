@@ -1,0 +1,28 @@
+id: shopex_keyword
+info:
+  name: shopex_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shopex"
+        words:
+          - "content=\"shopex"
+          - "@author litie[aita]shopex.cn"
+          - "http://www.shopex.cn' target='_blank'"
+        condition: and
+      - type: word
+        part: body
+        name: "shopex"
+        words:
+          - "content=\"ShopEx"
+        condition: and

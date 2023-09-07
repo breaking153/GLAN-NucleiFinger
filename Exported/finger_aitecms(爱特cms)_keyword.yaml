@@ -1,0 +1,26 @@
+id: aitecms_ai_te_cms_keyword
+info:
+  name: aitecms(爱特cms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "aitecms(爱特cms)"
+        words:
+          - "aitecms"
+        condition: and
+      - type: word
+        part: body
+        name: "aitecms(爱特cms)"
+        words:
+          - "爱特cms"
+        condition: and

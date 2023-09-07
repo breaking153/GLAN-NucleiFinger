@@ -1,0 +1,32 @@
+id: tutucms_keyword
+info:
+  name: tutucms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "tutucms"
+        words:
+          - "content=\"TUTUCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "tutucms"
+        words:
+          - "Powered by TUTUCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "tutucms"
+        words:
+          - "TUTUCMS\""
+        condition: and

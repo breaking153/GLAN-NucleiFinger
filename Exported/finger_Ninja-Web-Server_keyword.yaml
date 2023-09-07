@@ -1,0 +1,20 @@
+id: Ninja_Web_Server_keyword
+info:
+  name: Ninja-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Ninja-Web-Server"
+        words:
+          - "Ninja-Web-Server"
+        condition: and

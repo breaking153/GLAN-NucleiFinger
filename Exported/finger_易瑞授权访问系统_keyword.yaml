@@ -1,0 +1,19 @@
+id: yi_rui_shou_quan_fang_wen_xi_tong_keyword
+info:
+  name: 易瑞授权访问系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "易瑞授权访问系统"
+        words:
+          - "<title>易瑞授权访问系统"

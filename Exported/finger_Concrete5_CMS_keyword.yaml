@@ -1,0 +1,26 @@
+id: Concrete5_CMS_keyword
+info:
+  name: Concrete5_CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Concrete5_CMS"
+        words:
+          - "generator\" content=\"ezCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "Concrete5_CMS"
+        words:
+          - "CCM_DISPATCHER_FILENAME"
+        condition: and

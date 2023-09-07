@@ -1,0 +1,20 @@
+id: AChecker_Web_accessibility_evaluation_tool_keyword
+info:
+  name: AChecker-Web-accessibility-evaluation-tool_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AChecker-Web-accessibility-evaluation-tool"
+        words:
+          - "content=\"achecker is a web accessibility"
+        condition: and

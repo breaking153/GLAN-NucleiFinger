@@ -1,0 +1,22 @@
+id: pexip_keyword
+info:
+  name: pexip_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "pexip"
+        words:
+          - "<h2>pexip infinity</h2>"
+          - "<h2>会议平台</h2>"
+          - "pexip infinity"
+        condition: and

@@ -1,0 +1,21 @@
+id: IBM_Storwize_keyword
+info:
+  name: IBM-Storwize_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Storwize"
+        words:
+          - "class=\"poweredbystorwize"
+          - "ibm 和 storwize 是 ibm corporation 在美国和/或其他国家或地区的注册商标"
+        condition: and

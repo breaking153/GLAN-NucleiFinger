@@ -1,0 +1,26 @@
+id: zhi_rui_ruan_jian_keyword
+info:
+  name: 智睿软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "智睿软件"
+        words:
+          - "content=\"智睿软件"
+        condition: and
+      - type: word
+        part: body
+        name: "智睿软件"
+        words:
+          - "Zhirui.js"
+        condition: and

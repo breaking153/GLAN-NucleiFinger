@@ -1,0 +1,26 @@
+id: blog_fc2_keyword
+info:
+  name: blog_fc2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "blog_fc2"
+        words:
+          - "bloguid"
+        condition: and
+      - type: word
+        part: header
+        name: "blog_fc2"
+        words:
+          - "cookietest=test"
+        condition: and

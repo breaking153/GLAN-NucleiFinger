@@ -1,0 +1,20 @@
+id: Alibaba_Group_TLog_keyword
+info:
+  name: Alibaba-Group-TLog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alibaba-Group-TLog"
+        words:
+          - "content=\"tlog 实时数据处理"
+        condition: and

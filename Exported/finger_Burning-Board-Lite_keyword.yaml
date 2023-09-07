@@ -1,0 +1,33 @@
+id: Burning_Board_Lite_keyword
+info:
+  name: Burning-Board-Lite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Burning-Board-Lite"
+        words:
+          - "powered by <b><a href=\"http://www.woltlab.de"
+          - "powered by <b>burning board"
+        condition: and
+      - type: word
+        part: body
+        name: "Burning-Board-Lite"
+        words:
+          - "Powered by <b><a href=\"http://www.woltlab.de"
+        condition: and
+      - type: word
+        part: body
+        name: "Burning-Board-Lite"
+        words:
+          - "Powered by <b>Burning Board"
+        condition: and

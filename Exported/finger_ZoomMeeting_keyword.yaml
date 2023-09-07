@@ -1,0 +1,20 @@
+id: ZoomMeeting_keyword
+info:
+  name: ZoomMeeting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZoomMeeting"
+        words:
+          - "class=\"alert alert-success hideme zoom-newmessage\""
+        condition: and

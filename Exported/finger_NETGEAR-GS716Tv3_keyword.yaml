@@ -1,0 +1,20 @@
+id: NETGEAR_GS716Tv3_keyword
+info:
+  name: NETGEAR-GS716Tv3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-GS716Tv3"
+        words:
+          - "class=\"gs716tv3image spacer50percent topalign righthalign\""
+        condition: and

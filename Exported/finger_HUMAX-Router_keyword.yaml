@@ -1,0 +1,20 @@
+id: HUMAX_Router_keyword
+info:
+  name: HUMAX-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUMAX-Router"
+        words:
+          - "<strong>we're sorry but rego_v2 doesn't work properly"
+        condition: and

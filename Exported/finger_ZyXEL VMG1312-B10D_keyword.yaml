@@ -1,0 +1,20 @@
+id: ZyXEL_VMG1312_B10D_keyword
+info:
+  name: ZyXEL VMG1312-B10D_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL VMG1312-B10D"
+        words:
+          - "ZyXEL VMG1312-B10D"
+        condition: and

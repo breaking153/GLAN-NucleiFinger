@@ -1,0 +1,33 @@
+id: KaiBB_keyword
+info:
+  name: KaiBB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KaiBB"
+        words:
+          - "powered by kaibb"
+          - "content=\"forum powered by kaibb"
+        condition: and
+      - type: word
+        part: body
+        name: "KaiBB"
+        words:
+          - "Powered by KaiBB"
+        condition: and
+      - type: word
+        part: body
+        name: "KaiBB"
+        words:
+          - "content=\"Forum powered by KaiBB"
+        condition: and

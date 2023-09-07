@@ -1,0 +1,19 @@
+id: tian_zhi_zhi_hui_yi_yuan_zong_he_zhi_liang_jian_guan_ping_tai_faviconhash
+info:
+  name: 天智智慧医院综合质量监管平台_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "天智智慧医院综合质量监管平台"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1986460035\""
+        condition: or

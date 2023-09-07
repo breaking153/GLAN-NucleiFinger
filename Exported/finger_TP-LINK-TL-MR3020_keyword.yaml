@@ -1,0 +1,23 @@
+id: TP_LINK_TL_MR3020_keyword
+info:
+  name: TP-LINK-TL-MR3020_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TP-LINK-TL-MR3020"
+        words:
+          - "devname = \"wireless router tl-mr3020"
+          - "var modelname=\"tl-mr3020\""
+          - "tp-link portable wireless n 3g/4g router mr3020"
+          - "tp-link portable wireless n 3g router mr3020"
+        condition: and

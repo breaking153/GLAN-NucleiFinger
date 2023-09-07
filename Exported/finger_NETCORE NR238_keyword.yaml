@@ -1,0 +1,20 @@
+id: NETCORE_NR238_keyword
+info:
+  name: NETCORE NR238_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETCORE NR238"
+        words:
+          - "NETCORE NR238"
+        condition: and

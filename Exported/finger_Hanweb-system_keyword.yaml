@@ -1,0 +1,24 @@
+id: Hanweb_system_keyword
+info:
+  name: Hanweb-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanweb-system"
+        words:
+          - "produced by 大汉网络"
+          - "<a href='http://www.hanweb.com' style='display:none'>"
+          - "<meta name='generator' content='大汉版通'>"
+          - "<meta name='author' content='大汉网络'>"
+          - "/jcms_files/jcms"
+        condition: and

@@ -1,0 +1,21 @@
+id: 3CX_Phone_System_Management_Console_keyword
+info:
+  name: 3CX-Phone-System-Management-Console_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "3CX-Phone-System-Management-Console"
+        words:
+          - "src=\"/public/vendor.26422846c5ea381c.js\""
+          - "src=\"/public/app.807e10d98cfac19e.js\""
+        condition: and

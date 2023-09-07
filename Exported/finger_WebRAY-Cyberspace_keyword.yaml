@@ -1,0 +1,20 @@
+id: WebRAY_Cyberspace_keyword
+info:
+  name: WebRAY-Cyberspace_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebRAY-Cyberspace"
+        words:
+          - "asset_search_form"
+        condition: and

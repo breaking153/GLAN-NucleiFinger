@@ -1,0 +1,26 @@
+id: Secworld_Firewall_keyword
+info:
+  name: Secworld-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Secworld-Firewall"
+        words:
+          - "css/lsec/login.css"
+          - "src=\"?g=login_captcha"
+          - "content=\"上海斐讯数据通信技术有限公司\""
+          - "360网神防火墙系统nsg"
+          - "var __permission = \"360网神防火墙系统\""
+          - "var __permission = \"网神防火墙\""
+          - "var __permission = \"网神secgate3600 防火墙\""
+        condition: and

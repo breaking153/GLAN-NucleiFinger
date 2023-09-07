@@ -1,0 +1,28 @@
+id: OpenSNS_keyword
+info:
+  name: OpenSNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OpenSNS"
+        words:
+          - "powered by opensns"
+          - "content=\"opensns"
+          - "os-icon-home app-icon "
+        condition: and
+      - type: word
+        part: body
+        name: "OpenSNS"
+        words:
+          - "content=\"OpenSNS"
+        condition: and

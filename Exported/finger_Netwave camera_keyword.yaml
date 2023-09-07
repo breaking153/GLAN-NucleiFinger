@@ -1,0 +1,20 @@
+id: Netwave_camera_keyword
+info:
+  name: Netwave camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Netwave camera"
+        words:
+          - "Netwave camera"
+        condition: and

@@ -1,0 +1,23 @@
+id: ManageEngine_DeviceExpert_keyword
+info:
+  name: ManageEngine-DeviceExpert_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ManageEngine-DeviceExpert"
+        words:
+          - "/deviceexpert.js"
+          - "password manager pro does not allow"
+          - "selectpasswordpolicy"
+          - "changepasswordpolicy"
+        condition: and

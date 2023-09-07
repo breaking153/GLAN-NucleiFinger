@@ -1,0 +1,20 @@
+id: Axis2_Web_keyword
+info:
+  name: Axis2-Web_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Axis2-Web"
+        words:
+          - "axis2-web/css/axis-style.css"
+        condition: and

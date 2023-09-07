@@ -1,0 +1,20 @@
+id: cart_engine_keyword
+info:
+  name: cart_engine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cart_engine"
+        words:
+          - "skins/_common/jscripts.css"
+        condition: and

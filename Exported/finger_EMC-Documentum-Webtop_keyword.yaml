@@ -1,0 +1,21 @@
+id: EMC_Documentum_Webtop_keyword
+info:
+  name: EMC-Documentum-Webtop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EMC-Documentum-Webtop"
+        words:
+          - "/webtop/index.js"
+          - "/webtop/webtop/theme/documentum/css/webtop.css"
+        condition: and

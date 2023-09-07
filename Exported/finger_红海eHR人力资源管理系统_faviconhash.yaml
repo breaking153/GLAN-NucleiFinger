@@ -1,0 +1,19 @@
+id: hong_hai_eHR_ren_li_zi_yuan_guan_li_xi_tong_faviconhash
+info:
+  name: 红海eHR人力资源管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "红海eHR人力资源管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"3279470843\""
+        condition: or

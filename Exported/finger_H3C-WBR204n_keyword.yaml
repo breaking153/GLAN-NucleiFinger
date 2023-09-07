@@ -1,0 +1,20 @@
+id: H3C_WBR204n_keyword
+info:
+  name: H3C-WBR204n_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C-WBR204n"
+        words:
+          - "basic realm=\"h3c wbr204n\""
+        condition: and

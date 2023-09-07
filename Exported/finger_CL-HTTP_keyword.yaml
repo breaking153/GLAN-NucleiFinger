@@ -1,0 +1,26 @@
+id: CL_HTTP_keyword
+info:
+  name: CL-HTTP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CL-HTTP"
+        words:
+          - "server: cl-http"
+        condition: and
+      - type: word
+        part: header
+        name: "CL-HTTP"
+        words:
+          - "CL-HTTP"
+        condition: and

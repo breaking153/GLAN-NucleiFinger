@@ -1,0 +1,20 @@
+id: CDR_Stats_keyword
+info:
+  name: CDR-Stats_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CDR-Stats"
+        words:
+          - "/static/cdr-stats/js/jquery"
+        condition: and

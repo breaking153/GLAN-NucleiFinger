@@ -1,0 +1,20 @@
+id: HP_3Com_3CRWE554G72_keyword
+info:
+  name: HP-3Com-3CRWE554G72_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-3Com-3CRWE554G72"
+        words:
+          - "http-equiv=\"3cnumber\" content=\"3crwe554g72\""
+        condition: and

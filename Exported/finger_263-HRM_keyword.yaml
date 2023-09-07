@@ -1,0 +1,20 @@
+id: 263_HRM_keyword
+info:
+  name: 263-HRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "263-HRM"
+        words:
+          - "<p align=\"center\">请使用263em登陆!</p>"
+        condition: and

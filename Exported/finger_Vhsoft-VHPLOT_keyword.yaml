@@ -1,0 +1,20 @@
+id: Vhsoft_VHPLOT_keyword
+info:
+  name: Vhsoft-VHPLOT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Vhsoft-VHPLOT"
+        words:
+          - "/vhplot/webresource.axd"
+        condition: and

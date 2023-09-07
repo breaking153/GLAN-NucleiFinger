@@ -1,0 +1,29 @@
+id: Panabit_Panalog_keyword
+info:
+  name: Panabit-Panalog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Panabit-Panalog"
+        words:
+          - "img/logo.gif"
+          - "Maintain"
+          - "unamexx"
+          - "img/12.png"
+        condition: and
+      - type: word
+        part: body
+        name: "Panabit-Panalog"
+        words:
+          - "id=\"codeno\""
+        condition: and

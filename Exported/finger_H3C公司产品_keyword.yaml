@@ -1,0 +1,32 @@
+id: H3C_gong_si_chan_pin_keyword
+info:
+  name: H3C公司产品_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C公司产品"
+        words:
+          - "service@h3c.com"
+        condition: and
+      - type: word
+        part: body
+        name: "H3C公司产品"
+        words:
+          - "H3C Corporation"
+        condition: and
+      - type: word
+        part: body
+        name: "H3C公司产品"
+        words:
+          - "icg_helpScript.js"
+        condition: and

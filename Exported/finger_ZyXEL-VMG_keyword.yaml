@@ -1,0 +1,20 @@
+id: ZyXEL_VMG_keyword
+info:
+  name: ZyXEL-VMG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-VMG"
+        words:
+          - ".::welcome to the web-based configurator::."
+        condition: and

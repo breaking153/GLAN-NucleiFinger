@@ -1,0 +1,21 @@
+id: topsec_TopAudit_keyword
+info:
+  name: topsec-TopAudit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "topsec-TopAudit"
+        words:
+          - "topaudit"
+          - "ta-w 登录系统"
+        condition: and

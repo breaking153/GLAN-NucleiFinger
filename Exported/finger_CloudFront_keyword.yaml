@@ -1,0 +1,21 @@
+id: CloudFront_keyword
+info:
+  name: CloudFront_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CloudFront"
+        words:
+          - "x-amz-cf-id"
+          - "x-cache: error from cloudfront"
+        condition: and

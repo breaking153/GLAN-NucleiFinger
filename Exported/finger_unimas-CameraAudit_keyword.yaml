@@ -1,0 +1,20 @@
+id: unimas_CameraAudit_keyword
+info:
+  name: unimas-CameraAudit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "unimas-CameraAudit"
+        words:
+          - "txtpasswordcssclass"
+        condition: and

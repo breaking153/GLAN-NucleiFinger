@@ -1,0 +1,20 @@
+id: qi_ye_ban_QQ_keyword
+info:
+  name: 企业版QQ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "企业版QQ"
+        words:
+          - "http://wpa.b.qq.com/cgi/wpa.php"
+        condition: and

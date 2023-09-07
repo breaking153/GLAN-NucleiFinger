@@ -1,0 +1,22 @@
+id: PROLiNK_Router_keyword
+info:
+  name: PROLiNK-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PROLiNK-Router"
+        words:
+          - "<! copyright (c realtek semiconductor corp."
+          - "tw-eav510"
+          - "<frame src=\"attention.htm\" name=\"attention\" frameborder="
+        condition: and

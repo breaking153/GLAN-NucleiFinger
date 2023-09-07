@@ -1,0 +1,21 @@
+id: Chanzhicms_keyword
+info:
+  name: Chanzhicms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Chanzhicms"
+        words:
+          - "title='cms系统，首选蝉知cms"
+          - "chanzhi.js"
+        condition: and

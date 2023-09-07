@@ -1,0 +1,20 @@
+id: MKey_keyword
+info:
+  name: MKey_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MKey"
+        words:
+          - "北京数字天堂信息科技有限责任公司"
+        condition: and

@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -30,4 +30,16 @@ http:
         words:
           - "通达OA"
           - "login"
+        condition: and
+      - type: word
+        part: body
+        name: "通达OA"
+        words:
+          - "<link rel=\"shortcut icon\" href=\"/images/tongda.ico\" />"
+        condition: and
+      - type: word
+        part: body
+        name: "通达OA"
+        words:
+          - "Office Anywhere 2013"
         condition: and

@@ -1,0 +1,20 @@
+id: manage_system_keyword
+info:
+  name: manage-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "manage-system"
+        words:
+          - "content=\"基于vue2 + element ui 的后台管理系统解决方案"
+        condition: and

@@ -1,0 +1,20 @@
+id: Citrix_XCP_keyword
+info:
+  name: Citrix-XCP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citrix-XCP"
+        words:
+          - "<p/>citrix systems, inc. xcp 1.6.10"
+        condition: and

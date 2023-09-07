@@ -1,0 +1,22 @@
+id: Power_PowerPMS_keyword
+info:
+  name: Power-PowerPMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Power-PowerPMS"
+        words:
+          - "apphub.server.registertohub(qrcodeid"
+          - "/app_themes/default/assets/css/style.min.css"
+          - "/scripts/boot.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: xin_hu_ban_gong_OA_xi_tong_keyword
+info:
+  name: 信呼办公OA系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "信呼办公OA系统"
+        words:
+          - "信呼办公OA系统"
+        condition: and

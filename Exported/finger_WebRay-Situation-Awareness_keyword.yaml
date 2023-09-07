@@ -1,0 +1,20 @@
+id: WebRay_Situation_Awareness_keyword
+info:
+  name: WebRay-Situation-Awareness_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebRay-Situation-Awareness"
+        words:
+          - "class=\"disclaimer\" style=\"color: #ffffff\">《盛邦安全网站监控预警平台服务协议》</a>"
+        condition: and

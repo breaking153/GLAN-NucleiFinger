@@ -1,0 +1,20 @@
+id: normstar_HR_keyword
+info:
+  name: normstar-HR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "normstar-HR"
+        words:
+          - "class=\"blackfont\">诺姆四达人力资源测评咨询服务有限公司"
+        condition: and

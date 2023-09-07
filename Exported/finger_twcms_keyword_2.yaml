@@ -1,0 +1,26 @@
+id: twcms_keyword
+info:
+  name: twcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "twcms"
+        words:
+          - "/twcms/theme/"
+        condition: and
+      - type: word
+        part: body
+        name: "twcms"
+        words:
+          - "/css/global.css"
+        condition: and

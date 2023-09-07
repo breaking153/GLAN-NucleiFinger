@@ -1,0 +1,21 @@
+id: TinyRise_TinyShop_keyword
+info:
+  name: TinyRise-TinyShop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TinyRise-TinyShop"
+        words:
+          - "var server_url = '/__con__/__act__';"
+          - "tiny_token_"
+        condition: and

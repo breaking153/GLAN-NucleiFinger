@@ -1,0 +1,20 @@
+id: NOMADIX_XG_8000_keyword
+info:
+  name: NOMADIX-XG-8000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NOMADIX-XG-8000"
+        words:
+          - "realm=\"xg 8000"
+        condition: and

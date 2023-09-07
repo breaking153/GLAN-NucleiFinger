@@ -1,0 +1,21 @@
+id: MYRE_PHP_keyword
+info:
+  name: MYRE-PHP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MYRE-PHP"
+        words:
+          - "<!-- begin: menu footer don't change anything"
+          - "<b><u>my last viewed</u></b>"
+        condition: and

@@ -1,0 +1,26 @@
+id: DocCms_dao_ke_CMS_keyword
+info:
+  name: DocCms(稻壳CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DocCms(稻壳CMS)"
+        words:
+          - "DocCms"
+        condition: and
+      - type: word
+        part: body
+        name: "DocCms(稻壳CMS)"
+        words:
+          - "Power by DocCms"
+        condition: and

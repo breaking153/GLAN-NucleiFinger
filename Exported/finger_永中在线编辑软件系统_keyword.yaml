@@ -1,0 +1,21 @@
+id: yong_zhong_zai_xian_bian_ji_ruan_jian_xi_tong_keyword
+info:
+  name: 永中在线编辑软件系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "永中在线编辑软件系统"
+        words:
+          - "Web Office"
+          - "img/eio.png"
+        condition: and

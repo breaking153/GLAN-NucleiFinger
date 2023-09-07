@@ -1,0 +1,26 @@
+id: bei_kai_xie_tong_ban_gong_xi_tong_bei_kai_OA_keyword
+info:
+  name: 贝凯协同办公系统(贝凯OA)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "贝凯协同办公系统(贝凯OA)"
+        words:
+          - "贝凯协同办公系统"
+        condition: and
+      - type: word
+        part: body
+        name: "贝凯协同办公系统(贝凯OA)"
+        words:
+          - "贝凯OA"
+        condition: and

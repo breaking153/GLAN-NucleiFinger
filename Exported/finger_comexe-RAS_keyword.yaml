@@ -1,0 +1,25 @@
+id: comexe_RAS_keyword
+info:
+  name: comexe-RAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "comexe-RAS"
+        words:
+          - "type=\"application/npras"
+          - "href=\"pic/ras.ico"
+          - "href=\"pic/iras.ico"
+          - "科迈ras"
+          - "远程技术支持请求：<a href=\"http://www.comexe.cn"
+          - "href=\"cmxlogin.php\""
+        condition: and

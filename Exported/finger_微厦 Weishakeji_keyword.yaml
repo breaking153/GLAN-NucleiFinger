@@ -1,0 +1,20 @@
+id: wei_sha_Weishakeji_keyword
+info:
+  name: 微厦 Weishakeji_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "微厦 Weishakeji"
+        words:
+          - "微厦 Weishakeji"
+        condition: and

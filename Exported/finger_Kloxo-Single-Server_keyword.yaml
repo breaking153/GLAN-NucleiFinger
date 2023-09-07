@@ -1,0 +1,21 @@
+id: Kloxo_Single_Server_keyword
+info:
+  name: Kloxo-Single-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kloxo-Single-Server"
+        words:
+          - "src=\"/img/hypervm-logo.gif"
+          - "/htmllib/js/preop.js"
+        condition: and

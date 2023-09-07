@@ -1,0 +1,21 @@
+id: tian_rong_xin_TopAPP_fu_zai_jun_heng_xi_tong_keyword
+info:
+  name: 天融信TopAPP负载均衡系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信TopAPP负载均衡系统"
+        words:
+          - "TopAPP负载均衡系统"
+          - "天融信"
+        condition: and

@@ -1,0 +1,23 @@
+id: VMware_ESX_keyword
+info:
+  name: VMware-ESX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMware-ESX"
+        words:
+          - "content=\"vmware esxi"
+          - "document.write(\"<title>\" + id_eesx_welcome + \"</title>\""
+          - "content=\"vmware esx "
+          - "document.write(id_esx_viclientdesc;"
+        condition: and

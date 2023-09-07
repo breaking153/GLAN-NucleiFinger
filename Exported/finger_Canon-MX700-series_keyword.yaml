@@ -1,0 +1,20 @@
+id: Canon_MX700_series_keyword
+info:
+  name: Canon-MX700-series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-MX700-series"
+        words:
+          - "nowrap width=\"#\"> canon mx700 series</td>"
+        condition: and

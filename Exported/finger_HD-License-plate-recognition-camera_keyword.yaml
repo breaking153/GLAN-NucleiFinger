@@ -1,0 +1,21 @@
+id: HD_License_plate_recognition_camera_keyword
+info:
+  name: HD-License-plate-recognition-camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HD-License-plate-recognition-camera"
+        words:
+          - "<h3 >系统升级</h3>"
+          - "action=\"sysupgrade.php"
+        condition: and

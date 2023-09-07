@@ -1,0 +1,26 @@
+id: i_Catcher_Console_keyword
+info:
+  name: i-Catcher-Console_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "i-Catcher-Console"
+        words:
+          - "by i-catcher console"
+        condition: and
+      - type: word
+        part: body
+        name: "i-Catcher-Console"
+        words:
+          - "by i-Catcher Console"
+        condition: and

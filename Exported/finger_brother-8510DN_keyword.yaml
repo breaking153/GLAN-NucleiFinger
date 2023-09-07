@@ -1,0 +1,20 @@
+id: brother_8510DN_keyword
+info:
+  name: brother-8510DN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "brother-8510DN"
+        words:
+          - "id=\"modelname\"><h1>mfc-8510dn"
+        condition: and

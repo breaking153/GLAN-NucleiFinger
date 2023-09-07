@@ -1,0 +1,20 @@
+id: ZiGuangHuaYu_Attendance_Management_System_keyword
+info:
+  name: ZiGuangHuaYu-Attendance Management System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZiGuangHuaYu-Attendance Management System"
+        words:
+          - "广州紫光华宇信息技术有限公司"
+        condition: and

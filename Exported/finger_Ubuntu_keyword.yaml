@@ -1,0 +1,20 @@
+id: Ubuntu_keyword
+info:
+  name: Ubuntu_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ubuntu"
+        words:
+          - "welcome to nginx on ubuntu!"
+        condition: and

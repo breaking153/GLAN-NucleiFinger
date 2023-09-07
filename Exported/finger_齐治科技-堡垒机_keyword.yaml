@@ -1,0 +1,27 @@
+id: qi_zhi_ke_ji_bao_lei_ji_keyword
+info:
+  name: 齐治科技-堡垒机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "齐治科技-堡垒机"
+        words:
+          - "//xfpverifyExec.jsp"
+        condition: and
+      - type: word
+        part: body
+        name: "齐治科技-堡垒机"
+        words:
+          - "//检测指纹驱动是否安装"
+          - "function DLLRegistered(strID)"
+        condition: and

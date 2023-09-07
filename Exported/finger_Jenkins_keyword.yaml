@@ -1,0 +1,21 @@
+id: Jenkins_keyword
+info:
+  name: Jenkins_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jenkins"
+        words:
+          - "jenkins-agent-protocols"
+          - "Error 403 No valid crumb was included in the request"
+        condition: and

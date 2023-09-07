@@ -1,0 +1,19 @@
+id: Hue_hou_tai_bian_ji_qi_keyword
+info:
+  name: Hue 后台编辑器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hue 后台编辑器"
+        words:
+          - "<title>Hue - 欢迎使用 Hue"

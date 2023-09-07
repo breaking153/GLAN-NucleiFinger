@@ -1,0 +1,20 @@
+id: Mitel_Internet_product_keyword
+info:
+  name: Mitel-Internet-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mitel-Internet-product"
+        words:
+          - "pathname = pathname.replace(/esm_loginmain.htm/i,\"main.htm\";"
+        condition: and

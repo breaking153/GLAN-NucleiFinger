@@ -1,0 +1,20 @@
+id: NETGEAR_C7000_100NAS_keyword
+info:
+  name: NETGEAR C7000-100NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR C7000-100NAS"
+        words:
+          - "NETGEAR C7000-100NAS"
+        condition: and

@@ -1,0 +1,21 @@
+id: Hikvision_Video_coding_device_access_gateway_keyword
+info:
+  name: Hikvision-Video-coding-device-access-gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-Video-coding-device-access-gateway"
+        words:
+          - "<input id=\"p_pass\" class=\"int\" onfocus=\"this.value='';\" tabindex=\"2\" name=\"p_pass"
+          - "href=\"/bncgi-bin/test.pl"
+        condition: and

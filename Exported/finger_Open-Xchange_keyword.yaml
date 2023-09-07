@@ -1,0 +1,21 @@
+id: Open_Xchange_keyword
+info:
+  name: Open-Xchange_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Open-Xchange"
+        words:
+          - "you need to enable javascript to access the open-xchange server"
+          - "id=\"browserchecktext_id"
+        condition: and

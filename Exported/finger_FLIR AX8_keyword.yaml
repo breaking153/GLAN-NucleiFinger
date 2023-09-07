@@ -1,0 +1,20 @@
+id: FLIR_AX8_keyword
+info:
+  name: FLIR AX8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FLIR AX8"
+        words:
+          - "FLIR AX8"
+        condition: and

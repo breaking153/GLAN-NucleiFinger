@@ -1,0 +1,26 @@
+id: CISCO_EPC3925_keyword
+info:
+  name: CISCO_EPC3925_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO_EPC3925"
+        words:
+          - "Docsis_system"
+        condition: and
+      - type: word
+        part: body
+        name: "CISCO_EPC3925"
+        words:
+          - "EPC3925"
+        condition: and

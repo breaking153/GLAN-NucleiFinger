@@ -1,0 +1,22 @@
+id: NSFOCUS_Website_security_monitoring_system_keyword
+info:
+  name: NSFOCUS-Website-security-monitoring-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-Website-security-monitoring-system"
+        words:
+          - "stylesheet/nsfocus"
+          - "nsfocus.png"
+          - "/login_logo_wsm_zh_cn.png"
+        condition: and

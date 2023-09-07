@@ -1,0 +1,21 @@
+id: DrayTek_Vigor_Router_keyword_1
+info:
+  name: DrayTek-Vigor-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DrayTek-Vigor-Router"
+        words:
+          - "server: vigoraccess web server"
+          - "realm=\"login to the router web configurator"
+        condition: and

@@ -1,0 +1,20 @@
+id: SNB_Stock_Trading_Software_keyword
+info:
+  name: SNB-Stock-Trading-Software_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SNB-Stock-Trading-Software"
+        words:
+          - "copyright 2005–2009 <a href=\"http://www.s-mo.com\">"
+        condition: and

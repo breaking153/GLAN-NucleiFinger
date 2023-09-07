@@ -1,0 +1,21 @@
+id: mimosa_Product_keyword
+info:
+  name: mimosa-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mimosa-Product"
+        words:
+          - "client/img/mimosa-white-web-logo.png"
+          - "mimosa.isconnected="
+        condition: and

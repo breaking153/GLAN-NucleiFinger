@@ -1,0 +1,22 @@
+id: Mihalism_Multi_Host_keyword
+info:
+  name: Mihalism-Multi-Host_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mihalism-Multi-Host"
+        words:
+          - "http://www.mihalism.com/product/mmh/\">mihalism multi host"
+          - "powered by mihalism multi host"
+          - "content=\"mihalism multi host"
+        condition: and

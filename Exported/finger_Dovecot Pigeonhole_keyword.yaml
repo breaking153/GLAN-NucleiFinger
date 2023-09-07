@@ -1,0 +1,20 @@
+id: Dovecot_Pigeonhole_keyword
+info:
+  name: Dovecot Pigeonhole_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dovecot Pigeonhole"
+        words:
+          - "Dovecot Pigeonhole"
+        condition: and

@@ -1,0 +1,22 @@
+id: Oracle_Siebel_CRM_keyword
+info:
+  name: Oracle-Siebel-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Oracle-Siebel-CRM"
+        words:
+          - "ot='siebwebmainwindow'>"
+          - "scripting is used to manage data interactions between the siebel server/web server"
+          - "onload=\"gotourl('start.swe?swecmd=start'"
+        condition: and

@@ -1,0 +1,20 @@
+id: Journalx_keyword
+info:
+  name: Journalx_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Journalx"
+        words:
+          - "Journalx"
+        condition: and

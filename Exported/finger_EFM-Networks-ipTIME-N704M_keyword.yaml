@@ -1,0 +1,21 @@
+id: EFM_Networks_ipTIME_N704M_keyword
+info:
+  name: EFM-Networks-ipTIME-N704M_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-N704M"
+        words:
+          - "src =\"/images2/login_title.n704m.gif\""
+          - "src =\"/images2/login_title.n704mlg.gif\""
+        condition: and

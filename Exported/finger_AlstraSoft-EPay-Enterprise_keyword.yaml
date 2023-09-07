@@ -1,0 +1,26 @@
+id: AlstraSoft_EPay_Enterprise_keyword
+info:
+  name: AlstraSoft-EPay-Enterprise_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AlstraSoft-EPay-Enterprise"
+        words:
+          - "Powered by EPay Enterprise"
+        condition: and
+      - type: word
+        part: body
+        name: "AlstraSoft-EPay-Enterprise"
+        words:
+          - "/shop.htm?action=view"
+        condition: and

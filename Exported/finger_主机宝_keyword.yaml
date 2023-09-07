@@ -1,0 +1,20 @@
+id: zhu_ji_bao_keyword
+info:
+  name: 主机宝_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "主机宝"
+        words:
+          - "您访问的是主机宝服务器默认页"
+        condition: and

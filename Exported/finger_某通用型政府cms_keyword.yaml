@@ -1,0 +1,20 @@
+id: mou_tong_yong_xing_zheng_fu_cms_keyword
+info:
+  name: 某通用型政府cms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "某通用型政府cms"
+        words:
+          - "/deptWebsiteAction.do"
+        condition: and

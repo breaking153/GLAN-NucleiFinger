@@ -1,0 +1,26 @@
+id: Piwigo_keyword
+info:
+  name: Piwigo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Piwigo"
+        words:
+          - "generator\" content=\"piwigo"
+        condition: and
+      - type: word
+        part: body
+        name: "Piwigo"
+        words:
+          - "generator\" content=\"Piwigo"
+        condition: and

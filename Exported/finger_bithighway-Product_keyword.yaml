@@ -1,0 +1,20 @@
+id: bithighway_Product_keyword
+info:
+  name: bithighway-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "bithighway-Product"
+        words:
+          - "href='http://www.bithighway.com' target=_blank>北京碧海威科技有限公司<"
+        condition: and

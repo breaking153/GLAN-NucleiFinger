@@ -1,0 +1,22 @@
+id: tian_rong_xin_Reporter_keyword
+info:
+  name: 天融信 Reporter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信 Reporter"
+        words:
+          - "Login @ Reporter"
+          - "topsec"
+          - "login"
+        condition: and

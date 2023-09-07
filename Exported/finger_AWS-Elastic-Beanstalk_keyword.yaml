@@ -1,0 +1,21 @@
+id: AWS_Elastic_Beanstalk_keyword
+info:
+  name: AWS-Elastic-Beanstalk_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AWS-Elastic-Beanstalk"
+        words:
+          - "<h2>what's next?</h2>"
+          - "aws.amazon.com/elasticbeanstalk"
+        condition: and

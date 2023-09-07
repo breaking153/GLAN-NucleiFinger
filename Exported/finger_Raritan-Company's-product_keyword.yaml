@@ -1,0 +1,21 @@
+id: Raritan_Company_s_product_keyword
+info:
+  name: Raritan-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Raritan-Company's-product"
+        words:
+          - "<!-- raritan logo -->"
+          - "<div id=\"raritan_logo"
+        condition: and

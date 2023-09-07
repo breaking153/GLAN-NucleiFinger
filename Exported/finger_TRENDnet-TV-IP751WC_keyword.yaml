@@ -1,0 +1,21 @@
+id: TRENDnet_TV_IP751WC_keyword
+info:
+  name: TRENDnet-TV-IP751WC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TV-IP751WC"
+        words:
+          - "tv-ip751wc(tv-ip751wc"
+          - "tv-ip751wc"
+        condition: and

@@ -1,0 +1,22 @@
+id: KISSY_keyword
+info:
+  name: KISSY_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KISSY"
+        words:
+          - "kissy.ready"
+          - "kissy-min.js"
+          - "kissy.js"
+        condition: and

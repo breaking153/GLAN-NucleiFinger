@@ -1,0 +1,21 @@
+id: ScrewTurn_Wiki_Web_service_keyword
+info:
+  name: ScrewTurn-Wiki-Web-service_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ScrewTurn-Wiki-Web-service"
+        words:
+          - "powered by <a class=\"externallink\" href=\"http:"
+          - "title=\"screwturn wiki\" target=\"_blank\">screwturn wiki"
+        condition: and

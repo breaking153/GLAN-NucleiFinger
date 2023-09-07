@@ -1,0 +1,19 @@
+id: qi_an_xin_zi_dong_hua_shen_tou_ce_shi_xi_tong_faviconhash
+info:
+  name: 奇安信自动化渗透测试系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "奇安信自动化渗透测试系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-747580443\""
+        condition: or

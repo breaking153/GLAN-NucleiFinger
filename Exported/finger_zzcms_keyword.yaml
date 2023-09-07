@@ -1,0 +1,33 @@
+id: zzcms_keyword
+info:
+  name: zzcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zzcms"
+        words:
+          - "/zx/search.php"
+          - "/inc/showuserlogin.php?style=h&t=math.random("
+        condition: and
+      - type: word
+        part: body
+        name: "zzcms"
+        words:
+          - "_ZCMS_ShowNewMessage"
+        condition: and
+      - type: word
+        part: body
+        name: "zzcms"
+        words:
+          - "zcms_skin"
+        condition: and

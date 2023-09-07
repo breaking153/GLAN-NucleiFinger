@@ -1,0 +1,20 @@
+id: ZEBRA_GK420t_keyword
+info:
+  name: ZEBRA-GK420t_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-GK420t"
+        words:
+          - "ztc gk420t</h1>"
+        condition: and

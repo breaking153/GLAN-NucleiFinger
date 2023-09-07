@@ -1,0 +1,20 @@
+id: External_network_security_data_exchange_system_keyword
+info:
+  name: External-network-security-data-exchange-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "External-network-security-data-exchange-system"
+        words:
+          - "/unimas/"
+        condition: and

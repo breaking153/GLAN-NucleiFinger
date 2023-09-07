@@ -1,0 +1,19 @@
+id: Joomla_nei_rong_guan_li_xi_tong_faviconhash
+info:
+  name: Joomla内容管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Joomla内容管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1747282642\""
+        condition: or

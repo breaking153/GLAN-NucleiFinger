@@ -1,0 +1,20 @@
+id: Cont_Web_CMS_keyword
+info:
+  name: Cont Web CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cont Web CMS"
+        words:
+          - "Cont Web CMS"
+        condition: and

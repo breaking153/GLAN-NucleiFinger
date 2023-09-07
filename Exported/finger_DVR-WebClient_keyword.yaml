@@ -1,0 +1,26 @@
+id: DVR_WebClient_keyword
+info:
+  name: DVR-WebClient_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DVR-WebClient"
+        words:
+          - "259f9fdf-97ea-4c59-b957-5160cab6884e"
+        condition: and
+      - type: word
+        part: body
+        name: "DVR-WebClient"
+        words:
+          - "259F9FDF-97EA-4C59-B957-5160CAB6884E"
+        condition: and

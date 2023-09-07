@@ -1,0 +1,20 @@
+id: WebRAY_wang_zhan_jian_kong_yu_jing_ping_tai_keyword
+info:
+  name: WebRAY网站监控预警平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WebRAY网站监控预警平台"
+        words:
+          - "WebRAY网站监控预警平台"
+        condition: and

@@ -1,0 +1,20 @@
+id: yi_sai_tong_DLP_keyword_1
+info:
+  name: 亿赛通DLP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "亿赛通DLP"
+        words:
+          - "CDGServer3"
+        condition: and

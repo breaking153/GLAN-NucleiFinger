@@ -1,0 +1,20 @@
+id: tai_yi_xing_chen_T_Force_NGFW_keyword
+info:
+  name: 太一星晨T-Force NGFW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "太一星晨T-Force NGFW"
+        words:
+          - "太一星晨T-Force NGFW"
+        condition: and

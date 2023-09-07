@@ -1,0 +1,20 @@
+id: creatsoft_SafeSystem_keyword
+info:
+  name: creatsoft-SafeSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "creatsoft-SafeSystem"
+        words:
+          - "href=\"javascript:update_news('board/noticelist.jsp'"
+        condition: and

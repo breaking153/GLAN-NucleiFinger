@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_WDR3500_keyword
+info:
+  name: TP-LINK Wireless WDR3500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless WDR3500"
+        words:
+          - "TP-LINK Wireless WDR3500"
+        condition: and

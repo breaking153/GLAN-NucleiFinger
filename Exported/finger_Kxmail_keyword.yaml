@@ -1,0 +1,22 @@
+id: Kxmail_keyword
+info:
+  name: Kxmail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kxmail"
+        words:
+          - "powered by <a href=\"http://www.kxmail.net"
+          - "/systemfunction.pack.js"
+          - "lo_computername"
+        condition: and

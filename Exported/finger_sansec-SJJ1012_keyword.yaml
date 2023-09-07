@@ -1,0 +1,20 @@
+id: sansec_SJJ1012_keyword
+info:
+  name: sansec-SJJ1012_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sansec-SJJ1012"
+        words:
+          - ">多用户在线管理可能导致不可预知错误"
+        condition: and

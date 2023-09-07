@@ -1,0 +1,20 @@
+id: ICEFLOW_VPN_keyword
+info:
+  name: ICEFLOW_VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ICEFLOW_VPN"
+        words:
+          - "Server:ICEFLOW"
+        condition: and

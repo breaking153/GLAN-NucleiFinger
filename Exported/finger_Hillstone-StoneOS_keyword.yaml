@@ -1,0 +1,20 @@
+id: Hillstone_StoneOS_keyword
+info:
+  name: Hillstone-StoneOS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hillstone-StoneOS"
+        words:
+          - "'hillstone stoneos software version "
+        condition: and

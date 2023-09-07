@@ -1,0 +1,20 @@
+id: DSIS_Digital_Signage_Information_Soft_keyword
+info:
+  name: DSIS-Digital-Signage-Information-Soft_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DSIS-Digital-Signage-Information-Soft"
+        words:
+          - "content=\"数游dsis多媒体信息发布系统"
+        condition: and

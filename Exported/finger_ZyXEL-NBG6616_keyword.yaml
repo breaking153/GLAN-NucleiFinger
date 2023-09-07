@@ -1,0 +1,20 @@
+id: ZyXEL_NBG6616_keyword
+info:
+  name: ZyXEL-NBG6616_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-NBG6616"
+        words:
+          - "<li class=\"modelname\">nbg6616</li>"
+        condition: and

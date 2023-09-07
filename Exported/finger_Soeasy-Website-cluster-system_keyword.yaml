@@ -1,0 +1,20 @@
+id: Soeasy_Website_cluster_system_keyword
+info:
+  name: Soeasy-Website-cluster-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Soeasy-Website-cluster-system"
+        words:
+          - "egss_user"
+        condition: and

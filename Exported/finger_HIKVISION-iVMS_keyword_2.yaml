@@ -1,0 +1,31 @@
+id: HIKVISION_iVMS_keyword
+info:
+  name: HIKVISION-iVMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HIKVISION-iVMS"
+        words:
+          - "reset.bmp"
+          - "login.bmp"
+          - "loginbg.bmp"
+        condition: and
+      - type: word
+        part: body
+        name: "HIKVISION-iVMS"
+        words:
+          - "<!--警示提示处-->"
+          - "<h1 class=\"logo\">安防综合管理平台</h1>"
+          - "杭州海康威视系统技术有限公司 版权所有"
+          - "serviceip"
+        condition: and

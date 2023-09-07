@@ -1,0 +1,20 @@
+id: Landray_OA_keyword_1
+info:
+  name: Landray-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Landray-OA"
+        words:
+          - "Set-Cookie: isopen=close"
+        condition: and

@@ -1,0 +1,21 @@
+id: ipTIME_N704_keyword
+info:
+  name: ipTIME-N704_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-N704"
+        words:
+          - "src =\"/images2/login_title.n704.gif\""
+          - "src =\"/images/login_back_n704.gif\""
+        condition: and

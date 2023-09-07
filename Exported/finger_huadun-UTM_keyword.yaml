@@ -1,0 +1,20 @@
+id: huadun_UTM_keyword
+info:
+  name: huadun-UTM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "huadun-UTM"
+        words:
+          - "content=\"huadun network security technology co.,ltd\""
+        condition: and

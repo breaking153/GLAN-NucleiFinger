@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -18,4 +18,16 @@ http:
         words:
           - "Webmin"
           - "session_login"
+        condition: and
+      - type: word
+        part: body
+        name: "Webmin"
+        words:
+          - "webmin server on"
+        condition: and
+      - type: word
+        part: body
+        name: "Webmin"
+        words:
+          - "Webmin server on"
         condition: and

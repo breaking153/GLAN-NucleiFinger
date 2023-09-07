@@ -1,0 +1,39 @@
+id: Kerio_WebSTAR_keyword
+info:
+  name: Kerio-WebSTAR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kerio-WebSTAR"
+        words:
+          - "server: kerio_webstar"
+          - "4d_webstar"
+        condition: and
+      - type: word
+        part: header
+        name: "Kerio-WebSTAR"
+        words:
+          - "Kerio_WebSTAR"
+        condition: and
+      - type: word
+        part: header
+        name: "Kerio-WebSTAR"
+        words:
+          - "WebSTAR"
+        condition: and
+      - type: word
+        part: header
+        name: "Kerio-WebSTAR"
+        words:
+          - "4D_WebStar"
+        condition: and

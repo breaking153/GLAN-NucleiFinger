@@ -1,0 +1,20 @@
+id: H3C_BR104H_keyword
+info:
+  name: H3C-BR104H_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C-BR104H"
+        words:
+          - "basic realm=\"h3c br104h\""
+        condition: and

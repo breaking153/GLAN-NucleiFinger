@@ -1,0 +1,21 @@
+id: agora_cgi_keyword
+info:
+  name: agora.cgi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "agora.cgi"
+        words:
+          - "/agora.cgi?product="
+          - "/store/agora.cgi"
+        condition: and

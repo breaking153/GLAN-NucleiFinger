@@ -1,0 +1,20 @@
+id: Dart_WebServer_Tool_keyword
+info:
+  name: Dart-WebServer-Tool_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dart-WebServer-Tool"
+        words:
+          - "Dart WebServer Tool"
+        condition: and

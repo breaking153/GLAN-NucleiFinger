@@ -1,0 +1,20 @@
+id: iRedMail_keyword
+info:
+  name: iRedMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iRedMail"
+        words:
+          - "iredadmin"
+        condition: and

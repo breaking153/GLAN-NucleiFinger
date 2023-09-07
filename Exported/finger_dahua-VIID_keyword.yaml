@@ -1,0 +1,20 @@
+id: dahua_VIID_keyword
+info:
+  name: dahua-VIID_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "dahua-VIID"
+        words:
+          - "id=\"js_title\">视频图像信息库</span>"
+        condition: and

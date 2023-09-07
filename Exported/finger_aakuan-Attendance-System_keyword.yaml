@@ -1,0 +1,20 @@
+id: aakuan_Attendance_System_keyword
+info:
+  name: aakuan-Attendance-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "aakuan-Attendance-System"
+        words:
+          - "href=\"scripts/popmodal.css\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Axence_nVision_API_HTTP_keyword
+info:
+  name: Axence nVision API HTTP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Axence nVision API HTTP"
+        words:
+          - "Axence nVision API HTTP"
+        condition: and

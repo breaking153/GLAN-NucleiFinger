@@ -1,0 +1,20 @@
+id: tian_rong_xin_xu_ni_hua_an_quan_fang_hu_ping_tai_keyword
+info:
+  name: 天融信虚拟化安全防护平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "天融信虚拟化安全防护平台"
+        words:
+          - "天融信虚拟化安全防护平台"
+        condition: and

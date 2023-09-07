@@ -1,0 +1,21 @@
+id: Hanwei_Mobile_Platform_keyword
+info:
+  name: Hanwei-Mobile-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwei-Mobile-Platform"
+        words:
+          - "<img src=\"images/zshlogo.jpg\" />"
+          - "信任汉威的开发证书"
+        condition: and

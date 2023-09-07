@@ -1,0 +1,20 @@
+id: ZTE_BAVO_duo_mei_ti_ye_wu_zhong_xin_keyword
+info:
+  name: ZTE BAVO多媒体业务中心_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZTE BAVO多媒体业务中心"
+        words:
+          - "ZTE BAVO多媒体业务中心"
+        condition: and

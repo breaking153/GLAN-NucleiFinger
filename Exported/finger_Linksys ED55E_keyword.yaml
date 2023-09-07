@@ -1,0 +1,20 @@
+id: Linksys_ED55E_keyword
+info:
+  name: Linksys ED55E_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys ED55E"
+        words:
+          - "Linksys ED55E"
+        condition: and

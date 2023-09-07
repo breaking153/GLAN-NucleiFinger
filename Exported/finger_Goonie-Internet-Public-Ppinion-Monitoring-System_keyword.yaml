@@ -1,0 +1,21 @@
+id: Goonie_Internet_Public_Ppinion_Monitoring_System_keyword
+info:
+  name: Goonie-Internet-Public-Ppinion-Monitoring-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Goonie-Internet-Public-Ppinion-Monitoring-System"
+        words:
+          - "alert(\"菜单层数量和内容层数量不一样!\""
+          - "网络舆情监控系统"
+        condition: and

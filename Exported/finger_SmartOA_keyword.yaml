@@ -1,0 +1,21 @@
+id: SmartOA_keyword
+info:
+  name: SmartOA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SmartOA"
+        words:
+          - "content/images/login_background.jpg"
+          - "href=\"http://www.smartoa.com.cn/download/smartoa.apk\">安卓客户端</a>"
+        condition: and

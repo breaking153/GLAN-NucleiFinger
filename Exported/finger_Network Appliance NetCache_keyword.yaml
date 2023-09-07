@@ -1,0 +1,20 @@
+id: Network_Appliance_NetCache_keyword
+info:
+  name: Network Appliance NetCache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Network Appliance NetCache"
+        words:
+          - "Network Appliance NetCache"
+        condition: and

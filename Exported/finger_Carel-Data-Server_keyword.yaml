@@ -1,0 +1,26 @@
+id: Carel_Data_Server_keyword
+info:
+  name: Carel-Data-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Carel-Data-Server"
+        words:
+          - "src=\"/mpwebcorefn.js"
+        condition: and
+      - type: word
+        part: body
+        name: "Carel-Data-Server"
+        words:
+          - "src=\"/MPwebCoreFn.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: Kordil_EDMS_keyword_1
+info:
+  name: Kordil-EDMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kordil-EDMS"
+        words:
+          - "kordil_edms"
+        condition: and

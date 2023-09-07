@@ -1,0 +1,20 @@
+id: Ftxia_tao_bao_ke_keyword
+info:
+  name: Ftxia淘宝客_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Ftxia淘宝客"
+        words:
+          - "Ftxia淘宝客"
+        condition: and

@@ -1,0 +1,21 @@
+id: NetSoft_eIDA_keyword
+info:
+  name: NetSoft-eIDA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetSoft-eIDA"
+        words:
+          - "window.location.href = \"/appframe/login_v2/login.jsp\";"
+          - "href=\"/images/common/favicon.ico\""
+        condition: and

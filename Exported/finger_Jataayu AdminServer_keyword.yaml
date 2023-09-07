@@ -1,0 +1,20 @@
+id: Jataayu_AdminServer_keyword
+info:
+  name: Jataayu AdminServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Jataayu AdminServer"
+        words:
+          - "Jataayu AdminServer"
+        condition: and

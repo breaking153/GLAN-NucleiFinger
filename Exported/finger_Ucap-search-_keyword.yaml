@@ -1,0 +1,21 @@
+id: Ucap_search_keyword
+info:
+  name: Ucap-search-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ucap-search-"
+        words:
+          - "src=\"http://so.kaipuyun.cn?sitecode="
+          - "method=\"post\" action=\"s\" onsubmit=\"return checksearchform(;\">"
+        condition: and

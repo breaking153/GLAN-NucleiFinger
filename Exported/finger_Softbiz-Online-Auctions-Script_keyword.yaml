@@ -1,0 +1,20 @@
+id: Softbiz_Online_Auctions_Script_keyword
+info:
+  name: Softbiz-Online-Auctions-Script_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Softbiz-Online-Auctions-Script"
+        words:
+          - "powered by <a href=\"http://www.softbizscripts.com"
+        condition: and

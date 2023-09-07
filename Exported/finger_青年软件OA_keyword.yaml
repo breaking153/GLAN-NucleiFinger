@@ -1,0 +1,20 @@
+id: qing_nian_ruan_jian_OA_keyword
+info:
+  name: 青年软件OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "青年软件OA"
+        words:
+          - "/Content/qrlib/ligerUI/skins/"
+        condition: and

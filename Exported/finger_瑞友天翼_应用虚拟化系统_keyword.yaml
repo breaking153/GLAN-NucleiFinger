@@ -1,0 +1,20 @@
+id: rui_you_tian_yi_ying_yong_xu_ni_hua_xi_tong_keyword_1_1
+info:
+  name: 瑞友天翼_应用虚拟化系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "瑞友天翼_应用虚拟化系统"
+        words:
+          - "瑞友天翼_应用虚拟化系统"
+        condition: and

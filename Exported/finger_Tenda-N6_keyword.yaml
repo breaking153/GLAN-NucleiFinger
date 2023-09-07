@@ -1,0 +1,21 @@
+id: Tenda_N6_keyword
+info:
+  name: Tenda-N6_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda-N6"
+        words:
+          - "var sys_target = \"n6\""
+          - "class=\"loagin_title\">tenda n6"
+        condition: and

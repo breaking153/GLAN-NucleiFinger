@@ -1,0 +1,27 @@
+id: FUDforum_keyword
+info:
+  name: FUDforum_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FUDforum"
+        words:
+          - "powered by: fudforum"
+          - "/adm/admloginuser.php"
+        condition: and
+      - type: word
+        part: body
+        name: "FUDforum"
+        words:
+          - "Powered by: FUDforum"
+        condition: and

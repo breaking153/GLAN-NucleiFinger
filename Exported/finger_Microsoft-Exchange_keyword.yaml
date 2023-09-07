@@ -1,0 +1,26 @@
+id: Microsoft_Exchange_keyword
+info:
+  name: Microsoft-Exchange_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Microsoft-Exchange"
+        words:
+          - "microsoft outlook web access"
+          - "owalogocontainer"
+          - "<div class=\"signinheader\">outlook</div>"
+          - "/owa/"
+          - "/exchweb/bin/auth/owalogon.asp?url="
+          - "owapage = asp.auth_logon_aspx"
+          - "aria-label=\"outlook web app"
+        condition: and

@@ -1,0 +1,20 @@
+id: shen_xing_zhe_lu_you_keyword
+info:
+  name: 神行者路由_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "神行者路由"
+        words:
+          - "神行者路由"
+        condition: and

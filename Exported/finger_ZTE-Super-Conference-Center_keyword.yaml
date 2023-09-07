@@ -1,0 +1,20 @@
+id: ZTE_Super_Conference_Center_keyword
+info:
+  name: ZTE-Super-Conference-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-Super-Conference-Center"
+        words:
+          - "link href='./zxms80.css"
+        condition: and

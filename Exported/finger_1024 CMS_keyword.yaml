@@ -1,0 +1,26 @@
+id: 1024_CMS_keyword
+info:
+  name: 1024 CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "1024 CMS"
+        words:
+          - "Powered by 1024 CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "1024 CMS"
+        words:
+          - "content=\"1024 CMS"
+        condition: and

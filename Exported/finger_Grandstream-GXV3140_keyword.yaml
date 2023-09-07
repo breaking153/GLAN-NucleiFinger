@@ -1,0 +1,20 @@
+id: Grandstream_GXV3140_keyword
+info:
+  name: Grandstream-GXV3140_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Grandstream-GXV3140"
+        words:
+          - "document.title = \"gxv3140\""
+        condition: and

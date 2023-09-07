@@ -1,0 +1,20 @@
+id: ASUS_RT_AC86U_keyword
+info:
+  name: ASUS-RT-AC86U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-RT-AC86U"
+        words:
+          - "<div class=\"prod_madelname\">rt-ac86u"
+        condition: and

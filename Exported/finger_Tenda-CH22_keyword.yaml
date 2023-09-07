@@ -1,0 +1,20 @@
+id: Tenda_CH22_keyword
+info:
+  name: Tenda-CH22_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda-CH22"
+        words:
+          - "var sys_target = \"ch22\""
+        condition: and

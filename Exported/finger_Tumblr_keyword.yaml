@@ -1,0 +1,21 @@
+id: Tumblr_keyword
+info:
+  name: Tumblr_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tumblr"
+        words:
+          - "<meta name=\"tumblr-theme\" content="
+          - "<!-- begin tumblr code --><iframe src=\"http://assets.tumblr.com/iframe.html"
+        condition: and

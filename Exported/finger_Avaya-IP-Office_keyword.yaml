@@ -1,0 +1,20 @@
+id: Avaya_IP_Office_keyword
+info:
+  name: Avaya-IP-Office_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Avaya-IP-Office"
+        words:
+          - "action=\"/login/index.php?st=11&lng="
+        condition: and

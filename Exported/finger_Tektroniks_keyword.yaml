@@ -1,0 +1,20 @@
+id: Tektroniks_keyword
+info:
+  name: Tektroniks_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tektroniks"
+        words:
+          - "<td width=\"100\"><label id=\"au_login_id_label\" for=\"au_login_id\" datatype=\"\" required=\"true\">user name:</label></td>"
+        condition: and

@@ -1,0 +1,21 @@
+id: damicms_keyword
+info:
+  name: damicms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "damicms"
+        words:
+          - "content=\"damicms"
+          - "content=\"大米cms"
+        condition: and

@@ -1,0 +1,26 @@
+id: rui_bo_shi_yun_ban_gong_xi_tong_keyword
+info:
+  name: 睿博士云办公系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "睿博士云办公系统"
+        words:
+          - "/studentSign/toLogin.di"
+        condition: and
+      - type: word
+        part: body
+        name: "睿博士云办公系统"
+        words:
+          - "/user/toUpdatePasswordPage.di"
+        condition: and

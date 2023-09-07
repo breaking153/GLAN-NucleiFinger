@@ -1,0 +1,23 @@
+id: H3C_SecCenter_keyword
+info:
+  name: H3C-SecCenter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-SecCenter"
+        words:
+          - "请登录后使用seccenter安全管理中心"
+          - "background=\"/seccenter/img/index_02.gif"
+          - "src=\"/seccenter/img/logo.gif"
+          - "window.top.location='/seccenter/index.jsp';"
+        condition: and

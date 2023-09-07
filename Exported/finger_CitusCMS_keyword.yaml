@@ -1,0 +1,32 @@
+id: CitusCMS_keyword
+info:
+  name: CitusCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CitusCMS"
+        words:
+          - "Powered by CitusCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "CitusCMS"
+        words:
+          - "<strong>CitusCMS</strong>"
+        condition: and
+      - type: word
+        part: body
+        name: "CitusCMS"
+        words:
+          - "content=\"CitusCMS"
+        condition: and

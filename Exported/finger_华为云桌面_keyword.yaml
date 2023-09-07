@@ -1,0 +1,21 @@
+id: hua_wei_yun_zhuo_mian_keyword
+info:
+  name: 华为云桌面_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "华为云桌面"
+        words:
+          - "Desktop@FusionAccess"
+          - "/webui/"
+        condition: and

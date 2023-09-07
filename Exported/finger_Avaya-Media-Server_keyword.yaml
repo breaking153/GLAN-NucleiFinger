@@ -1,0 +1,20 @@
+id: Avaya_Media_Server_keyword
+info:
+  name: Avaya-Media-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Avaya-Media-Server"
+        words:
+          - "src=\"/emlogin/"
+        condition: and

@@ -1,0 +1,20 @@
+id: ai_zhan_CMS_nei_rong_guan_li_xi_tong_keyword
+info:
+  name: 爱站CMS内容管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "爱站CMS内容管理系统"
+        words:
+          - "爱站CMS内容管理系统"
+        condition: and

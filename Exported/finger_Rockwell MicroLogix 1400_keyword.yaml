@@ -1,0 +1,20 @@
+id: Rockwell_MicroLogix_1400_keyword_1
+info:
+  name: Rockwell MicroLogix 1400_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Rockwell MicroLogix 1400"
+        words:
+          - "Rockwell MicroLogix 1400"
+        condition: and

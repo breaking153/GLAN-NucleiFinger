@@ -1,0 +1,22 @@
+id: Dahua_TV_Wall_keyword
+info:
+  name: Dahua-TV-Wall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dahua-TV-Wall"
+        words:
+          - "estopall"
+          - "nav_screen"
+          - "nav_creen"
+        condition: and

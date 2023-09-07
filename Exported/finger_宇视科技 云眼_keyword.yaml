@@ -1,0 +1,20 @@
+id: yu_shi_ke_ji_yun_yan_keyword
+info:
+  name: 宇视科技 云眼_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "宇视科技 云眼"
+        words:
+          - "宇视科技 云眼"
+        condition: and

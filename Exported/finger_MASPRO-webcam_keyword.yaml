@@ -1,0 +1,21 @@
+id: MASPRO_webcam_keyword
+info:
+  name: MASPRO-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MASPRO-webcam"
+        words:
+          - "href=\"/keitai/index.html\""
+          - "href=\"/mobile/index.html\""
+        condition: and

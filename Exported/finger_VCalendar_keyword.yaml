@@ -1,0 +1,21 @@
+id: VCalendar_keyword
+info:
+  name: VCalendar_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VCalendar"
+        words:
+          - "powered by <a href=\"http://www.vcalendar.org\">vcalendar</a>"
+          - "<link href=\"styles/basic/style.css\""
+        condition: and

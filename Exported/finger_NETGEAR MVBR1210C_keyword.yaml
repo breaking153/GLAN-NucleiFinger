@@ -1,0 +1,20 @@
+id: NETGEAR_MVBR1210C_keyword
+info:
+  name: NETGEAR MVBR1210C_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR MVBR1210C"
+        words:
+          - "NETGEAR MVBR1210C"
+        condition: and

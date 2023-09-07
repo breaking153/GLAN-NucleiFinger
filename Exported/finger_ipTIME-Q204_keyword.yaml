@@ -1,0 +1,21 @@
+id: ipTIME_Q204_keyword
+info:
+  name: ipTIME-Q204_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-Q204"
+        words:
+          - "src=\"/images2/login_title.tq204.gif\""
+          - "src =\"/images/login_back_tq204.gif\""
+        condition: and

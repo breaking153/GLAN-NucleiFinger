@@ -1,0 +1,21 @@
+id: H3C_HDM_keyword
+info:
+  name: H3C-HDM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-HDM"
+        words:
+          - "/video_record.jnlp"
+          - "<iframe frameborder=\"0\" class=\"framelayout\" src=\"./page/blank.html\" name=\"mainframe\" id=\"mainframe"
+        condition: and

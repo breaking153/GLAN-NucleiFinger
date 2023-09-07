@@ -1,0 +1,33 @@
+id: Group_Office_keyword
+info:
+  name: Group-Office_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Group-Office"
+        words:
+          - "powered by group-office"
+          - "\"theme\":\"group-office\""
+        condition: and
+      - type: word
+        part: body
+        name: "Group-Office"
+        words:
+          - "powered by Group-Office"
+        condition: and
+      - type: word
+        part: body
+        name: "Group-Office"
+        words:
+          - "theme:\"Group-Office\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Solvonet_Device_VoIP_keyword
+info:
+  name: Solvonet-Device(VoIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Solvonet-Device(VoIP"
+        words:
+          - "basic realm=\"solvonet\""
+        condition: and

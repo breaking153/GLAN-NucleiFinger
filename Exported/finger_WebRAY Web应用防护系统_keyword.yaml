@@ -1,0 +1,20 @@
+id: WebRAY_Web_ying_yong_fang_hu_xi_tong_keyword
+info:
+  name: WebRAY Web应用防护系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WebRAY Web应用防护系统"
+        words:
+          - "WebRAY Web应用防护系统"
+        condition: and

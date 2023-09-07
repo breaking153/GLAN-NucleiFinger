@@ -1,0 +1,20 @@
+id: JBoss_Web_keyword
+info:
+  name: JBoss Web_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JBoss Web"
+        words:
+          - "JBoss, Home of Professional Open Source"
+        condition: and

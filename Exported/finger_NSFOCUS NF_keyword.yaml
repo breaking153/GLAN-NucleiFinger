@@ -1,0 +1,20 @@
+id: NSFOCUS_NF_keyword
+info:
+  name: NSFOCUS NF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NSFOCUS NF"
+        words:
+          - "NSFOCUS NF"
+        condition: and

@@ -1,0 +1,21 @@
+id: FLIR_DVTELCamera_keyword
+info:
+  name: FLIR-DVTELCamera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FLIR-DVTELCamera"
+        words:
+          - "class=\"loginleft displaynone\""
+          - "class=\"footer\">dvtel inc"
+        condition: and

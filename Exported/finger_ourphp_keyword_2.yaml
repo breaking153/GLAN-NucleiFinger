@@ -1,0 +1,26 @@
+id: ourphp_keyword
+info:
+  name: ourphp_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ourphp"
+        words:
+          - "content=\"OURPHP"
+        condition: and
+      - type: word
+        part: body
+        name: "ourphp"
+        words:
+          - "Powered by ourphp"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_WNR618_keyword
+info:
+  name: NETGEAR WNR618_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR WNR618"
+        words:
+          - "NETGEAR WNR618"
+        condition: and

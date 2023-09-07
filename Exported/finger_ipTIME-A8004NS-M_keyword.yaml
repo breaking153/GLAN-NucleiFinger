@@ -1,0 +1,20 @@
+id: ipTIME_A8004NS_M_keyword
+info:
+  name: ipTIME-A8004NS-M_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-A8004NS-M"
+        words:
+          - "src=\"/images2/login_title.a8004nm.gif\""
+        condition: and

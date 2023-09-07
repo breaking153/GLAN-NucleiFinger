@@ -1,0 +1,26 @@
+id: DotA_OpenStats_keyword
+info:
+  name: DotA-OpenStats_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DotA-OpenStats"
+        words:
+          - "content=\"dota OpenStats"
+        condition: and
+      - type: word
+        part: body
+        name: "DotA-OpenStats"
+        words:
+          - "content=\"openstats.iz.rs"
+        condition: and

@@ -1,0 +1,20 @@
+id: dong_fang_tong_ying_yong_fu_wu_qi_TongWeb_keyword
+info:
+  name: 东方通应用服务器TongWeb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "东方通应用服务器TongWeb"
+        words:
+          - "TongWeb Server"
+        condition: and

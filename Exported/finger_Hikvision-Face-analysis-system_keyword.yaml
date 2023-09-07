@@ -1,0 +1,22 @@
+id: Hikvision_Face_analysis_system_keyword
+info:
+  name: Hikvision-Face-analysis-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-Face-analysis-system"
+        words:
+          - "人脸分析子系统"
+          - "人脸实时报警系统"
+          - "杭州海康威视数字技术股份有限公司"
+        condition: and

@@ -1,0 +1,20 @@
+id: zhong_xing_lu_you_qi_keyword
+info:
+  name: 中兴路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "中兴路由器"
+        words:
+          - "Server:Mini web server 1.0 ZTE corp 2005."
+        condition: and

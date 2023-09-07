@@ -1,0 +1,20 @@
+id: Hughes_Technologies_Embedded_Server_keyword
+info:
+  name: Hughes Technologies Embedded Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Hughes Technologies Embedded Server"
+        words:
+          - "Hughes Technologies Embedded Server"
+        condition: and

@@ -1,0 +1,20 @@
+id: VSS_Web_keyword
+info:
+  name: VSS-Web_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VSS-Web"
+        words:
+          - "<a href=\"http://www.vssweb.net/ivsweb.exe"
+        condition: and

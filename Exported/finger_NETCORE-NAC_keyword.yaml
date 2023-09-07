@@ -1,0 +1,22 @@
+id: NETCORE_NAC_keyword
+info:
+  name: NETCORE-NAC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETCORE-NAC"
+        words:
+          - "script/netcore.js"
+          - "./script/logic.js"
+          - "netis"
+        condition: and

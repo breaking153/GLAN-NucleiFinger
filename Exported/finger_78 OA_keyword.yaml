@@ -1,0 +1,21 @@
+id: 78_OA_keyword
+info:
+  name: 78 OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "78 OA"
+        words:
+          - "/resource/javascript/system/runtime.min.js"
+          - "password"
+        condition: and

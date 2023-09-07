@@ -1,0 +1,20 @@
+id: Customer_Service_Operations_Management_System_keyword
+info:
+  name: Customer-Service-Operations-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Customer-Service-Operations-Management-System"
+        words:
+          - "<div class=\"count-down\">页面在<em>5</em>秒后自动跳转至您有权限的页面</div>"
+        condition: and

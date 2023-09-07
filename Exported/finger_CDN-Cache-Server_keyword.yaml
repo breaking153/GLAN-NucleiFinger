@@ -1,0 +1,20 @@
+id: CDN_Cache_Server_keyword
+info:
+  name: CDN-Cache-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CDN-Cache-Server"
+        words:
+          - "Cdn Cache Server"
+        condition: and

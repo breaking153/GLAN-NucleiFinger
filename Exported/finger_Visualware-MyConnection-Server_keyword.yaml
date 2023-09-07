@@ -1,0 +1,20 @@
+id: Visualware_MyConnection_Server_keyword
+info:
+  name: Visualware-MyConnection-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Visualware-MyConnection-Server"
+        words:
+          - "<!-- begin myconnection server applet -->"
+        condition: and

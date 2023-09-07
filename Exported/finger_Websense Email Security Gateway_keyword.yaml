@@ -1,0 +1,20 @@
+id: Websense_Email_Security_Gateway_keyword
+info:
+  name: Websense Email Security Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Websense Email Security Gateway"
+        words:
+          - "Websense Email Security Gateway"
+        condition: and

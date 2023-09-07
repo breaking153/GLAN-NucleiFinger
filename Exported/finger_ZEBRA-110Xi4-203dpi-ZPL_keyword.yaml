@@ -1,0 +1,20 @@
+id: ZEBRA_110Xi4_203dpi_ZPL_keyword
+info:
+  name: ZEBRA-110Xi4-203dpi-ZPL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-110Xi4-203dpi-ZPL"
+        words:
+          - "ztc 110xi4-203dpi zpl</h1>"
+        condition: and

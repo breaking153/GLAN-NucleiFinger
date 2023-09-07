@@ -1,0 +1,20 @@
+id: DCS_2103_keyword
+info:
+  name: DCS-2103_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DCS-2103"
+        words:
+          - "realm=\"dcs-2103"
+        condition: and

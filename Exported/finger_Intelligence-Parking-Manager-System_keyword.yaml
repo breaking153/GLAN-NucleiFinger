@@ -1,0 +1,20 @@
+id: Intelligence_Parking_Manager_System_keyword
+info:
+  name: Intelligence-Parking-Manager-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Intelligence-Parking-Manager-System"
+        words:
+          - "江西百胜门控设备有限公司::智能停车场管理系统"
+        condition: and

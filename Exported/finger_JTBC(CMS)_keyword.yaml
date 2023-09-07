@@ -1,0 +1,26 @@
+id: JTBC_CMS_keyword
+info:
+  name: JTBC(CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JTBC(CMS)"
+        words:
+          - "/js/jtbc.js"
+        condition: and
+      - type: word
+        part: body
+        name: "JTBC(CMS)"
+        words:
+          - "content=\"JTBC"
+        condition: and

@@ -1,0 +1,21 @@
+id: Siemens_SIMATIC_HMI_keyword
+info:
+  name: Siemens-SIMATIC-HMI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-SIMATIC-HMI"
+        words:
+          - "/images/siemens_firmenmarke.gif"
+          - "refresh\" content=\"0;url=/www/start.html\">"
+        condition: and

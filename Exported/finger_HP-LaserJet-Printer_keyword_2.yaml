@@ -1,0 +1,32 @@
+id: HP_LaserJet_Printer_keyword_1
+info:
+  name: HP-LaserJet-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP-LaserJet-Printer"
+        words:
+          - "hp-chaisoe"
+        condition: and
+      - type: word
+        part: header
+        name: "HP-LaserJet-Printer"
+        words:
+          - "HP-ChaiServer"
+        condition: and
+      - type: word
+        part: header
+        name: "HP-LaserJet-Printer"
+        words:
+          - "HP-ChaiSOE"
+        condition: and

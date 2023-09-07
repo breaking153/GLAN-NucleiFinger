@@ -1,0 +1,39 @@
+id: ASPCMS_keyword
+info:
+  name: ASPCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASPCMS"
+        words:
+          - "content=\"aspcms"
+          - "/inc/aspcms_advjs.asp"
+        condition: and
+      - type: word
+        part: body
+        name: "ASPCMS"
+        words:
+          - "content=\"ASPCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "ASPCMS"
+        words:
+          - "/inc/AspCms_AdvJs.asp"
+        condition: and
+      - type: word
+        part: body
+        name: "ASPCMS"
+        words:
+          - "AspCMS"
+        condition: and

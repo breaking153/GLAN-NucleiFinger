@@ -1,0 +1,20 @@
+id: OpenBSD_httpd_keyword
+info:
+  name: OpenBSD httpd_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "OpenBSD httpd"
+        words:
+          - "OpenBSD httpd"
+        condition: and

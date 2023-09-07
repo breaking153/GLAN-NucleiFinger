@@ -1,0 +1,21 @@
+id: zhi_meng_ke_ji_guan_jia_po_wu_lian_tong_keyword
+info:
+  name: 致梦科技-管家婆物联通_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "致梦科技-管家婆物联通"
+        words:
+          - "HtmlPages/Vue/vue.js"
+          - "GetLoginValidate"
+        condition: and

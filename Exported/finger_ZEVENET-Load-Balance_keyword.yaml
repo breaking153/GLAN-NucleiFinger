@@ -1,0 +1,20 @@
+id: ZEVENET_Load_Balance_keyword
+info:
+  name: ZEVENET-Load-Balance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZEVENET-Load-Balance"
+        words:
+          - "realm=\"zen load balancer"
+        condition: and

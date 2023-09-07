@@ -1,0 +1,27 @@
+id: xjhyt_System_keyword
+info:
+  name: xjhyt-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "xjhyt-System"
+        words:
+          - "class=\"wrap login_wrap\""
+          - "url(images/yh.jpg"
+        condition: and
+      - type: word
+        part: body
+        name: "xjhyt-System"
+        words:
+          - "<input class=\"an1\" name=\"btnrst\" id=\"btnrst\" type=\"reset\" value=\" \" />"
+        condition: and

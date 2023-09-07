@@ -1,0 +1,20 @@
+id: fu_fu_an_quan_ji_xian_guan_li_keyword
+info:
+  name: 福富安全基线管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "福富安全基线管理"
+        words:
+          - "align=\"center\">福富软件"
+        condition: and

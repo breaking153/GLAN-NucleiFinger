@@ -1,0 +1,20 @@
+id: uniview_TMS8500_keyword
+info:
+  name: uniview-TMS8500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "uniview-TMS8500"
+        words:
+          - "tms8500-imos110"
+        condition: and

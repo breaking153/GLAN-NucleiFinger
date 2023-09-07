@@ -1,0 +1,26 @@
+id: OA_qi_ye_zhi_neng_ban_gong_zi_dong_hua_xi_tong_keyword
+info:
+  name: OA企业智能办公自动化系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OA企业智能办公自动化系统"
+        words:
+          - "input name=\"S1\" type=\"image\""
+        condition: and
+      - type: word
+        part: body
+        name: "OA企业智能办公自动化系统"
+        words:
+          - "count/mystat.asp"
+        condition: and

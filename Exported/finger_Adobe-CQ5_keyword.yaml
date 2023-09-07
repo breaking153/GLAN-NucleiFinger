@@ -1,0 +1,20 @@
+id: Adobe_CQ5_keyword
+info:
+  name: Adobe-CQ5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Adobe-CQ5"
+        words:
+          - "_jcr_content"
+        condition: and

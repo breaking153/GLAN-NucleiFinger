@@ -1,0 +1,20 @@
+id: ZEBRA_TLP_2824_Plus_keyword
+info:
+  name: ZEBRA-TLP-2824-Plus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-TLP-2824-Plus"
+        words:
+          - "ztc tlp 2824 plus</h1>"
+        condition: and

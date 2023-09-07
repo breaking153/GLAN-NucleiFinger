@@ -1,0 +1,20 @@
+id: Miracle_Hunt_Services_keyword
+info:
+  name: Miracle Hunt Services_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Miracle Hunt Services"
+        words:
+          - "Miracle Hunt Services"
+        condition: and

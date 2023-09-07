@@ -1,0 +1,24 @@
+id: RuoYi_keyword
+info:
+  name: RuoYi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RuoYi"
+        words:
+          - "All Rights Reserved. RuoYi"
+          - "/ry-ui.css"
+          - "/ry-ui.js"
+          - ""
+          - "(e49fd30ea870c7a820464ca56a113e6e"
+        condition: and

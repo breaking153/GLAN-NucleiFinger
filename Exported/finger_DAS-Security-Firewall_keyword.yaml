@@ -1,0 +1,21 @@
+id: DAS_Security_Firewall_keyword
+info:
+  name: DAS-Security-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DAS-Security-Firewall"
+        words:
+          - "scripts/web-common.js"
+          - "dbapp security"
+        condition: and

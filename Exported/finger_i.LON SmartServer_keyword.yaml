@@ -1,0 +1,20 @@
+id: i_LON_SmartServer_keyword
+info:
+  name: i.LON SmartServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "i.LON SmartServer"
+        words:
+          - "i.LON SmartServer"
+        condition: and

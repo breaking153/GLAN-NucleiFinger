@@ -1,0 +1,20 @@
+id: Meiya_Pico_Product_keyword
+info:
+  name: Meiya-Pico-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Meiya-Pico-Product"
+        words:
+          - "meiya pico. all rights reserved"
+        condition: and

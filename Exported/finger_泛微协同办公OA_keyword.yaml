@@ -1,0 +1,20 @@
+id: fan_wei_xie_tong_ban_gong_OA_keyword
+info:
+  name: 泛微协同办公OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "泛微协同办公OA"
+        words:
+          - "/wui/common/css/w7OVFont.css"
+        condition: and

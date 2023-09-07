@@ -1,0 +1,21 @@
+id: CISCO_Nexus_Data_Broker_keyword
+info:
+  name: CISCO-Nexus-Data-Broker_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-Nexus-Data-Broker"
+        words:
+          - "j_security_check"
+          - "window.location.href = '/monitor';"
+        condition: and

@@ -1,0 +1,24 @@
+id: D_Link_DIR_615_keyword
+info:
+  name: D-Link-DIR-615_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DIR-615"
+        words:
+          - "content=\"d-link device"
+          - "content=\"dir-615"
+          - "<a href='http://support.dlink.com.tw'  target=_blank><font class=l_tb>dir-615"
+          - "var modemver=\"dir-615\""
+          - "<div class=\"modelname\">dir-615"
+        condition: and

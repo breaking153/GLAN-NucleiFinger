@@ -1,0 +1,26 @@
+id: FITELnet_Router_keyword
+info:
+  name: FITELnet-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FITELnet-Router"
+        words:
+          - "server: gr-httpd server"
+        condition: and
+      - type: word
+        part: header
+        name: "FITELnet-Router"
+        words:
+          - "GR-HTTPD Server"
+        condition: and

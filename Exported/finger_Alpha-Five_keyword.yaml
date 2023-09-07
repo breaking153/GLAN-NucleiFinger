@@ -1,0 +1,33 @@
+id: Alpha_Five_keyword
+info:
+  name: Alpha-Five_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Alpha-Five"
+        words:
+          - "alpha five"
+          - "a5wsessionid"
+        condition: and
+      - type: word
+        part: header
+        name: "Alpha-Five"
+        words:
+          - "Alpha Five"
+        condition: and
+      - type: word
+        part: header
+        name: "Alpha-Five"
+        words:
+          - "A5wSessionId"
+        condition: and

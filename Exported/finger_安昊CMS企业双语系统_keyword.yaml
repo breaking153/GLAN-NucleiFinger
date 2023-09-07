@@ -1,0 +1,20 @@
+id: an_hao_CMS_qi_ye_shuang_yu_xi_tong_keyword
+info:
+  name: 安昊CMS企业双语系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "安昊CMS企业双语系统"
+        words:
+          - "安昊CMS企业双语系统"
+        condition: and

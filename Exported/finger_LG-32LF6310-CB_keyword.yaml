@@ -1,0 +1,20 @@
+id: LG_32LF6310_CB_keyword
+info:
+  name: LG-32LF6310-CB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-32LF6310-CB"
+        words:
+          - "<modelnumber>32lf6310-cb</modelnumber>"
+        condition: and

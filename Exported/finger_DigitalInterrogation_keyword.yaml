@@ -1,0 +1,20 @@
+id: DigitalInterrogation_keyword
+info:
+  name: DigitalInterrogation_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DigitalInterrogation"
+        words:
+          - "classid='clsid:e77e049b-23fc-4db8-b756-60529a35fad5'"
+        condition: and

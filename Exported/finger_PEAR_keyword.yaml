@@ -1,0 +1,21 @@
+id: PEAR_keyword
+info:
+  name: PEAR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PEAR"
+        words:
+          - "installed packages, channel pear"
+          - "content=\"webbased pear package manager"
+        condition: and

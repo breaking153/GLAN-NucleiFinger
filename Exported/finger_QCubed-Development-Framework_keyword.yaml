@@ -1,0 +1,21 @@
+id: QCubed_Development_Framework_keyword
+info:
+  name: QCubed-Development-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QCubed-Development-Framework"
+        words:
+          - "<div id=\"codeversion\">qcubed development framework"
+          - "<b>qcubed version:</b>"
+        condition: and

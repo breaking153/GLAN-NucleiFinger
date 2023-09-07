@@ -1,0 +1,20 @@
+id: mo_fang_fen_lei_xin_xi_xi_tong_ASPMPS_keyword
+info:
+  name: 魔方分类信息系统_ASPMPS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "魔方分类信息系统_ASPMPS"
+        words:
+          - "魔方分类信息系统_ASPMPS"
+        condition: and

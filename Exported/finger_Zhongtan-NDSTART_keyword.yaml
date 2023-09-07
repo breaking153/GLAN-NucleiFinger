@@ -1,0 +1,21 @@
+id: Zhongtan_NDSTART_keyword
+info:
+  name: Zhongtan-NDSTART_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zhongtan-NDSTART"
+        words:
+          - "var pubnewsarray"
+          - "<title>南大之星信息发布系统 "
+        condition: and

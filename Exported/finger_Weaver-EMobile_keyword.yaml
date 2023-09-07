@@ -1,0 +1,24 @@
+id: Weaver_EMobile_keyword
+info:
+  name: Weaver-EMobile_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Weaver-EMobile"
+        words:
+          - "content=\"weaver e-mobile\""
+          - "e-mobile&nbsp;"
+          - "action=\"/verifylogin.do"
+          - "/images/login_logo@2x.png"
+          - "window.apiprifix = \"/emp\";"
+        condition: and

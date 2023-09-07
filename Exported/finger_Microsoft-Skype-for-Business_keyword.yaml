@@ -1,0 +1,20 @@
+id: Microsoft_Skype_for_Business_keyword
+info:
+  name: Microsoft-Skype-for-Business_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Microsoft-Skype-for-Business"
+        words:
+          - "var reachclientproductname = \"skype for business web 应用\""
+        condition: and

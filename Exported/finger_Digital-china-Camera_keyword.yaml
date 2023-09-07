@@ -1,0 +1,20 @@
+id: Digital_china_Camera_keyword
+info:
+  name: Digital-china-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Digital-china-Camera"
+        words:
+          - "神州数码"
+        condition: and

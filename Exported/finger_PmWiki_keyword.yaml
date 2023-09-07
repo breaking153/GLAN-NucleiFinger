@@ -1,0 +1,21 @@
+id: PmWiki_keyword
+info:
+  name: PmWiki_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PmWiki"
+        words:
+          - "<span class='commentout-pmwikiorg'>"
+          - "<a href=\"http://www.pmwiki.org/\" target="
+        condition: and

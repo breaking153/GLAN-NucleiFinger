@@ -1,0 +1,20 @@
+id: Yottabyte_Company_s_product_keyword
+info:
+  name: Yottabyte-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yottabyte-Company's-product"
+        words:
+          - "class=\"btn btn-primary form-btn form-btn-login pull-right\""
+        condition: and

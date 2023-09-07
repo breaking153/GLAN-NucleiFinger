@@ -1,0 +1,20 @@
+id: UnitEver_shu_zi_hua_xiao_yuan_ping_tai_keyword
+info:
+  name: UnitEver数字化校园平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "UnitEver数字化校园平台"
+        words:
+          - "UnitEver数字化校园平台"
+        condition: and

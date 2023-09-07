@@ -1,0 +1,20 @@
+id: crmeb_dian_shang_xi_tong_keyword
+info:
+  name: crmeb电商系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "crmeb电商系统"
+        words:
+          - "crmeb电商系统"
+        condition: and

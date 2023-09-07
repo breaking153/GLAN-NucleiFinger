@@ -1,0 +1,33 @@
+id: CameraLife_keyword
+info:
+  name: CameraLife_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CameraLife"
+        words:
+          - "content=\"camera life"
+          - "this site is powered by camera life"
+        condition: and
+      - type: word
+        part: body
+        name: "CameraLife"
+        words:
+          - "content=\"Camera Life"
+        condition: and
+      - type: word
+        part: body
+        name: "CameraLife"
+        words:
+          - "This site is powered by Camera Life"
+        condition: and

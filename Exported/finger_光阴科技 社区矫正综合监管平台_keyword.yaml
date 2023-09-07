@@ -1,0 +1,20 @@
+id: guang_yin_ke_ji_she_qu_jiao_zheng_zong_he_jian_guan_ping_tai_keyword
+info:
+  name: 光阴科技 社区矫正综合监管平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "光阴科技 社区矫正综合监管平台"
+        words:
+          - "光阴科技 社区矫正综合监管平台"
+        condition: and

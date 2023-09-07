@@ -1,0 +1,20 @@
+id: EnjoySCM_gong_ying_lian_guan_li_xi_tong_keyword
+info:
+  name: EnjoySCM 供应链管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EnjoySCM 供应链管理系统"
+        words:
+          - "供应商网上服务厅"
+        condition: and

@@ -1,0 +1,21 @@
+id: Apache_Airflow_keyword_1
+info:
+  name: Apache-Airflow_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-Airflow"
+        words:
+          - "src=\"/static/pin_100.png\""
+          - "<span>airflow</span>"
+        condition: and

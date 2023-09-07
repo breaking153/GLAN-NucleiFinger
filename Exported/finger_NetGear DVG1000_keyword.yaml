@@ -1,0 +1,20 @@
+id: NetGear_DVG1000_keyword
+info:
+  name: NetGear DVG1000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NetGear DVG1000"
+        words:
+          - "NetGear DVG1000"
+        condition: and

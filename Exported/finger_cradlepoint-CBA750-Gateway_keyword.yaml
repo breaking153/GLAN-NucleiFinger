@@ -1,0 +1,20 @@
+id: cradlepoint_CBA750_Gateway_keyword
+info:
+  name: cradlepoint-CBA750-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-CBA750-Gateway"
+        words:
+          - "cradlepoint cba750 gateway"
+        condition: and

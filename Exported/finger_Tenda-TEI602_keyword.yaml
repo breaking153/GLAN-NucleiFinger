@@ -1,0 +1,20 @@
+id: Tenda_TEI602_keyword
+info:
+  name: Tenda-TEI602_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tenda-TEI602"
+        words:
+          - "var sys_target = \"tei602\""
+        condition: and

@@ -1,0 +1,21 @@
+id: fei_yu_xing_lu_you_qi_xing_wei_guan_li_keyword
+info:
+  name: 飞鱼星路由器-行为管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "飞鱼星路由器-行为管理"
+        words:
+          - "content=\"0.2;"
+          - "/home/login.html"
+        condition: and

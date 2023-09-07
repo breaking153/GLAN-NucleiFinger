@@ -1,0 +1,32 @@
+id: KindEditor_keyword
+info:
+  name: KindEditor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KindEditor"
+        words:
+          - "kindeditor.js"
+        condition: and
+      - type: word
+        part: body
+        name: "KindEditor"
+        words:
+          - "KindEditor.ready"
+        condition: and
+      - type: word
+        part: body
+        name: "KindEditor"
+        words:
+          - "K.create"
+        condition: and

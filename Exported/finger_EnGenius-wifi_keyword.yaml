@@ -1,0 +1,20 @@
+id: EnGenius_wifi_keyword
+info:
+  name: EnGenius-wifi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EnGenius-wifi"
+        words:
+          - "style=\"background: url(/pictures/img_bg_horizon.png repeat-x\""
+        condition: and

@@ -1,0 +1,20 @@
+id: dong_ruan_NetEye_tong_yi_shen_fen_guan_kong_xi_tong_deng_lu_keyword
+info:
+  name: 东软 NetEye 统一身份管控系统登录_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "东软 NetEye 统一身份管控系统登录"
+        words:
+          - "东软 NetEye 统一身份管控系统登录"
+        condition: and

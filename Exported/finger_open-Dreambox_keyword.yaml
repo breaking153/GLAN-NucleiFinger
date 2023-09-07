@@ -1,0 +1,20 @@
+id: open_Dreambox_keyword
+info:
+  name: open-Dreambox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "open-Dreambox"
+        words:
+          - "src=\"/web-data/img\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Avaya_Application_Enablement_Services_keyword
+info:
+  name: Avaya-Application-Enablement-Services_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Avaya-Application-Enablement-Services"
+        words:
+          - "<b>application enablement services&nbsp;</b>"
+        condition: and

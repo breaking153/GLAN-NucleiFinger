@@ -1,0 +1,20 @@
+id: QingYuan_HSSE_keyword
+info:
+  name: QingYuan-HSSE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QingYuan-HSSE"
+        words:
+          - "hsse 系统"
+        condition: and

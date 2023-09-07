@@ -1,0 +1,21 @@
+id: yonyou_RMIS_keyword
+info:
+  name: yonyou-RMIS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yonyou-RMIS"
+        words:
+          - "meta http-equiv=\"grp-rmis"
+          - "href=\"clientfile/rmisupdate.exe"
+        condition: and

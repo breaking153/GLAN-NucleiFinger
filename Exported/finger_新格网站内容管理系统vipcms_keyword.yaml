@@ -1,0 +1,20 @@
+id: xin_ge_wang_zhan_nei_rong_guan_li_xi_tong_vipcms_keyword
+info:
+  name: 新格网站内容管理系统vipcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "新格网站内容管理系统vipcms"
+        words:
+          - "新格网站内容管理系统vipcms"
+        condition: and

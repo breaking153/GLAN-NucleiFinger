@@ -1,0 +1,19 @@
+id: bo_hua_wang_long_xin_xi_an_quan_yi_ti_ji_keyword
+info:
+  name: 博华网龙信息安全一体机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "博华网龙信息安全一体机"
+        words:
+          - "<title>博华网龙信息安全一体机"

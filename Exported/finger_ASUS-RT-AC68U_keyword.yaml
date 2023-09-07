@@ -1,0 +1,27 @@
+id: ASUS_RT_AC68U_keyword
+info:
+  name: ASUS-RT-AC68U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-RT-AC68U"
+        words:
+          - "var product_name='rt-ac68u'"
+          - "capture(status_router.sys_model</script></div>asus rt-ac68u"
+          - "capture(status_router.sys_model</script></div> asus rt-ac68u&nbsp;"
+          - "<div class=\"prod_madelname\">rt-ac68u"
+          - "class=\"prod_madelname\">jrs eco 100 on asus rt-ac68u</div>"
+          - "class=\"prod_madelname\" style=\"margin-left:78px;\">rt-ac68u"
+          - "var mmc = {"
+          - "asus rt-ac68u"
+        condition: and

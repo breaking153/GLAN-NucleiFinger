@@ -1,0 +1,20 @@
+id: Litespeed_Cache_keyword
+info:
+  name: Litespeed Cache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Litespeed Cache"
+        words:
+          - "Litespeed Cache"
+        condition: and

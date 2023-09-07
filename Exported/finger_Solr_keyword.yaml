@@ -1,0 +1,27 @@
+id: Solr_keyword
+info:
+  name: Solr_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Solr"
+        words:
+          - "solrcore initialization failures"
+          - "app_config.solr_path"
+        condition: and
+      - type: word
+        part: body
+        name: "Solr"
+        words:
+          - "SolrCore Initialization Failures"
+        condition: and

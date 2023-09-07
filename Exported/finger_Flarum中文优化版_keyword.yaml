@@ -1,0 +1,20 @@
+id: Flarum_zhong_wen_you_hua_ban_keyword
+info:
+  name: Flarum中文优化版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Flarum中文优化版"
+        words:
+          - "Flarum中文优化版"
+        condition: and

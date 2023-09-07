@@ -1,0 +1,21 @@
+id: TRIDENT7_Wave7_OLT_keyword
+info:
+  name: TRIDENT7-Wave7-OLT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRIDENT7-Wave7-OLT"
+        words:
+          - "wave7 optics, inc. all rights reserved."
+          - "<td valign=\"bottom\" colspan=2><font size=2 align=\"justify\">&copy; "
+        condition: and

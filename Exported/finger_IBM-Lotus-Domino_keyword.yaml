@@ -1,0 +1,20 @@
+id: IBM_Lotus_Domino_keyword
+info:
+  name: IBM-Lotus-Domino_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM-Lotus-Domino"
+        words:
+          - "server: lotus-domino/"
+        condition: and

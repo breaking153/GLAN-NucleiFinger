@@ -1,0 +1,26 @@
+id: ShopNc_shang_cheng_xi_tong_keyword
+info:
+  name: ShopNc商城系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ShopNc商城系统"
+        words:
+          - "Powered by <a href=\"http://www.shopnc.net\" target=\"_blank\" style=\"color:#FF6600\">ShopNC"
+        condition: and
+      - type: word
+        part: body
+        name: "ShopNc商城系统"
+        words:
+          - "(function(a,b){function G(a){var b=F[a]={}"
+        condition: and

@@ -1,0 +1,20 @@
+id: sony_she_xiang_tou_keyword
+info:
+  name: sony摄像头_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "sony摄像头"
+        words:
+          - "inquiry.cgi?inqjs=system&inqjs=camera"
+        condition: and

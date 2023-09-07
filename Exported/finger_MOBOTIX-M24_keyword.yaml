@@ -1,0 +1,20 @@
+id: MOBOTIX_M24_keyword
+info:
+  name: MOBOTIX-M24_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MOBOTIX-M24"
+        words:
+          - "<span class=\"bold featurestypeinfo\">m24"
+        condition: and

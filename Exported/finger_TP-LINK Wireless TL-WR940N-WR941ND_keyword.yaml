@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_TL_WR940N_WR941ND_keyword
+info:
+  name: TP-LINK Wireless TL-WR940N-WR941ND_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless TL-WR940N-WR941ND"
+        words:
+          - "TP-LINK Wireless TL-WR940N/WR941ND"
+        condition: and

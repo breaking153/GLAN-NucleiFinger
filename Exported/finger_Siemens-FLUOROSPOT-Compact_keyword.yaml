@@ -1,0 +1,20 @@
+id: Siemens_FLUOROSPOT_Compact_keyword
+info:
+  name: Siemens-FLUOROSPOT-Compact_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-FLUOROSPOT-Compact"
+        words:
+          - "<form id=\"inicio\" name=\"inicio\" action=\"/rsf/init.do\""
+        condition: and

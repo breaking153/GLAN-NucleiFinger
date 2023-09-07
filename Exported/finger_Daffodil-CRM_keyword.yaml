@@ -1,0 +1,26 @@
+id: Daffodil_CRM_keyword
+info:
+  name: Daffodil-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Daffodil-CRM"
+        words:
+          - "Powered by Daffodil"
+        condition: and
+      - type: word
+        part: body
+        name: "Daffodil-CRM"
+        words:
+          - "Design & Development by Daffodil Software Ltd"
+        condition: and

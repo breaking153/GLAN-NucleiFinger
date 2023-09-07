@@ -4,14 +4,10 @@ info:
   author: GLAN
   severity: info
   tags: tech
-  metadata:
-    max-request: 1
-    plugin_namespace: black-studio-tinymce-widget
-  
 http:
   - method: GET
     path:
-      - "{{RootURL}}/favicon.ico"
+      - "{{RootURL}}//favicon.ico"
     cookie-reuse: true
     matchers-condition: or
     redirects: true

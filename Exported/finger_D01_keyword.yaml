@@ -1,0 +1,22 @@
+id: D01_keyword
+info:
+  name: D01_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D01"
+        words:
+          - "/assets/gongan/"
+          - "公安部第一研究所"
+          - "网探d01"
+        condition: and

@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}/favicon.ico"
+      - "{{RootURL}}//favicon.ico"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -16,5 +16,4 @@ http:
         name: "wdCP cloud host management system"
         dsl:
           - "mmh3(base64_py(body)) == \"255892555\""
-          - "mmh3(base64_py(body)) == \"1786752597\""
         condition: or

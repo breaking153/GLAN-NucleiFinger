@@ -1,0 +1,20 @@
+id: YIXUNCMS_wang_zhan_jian_she_xi_tong_keyword
+info:
+  name: YIXUNCMS网站建设系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "YIXUNCMS网站建设系统"
+        words:
+          - "YIXUNCMS网站建设系统"
+        condition: and

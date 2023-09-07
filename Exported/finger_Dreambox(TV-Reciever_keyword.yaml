@@ -1,0 +1,20 @@
+id: Dreambox_TV_Reciever_keyword
+info:
+  name: Dreambox(TV-Reciever_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Dreambox(TV-Reciever"
+        words:
+          - "basic realm=\"dreambox\""
+        condition: and

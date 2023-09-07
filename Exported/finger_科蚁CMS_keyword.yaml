@@ -1,0 +1,26 @@
+id: ke_yi_CMS_keyword
+info:
+  name: 科蚁CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "科蚁CMS"
+        words:
+          - "keyicms:keyicms"
+        condition: and
+      - type: word
+        part: body
+        name: "科蚁CMS"
+        words:
+          - "Powered by <a href=\"http://www.keyicms.com"
+        condition: and

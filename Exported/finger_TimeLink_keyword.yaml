@@ -1,0 +1,21 @@
+id: TimeLink_keyword
+info:
+  name: TimeLink_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TimeLink"
+        words:
+          - "link international corp. all rights reserved"
+          - "<link rel=\"shortcut icon\" type=\"image/png\" href=\"/timelink/images/favicon.ico\"/>"
+        condition: and

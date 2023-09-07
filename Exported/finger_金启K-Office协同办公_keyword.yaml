@@ -1,0 +1,20 @@
+id: jin_qi_K_Office_xie_tong_ban_gong_keyword
+info:
+  name: 金启K-Office协同办公_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "金启K-Office协同办公"
+        words:
+          - "金启K-Office协同办公"
+        condition: and

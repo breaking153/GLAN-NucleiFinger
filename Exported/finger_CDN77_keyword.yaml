@@ -1,0 +1,20 @@
+id: CDN77_keyword
+info:
+  name: CDN77_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CDN77"
+        words:
+          - "CDN77"
+        condition: and

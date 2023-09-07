@@ -1,0 +1,21 @@
+id: ACTi_NVR_keyword
+info:
+  name: ACTi-NVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ACTi-NVR"
+        words:
+          - "var szproductbrand = 'acti'"
+          - "var szproducttype = 'nvr'"
+        condition: and

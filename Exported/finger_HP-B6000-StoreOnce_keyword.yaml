@@ -1,0 +1,20 @@
+id: HP_B6000_StoreOnce_keyword
+info:
+  name: HP-B6000-StoreOnce_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-B6000-StoreOnce"
+        words:
+          - "href=\"./theme/default/css/hp_fusion_management.css\""
+        condition: and

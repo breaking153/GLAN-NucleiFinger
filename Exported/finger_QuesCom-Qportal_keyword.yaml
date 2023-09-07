@@ -1,0 +1,22 @@
+id: QuesCom_Qportal_keyword
+info:
+  name: QuesCom-Qportal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QuesCom-Qportal"
+        words:
+          - "<head profile=\"http://www.quescom.com"
+          - "href=\"/qpuser.css"
+          - "/cticall/cticall_close.asp\" name=\"cticlose"
+        condition: and

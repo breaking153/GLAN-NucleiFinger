@@ -1,0 +1,22 @@
+id: RAILS_Framework_keyword
+info:
+  name: RAILS-Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RAILS-Framework"
+        words:
+          - "content=\"ruby on rails "
+          - "alt=\"ruby on rails\" "
+          - "type=\"hidden\" name=\"authenticity_token"
+        condition: and

@@ -1,0 +1,20 @@
+id: BrewBlogger_keyword
+info:
+  name: BrewBlogger_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BrewBlogger"
+        words:
+          - "developed by <a href=\"http://www.zkdigital.com"
+        condition: and

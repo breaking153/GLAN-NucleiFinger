@@ -1,0 +1,20 @@
+id: TP_LINK_TD_W8901G_keyword
+info:
+  name: TP-LINK-TD-W8901G_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK-TD-W8901G"
+        words:
+          - "realm=\"td-w8901g"
+        condition: and

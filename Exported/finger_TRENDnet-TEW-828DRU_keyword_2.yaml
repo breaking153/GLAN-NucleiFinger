@@ -1,0 +1,20 @@
+id: TRENDnet_TEW_828DRU_keyword_1
+info:
+  name: TRENDnet-TEW-828DRU_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TRENDnet-TEW-828DRU"
+        words:
+          - "realm=\"tew-828dru"
+        condition: and

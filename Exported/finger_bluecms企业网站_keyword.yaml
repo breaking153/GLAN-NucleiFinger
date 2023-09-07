@@ -1,0 +1,20 @@
+id: bluecms_qi_ye_wang_zhan_keyword
+info:
+  name: bluecms企业网站_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "bluecms企业网站"
+        words:
+          - "bluecms企业网站"
+        condition: and

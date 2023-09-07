@@ -1,0 +1,23 @@
+id: Netentsec_NS_ASG_Security_gateway_keyword
+info:
+  name: Netentsec-NS-ASG-Security-gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netentsec-NS-ASG-Security-gateway"
+        words:
+          - "400-678-3600"
+          - "client/thickbox.css"
+          - "/commonplugin/softkeyboard.js"
+          - "id=\"slotserialnumber\""
+        condition: and

@@ -1,0 +1,21 @@
+id: 263_Enterprise_Mailbox_keyword
+info:
+  name: 263-Enterprise-Mailbox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "263-Enterprise-Mailbox"
+        words:
+          - "net263.wm.custom_login.homepage_init"
+          - "/custom_login/js/net263_wm_util.js"
+        condition: and

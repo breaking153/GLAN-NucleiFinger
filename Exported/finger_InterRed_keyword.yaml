@@ -1,0 +1,33 @@
+id: InterRed_keyword
+info:
+  name: InterRed_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "InterRed"
+        words:
+          - "content=\"interred"
+          - "created with interred"
+        condition: and
+      - type: word
+        part: body
+        name: "InterRed"
+        words:
+          - "content=\"InterRed"
+        condition: and
+      - type: word
+        part: body
+        name: "InterRed"
+        words:
+          - "Created with InterRed"
+        condition: and

@@ -1,0 +1,20 @@
+id: Megvii_Company_s_product_keyword
+info:
+  name: Megvii-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Megvii-Company's-product"
+        words:
+          - "powered by megvii 本产品由旷视®提供智能技术支持"
+        condition: and

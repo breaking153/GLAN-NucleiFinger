@@ -1,0 +1,21 @@
+id: Gadspot_DVR_keyword
+info:
+  name: Gadspot-DVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gadspot-DVR"
+        words:
+          - "content=\"chenxiaohui\""
+          - "name=\"configptz\""
+        condition: and

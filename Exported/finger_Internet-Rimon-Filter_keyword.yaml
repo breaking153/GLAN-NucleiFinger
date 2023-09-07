@@ -1,0 +1,26 @@
+id: Internet_Rimon_Filter_keyword
+info:
+  name: Internet-Rimon-Filter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Internet-Rimon-Filter"
+        words:
+          - "rimon: rwc_block"
+        condition: and
+      - type: word
+        part: header
+        name: "Internet-Rimon-Filter"
+        words:
+          - "rimon"
+        condition: and

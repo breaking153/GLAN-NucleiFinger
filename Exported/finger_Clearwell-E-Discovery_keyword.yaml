@@ -1,0 +1,26 @@
+id: Clearwell_E_Discovery_keyword
+info:
+  name: Clearwell-E-Discovery_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Clearwell-E-Discovery"
+        words:
+          - "server: clearwell"
+        condition: and
+      - type: word
+        part: header
+        name: "Clearwell-E-Discovery"
+        words:
+          - "Clearwell"
+        condition: and

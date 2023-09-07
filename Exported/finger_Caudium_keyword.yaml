@@ -1,0 +1,33 @@
+id: Caudium_keyword
+info:
+  name: Caudium_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Caudium"
+        words:
+          - "caudium"
+          - "x-got-fish: pike"
+        condition: and
+      - type: word
+        part: header
+        name: "Caudium"
+        words:
+          - "Caudium"
+        condition: and
+      - type: word
+        part: header
+        name: "Caudium"
+        words:
+          - "X-Got-Fish:Pike"
+        condition: and

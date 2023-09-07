@@ -1,0 +1,20 @@
+id: HISOME_SIP_lu_you_fen_fa_fu_wu_qi_keyword
+info:
+  name: HISOME SIP路由分发服务器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HISOME SIP路由分发服务器"
+        words:
+          - "HISOME SIP路由分发服务器"
+        condition: and

@@ -1,0 +1,20 @@
+id: zychr_CMS_keyword
+info:
+  name: zychr-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zychr-CMS"
+        words:
+          - "powered by zychr.com"
+        condition: and

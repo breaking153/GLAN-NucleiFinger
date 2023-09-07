@@ -1,0 +1,20 @@
+id: Peplink_Balance_Series_keyword
+info:
+  name: Peplink-Balance-Series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Peplink-Balance-Series"
+        words:
+          - "realm=\"peplink balance series"
+        condition: and

@@ -1,0 +1,20 @@
+id: CISCO_WebEx_keyword
+info:
+  name: CISCO-WebEx_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-WebEx"
+        words:
+          - "alt=\"cisco webex meetings server\""
+        condition: and

@@ -1,0 +1,22 @@
+id: Campus_card_management_system_keyword
+info:
+  name: Campus-card-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Campus-card-management-system"
+        words:
+          - "harbin synjones electronic"
+          - "document.formpostds.action=\"xxsearch.action"
+          - "/shouyeziti.css"
+        condition: and

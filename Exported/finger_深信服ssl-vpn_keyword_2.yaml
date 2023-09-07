@@ -1,0 +1,20 @@
+id: shen_xin_fu_ssl_vpn_keyword_1
+info:
+  name: 深信服ssl-vpn_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "深信服ssl-vpn"
+        words:
+          - "TWFID"
+        condition: and

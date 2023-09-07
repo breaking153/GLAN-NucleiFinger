@@ -1,0 +1,22 @@
+id: 78OA_keyword
+info:
+  name: 78OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "78OA"
+        words:
+          - "/resource/javascript/system/runtime.min.js"
+          - "license.78oa.com"
+          - "src=\"/module/index.php"
+        condition: and

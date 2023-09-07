@@ -1,0 +1,21 @@
+id: Nagios_XI_keyword_1
+info:
+  name: Nagios-XI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nagios-XI"
+        words:
+          - "click the link below to get started using nagios xi."
+          - "/nagiosxi/images/favicon.ico"
+        condition: and

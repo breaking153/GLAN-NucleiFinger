@@ -1,0 +1,26 @@
+id: Panasonic_Network_Camera_keyword
+info:
+  name: Panasonic-Network-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Panasonic-Network-Camera"
+        words:
+          - "multicameraframe?mode=motion&language"
+          - "cgitagmenu?page=top&language="
+          - "src=\"cgitagmenu?page="
+          - "var svideoinput=\"pal"
+          - "content=\"(c panasonic syetem networks co.,ltd."
+          - "/js/cmsgtab.js"
+          - "src=\"barfoot.html\""
+        condition: and

@@ -1,0 +1,20 @@
+id: fan_wei_e_cology_keyword
+info:
+  name: 泛微e-cology_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "泛微e-cology"
+        words:
+          - "泛微e-cology"
+        condition: and

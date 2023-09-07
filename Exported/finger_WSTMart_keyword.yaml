@@ -1,0 +1,21 @@
+id: WSTMart_keyword
+info:
+  name: WSTMart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WSTMart"
+        words:
+          - "powered by wstmart"
+          - "href=\"/wstmart/home/"
+        condition: and

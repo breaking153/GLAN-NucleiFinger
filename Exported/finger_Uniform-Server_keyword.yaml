@@ -1,0 +1,22 @@
+id: Uniform_Server_keyword
+info:
+  name: Uniform-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Uniform-Server"
+        words:
+          - "<a href=\"http://www.uniformserver.com\">"
+          - "<meta name=\"description\" content=\"the uniform server 8.1.0-coral.\" />"
+          - "<div id=\"divider\">developed by <a href=\"http://www.uniformserver.com/\">the uniform server development team</a></div>"
+        condition: and

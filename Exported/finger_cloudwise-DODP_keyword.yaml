@@ -1,0 +1,20 @@
+id: cloudwise_DODP_keyword
+info:
+  name: cloudwise-DODP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cloudwise-DODP"
+        words:
+          - "/public/vendor/monaco/vs/loader.js"
+        condition: and

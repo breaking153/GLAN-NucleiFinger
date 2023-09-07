@@ -1,0 +1,32 @@
+id: Acidcat_CMS_keyword_1
+info:
+  name: Acidcat CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Acidcat CMS"
+        words:
+          - "Powered by Acidcat CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "Acidcat CMS"
+        words:
+          - "Start Acidcat CMS footer information"
+        condition: and
+      - type: word
+        part: body
+        name: "Acidcat CMS"
+        words:
+          - "/css/admin_import.css"
+        condition: and

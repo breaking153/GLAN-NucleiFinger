@@ -1,0 +1,20 @@
+id: NETGEAR_wnr2200_keyword
+info:
+  name: NETGEAR wnr2200_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR wnr2200"
+        words:
+          - "NETGEAR wnr2200"
+        condition: and

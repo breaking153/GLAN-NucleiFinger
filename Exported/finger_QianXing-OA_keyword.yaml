@@ -1,0 +1,21 @@
+id: QianXing_OA_keyword
+info:
+  name: QianXing-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QianXing-OA"
+        words:
+          - "input name=\"s1\" type=\"image\""
+          - "count/mystat.asp"
+        condition: and

@@ -1,0 +1,21 @@
+id: Metaswitch_Networks_MetaView_Web_keyword
+info:
+  name: Metaswitch-Networks-MetaView-Web_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Metaswitch-Networks-MetaView-Web"
+        words:
+          - "content='dcl.metaview.web.client'"
+          - "src=\"dcl.metaview.web.client.nocache.js\">"
+        condition: and

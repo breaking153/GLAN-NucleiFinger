@@ -1,0 +1,20 @@
+id: New_Rock_IP_PBX_Management_System_keyword
+info:
+  name: New-Rock--IP-PBX-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "New-Rock--IP-PBX-Management-System"
+        words:
+          - "var data = formatparams(params.data"
+        condition: and

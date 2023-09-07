@@ -1,0 +1,21 @@
+id: ZhengDaZhongRi_Education_keyword
+info:
+  name: ZhengDaZhongRi-Education_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZhengDaZhongRi-Education"
+        words:
+          - "images/lgline.gif"
+          - "onclick=\"safecodeclick\" src=\"safecode.aspx"
+        condition: and

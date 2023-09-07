@@ -1,0 +1,32 @@
+id: SCADA_PLC_keyword_1
+info:
+  name: SCADA PLC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SCADA PLC"
+        words:
+          - "/images/rockcolor.gif"
+        condition: and
+      - type: word
+        part: body
+        name: "SCADA PLC"
+        words:
+          - "/ralogo.gif"
+        condition: and
+      - type: word
+        part: body
+        name: "SCADA PLC"
+        words:
+          - "Ethernet Processor"
+        condition: and

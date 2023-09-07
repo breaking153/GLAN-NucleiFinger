@@ -1,0 +1,20 @@
+id: Diferior_keyword
+info:
+  name: Diferior_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Diferior"
+        words:
+          - "Powered by Diferior"
+        condition: and

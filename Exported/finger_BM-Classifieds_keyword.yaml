@@ -1,0 +1,20 @@
+id: BM_Classifieds_keyword
+info:
+  name: BM-Classifieds_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BM-Classifieds"
+        words:
+          - "<!-- START HEADER TABLE - HOLDS GRAPHIC AND SITE NAME -->"
+        condition: and

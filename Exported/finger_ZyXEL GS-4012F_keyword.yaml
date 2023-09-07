@@ -1,0 +1,20 @@
+id: ZyXEL_GS_4012F_keyword
+info:
+  name: ZyXEL GS-4012F_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL GS-4012F"
+        words:
+          - "ZyXEL GS-4012F"
+        condition: and

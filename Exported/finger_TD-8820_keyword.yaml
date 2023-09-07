@@ -1,0 +1,20 @@
+id: TD_8820_keyword
+info:
+  name: TD-8820_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TD-8820"
+        words:
+          - "realm=\"td-8820"
+        condition: and

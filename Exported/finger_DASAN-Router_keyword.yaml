@@ -1,0 +1,21 @@
+id: DASAN_Router_keyword
+info:
+  name: DASAN-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DASAN-Router"
+        words:
+          - "cgi-bin/top.cgi"
+          - "cgi-bin/menu.cgi"
+        condition: and

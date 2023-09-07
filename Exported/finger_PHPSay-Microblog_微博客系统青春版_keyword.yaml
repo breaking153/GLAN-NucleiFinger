@@ -1,0 +1,20 @@
+id: PHPSay_Microblog_wei_bo_ke_xi_tong_qing_chun_ban_keyword
+info:
+  name: PHPSay-Microblog_微博客系统青春版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PHPSay-Microblog_微博客系统青春版"
+        words:
+          - "PHPSay-Microblog_微博客系统青春版"
+        condition: and

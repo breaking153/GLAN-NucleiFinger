@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -24,6 +24,18 @@ http:
         part: body
         name: "Grafana"
         words:
-          - "https://grafana.com"
-          - "public/build/grafana"
+          - "<title>Grafana</title>"
+        condition: and
+      - type: word
+        part: body
+        name: "Grafana"
+        words:
+          - "background-image: url(\"public/img/grafana_icon.svg\""
+          - "Sometimes restarting grafana-server can help"
+        condition: and
+      - type: word
+        part: body
+        name: "Grafana"
+        words:
+          - "window.grafanabootdata = "
         condition: and

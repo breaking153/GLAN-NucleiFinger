@@ -1,0 +1,20 @@
+id: H3C_SR6602_keyword
+info:
+  name: H3C-SR6602_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C-SR6602"
+        words:
+          - "h3c sr6602"
+        condition: and

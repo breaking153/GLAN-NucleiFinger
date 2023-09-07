@@ -1,0 +1,23 @@
+id: JAVA_keyword
+info:
+  name: JAVA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JAVA"
+        words:
+          - "<h2>struts problem report</h2>"
+          - "there is no action mapped for namespace"
+          - "no result defined for action and result input"
+          - "index.jsp"
+        condition: and

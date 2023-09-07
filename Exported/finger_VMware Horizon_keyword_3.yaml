@@ -1,0 +1,20 @@
+id: VMware_Horizon_keyword_1_1_1
+info:
+  name: VMware Horizon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "VMware Horizon"
+        words:
+          - "VMware Horizon"
+        condition: and

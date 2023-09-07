@@ -1,0 +1,22 @@
+id: CODESYS_WebVisu_keyword
+info:
+  name: CODESYS-WebVisu_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CODESYS-WebVisu"
+        words:
+          - "<param name=\"startvisu\" value=\"plc_visu\">"
+          - "codesys webvisualization"
+          - "<applet codebase=. code=webvisu/webvisu.class name=\"webvisu"
+        condition: and

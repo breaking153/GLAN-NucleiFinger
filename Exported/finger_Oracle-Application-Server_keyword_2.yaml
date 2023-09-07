@@ -1,0 +1,26 @@
+id: Oracle_Application_Server_keyword_1
+info:
+  name: Oracle-Application-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Oracle-Application-Server"
+        words:
+          - "oracle-application-server"
+        condition: and
+      - type: word
+        part: header
+        name: "Oracle-Application-Server"
+        words:
+          - "Oracle-Application-Server"
+        condition: and

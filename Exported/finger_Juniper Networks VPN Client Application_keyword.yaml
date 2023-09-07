@@ -1,0 +1,20 @@
+id: Juniper_Networks_VPN_Client_Application_keyword
+info:
+  name: Juniper Networks VPN Client Application_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Juniper Networks VPN Client Application"
+        words:
+          - "Juniper Networks VPN Client Application"
+        condition: and

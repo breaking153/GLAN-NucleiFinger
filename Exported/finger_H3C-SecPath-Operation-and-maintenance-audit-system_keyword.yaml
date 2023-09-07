@@ -1,0 +1,20 @@
+id: H3C_SecPath_Operation_and_maintenance_audit_system_keyword
+info:
+  name: H3C-SecPath-Operation-and-maintenance-audit-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-SecPath-Operation-and-maintenance-audit-system"
+        words:
+          - "<span>h3c secpath 运维审计系统</span></div>"
+        condition: and

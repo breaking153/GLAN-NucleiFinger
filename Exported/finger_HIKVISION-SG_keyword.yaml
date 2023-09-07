@@ -1,0 +1,20 @@
+id: HIKVISION_SG_keyword
+info:
+  name: HIKVISION-SG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HIKVISION-SG"
+        words:
+          - "src=\"./webui/js/jquerylib/jquery-1.7.2.min.js\""
+        condition: and

@@ -1,0 +1,19 @@
+id: Coremail_faviconhash
+info:
+  name: Coremail_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Coremail"
+        dsl:
+          - "mmh3(base64_py(body)) == \"541942600\""
+        condition: or

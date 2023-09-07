@@ -1,0 +1,20 @@
+id: TQ_yun_hu_jiao_zhong_xin_keyword
+info:
+  name: TQ云呼叫中心_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TQ云呼叫中心"
+        words:
+          - "tq.cn/floatcard?"
+        condition: and

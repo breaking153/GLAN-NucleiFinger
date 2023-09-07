@@ -1,0 +1,21 @@
+id: Sympa_mailing_list_server_keyword
+info:
+  name: Sympa-mailing-list-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sympa-mailing-list-server"
+        words:
+          - "content=\"sympa"
+          - "alt=\"sympa logo"
+        condition: and

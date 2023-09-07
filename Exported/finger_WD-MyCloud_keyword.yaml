@@ -1,0 +1,20 @@
+id: WD_MyCloud_keyword
+info:
+  name: WD-MyCloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WD-MyCloud"
+        words:
+          - "_project_model_id_kings_canyon"
+        condition: and

@@ -1,0 +1,20 @@
+id: UCCC_IOT_keyword
+info:
+  name: UCCC-IOT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UCCC-IOT"
+        words:
+          - "hidden-xs\">物联网云平台"
+        condition: and

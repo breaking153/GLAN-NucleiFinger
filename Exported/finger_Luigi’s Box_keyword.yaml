@@ -1,0 +1,20 @@
+id: Luigi_s_Box_keyword
+info:
+  name: Luigi’s Box_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Luigi’s Box"
+        words:
+          - "Luigi’s Box"
+        condition: and

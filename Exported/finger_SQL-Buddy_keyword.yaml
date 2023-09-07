@@ -1,0 +1,21 @@
+id: SQL_Buddy_keyword
+info:
+  name: SQL-Buddy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SQL-Buddy"
+        words:
+          - "h3><a href=\"http://www.sqlbuddy.com/help"
+          - "href=\"themes/bittersweet/css/main.css"
+        condition: and

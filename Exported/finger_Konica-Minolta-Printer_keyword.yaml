@@ -1,0 +1,22 @@
+id: Konica_Minolta_Printer_keyword
+info:
+  name: Konica-Minolta-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Konica-Minolta-Printer"
+        words:
+          - "vlink=\"#000000\" onload=\"location.replace('/wcd/index.html';\" >"
+          - "<meta http-equiv=\"refresh\" content=\"0; url=/wcd/js_error.xml\">"
+          - "<langno>en</langno> </mfp>"
+        condition: and

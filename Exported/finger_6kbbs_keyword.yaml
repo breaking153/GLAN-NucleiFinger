@@ -1,0 +1,33 @@
+id: 6kbbs_keyword
+info:
+  name: 6kbbs_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "6kbbs"
+        words:
+          - "powered by 6kbbs"
+          - "generator\" content=\"6kbbs"
+        condition: and
+      - type: word
+        part: body
+        name: "6kbbs"
+        words:
+          - "Powered by 6kbbs"
+        condition: and
+      - type: word
+        part: body
+        name: "6kbbs"
+        words:
+          - "generator\" content=\"6KBBS"
+        condition: and

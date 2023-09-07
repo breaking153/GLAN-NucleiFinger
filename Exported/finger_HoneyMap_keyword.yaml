@@ -1,0 +1,20 @@
+id: HoneyMap_keyword
+info:
+  name: HoneyMap_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HoneyMap"
+        words:
+          - "HoneyMap"
+        condition: and

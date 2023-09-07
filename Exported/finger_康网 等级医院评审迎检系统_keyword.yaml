@@ -1,0 +1,20 @@
+id: kang_wang_deng_ji_yi_yuan_ping_shen_ying_jian_xi_tong_keyword
+info:
+  name: 康网 等级医院评审迎检系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "康网 等级医院评审迎检系统"
+        words:
+          - "康网 等级医院评审迎检系统"
+        condition: and

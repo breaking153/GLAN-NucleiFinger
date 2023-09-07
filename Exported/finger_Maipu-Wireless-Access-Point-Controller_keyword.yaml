@@ -1,0 +1,20 @@
+id: Maipu_Wireless_Access_Point_Controller_keyword
+info:
+  name: Maipu-Wireless-Access-Point-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Maipu-Wireless-Access-Point-Controller"
+        words:
+          - "js/localil8n.js"
+        condition: and

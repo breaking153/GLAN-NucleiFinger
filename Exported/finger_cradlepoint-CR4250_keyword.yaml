@@ -1,0 +1,21 @@
+id: cradlepoint_CR4250_keyword
+info:
+  name: cradlepoint-CR4250_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-CR4250"
+        words:
+          - "cplogin.model = \"cr4250-poe\";"
+          - "cplogin.model = \"cr4250\";"
+        condition: and

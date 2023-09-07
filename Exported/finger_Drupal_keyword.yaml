@@ -1,0 +1,26 @@
+id: Drupal_keyword
+info:
+  name: Drupal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Drupal"
+        words:
+          - "drupal"
+        condition: and
+      - type: word
+        part: header
+        name: "Drupal"
+        words:
+          - "X-Generator:Drupal"
+        condition: and

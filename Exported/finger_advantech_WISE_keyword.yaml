@@ -1,0 +1,20 @@
+id: advantech_WISE_keyword
+info:
+  name: advantech_WISE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "advantech_WISE"
+        words:
+          - "remote manage your intelligent systems"
+        condition: and

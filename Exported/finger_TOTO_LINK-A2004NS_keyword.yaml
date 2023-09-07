@@ -1,0 +1,22 @@
+id: TOTO_LINK_A2004NS_keyword
+info:
+  name: TOTO_LINK-A2004NS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOTO_LINK-A2004NS"
+        words:
+          - "src =\"/images2/login_back_za2ns.en.gif"
+          - "totolink a2004ns"
+          - "totolink a2004ns"
+        condition: and

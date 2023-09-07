@@ -1,0 +1,21 @@
+id: ZhongShengSoft_CRM_keyword
+info:
+  name: ZhongShengSoft-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZhongShengSoft-CRM"
+        words:
+          - "clientutil.isff=!clientutil.isie"
+          - "alert(\"餐厅编号不能为空\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Golden_dragon_card_Ecard_website_query_subsystem_keyword
+info:
+  name: Golden-dragon-card-Ecard-website-query-subsystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Golden-dragon-card-Ecard-website-query-subsystem"
+        words:
+          - "location.href=\"homelogin.action"
+        condition: and

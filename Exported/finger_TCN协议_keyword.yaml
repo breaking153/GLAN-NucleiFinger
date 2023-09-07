@@ -1,0 +1,26 @@
+id: TCN_xie_yi_keyword
+info:
+  name: TCN协议_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TCN协议"
+        words:
+          - "Tcn:choice"
+        condition: and
+      - type: word
+        part: header
+        name: "TCN协议"
+        words:
+          - "Tcn:list"
+        condition: and

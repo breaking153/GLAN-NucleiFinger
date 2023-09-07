@@ -1,0 +1,23 @@
+id: VAM_Product_keyword
+info:
+  name: VAM-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VAM-Product"
+        words:
+          - "id=\"mymodallabel\">login vam system"
+          - "powered by virtual airlines manager"
+          - "src=\"js/vam.js\""
+          - "href=\"https://virtualairlinesmanager.net/\">virtual airlines manager"
+        condition: and

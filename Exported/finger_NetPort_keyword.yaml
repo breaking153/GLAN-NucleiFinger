@@ -1,0 +1,21 @@
+id: NetPort_keyword
+info:
+  name: NetPort_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NetPort"
+        words:
+          - "server: netport software"
+          - "power by netport"
+        condition: and

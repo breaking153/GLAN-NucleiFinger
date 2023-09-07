@@ -1,0 +1,20 @@
+id: jin_long_qia_jin_rong_hua_yi_qia_tong_wang_zhan_cha_xun_zi_xi_tong_keyword
+info:
+  name: 金龙卡金融化一卡通网站查询子系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金龙卡金融化一卡通网站查询子系统"
+        words:
+          - "location.href=\"homeLogin.action"
+        condition: and

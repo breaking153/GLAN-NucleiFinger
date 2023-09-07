@@ -1,0 +1,26 @@
+id: ZKEACMS_zhi_ke_CMS_keyword
+info:
+  name: ZKEACMS(纸壳CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZKEACMS(纸壳CMS)"
+        words:
+          - "ZKEACMS"
+        condition: and
+      - type: word
+        part: body
+        name: "ZKEACMS(纸壳CMS)"
+        words:
+          - "纸壳CMS"
+        condition: and

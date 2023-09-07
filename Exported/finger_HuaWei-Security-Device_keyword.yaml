@@ -1,0 +1,21 @@
+id: HuaWei_Security_Device_keyword
+info:
+  name: HuaWei-Security-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-Security-Device"
+        words:
+          - "sweb-internal/resource/"
+          - "sweb-internal/plat/login/login_new.js"
+        condition: and

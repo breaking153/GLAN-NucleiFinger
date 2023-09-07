@@ -1,0 +1,20 @@
+id: gzmwiccard_System_keyword
+info:
+  name: gzmwiccard-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "gzmwiccard-System"
+        words:
+          - "抄表器驱动tp1100m"
+        condition: and

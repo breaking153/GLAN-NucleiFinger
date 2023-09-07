@@ -1,0 +1,20 @@
+id: Monkey_HTTP_Server_keyword
+info:
+  name: Monkey HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Monkey HTTP Server"
+        words:
+          - "Monkey HTTP Server"
+        condition: and

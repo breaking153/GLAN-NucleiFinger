@@ -1,0 +1,21 @@
+id: F5_BIGIP_keyword_1
+info:
+  name: F5-BIGIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "F5-BIGIP"
+        words:
+          - "bigipserver"
+          - "mrhshint="
+        condition: and

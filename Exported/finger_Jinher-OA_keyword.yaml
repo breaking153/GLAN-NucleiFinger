@@ -1,0 +1,26 @@
+id: Jinher_OA_keyword
+info:
+  name: Jinher-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jinher-OA"
+        words:
+          - "Jinher Software"
+          - "<title>金和"
+          - "js/passwordcommon.js"
+          - "js/passwordnew.js"
+          - "jinher network"
+          - "c6/jhsoft.web.login"
+          - "closewindownoask"
+        condition: and

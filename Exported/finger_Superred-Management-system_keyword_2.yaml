@@ -1,0 +1,20 @@
+id: Superred_Management_system_keyword_1
+info:
+  name: Superred-Management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Superred-Management-system"
+        words:
+          - "onceas-webcontainer"
+        condition: and

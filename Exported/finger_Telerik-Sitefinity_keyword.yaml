@@ -1,0 +1,21 @@
+id: Telerik_Sitefinity_keyword
+info:
+  name: Telerik-Sitefinity_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Telerik-Sitefinity"
+        words:
+          - "telerik.web.ui.webresource.axd"
+          - "content=\"sitefinity"
+        condition: and

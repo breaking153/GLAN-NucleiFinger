@@ -1,0 +1,20 @@
+id: moxa_VPort_P06_1MP_M12_IP_Camera_keyword
+info:
+  name: moxa VPort P06-1MP-M12 IP Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "moxa VPort P06-1MP-M12 IP Camera"
+        words:
+          - "moxa VPort P06-1MP-M12 IP Camera"
+        condition: and

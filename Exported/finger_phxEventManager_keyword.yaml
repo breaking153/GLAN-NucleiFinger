@@ -1,0 +1,22 @@
+id: phxEventManager_keyword
+info:
+  name: phxEventManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phxEventManager"
+        words:
+          - "<td><div class=\"minicalmonth"
+          - "src=\"pem-includes/xajax/xajax_js/xajax_core.js"
+          - "powered by phxeventmanager"
+        condition: and

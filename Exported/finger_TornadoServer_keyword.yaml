@@ -1,0 +1,26 @@
+id: TornadoServer_keyword
+info:
+  name: TornadoServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TornadoServer"
+        words:
+          - "server: tornadoserver"
+        condition: and
+      - type: word
+        part: header
+        name: "TornadoServer"
+        words:
+          - "TornadoServer"
+        condition: and

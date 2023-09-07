@@ -1,0 +1,20 @@
+id: AWS_Elemental_Delta_keyword
+info:
+  name: AWS Elemental Delta_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AWS Elemental Delta"
+        words:
+          - "AWS Elemental Delta"
+        condition: and

@@ -1,0 +1,20 @@
+id: ZKTECO_bai_ao_rui_da_an_fang_guan_li_xi_tong_ping_tai_keyword
+info:
+  name: ZKTECO 百傲瑞达安防管理系统平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZKTECO 百傲瑞达安防管理系统平台"
+        words:
+          - "ZKTECO 百傲瑞达安防管理系统平台"
+        condition: and

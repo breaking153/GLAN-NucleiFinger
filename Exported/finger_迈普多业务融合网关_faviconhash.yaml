@@ -1,0 +1,19 @@
+id: mai_pu_duo_ye_wu_rong_he_wang_guan_faviconhash
+info:
+  name: 迈普多业务融合网关_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "迈普多业务融合网关"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1234665500\""
+        condition: or

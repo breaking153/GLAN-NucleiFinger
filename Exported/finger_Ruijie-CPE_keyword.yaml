@@ -1,0 +1,20 @@
+id: Ruijie_CPE_keyword
+info:
+  name: Ruijie-CPE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Ruijie-CPE"
+        words:
+          - "realm=\"ruijie-cpe"
+        condition: and

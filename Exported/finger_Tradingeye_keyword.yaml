@@ -1,0 +1,21 @@
+id: Tradingeye_keyword
+info:
+  name: Tradingeye_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tradingeye"
+        words:
+          - "content=\"dpivision.com ltd\" />"
+          - "id=\"credits\"><a href=\"http://www.tradingeye.com/\">powered by tradingeye</a>"
+        condition: and

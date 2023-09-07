@@ -1,0 +1,20 @@
+id: NETGEAR_FS728TP_keyword
+info:
+  name: NETGEAR-FS728TP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-FS728TP"
+        words:
+          - "class=\"fs728tpimage spacer50percent topalign righthalign\""
+        condition: and

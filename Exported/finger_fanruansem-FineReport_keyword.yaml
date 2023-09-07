@@ -1,0 +1,20 @@
+id: fanruansem_FineReport_keyword
+info:
+  name: fanruansem-FineReport_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "fanruansem-FineReport"
+        words:
+          - "content=\"finereport--web reporting tool\""
+        condition: and

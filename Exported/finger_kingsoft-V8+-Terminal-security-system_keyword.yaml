@@ -1,0 +1,21 @@
+id: kingsoft_V8_Terminal_security_system_keyword
+info:
+  name: kingsoft-V8+-Terminal-security-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "kingsoft-V8+-Terminal-security-system"
+        words:
+          - "class=\"anouncetext\">为了更好的保障企业内网的安全，公司决定从即日起全面部署金山企业安全终端防护优化系统"
+          - "href=\"mobiletools/android/net.ejinshan.avclient.apk"
+        condition: and

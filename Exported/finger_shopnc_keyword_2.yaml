@@ -1,0 +1,32 @@
+id: shopnc_keyword
+info:
+  name: shopnc_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shopnc"
+        words:
+          - "Powered by ShopNC"
+        condition: and
+      - type: word
+        part: body
+        name: "shopnc"
+        words:
+          - "Copyright 2007-2014 ShopNC Inc"
+        condition: and
+      - type: word
+        part: body
+        name: "shopnc"
+        words:
+          - "content=\"ShopNC"
+        condition: and

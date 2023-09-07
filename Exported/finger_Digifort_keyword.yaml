@@ -1,0 +1,25 @@
+id: Digifort_keyword
+info:
+  name: Digifort_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Digifort"
+        words:
+          - "content=\"digifort"
+          - "href=\"http://www.digifort.jp/\"><img src=\"/user_data/packages/digifort_pc/img/common/logo.gif"
+          - "digifort http "
+          - "serveur digifort http"
+          - "digifort http "
+          - "serveur digifort http"
+        condition: and

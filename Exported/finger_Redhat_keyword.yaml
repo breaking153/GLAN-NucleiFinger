@@ -1,0 +1,26 @@
+id: Redhat_keyword
+info:
+  name: Redhat_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Redhat"
+        words:
+          - "Redhat"
+        condition: and
+      - type: word
+        part: header
+        name: "Redhat"
+        words:
+          - "Red Hat"
+        condition: and

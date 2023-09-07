@@ -1,0 +1,26 @@
+id: QNO_Router_keyword_1
+info:
+  name: QNO_Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QNO_Router"
+        words:
+          - "/QNOVirtual_Keyboard.js"
+        condition: and
+      - type: word
+        part: body
+        name: "QNO_Router"
+        words:
+          - "/images/login_img01_03.gif"
+        condition: and

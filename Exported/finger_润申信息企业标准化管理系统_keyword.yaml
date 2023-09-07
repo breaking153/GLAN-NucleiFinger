@@ -1,0 +1,22 @@
+id: run_shen_xin_xi_qi_ye_biao_zhun_hua_guan_li_xi_tong_keyword
+info:
+  name: 润申信息企业标准化管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "润申信息企业标准化管理系统"
+        words:
+          - "润申信息"
+          - "企业标准化管理系统"
+          - "loginForm"
+        condition: and

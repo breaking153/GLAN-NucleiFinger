@@ -1,0 +1,21 @@
+id: JianHengXinAn_JH_LAS_keyword
+info:
+  name: JianHengXinAn-JH-LAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JianHengXinAn-JH-LAS"
+        words:
+          - "jh-la3600"
+          - "建恒信安日志审计系统"
+        condition: and

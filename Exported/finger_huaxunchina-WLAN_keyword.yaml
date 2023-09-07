@@ -1,0 +1,21 @@
+id: huaxunchina_WLAN_keyword
+info:
+  name: huaxunchina-WLAN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "huaxunchina-WLAN"
+        words:
+          - "var url=\"resetwebsvr.php?act=reset\";"
+          - "华讯方舟 - 集中无线控制器"
+        condition: and

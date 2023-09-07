@@ -1,0 +1,20 @@
+id: MontaVista_linux_keyword
+info:
+  name: MontaVista linux_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MontaVista linux"
+        words:
+          - "MontaVista"
+        condition: and

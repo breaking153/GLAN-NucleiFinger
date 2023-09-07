@@ -1,0 +1,36 @@
+id: DedeCMS_keyword
+info:
+  name: DedeCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DedeCMS"
+        words:
+          - "power by dedecms"
+          - "http://www.dedecms.com/"
+          - "dedecms"
+          - "/templets/default/style/dedecms.css"
+          - "<div><h3>dedecms error warning!</h3>"
+        condition: and
+      - type: word
+        part: body
+        name: "DedeCMS"
+        words:
+          - "Power by DedeCms"
+        condition: and
+      - type: word
+        part: body
+        name: "DedeCMS"
+        words:
+          - "DedeCMS"
+        condition: and

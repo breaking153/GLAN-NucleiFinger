@@ -1,0 +1,23 @@
+id: SONY_LIV_keyword
+info:
+  name: SONY-LIV_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SONY-LIV"
+        words:
+          - "http://sonyliv.com/asset/socialsharelogo"
+          - "<meta name=\"author\" content=\"sony pictures networks india pvt. ltd\">"
+          - "<meta name=\"twitter:image\" content=\"http://sonyliv.com/asset/socialsharelogo\"/>"
+          - "content=\"sony liv"
+        condition: and

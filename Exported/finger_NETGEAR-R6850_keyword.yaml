@@ -1,0 +1,21 @@
+id: NETGEAR_R6850_keyword
+info:
+  name: NETGEAR-R6850_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR-R6850"
+        words:
+          - "realm=\"netgear netgear r6850"
+          - "realm=\"netgear r6850"
+        condition: and

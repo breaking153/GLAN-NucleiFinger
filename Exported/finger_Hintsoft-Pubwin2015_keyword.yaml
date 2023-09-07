@@ -1,0 +1,20 @@
+id: Hintsoft_Pubwin2015_keyword
+info:
+  name: Hintsoft-Pubwin2015_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hintsoft-Pubwin2015"
+        words:
+          - "images/newlogin_01.jpg"
+        condition: and

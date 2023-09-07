@@ -1,0 +1,20 @@
+id: Hitachi_Storage_Navigator_keyword
+info:
+  name: Hitachi-Storage-Navigator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hitachi-Storage-Navigator"
+        words:
+          - "<form method=\"post\" action=\"./index.do\" name=\"frm\" />"
+        condition: and

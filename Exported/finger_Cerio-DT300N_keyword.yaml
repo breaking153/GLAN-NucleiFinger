@@ -1,0 +1,20 @@
+id: Cerio_DT300N_keyword
+info:
+  name: Cerio-DT300N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cerio-DT300N"
+        words:
+          - "copyright &copy; 2012 cerio. all rights reserved"
+        condition: and

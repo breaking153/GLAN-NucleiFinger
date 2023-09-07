@@ -1,0 +1,21 @@
+id: phpMyRealty_keyword
+info:
+  name: phpMyRealty_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpMyRealty"
+        words:
+          - "<!-- main content table : stop -->"
+          - "powered by <a href=\"http://www.phpmyrealty.com"
+        condition: and

@@ -1,0 +1,20 @@
+id: SmartCityConstructionProjectManagementSystem_keyword
+info:
+  name: SmartCityConstructionProjectManagementSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SmartCityConstructionProjectManagementSystem"
+        words:
+          - "id=\"sitenametitle\">智慧城建项目管理系统</p"
+        condition: and

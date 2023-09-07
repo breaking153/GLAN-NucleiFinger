@@ -1,0 +1,32 @@
+id: Camera_keyword
+info:
+  name: Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Camera"
+        words:
+          - "href=\"/doc/css/rzslider.css\""
+        condition: and
+      - type: word
+        part: body
+        name: "Camera"
+        words:
+          - "/videostream.cgi?loginuse="
+        condition: and
+      - type: word
+        part: body
+        name: "Camera"
+        words:
+          - "北京中盾安全技术开发公司"
+        condition: and

@@ -1,0 +1,20 @@
+id: yuge_telemedicine_keyword
+info:
+  name: yuge-telemedicine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yuge-telemedicine"
+        words:
+          - "渔歌医疗远程影响诊疗系统"
+        condition: and

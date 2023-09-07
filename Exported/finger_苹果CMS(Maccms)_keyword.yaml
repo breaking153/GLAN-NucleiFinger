@@ -1,0 +1,26 @@
+id: ping_guo_CMS_Maccms_keyword
+info:
+  name: 苹果CMS(Maccms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "苹果CMS(Maccms)"
+        words:
+          - "Maccms"
+        condition: and
+      - type: word
+        part: body
+        name: "苹果CMS(Maccms)"
+        words:
+          - "maccms.com"
+        condition: and

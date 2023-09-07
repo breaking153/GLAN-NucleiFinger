@@ -1,0 +1,32 @@
+id: Kerio_Connect_keyword
+info:
+  name: Kerio-Connect_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kerio-Connect"
+        words:
+          - "server: kerio connect"
+        condition: and
+      - type: word
+        part: header
+        name: "Kerio-Connect"
+        words:
+          - "Kerio Connect"
+        condition: and
+      - type: word
+        part: header
+        name: "Kerio-Connect"
+        words:
+          - "Kerio MailServer"
+        condition: and

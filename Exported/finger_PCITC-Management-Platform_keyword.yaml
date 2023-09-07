@@ -1,0 +1,20 @@
+id: PCITC_Management_Platform_keyword
+info:
+  name: PCITC-Management-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PCITC-Management-Platform"
+        words:
+          - "window.open(\"http://itmc.mmsh.sinopec.com/itgk/sysmgr/productregister/yunweiproregister.view\"; }  "
+        condition: and

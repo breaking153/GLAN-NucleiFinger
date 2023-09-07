@@ -1,0 +1,20 @@
+id: Linksys_Muenster_keyword
+info:
+  name: Linksys-Muenster_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys-Muenster"
+        words:
+          - "Linksys-Muenster"
+        condition: and

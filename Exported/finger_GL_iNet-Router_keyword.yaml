@@ -1,0 +1,20 @@
+id: GL_iNet_Router_keyword
+info:
+  name: GL_iNet-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GL_iNet-Router"
+        words:
+          - "/cgi-bin/login_cgi?action=checklogin"
+        condition: and

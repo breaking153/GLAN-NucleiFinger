@@ -1,0 +1,20 @@
+id: EnableQ_zai_xian_wen_juan_diao_cha_yin_qing_keyword
+info:
+  name: EnableQ在线问卷调查引擎_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EnableQ在线问卷调查引擎"
+        words:
+          - "/enableq.css"
+        condition: and

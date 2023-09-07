@@ -1,0 +1,20 @@
+id: Thinker_IntelligentGateway_keyword
+info:
+  name: Thinker-IntelligentGateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Thinker-IntelligentGateway"
+        words:
+          - "智能网关系统<br>"
+        condition: and

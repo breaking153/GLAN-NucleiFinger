@@ -1,0 +1,20 @@
+id: uniview_VM2500_keyword
+info:
+  name: uniview-VM2500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "uniview-VM2500"
+        words:
+          - "软件版本：  vm2500"
+        condition: and

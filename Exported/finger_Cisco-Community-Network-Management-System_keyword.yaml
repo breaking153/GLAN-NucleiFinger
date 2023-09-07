@@ -1,0 +1,20 @@
+id: Cisco_Community_Network_Management_System_keyword
+info:
+  name: Cisco-Community-Network-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco-Community-Network-Management-System"
+        words:
+          - "cisco小区网络管理系统"
+        condition: and

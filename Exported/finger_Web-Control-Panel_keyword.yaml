@@ -1,0 +1,20 @@
+id: Web_Control_Panel_keyword
+info:
+  name: Web-Control-Panel_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Web-Control-Panel"
+        words:
+          - "<td><img src=\"/images/wcpe.gif"
+        condition: and

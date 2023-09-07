@@ -1,0 +1,20 @@
+id: Oracle_Access_Manager_keyword
+info:
+  name: Oracle-Access-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Oracle-Access-Manager"
+        words:
+          - "footerversion\">oracle access manager version"
+        condition: and

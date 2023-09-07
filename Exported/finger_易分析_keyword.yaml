@@ -1,0 +1,20 @@
+id: yi_fen_xi_keyword
+info:
+  name: 易分析_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "易分析"
+        words:
+          - "PHPStat Analytics 网站数据分析系统"
+        condition: and

@@ -1,0 +1,20 @@
+id: AirLink_WL_2600CAM_keyword
+info:
+  name: AirLink-WL-2600CAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AirLink-WL-2600CAM"
+        words:
+          - "realm=\"wl-2600cam"
+        condition: and

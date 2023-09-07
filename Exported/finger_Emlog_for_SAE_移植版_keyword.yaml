@@ -1,0 +1,20 @@
+id: Emlog_for_SAE_yi_zhi_ban_keyword
+info:
+  name: Emlog_for_SAE_移植版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Emlog_for_SAE_移植版"
+        words:
+          - "content=\"emlog\""
+        condition: and

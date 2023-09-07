@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_WA701N_keyword
+info:
+  name: TP-LINK Wireless WA701N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless WA701N"
+        words:
+          - "TP-LINK Wireless WA701N"
+        condition: and

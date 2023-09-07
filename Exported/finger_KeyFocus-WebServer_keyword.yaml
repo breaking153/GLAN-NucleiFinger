@@ -1,0 +1,26 @@
+id: KeyFocus_WebServer_keyword
+info:
+  name: KeyFocus-WebServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "KeyFocus-WebServer"
+        words:
+          - "server: kfwebserver"
+        condition: and
+      - type: word
+        part: header
+        name: "KeyFocus-WebServer"
+        words:
+          - "KFWebServer"
+        condition: and

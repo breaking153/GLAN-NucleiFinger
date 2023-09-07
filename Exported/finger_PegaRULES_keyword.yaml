@@ -1,0 +1,21 @@
+id: PegaRULES_keyword
+info:
+  name: PegaRULES_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PegaRULES"
+        words:
+          - "unable to logon to the pegarules system"
+          - "href=\"images/pzpegaicon.ico"
+        condition: and

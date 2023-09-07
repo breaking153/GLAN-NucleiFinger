@@ -1,0 +1,20 @@
+id: cradlepoint_AER1600_keyword
+info:
+  name: cradlepoint-AER1600_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-AER1600"
+        words:
+          - "cplogin.model = \"aer1600\""
+        condition: and

@@ -1,0 +1,20 @@
+id: ZTE_IX350_keyword
+info:
+  name: ZTE-IX350_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-IX350"
+        words:
+          - "welcome to zte ix350</span>"
+        condition: and

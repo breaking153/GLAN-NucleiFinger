@@ -1,0 +1,39 @@
+id: PHPMyWind_keyword
+info:
+  name: PHPMyWind_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHPMyWind"
+        words:
+          - "phpmywind.com all rights reserved"
+          - "content=\"phpmywind"
+        condition: and
+      - type: word
+        part: body
+        name: "PHPMyWind"
+        words:
+          - "phpMyWind.com All Rights Reserved"
+        condition: and
+      - type: word
+        part: body
+        name: "PHPMyWind"
+        words:
+          - "content=\"PHPMyWind"
+        condition: and
+      - type: word
+        part: body
+        name: "PHPMyWind"
+        words:
+          - "PHPMyWind"
+        condition: and

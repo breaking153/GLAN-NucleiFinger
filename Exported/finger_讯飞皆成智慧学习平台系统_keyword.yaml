@@ -1,0 +1,20 @@
+id: xun_fei_jie_cheng_zhi_hui_xue_xi_ping_tai_xi_tong_keyword
+info:
+  name: 讯飞皆成智慧学习平台系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "讯飞皆成智慧学习平台系统"
+        words:
+          - "讯飞皆成智慧学习平台系统"
+        condition: and

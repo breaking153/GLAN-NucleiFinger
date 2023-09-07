@@ -1,0 +1,21 @@
+id: NETGEAR_DGND3700_keyword
+info:
+  name: NETGEAR-DGND3700_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-DGND3700"
+        words:
+          - "var host_name=\"dgnd3700\""
+          - "content=\"dgnd3700"
+        condition: and

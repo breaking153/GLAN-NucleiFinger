@@ -1,0 +1,20 @@
+id: Rising_Antivirus_Online_keyword
+info:
+  name: Rising-Antivirus-Online_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Rising-Antivirus-Online"
+        words:
+          - "src=\"ravweb_files/"
+        condition: and

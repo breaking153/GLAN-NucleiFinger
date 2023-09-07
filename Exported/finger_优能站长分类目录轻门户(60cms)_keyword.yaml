@@ -1,0 +1,26 @@
+id: you_neng_zhan_chang_fen_lei_mu_lu_qing_men_hu_60cms_keyword
+info:
+  name: 优能站长分类目录轻门户(60cms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "优能站长分类目录轻门户(60cms)"
+        words:
+          - "优能站长分类目录轻门户"
+        condition: and
+      - type: word
+        part: body
+        name: "优能站长分类目录轻门户(60cms)"
+        words:
+          - "60cms"
+        condition: and

@@ -1,0 +1,20 @@
+id: TP_Link_TL_WR741N_keyword
+info:
+  name: TP-Link TL-WR741N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-Link TL-WR741N"
+        words:
+          - "TP-Link TL-WR741N"
+        condition: and

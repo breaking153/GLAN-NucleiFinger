@@ -1,0 +1,20 @@
+id: mikrotik_router_keyword
+info:
+  name: mikrotik_router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mikrotik_router"
+        words:
+          - "mikrotik"
+        condition: and

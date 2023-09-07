@@ -1,0 +1,26 @@
+id: weiphp_wei_xin_gong_zhong_ping_tai_kuang_jia_keyword
+info:
+  name: weiphp微信公众平台框架_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "weiphp微信公众平台框架"
+        words:
+          - "content=\"WeiPHP"
+        condition: and
+      - type: word
+        part: body
+        name: "weiphp微信公众平台框架"
+        words:
+          - "/css/weiphp.css"
+        condition: and

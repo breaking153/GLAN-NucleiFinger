@@ -1,0 +1,20 @@
+id: McAfee_Web_Gateway_keyword
+info:
+  name: McAfee-Web-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "McAfee-Web-Gateway"
+        words:
+          - "mcafee web gateway"
+        condition: and

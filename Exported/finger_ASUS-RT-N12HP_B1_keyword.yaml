@@ -1,0 +1,21 @@
+id: ASUS_RT_N12HP_B1_keyword
+info:
+  name: ASUS-RT-N12HP_B1_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-RT-N12HP_B1"
+        words:
+          - "<div class=\"prod_madelname\">rt-n12hp_b1"
+          - "class=\"prod_madelname\" style=\"margin-left:78px;\">rt-n12hp_b1"
+        condition: and

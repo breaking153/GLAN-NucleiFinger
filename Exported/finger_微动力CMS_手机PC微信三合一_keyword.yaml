@@ -1,0 +1,20 @@
+id: wei_dong_li_CMS_shou_ji_PC_wei_xin_san_he_yi_keyword
+info:
+  name: 微动力CMS_手机PC微信三合一_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "微动力CMS_手机PC微信三合一"
+        words:
+          - "微动力CMS_手机PC微信三合一"
+        condition: and

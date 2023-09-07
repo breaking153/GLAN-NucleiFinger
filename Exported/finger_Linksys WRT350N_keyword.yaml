@@ -1,0 +1,20 @@
+id: Linksys_WRT350N_keyword
+info:
+  name: Linksys WRT350N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys WRT350N"
+        words:
+          - "Linksys WRT350N"
+        condition: and

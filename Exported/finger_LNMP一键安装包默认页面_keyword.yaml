@@ -1,0 +1,19 @@
+id: LNMP_yi_jian_an_zhuang_bao_mo_ren_ye_mian_keyword
+info:
+  name: LNMP一键安装包默认页面_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LNMP一键安装包默认页面"
+        words:
+          - "<title>LNMP一键安装包"

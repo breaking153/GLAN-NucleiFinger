@@ -1,0 +1,21 @@
+id: PiAware_Info_keyword
+info:
+  name: PiAware-Info_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PiAware-Info"
+        words:
+          - "piaware status"
+          - "<%= t('this is a piaware ads-b feeder' %>."
+        condition: and

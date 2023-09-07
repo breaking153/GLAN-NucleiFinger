@@ -1,0 +1,20 @@
+id: Section_io_keyword
+info:
+  name: Section.io_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Section.io"
+        words:
+          - "Section.io"
+        condition: and

@@ -1,0 +1,22 @@
+id: shenri_elevator_keyword
+info:
+  name: shenri-elevator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shenri-elevator"
+        words:
+          - "/frameworks/images/ico.ico"
+          - "images/login/btnmobile.gif"
+          - "copyright 2015 shenri habiliment co.,ltd. all rights reserved"
+        condition: and

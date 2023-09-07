@@ -1,0 +1,20 @@
+id: dayrui_xi_lie_chan_pin_keyword
+info:
+  name: dayrui系列产品_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "dayrui系列产品"
+        words:
+          - "dayrui/statics"
+        condition: and

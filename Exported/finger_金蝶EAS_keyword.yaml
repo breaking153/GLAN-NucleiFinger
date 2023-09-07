@@ -1,0 +1,26 @@
+id: jin_die_EAS_keyword_1
+info:
+  name: 金蝶EAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金蝶EAS"
+        words:
+          - "EAS系统登录"
+        condition: and
+      - type: word
+        part: body
+        name: "金蝶EAS"
+        words:
+          - "easSessionId"
+        condition: and

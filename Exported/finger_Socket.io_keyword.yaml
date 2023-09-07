@@ -1,0 +1,20 @@
+id: Socket_io_keyword
+info:
+  name: Socket.io_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Socket.io"
+        words:
+          - "Socket.io"
+        condition: and

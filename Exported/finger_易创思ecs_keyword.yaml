@@ -1,0 +1,20 @@
+id: yi_chuang_si_ecs_keyword
+info:
+  name: 易创思ecs_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "易创思ecs"
+        words:
+          - "易创思ecs"
+        condition: and

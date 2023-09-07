@@ -1,0 +1,20 @@
+id: Yonyou_ERP_NC_keyword
+info:
+  name: Yonyou-ERP-NC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yonyou-ERP-NC"
+        words:
+          - "/nc/servlet/nc.ui.iufo.login.index"
+        condition: and

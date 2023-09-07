@@ -1,0 +1,21 @@
+id: ULTIMUS_BPM_keyword
+info:
+  name: ULTIMUS-BPM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ULTIMUS-BPM"
+        words:
+          - "content=\"ultimus bpm"
+          - "class=\"toptitle\">bpm"
+        condition: and

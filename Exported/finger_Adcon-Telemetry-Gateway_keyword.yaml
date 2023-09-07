@@ -1,0 +1,21 @@
+id: Adcon_Telemetry_Gateway_keyword
+info:
+  name: Adcon-Telemetry-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Adcon-Telemetry-Gateway"
+        words:
+          - "adcon telemetry gmbh;"
+          - "welcome to the a840 telemetry gateway!"
+        condition: and

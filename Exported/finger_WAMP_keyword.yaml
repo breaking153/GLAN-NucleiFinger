@@ -1,0 +1,22 @@
+id: WAMP_keyword
+info:
+  name: WAMP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WAMP"
+        words:
+          - "<li><a href=\"phpsysinfo/\">phpsysinfo</a></li>"
+          - "title and h1 heading"
+          - "<h1><abbr title=\"windows\">w</abbr><abbr title=\"apache\">a</abbr><abbr title=\"mysql\">m</abbr><abbr title=\"php\">p</abbr></h1>"
+        condition: and

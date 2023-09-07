@@ -1,0 +1,20 @@
+id: SES_imagotag_keyword
+info:
+  name: SES-imagotag_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SES-imagotag"
+        words:
+          - "href=\"/xsl/accesspoint.xsl\""
+        condition: and

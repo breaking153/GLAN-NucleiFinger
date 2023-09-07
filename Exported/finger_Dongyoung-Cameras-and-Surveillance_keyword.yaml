@@ -1,0 +1,21 @@
+id: Dongyoung_Cameras_and_Surveillance_keyword
+info:
+  name: Dongyoung-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dongyoung-Cameras-and-Surveillance"
+        words:
+          - "<iframe id='login' name='login' src='/cgi-bin/login' frameborder"
+          - "<body bgcolor=\"#e6e6e6\" "
+        condition: and

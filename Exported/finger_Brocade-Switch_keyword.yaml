@@ -1,0 +1,21 @@
+id: Brocade_Switch_keyword
+info:
+  name: Brocade-Switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Brocade-Switch"
+        words:
+          - "originalurl=\"/switchexplorer.html\""
+          - "com.brocade.web.secsan.loginapplet"
+        condition: and

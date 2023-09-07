@@ -1,0 +1,20 @@
+id: jin_pan_fei_shu_zi_liao_guan_li_xi_tong_keyword
+info:
+  name: 金盘非书资料管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "金盘非书资料管理系统"
+        words:
+          - "金盘非书资料管理系统"
+        condition: and

@@ -1,0 +1,26 @@
+id: yi_you_CMS_EyouCms_keyword
+info:
+  name: 易优CMS(EyouCms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "易优CMS(EyouCms)"
+        words:
+          - "易优CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "易优CMS(EyouCms)"
+        words:
+          - "EyouCms"
+        condition: and

@@ -1,0 +1,20 @@
+id: ZEBRA_105SLPlus_300dpi_ZPL_keyword
+info:
+  name: ZEBRA-105SLPlus-300dpi-ZPL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZEBRA-105SLPlus-300dpi-ZPL"
+        words:
+          - "ztc 105slplus-300dpi zpl</h1>"
+        condition: and

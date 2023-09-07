@@ -1,0 +1,26 @@
+id: 25yi_keyword
+info:
+  name: 25yi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "25yi"
+        words:
+          - "Powered by 25yi"
+        condition: and
+      - type: word
+        part: body
+        name: "25yi"
+        words:
+          - "css/25yi.css"
+        condition: and

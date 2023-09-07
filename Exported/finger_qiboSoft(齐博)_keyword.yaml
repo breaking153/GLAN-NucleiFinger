@@ -1,0 +1,20 @@
+id: qiboSoft_qi_bo_keyword
+info:
+  name: qiboSoft(齐博)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "qiboSoft(齐博)"
+        words:
+          - "qiboSoft"
+        condition: and

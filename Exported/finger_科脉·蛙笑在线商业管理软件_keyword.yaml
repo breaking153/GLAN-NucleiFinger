@@ -1,0 +1,22 @@
+id: ke_mai_wa_xiao_zai_xian_shang_ye_guan_li_ruan_jian_keyword
+info:
+  name: 科脉·蛙笑在线商业管理软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "科脉·蛙笑在线商业管理软件"
+        words:
+          - "Kemai"
+          - "Login.aspx"
+          - "科脉"
+        condition: and

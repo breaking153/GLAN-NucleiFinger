@@ -1,0 +1,20 @@
+id: Zoom_Search_Engine_keyword
+info:
+  name: Zoom-Search-Engine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zoom-Search-Engine"
+        words:
+          - "name=\"zoom_query\""
+        condition: and

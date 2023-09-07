@@ -1,0 +1,20 @@
+id: qi_ming_tian_yue_wang_luo_an_quan_shen_ji_xi_tong_keyword
+info:
+  name: 启明天玥网络安全审计系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "启明天玥网络安全审计系统"
+        words:
+          - "启明天玥网络安全审计系统"
+        condition: and

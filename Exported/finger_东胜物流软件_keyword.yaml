@@ -1,0 +1,21 @@
+id: dong_sheng_wu_liu_ruan_jian_keyword
+info:
+  name: 东胜物流软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "东胜物流软件"
+        words:
+          - "js/dhtmlxcombo_whp.js"
+          - "login.aspx"
+        condition: and

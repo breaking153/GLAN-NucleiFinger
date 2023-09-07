@@ -1,0 +1,20 @@
+id: D_Link_DSL_2640T_keyword
+info:
+  name: D_Link-DSL-2640T_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D_Link-DSL-2640T"
+        words:
+          - "realm=\"dsl-2640t"
+        condition: and

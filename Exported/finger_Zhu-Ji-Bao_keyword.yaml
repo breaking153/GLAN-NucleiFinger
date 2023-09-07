@@ -1,0 +1,21 @@
+id: Zhu_Ji_Bao_keyword
+info:
+  name: Zhu-Ji-Bao_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zhu-Ji-Bao"
+        words:
+          - "您访问的是主机宝服务器默认页"
+          - "<a href=\"http://z.admin5.com/\" target="
+        condition: and

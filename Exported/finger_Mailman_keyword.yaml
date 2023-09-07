@@ -1,0 +1,22 @@
+id: Mailman_keyword
+info:
+  name: Mailman_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mailman"
+        words:
+          - "delivered by mailman"
+          - "/images/mailman"
+          - "href=\"http://www.gnu.org/software/mailman/index.html"
+        condition: and

@@ -1,0 +1,26 @@
+id: hanweb_keyword
+info:
+  name: hanweb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hanweb"
+        words:
+          - "Use the correct document accordingly"
+        condition: and
+      - type: word
+        part: body
+        name: "hanweb"
+        words:
+          - "BORDER-RIGHT: #e6e6e6"
+        condition: and

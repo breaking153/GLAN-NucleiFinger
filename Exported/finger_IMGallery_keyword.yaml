@@ -1,0 +1,26 @@
+id: IMGallery_keyword
+info:
+  name: IMGallery_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IMGallery"
+        words:
+          - "href=\"http://www.imgallery.zor.pl\"><b>imgallery"
+        condition: and
+      - type: word
+        part: body
+        name: "IMGallery"
+        words:
+          - "href=\"http://www.imgallery.zor.pl\"><b>IMGallery"
+        condition: and

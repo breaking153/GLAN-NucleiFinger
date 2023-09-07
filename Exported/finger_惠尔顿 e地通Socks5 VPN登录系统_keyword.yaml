@@ -1,0 +1,20 @@
+id: hui_er_dun_e_di_tong_Socks5_VPN_deng_lu_xi_tong_keyword
+info:
+  name: 惠尔顿 e地通Socks5 VPN登录系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "惠尔顿 e地通Socks5 VPN登录系统"
+        words:
+          - "惠尔顿 e地通Socks5 VPN登录系统"
+        condition: and

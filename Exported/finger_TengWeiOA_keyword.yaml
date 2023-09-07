@@ -1,0 +1,21 @@
+id: TengWeiOA_keyword
+info:
+  name: TengWeiOA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TengWeiOA"
+        words:
+          - "/_common/scripts/global.js"
+          - "/valcode.aspx"
+        condition: and

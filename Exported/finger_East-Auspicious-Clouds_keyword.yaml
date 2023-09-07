@@ -1,0 +1,20 @@
+id: East_Auspicious_Clouds_keyword
+info:
+  name: East-Auspicious-Clouds_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "East-Auspicious-Clouds"
+        words:
+          - "<p>版权所有：贵州东方世纪科技股份有限公司"
+        condition: and

@@ -1,0 +1,21 @@
+id: ipTIME_EW302N_keyword
+info:
+  name: ipTIME-EW302N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-EW302N"
+        words:
+          - "src=\"/images2/login_title.ew302.gif\""
+          - "src=\"/images2/login_title.ew302nr.gif\""
+        condition: and

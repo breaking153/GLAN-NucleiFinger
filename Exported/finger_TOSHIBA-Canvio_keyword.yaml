@@ -1,0 +1,20 @@
+id: TOSHIBA_Canvio_keyword
+info:
+  name: TOSHIBA-Canvio_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOSHIBA-Canvio"
+        words:
+          - "welcome to silverstore 2-drive nas"
+        condition: and

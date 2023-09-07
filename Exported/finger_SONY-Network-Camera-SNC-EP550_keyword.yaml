@@ -1,0 +1,20 @@
+id: SONY_Network_Camera_SNC_EP550_keyword
+info:
+  name: SONY-Network-Camera-SNC-EP550_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SONY-Network-Camera-SNC-EP550"
+        words:
+          - "realm=\"sony network camera snc-ep550"
+        condition: and

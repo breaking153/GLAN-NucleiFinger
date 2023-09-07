@@ -1,0 +1,22 @@
+id: Weatimages_keyword
+info:
+  name: Weatimages_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Weatimages"
+        words:
+          - "<a href=\"http://nazarkin.name/projects/weatimages"
+          - "<meta name=\"generator\" content=\"weatimages\"/>"
+          - "<div align=\"center\" class=\"weatimages_toppest_navig\" style=\"text-decoration:underline;\">"
+        condition: and

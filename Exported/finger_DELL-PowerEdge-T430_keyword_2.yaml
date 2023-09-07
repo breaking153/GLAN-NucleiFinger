@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_T430_keyword_1
+info:
+  name: DELL-PowerEdge-T430_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DELL-PowerEdge-T430"
+        words:
+          - "poweredge-t430"
+        condition: and

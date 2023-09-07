@@ -1,0 +1,20 @@
+id: MeetingPlaza_keyword_1
+info:
+  name: MeetingPlaza_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MeetingPlaza"
+        words:
+          - "interspace http tunneling"
+        condition: and

@@ -1,0 +1,20 @@
+id: wan_hu_wang_luo_ezEIP4_0_keyword
+info:
+  name: 万户网络ezEIP4.0_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "万户网络ezEIP4.0"
+        words:
+          - "css/css_whir.css"
+        condition: and

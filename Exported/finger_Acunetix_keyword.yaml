@@ -1,0 +1,23 @@
+id: Acunetix_keyword
+info:
+  name: Acunetix_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Acunetix"
+        words:
+          - "acunetix-logo-full-new-black.svg"
+          - "title>Acunetix</title>"
+          - "<acx-root></acx-root>"
+          - "<html ng-app=\"WVS\""
+        condition: and

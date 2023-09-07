@@ -1,0 +1,27 @@
+id: Kafka_Manager_keyword_1
+info:
+  name: Kafka-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kafka-Manager"
+        words:
+          - "kafka admin"
+          - "kafka-manager"
+        condition: and
+      - type: word
+        part: header
+        name: "Kafka-Manager"
+        words:
+          - "Kafka-Manager"
+        condition: and

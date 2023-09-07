@@ -1,0 +1,21 @@
+id: Landray_EIS_Smart_collaboration_platform_keyword
+info:
+  name: Landray-EIS-Smart-collaboration-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Landray-EIS-Smart-collaboration-platform"
+        words:
+          - "/scripts/jquery.landray.common.js"
+          - "v11_qrcodebar clr"
+        condition: and

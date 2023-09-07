@@ -1,0 +1,22 @@
+id: Fastjson_keyword
+info:
+  name: Fastjson_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Fastjson"
+        words:
+          - "js/base/fastjson"
+          - "var json = json.parse"
+          - "nested exception is com.alibaba.fastjson.JSONException: unclosed string"
+        condition: and

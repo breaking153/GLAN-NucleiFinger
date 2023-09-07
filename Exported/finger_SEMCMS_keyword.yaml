@@ -1,0 +1,23 @@
+id: SEMCMS_keyword
+info:
+  name: SEMCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SEMCMS"
+        words:
+          - "sc_mid_c_left_c sc_mid_left_bt"
+          - "semcms php 3.9"
+          - "<b semcms php 2.9</b>"
+          - "powered by <a href=\"http://www.sem-cms.com\""
+        condition: and

@@ -1,0 +1,20 @@
+id: MULTILASER_Roteador_Wireless_N300_keyword
+info:
+  name: MULTILASER-Roteador-Wireless-N300_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MULTILASER-Roteador-Wireless-N300"
+        words:
+          - "rel=\"shortcut icon\" href=\"./multi_icone.ico\""
+        condition: and

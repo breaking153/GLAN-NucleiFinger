@@ -1,0 +1,22 @@
+id: dong_ying_jin_shi_ruan_jian_keyword
+info:
+  name: 东营金石软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "东营金石软件"
+        words:
+          - "aspNetHidden"
+          - "loginselect"
+          - "txtLoginName"
+        condition: and

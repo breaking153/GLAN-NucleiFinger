@@ -1,0 +1,21 @@
+id: Django_keyword
+info:
+  name: Django_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Django"
+        words:
+          - "__admin_media_prefix__"
+          - "csrfmiddlewaretoken"
+        condition: and

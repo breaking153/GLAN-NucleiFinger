@@ -1,0 +1,19 @@
+id: iDS_lian_wang_shu_zi_biao_pai_guan_li_xi_tong_keyword
+info:
+  name: iDS联网数字标牌管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iDS联网数字标牌管理系统"
+        words:
+          - "<title>iDS联网数字标牌管理系统"

@@ -1,0 +1,20 @@
+id: ECash_System_keyword
+info:
+  name: ECash-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ECash-System"
+        words:
+          - "<br>欢迎使用e-cash系统"
+        condition: and

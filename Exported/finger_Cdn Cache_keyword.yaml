@@ -1,0 +1,20 @@
+id: Cdn_Cache_keyword
+info:
+  name: Cdn Cache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cdn Cache"
+        words:
+          - "Cdn Cache"
+        condition: and

@@ -1,0 +1,21 @@
+id: Hadoop_Hue_keyword
+info:
+  name: Hadoop-Hue_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hadoop-Hue"
+        words:
+          - "jhuehdfstreeglobals"
+          - "hue and the hue logo are trademarks of cloudera, inc."
+        condition: and

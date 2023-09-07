@@ -1,0 +1,20 @@
+id: NETGEAR_CG3700EMR_1CMNDS_keyword
+info:
+  name: NETGEAR CG3700EMR-1CMNDS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR CG3700EMR-1CMNDS"
+        words:
+          - "NETGEAR CG3700EMR-1CMNDS"
+        condition: and

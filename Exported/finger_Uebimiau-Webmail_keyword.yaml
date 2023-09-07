@@ -1,0 +1,20 @@
+id: Uebimiau_Webmail_keyword
+info:
+  name: Uebimiau-Webmail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Uebimiau-Webmail"
+        words:
+          - "<script type=\"text/javascript\" src=\"themes/default/js/webmail.js\"></script>"
+        condition: and

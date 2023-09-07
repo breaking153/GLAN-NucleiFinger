@@ -1,0 +1,20 @@
+id: ren_zi_xing_ren_tian_xing_wang_luo_an_quan_guan_li_xi_tong_keyword
+info:
+  name: 任子行 任天行网络安全管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "任子行 任天行网络安全管理系统"
+        words:
+          - "任子行 任天行网络安全管理系统"
+        condition: and

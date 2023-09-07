@@ -1,0 +1,21 @@
+id: TP_LINK_TL_WDR7500_keyword
+info:
+  name: TP_LINK-TL-WDR7500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP_LINK-TL-WDR7500"
+        words:
+          - "realm=\"tp-link wireless wdr7500"
+          - "realm=\"tp-link wireless dual band gigabit router wdr7500"
+        condition: and

@@ -1,0 +1,20 @@
+id: VideoSurveillanceManagementPlatform_keyword
+info:
+  name: VideoSurveillanceManagementPlatform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VideoSurveillanceManagementPlatform"
+        words:
+          - " <span>平台采用最新图像化展现技术"
+        condition: and

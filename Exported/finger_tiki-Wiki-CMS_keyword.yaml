@@ -1,0 +1,20 @@
+id: tiki_Wiki_CMS_keyword
+info:
+  name: tiki-Wiki-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "tiki-Wiki-CMS"
+        words:
+          - "jquerytiki = new object"
+        condition: and

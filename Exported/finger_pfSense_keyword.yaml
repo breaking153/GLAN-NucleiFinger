@@ -1,0 +1,22 @@
+id: pfSense_keyword
+info:
+  name: pfSense_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "pfSense"
+        words:
+          - "https://www.pfsense.org/?gui=bootstrap"
+          - "rubicon communications, llc (netgate"
+          - "<h4>login to pfsense</h4>"
+        condition: and

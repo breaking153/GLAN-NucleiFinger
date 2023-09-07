@@ -1,0 +1,20 @@
+id: Siemens_Gigaset_keyword
+info:
+  name: Siemens Gigaset_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Siemens Gigaset"
+        words:
+          - "Siemens Gigaset"
+        condition: and

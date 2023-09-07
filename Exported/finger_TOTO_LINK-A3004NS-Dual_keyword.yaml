@@ -1,0 +1,20 @@
+id: TOTO_LINK_A3004NS_Dual_keyword
+info:
+  name: TOTO_LINK-A3004NS-Dual_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOTO_LINK-A3004NS-Dual"
+        words:
+          - "src =\"/images2/login_back_za3nd.ch.gif\""
+        condition: and

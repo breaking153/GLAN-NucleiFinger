@@ -1,0 +1,20 @@
+id: epygi_QX2000_keyword
+info:
+  name: epygi-QX2000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "epygi-QX2000"
+        words:
+          - "epygi        <span class=\"product-name\">qx2000"
+        condition: and

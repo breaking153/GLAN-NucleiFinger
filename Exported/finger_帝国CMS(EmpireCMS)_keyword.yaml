@@ -1,0 +1,26 @@
+id: di_guo_CMS_EmpireCMS_keyword
+info:
+  name: 帝国CMS(EmpireCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "帝国CMS(EmpireCMS)"
+        words:
+          - "帝国CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "帝国CMS(EmpireCMS)"
+        words:
+          - "EmpireCMS"
+        condition: and

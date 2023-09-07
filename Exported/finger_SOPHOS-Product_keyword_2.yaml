@@ -1,0 +1,20 @@
+id: SOPHOS_Product_keyword_1
+info:
+  name: SOPHOS-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SOPHOS-Product"
+        words:
+          - "via: http/1.1 forward.http.proxy:3128"
+        condition: and

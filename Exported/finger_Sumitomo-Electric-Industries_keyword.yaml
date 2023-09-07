@@ -1,0 +1,20 @@
+id: Sumitomo_Electric_Industries_keyword
+info:
+  name: Sumitomo-Electric-Industries_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sumitomo-Electric-Industries"
+        words:
+          - "realm=\"sumitomo electric industries"
+        condition: and

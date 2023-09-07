@@ -1,0 +1,20 @@
+id: ThreatConnect_Platform_keyword
+info:
+  name: ThreatConnect-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ThreatConnect-Platform"
+        words:
+          - "content=\"threatconnect\" />"
+        condition: and

@@ -1,0 +1,20 @@
+id: Apache_APISIX_keyword
+info:
+  name: Apache APISIX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache APISIX"
+        words:
+          - "{\"error_msg\":\"404 Route Not Found\"}"
+        condition: and

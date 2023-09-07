@@ -1,0 +1,20 @@
+id: Alerton_BCM_WEB_keyword
+info:
+  name: Alerton BCM-WEB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Alerton BCM-WEB"
+        words:
+          - "Alerton BCM-WEB"
+        condition: and

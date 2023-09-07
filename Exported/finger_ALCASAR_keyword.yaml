@@ -1,0 +1,26 @@
+id: ALCASAR_keyword
+info:
+  name: ALCASAR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ALCASAR"
+        words:
+          - "valoriserdiv5"
+        condition: and
+      - type: word
+        part: body
+        name: "ALCASAR"
+        words:
+          - "valoriserDiv5"
+        condition: and

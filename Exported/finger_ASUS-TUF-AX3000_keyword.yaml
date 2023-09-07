@@ -1,0 +1,21 @@
+id: ASUS_TUF_AX3000_keyword
+info:
+  name: ASUS-TUF-AX3000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-TUF-AX3000"
+        words:
+          - "document.getelementsbyclassname(\"model-name\"[0].innerhtml = \"tuf-ax3000\""
+          - "class=\"prod_madelname\">tuf-ax3000</div>"
+        condition: and

@@ -1,0 +1,26 @@
+id: cInvoice_keyword
+info:
+  name: cInvoice_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cInvoice"
+        words:
+          - "powered by <a href=\"http://www.forperfect.com/"
+        condition: and
+      - type: word
+        part: body
+        name: "cInvoice"
+        words:
+          - "Powered by <a href=\"http://www.forperfect.com/"
+        condition: and

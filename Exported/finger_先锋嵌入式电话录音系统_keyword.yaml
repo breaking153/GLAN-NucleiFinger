@@ -1,0 +1,20 @@
+id: xian_feng_qian_ru_shi_dian_hua_lu_yin_xi_tong_keyword
+info:
+  name: 先锋嵌入式电话录音系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "先锋嵌入式电话录音系统"
+        words:
+          - "先锋嵌入式电话录音系统"
+        condition: and

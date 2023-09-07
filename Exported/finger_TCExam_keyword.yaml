@@ -1,0 +1,21 @@
+id: TCExam_keyword
+info:
+  name: TCExam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TCExam"
+        words:
+          - "<a name=\"topofdoc\" id=\"topofdoc\"></a>"
+          - "content=\"nicola asuni - tecnick.com s.r.l.\" />"
+        condition: and

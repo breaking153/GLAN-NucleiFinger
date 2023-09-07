@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -63,11 +63,4 @@ http:
         name: "宝塔-BT.cn"
         words:
           - "宝塔Linux面板"
-        condition: and
-      - type: word
-        part: body
-        name: "宝塔-BT.cn"
-        words:
-          - "<title>入口校验失败</title>"
-          - "href=\"http://www.bt.cn/bbs\""
         condition: and

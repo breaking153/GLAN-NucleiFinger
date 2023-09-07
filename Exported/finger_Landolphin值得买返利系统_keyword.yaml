@@ -1,0 +1,20 @@
+id: Landolphin_zhi_de_mai_fan_li_xi_tong_keyword
+info:
+  name: Landolphin值得买返利系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Landolphin值得买返利系统"
+        words:
+          - "bx_css_async"
+        condition: and

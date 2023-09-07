@@ -1,0 +1,21 @@
+id: Savant_Web_server_keyword
+info:
+  name: Savant-Web-server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Savant-Web-server"
+        words:
+          - "server: savant"
+          - "realm=\"savant"
+        condition: and

@@ -1,0 +1,20 @@
+id: IronPort_AsyncOS_keyword
+info:
+  name: IronPort AsyncOS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IronPort AsyncOS"
+        words:
+          - "IronPort AsyncOS"
+        condition: and

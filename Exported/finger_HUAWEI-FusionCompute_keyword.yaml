@@ -1,0 +1,20 @@
+id: HUAWEI_FusionCompute_keyword
+info:
+  name: HUAWEI-FusionCompute_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-FusionCompute"
+        words:
+          - "resources/themes/images/logo/favicon.ico"
+        condition: and

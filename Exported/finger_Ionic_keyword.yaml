@@ -1,0 +1,23 @@
+id: Ionic_keyword
+info:
+  name: Ionic_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ionic"
+        words:
+          - "ionic.css"
+          - "ionic.min.css"
+          - "ionic.js"
+          - "ionic.min.js"
+        condition: and

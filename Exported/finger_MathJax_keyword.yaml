@@ -1,0 +1,20 @@
+id: MathJax_keyword
+info:
+  name: MathJax_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MathJax"
+        words:
+          - "MathJax"
+        condition: and

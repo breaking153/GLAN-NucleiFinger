@@ -1,0 +1,22 @@
+id: VoteManager_keyword
+info:
+  name: VoteManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VoteManager"
+        words:
+          - "content=\"微平台投票系统"
+          - "content=\"微平台投票管理系统"
+          - "<a href=\"http://www.cdrbp.cn\">微信数字投票"
+        condition: and

@@ -1,0 +1,20 @@
+id: ipTIME_A1004V_keyword
+info:
+  name: ipTIME-A1004V_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-A1004V"
+        words:
+          - "src=\"/images2/login_title.a1004v.gif\""
+        condition: and

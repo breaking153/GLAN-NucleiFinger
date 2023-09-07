@@ -1,0 +1,20 @@
+id: NSFOCUS_VPN_keyword_1
+info:
+  name: NSFOCUS VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NSFOCUS VPN"
+        words:
+          - "NSFOCUS VPN"
+        condition: and

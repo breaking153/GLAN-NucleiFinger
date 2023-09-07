@@ -1,0 +1,20 @@
+id: SmartThumbs_keyword
+info:
+  name: SmartThumbs_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SmartThumbs"
+        words:
+          - "powered by<a href=\"http://www.smart-scripts.com\">smart thumbs</a>"
+        condition: and

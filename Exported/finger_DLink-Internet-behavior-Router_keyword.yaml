@@ -1,0 +1,21 @@
+id: DLink_Internet_behavior_Router_keyword
+info:
+  name: DLink-Internet-behavior-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DLink-Internet-behavior-Router"
+        words:
+          - "<body oncontextmenu='return false;' onload=\"init(;\" >"
+          - "top.window.open(\"login.html\",\"_self\";"
+        condition: and

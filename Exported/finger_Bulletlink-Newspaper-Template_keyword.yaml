@@ -1,0 +1,27 @@
+id: Bulletlink_Newspaper_Template_keyword
+info:
+  name: Bulletlink-Newspaper-Template_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bulletlink-Newspaper-Template"
+        words:
+          - "/modalpopup/core-modalpopup.css"
+          - "powered by bulletlink"
+        condition: and
+      - type: word
+        part: body
+        name: "Bulletlink-Newspaper-Template"
+        words:
+          - "/ModalPopup/core-modalpopup.css"
+        condition: and

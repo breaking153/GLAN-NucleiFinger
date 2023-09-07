@@ -1,0 +1,20 @@
+id: Craigs_CMS_keyword
+info:
+  name: Craigs CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Craigs CMS"
+        words:
+          - "Craigs CMS"
+        condition: and

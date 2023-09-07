@@ -1,0 +1,20 @@
+id: EFM_Networks_ipTIME_N104T_keyword
+info:
+  name: EFM-Networks-ipTIME-N104T_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-N104T"
+        words:
+          - "src =\"/images/login_title_n104t.gif\""
+        condition: and

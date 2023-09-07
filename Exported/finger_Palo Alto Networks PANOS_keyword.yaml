@@ -1,0 +1,20 @@
+id: Palo_Alto_Networks_PANOS_keyword
+info:
+  name: Palo Alto Networks PANOS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Palo Alto Networks PANOS"
+        words:
+          - "Palo Alto Networks PANOS"
+        condition: and

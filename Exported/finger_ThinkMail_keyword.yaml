@@ -1,0 +1,23 @@
+id: ThinkMail_keyword
+info:
+  name: ThinkMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ThinkMail"
+        words:
+          - "href='http://www.thinkcloud.cn' target='_blank'>thinkcloud</a>.all right reserved</div>"
+          - "app_download\":\"\",\"thinkmail官网"
+          - "/webmail\"+\"/common/validatecode.do"
+          - "/resource/se/common/jquery.js"
+        condition: and

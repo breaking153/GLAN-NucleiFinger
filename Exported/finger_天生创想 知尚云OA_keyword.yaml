@@ -1,0 +1,20 @@
+id: tian_sheng_chuang_xiang_zhi_shang_yun_OA_keyword
+info:
+  name: 天生创想 知尚云OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "天生创想 知尚云OA"
+        words:
+          - "天生创想 知尚云OA"
+        condition: and

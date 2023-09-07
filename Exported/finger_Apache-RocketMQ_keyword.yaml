@@ -1,0 +1,20 @@
+id: Apache_RocketMQ_keyword
+info:
+  name: Apache-RocketMQ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-RocketMQ"
+        words:
+          - "title>RocketMq"
+        condition: and

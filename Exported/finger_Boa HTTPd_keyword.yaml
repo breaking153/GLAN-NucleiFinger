@@ -1,0 +1,20 @@
+id: Boa_HTTPd_keyword
+info:
+  name: Boa HTTPd_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Boa HTTPd"
+        words:
+          - "Boa HTTPd"
+        condition: and

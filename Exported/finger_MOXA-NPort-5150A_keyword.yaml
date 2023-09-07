@@ -1,0 +1,20 @@
+id: MOXA_NPort_5150A_keyword
+info:
+  name: MOXA-NPort-5150A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MOXA-NPort-5150A"
+        words:
+          - "5150a"
+        condition: and

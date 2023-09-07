@@ -1,0 +1,20 @@
+id: LG_55UK6300PLB_keyword
+info:
+  name: LG-55UK6300PLB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-55UK6300PLB"
+        words:
+          - "<modelnumber>55uk6300plb</modelnumber>"
+        condition: and

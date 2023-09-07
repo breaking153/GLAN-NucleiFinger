@@ -1,0 +1,20 @@
+id: NetScout_nGeniusONE_keyword
+info:
+  name: NetScout-nGeniusONE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetScout-nGeniusONE"
+        words:
+          - "var newpath = \"/common/ngeniusdirect.jsp"
+        condition: and

@@ -1,0 +1,22 @@
+id: Nucleus_CMS_keyword
+info:
+  name: Nucleus-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nucleus-CMS"
+        words:
+          - "target=\"_blank\">nucleus cms"
+          - "nucleus_lf_name"
+          - "title=\"nucleus\" href=\"http://nucleuscms.org/"
+        condition: and

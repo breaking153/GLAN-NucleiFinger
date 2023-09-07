@@ -1,0 +1,20 @@
+id: fei_si_te_nuo_qi_kan_wang_luo_cai_bian_xi_tong_keyword
+info:
+  name: 菲斯特诺期刊网络采编系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "菲斯特诺期刊网络采编系统"
+        words:
+          - "菲斯特诺期刊网络采编系统"
+        condition: and

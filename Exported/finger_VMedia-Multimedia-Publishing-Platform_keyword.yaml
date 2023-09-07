@@ -1,0 +1,21 @@
+id: VMedia_Multimedia_Publishing_Platform_keyword
+info:
+  name: VMedia-Multimedia-Publishing-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMedia-Multimedia-Publishing-Platform"
+        words:
+          - "function toggle(targetid"
+          - "class=\"video_00\""
+        condition: and

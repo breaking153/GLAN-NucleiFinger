@@ -1,0 +1,20 @@
+id: TSM_keyword
+info:
+  name: TSM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TSM"
+        words:
+          - "var url = getcontextname( + \"?service=ajaxdirect/1/"
+        condition: and

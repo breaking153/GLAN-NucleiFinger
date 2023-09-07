@@ -1,0 +1,20 @@
+id: 263_qi_ye_you_xiang_keyword
+info:
+  name: 263企业邮箱_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "263企业邮箱"
+        words:
+          - "263企业邮箱"
+        condition: and

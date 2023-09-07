@@ -1,0 +1,20 @@
+id: Karenderia_MRS_keyword
+info:
+  name: Karenderia MRS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Karenderia MRS"
+        words:
+          - "Karenderia MRS"
+        condition: and

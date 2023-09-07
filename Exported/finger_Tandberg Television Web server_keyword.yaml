@@ -1,0 +1,20 @@
+id: Tandberg_Television_Web_server_keyword
+info:
+  name: Tandberg Television Web server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Tandberg Television Web server"
+        words:
+          - "Tandberg Television Web server"
+        condition: and

@@ -1,0 +1,22 @@
+id: Bosch_SPS_keyword
+info:
+  name: Bosch-SPS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bosch-SPS"
+        words:
+          - "miccomp[0][1] =="
+          - "src='inner_frmset.html'>"
+          - "bosch security systems.  all rights reserved."
+        condition: and

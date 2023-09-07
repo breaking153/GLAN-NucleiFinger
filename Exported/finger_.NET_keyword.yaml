@@ -1,0 +1,26 @@
+id: NET_keyword
+info:
+  name: .NET_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: ".NET"
+        words:
+          - "content=\"visual basic .net 7.1"
+        condition: and
+      - type: word
+        part: body
+        name: ".NET"
+        words:
+          - "content=\"Visual Basic .NET 7.1"
+        condition: and

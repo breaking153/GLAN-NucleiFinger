@@ -1,0 +1,20 @@
+id: jsyhit_System_keyword
+info:
+  name: jsyhit-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "jsyhit-System"
+        words:
+          - "content=\"仪化产品质量查询系统\""
+        condition: and

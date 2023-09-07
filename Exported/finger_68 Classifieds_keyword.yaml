@@ -1,0 +1,20 @@
+id: 68_Classifieds_keyword
+info:
+  name: 68 Classifieds_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "68 Classifieds"
+        words:
+          - "68 Classifieds"
+        condition: and

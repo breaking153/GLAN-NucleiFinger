@@ -1,0 +1,20 @@
+id: ipTIME_N5_i_keyword
+info:
+  name: ipTIME-N5-i_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-N5-i"
+        words:
+          - "src =\"/images2/login_title.n5i.gif\""
+        condition: and

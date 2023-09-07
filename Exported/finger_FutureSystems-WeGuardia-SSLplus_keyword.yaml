@@ -1,0 +1,21 @@
+id: FutureSystems_WeGuardia_SSLplus_keyword
+info:
+  name: FutureSystems-WeGuardia-SSLplus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FutureSystems-WeGuardia-SSLplus"
+        words:
+          - "id=\"tsgssl\""
+          - "sslplus"
+        condition: and

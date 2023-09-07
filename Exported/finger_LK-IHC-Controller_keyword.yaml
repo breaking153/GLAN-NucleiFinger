@@ -1,0 +1,20 @@
+id: LK_IHC_Controller_keyword
+info:
+  name: LK-IHC-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LK-IHC-Controller"
+        words:
+          - "/images/bg_image_lk.jpg"
+        condition: and

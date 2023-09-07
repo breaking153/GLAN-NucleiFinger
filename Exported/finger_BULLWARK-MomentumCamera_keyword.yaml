@@ -1,0 +1,20 @@
+id: BULLWARK_MomentumCamera_keyword
+info:
+  name: BULLWARK-MomentumCamera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BULLWARK-MomentumCamera"
+        words:
+          - "<img src=\"images/bullwark_nvr.png\""
+        condition: and

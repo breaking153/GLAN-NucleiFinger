@@ -1,0 +1,20 @@
+id: tong_cheng_duo_yong_hu_shang_cheng_keyword
+info:
+  name: 同城多用户商城_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "同城多用户商城"
+        words:
+          - "style_chaoshi"
+        condition: and

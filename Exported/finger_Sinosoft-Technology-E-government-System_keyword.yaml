@@ -1,0 +1,22 @@
+id: Sinosoft_Technology_E_government_System_keyword
+info:
+  name: Sinosoft-Technology-E-government-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sinosoft-Technology-E-government-System"
+        words:
+          - "app_themes/1/style.css"
+          - "window.location = \"homepages/index.aspx"
+          - "homepages/content_page.aspx"
+        condition: and

@@ -1,0 +1,20 @@
+id: Hospital_material_supplier_B2B_platform_keyword
+info:
+  name: Hospital-material-supplier-B2B-platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hospital-material-supplier-B2B-platform"
+        words:
+          - "医院物资供应商b2b平台"
+        condition: and

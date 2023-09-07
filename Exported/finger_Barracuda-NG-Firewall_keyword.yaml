@@ -1,0 +1,26 @@
+id: Barracuda_NG_Firewall_keyword
+info:
+  name: Barracuda-NG-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Barracuda-NG-Firewall"
+        words:
+          - "barracuda ng firewall"
+        condition: and
+      - type: word
+        part: header
+        name: "Barracuda-NG-Firewall"
+        words:
+          - "Barracuda-NG-Firewall"
+        condition: and

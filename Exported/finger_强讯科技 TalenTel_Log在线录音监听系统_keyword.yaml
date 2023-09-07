@@ -1,0 +1,20 @@
+id: qiang_xun_ke_ji_TalenTel_Log_zai_xian_lu_yin_jian_ting_xi_tong_keyword
+info:
+  name: 强讯科技 TalenTel_Log在线录音监听系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "强讯科技 TalenTel_Log在线录音监听系统"
+        words:
+          - "强讯科技 TalenTel_Log在线录音监听系统"
+        condition: and

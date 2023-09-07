@@ -1,0 +1,21 @@
+id: 1039soft_JiaXiao_keyword
+info:
+  name: 1039soft-JiaXiao_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "1039soft-JiaXiao"
+        words:
+          - "name=\"hid_qu_type\" id=\"hid_qu_type\""
+          - "/handler/validatecode.ashx?id="
+        condition: and

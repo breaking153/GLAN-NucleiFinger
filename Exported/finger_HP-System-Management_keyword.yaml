@@ -1,0 +1,21 @@
+id: HP_System_Management_keyword
+info:
+  name: HP-System-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP-System-Management"
+        words:
+          - "server: compaqhttpserver"
+          - "set-cookie: compaq-hmmd"
+        condition: and

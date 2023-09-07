@@ -1,0 +1,20 @@
+id: wei_pin_hui_CDN_keyword
+info:
+  name: 唯品会CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "唯品会CDN"
+        words:
+          - "唯品会CDN"
+        condition: and

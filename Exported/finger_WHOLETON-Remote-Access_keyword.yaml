@@ -1,0 +1,21 @@
+id: WHOLETON_Remote_Access_keyword
+info:
+  name: WHOLETON-Remote-Access_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WHOLETON-Remote-Access"
+        words:
+          - " 远程接入平台"
+          - "<a href=\"http://www.wholeton.com\" target=\"_blank\">"
+        condition: and

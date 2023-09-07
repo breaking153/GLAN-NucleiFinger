@@ -1,0 +1,21 @@
+id: SCO_OpenServer_keyword
+info:
+  name: SCO-OpenServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SCO-OpenServer"
+        words:
+          - "sco corporate web site"
+          - "gif/rlogo1.gif"
+        condition: and

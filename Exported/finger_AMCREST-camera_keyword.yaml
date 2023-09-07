@@ -1,0 +1,24 @@
+id: AMCREST_camera_keyword
+info:
+  name: AMCREST-camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AMCREST-camera"
+        words:
+          - "amcrest"
+          - "w_cloudcurver"
+          - "onclick=\"chkalarmsound("
+          - "id=\"play_alarm_sound"
+          - "amcrest technologies"
+        condition: and

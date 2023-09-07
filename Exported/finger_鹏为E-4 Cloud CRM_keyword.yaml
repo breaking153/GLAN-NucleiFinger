@@ -1,0 +1,20 @@
+id: peng_wei_E_4_Cloud_CRM_keyword
+info:
+  name: 鹏为E-4 Cloud CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "鹏为E-4 Cloud CRM"
+        words:
+          - "鹏为E/4 Cloud CRM"
+        condition: and

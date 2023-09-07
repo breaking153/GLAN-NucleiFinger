@@ -1,0 +1,20 @@
+id: Newgrand_Project_Management_System_keyword
+info:
+  name: Newgrand-Project-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Newgrand-Project-Management-System"
+        words:
+          - "src=\"../images/right.jpg\" alt=\"版权信息\""
+        condition: and

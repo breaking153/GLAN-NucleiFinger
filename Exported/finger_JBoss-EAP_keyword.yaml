@@ -1,0 +1,20 @@
+id: JBoss_EAP_keyword_1
+info:
+  name: JBoss-EAP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JBoss-EAP"
+        words:
+          - "<h3>your jboss enterprise application platform is running.</h3>"
+        condition: and

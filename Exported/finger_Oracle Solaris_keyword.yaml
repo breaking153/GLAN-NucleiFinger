@@ -1,0 +1,20 @@
+id: Oracle_Solaris_keyword
+info:
+  name: Oracle Solaris_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Oracle Solaris"
+        words:
+          - "Oracle Solaris"
+        condition: and

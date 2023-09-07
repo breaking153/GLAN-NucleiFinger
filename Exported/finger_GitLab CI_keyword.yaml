@@ -1,0 +1,20 @@
+id: GitLab_CI_keyword
+info:
+  name: GitLab CI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "GitLab CI"
+        words:
+          - "GitLab CI"
+        condition: and

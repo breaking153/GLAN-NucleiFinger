@@ -1,0 +1,19 @@
+id: hui_xing_zi_lai_shui_ying_ye_guan_li_xin_xi_xi_tong_faviconhash
+info:
+  name: 慧星自来水营业管理信息系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "慧星自来水营业管理信息系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1704826498\""
+        condition: or

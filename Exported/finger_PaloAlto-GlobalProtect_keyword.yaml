@@ -1,0 +1,20 @@
+id: PaloAlto_GlobalProtect_keyword
+info:
+  name: PaloAlto-GlobalProtect_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PaloAlto-GlobalProtect"
+        words:
+          - "global-protect/login.esp"
+        condition: and

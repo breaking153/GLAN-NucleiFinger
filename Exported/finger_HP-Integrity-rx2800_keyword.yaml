@@ -1,0 +1,20 @@
+id: HP_Integrity_rx2800_keyword
+info:
+  name: HP-Integrity-rx2800_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-Integrity-rx2800"
+        words:
+          - "class=\"logintitlesub\">hpe integrity rx2800"
+        condition: and

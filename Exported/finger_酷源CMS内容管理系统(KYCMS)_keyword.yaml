@@ -1,0 +1,26 @@
+id: ku_yuan_CMS_nei_rong_guan_li_xi_tong_KYCMS_keyword
+info:
+  name: 酷源CMS内容管理系统(KYCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "酷源CMS内容管理系统(KYCMS)"
+        words:
+          - "酷源CMS内容管理系统"
+        condition: and
+      - type: word
+        part: body
+        name: "酷源CMS内容管理系统(KYCMS)"
+        words:
+          - "KYCMS"
+        condition: and

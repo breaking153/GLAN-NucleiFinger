@@ -1,0 +1,20 @@
+id: D_Link_Camera_keyword
+info:
+  name: D-Link Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D-Link Camera"
+        words:
+          - "D-Link Camera"
+        condition: and

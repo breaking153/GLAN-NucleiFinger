@@ -1,0 +1,20 @@
+id: legendsec_ImportSystem_keyword
+info:
+  name: legendsec-ImportSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "legendsec-ImportSystem"
+        words:
+          - "document.myform.btn_login.disabled = true;"
+        condition: and

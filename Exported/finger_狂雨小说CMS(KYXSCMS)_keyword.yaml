@@ -1,0 +1,26 @@
+id: kuang_yu_xiao_shuo_CMS_KYXSCMS_keyword
+info:
+  name: 狂雨小说CMS(KYXSCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "狂雨小说CMS(KYXSCMS)"
+        words:
+          - "狂雨小说CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "狂雨小说CMS(KYXSCMS)"
+        words:
+          - "KYXSCMS"
+        condition: and

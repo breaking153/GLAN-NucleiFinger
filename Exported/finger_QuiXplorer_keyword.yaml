@@ -1,0 +1,21 @@
+id: QuiXplorer_keyword
+info:
+  name: QuiXplorer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QuiXplorer"
+        words:
+          - "href=\"http://quixplorer.sourceforge.net\" target="
+          - "target=\"_blank\">the quix project</a></small>"
+        condition: and

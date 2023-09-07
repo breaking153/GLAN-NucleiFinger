@@ -1,0 +1,21 @@
+id: an_ning_dian_zi_you_jian_xi_tong_AnyMacro_Mail_keyword
+info:
+  name: 安宁电子邮件系统　AnyMacro Mail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "安宁电子邮件系统　AnyMacro Mail"
+        words:
+          - "anymacro"
+          - "passre.php"
+        condition: and

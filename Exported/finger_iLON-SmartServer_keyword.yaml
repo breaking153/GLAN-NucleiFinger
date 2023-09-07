@@ -1,0 +1,33 @@
+id: iLON_SmartServer_keyword
+info:
+  name: iLON-SmartServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "iLON-SmartServer"
+        words:
+          - "windriver"
+          - "i.lon"
+        condition: and
+      - type: word
+        part: header
+        name: "iLON-SmartServer"
+        words:
+          - "WindRiver"
+        condition: and
+      - type: word
+        part: header
+        name: "iLON-SmartServer"
+        words:
+          - "i.LON"
+        condition: and

@@ -1,0 +1,21 @@
+id: IBM_Spectrum_Computing_keyword
+info:
+  name: IBM Spectrum Computing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM Spectrum Computing"
+        words:
+          - "/platform/framework/logout/logout.action"
+          - "ssoclient_"
+        condition: and

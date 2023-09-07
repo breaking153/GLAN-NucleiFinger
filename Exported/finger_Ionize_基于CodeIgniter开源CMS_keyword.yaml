@@ -1,0 +1,20 @@
+id: Ionize_ji_yu_CodeIgniter_kai_yuan_CMS_keyword
+info:
+  name: Ionize_基于CodeIgniter开源CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Ionize_基于CodeIgniter开源CMS"
+        words:
+          - "Ionize_基于CodeIgniter开源CMS"
+        condition: and

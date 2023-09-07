@@ -1,0 +1,26 @@
+id: E_Xoopport_keyword
+info:
+  name: E-Xoopport_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "E-Xoopport"
+        words:
+          - "Powered by E-Xoopport"
+        condition: and
+      - type: word
+        part: body
+        name: "E-Xoopport"
+        words:
+          - "content=\"E-Xoopport"
+        condition: and

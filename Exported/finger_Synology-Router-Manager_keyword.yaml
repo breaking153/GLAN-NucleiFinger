@@ -1,0 +1,21 @@
+id: Synology_Router_Manager_keyword
+info:
+  name: Synology-Router-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Synology-Router-Manager"
+        words:
+          - "hostname\" : \"synologyrouter\""
+          - "content=\"synologyrouter"
+        condition: and

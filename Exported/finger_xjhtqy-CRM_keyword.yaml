@@ -1,0 +1,20 @@
+id: xjhtqy_CRM_keyword
+info:
+  name: xjhtqy-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "xjhtqy-CRM"
+        words:
+          - "class=\"hidden-xs ewheaderrow\"><img src=\"aspximages/htqy.png\""
+        condition: and

@@ -1,0 +1,20 @@
+id: WCS_2060_Wireless_P_T_IP_Network_Camera_keyword
+info:
+  name: WCS-2060 Wireless P-T IP Network Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WCS-2060 Wireless P-T IP Network Camera"
+        words:
+          - "WCS-2060 Wireless P/T IP Network Camera"
+        condition: and

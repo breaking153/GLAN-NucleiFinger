@@ -1,0 +1,33 @@
+id: ChiliProject_keyword
+info:
+  name: ChiliProject_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ChiliProject"
+        words:
+          - "powered by <a href=\"https://www.chiliproject.org/"
+          - "content=\"chiliproject"
+        condition: and
+      - type: word
+        part: body
+        name: "ChiliProject"
+        words:
+          - "Powered by <a href=\"https://www.chiliproject.org/"
+        condition: and
+      - type: word
+        part: body
+        name: "ChiliProject"
+        words:
+          - "content=\"ChiliProject"
+        condition: and

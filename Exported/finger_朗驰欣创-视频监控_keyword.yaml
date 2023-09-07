@@ -1,0 +1,21 @@
+id: lang_chi_xin_chuang_shi_pin_jian_kong_keyword
+info:
+  name: 朗驰欣创-视频监控_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "朗驰欣创-视频监控"
+        words:
+          - "Installplug.exe"
+          - "NVSID"
+        condition: and

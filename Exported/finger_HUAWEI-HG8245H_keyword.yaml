@@ -1,0 +1,21 @@
+id: HUAWEI_HG8245H_keyword
+info:
+  name: HUAWEI-HG8245H_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-HG8245H"
+        words:
+          - "var productname = 'hg8245h"
+          - "var productname = 'hg8245h';"
+        condition: and

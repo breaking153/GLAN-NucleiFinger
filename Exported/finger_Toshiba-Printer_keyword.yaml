@@ -1,0 +1,23 @@
+id: Toshiba_Printer_keyword
+info:
+  name: Toshiba-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Toshiba-Printer"
+        words:
+          - "<title class=\"clstitle1\">topaccess</title>"
+          - "<frameset name=\"tatoplevelframeset\" rows=\"*\""
+          - "<frame name=\"toplevelframe\" src='frameindex.html?v= "
+          - "if(location.href.indexof(\"?main=efiling\" == -1{"
+        condition: and

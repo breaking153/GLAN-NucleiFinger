@@ -1,0 +1,20 @@
+id: PHPEMS_zai_xian_mo_ni_kao_shi_xi_tong_keyword
+info:
+  name: PHPEMS在线模拟考试系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PHPEMS在线模拟考试系统"
+        words:
+          - "PHPEMS在线模拟考试系统"
+        condition: and

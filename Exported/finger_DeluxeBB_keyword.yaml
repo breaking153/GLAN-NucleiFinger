@@ -1,0 +1,26 @@
+id: DeluxeBB_keyword
+info:
+  name: DeluxeBB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DeluxeBB"
+        words:
+          - "content=\"powered by deluxebb"
+        condition: and
+      - type: word
+        part: body
+        name: "DeluxeBB"
+        words:
+          - "content=\"powered by DeluxeBB"
+        condition: and

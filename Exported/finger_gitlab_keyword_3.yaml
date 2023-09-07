@@ -1,0 +1,26 @@
+id: gitlab_keyword
+info:
+  name: gitlab_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "gitlab"
+        words:
+          - "gon.default_issues_tracker"
+        condition: and
+      - type: word
+        part: body
+        name: "gitlab"
+        words:
+          - "GitLab Community Edition"
+        condition: and

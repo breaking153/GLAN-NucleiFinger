@@ -1,0 +1,20 @@
+id: ZyXEL_EMG2926_keyword
+info:
+  name: ZyXEL-EMG2926_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-EMG2926"
+        words:
+          - "<li class=\"modelname\">emg2926</li>"
+        condition: and

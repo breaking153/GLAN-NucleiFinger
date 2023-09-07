@@ -1,0 +1,32 @@
+id: F5_BIGIP_keyword_1_1
+info:
+  name: F5_BIGIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "F5_BIGIP"
+        words:
+          - "BIGipServer"
+        condition: and
+      - type: word
+        part: header
+        name: "F5_BIGIP"
+        words:
+          - "X-WA-Info"
+        condition: and
+      - type: word
+        part: header
+        name: "F5_BIGIP"
+        words:
+          - "X-PvInfo"
+        condition: and

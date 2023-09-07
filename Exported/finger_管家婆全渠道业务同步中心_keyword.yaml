@@ -1,0 +1,19 @@
+id: guan_jia_po_quan_qu_dao_ye_wu_tong_bu_zhong_xin_keyword
+info:
+  name: 管家婆全渠道业务同步中心_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "管家婆全渠道业务同步中心"
+        words:
+          - "<title>管家婆全渠道业务同步中心"

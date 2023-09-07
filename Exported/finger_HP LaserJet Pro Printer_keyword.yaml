@@ -1,0 +1,20 @@
+id: HP_LaserJet_Pro_Printer_keyword
+info:
+  name: HP LaserJet Pro Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP LaserJet Pro Printer"
+        words:
+          - "HP LaserJet Pro Printer"
+        condition: and

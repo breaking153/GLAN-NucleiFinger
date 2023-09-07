@@ -1,0 +1,20 @@
+id: FoosunCMS_feng_xun_keyword
+info:
+  name: FoosunCMS(风讯)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FoosunCMS(风讯)"
+        words:
+          - "foosuncms"
+        condition: and

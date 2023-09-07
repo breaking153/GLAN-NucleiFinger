@@ -1,0 +1,21 @@
+id: MGB_OpenSource_Guestbook_keyword
+info:
+  name: MGB-OpenSource-Guestbook_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MGB-OpenSource-Guestbook"
+        words:
+          - "content=\"mgb opensource guestbook"
+          - "title=\"mgb homepage"
+        condition: and

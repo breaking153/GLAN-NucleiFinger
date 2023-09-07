@@ -1,0 +1,21 @@
+id: ostec_firebox_keyword
+info:
+  name: ostec-firebox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ostec-firebox"
+        words:
+          - "background-image: url('/icones/fundo_firebox.png'"
+          - "http://colorzilla.com/"
+        condition: and

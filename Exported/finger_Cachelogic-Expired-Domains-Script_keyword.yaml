@@ -1,0 +1,20 @@
+id: Cachelogic_Expired_Domains_Script_keyword
+info:
+  name: Cachelogic-Expired-Domains-Script_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cachelogic-Expired-Domains-Script"
+        words:
+          - "href=\"http://cachelogic.net\">Cachelogic.net"
+        condition: and

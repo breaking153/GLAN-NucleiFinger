@@ -1,0 +1,22 @@
+id: bai_zhuo_byzoro_an_quan_wang_guan_keyword
+info:
+  name: 百卓byzoro-安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "百卓byzoro-安全网关"
+        words:
+          - "北京百卓"
+          - "PatrolFlow"
+          - "login.php"
+        condition: and

@@ -1,0 +1,20 @@
+id: inseego_Skyus_E_keyword
+info:
+  name: inseego-Skyus-E_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "inseego-Skyus-E"
+        words:
+          - "src=\"img/skyus_e_fpos.png\""
+        condition: and

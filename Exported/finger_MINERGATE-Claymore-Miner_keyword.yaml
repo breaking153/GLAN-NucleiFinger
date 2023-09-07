@@ -1,0 +1,21 @@
+id: MINERGATE_Claymore_Miner_keyword
+info:
+  name: MINERGATE-Claymore-Miner_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MINERGATE-Claymore-Miner"
+        words:
+          - "eth — total speed:"
+          - "eth: gpu0"
+        condition: and

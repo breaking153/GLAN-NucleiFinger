@@ -1,0 +1,21 @@
+id: appex_lotapp_keyword
+info:
+  name: appex-lotapp_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "appex-lotapp"
+        words:
+          - "appex network corporation"
+          - "/change_lan.php?lanid=en"
+        condition: and

@@ -1,0 +1,20 @@
+id: lian_xiang_wang_yu_an_quan_wang_guan_keyword
+info:
+  name: 联想网御安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "联想网御安全网关"
+        words:
+          - "联想网御安全网关"
+        condition: and

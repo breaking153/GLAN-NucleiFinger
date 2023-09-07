@@ -1,0 +1,20 @@
+id: Optergy_jian_zhu_he_neng_yuan_guan_li_ruan_jian_keyword
+info:
+  name: Optergy建筑和能源管理软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Optergy建筑和能源管理软件"
+        words:
+          - "Optergy建筑和能源管理软件"
+        condition: and

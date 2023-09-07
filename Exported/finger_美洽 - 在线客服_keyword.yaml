@@ -1,0 +1,20 @@
+id: mei_qia_zai_xian_ke_fu_keyword
+info:
+  name: 美洽 - 在线客服_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "美洽 - 在线客服"
+        words:
+          - "/meiqia.js"
+        condition: and

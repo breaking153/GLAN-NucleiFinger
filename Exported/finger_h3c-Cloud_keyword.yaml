@@ -1,0 +1,20 @@
+id: h3c_Cloud_keyword
+info:
+  name: h3c-Cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "h3c-Cloud"
+        words:
+          - "分布式存储管理系统 </p>"
+        condition: and

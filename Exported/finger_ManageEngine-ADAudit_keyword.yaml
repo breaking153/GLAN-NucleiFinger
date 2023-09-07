@@ -1,0 +1,22 @@
+id: ManageEngine_ADAudit_keyword
+info:
+  name: ManageEngine-ADAudit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ManageEngine-ADAudit"
+        words:
+          - "adauditplus authentication"
+          - "title=\"manageengine admanager plus"
+          - "manageengine"
+        condition: and

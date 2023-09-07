@@ -1,0 +1,26 @@
+id: Blazix_keyword
+info:
+  name: Blazix_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Blazix"
+        words:
+          - "server: blazix java server"
+        condition: and
+      - type: word
+        part: header
+        name: "Blazix"
+        words:
+          - "Blazix Java Server"
+        condition: and

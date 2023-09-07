@@ -1,0 +1,21 @@
+id: Ruckus_Wireless_keyword
+info:
+  name: Ruckus-Wireless_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruckus-Wireless"
+        words:
+          - "alt=\"ruckus wireless\" title=\"ruckus wireless"
+          - "mon.  tell me your username"
+        condition: and

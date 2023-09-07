@@ -1,0 +1,21 @@
+id: EFM_Networks_ipTIME_N1004Q_keyword
+info:
+  name: EFM-Networks-ipTIME-N1004Q_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-N1004Q"
+        words:
+          - "src=\"/images2/login_title.n104q.gif\""
+          - "src=\"/images2/login_title.n104qi.gif\""
+        condition: and

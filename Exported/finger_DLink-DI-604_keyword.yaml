@@ -1,0 +1,20 @@
+id: DLink_DI_604_keyword
+info:
+  name: DLink-DI-604_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DLink-DI-604"
+        words:
+          - "realm=\"di-604"
+        condition: and

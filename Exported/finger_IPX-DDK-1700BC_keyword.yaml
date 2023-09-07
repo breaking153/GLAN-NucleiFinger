@@ -1,0 +1,20 @@
+id: IPX_DDK_1700BC_keyword
+info:
+  name: IPX-DDK-1700BC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IPX-DDK-1700BC"
+        words:
+          - "realm=\"ddk-1700bc"
+        condition: and

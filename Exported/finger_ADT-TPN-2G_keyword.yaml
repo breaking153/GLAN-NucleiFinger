@@ -1,0 +1,20 @@
+id: ADT_TPN_2G_keyword
+info:
+  name: ADT-TPN-2G_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ADT-TPN-2G"
+        words:
+          - "src=\"./system/usbkey.js\""
+        condition: and

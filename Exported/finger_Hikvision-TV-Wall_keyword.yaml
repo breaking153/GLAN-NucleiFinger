@@ -1,0 +1,20 @@
+id: Hikvision_TV_Wall_keyword
+info:
+  name: Hikvision-TV-Wall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-TV-Wall"
+        words:
+          - "tvwall_newtvwall"
+        condition: and

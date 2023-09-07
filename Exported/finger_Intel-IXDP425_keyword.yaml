@@ -1,0 +1,20 @@
+id: Intel_IXDP425_keyword
+info:
+  name: Intel-IXDP425_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Intel-IXDP425"
+        words:
+          - "intel(r"
+        condition: and

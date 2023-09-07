@@ -1,0 +1,20 @@
+id: dvr_webcam_WebDVR_keyword
+info:
+  name: dvr.webcam WebDVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "dvr.webcam WebDVR"
+        words:
+          - "dvr.webcam WebDVR"
+        condition: and

@@ -1,0 +1,23 @@
+id: phpSysInfo_keyword
+info:
+  name: phpSysInfo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpSysInfo"
+        words:
+          - "var stargeturl = \"index.php?disp=dynamic"
+          - "content=\"phpsysinfo"
+          - "href=\"http://phpsysinfo.sourceforge.net/\">phpsysinfo"
+          - "/templates/phpsysinfo.css"
+        condition: and

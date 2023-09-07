@@ -1,0 +1,21 @@
+id: SourceCode_K2_keyword
+info:
+  name: SourceCode-K2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SourceCode-K2"
+        words:
+          - "document.getelementbyid(\"redirectform\".action = \"../mxworkspace/login.aspx"
+          - "document.getelementbyid(\"redirectform\".action = \"../workspace/default.aspx"
+        condition: and

@@ -1,0 +1,21 @@
+id: superplaceholder_js_keyword
+info:
+  name: superplaceholder.js_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "superplaceholder.js"
+        words:
+          - "superplaceholder.js"
+          - "superplaceholder.min.js"
+        condition: and

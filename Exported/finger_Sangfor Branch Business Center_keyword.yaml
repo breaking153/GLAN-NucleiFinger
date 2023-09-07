@@ -1,0 +1,20 @@
+id: Sangfor_Branch_Business_Center_keyword
+info:
+  name: Sangfor Branch Business Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sangfor Branch Business Center"
+        words:
+          - "location.href = '/bbc/index'"
+        condition: and

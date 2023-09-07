@@ -1,0 +1,21 @@
+id: SPON_IP_wang_luo_dui_jiang_guang_bo_xi_tong_keyword
+info:
+  name: SPON IP网络对讲广播系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SPON IP网络对讲广播系统"
+        words:
+          - "spon_base64.js"
+          - "login"
+        condition: and

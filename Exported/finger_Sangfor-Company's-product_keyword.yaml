@@ -1,0 +1,20 @@
+id: Sangfor_Company_s_product_keyword
+info:
+  name: Sangfor-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sangfor-Company's-product"
+        words:
+          - "arr[count++] = '%' + ('0'+(parseint(str.substr(i, 2, 16^key[i/2%32].tostring(16.touppercase(.slice(-2;"
+        condition: and

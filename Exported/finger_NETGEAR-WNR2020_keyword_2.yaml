@@ -1,0 +1,20 @@
+id: NETGEAR_WNR2020_keyword_1
+info:
+  name: NETGEAR-WNR2020_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR-WNR2020"
+        words:
+          - "netgear wnr2020"
+        condition: and

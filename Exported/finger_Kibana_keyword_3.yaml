@@ -1,0 +1,21 @@
+id: Kibana_keyword_1_1
+info:
+  name: Kibana_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kibana"
+        words:
+          - "kbn-name: kibana"
+          - "kbn-version"
+        condition: and

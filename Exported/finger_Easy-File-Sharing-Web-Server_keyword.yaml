@@ -1,0 +1,26 @@
+id: Easy_File_Sharing_Web_Server_keyword
+info:
+  name: Easy-File-Sharing-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Easy-File-Sharing-Web-Server"
+        words:
+          - "server: easy file sharing web server"
+        condition: and
+      - type: word
+        part: header
+        name: "Easy-File-Sharing-Web-Server"
+        words:
+          - "Easy File Sharing Web Server"
+        condition: and

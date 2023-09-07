@@ -1,0 +1,21 @@
+id: TomatoCMS_keyword
+info:
+  name: TomatoCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TomatoCMS"
+        words:
+          - "tomato.core.widget.loader.baseurl = 'http://"
+          - "<a href=\"http://www.tomatocms.com\" title=\"powered by tomatocms\" target=\"_blank\">"
+        condition: and

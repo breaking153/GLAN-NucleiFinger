@@ -1,0 +1,21 @@
+id: sha_men_kuai_pu_keyword
+info:
+  name: 厦门快普_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "厦门快普"
+        words:
+          - "jKPM6"
+          - "WebResource.axd"
+        condition: and

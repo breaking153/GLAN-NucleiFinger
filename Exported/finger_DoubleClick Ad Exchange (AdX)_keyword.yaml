@@ -1,0 +1,20 @@
+id: DoubleClick_Ad_Exchange_AdX_keyword
+info:
+  name: DoubleClick Ad Exchange (AdX)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DoubleClick Ad Exchange (AdX)"
+        words:
+          - "DoubleClick Ad Exchange (AdX)"
+        condition: and

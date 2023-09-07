@@ -1,0 +1,20 @@
+id: AXIS_70U_keyword
+info:
+  name: AXIS-70U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AXIS-70U"
+        words:
+          - "AXIS-70U"
+        condition: and

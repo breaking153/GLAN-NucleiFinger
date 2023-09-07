@@ -1,0 +1,20 @@
+id: Linksys_Smart_Wi_Fi_keyword
+info:
+  name: Linksys-Smart-Wi-Fi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Linksys-Smart-Wi-Fi"
+        words:
+          - "content=\"included with your linksys smart wi-fi "
+        condition: and

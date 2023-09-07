@@ -1,0 +1,22 @@
+id: NVS3000_zong_he_shi_pin_jian_kong_ping_tai_keyword
+info:
+  name: NVS3000综合视频监控平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NVS3000综合视频监控平台"
+        words:
+          - "视频监控"
+          - "NVS3000综合"
+          - "login"
+        condition: and

@@ -1,0 +1,26 @@
+id: libwww_perl_daemon_keyword
+info:
+  name: libwww-perl-daemon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "libwww-perl-daemon"
+        words:
+          - "server: libwww-perl-daemon"
+        condition: and
+      - type: word
+        part: header
+        name: "libwww-perl-daemon"
+        words:
+          - "libwww-perl-daemon"
+        condition: and

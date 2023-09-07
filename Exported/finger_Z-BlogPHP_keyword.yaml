@@ -1,0 +1,20 @@
+id: Z_BlogPHP_keyword
+info:
+  name: Z-BlogPHP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Z-BlogPHP"
+        words:
+          - "Product:Z-BlogPHP"
+        condition: and

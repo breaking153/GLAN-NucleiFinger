@@ -1,0 +1,21 @@
+id: CSCMS_keyword
+info:
+  name: CSCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CSCMS"
+        words:
+          - "tag_adfo dis_wap"
+          - "/js/cscms.js"
+        condition: and

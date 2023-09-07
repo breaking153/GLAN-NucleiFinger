@@ -1,0 +1,20 @@
+id: Actiontec_MI424WR_keyword
+info:
+  name: Actiontec-MI424WR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Actiontec-MI424WR"
+        words:
+          - "</div> actiontec mi424wr"
+        condition: and

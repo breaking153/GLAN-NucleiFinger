@@ -1,0 +1,20 @@
+id: hnjycy_keyword
+info:
+  name: hnjycy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hnjycy"
+        words:
+          - "href=\"http://www.hnjycy.com\" target=\"_blank\">沃科网<"
+        condition: and

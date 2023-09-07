@@ -1,0 +1,20 @@
+id: Brocade_Data_Angle_Guard_Database_keyword
+info:
+  name: Brocade-Data-Angle-Guard-Database_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Brocade-Data-Angle-Guard-Database"
+        words:
+          - "window.location.host + \"/agweb\""
+        condition: and

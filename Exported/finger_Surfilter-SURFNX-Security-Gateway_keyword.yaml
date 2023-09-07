@@ -1,0 +1,21 @@
+id: Surfilter_SURFNX_Security_Gateway_keyword
+info:
+  name: Surfilter-SURFNX-Security-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Surfilter-SURFNX-Security-Gateway"
+        words:
+          - "internal/templates/surfilter/images/logo_big.png"
+          - "/internal/templates/surfilter/css/"
+        condition: and

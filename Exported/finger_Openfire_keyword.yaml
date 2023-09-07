@@ -1,0 +1,21 @@
+id: Openfire_keyword
+info:
+  name: Openfire_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Openfire"
+        words:
+          - "class=\"row justify-content-center\""
+          - "<title>openfire 管理界面</title>"
+        condition: and

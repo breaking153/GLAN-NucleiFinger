@@ -1,0 +1,20 @@
+id: WIFI_security_terminal_Device_management_keyword
+info:
+  name: WIFI-security-terminal-Device-management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WIFI-security-terminal-Device-management"
+        words:
+          - "<h1>wifi安全终端设备管理</h1>"
+        condition: and

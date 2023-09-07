@@ -1,0 +1,20 @@
+id: TomatoUSB_Linksys_E3000_keyword
+info:
+  name: TomatoUSB-Linksys-E3000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TomatoUSB-Linksys-E3000"
+        words:
+          - "realm=\"linksys e3000"
+        condition: and

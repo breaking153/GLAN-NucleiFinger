@@ -1,0 +1,21 @@
+id: HaoShiTong_Cloud_Conference_keyword
+info:
+  name: HaoShiTong-Cloud-Conference_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HaoShiTong-Cloud-Conference"
+        words:
+          - "images/common/logina_1.gif"
+          - "type=\"hidden\" id=\"app.index.configsuclogin"
+        condition: and

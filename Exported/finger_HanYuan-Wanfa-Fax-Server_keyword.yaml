@@ -1,0 +1,21 @@
+id: HanYuan_Wanfa_Fax_Server_keyword
+info:
+  name: HanYuan-Wanfa-Fax-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HanYuan-Wanfa-Fax-Server"
+        words:
+          - "background=\"images/centerfax0.gif\""
+          - "background-image:url(images/bgfax0.jpg;"
+        condition: and

@@ -1,0 +1,33 @@
+id: Ikonboard_keyword
+info:
+  name: Ikonboard_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ikonboard"
+        words:
+          - "content=\"ikonboard"
+          - "powered by <a href=\"http://www.ikonboard.com"
+        condition: and
+      - type: word
+        part: body
+        name: "Ikonboard"
+        words:
+          - "content=\"Ikonboard"
+        condition: and
+      - type: word
+        part: body
+        name: "Ikonboard"
+        words:
+          - "Powered by <a href=\"http://www.ikonboard.com"
+        condition: and

@@ -1,0 +1,20 @@
+id: iTEST3_0_keyword
+info:
+  name: iTEST3.0_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iTEST3.0"
+        words:
+          - "src=\"/itest/static/its/internal/"
+        condition: and

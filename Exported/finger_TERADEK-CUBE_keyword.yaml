@@ -1,0 +1,21 @@
+id: TERADEK_CUBE_keyword
+info:
+  name: TERADEK-CUBE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TERADEK-CUBE"
+        words:
+          - "index.cs?header=0"
+          - "administrative console"
+        condition: and

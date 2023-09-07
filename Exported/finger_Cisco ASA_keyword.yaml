@@ -1,0 +1,20 @@
+id: Cisco_ASA_keyword_1
+info:
+  name: Cisco ASA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cisco ASA"
+        words:
+          - "Cisco ASA"
+        condition: and

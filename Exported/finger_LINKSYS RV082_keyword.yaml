@@ -1,0 +1,20 @@
+id: LINKSYS_RV082_keyword
+info:
+  name: LINKSYS RV082_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LINKSYS RV082"
+        words:
+          - "LINKSYS RV082"
+        condition: and

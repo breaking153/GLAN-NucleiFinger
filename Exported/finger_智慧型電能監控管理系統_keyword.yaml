@@ -1,0 +1,20 @@
+id: zhi_hui_xing_dian_neng_jian_kong_guan_li_xi_tong_keyword
+info:
+  name: 智慧型電能監控管理系統_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "智慧型電能監控管理系統"
+        words:
+          - "智慧型電能監控管理系統"
+        condition: and

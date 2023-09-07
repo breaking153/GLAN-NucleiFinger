@@ -1,0 +1,20 @@
+id: Linksys_sacz_keyword
+info:
+  name: Linksys-sacz_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys-sacz"
+        words:
+          - "Linksys-sacz"
+        condition: and

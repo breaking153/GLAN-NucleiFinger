@@ -1,0 +1,21 @@
+id: Salien_Performance_Management_Platform_keyword
+info:
+  name: Salien-Performance-Management-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Salien-Performance-Management-Platform"
+        words:
+          - "href=\"images/login/cbgl/favicon.ico\""
+          - "content=\"copyright 2010 www.salien.com.cn\""
+        condition: and

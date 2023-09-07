@@ -1,0 +1,21 @@
+id: HUAWEI_HG8240_keyword
+info:
+  name: HUAWEI-HG8240_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUAWEI-HG8240"
+        words:
+          - "var productname = 'hg8240'"
+          - "var productname='hg8240'"
+        condition: and

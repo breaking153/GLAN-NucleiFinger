@@ -1,0 +1,21 @@
+id: Digi_Connect_SP_keyword
+info:
+  name: Digi-Connect-SP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Digi-Connect-SP"
+        words:
+          - "href=\"http://www.digi.com\""
+          - "welcome to the configuration and management interface of the digi connect sp python."
+        condition: and

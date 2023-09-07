@@ -1,0 +1,20 @@
+id: Oracle_Web_Cache_keyword
+info:
+  name: Oracle Web Cache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Oracle Web Cache"
+        words:
+          - "Oracle Web Cache"
+        condition: and

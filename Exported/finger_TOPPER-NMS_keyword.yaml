@@ -1,0 +1,20 @@
+id: TOPPER_NMS_keyword
+info:
+  name: TOPPER-NMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOPPER-NMS"
+        words:
+          - "mailto:kenstar@kenstar-group.com"
+        condition: and

@@ -1,0 +1,23 @@
+id: net2ftp_keyword
+info:
+  name: net2ftp_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "net2ftp"
+        words:
+          - "<!-- net2ftp version"
+          - "<!-- end of net2ftp login form"
+          - "href=\"http://www.net2ftp.com\">net2ftp</a>"
+          - "content=\"net2ftp"
+        condition: and

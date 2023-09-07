@@ -1,0 +1,21 @@
+id: Xbrother_Modularized_environment_Monitoring_system_of_Data_Center_keyword
+info:
+  name: Xbrother-Modularized&environment-Monitoring-system-of-Data-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Xbrother-Modularized&environment-Monitoring-system-of-Data-Center"
+        words:
+          - "id=webclient codebase=webclient.cab"
+          - "classid=clsid:6892ebc7-0186-4a73-a5ce-a144865f3dc5>"
+        condition: and

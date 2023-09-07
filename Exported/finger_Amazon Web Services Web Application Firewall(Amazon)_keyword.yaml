@@ -1,0 +1,26 @@
+id: Amazon_Web_Services_Web_Application_Firewall_Amazon_keyword
+info:
+  name: Amazon Web Services Web Application Firewall(Amazon)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Amazon Web Services Web Application Firewall(Amazon)"
+        words:
+          - "Amazon Web Services Web Application Firewall"
+        condition: and
+      - type: word
+        part: body
+        name: "Amazon Web Services Web Application Firewall(Amazon)"
+        words:
+          - "Amazon"
+        condition: and

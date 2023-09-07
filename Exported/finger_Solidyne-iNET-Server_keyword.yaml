@@ -1,0 +1,21 @@
+id: Solidyne_iNET_Server_keyword
+info:
+  name: Solidyne-iNET-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Solidyne-iNET-Server"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0; url=/hmi/\">"
+          - "<frame name=\"frleft\" scrolling=\"no\" id=\"frleft\" src=\"qfrleft.aspx\">"
+        condition: and

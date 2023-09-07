@@ -1,0 +1,19 @@
+id: chang_jie_CRM_faviconhash
+info:
+  name: 畅捷CRM_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "畅捷CRM"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1068428644\""
+        condition: or

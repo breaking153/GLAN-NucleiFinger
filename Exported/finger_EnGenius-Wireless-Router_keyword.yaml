@@ -1,0 +1,21 @@
+id: EnGenius_Wireless_Router_keyword
+info:
+  name: EnGenius-Wireless-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EnGenius-Wireless-Router"
+        words:
+          - "engeniusrouter"
+          - "/logo_engenius.png"
+        condition: and

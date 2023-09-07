@@ -1,0 +1,20 @@
+id: NGI_DIAM4_keyword
+info:
+  name: NGI-DIAM4_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NGI-DIAM4"
+        words:
+          - "src=\"/diam4/inc/lang/fr/lang.min.js\""
+        condition: and

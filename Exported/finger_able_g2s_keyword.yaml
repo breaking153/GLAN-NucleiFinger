@@ -1,0 +1,20 @@
+id: able_g2s_keyword
+info:
+  name: able_g2s_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "able_g2s"
+        words:
+          - "LoginForm.aspx?&KeepThis=true&TB_iframe=true&height=150&width=300', false);"
+        condition: and

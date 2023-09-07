@@ -1,0 +1,20 @@
+id: TP_LINK_TD_VG3631_keyword_1
+info:
+  name: TP-LINK TD-VG3631_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK TD-VG3631"
+        words:
+          - "TP-LINK TD-VG3631"
+        condition: and

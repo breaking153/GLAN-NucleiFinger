@@ -1,0 +1,20 @@
+id: SONY_SNC_EP521_keyword
+info:
+  name: SONY-SNC-EP521_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SONY-SNC-EP521"
+        words:
+          - "sony network camera snc-ep521"
+        condition: and

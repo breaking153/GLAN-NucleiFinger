@@ -1,0 +1,26 @@
+id: HituxCMS_hai_na_qi_ye_wang_zhan_guan_li_xi_tong_keyword_1
+info:
+  name: HituxCMS(海纳企业网站管理系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HituxCMS(海纳企业网站管理系统)"
+        words:
+          - "HituxCMS"
+        condition: and
+      - type: word
+        part: header
+        name: "HituxCMS(海纳企业网站管理系统)"
+        words:
+          - "海纳企业网站管理系统"
+        condition: and

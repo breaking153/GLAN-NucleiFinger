@@ -1,0 +1,28 @@
+id: NetDvrV3_keyword
+info:
+  name: NetDvrV3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetDvrV3"
+        words:
+          - "objlvrfornoie"
+          - "netdvrv3"
+          - "document.write(\"<a href='../netdvrv3.exe'>web client plugin</a>.\""
+        condition: and
+      - type: word
+        part: body
+        name: "NetDvrV3"
+        words:
+          - "objLvrForNoIE"
+        condition: and

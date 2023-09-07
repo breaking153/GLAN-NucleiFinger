@@ -1,0 +1,27 @@
+id: AliyunOSS_keyword
+info:
+  name: AliyunOSS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AliyunOSS"
+        words:
+          - "server: aliyunoss"
+          - "x-oss-request-id"
+        condition: and
+      - type: word
+        part: header
+        name: "AliyunOSS"
+        words:
+          - "AliyunOSS"
+        condition: and

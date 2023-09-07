@@ -1,0 +1,21 @@
+id: RemObjects_DXSock_keyword
+info:
+  name: RemObjects-DXSock_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RemObjects-DXSock"
+        words:
+          - "content=\"remobjects sdk"
+          - "remobjects software, llc."
+        condition: and

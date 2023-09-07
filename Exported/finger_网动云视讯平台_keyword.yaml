@@ -1,0 +1,26 @@
+id: wang_dong_yun_shi_xun_ping_tai_keyword
+info:
+  name: 网动云视讯平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "网动云视讯平台"
+        words:
+          - "/js/roomHeight.js"
+        condition: and
+      - type: word
+        part: body
+        name: "网动云视讯平台"
+        words:
+          - "meetingShow!show.action"
+        condition: and

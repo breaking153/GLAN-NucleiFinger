@@ -1,0 +1,21 @@
+id: Kingdee_keyword
+info:
+  name: Kingdee_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kingdee"
+        words:
+          - "href=\"/kingdee/index.jsp\""
+          - "img src=\"images/logo-kingdee.gif\""
+        condition: and

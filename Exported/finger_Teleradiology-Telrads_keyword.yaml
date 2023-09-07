@@ -1,0 +1,20 @@
+id: Teleradiology_Telrads_keyword
+info:
+  name: Teleradiology-Telrads_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Teleradiology-Telrads"
+        words:
+          - "https://clients.telrads.com/css/feedback.css"
+        condition: and

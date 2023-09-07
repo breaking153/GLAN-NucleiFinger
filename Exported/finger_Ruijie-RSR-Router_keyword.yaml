@@ -1,0 +1,20 @@
+id: Ruijie_RSR_Router_keyword
+info:
+  name: Ruijie-RSR-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie-RSR-Router"
+        words:
+          - "class=\"foot_login\">ruijie networks rsr router"
+        condition: and

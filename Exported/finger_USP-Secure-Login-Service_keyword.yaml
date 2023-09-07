@@ -1,0 +1,22 @@
+id: USP_Secure_Login_Service_keyword
+info:
+  name: USP-Secure-Login-Service_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "USP-Secure-Login-Service"
+        words:
+          - "<!-- sls javascripts -->"
+          - "<form action=\"auth\" method=\"post\" name=\"loginform\" onsubmit=\"return checkformsubmit(;\" >"
+          - "<input name=\"currentrequestedpage\" type=\"hidden\" value="
+        condition: and

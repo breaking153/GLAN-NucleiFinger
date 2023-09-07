@@ -1,0 +1,20 @@
+id: lan_ling_yi_dong_ban_gong_keyword
+info:
+  name: 蓝凌移动办公_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "蓝凌移动办公"
+        words:
+          - "蓝凌移动办公"
+        condition: and

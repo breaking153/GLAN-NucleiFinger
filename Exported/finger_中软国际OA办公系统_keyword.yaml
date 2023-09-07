@@ -1,0 +1,20 @@
+id: zhong_ruan_guo_ji_OA_ban_gong_xi_tong_keyword
+info:
+  name: 中软国际OA办公系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "中软国际OA办公系统"
+        words:
+          - "中软国际OA办公系统"
+        condition: and

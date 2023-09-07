@@ -1,0 +1,21 @@
+id: fang_zheng_xiang_yu_keyword
+info:
+  name: 方正翔宇_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "方正翔宇"
+        words:
+          - "e5style/login1.css"
+          - "e5workspace/security/captcha.do"
+        condition: and

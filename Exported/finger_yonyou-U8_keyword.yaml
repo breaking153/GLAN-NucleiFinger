@@ -1,0 +1,22 @@
+id: yonyou_U8_keyword
+info:
+  name: yonyou-U8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "yonyou-U8"
+        words:
+          - "getfirstu8accid"
+          - "javascript/bw8.js"
+          - "var servervendor = 'yonyouupcn'"
+        condition: and

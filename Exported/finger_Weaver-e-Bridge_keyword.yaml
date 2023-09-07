@@ -1,0 +1,20 @@
+id: Weaver_e_Bridge_keyword
+info:
+  name: Weaver-e-Bridge_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Weaver-e-Bridge"
+        words:
+          - "content=\"泛微云桥e-bridge\""
+        condition: and

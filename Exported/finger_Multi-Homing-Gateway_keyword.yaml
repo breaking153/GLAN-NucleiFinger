@@ -1,0 +1,20 @@
+id: Multi_Homing_Gateway_keyword
+info:
+  name: Multi-Homing-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Multi-Homing-Gateway"
+        words:
+          - "realm=\"multi-homing gateway"
+        condition: and

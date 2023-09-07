@@ -1,0 +1,21 @@
+id: DAS_USMB_keyword
+info:
+  name: DAS-USMB-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DAS-USMB-"
+        words:
+          - "var pagefunc968535468893538dasdaweqwertion = \"timeout\";"
+          - "src=\"loadoem?path=login-logo.png"
+        condition: and

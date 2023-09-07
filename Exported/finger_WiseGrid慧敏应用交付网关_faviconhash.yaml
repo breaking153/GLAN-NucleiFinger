@@ -1,0 +1,19 @@
+id: WiseGrid_hui_min_ying_yong_jiao_fu_wang_guan_faviconhash
+info:
+  name: WiseGrid慧敏应用交付网关_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "WiseGrid慧敏应用交付网关"
+        dsl:
+          - "mmh3(base64_py(body)) == \"910523681\""
+        condition: or

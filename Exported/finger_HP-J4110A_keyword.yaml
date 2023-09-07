@@ -1,0 +1,20 @@
+id: HP_J4110A_keyword
+info:
+  name: HP-J4110A_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HP-J4110A"
+        words:
+          - "realm=\"hp j4110a"
+        condition: and

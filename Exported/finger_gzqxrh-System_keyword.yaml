@@ -1,0 +1,23 @@
+id: gzqxrh_System_keyword
+info:
+  name: gzqxrh-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "gzqxrh-System"
+        words:
+          - "广州全息若海信息科技有限公司"
+          - "src=\"/scripts/easyui/jquery.easyui.min.js\""
+          - "style=\"vertical-align: middle; cursor: pointer"
+          - "响应键盘的回车事件"
+        condition: and

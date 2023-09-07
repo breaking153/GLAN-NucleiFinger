@@ -1,0 +1,20 @@
+id: cradlepoint_AER2200_600M_keyword
+info:
+  name: cradlepoint-AER2200-600M_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-AER2200-600M"
+        words:
+          - "cplogin.model = \"aer2200-fips-600m\";"
+        condition: and

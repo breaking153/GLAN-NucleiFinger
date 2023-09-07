@@ -1,0 +1,21 @@
+id: InfoGuard_Airlock_keyword
+info:
+  name: InfoGuard-Airlock_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "InfoGuard-Airlock"
+        words:
+          - "al_sess="
+          - "al_lb="
+        condition: and

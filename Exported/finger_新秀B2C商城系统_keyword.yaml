@@ -1,0 +1,20 @@
+id: xin_xiu_B2C_shang_cheng_xi_tong_keyword
+info:
+  name: 新秀B2C商城系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "新秀B2C商城系统"
+        words:
+          - "新秀B2C商城系统"
+        condition: and

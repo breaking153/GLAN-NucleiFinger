@@ -1,0 +1,20 @@
+id: Youngzsoft_DBMail_keyword
+info:
+  name: Youngzsoft-DBMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Youngzsoft-DBMail"
+        words:
+          - "href=\"http://www.dbmailserver.com\" target=_blank"
+        condition: and

@@ -1,0 +1,32 @@
+id: FOXPHP_kai_yuan_wei_ke_xi_tong_keyword
+info:
+  name: FOXPHP开源威客系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FOXPHP开源威客系统"
+        words:
+          - "FoxPHPScroll"
+        condition: and
+      - type: word
+        part: body
+        name: "FOXPHP开源威客系统"
+        words:
+          - "FoxPHP_ImList"
+        condition: and
+      - type: word
+        part: body
+        name: "FOXPHP开源威客系统"
+        words:
+          - "content=\"FoxPHP"
+        condition: and

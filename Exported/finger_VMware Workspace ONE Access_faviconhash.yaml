@@ -1,0 +1,19 @@
+id: VMware_Workspace_ONE_Access_faviconhash
+info:
+  name: VMware Workspace ONE Access_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "VMware Workspace ONE Access"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1250474341\""
+        condition: or

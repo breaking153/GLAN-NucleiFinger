@@ -1,0 +1,21 @@
+id: E_Tiller_keyword
+info:
+  name: E-Tiller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "E-Tiller"
+        words:
+          - "北京勤云"
+          - "reader/view_abstract.aspx"
+        condition: and

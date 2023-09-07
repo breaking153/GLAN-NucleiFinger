@@ -1,0 +1,26 @@
+id: Destoon_B2B_wang_zhan_keyword
+info:
+  name: Destoon B2B网站_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Destoon B2B网站"
+        words:
+          - "Powered by DESTOON"
+        condition: and
+      - type: word
+        part: body
+        name: "Destoon B2B网站"
+        words:
+          - "DESTOON B2B SYSTEM"
+        condition: and

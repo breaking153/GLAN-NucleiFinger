@@ -1,0 +1,20 @@
+id: RX_Web_Server_keyword
+info:
+  name: RX Web Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "RX Web Server"
+        words:
+          - "RX Web Server"
+        condition: and

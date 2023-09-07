@@ -1,0 +1,20 @@
+id: learun_System_keyword
+info:
+  name: learun-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "learun-System"
+        words:
+          - "content=\"力软敏捷开发框架，是一个web可视化开发平台"
+        condition: and

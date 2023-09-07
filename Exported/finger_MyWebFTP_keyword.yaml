@@ -1,0 +1,21 @@
+id: MyWebFTP_keyword
+info:
+  name: MyWebFTP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MyWebFTP"
+        words:
+          - "href='mwftp/common/mwftp.css"
+          - "mwftp/common/mwftp.js"
+        condition: and

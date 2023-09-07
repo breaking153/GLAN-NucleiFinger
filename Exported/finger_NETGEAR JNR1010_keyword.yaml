@@ -1,0 +1,20 @@
+id: NETGEAR_JNR1010_keyword_1
+info:
+  name: NETGEAR JNR1010_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR JNR1010"
+        words:
+          - "NETGEAR JNR1010"
+        condition: and

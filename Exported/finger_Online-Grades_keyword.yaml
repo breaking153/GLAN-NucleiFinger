@@ -1,0 +1,20 @@
+id: Online_Grades_keyword
+info:
+  name: Online-Grades_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Online-Grades"
+        words:
+          - "content=\"online grades"
+        condition: and

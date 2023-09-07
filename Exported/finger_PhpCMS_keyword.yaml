@@ -1,0 +1,53 @@
+id: PhpCMS_keyword
+info:
+  name: PhpCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PhpCMS"
+        words:
+          - "http://www.phpcms.cn"
+          - "content=\"phpcms"
+          - "powered by phpcms"
+          - "data/configs.js"
+        condition: and
+      - type: word
+        part: body
+        name: "PhpCMS"
+        words:
+          - "content=\"Phpcms"
+        condition: and
+      - type: word
+        part: body
+        name: "PhpCMS"
+        words:
+          - "Powered by Phpcms"
+        condition: and
+      - type: word
+        part: body
+        name: "PhpCMS"
+        words:
+          - "data/config.js"
+        condition: and
+      - type: word
+        part: body
+        name: "PhpCMS"
+        words:
+          - "/index.php?m=content&c=index&a=lists"
+        condition: and
+      - type: word
+        part: body
+        name: "PhpCMS"
+        words:
+          - "/index.php?m=content&amp;c=index&amp;a=lists"
+        condition: and

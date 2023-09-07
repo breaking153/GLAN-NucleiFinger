@@ -1,0 +1,26 @@
+id: wang_su_CDN_keyword
+info:
+  name: 网宿CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "网宿CDN"
+        words:
+          - "Cdn Cache Server"
+        condition: and
+      - type: word
+        part: header
+        name: "网宿CDN"
+        words:
+          - "WS CDN Server"
+        condition: and

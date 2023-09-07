@@ -1,0 +1,20 @@
+id: Alibaba_Group_DMS_keyword
+info:
+  name: Alibaba-Group-DMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alibaba-Group-DMS"
+        words:
+          - "copyright &copy;  dms  all rights reserved （alibaba 数据管理产品）"
+        condition: and

@@ -1,0 +1,20 @@
+id: hw99_Checking_keyword
+info:
+  name: hw99-Checking_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hw99-Checking"
+        words:
+          - "/hwface/script/logincheck.js"
+        condition: and

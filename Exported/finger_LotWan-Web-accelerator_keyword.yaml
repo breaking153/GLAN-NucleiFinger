@@ -1,0 +1,20 @@
+id: LotWan_Web_accelerator_keyword
+info:
+  name: LotWan-Web-accelerator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LotWan-Web-accelerator"
+        words:
+          - "北京华夏创新科技有限公司"
+        condition: and

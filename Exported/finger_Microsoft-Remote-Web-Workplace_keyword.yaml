@@ -1,0 +1,21 @@
+id: Microsoft_Remote_Web_Workplace_keyword
+info:
+  name: Microsoft-Remote-Web-Workplace_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Microsoft-Remote-Web-Workplace"
+        words:
+          - "content=\"copyright (c microsoft corporation"
+          - "action=\"logon.aspx?"
+        condition: and

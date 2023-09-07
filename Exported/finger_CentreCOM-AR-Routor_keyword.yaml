@@ -1,0 +1,21 @@
+id: CentreCOM_AR_Routor_keyword
+info:
+  name: CentreCOM-AR-Routor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CentreCOM-AR-Routor"
+        words:
+          - "centrecom&reg; ar260s v2</span>"
+          - "centrecom&reg; arx640s</span>"
+        condition: and

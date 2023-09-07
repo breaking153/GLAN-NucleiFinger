@@ -1,0 +1,26 @@
+id: Sophos_Web_Appliance_keyword_1
+info:
+  name: Sophos Web Appliance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sophos Web Appliance"
+        words:
+          - "resources/images/sophos_web.ico"
+        condition: and
+      - type: word
+        part: body
+        name: "Sophos Web Appliance"
+        words:
+          - "url(resources/images/en/login_swa.jpg)"
+        condition: and

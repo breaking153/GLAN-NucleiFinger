@@ -1,0 +1,20 @@
+id: EDAS_Setting_Management_keyword
+info:
+  name: EDAS-Setting-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EDAS-Setting-Management"
+        words:
+          - "lcccommoncontroller"
+        condition: and

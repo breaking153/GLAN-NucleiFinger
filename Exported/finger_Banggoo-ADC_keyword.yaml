@@ -1,0 +1,21 @@
+id: Banggoo_ADC_keyword
+info:
+  name: Banggoo-ADC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Banggoo-ADC"
+        words:
+          - "content=\"banggoo adc "
+          - "欢迎登录banggoo adc管理界面</div>"
+        condition: and

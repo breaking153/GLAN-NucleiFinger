@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}/favicon.ico"
+      - "{{RootURL}}//favicon.ico"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -18,4 +18,5 @@ http:
           - "mmh3(base64_py(body)) == \"-1255992602\""
           - "mmh3(base64_py(body)) == \"1895360511\""
           - "mmh3(base64_py(body)) == \"-991123252\""
+          - "mmh3(base64_py(body)) == \"1182206475\""
         condition: or

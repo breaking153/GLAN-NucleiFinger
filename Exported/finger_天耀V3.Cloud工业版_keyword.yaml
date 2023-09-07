@@ -1,0 +1,20 @@
+id: tian_yao_V3_Cloud_gong_ye_ban_keyword
+info:
+  name: 天耀V3.Cloud工业版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "天耀V3.Cloud工业版"
+        words:
+          - "天耀V3.Cloud工业版"
+        condition: and

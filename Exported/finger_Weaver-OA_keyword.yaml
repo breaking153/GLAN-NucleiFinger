@@ -1,0 +1,24 @@
+id: Weaver_OA_keyword
+info:
+  name: Weaver-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Weaver-OA"
+        words:
+          - "/wui/common/css/w7ovfont.css"
+          - "typeof poppedwindow"
+          - "client/jquery.client_wev8.js"
+          - "/theme/ecology8/jquery/js/zdialog_wev8.js"
+          - "ecology8/lang/weaver_lang_7_wev8.js"
+        condition: and

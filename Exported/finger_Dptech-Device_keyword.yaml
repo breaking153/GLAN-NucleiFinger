@@ -1,0 +1,21 @@
+id: Dptech_Device_keyword
+info:
+  name: Dptech-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dptech-Device"
+        words:
+          - "window.location = \"html/login_en.html\";"
+          - "/func/web_main/validate?check=\"+hex_md5(s.tolowercase("
+        condition: and

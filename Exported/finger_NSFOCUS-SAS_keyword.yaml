@@ -1,0 +1,20 @@
+id: NSFOCUS_SAS_keyword
+info:
+  name: NSFOCUS-SAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-SAS"
+        words:
+          - "/login_logo_sas_zh_cn.png"
+        condition: and

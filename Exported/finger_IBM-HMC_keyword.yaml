@@ -1,0 +1,21 @@
+id: IBM_HMC_keyword
+info:
+  name: IBM-HMC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-HMC"
+        words:
+          - "rel=\"icon\" href=\"/hmc.png"
+          - "<frame src=\"/preloginmonitor/welcome.jsp\"/>"
+        condition: and

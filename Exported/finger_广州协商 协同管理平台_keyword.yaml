@@ -1,0 +1,20 @@
+id: guang_zhou_xie_shang_xie_tong_guan_li_ping_tai_keyword
+info:
+  name: 广州协商 协同管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "广州协商 协同管理平台"
+        words:
+          - "广州协商 协同管理平台"
+        condition: and

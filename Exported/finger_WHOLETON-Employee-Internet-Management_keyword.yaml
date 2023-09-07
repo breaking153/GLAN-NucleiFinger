@@ -1,0 +1,23 @@
+id: WHOLETON_Employee_Internet_Management_keyword
+info:
+  name: WHOLETON-Employee-Internet-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WHOLETON-Employee-Internet-Management"
+        words:
+          - "updateloginpswd.php"
+          - "passroedele"
+          - "下一代防火墙"
+          - "classid=\"clsid:81be1f16-9d88-48cc-8d3e-cb8e37b71fee"
+        condition: and

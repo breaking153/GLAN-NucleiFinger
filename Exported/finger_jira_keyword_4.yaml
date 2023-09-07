@@ -1,0 +1,20 @@
+id: jira_keyword_1
+info:
+  name: jira_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "jira"
+        words:
+          - "atlassian.xsrf.token"
+        condition: and

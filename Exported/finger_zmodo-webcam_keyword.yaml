@@ -1,0 +1,20 @@
+id: zmodo_webcam_keyword
+info:
+  name: zmodo-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zmodo-webcam"
+        words:
+          - "src='./img/bj.jpg',sizingmethod='scale'"
+        condition: and

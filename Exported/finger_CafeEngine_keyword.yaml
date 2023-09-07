@@ -1,0 +1,26 @@
+id: CafeEngine_keyword
+info:
+  name: CafeEngine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CafeEngine"
+        words:
+          - "/CafeEngine/style.css"
+        condition: and
+      - type: word
+        part: body
+        name: "CafeEngine"
+        words:
+          - "<a href=http://cafeengine.com>CafeEngine.com"
+        condition: and

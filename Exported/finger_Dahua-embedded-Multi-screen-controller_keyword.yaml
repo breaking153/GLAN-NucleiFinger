@@ -1,0 +1,21 @@
+id: Dahua_embedded_Multi_screen_controller_keyword
+info:
+  name: Dahua-embedded-Multi-screen-controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dahua-embedded-Multi-screen-controller"
+        words:
+          - "嵌入式多屏控制器"
+          - "<!--div id=\"information\">浙江大华技术股份有限公司</div-->"
+        condition: and

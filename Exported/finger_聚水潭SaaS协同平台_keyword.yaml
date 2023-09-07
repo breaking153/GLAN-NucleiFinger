@@ -7,20 +7,14 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
     matchers:
       - type: word
-        part: body
+        part: header
         name: "聚水潭SaaS协同平台"
         words:
-          - "Hxj_Web_UI_Script_jquery_json-2_4_js"
-        condition: and
-      - type: word
-        part: body
-        name: "聚水潭SaaS协同平台"
-        words:
-          - "<title>聚水潭SaaS协同平台登录入口</title>"
+          - "聚水潭SaaS协同平台"
         condition: and

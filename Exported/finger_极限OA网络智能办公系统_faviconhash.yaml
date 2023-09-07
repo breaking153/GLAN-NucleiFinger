@@ -1,0 +1,19 @@
+id: ji_xian_OA_wang_luo_zhi_neng_ban_gong_xi_tong_faviconhash
+info:
+  name: 极限OA网络智能办公系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "极限OA网络智能办公系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1967132225\""
+        condition: or

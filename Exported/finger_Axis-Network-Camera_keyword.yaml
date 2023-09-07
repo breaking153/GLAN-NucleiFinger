@@ -1,0 +1,22 @@
+id: Axis_Network_Camera_keyword
+info:
+  name: Axis-Network-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Axis-Network-Camera"
+        words:
+          - "/incl/trash.shtml"
+          - "src=\"/incl/axis_connection.js"
+          - "/axis-media/media.amp?"
+        condition: and

@@ -1,0 +1,20 @@
+id: linksys_wrt160nl_keyword
+info:
+  name: linksys wrt160nl_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "linksys wrt160nl"
+        words:
+          - "linksys wrt160nl"
+        condition: and

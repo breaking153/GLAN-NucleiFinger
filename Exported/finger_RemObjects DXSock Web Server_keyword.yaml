@@ -1,0 +1,20 @@
+id: RemObjects_DXSock_Web_Server_keyword
+info:
+  name: RemObjects DXSock Web Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "RemObjects DXSock Web Server"
+        words:
+          - "RemObjects DXSock Web Server"
+        condition: and

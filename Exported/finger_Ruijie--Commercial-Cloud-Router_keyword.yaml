@@ -1,0 +1,20 @@
+id: Ruijie_Commercial_Cloud_Router_keyword
+info:
+  name: Ruijie--Commercial-Cloud-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie--Commercial-Cloud-Router"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0; url=/cgi-bin/mcfi\" />"
+        condition: and

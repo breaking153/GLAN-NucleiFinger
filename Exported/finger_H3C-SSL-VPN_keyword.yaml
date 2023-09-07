@@ -1,0 +1,21 @@
+id: H3C_SSL_VPN_keyword
+info:
+  name: H3C-SSL-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-SSL-VPN"
+        words:
+          - "keep me signed in</span>"
+          - "welcome to ssl vpn</h1>"
+        condition: and

@@ -1,0 +1,21 @@
+id: BinarySec_Cloud_Defense_keyword
+info:
+  name: BinarySec-Cloud-Defense_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BinarySec-Cloud-Defense"
+        words:
+          - "x-binarysec"
+          - "x-binarysec-nocache"
+        condition: and

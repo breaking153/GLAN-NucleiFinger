@@ -1,0 +1,20 @@
+id: ATEN_SN0116_HTTP_Server_keyword
+info:
+  name: ATEN SN0116 HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ATEN SN0116 HTTP Server"
+        words:
+          - "ATEN SN0116 HTTP Server"
+        condition: and

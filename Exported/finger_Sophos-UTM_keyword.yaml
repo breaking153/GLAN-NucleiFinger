@@ -1,0 +1,20 @@
+id: Sophos_UTM_keyword
+info:
+  name: Sophos-UTM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sophos-UTM"
+        words:
+          - "wfe/asg/js/"
+        condition: and

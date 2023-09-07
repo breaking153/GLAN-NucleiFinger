@@ -1,0 +1,20 @@
+id: xi_mo_ke_ji_shang_wang_xing_wei_guan_li_keyword
+info:
+  name: 西默科技 上网行为管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "西默科技 上网行为管理"
+        words:
+          - "西默科技 上网行为管理"
+        condition: and

@@ -1,0 +1,20 @@
+id: Canon_MF4500_Series_keyword
+info:
+  name: Canon-MF4500-Series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-MF4500-Series"
+        words:
+          - "<td>mf4500 series</td>"
+        condition: and

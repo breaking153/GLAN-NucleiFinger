@@ -1,0 +1,21 @@
+id: RV042_VPN_Router_keyword
+info:
+  name: RV042-VPN-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "RV042-VPN-Router"
+        words:
+          - "realm=\"rv042"
+          - "realm=\"klo-rv042"
+        condition: and

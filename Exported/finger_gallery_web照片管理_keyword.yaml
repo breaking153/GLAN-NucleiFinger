@@ -1,0 +1,20 @@
+id: gallery_web_zhao_pian_guan_li_keyword
+info:
+  name: gallery_web照片管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "gallery_web照片管理"
+        words:
+          - "/gallery/images/gallery.png"
+        condition: and

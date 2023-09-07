@@ -1,0 +1,21 @@
+id: FiberHome_Product_keyword
+info:
+  name: FiberHome-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FiberHome-Product"
+        words:
+          - "fiberhome systems, inc."
+          - "scos_fx@fiberhome.com "
+        condition: and

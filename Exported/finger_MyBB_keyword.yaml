@@ -1,0 +1,23 @@
+id: MyBB_keyword
+info:
+  name: MyBB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MyBB"
+        words:
+          - "powered by <a href=\"http://www.mybboard.com"
+          - "<!-- mybb is free software developed and maintained"
+          - "visibility of the mybb copyright at any time"
+          - "onchange=\"mybb.changelanguage(;"
+        condition: and

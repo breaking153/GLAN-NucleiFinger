@@ -1,0 +1,20 @@
+id: you_WAF_keyword
+info:
+  name: 有WAF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "有WAF"
+        words:
+          - "WAF/"
+        condition: and

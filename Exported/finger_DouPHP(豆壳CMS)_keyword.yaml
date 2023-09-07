@@ -1,0 +1,32 @@
+id: DouPHP_dou_ke_CMS_keyword
+info:
+  name: DouPHP(豆壳CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DouPHP(豆壳CMS)"
+        words:
+          - "DouPHP"
+        condition: and
+      - type: word
+        part: body
+        name: "DouPHP(豆壳CMS)"
+        words:
+          - "Powered by DouPHP"
+        condition: and
+      - type: word
+        part: body
+        name: "DouPHP(豆壳CMS)"
+        words:
+          - "indexLeft"
+        condition: and

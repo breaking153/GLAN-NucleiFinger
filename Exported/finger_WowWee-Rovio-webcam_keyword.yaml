@@ -1,0 +1,20 @@
+id: WowWee_Rovio_webcam_keyword
+info:
+  name: WowWee-Rovio-webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WowWee-Rovio-webcam"
+        words:
+          - "basic realm=\"rovio\""
+        condition: and

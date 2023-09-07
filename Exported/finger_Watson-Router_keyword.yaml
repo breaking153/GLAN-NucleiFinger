@@ -1,0 +1,20 @@
+id: Watson_Router_keyword
+info:
+  name: Watson-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Watson-Router"
+        words:
+          - " case 32: if (is_button_in_focus"
+        condition: and

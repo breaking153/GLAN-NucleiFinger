@@ -1,0 +1,20 @@
+id: ZHYU_TrustMore_keyword
+info:
+  name: ZHYU-TrustMore_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZHYU-TrustMore"
+        words:
+          - "TrustMore 安全可信的应用授权平台"
+        condition: and

@@ -1,0 +1,33 @@
+id: Citrix_XenServer_keyword
+info:
+  name: Citrix-XenServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citrix-XenServer"
+        words:
+          - "citrix systems, inc. xenserver"
+          - "<a href=\"xencentersetup.exe\">xencenter installer</a>"
+        condition: and
+      - type: word
+        part: body
+        name: "Citrix-XenServer"
+        words:
+          - "Citrix Systems, Inc. XenServer"
+        condition: and
+      - type: word
+        part: body
+        name: "Citrix-XenServer"
+        words:
+          - "<a href=\"XenCenterSetup.exe\">XenCenter installer</a>"
+        condition: and

@@ -1,0 +1,20 @@
+id: Rimes_Cisco_keyword
+info:
+  name: Rimes-Cisco_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Rimes-Cisco"
+        words:
+          - "Rimes-Cisco"
+        condition: and

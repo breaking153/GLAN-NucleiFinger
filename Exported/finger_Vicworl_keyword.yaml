@@ -1,0 +1,34 @@
+id: Vicworl_keyword
+info:
+  name: Vicworl_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Vicworl"
+        words:
+          - "powered by vicworl"
+          - "content=\"vicworl"
+          - "vindex_right_d"
+        condition: and
+      - type: word
+        part: body
+        name: "Vicworl"
+        words:
+          - "Powered by Vicworl"
+        condition: and
+      - type: word
+        part: body
+        name: "Vicworl"
+        words:
+          - "content=\"Vicworl"
+        condition: and

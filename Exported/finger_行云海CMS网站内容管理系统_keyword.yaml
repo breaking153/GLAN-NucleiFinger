@@ -1,0 +1,20 @@
+id: xing_yun_hai_CMS_wang_zhan_nei_rong_guan_li_xi_tong_keyword
+info:
+  name: 行云海CMS网站内容管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "行云海CMS网站内容管理系统"
+        words:
+          - "行云海CMS网站内容管理系统"
+        condition: and

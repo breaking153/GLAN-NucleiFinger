@@ -1,0 +1,27 @@
+id: adslr_Router_keyword
+info:
+  name: adslr-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "adslr-Router"
+        words:
+          - "href=\"css/r1login.css\""
+          - "src=\"chinesehl.js\""
+        condition: and
+      - type: word
+        part: body
+        name: "adslr-Router"
+        words:
+          - "/img/r1/favicon.ico"
+        condition: and

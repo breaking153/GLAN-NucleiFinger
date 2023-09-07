@@ -1,0 +1,22 @@
+id: Proxmox_VE_keyword
+info:
+  name: Proxmox-VE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Proxmox-VE"
+        words:
+          - "class=\"boxheadline\">proxmox virtual environment"
+          - "href='http://www.proxmox.com' target='_blank' class=\"boxheadline"
+          - "ext.create('pve.stdworkspace'"
+        condition: and

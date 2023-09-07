@@ -1,0 +1,21 @@
+id: AVerMedia_WebCamX_keyword
+info:
+  name: AVerMedia-WebCamX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AVerMedia-WebCamX"
+        words:
+          - "id='webcamx'"
+          - "depending on the internet bandwidth, it might take a few minutes to download the software."
+        condition: and

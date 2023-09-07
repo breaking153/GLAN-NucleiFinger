@@ -1,0 +1,22 @@
+id: di_pu_VPN_keyword
+info:
+  name: 迪普VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "迪普VPN"
+        words:
+          - "dptech_ssl"
+          - "sslvpn"
+          - "loginAPI.js"
+        condition: and

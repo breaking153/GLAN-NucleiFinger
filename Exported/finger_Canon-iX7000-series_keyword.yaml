@@ -1,0 +1,20 @@
+id: Canon_iX7000_series_keyword
+info:
+  name: Canon-iX7000-series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-iX7000-series"
+        words:
+          - "nowrap>canon ix7000 series</td>"
+        condition: and

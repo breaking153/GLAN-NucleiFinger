@@ -1,0 +1,21 @@
+id: udesk_keyword
+info:
+  name: udesk_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "udesk"
+        words:
+          - "assets-cli.udesk.cn/im_client/js/udeskapi.js"
+          - "udesk.cn/im_client/?web_plugin_id="
+        condition: and

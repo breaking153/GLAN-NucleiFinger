@@ -1,0 +1,20 @@
+id: Alcatel_Lucent_OS6900_X20_keyword
+info:
+  name: Alcatel_Lucent-OS6900-X20_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alcatel_Lucent-OS6900-X20"
+        words:
+          - "<span>device os6900-x20"
+        condition: and

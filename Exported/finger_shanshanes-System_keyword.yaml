@@ -1,0 +1,22 @@
+id: shanshanes_System_keyword
+info:
+  name: shanshanes-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "shanshanes-System"
+        words:
+          - "<title>杉杉储能监控平台</title>"
+          - "amap.mousetool,amap.districtsearch"
+          - "/dist/libs/layui/css/layui.css"
+        condition: and

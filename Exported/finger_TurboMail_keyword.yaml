@@ -1,0 +1,29 @@
+id: TurboMail_keyword
+info:
+  name: TurboMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TurboMail"
+        words:
+          - "powered by turbomail"
+          - "wzcon1 clearfix"
+          - "<a href=\"http://www.turbomail.org\">powered by turbomail</a>"
+          - "alt=\"turbomail 电子邮件系统\"/>"
+        condition: and
+      - type: word
+        part: body
+        name: "TurboMail"
+        words:
+          - "Powered by TurboMail"
+        condition: and

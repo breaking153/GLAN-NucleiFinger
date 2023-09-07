@@ -1,0 +1,26 @@
+id: b2bbuilder_keyword
+info:
+  name: b2bbuilder_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "b2bbuilder"
+        words:
+          - "content=\"B2Bbuilder"
+        condition: and
+      - type: word
+        part: body
+        name: "b2bbuilder"
+        words:
+          - "translateButtonId = \"B2Bbuilder"
+        condition: and

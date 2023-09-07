@@ -1,0 +1,21 @@
+id: Qinzhe_EXCEL_keyword
+info:
+  name: Qinzhe-EXCEL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Qinzhe-EXCEL"
+        words:
+          - "如果能访问到qinzhe网站上的图片，说明网络是通的，显示新闻"
+          - "id=\"chkworkbyreplacer\" type=\"checkbox\""
+        condition: and

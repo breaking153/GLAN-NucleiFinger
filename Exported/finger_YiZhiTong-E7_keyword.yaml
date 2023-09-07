@@ -1,0 +1,20 @@
+id: YiZhiTong_E7_keyword
+info:
+  name: YiZhiTong-E7_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YiZhiTong-E7"
+        words:
+          - "name=\"hidden_isbiaozhun\""
+        condition: and

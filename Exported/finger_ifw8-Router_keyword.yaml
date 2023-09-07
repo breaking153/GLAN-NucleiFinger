@@ -1,0 +1,22 @@
+id: ifw8_Router_keyword
+info:
+  name: ifw8-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ifw8-Router"
+        words:
+          - "/index.htm?page="
+          - "images/login-logo.png"
+          - "www.ifw8.cn"
+        condition: and

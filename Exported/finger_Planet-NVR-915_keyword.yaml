@@ -1,0 +1,20 @@
+id: Planet_NVR_915_keyword
+info:
+  name: Planet-NVR-915_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Planet-NVR-915"
+        words:
+          - "realm=\"nvr-915"
+        condition: and

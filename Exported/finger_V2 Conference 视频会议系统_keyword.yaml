@@ -1,0 +1,20 @@
+id: V2_Conference_shi_pin_hui_yi_xi_tong_keyword
+info:
+  name: V2 Conference 视频会议系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "V2 Conference 视频会议系统"
+        words:
+          - "window.location.href=\"/Conf/index.jsp\""
+        condition: and

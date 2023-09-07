@@ -1,0 +1,20 @@
+id: zong_heng_tong_jian_kong_xi_tong_keyword
+info:
+  name: 纵横通 监控系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "纵横通 监控系统"
+        words:
+          - "纵横通 监控系统"
+        condition: and

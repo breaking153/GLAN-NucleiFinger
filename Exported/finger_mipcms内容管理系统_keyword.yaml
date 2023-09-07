@@ -1,0 +1,20 @@
+id: mipcms_nei_rong_guan_li_xi_tong_keyword
+info:
+  name: mipcms内容管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "mipcms内容管理系统"
+        words:
+          - "mipcms内容管理系统"
+        condition: and

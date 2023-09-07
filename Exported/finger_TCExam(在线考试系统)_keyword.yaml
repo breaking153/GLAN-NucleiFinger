@@ -1,0 +1,26 @@
+id: TCExam_zai_xian_kao_shi_xi_tong_keyword
+info:
+  name: TCExam(在线考试系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TCExam(在线考试系统)"
+        words:
+          - "TCExam"
+        condition: and
+      - type: word
+        part: body
+        name: "TCExam(在线考试系统)"
+        words:
+          - "在线考试系统"
+        condition: and

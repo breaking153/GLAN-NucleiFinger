@@ -1,0 +1,21 @@
+id: DIGI_TransPort_WR41v2_keyword
+info:
+  name: DIGI-TransPort-WR41v2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DIGI-TransPort-WR41v2"
+        words:
+          - "class=\"heading\">transport wr41v2"
+          - "class=\"page_body_header\">transport wr41v2"
+        condition: and

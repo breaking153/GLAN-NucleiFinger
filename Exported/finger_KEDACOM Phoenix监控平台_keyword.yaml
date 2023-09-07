@@ -1,0 +1,20 @@
+id: KEDACOM_Phoenix_jian_kong_ping_tai_keyword
+info:
+  name: KEDACOM Phoenix监控平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "KEDACOM Phoenix监控平台"
+        words:
+          - "KEDACOM Phoenix监控平台"
+        condition: and

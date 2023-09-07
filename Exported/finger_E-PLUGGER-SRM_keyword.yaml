@@ -1,0 +1,21 @@
+id: E_PLUGGER_SRM_keyword
+info:
+  name: E-PLUGGER-SRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "E-PLUGGER-SRM"
+        words:
+          - "lan12-jingbian-hong"
+          - "科研管理系统，北京易普拉格科技"
+        condition: and

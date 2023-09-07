@@ -1,0 +1,20 @@
+id: IX_Series_keyword_1
+info:
+  name: IX Series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IX Series"
+        words:
+          - "IX Series"
+        condition: and

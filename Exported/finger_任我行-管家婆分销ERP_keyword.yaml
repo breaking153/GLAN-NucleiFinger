@@ -1,0 +1,22 @@
+id: ren_wo_xing_guan_jia_po_fen_xiao_ERP_keyword
+info:
+  name: 任我行-管家婆分销ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "任我行-管家婆分销ERP"
+        words:
+          - "分销ERP"
+          - "txt_DbName"
+          - "DownloadDriver.asp"
+        condition: and

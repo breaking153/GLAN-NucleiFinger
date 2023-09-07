@@ -1,0 +1,21 @@
+id: TP_LINK_TL_WA801ND_keyword
+info:
+  name: TP_LINK-TL-WA801ND_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP_LINK-TL-WA801ND"
+        words:
+          - "tpl-ink wireless wa801nd"
+          - "realm=\"tp-link wireless n access point wa801nd"
+        condition: and

@@ -1,0 +1,26 @@
+id: ASPilot_Cart_keyword
+info:
+  name: ASPilot-Cart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASPilot-Cart"
+        words:
+          - "content=\"Pilot Cart"
+        condition: and
+      - type: word
+        part: body
+        name: "ASPilot-Cart"
+        words:
+          - "/pilot_css_default.css"
+        condition: and

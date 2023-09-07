@@ -1,0 +1,25 @@
+id: Reach_HD_recording_system_keyword
+info:
+  name: Reach-HD-recording-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Reach-HD-recording-system"
+        words:
+          - "/common/js/reach.js"
+          - "深圳锐取信息技术股份有限公司"
+          - "/reach/jquery.reach.js"
+          - "<font size=4.5>锐取多媒体录播系统"
+          - "多媒体录播系统"
+          - "锐取"
+        condition: and

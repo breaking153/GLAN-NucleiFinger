@@ -1,0 +1,20 @@
+id: PMWAY_E5_keyword
+info:
+  name: PMWAY-E5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PMWAY-E5"
+        words:
+          - "tip_browsertoolow:\"您当前使用的浏览器版本或模式太低，鹏为e5为了您更好的体验，请升级您的ie版本至8.0或以上。\""
+        condition: and

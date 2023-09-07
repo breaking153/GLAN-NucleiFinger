@@ -1,0 +1,20 @@
+id: cradlepoint_IBR650LE2_keyword
+info:
+  name: cradlepoint-IBR650LE2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cradlepoint-IBR650LE2"
+        words:
+          - "cplogin.model = \"ibr650le2\";"
+        condition: and

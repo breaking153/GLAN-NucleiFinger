@@ -1,0 +1,20 @@
+id: i_Gallery_keyword
+info:
+  name: i-Gallery_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "i-Gallery"
+        words:
+          - "href=\"igallery.asp"
+        condition: and

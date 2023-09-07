@@ -1,0 +1,20 @@
+id: AKCMS_zheng_fu_wang_zhan_xi_tong_keyword
+info:
+  name: AKCMS政府网站系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AKCMS政府网站系统"
+        words:
+          - "AKCMS政府网站系统"
+        condition: and

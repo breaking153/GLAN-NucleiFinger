@@ -1,0 +1,26 @@
+id: SJSWPS_OiWPS_keyword_1
+info:
+  name: SJSWPS_ OiWPS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SJSWPS_ OiWPS"
+        words:
+          - "Sun-Java-System-Web-Proxy-Server"
+        condition: and
+      - type: word
+        part: header
+        name: "SJSWPS_ OiWPS"
+        words:
+          - "Oracle-iPlanet-Proxy-Server"
+        condition: and

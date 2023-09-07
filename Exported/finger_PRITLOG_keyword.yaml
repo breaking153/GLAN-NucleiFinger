@@ -1,0 +1,21 @@
+id: PRITLOG_keyword
+info:
+  name: PRITLOG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PRITLOG"
+        words:
+          - "powered by <a href=\"http://pritlog.com/\">pritlog"
+          - "<em id=\"jserror\">please enable javascript for full functionality"
+        condition: and

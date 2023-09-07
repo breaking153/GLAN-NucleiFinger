@@ -1,0 +1,20 @@
+id: NetworkResourcesAuxiliaryPlatform_keyword
+info:
+  name: NetworkResourcesAuxiliaryPlatform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetworkResourcesAuxiliaryPlatform"
+        words:
+          - "<b>网络资源综合支撑辅助平台</b>"
+        condition: and

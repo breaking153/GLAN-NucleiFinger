@@ -1,0 +1,33 @@
+id: Ganglia_keyword
+info:
+  name: Ganglia_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ganglia"
+        words:
+          - "onchange=\"ganglia_form.submit(;"
+          - "name=\"ganglia_form"
+        condition: and
+      - type: word
+        part: body
+        name: "Ganglia"
+        words:
+          - "OnChange=\"ganglia_form.submit();"
+        condition: and
+      - type: word
+        part: body
+        name: "Ganglia"
+        words:
+          - "NAME=\"ganglia_form"
+        condition: and

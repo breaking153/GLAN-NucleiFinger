@@ -1,0 +1,21 @@
+id: FAQ_Manager_keyword
+info:
+  name: FAQ-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FAQ-Manager"
+        words:
+          - "<td><font size=\"-1\">&nbsp;</font><p><b><font size=\"-1\">faq admin area</font></b></td>"
+          - "<a href=\"admin/\">admin area</a></td></tr></table></body></html>"
+        condition: and

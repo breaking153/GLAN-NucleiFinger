@@ -1,0 +1,20 @@
+id: hua_wei_HUAWEI_SRG1220_keyword
+info:
+  name: 华为_HUAWEI_SRG1220_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "华为_HUAWEI_SRG1220"
+        words:
+          - "HUAWEI SRG1220"
+        condition: and

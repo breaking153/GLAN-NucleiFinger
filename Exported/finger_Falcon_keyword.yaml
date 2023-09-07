@@ -1,0 +1,22 @@
+id: Falcon_keyword
+info:
+  name: Falcon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Falcon"
+        words:
+          - "<h3 class=\"font-bold\">opsplatform</h3>"
+          - "<h3 class=\"font-bold\">opsplatform</h3>"
+          - "textarea class=\"form-control endpoints"
+        condition: and

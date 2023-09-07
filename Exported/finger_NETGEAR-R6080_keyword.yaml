@@ -1,0 +1,20 @@
+id: NETGEAR_R6080_keyword
+info:
+  name: NETGEAR-R6080_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-R6080"
+        words:
+          - "content=\"r6080\""
+        condition: and

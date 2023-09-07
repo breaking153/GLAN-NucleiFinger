@@ -1,0 +1,20 @@
+id: SONY_SNC_DH110T_keyword
+info:
+  name: SONY-SNC-DH110T_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SONY-SNC-DH110T"
+        words:
+          - "realm=\"sony network camera snc-dh110t"
+        condition: and

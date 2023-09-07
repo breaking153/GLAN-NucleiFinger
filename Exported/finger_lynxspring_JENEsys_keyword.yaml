@@ -1,0 +1,20 @@
+id: lynxspring_JENEsys_keyword
+info:
+  name: lynxspring_JENEsys_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "lynxspring_JENEsys"
+        words:
+          - "LX JENEsys"
+        condition: and

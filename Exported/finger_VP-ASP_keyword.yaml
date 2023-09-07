@@ -1,0 +1,22 @@
+id: VP_ASP_keyword
+info:
+  name: VP-ASP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VP-ASP"
+        words:
+          - "<a href=\"http://www.vpasp.com\">"
+          - "src=\"vs350.js"
+          - "shopdisplayproducts.asp?id="
+        condition: and

@@ -1,0 +1,20 @@
+id: 3Com_NBX_V3000_IP_Telephony_Solution_keyword
+info:
+  name: 3Com NBX V3000 IP Telephony Solution_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "3Com NBX V3000 IP Telephony Solution"
+        words:
+          - "3Com NBX V3000 IP Telephony Solution"
+        condition: and

@@ -1,0 +1,21 @@
+id: 360_NGFW_keyword
+info:
+  name: 360-NGFW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-NGFW"
+        words:
+          - "var __permission = \"360防火墙\""
+          - "<span class=\"fwtitle_big\">360"
+        condition: and

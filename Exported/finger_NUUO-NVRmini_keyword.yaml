@@ -1,0 +1,20 @@
+id: NUUO_NVRmini_keyword
+info:
+  name: NUUO-NVRmini_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NUUO-NVRmini"
+        words:
+          - "nvrmini"
+        condition: and

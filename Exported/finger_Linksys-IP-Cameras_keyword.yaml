@@ -1,0 +1,25 @@
+id: Linksys_IP_Cameras_keyword
+info:
+  name: Linksys-IP-Cameras_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Linksys-IP-Cameras"
+        words:
+          - "content=\"wvc54gca"
+          - "content=\"wvc80n"
+          - "<img border=\"0\" src=\"linksys_blue_logo.gif\"></td>"
+          - "<a href=\"http://www.linksys.com/\" class=\"mainmenu\" target=\"_blank\"><script>dw(tm05</script></a></td>"
+          - "content=\"lcs 3024"
+          - "align=\"center\">compact wireless-g"
+        condition: and

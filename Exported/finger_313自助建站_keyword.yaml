@@ -1,0 +1,20 @@
+id: 313_zi_zhu_jian_zhan_keyword
+info:
+  name: 313自助建站_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "313自助建站"
+        words:
+          - "313CMS"
+        condition: and

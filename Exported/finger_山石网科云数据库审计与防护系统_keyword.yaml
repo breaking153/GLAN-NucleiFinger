@@ -1,0 +1,21 @@
+id: shan_shi_wang_ke_yun_shu_ju_ku_shen_ji_yu_fang_hu_xi_tong_keyword
+info:
+  name: 山石网科云数据库审计与防护系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "山石网科云数据库审计与防护系统"
+        words:
+          - "#!/dbSummary"
+          - "/lib/colResizable/"
+        condition: and

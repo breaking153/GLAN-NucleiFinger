@@ -1,0 +1,21 @@
+id: Wisdom_parking_management_platform_keyword
+info:
+  name: Wisdom parking management platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wisdom parking management platform"
+        words:
+          - "content=\"智慧停车管理平台"
+          - "<div class=\"login-tit w320 h72\">登录账号</div>"
+        condition: and

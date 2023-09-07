@@ -1,0 +1,21 @@
+id: zonghousc_System_keyword
+info:
+  name: zonghousc-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zonghousc-System"
+        words:
+          - "style/default/frui.css"
+          - "data-errormessage-value-missing=\"* 请录入用户名"
+        condition: and

@@ -1,0 +1,20 @@
+id: Tab_and_Link_Manager_keyword
+info:
+  name: Tab-and-Link-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tab-and-Link-Manager"
+        words:
+          - "<div id=\"footer_copyright\" class=\"shade footer_copyright\">powered by <a href=\"http://www.wolfshead-solutions.com/ws-products/product-1"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_WGR614SS_keyword
+info:
+  name: NETGEAR WGR614SS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR WGR614SS"
+        words:
+          - "NETGEAR WGR614SS"
+        condition: and

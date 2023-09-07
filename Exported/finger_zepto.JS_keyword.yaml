@@ -1,0 +1,21 @@
+id: zepto_JS_keyword
+info:
+  name: zepto.JS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zepto.JS"
+        words:
+          - "zepto.js"
+          - "zepto.min.js"
+        condition: and

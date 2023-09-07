@@ -1,0 +1,20 @@
+id: Sierra_ADSL_keyword_1
+info:
+  name: Sierra-ADSL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Sierra-ADSL"
+        words:
+          - "sierra wireless inc, embedded server"
+        condition: and

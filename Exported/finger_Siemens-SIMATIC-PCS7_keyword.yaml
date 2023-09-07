@@ -1,0 +1,23 @@
+id: Siemens_SIMATIC_PCS7_keyword
+info:
+  name: Siemens-SIMATIC-PCS7_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-SIMATIC-PCS7"
+        words:
+          - "<td class=\"static_field\">station name:</td>"
+          - "<link rel=\"stylesheet\" type=\"text/css\" href=\"/s7web.css\">"
+          - "siemens_firmenmarke_header.gif"
+          - "<td class=\"login_area\" colspan=\"2\"><img src=\"/simatic_controller.png\" alt=\"simatic s7 cp\"></td>"
+        condition: and

@@ -1,0 +1,20 @@
+id: WCS_2040_P_T_Z_Wireless_IP_Camera_keyword
+info:
+  name: WCS-2040 P-T-Z Wireless IP Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WCS-2040 P-T-Z Wireless IP Camera"
+        words:
+          - "WCS-2040 P/T/Z Wireless IP Camera"
+        condition: and

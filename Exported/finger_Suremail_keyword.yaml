@@ -1,0 +1,21 @@
+id: Suremail_keyword
+info:
+  name: Suremail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Suremail"
+        words:
+          - "content=\"北京国信安邮科技有限公司"
+          - "<span> 客服邮箱：support@suremail.cn</span>"
+        condition: and

@@ -1,0 +1,20 @@
+id: 2z_project_keyword
+info:
+  name: 2z project_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "2z project"
+        words:
+          - "Generator\" content=\"2z project"
+        condition: and

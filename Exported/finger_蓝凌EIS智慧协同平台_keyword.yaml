@@ -7,7 +7,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
@@ -18,4 +18,10 @@ http:
         words:
           - "/scripts/jquery.landray.common.js"
           - "蓝凌软件"
+        condition: and
+      - type: word
+        part: body
+        name: "蓝凌EIS智慧协同平台"
+        words:
+          - "v11_QRcodeBar clr"
         condition: and

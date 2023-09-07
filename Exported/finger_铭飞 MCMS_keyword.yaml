@@ -1,0 +1,22 @@
+id: ming_fei_MCMS_keyword
+info:
+  name: 铭飞 MCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "铭飞 MCMS"
+        words:
+          - "ms.js"
+          - "ms.http.js"
+          - "plugins"
+        condition: and

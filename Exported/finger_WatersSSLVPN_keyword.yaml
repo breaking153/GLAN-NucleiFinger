@@ -1,0 +1,20 @@
+id: WatersSSLVPN_keyword
+info:
+  name: WatersSSLVPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WatersSSLVPN"
+        words:
+          - "welcome.cgi?p=logo&signinid=url_default"
+        condition: and

@@ -1,0 +1,20 @@
+id: Scrutinizer_Traffic_management_system_keyword
+info:
+  name: Scrutinizer-Traffic-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Scrutinizer-Traffic-management-system"
+        words:
+          - "<div id='testalerthdrmsg'>for the best scrutinizer experience possible, please address the issues below:"
+        condition: and

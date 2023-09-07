@@ -1,0 +1,20 @@
+id: DTV_HMC_Lite_Server_keyword
+info:
+  name: DTV HMC-Lite Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DTV HMC-Lite Server"
+        words:
+          - "DTV HMC-Lite Server"
+        condition: and

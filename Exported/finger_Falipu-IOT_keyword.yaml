@@ -1,0 +1,20 @@
+id: Falipu_IOT_keyword
+info:
+  name: Falipu-IOT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Falipu-IOT"
+        words:
+          - "id=\"t1\">安全、稳定、安全</div>"
+        condition: and

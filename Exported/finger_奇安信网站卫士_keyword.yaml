@@ -1,0 +1,20 @@
+id: qi_an_xin_wang_zhan_wei_shi_keyword
+info:
+  name: 奇安信网站卫士_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "奇安信网站卫士"
+        words:
+          - "奇安信网站卫士"
+        condition: and

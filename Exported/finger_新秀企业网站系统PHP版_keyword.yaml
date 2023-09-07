@@ -1,0 +1,20 @@
+id: xin_xiu_qi_ye_wang_zhan_xi_tong_PHP_ban_keyword
+info:
+  name: 新秀企业网站系统PHP版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "新秀企业网站系统PHP版"
+        words:
+          - "新秀企业网站系统PHP版"
+        condition: and

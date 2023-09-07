@@ -1,0 +1,21 @@
+id: TP_LINK_TL_PS110U_keyword
+info:
+  name: TP_LINK-TL-PS110U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TP_LINK-TL-PS110U"
+        words:
+          - "img src=\"images/blank.gif"
+          - "href=\"tcpip.htm\""
+        condition: and

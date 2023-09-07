@@ -1,0 +1,20 @@
+id: EasyCloud_keyword
+info:
+  name: EasyCloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EasyCloud"
+        words:
+          - "<h1 class=\"white\">云资源管控平台</h1>"
+        condition: and

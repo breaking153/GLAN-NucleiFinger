@@ -1,0 +1,35 @@
+id: Atmail_keyword
+info:
+  name: Atmail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Atmail"
+        words:
+          - "powered by atmail"
+          - "fixshowmail"
+          - "/index.php/mail/auth/processlogin"
+          - "<input id=\"mailserverinput"
+        condition: and
+      - type: word
+        part: body
+        name: "Atmail"
+        words:
+          - "Powered by Atmail"
+        condition: and
+      - type: word
+        part: body
+        name: "Atmail"
+        words:
+          - "FixShowMail"
+        condition: and

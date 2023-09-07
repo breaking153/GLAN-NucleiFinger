@@ -1,0 +1,20 @@
+id: ou_tu_zhi_neng_tong_guan_yun_ping_tai_keyword
+info:
+  name: 欧途智能通关云平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "欧途智能通关云平台"
+        words:
+          - "欧途智能通关云平台"
+        condition: and

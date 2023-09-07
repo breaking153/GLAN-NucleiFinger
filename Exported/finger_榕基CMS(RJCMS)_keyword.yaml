@@ -1,0 +1,26 @@
+id: rong_ji_CMS_RJCMS_keyword
+info:
+  name: 榕基CMS(RJCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "榕基CMS(RJCMS)"
+        words:
+          - "榕基CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "榕基CMS(RJCMS)"
+        words:
+          - "RJCMS"
+        condition: and

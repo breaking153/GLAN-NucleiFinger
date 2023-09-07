@@ -1,0 +1,20 @@
+id: hillston_OperationAndAnalysis_keyword
+info:
+  name: hillston-OperationAndAnalysis_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hillston-OperationAndAnalysis"
+        words:
+          - "/static/css/main.4672616b.chunk.css"
+        condition: and

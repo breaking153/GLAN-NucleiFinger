@@ -1,0 +1,20 @@
+id: Polycom_dst_mcs_Video_Conferencing_keyword
+info:
+  name: Polycom-dst-mcs-Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Polycom-dst-mcs-Video-Conferencing"
+        words:
+          - "document.location.href=\"/cgi-bin/cgiserver?_dstp_functionid=homepage&language_type="
+        condition: and

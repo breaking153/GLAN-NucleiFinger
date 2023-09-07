@@ -1,0 +1,20 @@
+id: Topwalk_MTP_keyword
+info:
+  name: Topwalk-MTP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Topwalk-MTP"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0;url=/usercertloginaction.action\" />"
+        condition: and

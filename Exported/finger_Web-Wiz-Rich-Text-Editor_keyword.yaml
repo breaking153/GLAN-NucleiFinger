@@ -1,0 +1,20 @@
+id: Web_Wiz_Rich_Text_Editor_keyword
+info:
+  name: Web-Wiz-Rich-Text-Editor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Web-Wiz-Rich-Text-Editor"
+        words:
+          - "<a href=\"http://www.richtexteditor.org\""
+        condition: and

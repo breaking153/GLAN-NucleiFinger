@@ -1,0 +1,21 @@
+id: EFM_Networks_ipTIME_N604V_keyword
+info:
+  name: EFM-Networks-ipTIME-N604V_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-N604V"
+        words:
+          - "src =\"/images2/login_title.n604v.gif\""
+          - "src=\"/images2/login_title.n604vlg.gif\""
+        condition: and

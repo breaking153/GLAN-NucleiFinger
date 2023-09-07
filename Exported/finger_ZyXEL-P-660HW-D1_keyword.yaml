@@ -1,0 +1,20 @@
+id: ZyXEL_P_660HW_D1_keyword
+info:
+  name: ZyXEL-P-660HW-D1_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL-P-660HW-D1"
+        words:
+          - "realm=\"p-660hw-d1"
+        condition: and

@@ -1,0 +1,22 @@
+id: QiniuCDN_keyword
+info:
+  name: QiniuCDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QiniuCDN"
+        words:
+          - "glb.clouddn.com"
+          - "glb.qiniucdn.com"
+          - "cdn.staticfile.org"
+        condition: and

@@ -1,0 +1,20 @@
+id: xycms_php_ban_V1_1_keyword
+info:
+  name: xycms php版_V1.1_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "xycms php版_V1.1"
+        words:
+          - "xycms php版_V1.1"
+        condition: and

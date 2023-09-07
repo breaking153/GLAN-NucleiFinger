@@ -1,0 +1,20 @@
+id: CISCO_CVR100W_keyword
+info:
+  name: CISCO-CVR100W_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-CVR100W"
+        words:
+          - "href=\"http://www.cisco.com/go/cn/cvr100w\""
+        condition: and

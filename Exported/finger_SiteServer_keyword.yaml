@@ -1,0 +1,27 @@
+id: SiteServer_keyword
+info:
+  name: SiteServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SiteServer"
+        words:
+          - "http://www.siteserver.cn"
+          - "siteserver cms"
+        condition: and
+      - type: word
+        part: body
+        name: "SiteServer"
+        words:
+          - "T_系统首页模板"
+        condition: and

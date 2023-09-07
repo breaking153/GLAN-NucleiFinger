@@ -1,0 +1,21 @@
+id: Windows_Business_Server_keyword
+info:
+  name: Windows-Business-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Windows-Business-Server"
+        words:
+          - "src=\"images/sbslogo.gif"
+          - "href=\"/remote\">remote web workplace"
+        condition: and

@@ -1,0 +1,20 @@
+id: CHIYU_Device_keyword
+info:
+  name: CHIYU-Device_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CHIYU-Device"
+        words:
+          - "cmdbar.htm"
+        condition: and

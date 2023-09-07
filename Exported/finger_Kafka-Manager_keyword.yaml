@@ -1,0 +1,21 @@
+id: Kafka_Manager_keyword
+info:
+  name: Kafka-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kafka-Manager"
+        words:
+          - "/vassets/datatables/stylesheets"
+          - "vassets/images/2af62f58ee2baf495c9b3a9a1c30ce03-favicon.png"
+        condition: and

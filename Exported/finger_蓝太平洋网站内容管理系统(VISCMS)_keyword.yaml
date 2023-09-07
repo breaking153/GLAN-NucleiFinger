@@ -1,0 +1,26 @@
+id: lan_tai_ping_yang_wang_zhan_nei_rong_guan_li_xi_tong_VISCMS_keyword
+info:
+  name: 蓝太平洋网站内容管理系统(VISCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "蓝太平洋网站内容管理系统(VISCMS)"
+        words:
+          - "蓝太平洋网站内容管理系统"
+        condition: and
+      - type: word
+        part: body
+        name: "蓝太平洋网站内容管理系统(VISCMS)"
+        words:
+          - "VISCMS"
+        condition: and

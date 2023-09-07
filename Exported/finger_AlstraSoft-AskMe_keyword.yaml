@@ -1,0 +1,26 @@
+id: AlstraSoft_AskMe_keyword
+info:
+  name: AlstraSoft-AskMe_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AlstraSoft-AskMe"
+        words:
+          - "<a href=\"pass_recover.php\">"
+        condition: and
+      - type: word
+        part: body
+        name: "AlstraSoft-AskMe"
+        words:
+          - "http://www.alstrasoft.com"
+        condition: and

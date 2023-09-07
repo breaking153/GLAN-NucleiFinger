@@ -1,0 +1,20 @@
+id: FanCms_nei_rong_guan_li_xi_tong_3_wang_jian_rong_keyword
+info:
+  name: FanCms内容管理系统_3网兼容_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FanCms内容管理系统_3网兼容"
+        words:
+          - "FanCms内容管理系统_3网兼容"
+        condition: and

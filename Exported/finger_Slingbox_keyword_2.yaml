@@ -1,0 +1,20 @@
+id: Slingbox_keyword
+info:
+  name: Slingbox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Slingbox"
+        words:
+          - "Slingbox"
+        condition: and

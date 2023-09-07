@@ -1,0 +1,21 @@
+id: OCS_Inventory_NG_keyword
+info:
+  name: OCS-Inventory-NG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "OCS-Inventory-NG"
+        words:
+          - "css/ocsreports.css"
+          - "ocs inventory"
+        condition: and

@@ -1,0 +1,20 @@
+id: IBM_HTTP_Server_keyword_1_1_1
+info:
+  name: IBM HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IBM HTTP Server"
+        words:
+          - "IBM HTTP Server"
+        condition: and

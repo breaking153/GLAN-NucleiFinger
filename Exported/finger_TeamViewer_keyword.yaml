@@ -1,0 +1,32 @@
+id: TeamViewer_keyword
+info:
+  name: TeamViewer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TeamViewer"
+        words:
+          - "this site is running"
+        condition: and
+      - type: word
+        part: body
+        name: "TeamViewer"
+        words:
+          - "This site is running"
+        condition: and
+      - type: word
+        part: body
+        name: "TeamViewer"
+        words:
+          - "TeamViewer"
+        condition: and

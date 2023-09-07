@@ -1,0 +1,21 @@
+id: ZhongYou_System_keyword
+info:
+  name: ZhongYou-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZhongYou-System"
+        words:
+          - "background=zhongyou.jpg"
+          - "众友科技巡检管理软件"
+        condition: and

@@ -1,0 +1,21 @@
+id: Simple_Phishing_Toolkit_keyword
+info:
+  name: Simple-Phishing-Toolkit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Simple-Phishing-Toolkit"
+        words:
+          - "<span id=\"spt\"><a href=\"http://www.sptoolkit.com/download/\" target=\"_blank\">"
+          - "content=\"welcome to spt - simple phishing toolkit.  spt is a super simple but powerful phishing toolkit.\" />"
+        condition: and

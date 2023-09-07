@@ -1,0 +1,33 @@
+id: Apache_Forrest_keyword
+info:
+  name: Apache-Forrest_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-Forrest"
+        words:
+          - "content=\"apache forrest"
+          - "name=\"forrest"
+        condition: and
+      - type: word
+        part: body
+        name: "Apache-Forrest"
+        words:
+          - "content=\"Apache Forrest"
+        condition: and
+      - type: word
+        part: body
+        name: "Apache-Forrest"
+        words:
+          - "name=\"Forrest"
+        condition: and

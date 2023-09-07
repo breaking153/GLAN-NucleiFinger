@@ -1,0 +1,20 @@
+id: le_shi_lu_you_qi_keyword
+info:
+  name: 乐视路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "乐视路由器"
+        words:
+          - "<div class=\"login-logo\"></div>"
+        condition: and

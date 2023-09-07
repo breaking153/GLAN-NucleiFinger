@@ -1,0 +1,23 @@
+id: CTOP_OA_keyword
+info:
+  name: CTOP-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CTOP-OA"
+        words:
+          - "/ctop/index.jsp"
+          - "/software/jinstall.exe"
+          - "src=\"images/logo-ctop.gif"
+          - "src=\"images/ctop_logo.gif"
+        condition: and

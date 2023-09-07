@@ -1,0 +1,20 @@
+id: IPC_CHIP_keyword
+info:
+  name: IPC@CHIP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "IPC@CHIP"
+        words:
+          - "IPC@CHIP"
+        condition: and

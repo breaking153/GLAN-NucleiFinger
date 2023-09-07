@@ -1,0 +1,26 @@
+id: yuan_nian_cai_wu_ruan_jian_keyword
+info:
+  name: 元年财务软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "元年财务软件"
+        words:
+          - "yuannian.css"
+        condition: and
+      - type: word
+        part: body
+        name: "元年财务软件"
+        words:
+          - "/image/logo/yuannian.gif"
+        condition: and

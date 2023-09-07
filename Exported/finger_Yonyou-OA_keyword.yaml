@@ -1,0 +1,20 @@
+id: Yonyou_OA_keyword
+info:
+  name: Yonyou-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yonyou-OA"
+        words:
+          - "url[(]/images/logon/bg_login.jpg[] repeat-x top"
+        condition: and

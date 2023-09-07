@@ -1,0 +1,20 @@
+id: HUAWEI_X6781_Z37_keyword
+info:
+  name: HUAWEI-X6781-Z37_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HUAWEI-X6781-Z37"
+        words:
+          - "realm=\"huawei x6781-z37"
+        condition: and

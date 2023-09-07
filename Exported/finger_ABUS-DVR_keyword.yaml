@@ -1,0 +1,20 @@
+id: ABUS_DVR_keyword
+info:
+  name: ABUS-DVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ABUS-DVR"
+        words:
+          - "document.activex.url.value=\"172.7.76.84\""
+        condition: and

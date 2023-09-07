@@ -1,0 +1,29 @@
+id: Tongda_OA_keyword
+info:
+  name: Tongda-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tongda-OA"
+        words:
+          - "/static/templates/2013_01/index.css/"
+          - "javascript:document.form1.uname.focus("
+          - "href=\"/static/images/tongda.ico\""
+          - "<link rel=\"shortcut icon\" href=\"/images/tongda.ico\" />"
+          - "oa提示：不能登录oa"
+          - "紧急通知：今日10点停电"
+          - "tongda.ico"
+          - "class=\"style1\">新oa办公系统"
+          - "rel=\"shortcut icon\" href=\"/static/images/tongda.ico\""
+          - "<a href=\"https://www.tongda2000.com/download"
+        condition: and

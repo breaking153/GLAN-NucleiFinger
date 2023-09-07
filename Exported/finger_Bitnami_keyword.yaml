@@ -1,0 +1,21 @@
+id: Bitnami_keyword
+info:
+  name: Bitnami_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bitnami"
+        words:
+          - "<td><img src=\"img/bitnami.png\" alt=\"Bitnami\"></td>"
+          - "<p>Thanks for using Bitnami!</p>"
+        condition: and

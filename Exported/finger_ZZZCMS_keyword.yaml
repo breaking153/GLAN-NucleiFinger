@@ -1,0 +1,21 @@
+id: ZZZCMS_keyword
+info:
+  name: ZZZCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZZZCMS"
+        words:
+          - "href=\"/?brandlist/zzzcms"
+          - ".banner .in_business ul li dd"
+        condition: and

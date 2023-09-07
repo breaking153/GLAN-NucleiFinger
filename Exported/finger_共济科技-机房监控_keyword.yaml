@@ -1,0 +1,20 @@
+id: gong_ji_ke_ji_ji_fang_jian_kong_keyword
+info:
+  name: 共济科技-机房监控_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "共济科技-机房监控"
+        words:
+          - "共济科技-机房监控"
+        condition: and

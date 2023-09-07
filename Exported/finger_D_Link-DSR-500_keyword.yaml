@@ -1,0 +1,21 @@
+id: D_Link_DSR_500_keyword
+info:
+  name: D_Link-DSR-500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-DSR-500"
+        words:
+          - "<div class=\"floatl txt01\">product page: dsr-500"
+          - "unified services router - dsr-500 </div>"
+        condition: and

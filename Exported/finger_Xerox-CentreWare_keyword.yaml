@@ -1,0 +1,21 @@
+id: Xerox_CentreWare_keyword
+info:
+  name: Xerox-CentreWare_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Xerox-CentreWare"
+        words:
+          - "realm=\"centreware_is_admin"
+          - "realm=\"centreware internet services"
+        condition: and

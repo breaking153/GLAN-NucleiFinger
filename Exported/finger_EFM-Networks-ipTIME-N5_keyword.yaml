@@ -1,0 +1,20 @@
+id: EFM_Networks_ipTIME_N5_keyword
+info:
+  name: EFM-Networks-ipTIME-N5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-N5"
+        words:
+          - "src =\"/images2/login_title.n5.gif\""
+        condition: and

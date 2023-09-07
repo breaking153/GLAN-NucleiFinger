@@ -1,0 +1,21 @@
+id: Netquery_keyword
+info:
+  name: Netquery_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netquery"
+        words:
+          - "action=\"nquser.php"
+          - "href=\"nqadmin.php"
+        condition: and

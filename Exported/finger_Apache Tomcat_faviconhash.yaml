@@ -1,0 +1,19 @@
+id: Apache_Tomcat_faviconhash
+info:
+  name: Apache Tomcat_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Apache Tomcat"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-297069493\""
+        condition: or

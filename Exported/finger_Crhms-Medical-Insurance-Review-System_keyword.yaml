@@ -1,0 +1,20 @@
+id: Crhms_Medical_Insurance_Review_System_keyword
+info:
+  name: Crhms-Medical-Insurance-Review-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Crhms-Medical-Insurance-Review-System"
+        words:
+          - "url, \"中公网医疗信息管理系统\", option"
+        condition: and

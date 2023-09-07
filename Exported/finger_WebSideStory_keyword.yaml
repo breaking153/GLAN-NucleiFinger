@@ -1,0 +1,23 @@
+id: WebSideStory_keyword
+info:
+  name: WebSideStory_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WebSideStory"
+        words:
+          - "http://websidestory.com"
+          - "websidestory code"
+          - "websidestory,inc. all rights reserved. u.s.patent no. 6,393,479b1"
+          - "<!-- websidestory html for search -->"
+        condition: and

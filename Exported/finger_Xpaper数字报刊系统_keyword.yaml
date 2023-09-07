@@ -1,0 +1,20 @@
+id: Xpaper_shu_zi_bao_kan_xi_tong_keyword
+info:
+  name: Xpaper数字报刊系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Xpaper数字报刊系统"
+        words:
+          - "Xpaper数字报刊系统"
+        condition: and

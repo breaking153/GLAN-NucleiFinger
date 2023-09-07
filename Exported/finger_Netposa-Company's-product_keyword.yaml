@@ -1,0 +1,23 @@
+id: Netposa_Company_s_product_keyword
+info:
+  name: Netposa-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netposa-Company's-product"
+        words:
+          - "<h1>万解 - 东方网力: </h1>"
+          - "<span class=\"copyright\">东方网力科技股份有限公司"
+          - "<a href=\"http://www.netposa.com/\">关于我们</a>"
+          - "<span class=\"big\">东方网力科技股份有限公司"
+        condition: and

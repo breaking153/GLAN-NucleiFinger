@@ -1,0 +1,22 @@
+id: Fangpage_Exam_keyword
+info:
+  name: Fangpage-Exam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Fangpage-Exam"
+        words:
+          - "href=\"http://www.fangpage.com\" target=\"_blank"
+          - "href=\"http://fpexam.fangpage.com\" target="
+          - "/sites/exam/statics/css/login.css"
+        condition: and

@@ -1,0 +1,20 @@
+id: Gzsa_Intranet_security_keyword
+info:
+  name: Gzsa-Intranet-security_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gzsa-Intranet-security"
+        words:
+          - "gzsa. all rights reserved</span>"
+        condition: and

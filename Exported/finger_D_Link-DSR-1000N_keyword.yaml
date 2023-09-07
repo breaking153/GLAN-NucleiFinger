@@ -1,0 +1,20 @@
+id: D_Link_DSR_1000N_keyword
+info:
+  name: D_Link-DSR-1000N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-DSR-1000N"
+        words:
+          - "<div class=\"floatl txt01\">product page: dsr-1000n"
+        condition: and

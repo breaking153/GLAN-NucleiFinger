@@ -1,0 +1,21 @@
+id: UC_FAX_keyword
+info:
+  name: UC-FAX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UC-FAX"
+        words:
+          - " href=\"web/css/faxcss.css\""
+          - "src=\"web/img/log/logo-faxlogin.gif\""
+        condition: and

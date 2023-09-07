@@ -1,0 +1,20 @@
+id: HUMAX_QUANTUM_E3_keyword
+info:
+  name: HUMAX-QUANTUM-E3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HUMAX-QUANTUM-E3"
+        words:
+          - "class=\"pro-model\">quantum e3"
+        condition: and

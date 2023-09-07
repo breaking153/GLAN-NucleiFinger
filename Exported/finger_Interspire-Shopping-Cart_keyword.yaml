@@ -1,0 +1,26 @@
+id: Interspire_Shopping_Cart_keyword
+info:
+  name: Interspire-Shopping-Cart_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Interspire-Shopping-Cart"
+        words:
+          - "content=\"Interspire Shopping Cart"
+        condition: and
+      - type: word
+        part: body
+        name: "Interspire-Shopping-Cart"
+        words:
+          - "class=\"PoweredBy\">Interspire Shopping Cart"
+        condition: and

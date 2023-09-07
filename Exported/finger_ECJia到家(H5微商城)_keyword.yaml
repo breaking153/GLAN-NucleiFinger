@@ -1,0 +1,20 @@
+id: ECJia_dao_jia_H5_wei_shang_cheng_keyword
+info:
+  name: ECJia到家(H5微商城)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ECJia到家(H5微商城)"
+        words:
+          - "ECJia到家(H5微商城)"
+        condition: and

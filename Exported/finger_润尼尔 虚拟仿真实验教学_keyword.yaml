@@ -1,0 +1,20 @@
+id: run_ni_er_xu_ni_fang_zhen_shi_yan_jiao_xue_keyword
+info:
+  name: 润尼尔 虚拟仿真实验教学_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "润尼尔 虚拟仿真实验教学"
+        words:
+          - "润尼尔 虚拟仿真实验教学"
+        condition: and

@@ -1,0 +1,20 @@
+id: ke_xun_shu_zi_hua_xiao_yuan_zong_he_guan_li_xi_tong_keyword
+info:
+  name: 科迅数字化校园综合管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "科迅数字化校园综合管理系统"
+        words:
+          - "科迅数字化校园综合管理系统"
+        condition: and

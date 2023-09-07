@@ -1,0 +1,23 @@
+id: Cisco_Unified_IP_Phone_keyword
+info:
+  name: Cisco-Unified-IP-Phone_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-Unified-IP-Phone"
+        words:
+          - "cisco unified ip phone"
+          - "device.statistics.configuration"
+          - "/cgi/java/serviceability?adapter=device.statistics.device"
+          - "cisco unified ip phone"
+        condition: and

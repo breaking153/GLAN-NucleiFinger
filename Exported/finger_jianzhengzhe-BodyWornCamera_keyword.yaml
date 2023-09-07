@@ -1,0 +1,22 @@
+id: jianzhengzhe_BodyWornCamera_keyword
+info:
+  name: jianzhengzhe-BodyWornCamera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "jianzhengzhe-BodyWornCamera"
+        words:
+          - "/user/getdefaultpage"
+          - "/record/index"
+          - "href=\"/html/download.html\">工具下载</a></li>"
+        condition: and

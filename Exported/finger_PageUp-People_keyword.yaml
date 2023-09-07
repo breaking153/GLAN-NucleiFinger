@@ -1,0 +1,21 @@
+id: PageUp_People_keyword
+info:
+  name: PageUp-People_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PageUp-People"
+        words:
+          - "powered by pageup people"
+          - "class=\"pageuplink\" href=\"http://www.pageuppeople.com"
+        condition: and

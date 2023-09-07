@@ -1,0 +1,20 @@
+id: HP_Virtual_Connect_Manager_keyword
+info:
+  name: HP-Virtual-Connect-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-Virtual-Connect-Manager"
+        words:
+          - "name='mx_hidden' src=\"common/hiddenframe.html"
+        condition: and

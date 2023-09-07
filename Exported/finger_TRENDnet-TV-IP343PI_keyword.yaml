@@ -1,0 +1,20 @@
+id: TRENDnet_TV_IP343PI_keyword
+info:
+  name: TRENDnet-TV-IP343PI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TV-IP343PI"
+        words:
+          - "var titlename='tv-ip343pi'"
+        condition: and

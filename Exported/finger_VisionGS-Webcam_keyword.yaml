@@ -1,0 +1,21 @@
+id: VisionGS_Webcam_keyword
+info:
+  name: VisionGS-Webcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VisionGS-Webcam"
+        words:
+          - "<a href=\"http://www.visiongs.de"
+          - "<!-- visiongs still code begin -->"
+        condition: and

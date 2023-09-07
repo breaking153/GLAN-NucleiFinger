@@ -1,0 +1,20 @@
+id: daydao_System_keyword
+info:
+  name: daydao-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "daydao-System"
+        words:
+          - "我被修改啦.哈哈"
+        condition: and

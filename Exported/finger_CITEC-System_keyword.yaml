@@ -1,0 +1,20 @@
+id: CITEC_System_keyword
+info:
+  name: CITEC-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CITEC-System"
+        words:
+          - "正在使用腾讯qq帐号登录消防联网系统"
+        condition: and

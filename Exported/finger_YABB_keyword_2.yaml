@@ -1,0 +1,26 @@
+id: YABB_keyword_1
+info:
+  name: YABB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "YABB"
+        words:
+          - "y2user"
+        condition: and
+      - type: word
+        part: header
+        name: "YABB"
+        words:
+          - "Y2User"
+        condition: and

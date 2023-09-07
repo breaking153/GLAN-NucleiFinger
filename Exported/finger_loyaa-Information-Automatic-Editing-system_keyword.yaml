@@ -1,0 +1,20 @@
+id: loyaa_Information_Automatic_Editing_system_keyword
+info:
+  name: loyaa-Information-Automatic-Editing-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "loyaa-Information-Automatic-Editing-system"
+        words:
+          - "/loyaa/common.internal.js"
+        condition: and

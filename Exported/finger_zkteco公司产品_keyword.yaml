@@ -1,0 +1,26 @@
+id: zkteco_gong_si_chan_pin_keyword
+info:
+  name: zkteco公司产品_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zkteco公司产品"
+        words:
+          - "/media/images/ZKECO16.ico"
+        condition: and
+      - type: word
+        part: body
+        name: "zkteco公司产品"
+        words:
+          - "ZKTeco Inc. All Rights Reserved"
+        condition: and

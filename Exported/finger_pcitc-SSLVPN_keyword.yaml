@@ -1,0 +1,20 @@
+id: pcitc_SSLVPN_keyword
+info:
+  name: pcitc-SSLVPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "pcitc-SSLVPN"
+        words:
+          - "src=\"new_style/placeholderfriend.js\""
+        condition: and

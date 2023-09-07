@@ -1,0 +1,21 @@
+id: EQMail_keyword
+info:
+  name: EQMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EQMail"
+        words:
+          - "href=\"eqmail.ico"
+          - "<frame src=\"/cgi-bin/eqwebmail?empty=1"
+        condition: and

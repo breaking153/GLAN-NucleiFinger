@@ -1,0 +1,20 @@
+id: NetData_Embedded_HTTP_Server_keyword
+info:
+  name: NetData Embedded HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NetData Embedded HTTP Server"
+        words:
+          - "NetData Embedded HTTP Server"
+        condition: and

@@ -1,0 +1,20 @@
+id: Jekyll_bo_ke_keyword
+info:
+  name: Jekyll博客_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Jekyll博客"
+        words:
+          - "Jekyll博客"
+        condition: and

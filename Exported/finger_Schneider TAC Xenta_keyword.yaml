@@ -1,0 +1,20 @@
+id: Schneider_TAC_Xenta_keyword
+info:
+  name: Schneider TAC Xenta_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Schneider TAC Xenta"
+        words:
+          - "Schneider TAC Xenta"
+        condition: and

@@ -1,0 +1,22 @@
+id: Microsoft_SharePoint_keyword
+info:
+  name: Microsoft-SharePoint_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Microsoft-SharePoint"
+        words:
+          - "content=\"microsoft sharepoint"
+          - "content=\"sharepoint team"
+          - "id=\"msowebpartpage_postbacksource"
+        condition: and

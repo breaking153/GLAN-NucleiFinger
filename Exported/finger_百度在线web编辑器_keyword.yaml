@@ -1,0 +1,26 @@
+id: bai_du_zai_xian_web_bian_ji_qi_keyword
+info:
+  name: 百度在线web编辑器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "百度在线web编辑器"
+        words:
+          - "ueditor.all.js"
+        condition: and
+      - type: word
+        part: body
+        name: "百度在线web编辑器"
+        words:
+          - "UE.getEditor"
+        condition: and

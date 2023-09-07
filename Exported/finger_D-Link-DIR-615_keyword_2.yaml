@@ -1,0 +1,20 @@
+id: D_Link_DIR_615_keyword_1
+info:
+  name: D-Link-DIR-615_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D-Link-DIR-615"
+        words:
+          - "realm=\"d-link dir-615"
+        condition: and

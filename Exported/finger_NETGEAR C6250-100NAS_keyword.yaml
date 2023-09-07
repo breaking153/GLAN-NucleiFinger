@@ -1,0 +1,20 @@
+id: NETGEAR_C6250_100NAS_keyword
+info:
+  name: NETGEAR C6250-100NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR C6250-100NAS"
+        words:
+          - "NETGEAR C6250-100NAS"
+        condition: and

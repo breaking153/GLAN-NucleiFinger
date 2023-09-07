@@ -1,0 +1,20 @@
+id: greencms_keyword
+info:
+  name: greencms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "greencms"
+        words:
+          - "x-powered-by: greencms"
+        condition: and

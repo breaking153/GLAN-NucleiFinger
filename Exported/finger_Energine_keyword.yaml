@@ -1,0 +1,32 @@
+id: Energine_keyword
+info:
+  name: Energine_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Energine"
+        words:
+          - "scripts/Energine.js"
+        condition: and
+      - type: word
+        part: body
+        name: "Energine"
+        words:
+          - "Powered by <a href= \"http://energine.org/"
+        condition: and
+      - type: word
+        part: body
+        name: "Energine"
+        words:
+          - "stylesheets/energine.css"
+        condition: and

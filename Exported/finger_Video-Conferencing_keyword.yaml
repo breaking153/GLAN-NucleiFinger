@@ -1,0 +1,26 @@
+id: Video_Conferencing_keyword
+info:
+  name: Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Video-Conferencing"
+        words:
+          - "<a href=http://www.vmediax.com target="
+        condition: and
+      - type: word
+        part: body
+        name: "Video-Conferencing"
+        words:
+          - "href=\"/vr2conf/themes/vidyo/vidyo.css"
+        condition: and

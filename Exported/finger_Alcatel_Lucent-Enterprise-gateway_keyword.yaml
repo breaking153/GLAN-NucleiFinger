@@ -1,0 +1,21 @@
+id: Alcatel_Lucent_Enterprise_gateway_keyword
+info:
+  name: Alcatel_Lucent-Enterprise-gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alcatel_Lucent-Enterprise-gateway"
+        words:
+          - "欢迎登陆alcatel-lucent企业网关<p></p>请输入用户名和密码，3次出错将被锁定<p>"
+          - "alcatel-lucent"
+        condition: and

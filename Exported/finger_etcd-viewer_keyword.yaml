@@ -1,0 +1,20 @@
+id: etcd_viewer_keyword
+info:
+  name: etcd-viewer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "etcd-viewer"
+        words:
+          - "<a class=\"navbar-brand\" href=\"./home\">etcd viewer</a>"
+        condition: and

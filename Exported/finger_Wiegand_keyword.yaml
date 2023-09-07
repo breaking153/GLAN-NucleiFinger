@@ -1,0 +1,20 @@
+id: Wiegand_keyword
+info:
+  name: Wiegand_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wiegand"
+        words:
+          - "<form method=post action=act_id_1>"
+        condition: and

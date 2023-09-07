@@ -1,0 +1,22 @@
+id: Team_Board_keyword
+info:
+  name: Team-Board_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Team-Board"
+        words:
+          - "<a href=\"licence.asp\"><b style='color:#ff9900'>"
+          - "href=http://www.team5.cn\"><b>team "
+          - "team5.cn by daymoon"
+        condition: and

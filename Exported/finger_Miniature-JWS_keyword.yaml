@@ -1,0 +1,20 @@
+id: Miniature_JWS_keyword
+info:
+  name: Miniature-JWS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Miniature-JWS"
+        words:
+          - "rogatkin's"
+        condition: and

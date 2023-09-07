@@ -1,0 +1,20 @@
+id: Huawei_Home_Gateway_keyword
+info:
+  name: Huawei Home Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Huawei Home Gateway"
+        words:
+          - "Huawei Home Gateway"
+        condition: and

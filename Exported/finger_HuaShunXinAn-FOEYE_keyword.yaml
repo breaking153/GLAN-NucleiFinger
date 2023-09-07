@@ -1,0 +1,22 @@
+id: HuaShunXinAn_FOEYE_keyword
+info:
+  name: HuaShunXinAn-FOEYE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaShunXinAn-FOEYE"
+        words:
+          - "class=\"dlbrowsertext\""
+          - "北京白帽汇科技有限公司"
+          - "/assets/foeye/logo"
+        condition: and

@@ -1,0 +1,26 @@
+id: BigDump_keyword
+info:
+  name: BigDump_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BigDump"
+        words:
+          - "bigdump: staggered mysql dump importer"
+        condition: and
+      - type: word
+        part: body
+        name: "BigDump"
+        words:
+          - "BigDump: Staggered MySQL Dump Importer"
+        condition: and

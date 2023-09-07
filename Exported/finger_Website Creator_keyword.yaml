@@ -1,0 +1,20 @@
+id: Website_Creator_keyword
+info:
+  name: Website Creator_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Website Creator"
+        words:
+          - "Website Creator"
+        condition: and

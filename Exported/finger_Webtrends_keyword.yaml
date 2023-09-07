@@ -1,0 +1,20 @@
+id: Webtrends_keyword
+info:
+  name: Webtrends_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Webtrends"
+        words:
+          - "Webtrends"
+        condition: and

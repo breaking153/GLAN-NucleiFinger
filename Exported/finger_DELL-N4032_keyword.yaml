@@ -1,0 +1,20 @@
+id: DELL_N4032_keyword
+info:
+  name: DELL-N4032_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-N4032"
+        words:
+          - "class=\"login_server_default\">n4032"
+        condition: and

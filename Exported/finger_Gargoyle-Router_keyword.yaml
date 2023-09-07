@@ -1,0 +1,23 @@
+id: Gargoyle_Router_keyword
+info:
+  name: Gargoyle-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gargoyle-Router"
+        words:
+          - "src=\"/themes/gargoyle/images/wait_icon.gif\""
+          - "href=\"/themes/gargoyle/images/favicon.png\""
+          - "gargoyle router management utility"
+          - "gargoyle firmware webgui for router management"
+        condition: and

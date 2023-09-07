@@ -1,0 +1,20 @@
+id: NITC_wang_luo_ying_xiao_fu_wu_zhong_xin_keyword
+info:
+  name: NITC网络营销服务中心_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NITC网络营销服务中心"
+        words:
+          - "NITC网络营销服务中心"
+        condition: and

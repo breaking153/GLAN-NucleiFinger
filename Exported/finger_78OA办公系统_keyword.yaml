@@ -1,0 +1,20 @@
+id: 78OA_ban_gong_xi_tong_keyword
+info:
+  name: 78OA办公系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "78OA办公系统"
+        words:
+          - "78OA办公系统"
+        condition: and

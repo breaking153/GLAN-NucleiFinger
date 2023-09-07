@@ -1,0 +1,21 @@
+id: wisiyilink_Print_Server_keyword
+info:
+  name: wisiyilink-Print-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "wisiyilink-Print-Server"
+        words:
+          - "<a class=\"brand\" href=http://www.wisiyilink.com"
+          - "wisiyilink©2013-2017版权所有 专注打印服务器"
+        condition: and

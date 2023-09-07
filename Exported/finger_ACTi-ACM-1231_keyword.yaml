@@ -1,0 +1,20 @@
+id: ACTi_ACM_1231_keyword
+info:
+  name: ACTi-ACM-1231_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ACTi-ACM-1231"
+        words:
+          - "url=/cgi-bin/videoconfiguration.cgi"
+        condition: and

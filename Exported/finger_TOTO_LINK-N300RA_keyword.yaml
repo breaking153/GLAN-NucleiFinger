@@ -1,0 +1,20 @@
+id: TOTO_LINK_N300RA_keyword
+info:
+  name: TOTO_LINK-N300RA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOTO_LINK-N300RA"
+        words:
+          - "src =\"/images/login_back_zn300ra.gif\""
+        condition: and

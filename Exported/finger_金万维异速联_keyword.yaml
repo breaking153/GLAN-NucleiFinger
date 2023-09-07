@@ -1,0 +1,20 @@
+id: jin_wan_wei_yi_su_lian_keyword
+info:
+  name: 金万维异速联_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金万维异速联"
+        words:
+          - "GNRemote.dll?GNFunction="
+        condition: and

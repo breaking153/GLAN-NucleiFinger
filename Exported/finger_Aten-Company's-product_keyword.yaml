@@ -1,0 +1,23 @@
+id: Aten_Company_s_product_keyword
+info:
+  name: Aten-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Aten-Company's-product"
+        words:
+          - "<meta name=\"aten international co ltd."
+          - "action=\"/cgi/login.cgi"
+          - "name=\"aten international co ltd."
+          - "document.writeln(lang.lang_login_prompt"
+        condition: and

@@ -1,0 +1,21 @@
+id: YAPI_keyword
+info:
+  name: YAPI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YAPI"
+        words:
+          - "content=\"yapi"
+          - "<div id=\"yapi\" style=\"height: 100%;"
+        condition: and

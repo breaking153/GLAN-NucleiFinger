@@ -1,0 +1,40 @@
+id: BugFree_keyword
+info:
+  name: BugFree_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "BugFree"
+        words:
+          - "id=\"logo\" alt=bugfree"
+          - "class=\"loginbgimage\" alt=\"bugfree"
+          - "name=\"buguserpwd"
+        condition: and
+      - type: word
+        part: body
+        name: "BugFree"
+        words:
+          - "id=\"logo\" alt=BugFree"
+        condition: and
+      - type: word
+        part: body
+        name: "BugFree"
+        words:
+          - "class=\"loginBgImage\" alt=\"BugFree"
+        condition: and
+      - type: word
+        part: body
+        name: "BugFree"
+        words:
+          - "name=\"BugUserPWD"
+        condition: and

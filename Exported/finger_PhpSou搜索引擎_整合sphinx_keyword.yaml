@@ -1,0 +1,20 @@
+id: PhpSou_sou_suo_yin_qing_zheng_he_sphinx_keyword
+info:
+  name: PhpSou搜索引擎_整合sphinx_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PhpSou搜索引擎_整合sphinx"
+        words:
+          - "PhpSou搜索引擎_整合sphinx"
+        condition: and

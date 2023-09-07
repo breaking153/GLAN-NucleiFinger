@@ -1,0 +1,20 @@
+id: Amazon_S3_keyword
+info:
+  name: Amazon S3_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Amazon S3"
+        words:
+          - "Amazon S3"
+        condition: and

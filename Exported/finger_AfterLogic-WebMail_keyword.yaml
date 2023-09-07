@@ -1,0 +1,26 @@
+id: AfterLogic_WebMail_keyword
+info:
+  name: AfterLogic-WebMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AfterLogic-WebMail"
+        words:
+          - "phpwebmailsessid"
+        condition: and
+      - type: word
+        part: header
+        name: "AfterLogic-WebMail"
+        words:
+          - "PHPWEBMAILSESSID"
+        condition: and

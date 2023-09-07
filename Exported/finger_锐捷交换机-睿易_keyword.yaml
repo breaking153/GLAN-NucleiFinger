@@ -1,0 +1,21 @@
+id: rui_jie_jiao_huan_ji_rui_yi_keyword
+info:
+  name: 锐捷交换机-睿易_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "锐捷交换机-睿易"
+        words:
+          - "cgi-bin/luci"
+          - "#f47f3e"
+        condition: and

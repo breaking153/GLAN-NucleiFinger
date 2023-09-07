@@ -1,0 +1,20 @@
+id: YidaCMS_mian_fei_kai_yuan_wang_zhan_guan_li_xi_tong_keyword
+info:
+  name: YidaCMS免费开源网站管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YidaCMS免费开源网站管理系统"
+        words:
+          - "yidacms.css"
+        condition: and

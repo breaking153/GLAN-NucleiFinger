@@ -1,0 +1,21 @@
+id: dong_hua_yi_liao_xie_tong_ban_gong_xi_tong_keyword
+info:
+  name: 东华医疗协同办公系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "东华医疗协同办公系统"
+        words:
+          - "extcomponent/security/login.jsp"
+          - "login_dhc"
+        condition: and

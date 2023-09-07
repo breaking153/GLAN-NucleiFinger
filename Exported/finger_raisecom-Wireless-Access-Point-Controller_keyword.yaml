@@ -1,0 +1,20 @@
+id: raisecom_Wireless_Access_Point_Controller_keyword
+info:
+  name: raisecom-Wireless-Access-Point-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "raisecom-Wireless-Access-Point-Controller"
+        words:
+          - "var oemproductname = \"mvc_msg2300\""
+        condition: and

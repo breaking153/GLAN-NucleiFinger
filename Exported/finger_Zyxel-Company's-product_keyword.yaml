@@ -1,0 +1,22 @@
+id: Zyxel_Company_s_product_keyword
+info:
+  name: Zyxel-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zyxel-Company's-product"
+        words:
+          - "forms/rpauth_1"
+          - "alcatel-lucent"
+          - "href=\"/zyxel.ico"
+        condition: and

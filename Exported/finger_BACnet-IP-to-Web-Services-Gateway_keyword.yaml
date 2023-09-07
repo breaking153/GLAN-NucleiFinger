@@ -1,0 +1,20 @@
+id: BACnet_IP_to_Web_Services_Gateway_keyword
+info:
+  name: BACnet-IP-to-Web-Services-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BACnet-IP-to-Web-Services-Gateway"
+        words:
+          - "server: cimetrics eplus web server "
+        condition: and

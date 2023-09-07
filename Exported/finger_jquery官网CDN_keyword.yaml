@@ -1,0 +1,20 @@
+id: jquery_guan_wang_CDN_keyword
+info:
+  name: jquery官网CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "jquery官网CDN"
+        words:
+          - "code.jquery.com"
+        condition: and

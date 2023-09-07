@@ -1,0 +1,21 @@
+id: CNS_CoreNetwork_Services_keyword
+info:
+  name: CNS-CoreNetwork-Services_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CNS-CoreNetwork-Services"
+        words:
+          - "<!--p>cns网络核心服务自动化开通平台系统. "
+          - "<span class=\"left\">cns-app "
+        condition: and

@@ -1,0 +1,32 @@
+id: HAProxy_keyword
+info:
+  name: HAProxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HAProxy"
+        words:
+          - "realm=\"haproxy statistics"
+        condition: and
+      - type: word
+        part: header
+        name: "HAProxy"
+        words:
+          - "HAProxy Statistics"
+        condition: and
+      - type: word
+        part: header
+        name: "HAProxy"
+        words:
+          - "HAProxy"
+        condition: and

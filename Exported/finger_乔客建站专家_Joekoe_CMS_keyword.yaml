@@ -1,0 +1,20 @@
+id: qiao_ke_jian_zhan_zhuan_jia_Joekoe_CMS_keyword
+info:
+  name: 乔客建站专家_Joekoe_CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "乔客建站专家_Joekoe_CMS"
+        words:
+          - "乔客建站专家_Joekoe_CMS"
+        condition: and

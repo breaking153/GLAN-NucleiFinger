@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_WA860RE_keyword
+info:
+  name: TP-LINK Wireless WA860RE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless WA860RE"
+        words:
+          - "TP-LINK Wireless WA860RE"
+        condition: and

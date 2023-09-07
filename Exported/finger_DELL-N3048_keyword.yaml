@@ -1,0 +1,20 @@
+id: DELL_N3048_keyword
+info:
+  name: DELL-N3048_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-N3048"
+        words:
+          - "class=\"login_server_default\">n3048"
+        condition: and

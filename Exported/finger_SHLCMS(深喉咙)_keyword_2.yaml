@@ -1,0 +1,26 @@
+id: SHLCMS_shen_hou_long_keyword_1
+info:
+  name: SHLCMS(深喉咙)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SHLCMS(深喉咙)"
+        words:
+          - "SHLCMS"
+        condition: and
+      - type: word
+        part: header
+        name: "SHLCMS(深喉咙)"
+        words:
+          - "深喉咙"
+        condition: and

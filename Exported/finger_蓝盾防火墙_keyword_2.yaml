@@ -1,0 +1,20 @@
+id: lan_dun_fang_huo_qiang_keyword_1
+info:
+  name: 蓝盾防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "蓝盾防火墙"
+        words:
+          - "蓝盾防火墙"
+        condition: and

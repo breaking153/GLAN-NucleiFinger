@@ -1,0 +1,19 @@
+id: jin_zhong_ji_tuan_zhi_neng_wu_liu_guan_li_xi_tong_faviconhash
+info:
+  name: 金钟集团智能物流管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "金钟集团智能物流管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-364449966\""
+        condition: or

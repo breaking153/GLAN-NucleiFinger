@@ -1,0 +1,21 @@
+id: ZyXEL_PK5001Z_keyword
+info:
+  name: ZyXEL-PK5001Z_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-PK5001Z"
+        words:
+          - ">centurylink&reg; modem configuration zyxel pk5001z<"
+          - "centurylink.com</a>"
+        condition: and

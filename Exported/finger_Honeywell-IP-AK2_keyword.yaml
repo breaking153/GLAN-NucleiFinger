@@ -1,0 +1,20 @@
+id: Honeywell_IP_AK2_keyword
+info:
+  name: Honeywell-IP-AK2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Honeywell-IP-AK2"
+        words:
+          - "class=\"ak2word\">ip-ak2"
+        condition: and

@@ -1,0 +1,38 @@
+id: qi_shi_ren_cai_xi_tong_74cms_keyword
+info:
+  name: 骑士人才系统(74cms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "骑士人才系统(74cms)"
+        words:
+          - "骑士人才系统"
+        condition: and
+      - type: word
+        part: body
+        name: "骑士人才系统(74cms)"
+        words:
+          - "content=\"74cms.com"
+        condition: and
+      - type: word
+        part: body
+        name: "骑士人才系统(74cms)"
+        words:
+          - "content=\"骑士CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "骑士人才系统(74cms)"
+        words:
+          - "Powered by <a href=\"http://www.74cms.com/\""
+        condition: and

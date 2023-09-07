@@ -1,0 +1,26 @@
+id: MaxCMS_ma_ke_si_CMS_keyword
+info:
+  name: MaxCMS(马克斯CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MaxCMS(马克斯CMS)"
+        words:
+          - "MaxCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "MaxCMS(马克斯CMS)"
+        words:
+          - "马克斯CMS"
+        condition: and

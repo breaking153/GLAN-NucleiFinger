@@ -1,0 +1,20 @@
+id: jin_die_K_3_Cloud_keyword
+info:
+  name: 金蝶K-3 Cloud_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "金蝶K-3 Cloud"
+        words:
+          - "金蝶K/3 Cloud"
+        condition: and

@@ -1,0 +1,21 @@
+id: Barracuda_Spam_Firewall_keyword
+info:
+  name: Barracuda-Spam-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Barracuda-Spam-Firewall"
+        words:
+          - "/barracuda.css"
+          - "http://www.barracudanetworks.com?a=bsf_product"
+        condition: and

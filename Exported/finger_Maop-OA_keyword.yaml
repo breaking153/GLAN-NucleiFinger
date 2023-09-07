@@ -1,0 +1,22 @@
+id: Maop_OA_keyword
+info:
+  name: Maop-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Maop-OA"
+        words:
+          - "pwd yahei16"
+          - "www.oooa.cn"
+          - "href=\"http://www.oooa.cn\">重庆猫扑网络科技有限公司</a>"
+        condition: and

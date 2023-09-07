@@ -1,0 +1,21 @@
+id: ZyXEL_P_320W_keyword
+info:
+  name: ZyXEL-P-320W_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZyXEL-P-320W"
+        words:
+          - "welcome to zyxel p-320w"
+          - "loginpassword.value = \"zyxel zywall series\""
+        condition: and

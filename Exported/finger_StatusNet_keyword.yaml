@@ -1,0 +1,21 @@
+id: StatusNet_keyword
+info:
+  name: StatusNet_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "StatusNet"
+        words:
+          - "<p>this site is powered by <a href=\"http://status.net/\">statusnet</a> version"
+          - "it runs the <a href=\"http://status.net/\">statusnet</a> microblogging software, version "
+        condition: and

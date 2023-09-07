@@ -1,0 +1,21 @@
+id: UTech_Router_keyword
+info:
+  name: UTech-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "UTech-Router"
+        words:
+          - "u-tech roteador wi-fi"
+          - "copyright u-tech do brasil"
+        condition: and

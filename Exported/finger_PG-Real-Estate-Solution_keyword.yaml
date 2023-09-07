@@ -1,0 +1,20 @@
+id: PG_Real_Estate_Solution_keyword
+info:
+  name: PG-Real-Estate-Solution_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PG-Real-Estate-Solution"
+        words:
+          - ">pg real estate solution - real estate web site design"
+        condition: and

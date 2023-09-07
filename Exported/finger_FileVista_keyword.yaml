@@ -1,0 +1,27 @@
+id: FileVista_keyword
+info:
+  name: FileVista_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FileVista"
+        words:
+          - "welcome to filevista"
+          - "<a href=\"http://www.gleamtech.com/products/filevista/web-file-manager"
+        condition: and
+      - type: word
+        part: body
+        name: "FileVista"
+        words:
+          - "Welcome to FileVista"
+        condition: and

@@ -1,0 +1,32 @@
+id: ThinkOX_keyword
+info:
+  name: ThinkOX_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ThinkOX"
+        words:
+          - "powered by thinkox"
+        condition: and
+      - type: word
+        part: body
+        name: "ThinkOX"
+        words:
+          - "Powered By ThinkOX"
+        condition: and
+      - type: word
+        part: body
+        name: "ThinkOX"
+        words:
+          - "thinkox"
+        condition: and

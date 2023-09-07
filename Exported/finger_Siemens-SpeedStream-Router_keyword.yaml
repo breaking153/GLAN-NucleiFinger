@@ -1,0 +1,21 @@
+id: Siemens_SpeedStream_Router_keyword
+info:
+  name: Siemens-SpeedStream-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Siemens-SpeedStream-Router"
+        words:
+          - "<title>speedstream router management interface</title>"
+          - "siemens subscriber networks -->"
+        condition: and

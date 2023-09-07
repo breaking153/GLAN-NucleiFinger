@@ -1,0 +1,20 @@
+id: qi_hang_ji_dian_qi_ye_jian_zhan_CMS_xi_tong_keyword
+info:
+  name: 启航机电企业建站CMS系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "启航机电企业建站CMS系统"
+        words:
+          - "启航机电企业建站CMS系统"
+        condition: and

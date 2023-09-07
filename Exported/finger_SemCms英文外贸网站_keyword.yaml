@@ -1,0 +1,26 @@
+id: SemCms_ying_wen_wai_mao_wang_zhan_keyword
+info:
+  name: SemCms英文外贸网站_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SemCms英文外贸网站"
+        words:
+          - "semcms PHP"
+        condition: and
+      - type: word
+        part: body
+        name: "SemCms英文外贸网站"
+        words:
+          - "sc_mid_c_left_c sc_mid_left_bt"
+        condition: and

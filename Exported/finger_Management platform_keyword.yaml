@@ -1,0 +1,21 @@
+id: Management_platform_keyword
+info:
+  name: Management platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Management platform"
+        words:
+          - "北京天源迪科信息技术有限公司"
+          - "casloginview"
+        condition: and

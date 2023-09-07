@@ -1,0 +1,20 @@
+id: TRS_Hybase_keyword_1
+info:
+  name: TRS Hybase_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TRS Hybase"
+        words:
+          - "TRS Hybase"
+        condition: and

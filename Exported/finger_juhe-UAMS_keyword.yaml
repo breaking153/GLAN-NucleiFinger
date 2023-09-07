@@ -1,0 +1,22 @@
+id: juhe_UAMS_keyword
+info:
+  name: juhe-UAMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "juhe-UAMS"
+        words:
+          - "action=\"login.aspx\" id=\"ctl00\""
+          - "background-color: #4a93be;"
+          - "聚合统一认证管理系统"
+        condition: and

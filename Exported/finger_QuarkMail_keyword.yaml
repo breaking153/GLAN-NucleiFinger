@@ -1,0 +1,21 @@
+id: QuarkMail_keyword
+info:
+  name: QuarkMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "QuarkMail"
+        words:
+          - "window.location.replace(\"/cgi-bin/web2cgi/index.cgi\";"
+          - "scrolling=\"no\" frameborder="
+        condition: and

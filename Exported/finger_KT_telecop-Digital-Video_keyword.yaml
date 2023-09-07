@@ -1,0 +1,20 @@
+id: KT_telecop_Digital_Video_keyword
+info:
+  name: KT_telecop-Digital-Video_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KT_telecop-Digital-Video"
+        words:
+          - "https://itunes.apple.com/us/app/ismart-viewer/"
+        condition: and

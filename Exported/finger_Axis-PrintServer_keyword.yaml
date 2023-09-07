@@ -1,0 +1,21 @@
+id: Axis_PrintServer_keyword
+info:
+  name: Axis-PrintServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Axis-PrintServer"
+        words:
+          - "psb_printjobs.gif"
+          - "/cgi-bin/prodhelp?prod="
+        condition: and

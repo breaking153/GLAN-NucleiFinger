@@ -1,0 +1,20 @@
+id: NetArtMedia_Real_Estate_Portal_keyword
+info:
+  name: NetArtMedia-Real-Estate-Portal_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetArtMedia-Real-Estate-Portal"
+        words:
+          - "powered by <a href=\"http://www.netartmedia.net/realestate"
+        condition: and

@@ -1,0 +1,20 @@
+id: Axence_nVision_WebAccess_HTTP_Server_keyword
+info:
+  name: Axence nVision WebAccess HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Axence nVision WebAccess HTTP Server"
+        words:
+          - "Axence nVision WebAccess HTTP Server"
+        condition: and

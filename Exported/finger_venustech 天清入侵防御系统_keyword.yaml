@@ -1,0 +1,20 @@
+id: venustech_tian_qing_ru_qin_fang_yu_xi_tong_keyword
+info:
+  name: venustech 天清入侵防御系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "venustech 天清入侵防御系统"
+        words:
+          - "venustech 天清入侵防御系统"
+        condition: and

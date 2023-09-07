@@ -1,0 +1,25 @@
+id: Oceansoft_keyword
+info:
+  name: Oceansoft_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Oceansoft"
+        words:
+          - "江苏欧索软件有限公司"
+          - "/ocensoftcomm.js"
+          - "技术支持：<a href=\"http://www.oceansoft.com.cn/\">"
+          - "aspx/casecenter/acasecenter.aspx?pagetype=sxcx&casetype=sscs&casename="
+          - "href=\"/e/action/listinfo/?"
+          - "江苏欧索"
+        condition: and

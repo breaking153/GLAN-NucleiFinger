@@ -1,0 +1,21 @@
+id: WISEGIGA_keyword
+info:
+  name: WISEGIGA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WISEGIGA"
+        words:
+          - "/admin/css/style_wisegiga.css"
+          - "images/i_logo01.gif"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_R7500_keyword
+info:
+  name: NETGEAR R7500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR R7500"
+        words:
+          - "NETGEAR R7500"
+        condition: and

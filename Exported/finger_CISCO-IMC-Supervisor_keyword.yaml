@@ -1,0 +1,21 @@
+id: CISCO_IMC_Supervisor_keyword
+info:
+  name: CISCO-IMC-Supervisor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-IMC-Supervisor"
+        words:
+          - "font-family: \"ciscosansthin\""
+          - "cisco imc supervisor"
+        condition: and

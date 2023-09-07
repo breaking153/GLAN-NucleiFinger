@@ -1,0 +1,22 @@
+id: SugarCRM_keyword
+info:
+  name: SugarCRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SugarCRM"
+        words:
+          - "<a href=\" javascript:void window.open('http://support.sugarcrm.com'\">support</a>"
+          - "<img style='margin-top: 2px' border='0' width='106' height='23' src='include/images/poweredby_sugarcrm.png' alt='powered by sugarcrm'>"
+          - "<script>var module_sugar_grp1 = 'users';</script><script>var action_sugar_grp1 = 'login';</script><script>jscal_today"
+        condition: and

@@ -1,0 +1,19 @@
+id: WPS_bu_shu_ke_shi_hua_ping_tai_keyword
+info:
+  name: WPS 部署可视化平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WPS 部署可视化平台"
+        words:
+          - "<title>WPS 部署可视化平台"

@@ -1,0 +1,21 @@
+id: Empirebak_keyword
+info:
+  name: Empirebak_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Empirebak"
+        words:
+          - "powered by <a href=\"http://www.phome.net\" target=\"_blank\"><strong>empirebak</strong>"
+          - "<div align=\"center\">(<a href=\"doc.html\" target=\"_blank\">查看帝国备份王说明文档</a></div>"
+        condition: and

@@ -1,0 +1,26 @@
+id: Hybrid_Cluster_keyword
+info:
+  name: Hybrid-Cluster_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Hybrid-Cluster"
+        words:
+          - "server: hybrid cluster"
+        condition: and
+      - type: word
+        part: header
+        name: "Hybrid-Cluster"
+        words:
+          - "Hybrid Cluster"
+        condition: and

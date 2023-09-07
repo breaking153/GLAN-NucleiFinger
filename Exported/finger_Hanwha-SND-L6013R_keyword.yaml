@@ -1,0 +1,20 @@
+id: Hanwha_SND_L6013R_keyword
+info:
+  name: Hanwha-SND-L6013R_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-SND-L6013R"
+        words:
+          - "var defaultfilename = \"snd-l6013r\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Cwindow_zheng_wu_an_quan_you_xiang_xi_tong_keyword
+info:
+  name: Cwindow政务安全邮箱系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cwindow政务安全邮箱系统"
+        words:
+          - "Cwindow政务安全邮箱系统"
+        condition: and

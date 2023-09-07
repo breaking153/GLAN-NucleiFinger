@@ -1,0 +1,20 @@
+id: qing_guo_ruan_jian_jiao_wu_xi_tong_keyword
+info:
+  name: 青果软件教务系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "青果软件教务系统"
+        words:
+          - "青果软件教务系统"
+        condition: and

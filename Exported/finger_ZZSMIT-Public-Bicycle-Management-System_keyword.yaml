@@ -1,0 +1,20 @@
+id: ZZSMIT_Public_Bicycle_Management_System_keyword
+info:
+  name: ZZSMIT-Public-Bicycle-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZZSMIT-Public-Bicycle-Management-System"
+        words:
+          - "href=\"/skins/bicycle/css/login.css\""
+        condition: and

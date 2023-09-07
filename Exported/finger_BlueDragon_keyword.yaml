@@ -1,0 +1,26 @@
+id: BlueDragon_keyword
+info:
+  name: BlueDragon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "BlueDragon"
+        words:
+          - "bluedragon"
+        condition: and
+      - type: word
+        part: header
+        name: "BlueDragon"
+        words:
+          - "BlueDragon"
+        condition: and

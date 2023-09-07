@@ -1,0 +1,20 @@
+id: SANGFOR_M5100_keyword
+info:
+  name: SANGFOR-M5100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SANGFOR-M5100"
+        words:
+          - "value=\"m5100-q-4.0"
+        condition: and

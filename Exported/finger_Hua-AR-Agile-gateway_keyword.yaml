@@ -1,0 +1,24 @@
+id: Hua_AR_Agile_gateway_keyword
+info:
+  name: Hua-AR-Agile-gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hua-AR-Agile-gateway"
+        words:
+          - "document.title = 'ar web登录"
+          - "/verifycode.cgi?vrfcodeid="
+          - "document.title = 'log in to ar web';"
+          - "checkvoiceservice.cgi"
+          - "ispbxmode_callback"
+        condition: and

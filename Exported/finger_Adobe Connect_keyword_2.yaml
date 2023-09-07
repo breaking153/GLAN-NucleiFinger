@@ -1,0 +1,20 @@
+id: Adobe_Connect_keyword_1_1
+info:
+  name: Adobe Connect_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Adobe Connect"
+        words:
+          - "BREEZESESSION="
+        condition: and

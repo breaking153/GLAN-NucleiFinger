@@ -1,0 +1,27 @@
+id: Kentico_CMS_keyword
+info:
+  name: Kentico-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kentico-CMS"
+        words:
+          - "content=\"kentico cms"
+          - "/cmspages/getresource.ashx"
+        condition: and
+      - type: word
+        part: body
+        name: "Kentico-CMS"
+        words:
+          - "content=\"Kentico CMS"
+        condition: and

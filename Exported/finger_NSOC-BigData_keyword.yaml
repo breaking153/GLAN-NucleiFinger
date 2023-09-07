@@ -1,0 +1,22 @@
+id: NSOC_BigData_keyword
+info:
+  name: NSOC-BigData_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSOC-BigData"
+        words:
+          - "<h2>nsoc大数据分析系统</h2>"
+          - "src=\"/nfw/static/framework/images/views.png"
+          - "<b>nsoc云安全解决方案"
+        condition: and

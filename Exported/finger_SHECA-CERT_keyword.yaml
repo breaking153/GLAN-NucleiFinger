@@ -1,0 +1,21 @@
+id: SHECA_CERT_keyword
+info:
+  name: SHECA-CERT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SHECA-CERT"
+        words:
+          - "content: \"获取一证通信息异常。请检查数字证书是否正常运行"
+          - "<li class=\"in\" id=\"cert_li\">"
+        condition: and

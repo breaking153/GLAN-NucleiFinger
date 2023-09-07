@@ -1,0 +1,20 @@
+id: IBM_TS3310_keyword
+info:
+  name: IBM-TS3310_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-TS3310"
+        words:
+          - "http-equiv=\"refresh\" content=\"0; url=/main_login.htm\""
+        condition: and

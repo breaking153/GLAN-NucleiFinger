@@ -1,0 +1,21 @@
+id: mylittleforum_keyword
+info:
+  name: mylittleforum_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mylittleforum"
+        words:
+          - "powered by my little forum"
+          - "index.php?mode=js_defaults"
+        condition: and

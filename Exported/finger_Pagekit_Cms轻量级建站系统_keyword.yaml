@@ -1,0 +1,20 @@
+id: Pagekit_Cms_qing_liang_ji_jian_zhan_xi_tong_keyword
+info:
+  name: Pagekit_Cms轻量级建站系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Pagekit_Cms轻量级建站系统"
+        words:
+          - "Pagekit_Cms轻量级建站系统"
+        condition: and

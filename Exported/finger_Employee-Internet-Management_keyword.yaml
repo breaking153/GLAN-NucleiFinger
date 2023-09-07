@@ -1,0 +1,27 @@
+id: Employee_Internet_Management_keyword
+info:
+  name: Employee-Internet-Management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Employee-Internet-Management"
+        words:
+          - "data/soft_down/openvpn.zip"
+          - "/soft_down/mdog.exe"
+        condition: and
+      - type: word
+        part: body
+        name: "Employee-Internet-Management"
+        words:
+          - "莱克斯科技"
+        condition: and

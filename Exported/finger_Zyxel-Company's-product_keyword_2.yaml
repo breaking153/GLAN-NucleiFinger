@@ -1,0 +1,20 @@
+id: Zyxel_Company_s_product_keyword_1
+info:
+  name: Zyxel-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Zyxel-Company's-product"
+        words:
+          - "ndm-sysmode"
+        condition: and

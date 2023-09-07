@@ -1,0 +1,26 @@
+id: Funkwerk_Gateway_keyword
+info:
+  name: Funkwerk-Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Funkwerk-Gateway"
+        words:
+          - "funkwerk boss"
+        condition: and
+      - type: word
+        part: header
+        name: "Funkwerk-Gateway"
+        words:
+          - "Funkwerk BOSS"
+        condition: and

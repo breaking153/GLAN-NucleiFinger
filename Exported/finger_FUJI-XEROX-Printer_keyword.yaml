@@ -1,0 +1,28 @@
+id: FUJI_XEROX_Printer_keyword
+info:
+  name: FUJI-XEROX-Printer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FUJI-XEROX-Printer"
+        words:
+          - "<frame src=\"headstat.htm\" name=\"top"
+          - "<frame src=\"footer.asp\" name=\"footer\" title=\"footer\" scrolling=\"no\" noresize marginheight=\"2\">"
+          - "var jtpath = '/jt/cgi-bin/';"
+          - "fuji xerox"
+          - "frames[2].window.location.href=jtpath + loc;"
+          - "properties/aboutprinter.html"
+          - "phaser 6250dp</title>"
+          - "phaser 6250n</title>"
+          - "phaser 4500dt</font></td>"
+        condition: and

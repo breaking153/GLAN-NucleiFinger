@@ -1,0 +1,23 @@
+id: samPHPweb_keyword
+info:
+  name: samPHPweb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "samPHPweb"
+        words:
+          - "songinfo.php"
+          - "copyright spacial audio solutions"
+          - "href=\"http://www.spacialaudio.com/products/sambroadcaster/\""
+          - "<meta http-equiv=\"refresh\" content=\"0;url=playing.html\">"
+        condition: and

@@ -1,0 +1,20 @@
+id: lan_dun_BDWebGuard_keyword
+info:
+  name: 蓝盾BDWebGuard_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "蓝盾BDWebGuard"
+        words:
+          - "BACKGROUND: url(images/loginbg.jpg) #e5f1fc"
+        condition: and

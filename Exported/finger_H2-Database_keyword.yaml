@@ -1,0 +1,21 @@
+id: H2_Database_keyword
+info:
+  name: H2-Database_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H2-Database"
+        words:
+          - "login.jsp?jsessionid="
+          - "welcome to h2"
+        condition: and

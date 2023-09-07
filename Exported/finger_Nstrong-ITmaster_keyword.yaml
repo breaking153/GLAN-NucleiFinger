@@ -1,0 +1,21 @@
+id: Nstrong_ITmaster_keyword
+info:
+  name: Nstrong-ITmaster_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nstrong-ITmaster"
+        words:
+          - "var base_path = '/stormweb';"
+          - "netstrong"
+        condition: and

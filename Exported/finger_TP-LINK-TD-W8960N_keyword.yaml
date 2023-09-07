@@ -1,0 +1,20 @@
+id: TP_LINK_TD_W8960N_keyword
+info:
+  name: TP-LINK-TD-W8960N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TP-LINK-TD-W8960N"
+        words:
+          - "align='right'>model no. td-w8960n</div>"
+        condition: and

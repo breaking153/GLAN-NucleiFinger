@@ -1,0 +1,19 @@
+id: wu_kong_CRM_faviconhash
+info:
+  name: 悟空CRM_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "悟空CRM"
+        dsl:
+          - "mmh3(base64_py(body)) == \"872805507\""
+        condition: or

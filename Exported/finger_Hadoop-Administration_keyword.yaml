@@ -1,0 +1,21 @@
+id: Hadoop_Administration_keyword
+info:
+  name: Hadoop-Administration_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hadoop-Administration"
+        words:
+          - "/static/hadoop.css"
+          - "class=\"navbar-brand\">hadoop</div>"
+        condition: and

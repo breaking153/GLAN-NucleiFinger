@@ -1,0 +1,21 @@
+id: TeLinXinXi_527meeting_keyword
+info:
+  name: TeLinXinXi-527meeting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TeLinXinXi-527meeting"
+        words:
+          - "527meeting"
+          - " content=\"轻会议\""
+        condition: and

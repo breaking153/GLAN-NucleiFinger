@@ -1,0 +1,20 @@
+id: Lantronix_Company_s_product_keyword
+info:
+  name: Lantronix-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Lantronix-Company's-product"
+        words:
+          - "alt=\"lantronix thinweb manager"
+        condition: and

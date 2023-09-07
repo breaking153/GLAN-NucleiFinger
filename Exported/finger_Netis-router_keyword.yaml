@@ -1,0 +1,21 @@
+id: Netis_router_keyword
+info:
+  name: Netis-router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netis-router"
+        words:
+          - "script/netcore.js"
+          - "./script/logic.js"
+        condition: and

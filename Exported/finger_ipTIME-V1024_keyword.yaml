@@ -1,0 +1,20 @@
+id: ipTIME_V1024_keyword
+info:
+  name: ipTIME-V1024_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ipTIME-V1024"
+        words:
+          - "src=\"/images2/login_title.v1024.gif\""
+        condition: and

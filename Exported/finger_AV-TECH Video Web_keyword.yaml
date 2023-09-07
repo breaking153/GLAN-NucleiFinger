@@ -1,0 +1,20 @@
+id: AV_TECH_Video_Web_keyword
+info:
+  name: AV-TECH Video Web_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AV-TECH Video Web"
+        words:
+          - "AV-TECH Video Web"
+        condition: and

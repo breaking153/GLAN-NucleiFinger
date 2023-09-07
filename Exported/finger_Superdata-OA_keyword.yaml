@@ -1,0 +1,20 @@
+id: Superdata_OA_keyword
+info:
+  name: Superdata-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Superdata-OA"
+        words:
+          - "速达软件技术（广州）有限公司"
+        condition: and

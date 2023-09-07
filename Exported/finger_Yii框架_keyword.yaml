@@ -1,0 +1,21 @@
+id: Yii_kuang_jia_keyword
+info:
+  name: Yii框架_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yii框架"
+        words:
+          - "yii.js"
+          - "yii."
+        condition: and

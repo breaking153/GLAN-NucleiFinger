@@ -1,0 +1,20 @@
+id: Symantec_Endpoint_Protection_Manager_keyword_1
+info:
+  name: Symantec-Endpoint-Protection-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Symantec-Endpoint-Protection-Manager"
+        words:
+          - "symantec endpoint protection manager"
+        condition: and

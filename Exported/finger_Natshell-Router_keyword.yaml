@@ -1,0 +1,20 @@
+id: Natshell_Router_keyword
+info:
+  name: Natshell-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Natshell-Router"
+        words:
+          - "<h4>欢迎登录natshell</h4"
+        condition: and

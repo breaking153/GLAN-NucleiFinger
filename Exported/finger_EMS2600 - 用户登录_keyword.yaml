@@ -1,0 +1,20 @@
+id: EMS2600_yong_hu_deng_lu_keyword
+info:
+  name: EMS2600 - 用户登录_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EMS2600 - 用户登录"
+        words:
+          - "EMS2600 - 用户登录"
+        condition: and

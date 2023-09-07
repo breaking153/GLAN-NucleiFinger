@@ -1,0 +1,20 @@
+id: SMA_Cluster_Controller_keyword
+info:
+  name: SMA Cluster Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SMA Cluster Controller"
+        words:
+          - "SMA Cluster Controller"
+        condition: and

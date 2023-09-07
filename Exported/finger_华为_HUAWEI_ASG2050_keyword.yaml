@@ -1,0 +1,20 @@
+id: hua_wei_HUAWEI_ASG2050_keyword
+info:
+  name: 华为_HUAWEI_ASG2050_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "华为_HUAWEI_ASG2050"
+        words:
+          - "HUAWEI ASG2050"
+        condition: and

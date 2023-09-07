@@ -1,0 +1,21 @@
+id: NSFOCUS_VPN_keyword
+info:
+  name: NSFOCUS-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NSFOCUS-VPN"
+        words:
+          - "/logo_login_nsfocus.png"
+          - "sslvpn"
+        condition: and

@@ -1,0 +1,20 @@
+id: moxa_VPort_36_1MP_IP_Camera_keyword
+info:
+  name: moxa VPort 36-1MP IP Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "moxa VPort 36-1MP IP Camera"
+        words:
+          - "moxa VPort 36-1MP IP Camera"
+        condition: and

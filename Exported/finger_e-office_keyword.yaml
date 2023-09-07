@@ -1,0 +1,20 @@
+id: e_office_keyword
+info:
+  name: e-office_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "e-office"
+        words:
+          - "/general/login/view//images/updateLoad.gif"
+        condition: and

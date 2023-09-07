@@ -1,0 +1,20 @@
+id: My_Yii_keyword
+info:
+  name: My Yii_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "My Yii"
+        words:
+          - "<a href=\"http://www.yiiframework.com/\" rel=\"external\">Yii"
+        condition: and

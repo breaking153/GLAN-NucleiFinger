@@ -1,0 +1,26 @@
+id: ZTE_IAD_keyword
+info:
+  name: ZTE-IAD_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-IAD"
+        words:
+          - "/image/banner_I532.jpg"
+        condition: and
+      - type: word
+        part: body
+        name: "ZTE-IAD"
+        words:
+          - "/image/I202.gif"
+        condition: and

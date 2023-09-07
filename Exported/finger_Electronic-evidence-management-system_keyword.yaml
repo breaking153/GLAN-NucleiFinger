@@ -1,0 +1,22 @@
+id: Electronic_evidence_management_system_keyword
+info:
+  name: Electronic-evidence-management-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Electronic-evidence-management-system"
+        words:
+          - "content=\"媒体数据管理系统"
+          - "diag.url = \"iframe.php?action=announce&position=login&id=\"+id;"
+          - "深圳警翼数码科技有限公司"
+        condition: and

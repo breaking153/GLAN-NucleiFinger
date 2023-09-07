@@ -1,0 +1,19 @@
+id: Alcohol_Market_Regulation_Russia_faviconhash
+info:
+  name: (Federal Service for Alcohol Market Regulation - Russia)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: " Federal Service for Alcohol Market Regulation - Russia)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1131689409\""
+        condition: or

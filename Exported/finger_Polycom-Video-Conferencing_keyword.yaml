@@ -1,0 +1,32 @@
+id: Polycom_Video_Conferencing_keyword
+info:
+  name: Polycom-Video-Conferencing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Polycom-Video-Conferencing"
+        words:
+          - "kallowdirecthtmlfileaccess"
+          - "src='app/util/proxy/configfqnames.js"
+          - "<iframe src=\"\" name=\"contentframe\" scrolling=\"auto\" class=\"content\" id=\"contentframe\" frameborder=\"no\">"
+          - "document.title = sysname+' - polycom '+model"
+          - "polycom"
+          - "resources/webmain-all.css"
+          - "/rmx1000/js/"
+          - "rmx1000 device"
+          - "'<title>'+sysname+' - polycom '+getcurrentpagename (+'</title>'"
+          - "var g_ishdvideoioenabled = "
+          - "' +currentlanguage.tolowercase (+'\""
+          - "common.login.loginctrl"
+          - "fake_password"
+        condition: and

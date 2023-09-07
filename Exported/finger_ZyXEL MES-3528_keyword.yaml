@@ -1,0 +1,20 @@
+id: ZyXEL_MES_3528_keyword
+info:
+  name: ZyXEL MES-3528_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL MES-3528"
+        words:
+          - "ZyXEL MES-3528"
+        condition: and

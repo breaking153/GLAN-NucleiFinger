@@ -1,0 +1,20 @@
+id: TOTO_LINK_N305RB_keyword
+info:
+  name: TOTO_LINK-N305RB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOTO_LINK-N305RB"
+        words:
+          - "src =\"/images2/login_back_zn305rb.cx.gif\""
+        condition: and

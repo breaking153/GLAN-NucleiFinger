@@ -1,0 +1,22 @@
+id: JeeSite_keyword
+info:
+  name: JeeSite_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JeeSite"
+        words:
+          - "jeesite.css"
+          - "jeesite.js"
+          - "jeesite.com"
+        condition: and

@@ -1,0 +1,20 @@
+id: Medium_keyword
+info:
+  name: Medium_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Medium"
+        words:
+          - "Medium"
+        condition: and

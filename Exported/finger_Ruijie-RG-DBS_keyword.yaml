@@ -1,0 +1,21 @@
+id: Ruijie_RG_DBS_keyword
+info:
+  name: Ruijie-RG-DBS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie-RG-DBS"
+        words:
+          - "/css/impl-security.css"
+          - "/dbaudit/authenticate"
+        condition: and

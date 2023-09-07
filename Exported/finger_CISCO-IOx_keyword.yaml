@@ -1,0 +1,20 @@
+id: CISCO_IOx_keyword
+info:
+  name: CISCO-IOx_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-IOx"
+        words:
+          - "var g_url_version = \"/iox/api/v2\""
+        condition: and

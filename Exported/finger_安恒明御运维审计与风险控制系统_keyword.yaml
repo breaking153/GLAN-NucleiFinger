@@ -1,0 +1,20 @@
+id: an_heng_ming_yu_yun_wei_shen_ji_yu_feng_xian_kong_zhi_xi_tong_keyword
+info:
+  name: 安恒明御运维审计与风险控制系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "安恒明御运维审计与风险控制系统"
+        words:
+          - "安恒明御运维审计与风险控制系统"
+        condition: and

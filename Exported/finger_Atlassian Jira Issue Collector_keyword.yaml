@@ -1,0 +1,20 @@
+id: Atlassian_Jira_Issue_Collector_keyword
+info:
+  name: Atlassian Jira Issue Collector_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Atlassian Jira Issue Collector"
+        words:
+          - "Atlassian Jira Issue Collector"
+        condition: and

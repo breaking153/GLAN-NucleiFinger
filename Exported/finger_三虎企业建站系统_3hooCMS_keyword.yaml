@@ -1,0 +1,20 @@
+id: san_hu_qi_ye_jian_zhan_xi_tong_3hooCMS_keyword
+info:
+  name: 三虎企业建站系统_3hooCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "三虎企业建站系统_3hooCMS"
+        words:
+          - "三虎企业建站系统_3hooCMS"
+        condition: and

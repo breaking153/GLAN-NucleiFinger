@@ -1,0 +1,20 @@
+id: yi_cai_tong_keyword
+info:
+  name: 一采通_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "一采通"
+        words:
+          - "/custom/GroupNewsList.aspx?GroupId="
+        condition: and

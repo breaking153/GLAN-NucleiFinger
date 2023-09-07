@@ -1,0 +1,22 @@
+id: hua_yu_Reporter_keyword
+info:
+  name: 华域Reporter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "华域Reporter"
+        words:
+          - "reporter"
+          - "login"
+          - "action.php"
+        condition: and

@@ -1,0 +1,20 @@
+id: ADT_SJW74_VPN_keyword
+info:
+  name: ADT-SJW74-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ADT-SJW74-VPN"
+        words:
+          - "src=\"./system/usbkey.js\""
+        condition: and

@@ -1,0 +1,20 @@
+id: AMR_WinControl_keyword
+info:
+  name: AMR-WinControl_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AMR-WinControl"
+        words:
+          - "AMR_WinControl"
+        condition: and

@@ -1,0 +1,39 @@
+id: Billion_Router_keyword
+info:
+  name: Billion-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Billion-Router"
+        words:
+          - "billion sky"
+          - "basic realm=\"webadmin"
+        condition: and
+      - type: word
+        part: header
+        name: "Billion-Router"
+        words:
+          - "Billion Sky"
+        condition: and
+      - type: word
+        part: header
+        name: "Billion-Router"
+        words:
+          - "Conexant-EmWeb"
+        condition: and
+      - type: word
+        part: header
+        name: "Billion-Router"
+        words:
+          - "Basic realm=\"WebAdmin"
+        condition: and

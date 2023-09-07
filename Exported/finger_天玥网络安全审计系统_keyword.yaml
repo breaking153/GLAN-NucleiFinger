@@ -1,0 +1,22 @@
+id: tian_yue_wang_luo_an_quan_shen_ji_xi_tong_keyword
+info:
+  name: 天玥网络安全审计系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天玥网络安全审计系统"
+        words:
+          - "天玥"
+          - "venustech"
+          - "func_login"
+        condition: and

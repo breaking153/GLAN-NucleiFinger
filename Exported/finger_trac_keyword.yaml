@@ -1,0 +1,32 @@
+id: trac_keyword
+info:
+  name: trac_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "trac"
+        words:
+          - "<h1>available projects</h1>"
+        condition: and
+      - type: word
+        part: body
+        name: "trac"
+        words:
+          - "<h1>Available Projects</h1>"
+        condition: and
+      - type: word
+        part: body
+        name: "trac"
+        words:
+          - "wiki/TracGuide"
+        condition: and

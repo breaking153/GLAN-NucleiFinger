@@ -1,0 +1,21 @@
+id: 360_TianQing_keyword
+info:
+  name: 360-TianQing_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-TianQing"
+        words:
+          - "/task/index/detail?id={item.id}"
+          - "已过期或者未授权，购买请联系4008-136-360"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETENTSEC_Log_analysis_keyword
+info:
+  name: NETENTSEC-Log-analysis_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETENTSEC-Log-analysis"
+        words:
+          - "网康"
+        condition: and

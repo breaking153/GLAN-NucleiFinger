@@ -1,0 +1,20 @@
+id: Novell_NetWare_yuan_cheng_guan_li_qi_keyword
+info:
+  name: Novell NetWare远程管理器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Novell NetWare远程管理器"
+        words:
+          - "Novell NetWare远程管理器"
+        condition: and

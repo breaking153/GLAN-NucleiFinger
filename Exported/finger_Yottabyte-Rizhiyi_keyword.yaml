@@ -1,0 +1,20 @@
+id: Yottabyte_Rizhiyi_keyword
+info:
+  name: Yottabyte-Rizhiyi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Yottabyte-Rizhiyi"
+        words:
+          - "href=\"/static/assets/yottaweb-elements/index.css\""
+        condition: and

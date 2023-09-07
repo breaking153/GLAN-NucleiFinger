@@ -1,0 +1,20 @@
+id: Information_Security_Integrated_Management_Platform_keyword
+info:
+  name: Information Security Integrated Management Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Information Security Integrated Management Platform"
+        words:
+          - "ccaq_kf@unisk.cn"
+        condition: and

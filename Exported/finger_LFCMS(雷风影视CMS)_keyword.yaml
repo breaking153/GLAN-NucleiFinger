@@ -1,0 +1,32 @@
+id: LFCMS_lei_feng_ying_shi_CMS_keyword
+info:
+  name: LFCMS(雷风影视CMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LFCMS(雷风影视CMS)"
+        words:
+          - "LFCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "LFCMS(雷风影视CMS)"
+        words:
+          - "content=\"Ryan Haudenschilt"
+        condition: and
+      - type: word
+        part: body
+        name: "LFCMS(雷风影视CMS)"
+        words:
+          - "Powered by Family Connections"
+        condition: and

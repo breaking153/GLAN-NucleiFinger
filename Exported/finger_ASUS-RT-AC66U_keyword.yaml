@@ -1,0 +1,21 @@
+id: ASUS_RT_AC66U_keyword
+info:
+  name: ASUS-RT-AC66U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-RT-AC66U"
+        words:
+          - "class=\"prod_madelname\" style=\"margin-left:78px;\">rt-ac66u"
+          - "prod_madelname\">rt-ac66u"
+        condition: and

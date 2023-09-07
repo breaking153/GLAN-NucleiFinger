@@ -1,0 +1,20 @@
+id: EasyMeeting_hui_xun_tong_keyword
+info:
+  name: EasyMeeting 会讯通_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "EasyMeeting 会讯通"
+        words:
+          - "EasyMeeting 会讯通"
+        condition: and

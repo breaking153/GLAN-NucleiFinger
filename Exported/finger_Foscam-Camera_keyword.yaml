@@ -1,0 +1,25 @@
+id: Foscam_Camera_keyword
+info:
+  name: Foscam-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Foscam-Camera"
+        words:
+          - "<script src=\"get_status.cgi"
+          - "scrolling=\"auto\" src=\"login.htm\"></iframe>"
+          - "pluginspage=\"ipcwebcomponents.exe\" type=\"application/ipcam-regplugin\""
+          - "id=\"maskheaderdiv\""
+          - "ptzguard\""
+          - "style=\"background:url(images/con-logo-bg.png;"
+        condition: and

@@ -1,0 +1,20 @@
+id: Advantech_LR77_keyword
+info:
+  name: Advantech-LR77_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Advantech-LR77"
+        words:
+          - "lr77-v2"
+        condition: and

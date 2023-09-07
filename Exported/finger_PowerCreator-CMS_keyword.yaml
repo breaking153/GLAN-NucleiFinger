@@ -1,0 +1,22 @@
+id: PowerCreator_CMS_keyword
+info:
+  name: PowerCreator-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PowerCreator-CMS"
+        words:
+          - "email:support@powercreator.com.cn<br />"
+          - "<span class=\"bottom_versionno\">"
+          - "powercreator "
+        condition: and

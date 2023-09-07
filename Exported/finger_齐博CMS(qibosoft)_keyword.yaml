@@ -1,0 +1,20 @@
+id: qi_bo_CMS_qibosoft_keyword
+info:
+  name: 齐博CMS(qibosoft)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "齐博CMS(qibosoft)"
+        words:
+          - "qibosoft"
+        condition: and

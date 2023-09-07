@@ -1,0 +1,20 @@
+id: DELL_DCS2210_keyword
+info:
+  name: DELL-DCS2210_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-DCS2210"
+        words:
+          - "id=\"serverinfo\"> dcs2210"
+        condition: and

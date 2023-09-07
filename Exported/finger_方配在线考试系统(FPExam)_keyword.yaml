@@ -1,0 +1,21 @@
+id: fang_pei_zai_xian_kao_shi_xi_tong_FPExam_keyword
+info:
+  name: 方配在线考试系统(FPExam)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "方配在线考试系统(FPExam)"
+        words:
+          - "exam/logo/favicon.ico"
+          - "fangpage"
+        condition: and

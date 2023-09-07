@@ -1,0 +1,20 @@
+id: D_Link_Network_Camera_keyword
+info:
+  name: D-Link-Network-Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-Network-Camera"
+        words:
+          - "DCS-950G\".toLowerCase()"
+        condition: and

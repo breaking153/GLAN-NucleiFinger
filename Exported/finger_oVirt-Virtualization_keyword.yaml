@@ -1,0 +1,20 @@
+id: oVirt_Virtualization_keyword
+info:
+  name: oVirt-Virtualization_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "oVirt-Virtualization"
+        words:
+          - "<a href=\"https://www.ovirt.org\" class=\"obrand_loginpagelogolink\">"
+        condition: and

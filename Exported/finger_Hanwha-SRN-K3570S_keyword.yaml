@@ -1,0 +1,20 @@
+id: Hanwha_SRN_K3570S_keyword
+info:
+  name: Hanwha-SRN-K3570S_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-SRN-K3570S"
+        words:
+          - "$.nvr.model_name=\"srn-k3570s\""
+        condition: and

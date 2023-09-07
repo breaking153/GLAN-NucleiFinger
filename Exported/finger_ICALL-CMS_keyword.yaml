@@ -1,0 +1,20 @@
+id: ICALL_CMS_keyword
+info:
+  name: ICALL-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ICALL-CMS"
+        words:
+          - "var img_obj = document.getelementbyid('showing';"
+        condition: and

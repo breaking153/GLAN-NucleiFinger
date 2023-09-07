@@ -1,0 +1,20 @@
+id: TP_LINK_SOHO_R410v2_5_keyword
+info:
+  name: TP-LINK SOHO R410v2.5_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK SOHO R410v2.5"
+        words:
+          - "TP-LINK SOHO R410v2.5"
+        condition: and

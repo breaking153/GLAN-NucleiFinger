@@ -1,0 +1,32 @@
+id: DSpace_keyword
+info:
+  name: DSpace_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DSpace"
+        words:
+          - "<a href=\"http://www.dspace.org\">dspace software"
+        condition: and
+      - type: word
+        part: body
+        name: "DSpace"
+        words:
+          - "content=\"DSpace"
+        condition: and
+      - type: word
+        part: body
+        name: "DSpace"
+        words:
+          - "<a href=\"http://www.dspace.org\">DSpace Software"
+        condition: and

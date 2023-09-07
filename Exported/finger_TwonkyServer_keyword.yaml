@@ -1,0 +1,20 @@
+id: TwonkyServer_keyword
+info:
+  name: TwonkyServer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TwonkyServer"
+        words:
+          - "<meta name=\"description\" content=\"twonkymedia digital home\">"
+        condition: and

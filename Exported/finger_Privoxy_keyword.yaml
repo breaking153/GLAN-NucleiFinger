@@ -1,0 +1,27 @@
+id: Privoxy_keyword
+info:
+  name: Privoxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Privoxy"
+        words:
+          - "privoxy"
+          - "proxy-agent: privoxy"
+        condition: and
+      - type: word
+        part: header
+        name: "Privoxy"
+        words:
+          - "Proxy-Agent:Privoxy"
+        condition: and

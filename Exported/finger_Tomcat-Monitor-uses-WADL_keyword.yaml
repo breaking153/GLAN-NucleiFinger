@@ -1,0 +1,20 @@
+id: Tomcat_Monitor_uses_WADL_keyword
+info:
+  name: Tomcat-Monitor-uses-WADL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tomcat-Monitor-uses-WADL"
+        words:
+          - "tomcat monitor uses wadl to describe services it can offer"
+        condition: and

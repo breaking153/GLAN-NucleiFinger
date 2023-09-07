@@ -1,0 +1,32 @@
+id: qing_tian_dian_zi_zheng_wu_keyword
+info:
+  name: 擎天电子政务_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "擎天电子政务"
+        words:
+          - "App_Themes/1/Style.css"
+        condition: and
+      - type: word
+        part: body
+        name: "擎天电子政务"
+        words:
+          - "window.location = \"homepages/index.aspx"
+        condition: and
+      - type: word
+        part: body
+        name: "擎天电子政务"
+        words:
+          - "homepages/content_page.aspx"
+        condition: and

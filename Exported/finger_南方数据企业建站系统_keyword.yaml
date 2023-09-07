@@ -1,0 +1,20 @@
+id: nan_fang_shu_ju_qi_ye_jian_zhan_xi_tong_keyword
+info:
+  name: 南方数据企业建站系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "南方数据企业建站系统"
+        words:
+          - "南方数据企业建站系统"
+        condition: and

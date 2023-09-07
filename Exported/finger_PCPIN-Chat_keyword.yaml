@@ -1,0 +1,22 @@
+id: PCPIN_Chat_keyword
+info:
+  name: PCPIN-Chat_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PCPIN-Chat"
+        words:
+          - "title=\"powered by pcpin chat"
+          - "onclick=\"document.loginform.register.value=0; document.loginform.lostpassword.value=0"
+          - "window.appname_='pcpin_chat'"
+        condition: and

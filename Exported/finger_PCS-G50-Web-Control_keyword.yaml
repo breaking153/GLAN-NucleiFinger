@@ -1,0 +1,20 @@
+id: PCS_G50_Web_Control_keyword
+info:
+  name: PCS-G50-Web-Control_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PCS-G50-Web-Control"
+        words:
+          - "realm=\"pcs-g50 web control"
+        condition: and

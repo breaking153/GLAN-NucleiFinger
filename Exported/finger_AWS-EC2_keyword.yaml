@@ -1,0 +1,20 @@
+id: AWS_EC2_keyword
+info:
+  name: AWS-EC2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AWS-EC2"
+        words:
+          - "welcome to nginx on amazon ec2!"
+        condition: and

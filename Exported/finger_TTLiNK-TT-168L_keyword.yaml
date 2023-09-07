@@ -1,0 +1,20 @@
+id: TTLiNK_TT_168L_keyword
+info:
+  name: TTLiNK-TT-168L_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TTLiNK-TT-168L"
+        words:
+          - ">tt-168l</a>"
+        condition: and

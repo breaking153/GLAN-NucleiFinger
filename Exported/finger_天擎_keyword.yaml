@@ -1,0 +1,21 @@
+id: tian_qing_keyword
+info:
+  name: 天擎_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天擎"
+        words:
+          - "index/logo"
+          - "天擎</title>"
+        condition: and

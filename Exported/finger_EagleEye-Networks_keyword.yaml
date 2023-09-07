@@ -1,0 +1,21 @@
+id: EagleEye_Networks_keyword
+info:
+  name: EagleEye-Networks_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EagleEye-Networks"
+        words:
+          - "href=\"css/eagle.base_efafdad3.css"
+          - "title=\"eagle eye networks\">eagle eye networks</a></h1>"
+        condition: and

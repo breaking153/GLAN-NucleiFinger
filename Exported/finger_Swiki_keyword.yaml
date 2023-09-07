@@ -1,0 +1,20 @@
+id: Swiki_keyword
+info:
+  name: Swiki_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Swiki"
+        words:
+          - "<a href=\"http://minnow.cc.gatech.edu/swiki\" title=\"comswiki: powered by squeak\"><img src=\"/defaultscheme/comswiki.gif\" border=0 width=277 height=88 alt=\"comswiki: powered by squeak\"></a><br>"
+        condition: and

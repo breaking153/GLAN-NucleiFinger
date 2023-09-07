@@ -1,0 +1,20 @@
+id: Alcatel_Lucent_IP1020_keyword
+info:
+  name: Alcatel_Lucent-IP1020_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Alcatel_Lucent-IP1020"
+        words:
+          - "realm=\"alcatel ip1020"
+        condition: and

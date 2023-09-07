@@ -1,0 +1,21 @@
+id: Sapido_lu_you_qi_keyword
+info:
+  name: Sapido-路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sapido-路由器"
+        words:
+          - "<script>MML(\"change password\");</script>"
+          - "><script>MML('Traditional Chinese'"
+        condition: and

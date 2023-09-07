@@ -1,0 +1,20 @@
+id: yi_you_cms_qi_ye_jian_zhan_xi_tong_han_xiao_cheng_xu_keyword
+info:
+  name: 易优cms企业建站系统_含小程序_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "易优cms企业建站系统_含小程序"
+        words:
+          - "易优cms企业建站系统_含小程序"
+        condition: and

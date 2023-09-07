@@ -1,0 +1,21 @@
+id: D_Link_DSR_150_keyword
+info:
+  name: D_Link-DSR-150_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D_Link-DSR-150"
+        words:
+          - "<div class=\"floatl txt01\">product page: dsr-150"
+          - "unified services router - dsr-150 </div>"
+        condition: and

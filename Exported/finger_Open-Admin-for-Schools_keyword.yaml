@@ -1,0 +1,21 @@
+id: Open_Admin_for_Schools_keyword
+info:
+  name: Open-Admin-for-Schools_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Open-Admin-for-Schools"
+        words:
+          - "action=\"/cgi-bin/rptbirthday.pl"
+          - "open admin for schools"
+        condition: and

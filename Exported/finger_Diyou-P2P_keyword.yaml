@@ -1,0 +1,21 @@
+id: Diyou_P2P_keyword
+info:
+  name: Diyou-P2P_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Diyou-P2P"
+        words:
+          - "/js/diyou.js"
+          - "src=\"/dyweb/dythemes"
+        condition: and

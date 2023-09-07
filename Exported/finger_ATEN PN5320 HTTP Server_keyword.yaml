@@ -1,0 +1,20 @@
+id: ATEN_PN5320_HTTP_Server_keyword
+info:
+  name: ATEN PN5320 HTTP Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ATEN PN5320 HTTP Server"
+        words:
+          - "ATEN PN5320 HTTP Server"
+        condition: and

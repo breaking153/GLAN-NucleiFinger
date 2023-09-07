@@ -1,0 +1,20 @@
+id: Crow_Force_portal_CMS_keyword
+info:
+  name: Crow-Force-portal-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Crow-Force-portal-CMS"
+        words:
+          - "中企动力提供技术支持"
+        condition: and

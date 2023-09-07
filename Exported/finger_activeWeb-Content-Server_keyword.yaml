@@ -1,0 +1,32 @@
+id: activeWeb_Content_Server_keyword
+info:
+  name: activeWeb-Content-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "activeWeb-Content-Server"
+        words:
+          - "awnocachebegin__awnocachebegin__awnocachebegin__awnocachebegin__awnocachebegin"
+        condition: and
+      - type: word
+        part: body
+        name: "activeWeb-Content-Server"
+        words:
+          - "AWNOCACHEBEGIN__AWNOCACHEBEGIN__AWNOCACHEBEGIN__AWNOCACHEBEGIN__AWNOCACHEBEGIN"
+        condition: and
+      - type: word
+        part: body
+        name: "activeWeb-Content-Server"
+        words:
+          - "activeWeb cache extension"
+        condition: and

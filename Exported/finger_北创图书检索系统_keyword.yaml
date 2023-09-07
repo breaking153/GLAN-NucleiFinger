@@ -1,0 +1,20 @@
+id: bei_chuang_tu_shu_jian_suo_xi_tong_keyword
+info:
+  name: 北创图书检索系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "北创图书检索系统"
+        words:
+          - "opac_two"
+        condition: and

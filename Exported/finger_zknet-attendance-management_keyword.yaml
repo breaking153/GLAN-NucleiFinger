@@ -1,0 +1,23 @@
+id: zknet_attendance_management_keyword
+info:
+  name: zknet-attendance-management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "zknet-attendance-management"
+        words:
+          - "onclick=\"showstate(gettext('forgotten password' "
+          - "zknet"
+          - "zksoftware inc."
+          - "web考勤管理系统"
+        condition: and

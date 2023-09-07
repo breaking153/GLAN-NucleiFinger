@@ -1,0 +1,20 @@
+id: qi_ming_tai_he_xin_xi_an_quan_yun_ying_zhong_xin_xi_tong_keyword
+info:
+  name: 启明泰合信息安全运营中心系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "启明泰合信息安全运营中心系统"
+        words:
+          - "启明泰合信息安全运营中心系统"
+        condition: and

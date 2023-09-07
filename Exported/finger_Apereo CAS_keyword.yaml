@@ -1,0 +1,20 @@
+id: Apereo_CAS_keyword
+info:
+  name: Apereo CAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Apereo CAS"
+        words:
+          - "Apereo CAS"
+        condition: and

@@ -1,0 +1,35 @@
+id: MRTG_keyword
+info:
+  name: MRTG_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MRTG"
+        words:
+          - "href=\"http://oss.oetiker.ch/mrtg/"
+          - "command line is easier to read using \"view page properties\" of your browser"
+          - "mrtg "
+          - "mrtg "
+        condition: and
+      - type: word
+        part: body
+        name: "MRTG"
+        words:
+          - "Command line is easier to read using \"View Page Properties\" of your browser"
+        condition: and
+      - type: word
+        part: body
+        name: "MRTG"
+        words:
+          - "commandline was: indexmaker"
+        condition: and

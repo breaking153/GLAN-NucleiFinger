@@ -1,0 +1,33 @@
+id: VOS3000_keyword
+info:
+  name: VOS3000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VOS3000"
+        words:
+          - "content=\"vos3000"
+          - "images/vos3000.ico"
+        condition: and
+      - type: word
+        part: body
+        name: "VOS3000"
+        words:
+          - "<meta name=\"keywords\" content=\"VOS3000"
+        condition: and
+      - type: word
+        part: body
+        name: "VOS3000"
+        words:
+          - "<meta name=\"description\" content=\"VOS3000"
+        condition: and

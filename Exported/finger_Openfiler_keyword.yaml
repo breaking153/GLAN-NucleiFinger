@@ -1,0 +1,21 @@
+id: Openfiler_keyword
+info:
+  name: Openfiler_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Openfiler"
+        words:
+          - "href=\"http://www.openfiler.com/\">openfiler"
+          - "</strong>openfiler nas/san appliance"
+        condition: and

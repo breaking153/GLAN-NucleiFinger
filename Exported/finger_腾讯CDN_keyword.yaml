@@ -1,0 +1,20 @@
+id: teng_xun_CDN_keyword
+info:
+  name: 腾讯CDN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "腾讯CDN"
+        words:
+          - "腾讯CDN"
+        condition: and

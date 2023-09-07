@@ -1,0 +1,21 @@
+id: hechen_WAF_keyword
+info:
+  name: hechen-WAF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hechen-WAF"
+        words:
+          - "src=\"./js/jquery.validate.js\""
+          - "class=\"inputsize2\""
+        condition: and

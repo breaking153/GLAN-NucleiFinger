@@ -1,0 +1,21 @@
+id: TOTO_LINK_N300RT_keyword_1
+info:
+  name: TOTO_LINK-N300RT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TOTO_LINK-N300RT"
+        words:
+          - "realm=\"totolink n300rt"
+          - "realm=\"n300rt"
+        condition: and

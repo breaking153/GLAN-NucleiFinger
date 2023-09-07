@@ -1,0 +1,26 @@
+id: Cybozu_Garoon_keyword
+info:
+  name: Cybozu-Garoon_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Cybozu-Garoon"
+        words:
+          - "server: cybozu-ws"
+        condition: and
+      - type: word
+        part: header
+        name: "Cybozu-Garoon"
+        words:
+          - "Cybozu-WS"
+        condition: and

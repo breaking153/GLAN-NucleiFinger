@@ -1,0 +1,20 @@
+id: Emtronix_EM9260_keyword
+info:
+  name: Emtronix-EM9260_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Emtronix-EM9260"
+        words:
+          - "class=\"style1\">em9260 web server"
+        condition: and

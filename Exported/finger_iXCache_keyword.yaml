@@ -1,0 +1,21 @@
+id: iXCache_keyword
+info:
+  name: iXCache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "iXCache"
+        words:
+          - "iXCache"
+          - "/login/userverify.cgi"
+        condition: and

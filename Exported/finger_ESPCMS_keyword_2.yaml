@@ -1,0 +1,27 @@
+id: ESPCMS_keyword_1
+info:
+  name: ESPCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ESPCMS"
+        words:
+          - "powered by espcms"
+          - "/templates/default/style/tempates_div.css"
+        condition: and
+      - type: word
+        part: body
+        name: "ESPCMS"
+        words:
+          - "Powered by ESPCMS"
+        condition: and

@@ -1,0 +1,20 @@
+id: TAC_Xenta_Controller_keyword
+info:
+  name: TAC-Xenta-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TAC-Xenta-Controller"
+        words:
+          - "<html><body><script>var url=\"https://\"location.hostname\"/www/index/slogin.html\";location.href=url;</script></body></html>"
+        condition: and

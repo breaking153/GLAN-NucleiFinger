@@ -1,0 +1,20 @@
+id: Linksys_E4200_keyword
+info:
+  name: Linksys E4200_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys E4200"
+        words:
+          - "Linksys E4200"
+        condition: and

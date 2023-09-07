@@ -1,0 +1,21 @@
+id: Sweetrice_keyword
+info:
+  name: Sweetrice_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sweetrice"
+        words:
+          - "content=\"sweetrice"
+          - "powered by <a href=\"http://www.basic-cms.org\">basic cms sweetrice</a>"
+        condition: and

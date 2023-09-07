@@ -1,0 +1,20 @@
+id: Gordano_NTMail_keyword
+info:
+  name: Gordano NTMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Gordano NTMail"
+        words:
+          - "Gordano NTMail"
+        condition: and

@@ -1,0 +1,20 @@
+id: CheckPoint_SSL_Network_Extender_keyword
+info:
+  name: CheckPoint-SSL-Network-Extender_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "CheckPoint-SSL-Network-Extender"
+        words:
+          - "check point svn foundation"
+        condition: and

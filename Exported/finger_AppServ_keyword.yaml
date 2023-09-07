@@ -1,0 +1,21 @@
+id: AppServ_keyword
+info:
+  name: AppServ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AppServ"
+        words:
+          - "appserv/softicon.gif"
+          - "index.php?appservlang=th"
+        condition: and

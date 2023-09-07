@@ -1,0 +1,27 @@
+id: AirOS_keyword
+info:
+  name: AirOS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AirOS"
+        words:
+          - "airos_sessionid"
+          - "cookiechecker?uri="
+        condition: and
+      - type: word
+        part: header
+        name: "AirOS"
+        words:
+          - "AIROS_SESSIONID"
+        condition: and

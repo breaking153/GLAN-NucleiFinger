@@ -1,0 +1,23 @@
+id: ASUS_RT_N66U_keyword
+info:
+  name: ASUS-RT-N66U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-RT-N66U"
+        words:
+          - "<div class=\"prod_madelname\">rt-n66u"
+          - "capture(status_router.sys_model</script></div> asus rt-n66u&nbsp;"
+          - "capture(status_router.sys_model</script></div>asus rt-n66u"
+          - "class=\"prod_madelname\" style=\"margin-left:78px;\">rt-n66u"
+        condition: and

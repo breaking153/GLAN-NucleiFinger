@@ -1,0 +1,20 @@
+id: Inspur_Storage_keyword
+info:
+  name: Inspur-Storage-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Inspur-Storage-"
+        words:
+          - "<td align=\"left\">浪潮存储 您身边的存储专家</td>"
+        condition: and

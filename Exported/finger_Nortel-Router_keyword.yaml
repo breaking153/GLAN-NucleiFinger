@@ -1,0 +1,21 @@
+id: Nortel_Router_keyword
+info:
+  name: Nortel-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nortel-Router"
+        words:
+          - "nowrap>router model:"
+          - "about nortel secure router"
+        condition: and

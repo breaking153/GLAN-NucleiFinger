@@ -1,0 +1,21 @@
+id: WinWebMail_you_jian_xi_tong_keyword
+info:
+  name: WinWebMail邮件系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WinWebMail邮件系统"
+        words:
+          - "images/hrefbt.css"
+          - "WinWebMail"
+        condition: and

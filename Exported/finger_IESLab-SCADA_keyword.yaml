@@ -1,0 +1,21 @@
+id: IESLab_SCADA_keyword
+info:
+  name: IESLab-SCADA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IESLab-SCADA"
+        words:
+          - "copyrightpt12"
+          - "青岛积成电子有限公司"
+        condition: and

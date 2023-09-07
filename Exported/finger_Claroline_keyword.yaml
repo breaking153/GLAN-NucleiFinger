@@ -1,0 +1,33 @@
+id: Claroline_keyword
+info:
+  name: Claroline_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Claroline"
+        words:
+          - "target=\"_blank\">claroline</a>"
+          - "http://www.claroline.net\" rel=\"copyright"
+        condition: and
+      - type: word
+        part: body
+        name: "Claroline"
+        words:
+          - "target=\"_blank\">Claroline</a>"
+        condition: and
+      - type: word
+        part: body
+        name: "Claroline"
+        words:
+          - "http://www.claroline.net\" rel=\"Copyright"
+        condition: and

@@ -1,0 +1,20 @@
+id: tian_rong_xin_zhong_duan_wei_xie_jian_ce_fang_yu_xi_tong_keyword
+info:
+  name: 天融信终端威胁检测防御系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "天融信终端威胁检测防御系统"
+        words:
+          - "天融信终端威胁检测防御系统"
+        condition: and

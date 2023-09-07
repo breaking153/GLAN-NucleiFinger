@@ -1,0 +1,26 @@
+id: NetScaler_Citrix_Systems_keyword
+info:
+  name: NetScaler(Citrix Systems)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetScaler(Citrix Systems)"
+        words:
+          - "NetScaler"
+        condition: and
+      - type: word
+        part: body
+        name: "NetScaler(Citrix Systems)"
+        words:
+          - "Citrix Systems"
+        condition: and

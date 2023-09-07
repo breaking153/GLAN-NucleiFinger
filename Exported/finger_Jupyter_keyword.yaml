@@ -1,0 +1,22 @@
+id: Jupyter_keyword
+info:
+  name: Jupyter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jupyter"
+        words:
+          - "<title>Jupyter Notebook</title"
+          - ""
+          - "(97c6417ed01bdc0ae3ef32ae4894fd03"
+        condition: and

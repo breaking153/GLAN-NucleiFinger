@@ -1,0 +1,20 @@
+id: Linksys_WAG200GB_keyword
+info:
+  name: Linksys WAG200GB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys WAG200GB"
+        words:
+          - "Linksys WAG200GB"
+        condition: and

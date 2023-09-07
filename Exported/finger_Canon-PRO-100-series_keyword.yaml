@@ -1,0 +1,20 @@
+id: Canon_PRO_100_series_keyword
+info:
+  name: Canon-PRO-100-series_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canon-PRO-100-series"
+        words:
+          - "nowrap>canon pro-100 series</td>"
+        condition: and

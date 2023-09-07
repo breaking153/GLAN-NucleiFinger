@@ -1,0 +1,22 @@
+id: CDATA_Server_keyword
+info:
+  name: CDATA-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CDATA-Server"
+        words:
+          - "var key = evt.keycode?evt.keycode:evt.which"
+          - "placeholder=\"请输入管理员密码\""
+          - "placeholder=\"please enter administrator password\""
+        condition: and

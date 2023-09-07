@@ -1,0 +1,26 @@
+id: PHPDisk_wang_pan_xi_tong_UTF8_ban_V_Core_xi_lie_keyword
+info:
+  name: PHPDisk网盘系统UTF8版_V-Core系列_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHPDisk网盘系统UTF8版_V-Core系列"
+        words:
+          - "Powered by PHPDisk"
+        condition: and
+      - type: word
+        part: body
+        name: "PHPDisk网盘系统UTF8版_V-Core系列"
+        words:
+          - "content=\"PHPDisk"
+        condition: and

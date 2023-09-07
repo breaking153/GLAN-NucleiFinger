@@ -1,0 +1,21 @@
+id: IDS_WEBCAM_keyword
+info:
+  name: IDS-WEBCAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IDS-WEBCAM"
+        words:
+          - "action=\"webcam_login\""
+          - "ids_web_change_pwd"
+        condition: and

@@ -1,0 +1,26 @@
+id: RGCMS_rui_gu_nei_rong_guan_li_xi_tong_keyword
+info:
+  name: RGCMS(睿谷内容管理系统)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RGCMS(睿谷内容管理系统)"
+        words:
+          - "RGCMS"
+        condition: and
+      - type: word
+        part: body
+        name: "RGCMS(睿谷内容管理系统)"
+        words:
+          - "睿谷内容管理系统"
+        condition: and

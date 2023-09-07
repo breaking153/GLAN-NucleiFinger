@@ -1,0 +1,26 @@
+id: UrlRewriter_NET_keyword
+info:
+  name: UrlRewriter.NET_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "UrlRewriter.NET"
+        words:
+          - "urlrewriter.net"
+        condition: and
+      - type: word
+        part: header
+        name: "UrlRewriter.NET"
+        words:
+          - "UrlRewriter.NET"
+        condition: and

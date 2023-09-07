@@ -1,0 +1,20 @@
+id: Twitter_Emoji_Twemoji_keyword
+info:
+  name: Twitter Emoji (Twemoji)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Twitter Emoji (Twemoji)"
+        words:
+          - "Twitter Emoji (Twemoji)"
+        condition: and

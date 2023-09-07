@@ -1,0 +1,26 @@
+id: wei_chuang_CMS_Vwins_keyword
+info:
+  name: 微窗CMS(Vwins)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "微窗CMS(Vwins)"
+        words:
+          - "微窗CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "微窗CMS(Vwins)"
+        words:
+          - "Vwins"
+        condition: and

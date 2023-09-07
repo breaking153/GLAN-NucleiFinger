@@ -1,0 +1,20 @@
+id: wei_pu_wei_pu_kao_shi_fu_wu_ping_tai_keyword
+info:
+  name: 维普 维普考试服务平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "维普 维普考试服务平台"
+        words:
+          - "维普 维普考试服务平台"
+        condition: and

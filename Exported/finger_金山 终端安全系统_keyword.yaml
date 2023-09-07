@@ -1,0 +1,20 @@
+id: jin_shan_zhong_duan_an_quan_xi_tong_keyword
+info:
+  name: 金山 终端安全系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "金山 终端安全系统"
+        words:
+          - "金山 终端安全系统"
+        condition: and

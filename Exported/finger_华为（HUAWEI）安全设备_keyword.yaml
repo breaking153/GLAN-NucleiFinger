@@ -1,0 +1,20 @@
+id: hua_wei_HUAWEI_an_quan_she_bei_keyword
+info:
+  name: 华为（HUAWEI）安全设备_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "华为（HUAWEI）安全设备"
+        words:
+          - "sweb-lib/resource/"
+        condition: and

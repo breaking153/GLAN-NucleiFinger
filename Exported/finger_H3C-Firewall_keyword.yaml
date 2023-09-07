@@ -1,0 +1,21 @@
+id: H3C_Firewall_keyword
+info:
+  name: H3C-Firewall_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-Firewall"
+        words:
+          - "class=\"dl_margin0\" align=\"left\">web网管用户登录</div>"
+          - "/php/common/checknum_creat.php?module=config_authnum"
+        condition: and

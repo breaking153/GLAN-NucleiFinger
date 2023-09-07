@@ -1,0 +1,20 @@
+id: apilayer_Caddy_keyword
+info:
+  name: apilayer-Caddy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "apilayer-Caddy"
+        words:
+          - "server: caddy"
+        condition: and

@@ -1,0 +1,20 @@
+id: ChinaTelecomRiskManagementPlatform_keyword
+info:
+  name: ChinaTelecomRiskManagementPlatform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ChinaTelecomRiskManagementPlatform"
+        words:
+          - "风险治理平台</div>"
+        condition: and

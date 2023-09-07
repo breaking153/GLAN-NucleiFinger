@@ -1,0 +1,19 @@
+id: MobileIron_Log4j_keyword
+info:
+  name: MobileIron --Log4j_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MobileIron --Log4j"
+        words:
+          - "<title>MobileIron User Portal: Sign In"

@@ -1,0 +1,20 @@
+id: DLink_DI_824VUP_keyword
+info:
+  name: DLink-DI-824VUP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DLink-DI-824VUP"
+        words:
+          - "realm=\"di-824vup"
+        condition: and

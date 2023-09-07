@@ -1,0 +1,20 @@
+id: Mechat_Online_service_keyword
+info:
+  name: Mechat-Online-service_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mechat-Online-service"
+        words:
+          - "/meiqia.js"
+        condition: and

@@ -1,0 +1,22 @@
+id: Softnext_SPAM_keyword
+info:
+  name: Softnext-SPAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Softnext-SPAM"
+        words:
+          - "snspam/spam_request/"
+          - "snspam/start_page.asp"
+          - "spam_request/spam_requestact.asp"
+        condition: and

@@ -1,0 +1,19 @@
+id: H3C_SecPath_yun_wei_shen_ji_xi_tong_faviconhash
+info:
+  name: H3C SecPath 运维审计系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "H3C SecPath 运维审计系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1776863739\""
+        condition: or

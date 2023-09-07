@@ -1,0 +1,21 @@
+id: Project_Management_System_keyword
+info:
+  name: Project-Management-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Project-Management-System"
+        words:
+          - "var right = regexp.rightcontext"
+          - "window.top.location = \"login.aspx?url=\" + right\""
+        condition: and

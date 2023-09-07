@@ -1,0 +1,21 @@
+id: ManageEngine_OpManager_keyword
+info:
+  name: ManageEngine-OpManager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ManageEngine-OpManager"
+        words:
+          - "the complete network monitoring software from manageengine"
+          - "<a href=\"http://www.manageengine.com/products/opmanager/index.html\" target="
+        condition: and

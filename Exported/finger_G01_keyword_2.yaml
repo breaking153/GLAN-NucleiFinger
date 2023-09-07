@@ -1,0 +1,21 @@
+id: G01_keyword_1
+info:
+  name: G01_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "G01"
+        words:
+          - "security_session_verify"
+          - "yunsuo_session_verify"
+        condition: and

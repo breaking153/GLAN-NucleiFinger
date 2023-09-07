@@ -1,0 +1,21 @@
+id: WackoPicko_keyword
+info:
+  name: WackoPicko_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WackoPicko"
+        words:
+          - "<h2>welcome to wackopicko</h2>"
+          - "<h1 id=\"title\"><a href=\"/\">wackopicko.com</a></h1>"
+        condition: and

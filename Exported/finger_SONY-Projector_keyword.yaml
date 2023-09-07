@@ -1,0 +1,21 @@
+id: SONY_Projector_keyword
+info:
+  name: SONY-Projector_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SONY-Projector"
+        words:
+          - "<body onload=\"setwindowtitle(;showindex(;\">"
+          - "<script type=\"text/javascript\" src=\"sonylogojs.js\"></script>"
+        condition: and

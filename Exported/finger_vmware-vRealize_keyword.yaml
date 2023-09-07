@@ -1,0 +1,20 @@
+id: vmware_vRealize_keyword
+info:
+  name: vmware-vRealize_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "vmware-vRealize"
+        words:
+          - "正在重定向到 vrealize operations manager web"
+        condition: and

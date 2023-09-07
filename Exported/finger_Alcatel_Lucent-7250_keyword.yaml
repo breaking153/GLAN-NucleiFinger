@@ -1,0 +1,20 @@
+id: Alcatel_Lucent_7250_keyword
+info:
+  name: Alcatel_Lucent-7250_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Alcatel_Lucent-7250"
+        words:
+          - "realm=\"alcatel-lucent 7250"
+        condition: and

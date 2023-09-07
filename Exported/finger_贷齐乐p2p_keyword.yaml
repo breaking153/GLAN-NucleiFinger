@@ -1,0 +1,26 @@
+id: dai_qi_le_p2p_keyword
+info:
+  name: 贷齐乐p2p_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "贷齐乐p2p"
+        words:
+          - "/js/jPackageCss/jPackage.css"
+        condition: and
+      - type: word
+        part: body
+        name: "贷齐乐p2p"
+        words:
+          - "src=\"/js/jPackage"
+        condition: and

@@ -1,0 +1,20 @@
+id: CISCO_ASA_5500_X_keyword
+info:
+  name: CISCO-ASA-5500-X_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-ASA-5500-X"
+        words:
+          - "content=\"asa&nbsp;5500-x\""
+        condition: and

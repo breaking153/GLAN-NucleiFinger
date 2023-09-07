@@ -1,0 +1,26 @@
+id: yun_ye_CMS_yunyecms_keyword_1
+info:
+  name: 云业CMS(yunyecms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "云业CMS(yunyecms)"
+        words:
+          - "云业CMS"
+        condition: and
+      - type: word
+        part: header
+        name: "云业CMS(yunyecms)"
+        words:
+          - "yunyecms"
+        condition: and

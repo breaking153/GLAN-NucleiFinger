@@ -1,0 +1,20 @@
+id: Allegro_Software_RomPager_keyword
+info:
+  name: Allegro-Software-RomPager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Allegro-Software-RomPager"
+        words:
+          - "Allegro-Software-RomPager"
+        condition: and

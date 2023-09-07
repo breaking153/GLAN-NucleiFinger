@@ -1,0 +1,23 @@
+id: Alibaba_Druid_keyword
+info:
+  name: Alibaba Druid_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Alibaba Druid"
+        words:
+          - "click(druid.login.login"
+          - "<title>druid monitor</title>"
+          - "druid.common.buildHead"
+          - "druid.index.init("
+        condition: and

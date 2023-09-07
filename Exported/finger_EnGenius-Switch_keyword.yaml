@@ -1,0 +1,20 @@
+id: EnGenius_Switch_keyword
+info:
+  name: EnGenius-Switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EnGenius-Switch"
+        words:
+          - "conner_basic conner_gdl"
+        condition: and

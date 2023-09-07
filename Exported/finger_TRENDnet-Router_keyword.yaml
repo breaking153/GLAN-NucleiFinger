@@ -1,0 +1,29 @@
+id: TRENDnet_Router_keyword
+info:
+  name: TRENDnet-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-Router"
+        words:
+          - "<meta http-equiv=\"content-type\"contet=\"text/html; cahrset=ks_c_5601-1987\">"
+          - "<link rel=\"stylesheet\" rev=\"stylesheet\" href=\"ubicom_style.css\" type=\"text/css\" />"
+        condition: and
+      - type: word
+        part: body
+        name: "TRENDnet-Router"
+        words:
+          - "trendnet"
+          - "var model= dev_info.model"
+          - "modlename: misc.misc[0].model"
+        condition: and

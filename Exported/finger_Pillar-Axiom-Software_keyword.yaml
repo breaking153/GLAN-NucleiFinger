@@ -1,0 +1,20 @@
+id: Pillar_Axiom_Software_keyword
+info:
+  name: Pillar-Axiom-Software_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Pillar-Axiom-Software"
+        words:
+          - "axiom storage services manager"
+        condition: and

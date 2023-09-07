@@ -1,0 +1,20 @@
+id: esri_ArcGIS_keyword
+info:
+  name: esri-ArcGIS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "esri-ArcGIS"
+        words:
+          - "esri/discovery/admin.js"
+        condition: and

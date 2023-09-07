@@ -1,0 +1,20 @@
+id: Multi_channel_disk_recording_system_keyword
+info:
+  name: Multi-channel-disk-recording-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Multi-channel-disk-recording-system"
+        words:
+          - "id=\"webrecclient1"
+        condition: and

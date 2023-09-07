@@ -1,0 +1,20 @@
+id: thinkphp3_23_B_JUI_kai_fa_de_CRM_keyword
+info:
+  name: thinkphp3.23+B-JUI开发的CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "thinkphp3.23+B-JUI开发的CRM"
+        words:
+          - "thinkphp3.23+B-JUI开发的CRM"
+        condition: and

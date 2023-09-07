@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_400SC_keyword
+info:
+  name: DELL-PowerEdge-400SC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DELL-PowerEdge-400SC"
+        words:
+          - "poweredge-400sc"
+        condition: and

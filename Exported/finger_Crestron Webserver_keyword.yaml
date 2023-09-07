@@ -1,0 +1,20 @@
+id: Crestron_Webserver_keyword
+info:
+  name: Crestron Webserver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Crestron Webserver"
+        words:
+          - "Crestron Webserver"
+        condition: and

@@ -1,0 +1,20 @@
+id: SierraMonitor_FS_QS_1010_keyword
+info:
+  name: SierraMonitor-FS-QS-1010_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SierraMonitor-FS-QS-1010"
+        words:
+          - "realm=\"fs-qs-1010"
+        condition: and

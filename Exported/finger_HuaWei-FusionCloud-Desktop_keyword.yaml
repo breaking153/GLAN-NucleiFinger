@@ -1,0 +1,20 @@
+id: HuaWei_FusionCloud_Desktop_keyword
+info:
+  name: HuaWei-FusionCloud-Desktop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HuaWei-FusionCloud-Desktop"
+        words:
+          - "href=/webui/default/img/logo.ico"
+        condition: and

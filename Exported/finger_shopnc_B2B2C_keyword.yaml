@@ -1,0 +1,20 @@
+id: shopnc_B2B2C_keyword
+info:
+  name: shopnc_B2B2C_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "shopnc_B2B2C"
+        words:
+          - "shopnc_B2B2C"
+        condition: and

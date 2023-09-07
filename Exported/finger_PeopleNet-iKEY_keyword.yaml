@@ -1,0 +1,22 @@
+id: PeopleNet_iKEY_keyword
+info:
+  name: PeopleNet-iKEY_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PeopleNet-iKEY"
+        words:
+          - "content=\"ikey,众人科技,ikey"
+          - "ikey管理系统"
+          - "<div id=\"ikey_conter\">"
+        condition: and

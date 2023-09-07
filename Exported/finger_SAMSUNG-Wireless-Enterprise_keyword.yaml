@@ -1,0 +1,20 @@
+id: SAMSUNG_Wireless_Enterprise_keyword
+info:
+  name: SAMSUNG-Wireless-Enterprise_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SAMSUNG-Wireless-Enterprise"
+        words:
+          - "<h1>wireless enterprise manager</h1>"
+        condition: and

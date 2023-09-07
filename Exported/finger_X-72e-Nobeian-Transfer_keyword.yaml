@@ -1,0 +1,20 @@
+id: X_72e_Nobeian_Transfer_keyword
+info:
+  name: X-72e-Nobeian-Transfer_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "X-72e-Nobeian-Transfer"
+        words:
+          - "X-72e-Nobeian-Transfer"
+        condition: and

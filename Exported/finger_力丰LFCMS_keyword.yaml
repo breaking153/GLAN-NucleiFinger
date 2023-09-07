@@ -1,0 +1,20 @@
+id: li_feng_LFCMS_keyword
+info:
+  name: 力丰LFCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "力丰LFCMS"
+        words:
+          - "力丰LFCMS"
+        condition: and

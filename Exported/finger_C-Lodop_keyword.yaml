@@ -1,0 +1,21 @@
+id: C_Lodop_keyword
+info:
+  name: C-Lodop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "C-Lodop"
+        words:
+          - "<h1>关于c-lodop免费和注册授权</h1>"
+          - "document.getelementbyid(\"reqid\".value==document.getelementbyid(\"licid\".value"
+        condition: and

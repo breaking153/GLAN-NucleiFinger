@@ -1,0 +1,20 @@
+id: Nextcloud_Product_keyword
+info:
+  name: Nextcloud-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nextcloud-Product"
+        words:
+          - "nextcloud</a> – 给您所有数据一个安全的家"
+        condition: and

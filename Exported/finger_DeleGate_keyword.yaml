@@ -1,0 +1,26 @@
+id: DeleGate_keyword
+info:
+  name: DeleGate_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DeleGate"
+        words:
+          - "delegate"
+        condition: and
+      - type: word
+        part: header
+        name: "DeleGate"
+        words:
+          - "DeleGate"
+        condition: and

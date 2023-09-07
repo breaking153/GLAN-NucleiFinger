@@ -1,0 +1,27 @@
+id: DMXReady_Portfolio_Manager_keyword
+info:
+  name: DMXReady-Portfolio-Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DMXReady-Portfolio-Manager"
+        words:
+          - "/css/portfoliomanager/styles_display_page.css"
+          - "rememberme_portfoliomanager"
+        condition: and
+      - type: word
+        part: body
+        name: "DMXReady-Portfolio-Manager"
+        words:
+          - "/css/PortfolioManager/styles_display_page.css"
+        condition: and

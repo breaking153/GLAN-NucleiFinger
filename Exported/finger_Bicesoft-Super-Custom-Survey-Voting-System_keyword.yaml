@@ -1,0 +1,21 @@
+id: Bicesoft_Super_Custom_Survey_Voting_System_keyword
+info:
+  name: Bicesoft-Super-Custom-Survey-Voting-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Bicesoft-Super-Custom-Survey-Voting-System"
+        words:
+          - "href=\"images/bicesoft.css\""
+          - "佰思超强自定义问卷调查系统(bicesoft.com"
+        condition: and

@@ -1,0 +1,20 @@
+id: SmartCommunityIntegratedManagementCloudPlatform_keyword
+info:
+  name: SmartCommunityIntegratedManagementCloudPlatform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SmartCommunityIntegratedManagementCloudPlatform"
+        words:
+          - "class=\"container_huanlegendtext\""
+        condition: and

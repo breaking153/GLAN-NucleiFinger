@@ -1,0 +1,20 @@
+id: Preamsolutions_Inspection_and_Modification_Information_Platform_keyword
+info:
+  name: Preamsolutions-Inspection-and-Modification-Information-Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Preamsolutions-Inspection-and-Modification-Information-Platform"
+        words:
+          - "action=\"/gqjx/loginmgr.do?method=dologin"
+        condition: and

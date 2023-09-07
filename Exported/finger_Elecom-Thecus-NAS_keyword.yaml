@@ -1,0 +1,22 @@
+id: Elecom_Thecus_NAS_keyword
+info:
+  name: Elecom-Thecus-NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Elecom-Thecus-NAS"
+        words:
+          - "if(mod_ui=='thecus'"
+          - "msg:\"您无任何 raid 系统。\""
+          - "msg:\"you don`t have any raid system.\""
+        condition: and

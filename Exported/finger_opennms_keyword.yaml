@@ -1,0 +1,28 @@
+id: opennms_keyword
+info:
+  name: opennms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "opennms"
+        words:
+          - "/css/gwt-asset.css"
+          - "opennms® is a registered trademark of"
+          - "/opennms/index.jsp"
+        condition: and
+      - type: word
+        part: body
+        name: "opennms"
+        words:
+          - "OpenNMS® is a registered trademark of"
+        condition: and

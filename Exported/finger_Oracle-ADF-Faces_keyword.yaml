@@ -1,0 +1,22 @@
+id: Oracle_ADF_Faces_keyword
+info:
+  name: Oracle-ADF-Faces_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Oracle-ADF-Faces"
+        words:
+          - "content=\"oracle adf"
+          - "<!-- created by oracle adf faces"
+          - "var _adfwindowopenerror"
+        condition: and

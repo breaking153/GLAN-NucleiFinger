@@ -1,0 +1,22 @@
+id: Rockoa_OA_keyword
+info:
+  name: Rockoa-OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Rockoa-OA"
+        words:
+          - "onclick=\"loginsubmit(\""
+          - "信呼开发团队"
+          - "技术支持：<a href=\"http://www.rockoa.com/\""
+        condition: and

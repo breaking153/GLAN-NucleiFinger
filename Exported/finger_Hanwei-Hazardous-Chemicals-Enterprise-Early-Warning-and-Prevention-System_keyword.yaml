@@ -1,0 +1,21 @@
+id: Hanwei_Hazardous_Chemicals_Enterprise_Early_Warning_and_Prevention_System_keyword
+info:
+  name: Hanwei-Hazardous-Chemicals-Enterprise-Early-Warning-and-Prevention-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwei-Hazardous-Chemicals-Enterprise-Early-Warning-and-Prevention-System"
+        words:
+          - "default value is bootstrapdialog.type_primary"
+          - "var objheight = document.documentelement.clientheight"
+        condition: and

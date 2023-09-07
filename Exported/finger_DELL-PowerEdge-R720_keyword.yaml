@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_R720_keyword
+info:
+  name: DELL-PowerEdge-R720_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PowerEdge-R720"
+        words:
+          - "id=\"serverinfo\"> poweredge r720"
+        condition: and

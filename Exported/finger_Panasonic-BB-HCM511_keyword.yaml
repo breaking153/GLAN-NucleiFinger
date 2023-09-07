@@ -1,0 +1,20 @@
+id: Panasonic_BB_HCM511_keyword
+info:
+  name: Panasonic-BB-HCM511_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Panasonic-BB-HCM511"
+        words:
+          - "basic realm=\"generaluser/administrator\""
+        condition: and

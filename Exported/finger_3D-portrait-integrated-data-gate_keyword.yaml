@@ -1,0 +1,20 @@
+id: 3D_portrait_integrated_data_gate_keyword
+info:
+  name: 3D-portrait-integrated-data-gate_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "3D-portrait-integrated-data-gate"
+        words:
+          - "<body onload=\"checkexplorer('/page/login_new'\">"
+        condition: and

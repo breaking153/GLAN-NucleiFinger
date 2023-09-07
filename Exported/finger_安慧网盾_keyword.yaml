@@ -1,0 +1,20 @@
+id: an_hui_wang_dun_keyword
+info:
+  name: 安慧网盾_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "安慧网盾"
+        words:
+          - "Protected-By:AnHui Web Firewall"
+        condition: and

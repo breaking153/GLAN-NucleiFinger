@@ -1,0 +1,20 @@
+id: mai_pu_ISG1000_an_quan_wang_guan_keyword
+info:
+  name: 迈普 ISG1000安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "迈普 ISG1000安全网关"
+        words:
+          - "迈普 ISG1000安全网关"
+        condition: and

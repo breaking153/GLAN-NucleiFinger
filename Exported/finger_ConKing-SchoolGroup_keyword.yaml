@@ -1,0 +1,21 @@
+id: ConKing_SchoolGroup_keyword
+info:
+  name: ConKing-SchoolGroup_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ConKing-SchoolGroup"
+        words:
+          - "javascripts/float.js"
+          - "vcxvcxv"
+        condition: and

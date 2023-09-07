@@ -1,0 +1,26 @@
+id: FrontPage_Extensions_keyword
+info:
+  name: FrontPage-Extensions_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FrontPage-Extensions"
+        words:
+          - "frontpage"
+        condition: and
+      - type: word
+        part: header
+        name: "FrontPage-Extensions"
+        words:
+          - "FrontPage"
+        condition: and

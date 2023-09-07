@@ -1,0 +1,21 @@
+id: Apache_ActiveMQ_keyword
+info:
+  name: Apache-ActiveMQ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-ActiveMQ"
+        words:
+          - "<h2>Welcome to the Apache ActiveMQ!</h2>"
+          - "(realm=\"activemqrealm"
+        condition: and

@@ -1,0 +1,20 @@
+id: smc8024l2_switch_keyword
+info:
+  name: smc8024l2 switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "smc8024l2 switch"
+        words:
+          - "smc8024l2 switch"
+        condition: and

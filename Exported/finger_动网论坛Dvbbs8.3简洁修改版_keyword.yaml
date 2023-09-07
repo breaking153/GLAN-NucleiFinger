@@ -1,0 +1,20 @@
+id: dong_wang_lun_tan_Dvbbs8_3_jian_ji_xiu_gai_ban_keyword
+info:
+  name: 动网论坛Dvbbs8.3简洁修改版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "动网论坛Dvbbs8.3简洁修改版"
+        words:
+          - "动网论坛Dvbbs8.3简洁修改版"
+        condition: and

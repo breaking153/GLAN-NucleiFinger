@@ -1,0 +1,21 @@
+id: Netsweeper_keyword
+info:
+  name: Netsweeper_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netsweeper"
+        words:
+          - "netsweepersmbtextatbottomofloginscreen"
+          - "href=\"http://www.poweredbynetsweeper.com\"><img "
+        condition: and

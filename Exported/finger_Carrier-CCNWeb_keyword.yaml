@@ -1,0 +1,33 @@
+id: Carrier_CCNWeb_keyword
+info:
+  name: Carrier-CCNWeb_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Carrier-CCNWeb"
+        words:
+          - "/images/ccnweb.gif"
+          - "<applet code=\"jlogin.class\" archive=\"jlogin.jar"
+        condition: and
+      - type: word
+        part: body
+        name: "Carrier-CCNWeb"
+        words:
+          - "/images/CCNWeb.gif"
+        condition: and
+      - type: word
+        part: body
+        name: "Carrier-CCNWeb"
+        words:
+          - "<APPLET CODE=\"JLogin.class\" ARCHIVE=\"JLogin.jar"
+        condition: and

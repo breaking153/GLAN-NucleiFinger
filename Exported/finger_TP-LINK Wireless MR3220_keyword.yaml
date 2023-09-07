@@ -1,0 +1,20 @@
+id: TP_LINK_Wireless_MR3220_keyword
+info:
+  name: TP-LINK Wireless MR3220_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK Wireless MR3220"
+        words:
+          - "TP-LINK Wireless MR3220"
+        condition: and

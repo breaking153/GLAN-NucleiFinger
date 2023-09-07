@@ -1,0 +1,26 @@
+id: Ericsson_TV_Web_Server_keyword
+info:
+  name: Ericsson-TV-Web-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Ericsson-TV-Web-Server"
+        words:
+          - "server : ericsson television web server"
+        condition: and
+      - type: word
+        part: header
+        name: "Ericsson-TV-Web-Server"
+        words:
+          - "Ericsson Television Web server"
+        condition: and

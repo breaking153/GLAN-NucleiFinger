@@ -1,0 +1,22 @@
+id: JFrog_keyword
+info:
+  name: JFrog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JFrog"
+        words:
+          - "src=/ui/img/jfrog"
+          - "<meta http-equiv=\"refresh\" content=\"0;URL=/artifactory\">"
+          - "Artifactory is a binaries repository manager"
+        condition: and

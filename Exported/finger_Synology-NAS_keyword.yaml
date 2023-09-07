@@ -1,0 +1,21 @@
+id: Synology_NAS_keyword
+info:
+  name: Synology-NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Synology-NAS"
+        words:
+          - "content=\"synology diskstation"
+          - "content=\"synology nas 提供功能完整的网络存储"
+        condition: and

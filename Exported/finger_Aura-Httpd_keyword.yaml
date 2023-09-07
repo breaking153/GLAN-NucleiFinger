@@ -1,0 +1,20 @@
+id: Aura_Httpd_keyword
+info:
+  name: Aura-Httpd_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Aura-Httpd"
+        words:
+          - "sever: aurahttpd"
+        condition: and

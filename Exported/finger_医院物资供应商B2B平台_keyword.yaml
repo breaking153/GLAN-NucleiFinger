@@ -1,0 +1,20 @@
+id: yi_yuan_wu_zi_gong_ying_shang_B2B_ping_tai_keyword
+info:
+  name: 医院物资供应商B2B平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "医院物资供应商B2B平台"
+        words:
+          - "医院物资供应商B2B平台"
+        condition: and

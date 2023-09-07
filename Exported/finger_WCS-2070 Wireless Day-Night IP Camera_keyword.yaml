@@ -1,0 +1,20 @@
+id: WCS_2070_Wireless_Day_Night_IP_Camera_keyword
+info:
+  name: WCS-2070 Wireless Day-Night IP Camera_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WCS-2070 Wireless Day-Night IP Camera"
+        words:
+          - "WCS-2070 Wireless Day/Night IP Camera"
+        condition: and

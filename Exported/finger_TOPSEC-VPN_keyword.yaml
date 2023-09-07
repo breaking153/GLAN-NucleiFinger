@@ -1,0 +1,21 @@
+id: TOPSEC_VPN_keyword
+info:
+  name: TOPSEC-VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TOPSEC-VPN"
+        words:
+          - "window.location=\"/portal_default/index.html\";</script>"
+          - "window.location.href=\"/vone/pub/pda.html\";"
+        condition: and

@@ -1,0 +1,23 @@
+id: Netease_Enterprise_Mailbox_keyword
+info:
+  name: Netease-Enterprise-Mailbox_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Netease-Enterprise-Mailbox"
+        words:
+          - "frmvalidator"
+          - "<span class=\"warn\">请您从网易企业邮箱用户登录页登录</span>"
+          - "src=\"http://mimg.qiye.163.com/"
+          - "content=\"网易企业邮箱"
+        condition: and

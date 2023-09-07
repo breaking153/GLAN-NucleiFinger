@@ -1,0 +1,20 @@
+id: Hanwha_SND_6084_keyword
+info:
+  name: Hanwha-SND-6084_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-SND-6084"
+        words:
+          - "var defaultfilename = \"snd-6084\""
+        condition: and

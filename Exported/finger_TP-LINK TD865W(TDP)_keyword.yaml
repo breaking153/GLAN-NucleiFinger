@@ -1,0 +1,20 @@
+id: TP_LINK_TD865W_TDP_keyword
+info:
+  name: TP-LINK TD865W(TDP)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK TD865W(TDP)"
+        words:
+          - "TP-LINK TD865W(TDP)"
+        condition: and

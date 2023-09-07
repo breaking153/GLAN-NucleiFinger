@@ -1,0 +1,20 @@
+id: cyberoam_unified_thread_management_keyword
+info:
+  name: cyberoam unified thread management_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "cyberoam unified thread management"
+        words:
+          - "cyberoam unified thread management"
+        condition: and

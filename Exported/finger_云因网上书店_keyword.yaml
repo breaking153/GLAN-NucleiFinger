@@ -1,0 +1,26 @@
+id: yun_yin_wang_shang_shu_dian_keyword
+info:
+  name: 云因网上书店_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "云因网上书店"
+        words:
+          - "main/building.cfm"
+        condition: and
+      - type: word
+        part: body
+        name: "云因网上书店"
+        words:
+          - "href=\"../css/newscomm.css"
+        condition: and

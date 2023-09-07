@@ -1,0 +1,20 @@
+id: Lantronix_Modbus_Bridge_keyword
+info:
+  name: Lantronix-Modbus-Bridge_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Lantronix-Modbus-Bridge"
+        words:
+          - "modbus bridge"
+        condition: and

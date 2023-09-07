@@ -1,0 +1,21 @@
+id: SOPHOS_Product_keyword
+info:
+  name: SOPHOS-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SOPHOS-Product"
+        words:
+          - "<span class='logosophosfooterfont'>protected by</span>"
+          - "<td align='center'><img id='footerimage' name='footerimage' src='data:image/jpeg;base64"
+        condition: and

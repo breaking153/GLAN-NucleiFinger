@@ -1,0 +1,20 @@
+id: Nette_Framework_keyword
+info:
+  name: Nette Framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Nette Framework"
+        words:
+          - "Nette Framework"
+        condition: and

@@ -1,0 +1,19 @@
+id: Sangfor_ying_yong_jiao_fu_bao_biao_xi_tong_faviconhash
+info:
+  name: Sangfor 应用交付报表系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Sangfor 应用交付报表系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1810847295\""
+        condition: or

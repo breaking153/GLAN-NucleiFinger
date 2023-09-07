@@ -1,0 +1,19 @@
+id: jing_qi_ke_ji_jiu_zhu_guan_li_xi_tong_faviconhash
+info:
+  name: 晶奇科技救助管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "晶奇科技救助管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1185226132\""
+        condition: or

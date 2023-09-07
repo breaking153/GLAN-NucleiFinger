@@ -1,0 +1,20 @@
+id: hzhz_VIS_keyword
+info:
+  name: hzhz-VIS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "hzhz-VIS"
+        words:
+          - "src=\"internal/ext/ext-lang-zh_cn.js\""
+        condition: and

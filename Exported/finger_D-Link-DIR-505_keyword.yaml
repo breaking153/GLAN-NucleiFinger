@@ -1,0 +1,20 @@
+id: D_Link_DIR_505_keyword
+info:
+  name: D-Link-DIR-505_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DIR-505"
+        words:
+          - "<a href=\"javascript:check_is_modified('http://support.dlink.com/'\"><script>lang_obj.write('lng038'"
+        condition: and

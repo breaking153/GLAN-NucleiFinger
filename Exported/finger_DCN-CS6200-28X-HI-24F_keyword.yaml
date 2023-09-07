@@ -1,0 +1,20 @@
+id: DCN_CS6200_28X_HI_24F_keyword
+info:
+  name: DCN-CS6200-28X-HI-24F_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DCN-CS6200-28X-HI-24F"
+        words:
+          - "<b>cs6200-28x-hi-24f</b>"
+        condition: and

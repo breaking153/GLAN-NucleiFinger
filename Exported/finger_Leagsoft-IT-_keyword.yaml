@@ -1,0 +1,20 @@
+id: Leagsoft_IT_keyword
+info:
+  name: Leagsoft-IT-_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leagsoft-IT-"
+        words:
+          - "action=\"/manager/logincontroller.htm?act=login"
+        condition: and

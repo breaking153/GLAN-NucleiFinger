@@ -1,0 +1,22 @@
+id: yin_da_hui_zhi_zhi_hui_zong_he_guan_li_ping_tai_keyword_1
+info:
+  name: 银达汇智 智慧综合管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "银达汇智 智慧综合管理平台"
+        words:
+          - "miniui"
+          - "Help ?"
+          - "main.aspx"
+        condition: and

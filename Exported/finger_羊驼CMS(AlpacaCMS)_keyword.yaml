@@ -1,0 +1,26 @@
+id: yang_tuo_CMS_AlpacaCMS_keyword
+info:
+  name: 羊驼CMS(AlpacaCMS)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "羊驼CMS(AlpacaCMS)"
+        words:
+          - "羊驼CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "羊驼CMS(AlpacaCMS)"
+        words:
+          - "AlpacaCMS"
+        condition: and

@@ -1,0 +1,20 @@
+id: SAP_System_keyword
+info:
+  name: SAP-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "SAP-System"
+        words:
+          - "realm=\"sap-system"
+        condition: and

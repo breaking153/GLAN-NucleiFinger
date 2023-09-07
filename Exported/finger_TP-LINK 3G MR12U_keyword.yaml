@@ -1,0 +1,20 @@
+id: TP_LINK_3G_MR12U_keyword
+info:
+  name: TP-LINK 3G MR12U_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "TP-LINK 3G MR12U"
+        words:
+          - "TP-LINK 3G MR12U"
+        condition: and

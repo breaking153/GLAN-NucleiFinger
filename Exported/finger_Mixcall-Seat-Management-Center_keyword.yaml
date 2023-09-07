@@ -1,0 +1,21 @@
+id: Mixcall_Seat_Management_Center_keyword
+info:
+  name: Mixcall-Seat-Management-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Mixcall-Seat-Management-Center"
+        words:
+          - "深圳市深海捷科技有限公司"
+          - "/admin/modules/admin/statics/images/"
+        condition: and

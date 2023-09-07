@@ -1,0 +1,20 @@
+id: Nexus_Router_keyword
+info:
+  name: Nexus-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nexus-Router"
+        words:
+          - "http://nexuswifi.com/"
+        condition: and

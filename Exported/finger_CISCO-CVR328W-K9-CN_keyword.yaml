@@ -1,0 +1,21 @@
+id: CISCO_CVR328W_K9_CN_keyword
+info:
+  name: CISCO-CVR328W-K9-CN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CISCO-CVR328W-K9-CN"
+        words:
+          - "src='/js/cn_cvr328w'"
+          - "pidname='cvr328w-k9-cn'"
+        condition: and

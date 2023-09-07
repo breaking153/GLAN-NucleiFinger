@@ -1,0 +1,20 @@
+id: Django_REST_framework_keyword
+info:
+  name: Django REST framework_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Django REST framework"
+        words:
+          - "Django REST framework"
+        condition: and

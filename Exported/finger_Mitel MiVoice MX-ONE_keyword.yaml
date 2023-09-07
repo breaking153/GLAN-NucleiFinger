@@ -1,0 +1,20 @@
+id: Mitel_MiVoice_MX_ONE_keyword
+info:
+  name: Mitel MiVoice MX-ONE_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Mitel MiVoice MX-ONE"
+        words:
+          - "Mitel MiVoice MX-ONE"
+        condition: and

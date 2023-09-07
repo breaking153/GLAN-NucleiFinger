@@ -1,0 +1,39 @@
+id: Dahua_Cameras_and_Surveillance_keyword
+info:
+  name: Dahua-Cameras-and-Surveillance_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dahua-Cameras-and-Surveillance"
+        words:
+          - "id=\"search_card_label\" for=\"search_plateenable\">车牌号码</label>"
+          - "dahuartsp"
+          - "var g_isdeviceinited = true"
+          - "widget/js/jquery.ui.widget.js"
+          - "title::com_menu.title_setup"
+          - "css/playbackindex.css"
+          - "class=\"j_content j_min_width\""
+          - "j_sub_con j_loginbox"
+          - "overflow:hidden;background-color"
+          - "js/urlparser.js"
+          - "id=\"lab_loading\" class=\"j_load_p"
+          - "src=\"/cap.js\""
+          - "'nav_margin'.style.visibility = 'visible"
+          - "web service"
+          - "/css/oem.css"
+          - "loginfoot\">web视频监控系统"
+          - "webapp.ability.getwebcap('showgb28181client'"
+          - "class=\"ui-tip-container\" id=\"remark_modu\""
+          - "class=\"login_inputbox ui-input fn-width163\""
+          - "tl(\"huazhonghua\""
+        condition: and

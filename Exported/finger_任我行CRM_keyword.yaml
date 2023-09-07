@@ -1,0 +1,20 @@
+id: ren_wo_xing_CRM_keyword_1
+info:
+  name: 任我行CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "任我行CRM"
+        words:
+          - "CRM_LASTLOGINUSERKEY"
+        condition: and

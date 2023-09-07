@@ -1,0 +1,21 @@
+id: LifeType_keyword
+info:
+  name: LifeType_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LifeType"
+        words:
+          - "content=\"lifetype"
+          - "title=\"install lifetype"
+        condition: and

@@ -1,0 +1,22 @@
+id: SMF_keyword
+info:
+  name: SMF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SMF"
+        words:
+          - "<a href=\"http://www.simplemachines.org/about/copyright.php\" title=\"free forum software\" target=\"_blank"
+          - "<img class=\"floatright\" id=\"smflogo\" src="
+          - "document.getelementbyid(\"upshrink\".src = smf_images_url + "
+        condition: and

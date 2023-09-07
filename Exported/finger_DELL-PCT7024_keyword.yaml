@@ -1,0 +1,20 @@
+id: DELL_PCT7024_keyword
+info:
+  name: DELL-PCT7024_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PCT7024"
+        words:
+          - "class=\"login_server_default\">pct7024"
+        condition: and

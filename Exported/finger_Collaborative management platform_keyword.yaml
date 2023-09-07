@@ -1,0 +1,24 @@
+id: Collaborative_management_platform_keyword
+info:
+  name: Collaborative management platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Collaborative management platform"
+        words:
+          - "广州协商科技有限公司"
+          - "/web/submitlogon2.do"
+          - "css/hitalklogin.css"
+          - "/activex/sinoccshell.cab"
+          - "/web/submitlogon2.do "
+        condition: and

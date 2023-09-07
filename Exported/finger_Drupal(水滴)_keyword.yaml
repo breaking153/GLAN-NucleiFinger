@@ -1,0 +1,20 @@
+id: Drupal_shui_di_keyword
+info:
+  name: Drupal(水滴)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Drupal(水滴)"
+        words:
+          - "drupal"
+        condition: and

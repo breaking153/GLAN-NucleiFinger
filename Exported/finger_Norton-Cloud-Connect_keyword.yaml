@@ -1,0 +1,20 @@
+id: Norton_Cloud_Connect_keyword
+info:
+  name: Norton-Cloud-Connect_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Norton-Cloud-Connect"
+        words:
+          - "<h2 style=\"margin-left: 0px;\">norton cloud connect</h2>"
+        condition: and

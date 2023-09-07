@@ -1,0 +1,27 @@
+id: Gitblit_keyword
+info:
+  name: Gitblit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Gitblit"
+        words:
+          - "gitblt-favicon.png"
+          - "gitblit"
+        condition: and
+      - type: word
+        part: body
+        name: "Gitblit"
+        words:
+          - "<a title=\"gitblit homepage\" href=\"http://gitblit.com/\">"
+        condition: and

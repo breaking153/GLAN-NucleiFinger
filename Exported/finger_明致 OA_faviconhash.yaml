@@ -1,0 +1,19 @@
+id: ming_zhi_OA_faviconhash
+info:
+  name: 明致 OA_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "明致 OA"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1591287747\""
+        condition: or

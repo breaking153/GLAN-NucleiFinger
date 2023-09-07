@@ -1,0 +1,20 @@
+id: qi_an_xin_waf_keyword
+info:
+  name: 奇安信 waf_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "奇安信 waf"
+        words:
+          - "奇安信 waf"
+        condition: and

@@ -1,0 +1,21 @@
+id: Spring_Eureka_keyword
+info:
+  name: Spring Eureka_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Spring Eureka"
+        words:
+          - "<title>Eureka</title>"
+          - "eureka"
+        condition: and

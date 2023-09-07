@@ -1,0 +1,26 @@
+id: jian_zhan_zhi_xing_sitestar_wang_zhan_jian_she_xi_tong_sitestar_keyword
+info:
+  name: 建站之星(sitestar)网站建设系统(sitestar)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "建站之星(sitestar)网站建设系统(sitestar)"
+        words:
+          - "建站之星(sitestar)网站建设系统"
+        condition: and
+      - type: word
+        part: body
+        name: "建站之星(sitestar)网站建设系统(sitestar)"
+        words:
+          - "sitestar"
+        condition: and

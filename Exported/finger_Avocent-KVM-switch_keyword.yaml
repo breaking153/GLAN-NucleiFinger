@@ -1,0 +1,21 @@
+id: Avocent_KVM_switch_keyword
+info:
+  name: Avocent-KVM-switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Avocent-KVM-switch"
+        words:
+          - "src=\"/avct.js"
+          - "alt=\"avocent"
+        condition: and

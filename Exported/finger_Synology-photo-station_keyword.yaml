@@ -1,0 +1,24 @@
+id: Synology_photo_station_keyword
+info:
+  name: Synology-photo-station_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Synology-photo-station"
+        words:
+          - "photo_new/syno_photo_main.js"
+          - "content=\"photo station 6\""
+          - "content=\"service_not_available\""
+          - "content=\"photo station"
+          - "content=\"album"
+        condition: and

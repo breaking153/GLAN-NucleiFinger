@@ -1,0 +1,20 @@
+id: Ruijie_IT_keyword
+info:
+  name: Ruijie-IT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie-IT"
+        words:
+          - "var logincookiename = 'riil_id'"
+        condition: and

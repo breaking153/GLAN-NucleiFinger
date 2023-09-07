@@ -1,0 +1,21 @@
+id: Jakarta_Project_keyword
+info:
+  name: Jakarta-Project_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jakarta-Project"
+        words:
+          - "alt=\"the jakarta project"
+          - "<a href=\"http://jakarta.apache.org/\">"
+        condition: and

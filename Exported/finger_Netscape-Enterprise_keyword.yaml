@@ -1,0 +1,26 @@
+id: Netscape_Enterprise_keyword
+info:
+  name: Netscape-Enterprise_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Netscape-Enterprise"
+        words:
+          - "netscape-enterprise"
+        condition: and
+      - type: word
+        part: header
+        name: "Netscape-Enterprise"
+        words:
+          - "Netscape-Enterprise"
+        condition: and

@@ -1,0 +1,20 @@
+id: Account_Manager_Exhibition_System_keyword
+info:
+  name: Account Manager Exhibition System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Account Manager Exhibition System"
+        words:
+          - "action=\"/system/login/login.shtml"
+        condition: and

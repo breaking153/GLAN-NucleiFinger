@@ -1,0 +1,21 @@
+id: PMWAY_E4_keyword
+info:
+  name: PMWAY-E4_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PMWAY-E4"
+        words:
+          - "风<span style=\"padding-left: 12px;\"></span>格"
+          - "热情似火</option>"
+        condition: and

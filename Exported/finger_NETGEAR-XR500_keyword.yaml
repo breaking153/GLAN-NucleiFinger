@@ -1,0 +1,21 @@
+id: NETGEAR_XR500_keyword
+info:
+  name: NETGEAR-XR500_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NETGEAR-XR500"
+        words:
+          - "href=\"/npg/xr500\""
+          - "var host_name = \"xr500\""
+        condition: and

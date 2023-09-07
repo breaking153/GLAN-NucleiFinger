@@ -1,0 +1,26 @@
+id: Z_Blog_keyword_1
+info:
+  name: Z-Blog_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Z-Blog"
+        words:
+          - "product: z-blog"
+        condition: and
+      - type: word
+        part: header
+        name: "Z-Blog"
+        words:
+          - "Product:Z-Blog"
+        condition: and

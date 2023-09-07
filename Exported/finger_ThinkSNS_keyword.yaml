@@ -1,0 +1,27 @@
+id: ThinkSNS_keyword
+info:
+  name: ThinkSNS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ThinkSNS"
+        words:
+          - "_static/image/favicon.ico"
+          - "powered by <a href=\"http://www.thinksns.com\">"
+        condition: and
+      - type: word
+        part: body
+        name: "ThinkSNS"
+        words:
+          - "ThinkSNS"
+        condition: and

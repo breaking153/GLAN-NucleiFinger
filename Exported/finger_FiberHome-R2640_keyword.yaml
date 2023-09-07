@@ -1,0 +1,20 @@
+id: FiberHome_R2640_keyword
+info:
+  name: FiberHome-R2640_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "FiberHome-R2640"
+        words:
+          - "fh_r2640"
+        condition: and

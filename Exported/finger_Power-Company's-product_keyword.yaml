@@ -1,0 +1,20 @@
+id: Power_Company_s_product_keyword
+info:
+  name: Power-Company's-product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Power-Company's-product"
+        words:
+          - "onclick=\"return settheme('60year'"
+        condition: and

@@ -1,0 +1,40 @@
+id: vBulletin_keyword
+info:
+  name: vBulletin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "vBulletin"
+        words:
+          - "content=\"vbulletin"
+          - "powered by vbulletin&trade;"
+          - "<!-- do not remove this copyright notice -->powered by < a href=\"https://www.vbulletin.com\" id=\"vbulletinlink\">"
+        condition: and
+      - type: word
+        part: body
+        name: "vBulletin"
+        words:
+          - "content=\"vBulletin"
+        condition: and
+      - type: word
+        part: body
+        name: "vBulletin"
+        words:
+          - "Powered by vBulletin&trade;"
+        condition: and
+      - type: word
+        part: body
+        name: "vBulletin"
+        words:
+          - "vBulletin"
+        condition: and

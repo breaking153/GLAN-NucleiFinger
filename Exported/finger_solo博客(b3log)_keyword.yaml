@@ -1,0 +1,26 @@
+id: solo_bo_ke_b3log_keyword
+info:
+  name: solo博客(b3log)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "solo博客(b3log)"
+        words:
+          - "solo博客"
+        condition: and
+      - type: word
+        part: body
+        name: "solo博客(b3log)"
+        words:
+          - "b3log"
+        condition: and

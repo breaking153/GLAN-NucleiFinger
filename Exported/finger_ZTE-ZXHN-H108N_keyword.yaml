@@ -1,0 +1,20 @@
+id: ZTE_ZXHN_H108N_keyword
+info:
+  name: ZTE-ZXHN-H108N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ZTE-ZXHN-H108N"
+        words:
+          - "<modelname>zxhn h108n</modelname>"
+        condition: and

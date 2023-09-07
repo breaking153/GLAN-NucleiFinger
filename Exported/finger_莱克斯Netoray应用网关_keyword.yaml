@@ -1,0 +1,20 @@
+id: lai_ke_si_Netoray_ying_yong_wang_guan_keyword
+info:
+  name: 莱克斯Netoray应用网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "莱克斯Netoray应用网关"
+        words:
+          - "莱克斯Netoray应用网关"
+        condition: and

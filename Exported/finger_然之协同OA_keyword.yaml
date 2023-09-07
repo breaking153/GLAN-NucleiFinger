@@ -1,0 +1,20 @@
+id: ran_zhi_xie_tong_OA_keyword
+info:
+  name: 然之协同OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "然之协同OA"
+        words:
+          - "然之协同OA"
+        condition: and

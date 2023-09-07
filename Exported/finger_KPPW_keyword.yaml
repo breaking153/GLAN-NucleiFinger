@@ -1,0 +1,23 @@
+id: KPPW_keyword
+info:
+  name: KPPW_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KPPW"
+        words:
+          - "content=\"kekezu"
+          - "var siteurl = "
+          - "skin_path = 'tpl/default',"
+          - "<img id='imgflag' src=\"tpl/default/img/"
+        condition: and

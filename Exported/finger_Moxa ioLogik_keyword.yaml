@@ -1,0 +1,20 @@
+id: Moxa_ioLogik_keyword
+info:
+  name: Moxa ioLogik_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Moxa ioLogik"
+        words:
+          - "Moxa ioLogik"
+        condition: and

@@ -1,0 +1,26 @@
+id: GuppY_keyword
+info:
+  name: GuppY_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "GuppY"
+        words:
+          - "content=\"GuppY"
+        condition: and
+      - type: word
+        part: body
+        name: "GuppY"
+        words:
+          - "class=\"copyright\" href=\"http://www.freeguppy.org/"
+        condition: and

@@ -1,0 +1,20 @@
+id: NETGEAR_WNDR3600_keyword
+info:
+  name: NETGEAR WNDR3600_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "NETGEAR WNDR3600"
+        words:
+          - "NETGEAR WNDR3600"
+        condition: and

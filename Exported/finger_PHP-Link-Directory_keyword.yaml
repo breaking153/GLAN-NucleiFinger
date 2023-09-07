@@ -1,0 +1,21 @@
+id: PHP_Link_Directory_keyword
+info:
+  name: PHP-Link-Directory_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PHP-Link-Directory"
+        words:
+          - "powered by phplinkdirectory"
+          - "content=\"php link directory"
+        condition: and

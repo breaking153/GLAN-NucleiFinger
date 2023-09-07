@@ -1,0 +1,21 @@
+id: IBM_Cognos_keyword
+info:
+  name: IBM-Cognos_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Cognos"
+        words:
+          - "/cgi-bin/cognos.cgi"
+          - "cognos &#26159; international business machines corp"
+        condition: and

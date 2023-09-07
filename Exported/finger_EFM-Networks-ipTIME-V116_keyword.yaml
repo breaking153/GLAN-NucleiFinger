@@ -1,0 +1,21 @@
+id: EFM_Networks_ipTIME_V116_keyword
+info:
+  name: EFM-Networks-ipTIME-V116_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "EFM-Networks-ipTIME-V116"
+        words:
+          - "src =\"/images/login_back_tv116.gif\""
+          - "src=\"/images2/login_title.tv116.gif\""
+        condition: and

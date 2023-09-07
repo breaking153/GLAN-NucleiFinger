@@ -1,0 +1,20 @@
+id: Infinet_Wireless_WANFleX_Router_keyword
+info:
+  name: Infinet-Wireless-WANFleX-Router_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Infinet-Wireless-WANFleX-Router"
+        words:
+          - "content=\"InfiNet"
+        condition: and

@@ -1,0 +1,20 @@
+id: DIR_825_web_server_keyword
+info:
+  name: DIR-825 web server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DIR-825 web server"
+        words:
+          - "DIR-825 web server"
+        condition: and

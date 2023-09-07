@@ -1,0 +1,20 @@
+id: PRTG_Network_Monitor_keyword
+info:
+  name: PRTG-Network-Monitor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PRTG-Network-Monitor"
+        words:
+          - "href=\"/css/prtgmini.css?prtgversion="
+        condition: and

@@ -1,0 +1,32 @@
+id: xheditor_keyword
+info:
+  name: xheditor_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "xheditor"
+        words:
+          - "xheditor_lang/zh-cn.js"
+        condition: and
+      - type: word
+        part: body
+        name: "xheditor"
+        words:
+          - "class=\"xheditor"
+        condition: and
+      - type: word
+        part: body
+        name: "xheditor"
+        words:
+          - ".xheditor("
+        condition: and

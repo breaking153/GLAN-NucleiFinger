@@ -1,0 +1,20 @@
+id: DCN_DCRS_7604E_keyword
+info:
+  name: DCN-DCRS-7604E_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DCN-DCRS-7604E"
+        words:
+          - "<b>dcrs-7604e</b>"
+        condition: and

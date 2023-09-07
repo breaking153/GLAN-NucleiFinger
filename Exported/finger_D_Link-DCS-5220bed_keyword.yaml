@@ -1,0 +1,20 @@
+id: D_Link_DCS_5220bed_keyword
+info:
+  name: D_Link-DCS-5220bed_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "D_Link-DCS-5220bed"
+        words:
+          - "basic realm=\"dcs-5220bed\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Fact_Finder_keyword
+info:
+  name: Fact Finder_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Fact Finder"
+        words:
+          - "Fact Finder"
+        condition: and

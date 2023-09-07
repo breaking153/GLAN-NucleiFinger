@@ -1,0 +1,26 @@
+id: Armor_Protection_Armor_Defense_keyword
+info:
+  name: Armor Protection(Armor Defense)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Armor Protection(Armor Defense)"
+        words:
+          - "Armor Protection"
+        condition: and
+      - type: word
+        part: body
+        name: "Armor Protection(Armor Defense)"
+        words:
+          - "Armor Defense"
+        condition: and

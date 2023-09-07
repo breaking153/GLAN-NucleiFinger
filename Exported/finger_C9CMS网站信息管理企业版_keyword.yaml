@@ -1,0 +1,20 @@
+id: C9CMS_wang_zhan_xin_xi_guan_li_qi_ye_ban_keyword
+info:
+  name: C9CMS网站信息管理企业版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "C9CMS网站信息管理企业版"
+        words:
+          - "C9CMS网站信息管理企业版"
+        condition: and

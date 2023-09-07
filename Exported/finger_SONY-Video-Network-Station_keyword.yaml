@@ -1,0 +1,20 @@
+id: SONY_Video_Network_Station_keyword
+info:
+  name: SONY-Video-Network-Station_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SONY-Video-Network-Station"
+        words:
+          - "<title>sony snt-v304 video network station</title>"
+        condition: and

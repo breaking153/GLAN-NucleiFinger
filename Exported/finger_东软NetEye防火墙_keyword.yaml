@@ -1,0 +1,20 @@
+id: dong_ruan_NetEye_fang_huo_qiang_keyword
+info:
+  name: 东软NetEye防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "东软NetEye防火墙"
+        words:
+          - "东软NetEye防火墙"
+        condition: and

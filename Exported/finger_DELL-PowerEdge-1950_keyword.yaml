@@ -1,0 +1,20 @@
+id: DELL_PowerEdge_1950_keyword
+info:
+  name: DELL-PowerEdge-1950_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "DELL-PowerEdge-1950"
+        words:
+          - "poweredge--1950/cgi-bin/sicweb.exe"
+        condition: and

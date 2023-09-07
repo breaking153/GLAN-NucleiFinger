@@ -1,0 +1,20 @@
+id: ANNECA_InTouch_CRM_keyword
+info:
+  name: ANNECA-InTouch-CRM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ANNECA-InTouch-CRM"
+        words:
+          - "href=\"http://www.anneca.cz\""
+        condition: and

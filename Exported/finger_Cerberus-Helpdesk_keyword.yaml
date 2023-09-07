@@ -1,0 +1,26 @@
+id: Cerberus_Helpdesk_keyword
+info:
+  name: Cerberus-Helpdesk_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cerberus-Helpdesk"
+        words:
+          - "<!-- if you have your own stylesheet for html elements, you can remove the cerberus-html.css link"
+        condition: and
+      - type: word
+        part: body
+        name: "Cerberus-Helpdesk"
+        words:
+          - "<!-- If you have your own stylesheet for HTML elements, you can remove the cerberus-html.css link"
+        condition: and

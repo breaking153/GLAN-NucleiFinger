@@ -1,0 +1,21 @@
+id: KJ65N_keyword
+info:
+  name: KJ65N_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "KJ65N"
+        words:
+          - "images/login/top002.gif"
+          - "worlddesktop/webform1.aspx"
+        condition: and

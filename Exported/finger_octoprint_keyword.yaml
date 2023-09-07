@@ -1,0 +1,20 @@
+id: octoprint_keyword
+info:
+  name: octoprint_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "octoprint"
+        words:
+          - "/octoprint/wiki/plugin:-discovery"
+        condition: and

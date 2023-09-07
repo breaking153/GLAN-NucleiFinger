@@ -1,0 +1,20 @@
+id: HUAWEI_USG5150_keyword
+info:
+  name: HUAWEI-USG5150_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "HUAWEI-USG5150"
+        words:
+          - "usg5150"
+        condition: and

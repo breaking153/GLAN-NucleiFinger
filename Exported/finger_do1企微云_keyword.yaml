@@ -1,0 +1,20 @@
+id: do1_qi_wei_yun_keyword
+info:
+  name: do1企微云_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "do1企微云"
+        words:
+          - "do1企微云"
+        condition: and

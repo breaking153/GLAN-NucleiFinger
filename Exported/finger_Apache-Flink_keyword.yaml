@@ -1,0 +1,22 @@
+id: Apache_Flink_keyword
+info:
+  name: Apache-Flink_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache-Flink"
+        words:
+          - "<title>Apache Flink Web Dashboard</title>"
+          - "<flink-root></flink-root>"
+          - "<img alt=\"apache flink dashboard\" src=\"images/flink-logo.png"
+        condition: and

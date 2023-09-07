@@ -1,21 +1,26 @@
-id: pbootCms_keyword
+id: PbootCMS_keyword
 info:
-  name: pbootCms_keyword
+  name: PbootCMS_keyword
   author: GLAN
   severity: info
   tags: tech
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
     matchers:
       - type: word
-        part: body
-        name: "pbootCms"
+        part: header
+        name: "PbootCMS"
         words:
-          - "!-- 幻灯片 --"
-          - "!--占位导航栏--"
+          - "PbootSystem"
+        condition: and
+      - type: word
+        part: header
+        name: "PbootCMS"
+        words:
+          - "PbootCMS"
         condition: and

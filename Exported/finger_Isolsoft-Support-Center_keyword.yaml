@@ -1,0 +1,26 @@
+id: Isolsoft_Support_Center_keyword
+info:
+  name: Isolsoft-Support-Center_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Isolsoft-Support-Center"
+        words:
+          - "powered by: support center"
+        condition: and
+      - type: word
+        part: body
+        name: "Isolsoft-Support-Center"
+        words:
+          - "Powered by: Support Center"
+        condition: and

@@ -1,0 +1,21 @@
+id: MantisBT_keyword
+info:
+  name: MantisBT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MantisBT"
+        words:
+          - "powered by mantis bugtracker"
+          - "alt=\"mantis bugtracker"
+        condition: and

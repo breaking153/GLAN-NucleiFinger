@@ -1,0 +1,32 @@
+id: iDVR_keyword_1
+info:
+  name: iDVR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "iDVR"
+        words:
+          - "server: idvrhttpsvr"
+        condition: and
+      - type: word
+        part: header
+        name: "iDVR"
+        words:
+          - "Server:iDVRhttpSvr"
+        condition: and
+      - type: word
+        part: header
+        name: "iDVR"
+        words:
+          - "iDVRhttpSvr"
+        condition: and

@@ -1,0 +1,20 @@
+id: PowerProject_qi_ye_xiang_mu_guan_li_xi_tong_keyword
+info:
+  name: PowerProject企业项目管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PowerProject企业项目管理系统"
+        words:
+          - "PowerProject企业项目管理系统"
+        condition: and

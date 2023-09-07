@@ -1,0 +1,22 @@
+id: php_voting_system_keyword
+info:
+  name: php-voting-system_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "php-voting-system"
+        words:
+          - "content=\"qq 7000719"
+          - "content=\"http://www.888072.com"
+          - "content=\"http://www.vote123.cn"
+        condition: and

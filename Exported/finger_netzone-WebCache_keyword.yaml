@@ -1,0 +1,20 @@
+id: netzone_WebCache_keyword
+info:
+  name: netzone-WebCache_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "netzone-WebCache"
+        words:
+          - "广州高度软件有限公司版权所有"
+        condition: and

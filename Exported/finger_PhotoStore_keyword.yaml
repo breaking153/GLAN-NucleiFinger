@@ -1,0 +1,20 @@
+id: PhotoStore_keyword
+info:
+  name: PhotoStore_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PhotoStore"
+        words:
+          - "powered by <a href=\"http://www.ktools.net/photostore/index.php"
+        condition: and

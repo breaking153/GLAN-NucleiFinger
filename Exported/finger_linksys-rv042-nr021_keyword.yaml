@@ -1,0 +1,20 @@
+id: linksys_rv042_nr021_keyword
+info:
+  name: linksys-rv042-nr021_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "linksys-rv042-nr021"
+        words:
+          - "linksys-rv042-nr021"
+        condition: and

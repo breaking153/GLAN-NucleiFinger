@@ -1,0 +1,20 @@
+id: WebRTU_z2_keyword
+info:
+  name: WebRTU z2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WebRTU z2"
+        words:
+          - "WebRTU z2"
+        condition: and

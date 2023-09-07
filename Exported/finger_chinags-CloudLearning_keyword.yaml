@@ -1,0 +1,20 @@
+id: chinags_CloudLearning_keyword
+info:
+  name: chinags-CloudLearning_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "chinags-CloudLearning"
+        words:
+          - "/integrats/gs.sub.systemmanager/dologin/json"
+        condition: and

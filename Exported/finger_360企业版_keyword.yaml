@@ -1,0 +1,20 @@
+id: 360_qi_ye_ban_keyword
+info:
+  name: 360企业版_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360企业版"
+        words:
+          - "360EntInst"
+        condition: and

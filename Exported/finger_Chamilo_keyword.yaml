@@ -1,0 +1,26 @@
+id: Chamilo_keyword
+info:
+  name: Chamilo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Chamilo"
+        words:
+          - "<link href=\"http://www.chamilo.org/documentation.php"
+        condition: and
+      - type: word
+        part: body
+        name: "Chamilo"
+        words:
+          - "content=\"Chamilo"
+        condition: and

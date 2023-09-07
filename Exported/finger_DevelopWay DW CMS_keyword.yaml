@@ -1,0 +1,20 @@
+id: DevelopWay_DW_CMS_keyword
+info:
+  name: DevelopWay DW CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DevelopWay DW CMS"
+        words:
+          - "DevelopWay DW CMS"
+        condition: and

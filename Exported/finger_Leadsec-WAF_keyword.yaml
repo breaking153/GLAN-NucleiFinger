@@ -1,0 +1,21 @@
+id: Leadsec_WAF_keyword
+info:
+  name: Leadsec-WAF_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Leadsec-WAF"
+        words:
+          - "<div id=\"divlogin\">"
+          - "网御waf"
+        condition: and

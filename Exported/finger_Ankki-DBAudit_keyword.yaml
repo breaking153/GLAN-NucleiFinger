@@ -1,0 +1,20 @@
+id: Ankki_DBAudit_keyword
+info:
+  name: Ankki-DBAudit_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ankki-DBAudit"
+        words:
+          - "support@ankki.com"
+        condition: and

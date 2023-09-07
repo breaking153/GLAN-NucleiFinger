@@ -1,0 +1,20 @@
+id: awstats_misc_tracker_keyword
+info:
+  name: awstats_misc_tracker_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "awstats_misc_tracker"
+        words:
+          - "/js/awstats_misc_tracker.js"
+        condition: and

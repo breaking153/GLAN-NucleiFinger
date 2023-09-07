@@ -1,0 +1,20 @@
+id: Play_REST_API_keyword
+info:
+  name: Play REST API_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Play REST API"
+        words:
+          - "Play REST API"
+        condition: and

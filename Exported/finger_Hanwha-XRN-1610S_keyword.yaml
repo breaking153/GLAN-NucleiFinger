@@ -1,0 +1,20 @@
+id: Hanwha_XRN_1610S_keyword
+info:
+  name: Hanwha-XRN-1610S_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hanwha-XRN-1610S"
+        words:
+          - "$.nvr.model_name=\"xrn-1610s\""
+        condition: and

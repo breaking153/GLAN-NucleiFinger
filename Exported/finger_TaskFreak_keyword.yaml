@@ -1,0 +1,20 @@
+id: TaskFreak_keyword
+info:
+  name: TaskFreak_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TaskFreak"
+        words:
+          - "<a href=\"http://www.taskfreak.com\">taskfreak"
+        condition: and

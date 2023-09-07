@@ -1,0 +1,20 @@
+id: LINKSYS_DD_WRT_keyword
+info:
+  name: LINKSYS-DD-WRT_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LINKSYS-DD-WRT"
+        words:
+          - "LINKSYS-DD-WRT"
+        condition: and

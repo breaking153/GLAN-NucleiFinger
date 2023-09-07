@@ -1,0 +1,20 @@
+id: IPEC_IPMS_keyword
+info:
+  name: IPEC-IPMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IPEC-IPMS"
+        words:
+          - "/login/lpec/qrcode.html"
+        condition: and

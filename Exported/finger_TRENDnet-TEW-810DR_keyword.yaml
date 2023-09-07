@@ -1,0 +1,20 @@
+id: TRENDnet_TEW_810DR_keyword
+info:
+  name: TRENDnet-TEW-810DR_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TRENDnet-TEW-810DR"
+        words:
+          - "tew-810dr pre-test"
+        condition: and

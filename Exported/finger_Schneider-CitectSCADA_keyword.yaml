@@ -1,0 +1,21 @@
+id: Schneider_CitectSCADA_keyword
+info:
+  name: Schneider-CitectSCADA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Schneider-CitectSCADA"
+        words:
+          - "<meta http-equiv=\"refresh\" content=\"0; url=/citectscada\">"
+          - "content=\"start services, start group, the start group, automation, industrial, software engineering, scada, plc, rtu, rockwell, rockwell automation, allen-bradley, allen bradley, allenbradley, citect, citectscada, kingfisher"
+        condition: and

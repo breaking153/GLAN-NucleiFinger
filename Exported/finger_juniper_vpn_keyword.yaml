@@ -1,0 +1,20 @@
+id: juniper_vpn_keyword
+info:
+  name: juniper_vpn_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "juniper_vpn"
+        words:
+          - "welcome.cgi?p=logo"
+        condition: and

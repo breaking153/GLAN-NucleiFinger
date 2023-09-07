@@ -1,0 +1,21 @@
+id: Lime_Survey_keyword
+info:
+  name: Lime-Survey_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Lime-Survey"
+        words:
+          - "content=\"limesurvey"
+          - "href=\"http://www.limesurvey.org\" target=\"_blank"
+        condition: and

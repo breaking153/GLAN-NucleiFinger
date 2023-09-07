@@ -1,0 +1,21 @@
+id: JXT_Consulting_keyword
+info:
+  name: JXT-Consulting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JXT-Consulting"
+        words:
+          - "id=\"jxt-popup-wrapper"
+          - "powered by jxt consulting"
+        condition: and

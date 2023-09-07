@@ -1,0 +1,21 @@
+id: WDlinux_wdCPSystem_keyword
+info:
+  name: WDlinux-wdCPSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WDlinux-wdCPSystem"
+        words:
+          - "href=\"http://www.wdlinux.cn/bbs/index.php"
+          - "linux云主机"
+        condition: and

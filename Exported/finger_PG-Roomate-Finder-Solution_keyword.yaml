@@ -1,0 +1,21 @@
+id: PG_Roomate_Finder_Solution_keyword
+info:
+  name: PG-Roomate-Finder-Solution_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "PG-Roomate-Finder-Solution"
+        words:
+          - "powered by pg roomate finder solution"
+          - "powered by <a href=\"http://www.realtysoft.pro"
+        condition: and

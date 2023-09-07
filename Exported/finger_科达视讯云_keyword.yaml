@@ -1,0 +1,20 @@
+id: ke_da_shi_xun_yun_keyword
+info:
+  name: 科达视讯云_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "科达视讯云"
+        words:
+          - "科达视讯云"
+        condition: and

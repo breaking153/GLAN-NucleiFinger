@@ -1,0 +1,26 @@
+id: zhong_guo_qi_kan_xian_zhi_wang_keyword
+info:
+  name: 中国期刊先知网_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中国期刊先知网"
+        words:
+          - "本系统由<span class=\"STYLE1\" ><a href=\"http://www.firstknow.cn"
+        condition: and
+      - type: word
+        part: body
+        name: "中国期刊先知网"
+        words:
+          - "<img src=\"images/logoknow.png\""
+        condition: and

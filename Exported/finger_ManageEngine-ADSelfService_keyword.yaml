@@ -1,0 +1,23 @@
+id: ManageEngine_ADSelfService_keyword
+info:
+  name: ManageEngine-ADSelfService_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ManageEngine-ADSelfService"
+        words:
+          - "href=\"images/adssp_favicon.ico"
+          - "small_status_box"
+          - "src=\"adsf/js/"
+          - "manageengine"
+        condition: and

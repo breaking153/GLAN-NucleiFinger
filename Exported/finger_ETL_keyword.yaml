@@ -1,0 +1,20 @@
+id: ETL_keyword
+info:
+  name: ETL_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ETL"
+        words:
+          - "<div class=\"header\">登录补天etl系统</div>"
+        condition: and

@@ -1,0 +1,20 @@
+id: boxiao_System_keyword
+info:
+  name: boxiao-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "boxiao-System"
+        words:
+          - "var bxnstaticresroot='/bxn-static-resource/resources'"
+        condition: and

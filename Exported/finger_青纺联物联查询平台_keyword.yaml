@@ -1,0 +1,21 @@
+id: qing_fang_lian_wu_lian_cha_xun_ping_tai_keyword
+info:
+  name: 青纺联物联查询平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "青纺联物联查询平台"
+        words:
+          - "青纺联物联查询平台"
+          - "Themes/default/login.css"
+        condition: and

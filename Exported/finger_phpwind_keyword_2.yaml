@@ -1,0 +1,26 @@
+id: phpwind_keyword
+info:
+  name: phpwind_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpwind"
+        words:
+          - "content=\"phpwind"
+        condition: and
+      - type: word
+        part: body
+        name: "phpwind"
+        words:
+          - "phpwind"
+        condition: and

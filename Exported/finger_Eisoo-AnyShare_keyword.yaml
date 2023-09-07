@@ -1,0 +1,21 @@
+id: Eisoo_AnyShare_keyword
+info:
+  name: Eisoo-AnyShare_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Eisoo-AnyShare"
+        words:
+          - "res/libs/webuploader/webuploader.css"
+          - "src=\"/res/libs/base64.min.js\""
+        condition: and

@@ -1,0 +1,21 @@
+id: NetAuth_keyword
+info:
+  name: NetAuth_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetAuth"
+        words:
+          - "src=\"image/loginauthorize.png\""
+          - "onmouseover=\"mm_swapimage('image1','','image/loginok_after.gif',1\""
+        condition: and

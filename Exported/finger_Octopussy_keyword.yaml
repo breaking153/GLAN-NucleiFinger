@@ -1,0 +1,21 @@
+id: Octopussy_keyword
+info:
+  name: Octopussy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Octopussy"
+        words:
+          - "value=\"connect to octopussy"
+          - "align=\"center\" >octopussy"
+        condition: and

@@ -1,0 +1,21 @@
+id: U_READER_Digital_Library_keyword
+info:
+  name: U-READER-Digital-Library_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "U-READER-Digital-Library"
+        words:
+          - "content=\"ureader"
+          - "class=\"login-show-title\">dynomedia inc.</p>"
+        condition: and

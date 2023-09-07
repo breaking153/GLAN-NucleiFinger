@@ -1,0 +1,20 @@
+id: DELL_poweredge_r410_keyword
+info:
+  name: DELL-poweredge-r410_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "DELL-poweredge-r410"
+        words:
+          - "poweredge-r410"
+        condition: and

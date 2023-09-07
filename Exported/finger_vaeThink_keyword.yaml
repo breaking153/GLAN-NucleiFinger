@@ -1,0 +1,20 @@
+id: vaeThink_keyword
+info:
+  name: vaeThink_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "vaeThink"
+        words:
+          - "vaeThink"
+        condition: and

@@ -1,0 +1,26 @@
+id: ArGoSoft_Mail_Server_keyword
+info:
+  name: ArGoSoft-Mail-Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ArGoSoft-Mail-Server"
+        words:
+          - "argosoft mail server plus for"
+        condition: and
+      - type: word
+        part: body
+        name: "ArGoSoft-Mail-Server"
+        words:
+          - "ArGoSoft Mail Server Plus for"
+        condition: and

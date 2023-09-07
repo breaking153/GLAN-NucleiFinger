@@ -1,0 +1,20 @@
+id: LG_OLED55C8PLA_keyword
+info:
+  name: LG-OLED55C8PLA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LG-OLED55C8PLA"
+        words:
+          - "<modelname>oled55c8pla</modelname>"
+        condition: and

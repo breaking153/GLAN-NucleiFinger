@@ -1,0 +1,20 @@
+id: cndatacom_SMSP_keyword
+info:
+  name: cndatacom-SMSP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cndatacom-SMSP"
+        words:
+          - "/smrc/resources/default/"
+        condition: and

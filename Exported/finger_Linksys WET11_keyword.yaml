@@ -1,0 +1,20 @@
+id: Linksys_WET11_keyword
+info:
+  name: Linksys WET11_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Linksys WET11"
+        words:
+          - "Linksys WET11"
+        condition: and

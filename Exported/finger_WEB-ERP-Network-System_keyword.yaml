@@ -1,0 +1,20 @@
+id: WEB_ERP_Network_System_keyword
+info:
+  name: WEB-ERP-Network-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WEB-ERP-Network-System"
+        words:
+          - "window.location='/www/login.html'"
+        condition: and

@@ -1,0 +1,21 @@
+id: Glodon_Console_keyword
+info:
+  name: Glodon-Console_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Glodon-Console"
+        words:
+          - "src=\"/scripts/dd_belatedpng.js"
+          - "url: \"/console/account/logon\""
+        condition: and

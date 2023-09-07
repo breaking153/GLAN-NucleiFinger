@@ -1,0 +1,20 @@
+id: ADVANTECH_WISE_3610_keyword
+info:
+  name: ADVANTECH-WISE-3610_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ADVANTECH-WISE-3610"
+        words:
+          - "/advantech/advantech/css/main.css"
+        condition: and

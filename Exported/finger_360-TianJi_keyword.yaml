@@ -1,0 +1,20 @@
+id: 360_TianJi_keyword
+info:
+  name: 360-TianJi_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360-TianJi"
+        words:
+          - "src=\"/resource/img/login/logo_403.png\" alt=\"360天机\"/></a>"
+        condition: and

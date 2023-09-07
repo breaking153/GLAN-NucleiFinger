@@ -1,0 +1,21 @@
+id: Geutebruck_keyword
+info:
+  name: Geutebruck_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Geutebruck"
+        words:
+          - "geutebruck g-web"
+          - "content=\"geutebrück g-web\""
+        condition: and

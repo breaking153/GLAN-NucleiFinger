@@ -1,0 +1,26 @@
+id: zan_pian_CMS_ZanPianCms_keyword
+info:
+  name: 赞片CMS(ZanPianCms)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "赞片CMS(ZanPianCms)"
+        words:
+          - "赞片CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "赞片CMS(ZanPianCms)"
+        words:
+          - "ZanPianCms"
+        condition: and

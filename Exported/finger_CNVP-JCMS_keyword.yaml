@@ -1,0 +1,20 @@
+id: CNVP_JCMS_keyword
+info:
+  name: CNVP-JCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CNVP-JCMS"
+        words:
+          - "publish by jcms2010"
+        condition: and

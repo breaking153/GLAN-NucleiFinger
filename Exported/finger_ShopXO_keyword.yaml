@@ -7,14 +7,14 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}"
+      - "{{RootURL}}{{Path}}/"
     cookie-reuse: true
     matchers-condition: or
     redirects: true
     matchers:
       - type: word
-        part: body
+        part: header
         name: "ShopXO"
         words:
-          - "Powered by <a href=\"http://shopxo.net/\" title=\"ShopXO电商系统\" target=\"_blank\">"
+          - "ShopXO"
         condition: and

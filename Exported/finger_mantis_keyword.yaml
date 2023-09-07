@@ -1,0 +1,26 @@
+id: mantis_keyword
+info:
+  name: mantis_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "mantis"
+        words:
+          - "browser_search_plugin.php?type=id"
+        condition: and
+      - type: word
+        part: body
+        name: "mantis"
+        words:
+          - "MantisBT Team"
+        condition: and

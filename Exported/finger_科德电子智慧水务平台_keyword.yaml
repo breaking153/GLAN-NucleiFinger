@@ -1,0 +1,21 @@
+id: ke_de_dian_zi_zhi_hui_shui_wu_ping_tai_keyword
+info:
+  name: 科德电子智慧水务平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "科德电子智慧水务平台"
+        words:
+          - "山东科德电子有限公司"
+          - "J_LoginSub"
+        condition: and

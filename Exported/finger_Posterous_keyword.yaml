@@ -1,0 +1,21 @@
+id: Posterous_keyword
+info:
+  name: Posterous_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Posterous"
+        words:
+          - "content=\"posterous"
+          - "class=\"posterous_site_data"
+        condition: and

@@ -1,0 +1,27 @@
+id: Cisco_switch_keyword
+info:
+  name: Cisco-switch_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco-switch"
+        words:
+          - "/cs8941ddbf/"
+          - "class=\"titleciscouser"
+          - "id=\"lbldevname\" class=\"titleciscolog"
+          - "cisco css"
+          - "cisco css"
+          - "cisco systems"
+          - "frmwrkresource.htm"
+          - "<frame src=\"dashboard.shtml"
+        condition: and

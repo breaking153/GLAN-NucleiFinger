@@ -1,0 +1,20 @@
+id: qi_ming_tian_tian_IDS_keyword
+info:
+  name: 启明天阗IDS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "启明天阗IDS"
+        words:
+          - "启明天阗IDS"
+        condition: and

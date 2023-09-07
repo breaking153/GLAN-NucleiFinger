@@ -1,0 +1,20 @@
+id: AVT_Webserver_keyword
+info:
+  name: AVT Webserver_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "AVT Webserver"
+        words:
+          - "AVT Webserver"
+        condition: and

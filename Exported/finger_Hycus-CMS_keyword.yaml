@@ -1,0 +1,26 @@
+id: Hycus_CMS_keyword
+info:
+  name: Hycus-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hycus-CMS"
+        words:
+          - "content=\"Hycus"
+        condition: and
+      - type: word
+        part: body
+        name: "Hycus-CMS"
+        words:
+          - "Powered By <a href=\"http://www.hycus.com"
+        condition: and

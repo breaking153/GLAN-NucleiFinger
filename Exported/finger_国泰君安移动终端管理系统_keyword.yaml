@@ -1,0 +1,20 @@
+id: guo_tai_jun_an_yi_dong_zhong_duan_guan_li_xi_tong_keyword
+info:
+  name: 国泰君安移动终端管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "国泰君安移动终端管理系统"
+        words:
+          - "国泰君安移动终端管理系统"
+        condition: and

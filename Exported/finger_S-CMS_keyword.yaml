@@ -1,0 +1,27 @@
+id: S_CMS_keyword
+info:
+  name: S-CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "S-CMS"
+        words:
+          - "class=\"scms_container w1200\""
+          - "<p class=\"alignright\">powered by s:cms - copyright ©"
+          - "<!-- inizio righe di indicizzazione nei motori di ricerca -->"
+          - "www.smartlogic.com"
+          - "/media/20151019095214828.png"
+          - "<h2>闪灵cms建站系统</h2>"
+          - "type=news&s_id="
+          - "type=newsinfo&s_id="
+        condition: and

@@ -1,0 +1,20 @@
+id: Aisino_Telecom_keyword
+info:
+  name: Aisino-Telecom_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Aisino-Telecom"
+        words:
+          - "<font class=\"bottomfont\">航天信息股份有限公司 电信行业版"
+        condition: and

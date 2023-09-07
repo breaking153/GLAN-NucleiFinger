@@ -1,0 +1,26 @@
+id: FrogCMS_keyword
+info:
+  name: FrogCMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FrogCMS"
+        words:
+          - "target=\"_blank\">Frog CMS"
+        condition: and
+      - type: word
+        part: body
+        name: "FrogCMS"
+        words:
+          - "href=\"http://www.madebyfrog.com\">Frog CMS"
+        condition: and

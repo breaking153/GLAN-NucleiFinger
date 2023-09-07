@@ -1,0 +1,26 @@
+id: i3micro_keyword
+info:
+  name: i3micro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "i3micro"
+        words:
+          - "realm=\"i3micro"
+        condition: and
+      - type: word
+        part: header
+        name: "i3micro"
+        words:
+          - "i3micro"
+        condition: and

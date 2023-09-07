@@ -1,0 +1,21 @@
+id: Good10000_Tios_keyword
+info:
+  name: Good10000-Tios_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Good10000-Tios"
+        words:
+          - "value=\"https://mail.sinopec.com/owa/\""
+          - "北京万佳信科技有限公司"
+        condition: and

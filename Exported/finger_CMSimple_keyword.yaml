@@ -1,0 +1,26 @@
+id: CMSimple_keyword
+info:
+  name: CMSimple_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CMSimple"
+        words:
+          - "Powered by CMSimple.dk"
+        condition: and
+      - type: word
+        part: body
+        name: "CMSimple"
+        words:
+          - "content=\"CMSimple"
+        condition: and

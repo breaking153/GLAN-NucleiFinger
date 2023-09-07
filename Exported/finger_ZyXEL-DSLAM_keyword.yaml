@@ -1,0 +1,21 @@
+id: ZyXEL_DSLAM_keyword
+info:
+  name: ZyXEL-DSLAM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ZyXEL-DSLAM"
+        words:
+          - "realm=\"aam1212-"
+          - "realm=\"ies-1000"
+        condition: and

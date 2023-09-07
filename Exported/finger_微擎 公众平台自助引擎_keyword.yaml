@@ -1,0 +1,20 @@
+id: wei_qing_gong_zhong_ping_tai_zi_zhu_yin_qing_keyword_1
+info:
+  name: 微擎 公众平台自助引擎_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "微擎 公众平台自助引擎"
+        words:
+          - "微擎 公众平台自助引擎"
+        condition: and

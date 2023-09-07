@@ -1,0 +1,21 @@
+id: phpCollab_keyword
+info:
+  name: phpCollab_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpCollab"
+        words:
+          - "<!-- powered by phpcollab"
+          - "content='phpcollab"
+        condition: and

@@ -1,0 +1,19 @@
+id: Bonobo_Git_Server_faviconhash
+info:
+  name: Bonobo Git Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}//favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Bonobo Git Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-219625874\""
+        condition: or

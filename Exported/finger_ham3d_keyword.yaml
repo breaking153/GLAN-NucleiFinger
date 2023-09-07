@@ -1,0 +1,20 @@
+id: ham3d_keyword
+info:
+  name: ham3d_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "ham3d"
+        words:
+          - "ham3d"
+        condition: and

@@ -1,0 +1,20 @@
+id: cloudroom_Meeting_keyword
+info:
+  name: cloudroom-Meeting_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "cloudroom-Meeting"
+        words:
+          - "src=\"/companyimage/agents/sdk-logo.png\""
+        condition: and

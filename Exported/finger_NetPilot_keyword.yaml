@@ -1,0 +1,21 @@
+id: NetPilot_keyword
+info:
+  name: NetPilot_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetPilot"
+        words:
+          - "/images/netpilot/favicon.ico"
+          - "href=\"/sys/images/tree.css\" title=\"netpilot"
+        condition: and

@@ -1,0 +1,20 @@
+id: Cisco_UCC_keyword_1_1
+info:
+  name: Cisco UCC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco UCC"
+        words:
+          - "Cisco Unified Contact Center"
+        condition: and

@@ -1,0 +1,26 @@
+id: WebPy_keyword
+info:
+  name: WebPy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "WebPy"
+        words:
+          - "webpy_session_id"
+        condition: and
+      - type: word
+        part: header
+        name: "WebPy"
+        words:
+          - "WebPy"
+        condition: and

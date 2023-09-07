@@ -1,0 +1,22 @@
+id: NetWin_DBabble_keyword
+info:
+  name: NetWin-DBabble_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "NetWin-DBabble"
+        words:
+          - "/cgi/dbabble.cgi"
+          - ">dbabble online help</a>"
+          - "action=\"/dbabble"
+        condition: and

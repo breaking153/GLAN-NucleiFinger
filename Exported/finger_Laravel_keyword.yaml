@@ -1,0 +1,24 @@
+id: Laravel_keyword
+info:
+  name: Laravel_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Laravel"
+        words:
+          - "<title>Laravel</title>"
+          - "PhpDebugBar.Widgets.LaravelSQLQueriesWidget"
+          - "<a href=\"https://laravel.com/docs\">Documentation</a>"
+          - "<a href=\"https://laravel.com/docs\">Docs</a>"
+          - "<a href=\"https://github.com/laravel/laravel\">GitHub</a>"
+        condition: and

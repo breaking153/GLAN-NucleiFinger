@@ -1,0 +1,24 @@
+id: 74CMS_keyword
+info:
+  name: 74CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "74CMS"
+        words:
+          - "content=\"74cms.com"
+          - "content=\"骑士cms"
+          - "powered by <a href=\"http://www.74cms.com/\""
+          - "/templates/default/css/common.css"
+          - "selectjobscategory"
+        condition: and

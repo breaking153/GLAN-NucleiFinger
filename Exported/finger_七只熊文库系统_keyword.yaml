@@ -1,0 +1,20 @@
+id: qi_zhi_xiong_wen_ku_xi_tong_keyword
+info:
+  name: 七只熊文库系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "七只熊文库系统"
+        words:
+          - "七只熊文库系统"
+        condition: and

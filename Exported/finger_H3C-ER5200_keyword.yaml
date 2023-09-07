@@ -1,0 +1,20 @@
+id: H3C_ER5200_keyword
+info:
+  name: H3C-ER5200_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C-ER5200"
+        words:
+          - "h3c er5200"
+        condition: and

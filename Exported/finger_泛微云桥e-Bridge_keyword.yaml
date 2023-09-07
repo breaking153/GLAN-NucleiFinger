@@ -1,0 +1,20 @@
+id: fan_wei_yun_qiao_e_Bridge_keyword_1
+info:
+  name: 泛微云桥e-Bridge_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "泛微云桥e-Bridge"
+        words:
+          - "泛微云桥e-Bridge"
+        condition: and

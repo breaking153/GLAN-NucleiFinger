@@ -1,0 +1,21 @@
+id: Ajenti_Server_Admin_Panel_keyword
+info:
+  name: Ajenti-Server-Admin-Panel_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ajenti-Server-Admin-Panel"
+        words:
+          - "src=\"/ajenti:static/"
+          - "action=\"/ajenti:auth\""
+        condition: and

@@ -1,0 +1,21 @@
+id: da_hua_zhi_neng_wu_lian_zong_he_guan_li_ping_tai_keyword
+info:
+  name: 大华-智能物联综合管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "大华-智能物联综合管理平台"
+        words:
+          - "static/qwebchannel.js"
+          - "moment"
+        condition: and

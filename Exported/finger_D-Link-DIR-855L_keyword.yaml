@@ -1,0 +1,21 @@
+id: D_Link_DIR_855L_keyword
+info:
+  name: D-Link-DIR-855L_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "D-Link-DIR-855L"
+        words:
+          - "<a href=\"javascript:check_is_modified('http://support.dlink.com/'\">dir-855l"
+          - "<a href=\"http://support.dlink.com.tw/\">dir-855l"
+        condition: and

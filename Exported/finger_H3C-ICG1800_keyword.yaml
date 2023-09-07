@@ -1,0 +1,21 @@
+id: H3C_ICG1800_keyword
+info:
+  name: H3C-ICG1800_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "H3C-ICG1800"
+        words:
+          - "realm=\"h3c icg 1800"
+          - "realm=\"h3c icg1800"
+        condition: and

@@ -1,0 +1,22 @@
+id: rui_you_tian_yi_ying_yong_xu_ni_hua_xi_tong_keyword
+info:
+  name: 瑞友天翼－应用虚拟化系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "瑞友天翼－应用虚拟化系统"
+        words:
+          - "DownLoad.XGI"
+          - "realor.cn"
+          - "dvLogin"
+        condition: and

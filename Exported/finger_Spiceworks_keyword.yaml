@@ -1,0 +1,22 @@
+id: Spiceworks_keyword
+info:
+  name: Spiceworks_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Spiceworks"
+        words:
+          - "<meta name=\"author\" content=\"spiceworks, inc.\" />"
+          - "<link href=\"/stylesheets/general.css?"
+          - "<h1><img alt=\"spiceworks\" src=\"/images/logos/large.png"
+        condition: and

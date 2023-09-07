@@ -1,0 +1,26 @@
+id: IQeye_Netcam_keyword
+info:
+  name: IQeye-Netcam_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IQeye-Netcam"
+        words:
+          - "content=\"Brian Lau, IQinVision"
+        condition: and
+      - type: word
+        part: body
+        name: "IQeye-Netcam"
+        words:
+          - "loc = \"iqeyevid.html"
+        condition: and

@@ -1,0 +1,20 @@
+id: Layui_keyword
+info:
+  name: Layui_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Layui"
+        words:
+          - "Layui"
+        condition: and

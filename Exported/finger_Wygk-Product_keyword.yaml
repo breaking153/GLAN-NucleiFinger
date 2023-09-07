@@ -1,0 +1,22 @@
+id: Wygk_Product_keyword
+info:
+  name: Wygk-Product_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Wygk-Product"
+        words:
+          - "href=\"wrzcnet.ico"
+          - "<a href=\"mailto:webmaster@wrzc.net"
+          - "url = 'wrzcnet_vote.asp?stype=view';"
+        condition: and

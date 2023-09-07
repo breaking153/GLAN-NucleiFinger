@@ -1,0 +1,40 @@
+id: Hikvision_iVMS_keyword
+info:
+  name: Hikvision-iVMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hikvision-iVMS"
+        words:
+          - "g_szcachetime"
+          - "tab-border code-iivms\">"
+          - "class=\"enname\">ivms-4200"
+          - "//caoshiyan modify 2015-06-30 中转页面"
+          - "/home/locationindex.action?time="
+          - "<div class=\"enname\">ivms-4200"
+        condition: and
+      - type: word
+        part: body
+        name: "Hikvision-iVMS"
+        words:
+          - "g_szcachetime"
+          - "tab-border code-iivms\">"
+          - " window.document.location = '/license!getexpiredateofdays.action';"
+          - "2b73083e-9b29-4005-a123-1d4ec47a36d5\"; // 用于检测vms是否超时, chenliangyf1"
+          - "class=\"enname\">ivms-4200"
+          - "larempassword"
+          - "//caoshiyan modify 2015-06-30 中转页面"
+          - "/home/locationindex.action?time="
+          - "<div class=\"enname\">ivms-4200"
+          - "out\"><a href=\"download/ivms-"
+        condition: and

@@ -1,0 +1,21 @@
+id: Goodway_Integrated_Management_Information_System_keyword
+info:
+  name: Goodway-Integrated-Management-Information-System_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Goodway-Integrated-Management-Information-System"
+        words:
+          - "option value=\"enterprise\""
+          - "是否域账户登录"
+        condition: and

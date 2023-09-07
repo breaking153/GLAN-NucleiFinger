@@ -1,0 +1,20 @@
+id: Distributed_Regtech_Collaboration_Platform_keyword
+info:
+  name: Distributed Regtech Collaboration Platform_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Distributed Regtech Collaboration Platform"
+        words:
+          - "<span class=\"blue bolder\">drc</span>"
+        condition: and

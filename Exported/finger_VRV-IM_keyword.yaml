@@ -1,0 +1,23 @@
+id: VRV_IM_keyword
+info:
+  name: VRV-IM_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VRV-IM"
+        words:
+          - "<h3>连豆豆pc客户端 </h3>"
+          - "href=\"http://im.vrv.cn/server-securitycenter/password/goretrieval.vrv"
+          - "class=\"loginusername\" value=\"\" placeholder=\"连豆豆账号/邮箱/手机号"
+          - "class=\"wj-text wj-title\">下载信源豆豆</p>"
+        condition: and

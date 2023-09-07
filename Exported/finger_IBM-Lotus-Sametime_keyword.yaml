@@ -1,0 +1,23 @@
+id: IBM_Lotus_Sametime_keyword
+info:
+  name: IBM-Lotus-Sametime_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "IBM-Lotus-Sametime"
+        words:
+          - "src=\"sametime/avtest.js\""
+          - "href=\"sametime/meetingcenter-moz.css\""
+          - "class=\"sametimemeetingsbuttontransparent\""
+          - "sametime/themes/images/blank.gif"
+        condition: and

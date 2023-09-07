@@ -1,0 +1,20 @@
+id: PhotoShelter_keyword
+info:
+  name: PhotoShelter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "PhotoShelter"
+        words:
+          - "PhotoShelter"
+        condition: and

@@ -1,0 +1,20 @@
+id: MAiPU_Config_keyword
+info:
+  name: MAiPU-Config_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "MAiPU-Config"
+        words:
+          - "maipu"
+        condition: and

@@ -1,0 +1,20 @@
+id: Cerebro_keyword
+info:
+  name: Cerebro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cerebro"
+        words:
+          - "lang=\"en\" ng-app=\"cerebro"
+        condition: and

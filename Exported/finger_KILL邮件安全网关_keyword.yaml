@@ -1,0 +1,20 @@
+id: KILL_you_jian_an_quan_wang_guan_keyword
+info:
+  name: KILL邮件安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "KILL邮件安全网关"
+        words:
+          - "KILL邮件安全网关"
+        condition: and

@@ -1,0 +1,20 @@
+id: ASUS_R7000_keyword
+info:
+  name: ASUS-R7000_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ASUS-R7000"
+        words:
+          - "<div class=\"prod_madelname\">r7000"
+        condition: and

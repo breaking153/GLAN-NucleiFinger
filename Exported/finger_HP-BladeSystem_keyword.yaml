@@ -1,0 +1,21 @@
+id: HP_BladeSystem_keyword
+info:
+  name: HP-BladeSystem_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "HP-BladeSystem"
+        words:
+          - "checkhpsimsso"
+          - "//hpoa:enclosurestatus/"
+        condition: and

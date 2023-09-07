@@ -1,0 +1,20 @@
+id: Newton_keyword
+info:
+  name: Newton_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Newton"
+        words:
+          - "name=\"group_sn\""
+        condition: and

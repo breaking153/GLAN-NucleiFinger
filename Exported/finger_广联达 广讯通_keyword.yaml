@@ -1,0 +1,21 @@
+id: guang_lian_da_guang_xun_tong_keyword
+info:
+  name: 广联达 广讯通_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "广联达 广讯通"
+        words:
+          - "gtp.standard"
+          - "JS/gxtAutoLogin.js"
+        condition: and

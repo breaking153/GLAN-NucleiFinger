@@ -1,0 +1,32 @@
+id: Adobe_ColdFusion_keyword
+info:
+  name: Adobe ColdFusion_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Adobe ColdFusion"
+        words:
+          - "/cfajax/"
+        condition: and
+      - type: word
+        part: body
+        name: "Adobe ColdFusion"
+        words:
+          - "ColdFusion.Ajax"
+        condition: and
+      - type: word
+        part: body
+        name: "Adobe ColdFusion"
+        words:
+          - "cdm"
+        condition: and

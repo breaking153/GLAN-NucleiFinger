@@ -1,0 +1,20 @@
+id: bo_hua_wang_long_fang_huo_qiang_keyword
+info:
+  name: 博华网龙防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "博华网龙防火墙"
+        words:
+          - "博华网龙防火墙"
+        condition: and

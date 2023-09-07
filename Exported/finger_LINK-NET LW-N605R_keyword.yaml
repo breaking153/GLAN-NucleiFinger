@@ -1,0 +1,20 @@
+id: LINK_NET_LW_N605R_keyword
+info:
+  name: LINK-NET LW-N605R_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "LINK-NET LW-N605R"
+        words:
+          - "LINK-NET LW-N605R"
+        condition: and

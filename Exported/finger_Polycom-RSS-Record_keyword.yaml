@@ -1,0 +1,20 @@
+id: Polycom_RSS_Record_keyword
+info:
+  name: Polycom-RSS-Record_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Polycom-RSS-Record"
+        words:
+          - "window.location.replace(\"/rss/\""
+        condition: and

@@ -1,0 +1,20 @@
+id: Kendo_UI_keyword
+info:
+  name: Kendo UI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Kendo UI"
+        words:
+          - "Kendo UI"
+        condition: and

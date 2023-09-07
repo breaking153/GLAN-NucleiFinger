@@ -1,0 +1,20 @@
+id: Spring_Cloud_Netflix_keyword
+info:
+  name: Spring-Cloud-Netflix_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Spring-Cloud-Netflix"
+        words:
+          - "x-application-context: hystrix-dashboard:"
+        condition: and

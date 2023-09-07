@@ -1,0 +1,20 @@
+id: Semantic_ui_keyword
+info:
+  name: Semantic-ui_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Semantic-ui"
+        words:
+          - "Semantic-ui"
+        condition: and

@@ -1,0 +1,21 @@
+id: getck_SafeGateway_keyword
+info:
+  name: getck-SafeGateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "getck-SafeGateway"
+        words:
+          - "webui/images/basic/login/main_logo.gif"
+          - "应用安全网关"
+        condition: and

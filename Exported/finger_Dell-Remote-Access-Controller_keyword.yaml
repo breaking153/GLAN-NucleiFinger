@@ -1,0 +1,22 @@
+id: Dell_Remote_Access_Controller_keyword
+info:
+  name: Dell-Remote-Access-Controller_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Dell-Remote-Access-Controller"
+        words:
+          - "/cgi-bin/webcgi/ssologin"
+          - "javascript:getaimintprop"
+          - "top.document.location.href = \"/index.html?console\";"
+        condition: and
