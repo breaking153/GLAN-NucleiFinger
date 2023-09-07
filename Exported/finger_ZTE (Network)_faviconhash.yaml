@@ -1,0 +1,19 @@
+id: ZTE_Network_faviconhash
+info:
+  name: ZTE (Network)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "ZTE (Network)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1427976651\""
+        condition: or

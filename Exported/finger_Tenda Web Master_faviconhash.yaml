@@ -1,0 +1,19 @@
+id: Tenda_Web_Master_faviconhash
+info:
+  name: Tenda Web Master_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Tenda Web Master"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-2145085239\""
+        condition: or

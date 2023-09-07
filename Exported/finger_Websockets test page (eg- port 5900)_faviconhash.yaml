@@ -1,0 +1,19 @@
+id: Websockets_test_page_eg_port_5900_faviconhash
+info:
+  name: Websockets test page (eg- port 5900)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Websockets test page (eg- port 5900)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-291579889\""
+        condition: or

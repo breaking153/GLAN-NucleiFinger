@@ -1,0 +1,21 @@
+id: xin_ruan_ke_ji_ji_tong_EWEBS_keyword
+info:
+  name: 新软科技-极通EWEBS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "新软科技-极通EWEBS"
+        words:
+          - "N-soft"
+          - "ClientDownload.xgi"
+        condition: and

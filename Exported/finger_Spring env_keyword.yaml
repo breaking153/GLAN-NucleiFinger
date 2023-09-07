@@ -1,0 +1,26 @@
+id: Spring_env_keyword
+info:
+  name: Spring env_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Spring env"
+        words:
+          - "servletContextInitParams"
+        condition: and
+      - type: word
+        part: body
+        name: "Spring env"
+        words:
+          - "logback"
+        condition: and

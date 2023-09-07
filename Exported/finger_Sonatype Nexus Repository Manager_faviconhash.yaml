@@ -1,0 +1,19 @@
+id: Sonatype_Nexus_Repository_Manager_faviconhash
+info:
+  name: Sonatype Nexus Repository Manager_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Sonatype Nexus Repository Manager"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1546574541\""
+        condition: or

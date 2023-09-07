@@ -1,0 +1,19 @@
+id: Shock_Innovation_netis_setup_faviconhash
+info:
+  name: Shock&Innovation!! netis setup_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Shock&Innovation!! netis setup"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1326164945\""
+        condition: or

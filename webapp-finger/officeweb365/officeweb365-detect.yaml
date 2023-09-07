@@ -1,0 +1,21 @@
+id: officeweb365-detect
+info:
+  name: officeweb365-detect
+  author: GLAN
+  severity: info
+  tags: tech,officeweb365
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "文件不存在，无法预览！实际下载以预览为准"  
+          - "请输入furl参数"
+        condition: or
+      - type: status
+        status:
+          - 200

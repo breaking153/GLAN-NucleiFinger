@@ -1,0 +1,19 @@
+id: Discuz_faviconhash
+info:
+  name: Discuz!_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Discuz!"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-505448917\""
+        condition: or

@@ -1,0 +1,21 @@
+id: a_li_ba_ba_otter_manager_keyword
+info:
+  name: 阿里巴巴otter manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "阿里巴巴otter manager"
+        words:
+          - "Otter Manager"
+          - "channelList"
+        condition: and

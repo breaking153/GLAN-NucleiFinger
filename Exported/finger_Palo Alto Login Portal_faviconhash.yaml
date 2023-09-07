@@ -1,0 +1,19 @@
+id: Palo_Alto_Login_Portal_faviconhash
+info:
+  name: Palo Alto Login Portal_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Palo Alto Login Portal"
+        dsl:
+          - "mmh3(base64_py(body)) == \"602431586\""
+        condition: or

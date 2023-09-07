@@ -1,0 +1,38 @@
+id: FastAdmin_kuang_jia_keyword
+info:
+  name: FastAdmin 框架_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "FastAdmin 框架"
+        words:
+          - "assets/img/favicon.ico"
+          - "bootstrap.min.css"
+          - "navbar-toggle"
+        condition: and
+      - type: word
+        part: body
+        name: "FastAdmin 框架"
+        words:
+          - "ajax/upload"
+          - "assets/img/favicon.ico"
+          - "fastadmin"
+        condition: and
+      - type: word
+        part: body
+        name: "FastAdmin 框架"
+        words:
+          - "ajax/upload"
+          - "assets/img/favicon.ico"
+          - "fastadmin"
+        condition: and

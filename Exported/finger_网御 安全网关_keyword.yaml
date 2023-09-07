@@ -1,0 +1,22 @@
+id: wang_yu_an_quan_wang_guan_keyword
+info:
+  name: 网御 安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "网御 安全网关"
+        words:
+          - "安全系统"
+          - "网御星云"
+          - "login"
+        condition: and

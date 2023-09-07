@@ -1,0 +1,19 @@
+id: C_Lodop_faviconhash
+info:
+  name: C-Lodop_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "C-Lodop"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-329747115\""
+        condition: or

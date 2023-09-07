@@ -1,0 +1,22 @@
+id: ruo_yi_RuoYi_guan_li_xi_tong_keyword
+info:
+  name: 若依(RuoYi)-管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "若依(RuoYi)-管理系统"
+        words:
+          - "ry-ui"
+          - "username"
+          - "rememberme"
+        condition: and

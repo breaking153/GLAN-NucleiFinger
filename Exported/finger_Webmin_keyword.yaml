@@ -1,0 +1,21 @@
+id: Webmin_keyword
+info:
+  name: Webmin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Webmin"
+        words:
+          - "Webmin"
+          - "session_login"
+        condition: and

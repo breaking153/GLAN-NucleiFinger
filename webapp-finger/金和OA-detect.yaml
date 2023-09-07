@@ -1,0 +1,22 @@
+id: jinhe-oa-detect
+
+info:
+  name: jinhe-detect
+  author: GLAN
+  severity: info
+  description: Detects jinhe OA.
+  tags: tech,jinhe
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/c6/js/c6-base.js"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'c6ui-main'

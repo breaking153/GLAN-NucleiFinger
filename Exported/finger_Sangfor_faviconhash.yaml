@@ -1,0 +1,21 @@
+id: Sangfor_faviconhash
+info:
+  name: Sangfor_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Sangfor"
+        dsl:
+          - "mmh3(base64_py(body)) == \"123821839\""
+          - "mmh3(base64_py(body)) == \"-1810847295\""
+          - "mmh3(base64_py(body)) == \"-1926484046\""
+        condition: or

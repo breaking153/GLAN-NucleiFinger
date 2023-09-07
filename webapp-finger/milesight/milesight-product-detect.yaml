@@ -1,0 +1,27 @@
+id: milesight-product-detect
+
+info:
+  name: milesight-product-detect
+  author: GLAN
+  severity: info
+  description: milesight-product-detect.
+  tags: tech,milesight
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Copyright '
+      - type: word
+        part: body
+        words:
+          - 'Milesight IoT'
+

@@ -1,0 +1,21 @@
+id: phpinfo_keyword
+info:
+  name: phpinfo_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpinfo"
+        words:
+          - "<title>phpinfo"
+          - "Virtual Directory Support"
+        condition: and

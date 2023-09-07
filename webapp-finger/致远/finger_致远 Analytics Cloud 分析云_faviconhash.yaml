@@ -1,0 +1,19 @@
+id: zhi_yuan_Analytics_Cloud_fen_xi_yun_faviconhash
+info:
+  name: 致远 Analytics Cloud 分析云_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "致远 Analytics Cloud 分析云"
+        dsl:
+          - "mmh3(base64_py(body)) == \"410106848\""
+        condition: or

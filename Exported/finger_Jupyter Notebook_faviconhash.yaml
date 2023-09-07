@@ -1,0 +1,19 @@
+id: Jupyter_Notebook_faviconhash
+info:
+  name: Jupyter Notebook_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Jupyter Notebook"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-895963602\""
+        condition: or

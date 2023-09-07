@@ -1,0 +1,19 @@
+id: CenturyLink_Modem_GUI_Login_eg_Technicolor_faviconhash
+info:
+  name: CenturyLink Modem GUI Login (eg- Technicolor)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "CenturyLink Modem GUI Login (eg- Technicolor)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1908556829\""
+        condition: or

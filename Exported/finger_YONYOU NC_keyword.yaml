@@ -1,0 +1,28 @@
+id: YONYOU_NC_keyword
+info:
+  name: YONYOU NC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YONYOU NC"
+        words:
+          - "uclient.yonyou.com"
+          - "UClient"
+        condition: and
+      - type: word
+        part: body
+        name: "YONYOU NC"
+        words:
+          - "YONYOU NC"
+          - "img/logo_small.ico"
+        condition: and

@@ -1,0 +1,28 @@
+id: shen_xin_fu_waf_keyword
+info:
+  name: 深信服 waf_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服 waf"
+        words:
+          - "rsa.js"
+          - "commonFunction.js"
+        condition: and
+      - type: word
+        part: body
+        name: "深信服 waf"
+        words:
+          - "Redirect to..."
+          - "/LogInOut.php"
+        condition: and

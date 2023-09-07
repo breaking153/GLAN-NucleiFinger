@@ -1,0 +1,19 @@
+id: Saia_Burgess_Controls_PCD_faviconhash
+info:
+  name: Saia Burgess Controls – PCD_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Saia Burgess Controls – PCD"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1547576879\""
+        condition: or

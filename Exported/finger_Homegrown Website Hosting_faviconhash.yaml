@@ -1,0 +1,19 @@
+id: Homegrown_Website_Hosting_faviconhash
+info:
+  name: Homegrown Website Hosting_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Homegrown Website Hosting"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-421986013\""
+        condition: or

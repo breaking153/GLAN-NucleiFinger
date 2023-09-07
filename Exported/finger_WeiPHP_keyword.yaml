@@ -1,0 +1,22 @@
+id: WeiPHP_keyword
+info:
+  name: WeiPHP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "WeiPHP"
+        words:
+          - "weiphp.css"
+          - "weiphp"
+          - "Public/static"
+        condition: and

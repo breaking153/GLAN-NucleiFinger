@@ -1,0 +1,22 @@
+id: wangyu-acm-detect
+
+info:
+  name: wangyu-acm-detect
+  author: GLAN
+  severity: info
+  description: wangyu-acm-detect[2023]
+  tags: tech,wangyu
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Leadsec ACM'

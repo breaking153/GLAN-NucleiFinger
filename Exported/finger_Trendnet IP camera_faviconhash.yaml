@@ -1,0 +1,19 @@
+id: Trendnet_IP_camera_faviconhash
+info:
+  name: Trendnet IP camera_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Trendnet IP camera"
+        dsl:
+          - "mmh3(base64_py(body)) == \"512590457\""
+        condition: or

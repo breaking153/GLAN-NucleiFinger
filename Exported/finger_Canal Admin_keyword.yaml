@@ -1,0 +1,21 @@
+id: Canal_Admin_keyword
+info:
+  name: Canal Admin_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Canal Admin"
+        words:
+          - "Canal Admin"
+          - "js/app"
+        condition: and

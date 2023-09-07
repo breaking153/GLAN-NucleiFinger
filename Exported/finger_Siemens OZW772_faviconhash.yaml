@@ -1,0 +1,19 @@
+id: Siemens_OZW772_faviconhash
+info:
+  name: Siemens OZW772_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Siemens OZW772"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-336242473\""
+        condition: or

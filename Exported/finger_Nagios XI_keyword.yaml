@@ -1,0 +1,22 @@
+id: Nagios_XI_keyword
+info:
+  name: Nagios XI_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nagios XI"
+        words:
+          - "Nagios XI"
+          - "nagiosxi"
+          - "Nagios"
+        condition: and

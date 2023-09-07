@@ -1,0 +1,22 @@
+id: VMware_vCenter_keyword
+info:
+  name: VMware vCenter_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMware vCenter"
+        words:
+          - "VMware"
+          - "ID_VISDK"
+          - "download"
+        condition: and

@@ -1,0 +1,27 @@
+id: Shiro_keyword
+info:
+  name: Shiro_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    
+    redirects: true
+    matchers:
+      - type: word
+        part: header
+        name: "Shiro"
+        words:
+          - "rememberMe="
+        condition: and
+      - type: word
+        part: header
+        name: "Shiro"
+        words:
+          - "=deleteMe"
+        condition: and

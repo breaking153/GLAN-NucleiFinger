@@ -1,0 +1,23 @@
+id: Airwatch_faviconhash
+info:
+  name: Airwatch_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Airwatch"
+        dsl:
+          - "mmh3(base64_py(body)) == \"321909464\""
+          - "mmh3(base64_py(body)) == \"-1153873472\""
+          - "mmh3(base64_py(body)) == \"1095915848\""
+          - "mmh3(base64_py(body)) == \"788771792\""
+          - "mmh3(base64_py(body)) == \"-1863663974\""
+        condition: or

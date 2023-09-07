@@ -1,0 +1,21 @@
+id: CAS_dan_dian_deng_lu_keyword
+info:
+  name: CAS 单点登录_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CAS 单点登录"
+        words:
+          - "Central Authentication Service"
+          - "cas/login"
+        condition: and

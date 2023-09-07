@@ -1,0 +1,19 @@
+id: Surfilter_SSL_VPN_Portal_faviconhash
+info:
+  name: Surfilter SSL VPN Portal_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Surfilter SSL VPN Portal"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-590892202\""
+        condition: or

@@ -1,0 +1,19 @@
+id: SpamExperts_faviconhash
+info:
+  name: SpamExperts_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "SpamExperts"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1688698891\""
+        condition: or

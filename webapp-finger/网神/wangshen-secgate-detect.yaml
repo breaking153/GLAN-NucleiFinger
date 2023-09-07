@@ -1,0 +1,25 @@
+id: wangshen-secgate-detect
+
+info:
+  name: wangshen-secgate-detect
+  author: GLAN
+  severity: info
+  description: wangshen-secgate-detect[2023]
+  tags: tech,wangshen,secgate 
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'css/lsec/login.css'
+      - type: status
+        status:
+          - 200

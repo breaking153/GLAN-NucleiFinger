@@ -1,0 +1,19 @@
+id: macOS_Server_Apple_faviconhash
+info:
+  name: macOS Server (Apple)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "macOS Server (Apple)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1629518721\""
+        condition: or

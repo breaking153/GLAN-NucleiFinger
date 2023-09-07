@@ -1,0 +1,25 @@
+id: vsecure-edr-detect
+
+info:
+  name: vsecure-edr-detect
+  author: GLAN
+  severity: info
+  description: vsecure-edr-detect[2023]
+  tags: tech,vsecure 
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'styles/js/cfg/cfg_login.js'
+      - type: status
+        status:
+          - 200

@@ -1,0 +1,28 @@
+id: ACTI_shi_pin_jian_kong_keyword
+info:
+  name: ACTI 视频监控_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ACTI 视频监控"
+        words:
+          - "/cgi-bin/system?SYSTEM_INFO"
+          - "/cgi-bin/system?"
+        condition: and
+      - type: word
+        part: body
+        name: "ACTI 视频监控"
+        words:
+          - "Web Configurator"
+          - "images/header_logo.jpg"
+        condition: and

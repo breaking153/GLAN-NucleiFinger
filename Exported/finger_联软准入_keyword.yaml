@@ -1,0 +1,22 @@
+id: lian_ruan_zhun_ru_keyword
+info:
+  name: 联软准入_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "联软准入"
+        words:
+          - "网络准入"
+          - "leagsoft"
+          - "redirect"
+        condition: and

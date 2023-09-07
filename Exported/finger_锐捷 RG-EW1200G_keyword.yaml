@@ -1,0 +1,22 @@
+id: rui_jie_RG_EW1200G_keyword
+info:
+  name: 锐捷 RG-EW1200G_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "锐捷 RG-EW1200G"
+        words:
+          - "锐捷"
+          - "/static/img/title.ico"
+          - "/js/app"
+        condition: and

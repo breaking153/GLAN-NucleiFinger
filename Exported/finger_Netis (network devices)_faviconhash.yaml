@@ -1,0 +1,19 @@
+id: Netis_network_devices_faviconhash
+info:
+  name: Netis (network devices)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Netis (network devices)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-594256627\""
+        condition: or

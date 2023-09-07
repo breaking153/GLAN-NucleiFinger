@@ -1,0 +1,19 @@
+id: OkoFEN_Pellematic_faviconhash
+info:
+  name: OkoFEN Pellematic_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "OkoFEN Pellematic"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-625364318\""
+        condition: or

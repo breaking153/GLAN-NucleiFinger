@@ -1,0 +1,19 @@
+id: Universite_Toulouse_1_Capitole_faviconhash
+info:
+  name: Universite Toulouse 1 Capitole_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Universite Toulouse 1 Capitole"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1632780968\""
+        condition: or

@@ -1,0 +1,20 @@
+id: xin_dian_OA_keyword
+info:
+  name: 新点OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "新点OA"
+        words:
+          - "href=\"新点助手工具包.exe\""
+        condition: and

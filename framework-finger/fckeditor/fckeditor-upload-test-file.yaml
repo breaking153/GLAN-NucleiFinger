@@ -1,0 +1,44 @@
+id: fckeditor-upload-test-file
+
+info:
+  name: fckeditor-upload-test-file
+  author: GLAN
+  severity: low
+  tags: tech,fckeditor
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/connectors/test.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/upload/test.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/connectors/test.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/connectors/uploadtest.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/_samples/default.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/_samples/asp/sample01.asp"
+      - "{{RootURL}}{{Path}}/FCKeditor/_samples/asp/sample02.asp"
+      - "{{RootURL}}{{Path}}/FCKeditor/_samples/asp/sample03.asp"
+      - "{{RootURL}}{{Path}}/FCKeditor/_samples/asp/sample04.asp"
+      - "{{RootURL}}{{Path}}/FCKeditor/_samples/default.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/fckeditor.htm"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/fckdialog.html"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/connectors/asp/connector.asp?Command=GetFoldersAndFiles&Type=Image&CurrentFolder=/"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/connectors/php/connector.php?Command=GetFoldersAndFiles&Type=Image&CurrentFolder=/"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/connectors/aspx/connector.aspx?Command=GetFoldersAndFiles&Type=Image&CurrentFolder=/"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/connectors/jsp/connector.jsp?Command=GetFoldersAndFiles&Type=Image&CurrentFolder=/"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector={{Scheme}}://{{RootURL}}{{Path}}/fckeditor/editor/filemanager/connectors/php/connector.php"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector={{Scheme}}://{{RootURL}}{{Path}}/fckeditor/editor/filemanager/connectors/asp/connector.asp"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector={{Scheme}}://{{RootURL}}{{Path}}/fckeditor/editor/filemanager/connectors/aspx/connector.aspx"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector={{Scheme}}://{{RootURL}}{{Path}}/fckeditor/editor/filemanager/connectors/jsp/connector.jsp"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/browser.html?type=Image&connector=connectors/asp/connector.asp"
+      - "{{RootURL}}{{Path}}/FCKeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector=connectors/jsp/connector.jsp"
+      - "{{RootURL}}{{Path}}/fckeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector=connectors/aspx/connector.Aspx"
+      - "{{RootURL}}{{Path}}/fckeditor/editor/filemanager/browser/default/browser.html?Type=Image&Connector=connectors/php/connector.php"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'fckeditor'
+      - type: status
+        status:
+          - 200

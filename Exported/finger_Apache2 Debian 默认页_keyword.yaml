@@ -1,0 +1,22 @@
+id: Apache2_Debian_mo_ren_ye_keyword
+info:
+  name: Apache2 Debian 默认页_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache2 Debian 默认页"
+        words:
+          - "Apache2 Debian Default"
+          - "It works!"
+          - "Debian Logo"
+        condition: and

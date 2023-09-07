@@ -1,0 +1,21 @@
+id: Joomla_faviconhash
+info:
+  name: Joomla_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Joomla"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1627330242\""
+          - "mmh3(base64_py(body)) == \"-1950415971\""
+          - "mmh3(base64_py(body)) == \"366524387\""
+        condition: or

@@ -1,0 +1,22 @@
+id: H3C_ER6300G2_keyword
+info:
+  name: H3C ER6300G2_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C ER6300G2"
+        words:
+          - "ER6300G2"
+          - "h3c.com"
+          - "login"
+        condition: and

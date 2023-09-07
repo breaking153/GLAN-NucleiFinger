@@ -1,0 +1,27 @@
+id: esxi-detect
+
+info:
+  name: esxi-Detect
+  author: Adam Crosser
+  severity: info
+  description: Detects esxi
+  tags: tech,vmware,finger 
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/ui"
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '<html class="no-js vui-layout-html" ng-app="esxUiApp">'
+          - "<meta http-equiv=\"refresh\" content=\"0;URL='/ui'\"/>"

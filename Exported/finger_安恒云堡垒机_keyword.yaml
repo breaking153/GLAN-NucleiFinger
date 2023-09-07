@@ -1,0 +1,21 @@
+id: an_heng_yun_bao_lei_ji_keyword
+info:
+  name: 安恒云堡垒机_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "安恒云堡垒机"
+        words:
+          - "DBAPPSecurity"
+          - "安恒云堡垒机"
+        condition: and

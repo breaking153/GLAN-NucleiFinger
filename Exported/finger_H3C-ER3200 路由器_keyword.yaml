@@ -1,0 +1,22 @@
+id: H3C_ER3200_lu_you_qi_keyword
+info:
+  name: H3C-ER3200 路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C-ER3200 路由器"
+        words:
+          - "ER3200"
+          - "home.asp"
+          - "h3c.com"
+        condition: and

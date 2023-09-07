@@ -1,0 +1,19 @@
+id: BIG_IP_faviconhash
+info:
+  name: BIG-IP_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "BIG-IP"
+        dsl:
+          - "mmh3(base64_py(body)) == \"878647854\""
+        condition: or

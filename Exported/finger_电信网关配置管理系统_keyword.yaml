@@ -1,0 +1,21 @@
+id: dian_xin_wang_guan_pei_zhi_guan_li_xi_tong_keyword
+info:
+  name: 电信网关配置管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "电信网关配置管理系统"
+        words:
+          - "src=\"img/dl.gif\""
+          - "<TITLE>系统登录</TITLE>"
+        condition: and

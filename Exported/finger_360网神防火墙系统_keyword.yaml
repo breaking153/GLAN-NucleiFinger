@@ -1,0 +1,22 @@
+id: 360_wang_shen_fang_huo_qiang_xi_tong_keyword
+info:
+  name: 360网神防火墙系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "360网神防火墙系统"
+        words:
+          - "resources/image/logo_header.png"
+          - "360"
+          - "网神防火墙系统"
+        condition: and

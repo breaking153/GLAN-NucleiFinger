@@ -1,0 +1,19 @@
+id: UPC_Ceska_Republica_Network_faviconhash
+info:
+  name: UPC Ceska Republica (Network)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "UPC Ceska Republica (Network)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1911253822\""
+        condition: or

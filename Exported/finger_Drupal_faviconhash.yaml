@@ -1,0 +1,21 @@
+id: Drupal_faviconhash
+info:
+  name: Drupal_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Drupal"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-167656799\""
+          - "mmh3(base64_py(body)) == \"1174841451\""
+          - "mmh3(base64_py(body)) == \"1747282642\""
+        condition: or

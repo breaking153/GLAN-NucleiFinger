@@ -1,0 +1,22 @@
+id: Kyan_jian_kong_she_bei_keyword
+info:
+  name: Kyan 监控设备_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Kyan 监控设备"
+        words:
+          - "login_files"
+          - "platform"
+          - "欢迎登陆系统"
+        condition: and

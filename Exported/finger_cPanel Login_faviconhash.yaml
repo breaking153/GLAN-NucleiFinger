@@ -1,0 +1,21 @@
+id: cPanel_Login_faviconhash
+info:
+  name: cPanel Login_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "cPanel Login"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1993518473\""
+          - "mmh3(base64_py(body)) == \"1544230796\""
+          - "mmh3(base64_py(body)) == \"1244636413\""
+        condition: or

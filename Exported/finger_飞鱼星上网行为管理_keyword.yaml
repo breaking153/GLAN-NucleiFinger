@@ -1,0 +1,22 @@
+id: fei_yu_xing_shang_wang_xing_wei_guan_li_keyword
+info:
+  name: 飞鱼星上网行为管理_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "飞鱼星上网行为管理"
+        words:
+          - "css/R1Login.css"
+          - "share.ti_username"
+          - "login_logo"
+        condition: and

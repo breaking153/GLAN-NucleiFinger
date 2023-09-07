@@ -1,0 +1,20 @@
+id: KeyHelp_Keyweb_AG_faviconhash
+info:
+  name: KeyHelp (Keyweb AG)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "KeyHelp (Keyweb AG)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1267819858\""
+          - "mmh3(base64_py(body)) == \"726817668\""
+        condition: or

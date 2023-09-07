@@ -1,0 +1,19 @@
+id: Spiceworks_panel_faviconhash
+info:
+  name: Spiceworks (panel)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Spiceworks (panel)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-2117390767\""
+        condition: or

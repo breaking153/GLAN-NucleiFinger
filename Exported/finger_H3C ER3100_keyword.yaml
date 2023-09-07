@@ -1,0 +1,22 @@
+id: H3C_ER3100_keyword
+info:
+  name: H3C ER3100_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C ER3100"
+        words:
+          - "ER3100"
+          - "h3c.com"
+          - "login"
+        condition: and

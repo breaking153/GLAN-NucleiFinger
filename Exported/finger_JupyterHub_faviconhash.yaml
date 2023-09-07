@@ -1,0 +1,19 @@
+id: JupyterHub_faviconhash
+info:
+  name: JupyterHub_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "JupyterHub"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1248917303\""
+        condition: or

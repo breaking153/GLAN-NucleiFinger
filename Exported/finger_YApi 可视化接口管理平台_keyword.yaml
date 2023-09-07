@@ -1,0 +1,23 @@
+id: YApi_ke_shi_hua_jie_kou_guan_li_ping_tai_keyword
+info:
+  name: YApi 可视化接口管理平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "YApi 可视化接口管理平台"
+        words:
+          - "YApi"
+          - "id=\"yapi\""
+          - "prd"
+          - "可视化接口管理平台"
+        condition: and

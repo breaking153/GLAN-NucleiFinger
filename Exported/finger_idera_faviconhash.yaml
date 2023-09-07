@@ -1,0 +1,19 @@
+id: idera_faviconhash
+info:
+  name: idera_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "idera"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-450254253\""
+        condition: or

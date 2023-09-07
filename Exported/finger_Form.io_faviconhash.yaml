@@ -1,0 +1,19 @@
+id: Form_io_faviconhash
+info:
+  name: Form.io_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Form.io"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1319699698\""
+        condition: or

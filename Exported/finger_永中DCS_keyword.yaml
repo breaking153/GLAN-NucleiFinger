@@ -1,0 +1,21 @@
+id: yong_zhong_DCS_keyword
+info:
+  name: 永中DCS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "永中DCS"
+        words:
+          - "<title>永中文档在线预览DCS</title>"
+          - "www.yozodcs.com"
+        condition: and

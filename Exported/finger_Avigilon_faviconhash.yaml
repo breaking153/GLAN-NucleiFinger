@@ -1,0 +1,19 @@
+id: Avigilon_faviconhash
+info:
+  name: Avigilon_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Avigilon"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1318124267\""
+        condition: or

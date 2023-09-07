@@ -1,0 +1,25 @@
+id: yongyou-ksoa-detect
+
+info:
+  name: yongyou-ksoa-detect
+  author: Ryoma
+  severity: info
+  metadata:
+    verified: true
+    shodan-query: ecology_JSessionid
+    fofa-query: app="用友KSOA"
+  tags: ecology,tech,yongyou
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/login.jsp"
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "/images_index/productKSOA.jpg"
+      - type: status
+        status:
+          - 200

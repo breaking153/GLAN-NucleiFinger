@@ -1,0 +1,19 @@
+id: Netcom_Technology_faviconhash
+info:
+  name: Netcom Technology_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Netcom Technology"
+        dsl:
+          - "mmh3(base64_py(body)) == \"5471989\""
+        condition: or

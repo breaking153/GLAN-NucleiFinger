@@ -1,0 +1,19 @@
+id: zhi_yuan_OA_M1_Server_keyword
+info:
+  name: 致远OA M1 Server_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "致远OA M1 Server"
+        words:
+          - "<title>M1-Server"

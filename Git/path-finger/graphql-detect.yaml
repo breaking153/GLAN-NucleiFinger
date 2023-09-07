@@ -1,0 +1,161 @@
+id: graphql-detect
+
+info:
+  name: GraphQL API Detection
+  author: nkxxkn,elsfa7110,ofjaaah,exceed
+  severity: info
+  tags: tech,graphql
+  metadata:
+    max-request: 124
+
+http:
+  - method: POST
+    path:
+      - "{{RootURL}}{{Path}}/HyperGraphQL"
+      - "{{RootURL}}{{Path}}/___graphql"
+      - "{{RootURL}}{{Path}}/altair"
+      - "{{RootURL}}{{Path}}/api/cask/graphql-playground"
+      - "{{RootURL}}{{Path}}/api/graphql"
+      - "{{RootURL}}{{Path}}/api/graphql/v1"
+      - "{{RootURL}}{{Path}}/explorer"
+      - "{{RootURL}}{{Path}}/express-graphql"
+      - "{{RootURL}}{{Path}}/gql"
+      - "{{RootURL}}{{Path}}/graph"
+      - "{{RootURL}}{{Path}}/graph_cms"
+      - "{{RootURL}}{{Path}}/graphiql"
+      - "{{RootURL}}{{Path}}/graphiql.css"
+      - "{{RootURL}}{{Path}}/graphiql.js"
+      - "{{RootURL}}{{Path}}/graphiql.min.css"
+      - "{{RootURL}}{{Path}}/graphiql.min.js"
+      - "{{RootURL}}{{Path}}/graphiql.php"
+      - "{{RootURL}}{{Path}}/graphiql/finland"
+      - "{{RootURL}}{{Path}}/graphql"
+      - "{{RootURL}}{{Path}}/graphql-console"
+      - "{{RootURL}}{{Path}}/graphql-devtools"
+      - "{{RootURL}}{{Path}}/graphql-explorer"
+      - "{{RootURL}}{{Path}}/graphql-playground"
+      - "{{RootURL}}{{Path}}/graphql-playground-html"
+      - "{{RootURL}}{{Path}}/graphql.php"
+      - "{{RootURL}}{{Path}}/graphql/console"
+      - "{{RootURL}}{{Path}}/graphql/graphql-playground"
+      - "{{RootURL}}{{Path}}/graphql/schema.json"
+      - "{{RootURL}}{{Path}}/graphql/schema.xml"
+      - "{{RootURL}}{{Path}}/graphql/schema.yaml"
+      - "{{RootURL}}{{Path}}/graphql/v1"
+      - "{{RootURL}}{{Path}}/je/graphql"
+      - "{{RootURL}}{{Path}}/laravel-graphql-playground"
+      - "{{RootURL}}{{Path}}/playground"
+      - "{{RootURL}}{{Path}}/portal-graphql"
+      - "{{RootURL}}{{Path}}/query"
+      - "{{RootURL}}{{Path}}/query-api"
+      - "{{RootURL}}{{Path}}/query-explorer"
+      - "{{RootURL}}{{Path}}/query-laravel"
+      - "{{RootURL}}{{Path}}/sphinx-graphiql"
+      - "{{RootURL}}{{Path}}/subscriptions"
+      - "{{RootURL}}{{Path}}/v1"
+      - "{{RootURL}}{{Path}}/v1/altair"
+      - "{{RootURL}}{{Path}}/v1/api/graphql"
+      - "{{RootURL}}{{Path}}/v1/explorer"
+      - "{{RootURL}}{{Path}}/v1/graph"
+      - "{{RootURL}}{{Path}}/v1/graphiql"
+      - "{{RootURL}}{{Path}}/v1/graphiql.css"
+      - "{{RootURL}}{{Path}}/v1/graphiql.js"
+      - "{{RootURL}}{{Path}}/v1/graphiql.min.css"
+      - "{{RootURL}}{{Path}}/v1/graphiql.min.js"
+      - "{{RootURL}}{{Path}}/v1/graphiql.php"
+      - "{{RootURL}}{{Path}}/v1/graphiql/finland"
+      - "{{RootURL}}{{Path}}/v1/graphql"
+      - "{{RootURL}}{{Path}}/v1/graphql-explorer"
+      - "{{RootURL}}{{Path}}/v1/graphql.php"
+      - "{{RootURL}}{{Path}}/v1/graphql/console"
+      - "{{RootURL}}{{Path}}/v1/graphql/schema.json"
+      - "{{RootURL}}{{Path}}/v1/graphql/schema.xml"
+      - "{{RootURL}}{{Path}}/v1/graphql/schema.yaml"
+      - "{{RootURL}}{{Path}}/v1/playground"
+      - "{{RootURL}}{{Path}}/v1/subscriptions"
+      - "{{RootURL}}{{Path}}/v2"
+      - "{{RootURL}}{{Path}}/v2/altair"
+      - "{{RootURL}}{{Path}}/v2/api/graphql"
+      - "{{RootURL}}{{Path}}/v2/explorer"
+      - "{{RootURL}}{{Path}}/v2/graph"
+      - "{{RootURL}}{{Path}}/v2/graphiql"
+      - "{{RootURL}}{{Path}}/v2/graphiql.css"
+      - "{{RootURL}}{{Path}}/v2/graphiql.js"
+      - "{{RootURL}}{{Path}}/v2/graphiql.min.css"
+      - "{{RootURL}}{{Path}}/v2/graphiql.min.js"
+      - "{{RootURL}}{{Path}}/v2/graphiql.php"
+      - "{{RootURL}}{{Path}}/v2/graphiql/finland"
+      - "{{RootURL}}{{Path}}/v2/graphql"
+      - "{{RootURL}}{{Path}}/v2/graphql-explorer"
+      - "{{RootURL}}{{Path}}/v2/graphql.php"
+      - "{{RootURL}}{{Path}}/v2/graphql/console"
+      - "{{RootURL}}{{Path}}/v2/graphql/schema.json"
+      - "{{RootURL}}{{Path}}/v2/graphql/schema.xml"
+      - "{{RootURL}}{{Path}}/v2/graphql/schema.yaml"
+      - "{{RootURL}}{{Path}}/v2/playground"
+      - "{{RootURL}}{{Path}}/v2/subscriptions"
+      - "{{RootURL}}{{Path}}/v3"
+      - "{{RootURL}}{{Path}}/v3/altair"
+      - "{{RootURL}}{{Path}}/v3/api/graphql"
+      - "{{RootURL}}{{Path}}/v3/explorer"
+      - "{{RootURL}}{{Path}}/v3/graph"
+      - "{{RootURL}}{{Path}}/v3/graphiql"
+      - "{{RootURL}}{{Path}}/v3/graphiql.css"
+      - "{{RootURL}}{{Path}}/v3/graphiql.js"
+      - "{{RootURL}}{{Path}}/v3/graphiql.min.css"
+      - "{{RootURL}}{{Path}}/v3/graphiql.min.js"
+      - "{{RootURL}}{{Path}}/v3/graphiql.php"
+      - "{{RootURL}}{{Path}}/v3/graphiql/finland"
+      - "{{RootURL}}{{Path}}/v3/graphql"
+      - "{{RootURL}}{{Path}}/v3/graphql-explorer"
+      - "{{RootURL}}{{Path}}/v3/graphql.php"
+      - "{{RootURL}}{{Path}}/v3/graphql/console"
+      - "{{RootURL}}{{Path}}/v3/graphql/schema.json"
+      - "{{RootURL}}{{Path}}/v3/graphql/schema.xml"
+      - "{{RootURL}}{{Path}}/v3/graphql/schema.yaml"
+      - "{{RootURL}}{{Path}}/v3/playground"
+      - "{{RootURL}}{{Path}}/v3/subscriptions"
+      - "{{RootURL}}{{Path}}/v4/altair"
+      - "{{RootURL}}{{Path}}/v4/api/graphql"
+      - "{{RootURL}}{{Path}}/v4/explorer"
+      - "{{RootURL}}{{Path}}/v4/graph"
+      - "{{RootURL}}{{Path}}/v4/graphiql"
+      - "{{RootURL}}{{Path}}/v4/graphiql.css"
+      - "{{RootURL}}{{Path}}/v4/graphiql.js"
+      - "{{RootURL}}{{Path}}/v4/graphiql.min.css"
+      - "{{RootURL}}{{Path}}/v4/graphiql.min.js"
+      - "{{RootURL}}{{Path}}/v4/graphiql.php"
+      - "{{RootURL}}{{Path}}/v4/graphiql/finland"
+      - "{{RootURL}}{{Path}}/v4/graphql"
+      - "{{RootURL}}{{Path}}/v4/graphql-explorer"
+      - "{{RootURL}}{{Path}}/v4/graphql.php"
+      - "{{RootURL}}{{Path}}/v4/graphql/console"
+      - "{{RootURL}}{{Path}}/v4/graphql/schema.json"
+      - "{{RootURL}}{{Path}}/v4/graphql/schema.xml"
+      - "{{RootURL}}{{Path}}/v4/graphql/schema.yaml"
+      - "{{RootURL}}{{Path}}/v4/playground"
+      - "{{RootURL}}{{Path}}/v4/subscriptions"
+
+    headers:
+      Content-Type: application/json
+
+    body: '{"query":"query IntrospectionQuery{__schema {queryType { name }}}"}'
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: regex
+        regex:
+          - "__schema"
+          - "(Introspection|INTROSPECTION|introspection).*?"
+          - ".*?operation not found.*?"
+        condition: or

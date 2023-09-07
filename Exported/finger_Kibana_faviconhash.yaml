@@ -1,0 +1,23 @@
+id: Kibana_faviconhash
+info:
+  name: Kibana_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Kibana"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-267431135\""
+          - "mmh3(base64_py(body)) == \"-759754862\""
+          - "mmh3(base64_py(body)) == \"-1200737715\""
+          - "mmh3(base64_py(body)) == \"75230260\""
+          - "mmh3(base64_py(body)) == \"1668183286\""
+        condition: or

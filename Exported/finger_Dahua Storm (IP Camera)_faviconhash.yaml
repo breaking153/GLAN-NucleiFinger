@@ -1,0 +1,20 @@
+id: Dahua_Storm_IP_Camera_faviconhash
+info:
+  name: Dahua Storm (IP Camera)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Dahua Storm (IP Camera)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2019488876\""
+          - "mmh3(base64_py(body)) == \"833190513\""
+        condition: or

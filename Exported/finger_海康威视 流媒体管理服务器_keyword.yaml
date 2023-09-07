@@ -1,0 +1,22 @@
+id: hai_kang_wei_shi_liu_mei_ti_guan_li_fu_wu_qi_keyword
+info:
+  name: 海康威视 流媒体管理服务器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "海康威视 流媒体管理服务器"
+        words:
+          - "流媒体管理服务器"
+          - "MSHTML"
+          - "login"
+        condition: and

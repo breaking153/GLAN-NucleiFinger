@@ -1,0 +1,19 @@
+id: bao_ta_BT_cn_faviconhash
+info:
+  name: 宝塔-BT.cn_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "宝塔-BT.cn"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-386189083\""
+        condition: or

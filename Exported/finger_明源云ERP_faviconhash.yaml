@@ -1,0 +1,19 @@
+id: ming_yuan_yun_ERP_faviconhash
+info:
+  name: 明源云ERP_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "明源云ERP"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-626335361\""
+        condition: or

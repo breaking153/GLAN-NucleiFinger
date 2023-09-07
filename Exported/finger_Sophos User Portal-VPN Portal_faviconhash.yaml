@@ -1,0 +1,19 @@
+id: Sophos_User_Portal_VPN_Portal_faviconhash
+info:
+  name: Sophos User Portal-VPN Portal_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Sophos User Portal-VPN Portal"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1045696447\""
+        condition: or

@@ -1,0 +1,25 @@
+id: wangshen-SecSSL-detect
+
+info:
+  name: wangshen-SecSSL-detect
+  author: GLAN
+  severity: info
+  description: wangshen-SecSSL-detect[2023]
+  tags: tech,wangshen,secssl 
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'fw/app_list.php'
+      - type: status
+        status:
+          - 200

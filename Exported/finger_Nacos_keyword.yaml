@@ -1,0 +1,20 @@
+id: Nacos_keyword
+info:
+  name: Nacos_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Nacos"
+        words:
+          - "<title>Nacos</title>"
+        condition: and

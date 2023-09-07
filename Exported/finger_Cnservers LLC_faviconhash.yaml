@@ -1,0 +1,19 @@
+id: Cnservers_LLC_faviconhash
+info:
+  name: Cnservers LLC_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Cnservers LLC"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-235701012\""
+        condition: or

@@ -1,0 +1,27 @@
+id: imo_yun_ban_gong_shi_keyword
+info:
+  name: imo云办公室_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "imo云办公室"
+        words:
+          - "<a title=\"imo云办公室\""
+        condition: and
+      - type: word
+        part: body
+        name: "imo云办公室"
+        words:
+          - "高效率网上办公平台"
+          - "imo_setup.exe"
+        condition: and

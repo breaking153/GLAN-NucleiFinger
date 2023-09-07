@@ -1,0 +1,19 @@
+id: Cake_PHP_faviconhash
+info:
+  name: Cake PHP_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Cake PHP"
+        dsl:
+          - "mmh3(base64_py(body)) == \"980692677\""
+        condition: or

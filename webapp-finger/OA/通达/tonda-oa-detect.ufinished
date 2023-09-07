@@ -1,0 +1,27 @@
+id: tonda-oa-detect
+
+info:
+  name: tonda-oa-detect
+  author: GLAn
+  severity: info
+  metadata:
+    verified: true
+    shodan-query: ecology_JSessionid
+    fofa-query: app="泛微-协同办公OA"
+  tags: ecology,tech,fanwei
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/join/ln.jsp"
+      - "{{RootURL}}/join/getSecurityInfo.jsp"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "ecology_JSessionid"
+      - type: status
+        status:
+          - 200

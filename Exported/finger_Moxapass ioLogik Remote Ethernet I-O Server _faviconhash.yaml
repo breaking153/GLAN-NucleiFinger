@@ -1,0 +1,19 @@
+id: Moxapass_ioLogik_Remote_Ethernet_I_O_Server_faviconhash
+info:
+  name: Moxapass ioLogik Remote Ethernet I-O Server _faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Moxapass ioLogik Remote Ethernet I-O Server "
+        dsl:
+          - "mmh3(base64_py(body)) == \"381100274\""
+        condition: or

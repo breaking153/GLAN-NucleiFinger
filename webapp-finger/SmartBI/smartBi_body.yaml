@@ -1,0 +1,21 @@
+id: smartBi_body
+
+info:
+  name: smartBi_body
+  author: GLAN
+  severity: info
+  tags: tech,smartbi
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "bof.baseajax.common.Application"
+      - type: status
+        status:
+          - 0

@@ -1,0 +1,21 @@
+id: phpshe_shang_cheng_xi_tong_keyword
+info:
+  name: phpshe 商城系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "phpshe 商城系统"
+        words:
+          - "Powered by phpshe"
+          - "include/js/global.js"
+        condition: and

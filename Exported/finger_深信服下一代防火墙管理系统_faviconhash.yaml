@@ -1,0 +1,19 @@
+id: shen_xin_fu_xia_yi_dai_fang_huo_qiang_guan_li_xi_tong_faviconhash
+info:
+  name: 深信服下一代防火墙管理系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "深信服下一代防火墙管理系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"123821839\""
+        condition: or

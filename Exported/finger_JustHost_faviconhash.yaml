@@ -1,0 +1,19 @@
+id: JustHost_faviconhash
+info:
+  name: JustHost_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "JustHost"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1734609466\""
+        condition: or

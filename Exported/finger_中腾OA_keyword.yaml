@@ -1,0 +1,22 @@
+id: zhong_teng_OA_keyword
+info:
+  name: 中腾OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中腾OA"
+        words:
+          - "systemAction"
+          - "zt_webframe"
+          - "login"
+        condition: and

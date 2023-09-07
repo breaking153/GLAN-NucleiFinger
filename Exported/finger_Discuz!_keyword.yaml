@@ -1,0 +1,22 @@
+id: Discuz_keyword
+info:
+  name: Discuz!_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Discuz!"
+        words:
+          - "Discuz!"
+          - "Comsenz"
+          - "cache/"
+        condition: and

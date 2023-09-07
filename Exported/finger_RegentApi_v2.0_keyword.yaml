@@ -1,0 +1,20 @@
+id: RegentApi_v2_0_keyword
+info:
+  name: RegentApi_v2.0_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RegentApi_v2.0"
+        words:
+          - "RegentApi_v2.0"
+        condition: and

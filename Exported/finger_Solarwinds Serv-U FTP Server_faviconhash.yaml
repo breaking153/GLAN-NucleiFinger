@@ -1,0 +1,19 @@
+id: Solarwinds_Serv_U_FTP_Server_faviconhash
+info:
+  name: Solarwinds Serv-U FTP Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Solarwinds Serv-U FTP Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"812385209\""
+        condition: or

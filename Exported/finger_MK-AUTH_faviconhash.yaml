@@ -1,0 +1,19 @@
+id: MK_AUTH_faviconhash
+info:
+  name: MK-AUTH_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "MK-AUTH"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1490343308\""
+        condition: or

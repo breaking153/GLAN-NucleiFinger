@@ -1,0 +1,19 @@
+id: zi_chan_deng_ta_xi_tong_faviconhash
+info:
+  name: 资产灯塔系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "资产灯塔系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1708240621\""
+        condition: or

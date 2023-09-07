@@ -1,0 +1,19 @@
+id: IBM_Server_faviconhash
+info:
+  name: IBM Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "IBM Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1726027799\""
+        condition: or

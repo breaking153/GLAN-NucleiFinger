@@ -1,0 +1,29 @@
+id: qun_hui_NAS_keyword
+info:
+  name: 群晖 NAS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "群晖 NAS"
+        words:
+          - "Synology"
+          - "webman/"
+        condition: and
+      - type: word
+        part: body
+        name: "群晖 NAS"
+        words:
+          - "DiskStation"
+          - "webman/modules"
+          - "NAS"
+        condition: and

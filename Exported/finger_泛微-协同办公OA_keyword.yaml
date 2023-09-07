@@ -1,0 +1,32 @@
+id: fan_wei_xie_tong_ban_gong_OA_keyword
+info:
+  name: 泛微-协同办公OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "泛微-协同办公OA"
+        words:
+          - "cloudstore/resource/pc/polyfill/polyfill.min.js"
+        condition: and
+      - type: word
+        part: body
+        name: "泛微-协同办公OA"
+        words:
+          - "wui/theme/ecology8/page/images/login/username_wev8.png"
+        condition: and
+      - type: word
+        part: body
+        name: "泛微-协同办公OA"
+        words:
+          - "/wui/index.html#/?logintype=1"
+        condition: and

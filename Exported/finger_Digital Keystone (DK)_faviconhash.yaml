@@ -1,0 +1,19 @@
+id: Digital_Keystone_DK_faviconhash
+info:
+  name: Digital Keystone (DK)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Digital Keystone (DK)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-373674173\""
+        condition: or

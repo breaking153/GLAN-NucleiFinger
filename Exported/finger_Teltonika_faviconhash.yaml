@@ -1,0 +1,20 @@
+id: Teltonika_faviconhash
+info:
+  name: Teltonika_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Teltonika"
+        dsl:
+          - "mmh3(base64_py(body)) == \"119741608\""
+          - "mmh3(base64_py(body)) == \"-1612496354\""
+        condition: or

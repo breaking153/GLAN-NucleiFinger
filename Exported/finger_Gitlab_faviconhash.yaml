@@ -1,0 +1,20 @@
+id: Gitlab_faviconhash
+info:
+  name: Gitlab_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Gitlab"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1278323681\""
+          - "mmh3(base64_py(body)) == \"516963061\""
+        condition: or

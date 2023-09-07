@@ -1,0 +1,19 @@
+id: 401_deng_lu_ren_zheng_keyword
+info:
+  name: 401 登陆认证_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "401 登陆认证"
+        words:
+          - "<title>401 Authorization"

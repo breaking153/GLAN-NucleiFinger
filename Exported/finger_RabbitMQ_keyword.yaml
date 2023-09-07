@@ -1,0 +1,20 @@
+id: RabbitMQ_keyword
+info:
+  name: RabbitMQ_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "RabbitMQ"
+        words:
+          - "<title>RabbitMQ Management</title>"
+        condition: and

@@ -1,0 +1,25 @@
+id: changjiet-tplus-detect
+
+info:
+  name: changjiet-tplus-detect
+  author: GLAN
+  severity: info
+  description: changjiet-tplus-detect[2023]
+  tags: tech,changjietong,tplus
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<script>location='/tplus/';</script>"
+      - type: status
+        status:
+          - 200

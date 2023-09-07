@@ -1,0 +1,37 @@
+id: thinkcmf_finger
+info:
+  name: thinkcmf_finger_request
+  author: GLAN
+  severity: info
+  tags: tech,thinkcmf
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/api.php"
+      - "{{RootURL}}{{Path}}/public/api.php"
+    cookie-reuse: true
+    matchers:
+      - type: word
+        name: thinkcmf-api
+        words:
+          - "thinkcmf"
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/static/js/frontend.js"
+      - "{{RootURL}}{{Path}}/public/static/js/frontend.js"
+    cookie-reuse: true
+    matchers:
+      - type: word
+        name: thinkcmf-js
+        words:
+          - "CMF "
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/admin"
+    cookie-reuse: true
+    redirects: true
+    matchers:
+      - type: word
+        name: thinkcmf-admin
+        words:
+          - "action=\"/admin/public/dologin.html\""

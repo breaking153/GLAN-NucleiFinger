@@ -1,0 +1,22 @@
+id: wang_shen_SecGate_3600_fang_huo_qiang_keyword
+info:
+  name: 网神SecGate 3600防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "网神SecGate 3600防火墙"
+        words:
+          - "网神SecGate"
+          - "3600防火墙"
+          - "css/lsec/login.css"
+        condition: and

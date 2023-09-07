@@ -1,0 +1,20 @@
+id: rui_qu_gong_zuo_liu_xi_tong_keyword
+info:
+  name: 锐取工作流系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "锐取工作流系统"
+        words:
+          - "<title>深圳锐取工作流系统</title>"
+        condition: and

@@ -1,0 +1,22 @@
+id: shan_shi_wang_ke_fang_huo_qiang_keyword
+info:
+  name: 山石网科 防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "山石网科 防火墙"
+        words:
+          - "Hillstone"
+          - "licenseAggrement"
+          - "GLOBAL_CONFIG.js"
+        condition: and

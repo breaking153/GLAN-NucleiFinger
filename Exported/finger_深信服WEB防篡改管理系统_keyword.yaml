@@ -1,0 +1,21 @@
+id: shen_xin_fu_WEB_fang_cuan_gai_guan_li_xi_tong_keyword
+info:
+  name: 深信服WEB防篡改管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服WEB防篡改管理系统"
+        words:
+          - "WEB防篡改"
+          - "cgi-bin/tamper_admin.cgi"
+        condition: and

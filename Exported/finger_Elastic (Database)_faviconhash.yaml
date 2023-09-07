@@ -1,0 +1,20 @@
+id: Elastic_Database_faviconhash
+info:
+  name: Elastic (Database)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Elastic (Database)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1611729805\""
+          - "mmh3(base64_py(body)) == \"1552860581\""
+        condition: or

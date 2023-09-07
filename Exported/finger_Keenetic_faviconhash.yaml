@@ -1,0 +1,19 @@
+id: Keenetic_faviconhash
+info:
+  name: Keenetic_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Keenetic"
+        dsl:
+          - "mmh3(base64_py(body)) == \"547282364\""
+        condition: or

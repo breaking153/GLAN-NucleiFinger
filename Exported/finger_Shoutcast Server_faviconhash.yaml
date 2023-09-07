@@ -1,0 +1,19 @@
+id: Shoutcast_Server_faviconhash
+info:
+  name: Shoutcast Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Shoutcast Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-632583950\""
+        condition: or

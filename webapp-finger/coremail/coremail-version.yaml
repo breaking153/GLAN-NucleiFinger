@@ -1,0 +1,22 @@
+id: coremail-version-leak
+info:
+  name: coremail-version-leak
+  author: GLAN
+  severity: info
+  tags: tech,coremail
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/coremail/s/json?func=verify"
+    redirects: true
+    cookie-reuse: true
+    matchers:
+      - type: word
+        words:
+          - '"code":"S_OK",'
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - "\"version\":\"(.*)?\""
+        group: 1

@@ -1,0 +1,73 @@
+id: bao_ta_BT_cn_keyword
+info:
+  name: 宝塔-BT.cn_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "入口校验失败"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "没有找到站点"
+          - "可能原因"
+          - "CDN产品"
+          - "Web服务"
+          - "检查端口是否正确"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "<title>恭喜，站点创建成功"
+          - "面板系统后台"
+          - "系统自动生成"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "扫码登录更安全"
+          - "bt.cn"
+          - "/login"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "站点创建成功"
+          - "bt.cn"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "站点创建成功"
+          - "宝塔"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "宝塔Linux面板"
+        condition: and
+      - type: word
+        part: body
+        name: "宝塔-BT.cn"
+        words:
+          - "<title>入口校验失败</title>"
+          - "href=\"http://www.bt.cn/bbs\""
+        condition: and

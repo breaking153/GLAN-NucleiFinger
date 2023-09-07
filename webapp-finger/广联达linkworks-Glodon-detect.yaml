@@ -1,0 +1,22 @@
+id: Glodon-linkworks-detect
+
+info:
+  name: Glodon-linkworks-detect
+  author: GLAN
+  severity: info
+  description: Glodon-linkworks-detect.
+  tags: tech,jinhe
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '/Services/Identification/Server/'

@@ -1,0 +1,19 @@
+id: JBoss_Application_Server_7_faviconhash
+info:
+  name: JBoss Application Server 7_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "JBoss Application Server 7"
+        dsl:
+          - "mmh3(base64_py(body)) == \"937999361\""
+        condition: or

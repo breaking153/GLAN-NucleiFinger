@@ -1,0 +1,19 @@
+id: Rumpus_faviconhash
+info:
+  name: Rumpus_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Rumpus"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1528414776\""
+        condition: or

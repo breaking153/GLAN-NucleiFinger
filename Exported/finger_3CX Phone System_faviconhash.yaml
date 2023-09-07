@@ -1,0 +1,23 @@
+id: 3CX_Phone_System_faviconhash
+info:
+  name: 3CX Phone System_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+  metadata:
+    max-request: 1
+    plugin_namespace: black-studio-tinymce-widget
+  
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "3CX Phone System"
+        dsl:
+          - "mmh3(base64_py(body)) == \"970132176\""
+        condition: or

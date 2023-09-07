@@ -1,0 +1,44 @@
+id: telerik-dialoghandler-detect
+
+info:
+  name: Detect Telerik Web UI Dialog Handler
+  author: organiccrap,zhenwarx,nielsing
+  severity: info
+  description: This template detects the Telerik Web UI Dialog Handler.
+  reference:
+    - https://captmeelo.com/pentest/2018/08/03/pwning-with-telerik.html
+    - https://github.com/bao7uo/dp_crypto
+  tags: tech,telerik,asp
+  metadata:
+    max-request: 17
+
+http:
+  - method: GET
+    path:
+      - '{{RootURL}}{{Path}}/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/desktopmodules/telerikwebui/radeditorprovider/telerik.web.ui.dialoghandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/desktopmodules/dnnwerk.radeditorprovider/dialoghandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/DesktopModules/Admin/RadEditorProvider/DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/DesktopModule/UIQuestionControls/UIAskQuestion/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/Modules/CMS/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/Admin/ServerSide/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/DesktopModules/TNComments/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/Providers/HtmlEditorProviders/Telerik/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/App_Master/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/common/admin/PhotoGallery2/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/common/admin/Jobs2/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/AsiCommon/Controls/ContentManagement/ContentDesigner/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/common/admin/Calendar/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/cms/portlets/Telerik.Web.UI.DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/dashboard/UserControl/CMS/Page/Telerik.Web.UI.DialogHandler.aspx/Desktopmodules/Admin/dnnWerk.Users/DialogHandler.aspx?dp=1'
+      - '{{RootURL}}{{Path}}/Telerik.Web.UI.DialogHandler.axd?dp=1'
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - 'Invalid length for a Base-64 char array'

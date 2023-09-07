@@ -1,0 +1,22 @@
+id: milesight-vpn-detect
+
+info:
+  name: milesight-vpn-detect
+  author: GLAN
+  severity: info
+  description: milesight-vpn-detect.
+  tags: tech,milesight
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '<span class="title">MilesightVPN</span>'

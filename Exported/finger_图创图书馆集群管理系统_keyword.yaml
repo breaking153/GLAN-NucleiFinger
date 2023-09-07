@@ -1,0 +1,21 @@
+id: tu_chuang_tu_shu_guan_ji_qun_guan_li_xi_tong_keyword
+info:
+  name: 图创图书馆集群管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "图创图书馆集群管理系统"
+        words:
+          - "interlib/common/"
+          - "self.location.href"
+        condition: and

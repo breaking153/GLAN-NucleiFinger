@@ -1,0 +1,19 @@
+id: ClaimTime_Ramsell_Public_Health_Safety_faviconhash
+info:
+  name: ClaimTime (Ramsell Public Health & Safety)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "ClaimTime (Ramsell Public Health & Safety)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-687783882\""
+        condition: or

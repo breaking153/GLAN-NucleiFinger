@@ -1,0 +1,22 @@
+id: wangyu-detect
+
+info:
+  name: wangyu-detect
+  author: GLAN
+  severity: info
+  description: wangyu-detect[2023]
+  tags: tech,wangyu
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '网御星云信息技术'

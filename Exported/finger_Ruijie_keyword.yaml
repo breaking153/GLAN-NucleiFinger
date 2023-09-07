@@ -1,0 +1,20 @@
+id: Ruijie_keyword
+info:
+  name: Ruijie_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Ruijie"
+        words:
+          - "4008 111 000"
+        condition: and

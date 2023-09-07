@@ -1,0 +1,19 @@
+id: Kerio_Connect_WebMail_faviconhash
+info:
+  name: Kerio Connect WebMail_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Kerio Connect WebMail"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1678298769\""
+        condition: or

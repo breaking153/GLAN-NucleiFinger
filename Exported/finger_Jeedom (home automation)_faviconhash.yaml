@@ -1,0 +1,19 @@
+id: Jeedom_home_automation_faviconhash
+info:
+  name: Jeedom (home automation)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Jeedom (home automation)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"462223993\""
+        condition: or

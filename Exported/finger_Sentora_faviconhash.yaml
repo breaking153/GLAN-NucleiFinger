@@ -1,0 +1,19 @@
+id: Sentora_faviconhash
+info:
+  name: Sentora_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Sentora"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-2054889066\""
+        condition: or

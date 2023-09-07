@@ -1,0 +1,21 @@
+id: Parallels_Plesk_Panel_faviconhash
+info:
+  name: Parallels Plesk Panel_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Parallels Plesk Panel"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-652508439\""
+          - "mmh3(base64_py(body)) == \"-519765377\""
+          - "mmh3(base64_py(body)) == \"-771764544\""
+        condition: or

@@ -1,0 +1,22 @@
+id: VMware_vRealize_Operations_Manager_keyword
+info:
+  name: VMware vRealize Operations Manager_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "VMware vRealize Operations Manager"
+        words:
+          - "vRealize"
+          - "VMware"
+          - "Identity Manager"
+        condition: and

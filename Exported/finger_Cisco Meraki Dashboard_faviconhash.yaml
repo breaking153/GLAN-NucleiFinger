@@ -1,0 +1,19 @@
+id: Cisco_Meraki_Dashboard_faviconhash
+info:
+  name: Cisco Meraki Dashboard_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Cisco Meraki Dashboard"
+        dsl:
+          - "mmh3(base64_py(body)) == \"804949239\""
+        condition: or

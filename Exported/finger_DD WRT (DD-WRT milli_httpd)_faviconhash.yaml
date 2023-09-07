@@ -1,0 +1,19 @@
+id: DD_WRT_DD_WRT_milli_httpd_faviconhash
+info:
+  name: DD WRT (DD-WRT milli_httpd)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "DD WRT (DD-WRT milli_httpd)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"252728887\""
+        condition: or

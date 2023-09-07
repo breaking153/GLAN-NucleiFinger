@@ -1,0 +1,26 @@
+id: jin_die_yun_xing_kong_keyword
+info:
+  name: 金蝶云星空_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金蝶云星空"
+        words:
+          - "HTML5/content/themes/kdcss.min.css"
+        condition: and
+      - type: word
+        part: body
+        name: "金蝶云星空"
+        words:
+          - "/ClientBin/Kingdee.BOS.XPF.App.xap"
+        condition: and

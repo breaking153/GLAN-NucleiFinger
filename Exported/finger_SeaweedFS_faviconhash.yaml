@@ -1,0 +1,19 @@
+id: SeaweedFS_faviconhash
+info:
+  name: SeaweedFS_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "SeaweedFS"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1210969935\""
+        condition: or

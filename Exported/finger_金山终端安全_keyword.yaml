@@ -1,0 +1,22 @@
+id: jin_shan_zhong_duan_an_quan_keyword
+info:
+  name: 金山终端安全_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金山终端安全"
+        words:
+          - "终端安全系统"
+          - "setup/kanclient.exe"
+          - "iepngfix/iepngfix_tilebg.js"
+        condition: and

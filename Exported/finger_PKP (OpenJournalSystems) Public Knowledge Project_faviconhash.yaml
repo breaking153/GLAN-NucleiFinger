@@ -1,0 +1,19 @@
+id: PKP_OpenJournalSystems_Public_Knowledge_Project_faviconhash
+info:
+  name: PKP (OpenJournalSystems) Public Knowledge Project_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "PKP (OpenJournalSystems) Public Knowledge Project"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2099342476\""
+        condition: or

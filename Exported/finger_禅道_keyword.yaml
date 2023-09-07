@@ -1,0 +1,27 @@
+id: shan_dao_keyword
+info:
+  name: 禅道_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "禅道"
+        words:
+          - "self.location"
+          - "Lw=="
+        condition: and
+      - type: word
+        part: body
+        name: "禅道"
+        words:
+          - "/theme/default/images/main/zt-logo.png"
+        condition: and

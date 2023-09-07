@@ -1,0 +1,21 @@
+id: AWS_S3_Bucket_keyword
+info:
+  name: AWS S3 Bucket_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "AWS S3 Bucket"
+        words:
+          - "InvalidBucketName"
+          - "aliyuncs"
+        condition: and

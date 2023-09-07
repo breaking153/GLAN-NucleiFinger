@@ -1,0 +1,22 @@
+id: ManageEngine_ADManager_Plus_keyword
+info:
+  name: ManageEngine ADManager Plus_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "ManageEngine ADManager Plus"
+        words:
+          - "ADManager"
+          - "Hashtable.js"
+          - "ManageEngine"
+        condition: and

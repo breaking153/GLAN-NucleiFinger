@@ -1,0 +1,21 @@
+id: XXL_JOB_keyword
+info:
+  name: XXL-JOB_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "XXL-JOB"
+        words:
+          - "static/js/login.1.js"
+          - "任务调度中心"
+        condition: and

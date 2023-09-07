@@ -1,0 +1,20 @@
+id: e_mobile_keyword
+info:
+  name: e-mobile_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "e-mobile"
+        words:
+          - "weaver,e-mobile"
+        condition: and

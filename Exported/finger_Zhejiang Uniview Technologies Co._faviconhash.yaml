@@ -1,0 +1,19 @@
+id: Zhejiang_Uniview_Technologies_Co_faviconhash
+info:
+  name: Zhejiang Uniview Technologies Co._faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Zhejiang Uniview Technologies Co."
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1240222446\""
+        condition: or

@@ -1,0 +1,29 @@
+id: iomega_NAS_faviconhash
+info:
+  name: iomega NAS_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "iomega NAS"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-689902428\""
+          - "mmh3(base64_py(body)) == \"-600508822\""
+          - "mmh3(base64_py(body)) == \"656868270\""
+          - "mmh3(base64_py(body)) == \"-2056503929\""
+          - "mmh3(base64_py(body)) == \"-1656695885\""
+          - "mmh3(base64_py(body)) == \"331870709\""
+          - "mmh3(base64_py(body)) == \"1241049726\""
+          - "mmh3(base64_py(body)) == \"998138196\""
+          - "mmh3(base64_py(body)) == \"322531336\""
+          - "mmh3(base64_py(body)) == \"-401934945\""
+          - "mmh3(base64_py(body)) == \"-613216179\""
+        condition: or

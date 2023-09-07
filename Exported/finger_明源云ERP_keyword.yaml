@@ -1,0 +1,19 @@
+id: ming_yuan_yun_ERP_keyword
+info:
+  name: 明源云ERP_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "明源云ERP"
+        words:
+          - "<title>明源云ERP"

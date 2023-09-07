@@ -1,0 +1,19 @@
+id: TCN_faviconhash
+info:
+  name: TCN_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "TCN"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-702384832\""
+        condition: or

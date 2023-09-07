@@ -1,0 +1,21 @@
+id: wang_yu_vpn_keyword
+info:
+  name: 网御 vpn_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "网御 vpn"
+        words:
+          - "/vpn/common/js/leadsec.js"
+          - "/vpn/user/common/custom/auth_home.css"
+        condition: and

@@ -1,0 +1,22 @@
+id: hao_shi_tong_shi_pin_hui_yi_xi_tong_keyword
+info:
+  name: 好视通视频会议系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "好视通视频会议系统"
+        words:
+          - "用户登录"
+          - "resources/commonImage/favicon.ico"
+          - "login/createQRCode.do"
+        condition: and

@@ -1,0 +1,19 @@
+id: ALIBI_NVR_faviconhash
+info:
+  name: ALIBI NVR_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "ALIBI NVR"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1876585825\""
+        condition: or

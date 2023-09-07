@@ -1,0 +1,21 @@
+id: Typecho_keyword
+info:
+  name: Typecho_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Typecho"
+        words:
+          - "typecho"
+          - "usr/themes"
+        condition: and

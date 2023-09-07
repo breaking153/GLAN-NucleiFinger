@@ -1,0 +1,21 @@
+id: wei_san_yun_guan_li_xi_tong_keyword
+info:
+  name: 微三云管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "微三云管理系统"
+        words:
+          - "WSY_logo"
+          - "管理系统 MANAGEMENT SYSTEM"
+        condition: and

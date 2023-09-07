@@ -1,0 +1,22 @@
+id: tian_mai_ke_ji_wang_luo_shi_pin_jian_kong_xi_tong_keyword
+info:
+  name: 天迈科技网络视频监控系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天迈科技网络视频监控系统"
+        words:
+          - "jsessionid"
+          - "天迈科技"
+          - "网络视频监控系统"
+        condition: and

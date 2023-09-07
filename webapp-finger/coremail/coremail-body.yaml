@@ -1,0 +1,16 @@
+id: coremail-body
+info:
+  name: coremail-body
+  author: GLAN
+  severity: info
+  tags: tech,coremail
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/coremail/"
+    redirects: true
+    cookie-reuse: true
+    matchers:
+      - type: word
+        words:
+          - '"/coremail/help/'

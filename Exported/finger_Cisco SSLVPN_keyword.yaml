@@ -1,0 +1,20 @@
+id: Cisco_SSLVPN_keyword
+info:
+  name: Cisco SSLVPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Cisco SSLVPN"
+        words:
+          - "/+CSCOE+/logon.html"
+        condition: and

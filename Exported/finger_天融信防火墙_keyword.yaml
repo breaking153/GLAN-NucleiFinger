@@ -1,0 +1,22 @@
+id: tian_rong_xin_fang_huo_qiang_keyword
+info:
+  name: 天融信防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "天融信防火墙"
+        words:
+          - "TOPSEC"
+          - "image/aaa.png"
+          - "username"
+        condition: and

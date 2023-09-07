@@ -1,0 +1,19 @@
+id: Technicolor_Thomson_Speedtouch_Network_ADSL_faviconhash
+info:
+  name: Technicolor - Thomson Speedtouch (Network - ADSL)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Technicolor - Thomson Speedtouch (Network - ADSL)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"156312019\""
+        condition: or

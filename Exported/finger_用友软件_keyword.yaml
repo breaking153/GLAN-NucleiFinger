@@ -1,0 +1,28 @@
+id: yong_you_ruan_jian_keyword
+info:
+  name: 用友软件_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "用友软件"
+        words:
+          - "UFIDA Software CO.LTD all rights reserved"
+        condition: and
+      - type: word
+        part: body
+        name: "用友软件"
+        words:
+          - "logo/images/ufida_ehr_disable.png"
+          - "logo/images/ufida_ehr.png"
+          - "logo/images/ufida_ebs_disable.png"
+        condition: and

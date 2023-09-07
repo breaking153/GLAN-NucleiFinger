@@ -1,0 +1,21 @@
+id: lan_ling_EIS_zhi_hui_xie_tong_ping_tai_keyword
+info:
+  name: 蓝凌EIS智慧协同平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "蓝凌EIS智慧协同平台"
+        words:
+          - "/scripts/jquery.landray.common.js"
+          - "蓝凌软件"
+        condition: and

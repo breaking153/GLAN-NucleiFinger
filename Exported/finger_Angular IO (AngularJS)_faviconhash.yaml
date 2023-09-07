@@ -1,0 +1,19 @@
+id: Angular_IO_AngularJS_faviconhash
+info:
+  name: Angular IO (AngularJS)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Angular IO (AngularJS)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1255347784\""
+        condition: or

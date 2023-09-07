@@ -1,0 +1,19 @@
+id: Domoticz_Home_Automation_faviconhash
+info:
+  name: Domoticz (Home Automation)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Domoticz (Home Automation)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"90680708\""
+        condition: or

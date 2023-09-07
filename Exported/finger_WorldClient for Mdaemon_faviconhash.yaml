@@ -1,0 +1,20 @@
+id: WorldClient_for_Mdaemon_faviconhash
+info:
+  name: WorldClient for Mdaemon_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "WorldClient for Mdaemon"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1985721423\""
+          - "mmh3(base64_py(body)) == \"-35107086\""
+        condition: or

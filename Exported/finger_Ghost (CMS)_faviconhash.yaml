@@ -1,0 +1,20 @@
+id: Ghost_CMS_faviconhash
+info:
+  name: Ghost (CMS)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Ghost (CMS)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1015932800\""
+          - "mmh3(base64_py(body)) == \"-1231681737\""
+        condition: or

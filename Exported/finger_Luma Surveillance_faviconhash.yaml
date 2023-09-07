@@ -1,0 +1,19 @@
+id: Luma_Surveillance_faviconhash
+info:
+  name: Luma Surveillance_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Luma Surveillance"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1351901211\""
+        condition: or

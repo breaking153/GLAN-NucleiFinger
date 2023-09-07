@@ -1,0 +1,19 @@
+id: HostMonster_Web_hosting_faviconhash
+info:
+  name: HostMonster - Web hosting_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "HostMonster - Web hosting"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-972810761\""
+        condition: or

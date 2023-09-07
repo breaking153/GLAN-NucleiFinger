@@ -1,0 +1,19 @@
+id: StruxureWare_Schneider_Electric_faviconhash
+info:
+  name: StruxureWare (Schneider Electric)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "StruxureWare (Schneider Electric)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"979634648\""
+        condition: or

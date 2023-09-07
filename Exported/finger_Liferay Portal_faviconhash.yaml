@@ -1,0 +1,19 @@
+id: Liferay_Portal_faviconhash
+info:
+  name: Liferay Portal_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Liferay Portal"
+        dsl:
+          - "mmh3(base64_py(body)) == \"129457226\""
+        condition: or

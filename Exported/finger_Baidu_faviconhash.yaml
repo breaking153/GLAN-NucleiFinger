@@ -1,0 +1,19 @@
+id: Baidu_faviconhash
+info:
+  name: Baidu_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Baidu"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1118684072\""
+        condition: or

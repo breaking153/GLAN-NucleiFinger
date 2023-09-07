@@ -1,0 +1,26 @@
+id: shen_xin_fu_shang_wang_xing_wei_guan_li_xi_tong_keyword
+info:
+  name: 深信服上网行为管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服上网行为管理系统"
+        words:
+          - "utccjfaewjb = function(str, key)"
+        condition: and
+      - type: word
+        part: body
+        name: "深信服上网行为管理系统"
+        words:
+          - "document.write(WRFWWCSFBXMIGKRKHXFJ"
+        condition: and

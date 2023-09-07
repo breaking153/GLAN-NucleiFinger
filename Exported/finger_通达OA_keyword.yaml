@@ -1,0 +1,33 @@
+id: tong_da_OA_keyword
+info:
+  name: 通达OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "通达OA"
+        words:
+          - "/images/tongda.ico"
+        condition: and
+      - type: word
+        part: body
+        name: "通达OA"
+        words:
+          - "Office Anywhere"
+        condition: and
+      - type: word
+        part: body
+        name: "通达OA"
+        words:
+          - "通达OA"
+          - "login"
+        condition: and

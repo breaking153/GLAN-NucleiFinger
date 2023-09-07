@@ -1,0 +1,22 @@
+id: TamronOS_IPTV_xi_tong_keyword
+info:
+  name: TamronOS IPTV系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "TamronOS IPTV系统"
+        words:
+          - "TamronOS"
+          - "loginbox"
+          - "tamronos.com"
+        condition: and

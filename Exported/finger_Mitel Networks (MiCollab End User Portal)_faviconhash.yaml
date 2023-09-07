@@ -1,0 +1,19 @@
+id: Mitel_Networks_MiCollab_End_User_Portal_faviconhash
+info:
+  name: Mitel Networks (MiCollab End User Portal)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Mitel Networks (MiCollab End User Portal)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1922044295\""
+        condition: or

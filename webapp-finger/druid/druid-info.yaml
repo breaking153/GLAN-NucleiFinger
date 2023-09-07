@@ -1,0 +1,30 @@
+id: druid_info
+info:
+  name: druid_info
+  author: GLAN
+  severity: info
+  tags: tech,infoleak,druid
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/api/webpage/system/druid/index.html"
+      - "{{RootURL}}{{Path}}/api/system/druid/index.html"
+      - "{{RootURL}}{{Path}}/api/druid/index.html"
+      - "{{RootURL}}{{Path}}/api/druid/websession.html"
+      - "{{RootURL}}{{Path}}/druid/login.html"
+      - "{{RootURL}}{{Path}}/webpage/system/druid/index.html"
+      - "{{RootURL}}{{Path}}/system/druid/index.html"
+      - "{{RootURL}}{{Path}}/druid/index.html"
+      - "{{RootURL}}{{Path}}/druid/websession.html"
+      - "{{RootURL}}{{Path}}/api/druid/login.html"
+    cookie-reuse: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        name: "druid console"
+        words:
+          - "Apache Druid"

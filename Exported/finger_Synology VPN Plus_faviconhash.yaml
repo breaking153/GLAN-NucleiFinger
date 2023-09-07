@@ -1,0 +1,19 @@
+id: Synology_VPN_Plus_faviconhash
+info:
+  name: Synology VPN Plus_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Synology VPN Plus"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1235070469\""
+        condition: or

@@ -1,0 +1,22 @@
+id: sangfor-report-detect
+
+info:
+  name: sangfor-report-detect
+  author: GLAN
+  severity: info
+  description: Glodon-linkworks-detect.
+  tags: tech,jinhe
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/rep/login"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '/report/templet/image/login-logo-text.png'

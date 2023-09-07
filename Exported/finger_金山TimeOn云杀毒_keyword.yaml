@@ -1,0 +1,21 @@
+id: jin_shan_TimeOn_yun_sha_du_keyword
+info:
+  name: 金山TimeOn云杀毒_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金山TimeOn云杀毒"
+        words:
+          - "<title>TimeOn"
+          - "iepngfix/iepngfix_tilebg.js"
+        condition: and

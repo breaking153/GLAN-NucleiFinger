@@ -1,0 +1,21 @@
+id: jin_he_OA_keyword
+info:
+  name: 金合OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金合OA"
+        words:
+          - "Jhsoft.Web.login"
+          - "PassWord.aspx"
+        condition: and

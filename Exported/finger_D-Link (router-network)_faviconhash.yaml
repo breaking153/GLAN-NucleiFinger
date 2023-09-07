@@ -1,0 +1,21 @@
+id: D_Link_router_network_faviconhash
+info:
+  name: D-Link (router-network)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "D-Link (router-network)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1703788174\""
+          - "mmh3(base64_py(body)) == \"517158172\""
+          - "mmh3(base64_py(body)) == \"1038500535\""
+        condition: or

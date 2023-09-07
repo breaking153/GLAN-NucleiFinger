@@ -1,0 +1,19 @@
+id: CapRover_faviconhash
+info:
+  name: CapRover_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "CapRover"
+        dsl:
+          - "mmh3(base64_py(body)) == \"988422585\""
+        condition: or

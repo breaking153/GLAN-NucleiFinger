@@ -1,0 +1,22 @@
+id: anheng-mingyu-detect
+
+info:
+  name: anheng-mingyu-detect
+  author: GLAN
+  severity: info
+  description: anheng-mingyu-detect.
+  tags: tech,anheng
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '/index.php/login/download_web_control'

@@ -1,0 +1,20 @@
+id: wdCP_cloud_host_management_system_faviconhash
+info:
+  name: wdCP cloud host management system_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "wdCP cloud host management system"
+        dsl:
+          - "mmh3(base64_py(body)) == \"255892555\""
+          - "mmh3(base64_py(body)) == \"1786752597\""
+        condition: or

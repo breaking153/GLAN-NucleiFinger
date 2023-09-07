@@ -1,0 +1,19 @@
+id: er_ji_yu_ming_fen_fa_xi_tong_faviconhash
+info:
+  name: 二级域名分发系统_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "二级域名分发系统"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-2055778861\""
+        condition: or

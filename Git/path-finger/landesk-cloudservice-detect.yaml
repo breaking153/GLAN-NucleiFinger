@@ -1,0 +1,27 @@
+id: landesk-cloudservice-detect
+
+info:
+  name: landesk-cloudservice-detect
+  author: GLAN
+  severity: info
+  description: landesk-cloudservice-detect
+  tags: tech,landesk
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - 'src="allowed/landesk-logo.png"'
+          - 'LANDESK'
+        condition: and

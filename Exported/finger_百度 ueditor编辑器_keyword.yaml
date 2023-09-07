@@ -1,0 +1,21 @@
+id: bai_du_ueditor_bian_ji_qi_keyword
+info:
+  name: 百度 ueditor编辑器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "百度 ueditor编辑器"
+        words:
+          - "ueditor.all.js"
+          - "UE.getEditor"
+        condition: and

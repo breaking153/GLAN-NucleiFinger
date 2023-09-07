@@ -1,0 +1,24 @@
+id: finger_seeyon_A8
+info:
+  name: 致远A8_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "致远A8"
+        words:
+          - "parent.frame_A8"
+      - type: word
+        part: body
+        name: "致远OA"
+        words:
+          - "A8+企业版"

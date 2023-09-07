@@ -1,0 +1,25 @@
+id: yongyou-mobsm-detect
+
+info:
+  name: yongyou-mobsm-detect
+  author: Ryoma
+  severity: info
+  metadata:
+    verified: true
+    shodan-query: ecology_JSessionid
+    fofa-query: app="用友-移动系统管理"
+  tags: ecology,tech,yongyou
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}js/controllers/cms/cms-category-controller.js"
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "/mobsm/login/home"
+      - type: status
+        status:
+          - 200

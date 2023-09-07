@@ -1,0 +1,19 @@
+id: Freebox_OS_faviconhash
+info:
+  name: Freebox OS_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Freebox OS"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1838417872\""
+        condition: or

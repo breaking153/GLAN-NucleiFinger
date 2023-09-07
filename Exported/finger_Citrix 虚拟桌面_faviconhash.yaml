@@ -1,0 +1,19 @@
+id: Citrix_xu_ni_zhuo_mian_faviconhash
+info:
+  name: Citrix 虚拟桌面_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Citrix 虚拟桌面"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1272756243\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Nuxt_JS_faviconhash
+info:
+  name: Nuxt JS_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Nuxt JS"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1442789563\""
+        condition: or

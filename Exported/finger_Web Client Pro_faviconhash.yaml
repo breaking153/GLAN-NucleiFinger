@@ -1,0 +1,19 @@
+id: Web_Client_Pro_faviconhash
+info:
+  name: Web Client Pro_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Web Client Pro"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-956471263\""
+        condition: or

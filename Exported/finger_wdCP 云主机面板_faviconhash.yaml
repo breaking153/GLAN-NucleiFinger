@@ -1,0 +1,19 @@
+id: wdCP_yun_zhu_ji_mian_ban_faviconhash
+info:
+  name: wdCP 云主机面板_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "wdCP 云主机面板"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1786752597\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Portainer_Docker_Management_faviconhash
+info:
+  name: Portainer (Docker Management)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Portainer (Docker Management)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1424036600\""
+        condition: or

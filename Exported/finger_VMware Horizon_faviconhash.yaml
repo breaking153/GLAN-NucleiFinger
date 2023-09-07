@@ -1,0 +1,21 @@
+id: VMware_Horizon_faviconhash
+info:
+  name: VMware Horizon_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "VMware Horizon"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1255992602\""
+          - "mmh3(base64_py(body)) == \"1895360511\""
+          - "mmh3(base64_py(body)) == \"-991123252\""
+        condition: or

@@ -1,0 +1,21 @@
+id: Plesk_faviconhash
+info:
+  name: Plesk_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Plesk"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-134375033\""
+          - "mmh3(base64_py(body)) == \"-1050786453\""
+          - "mmh3(base64_py(body)) == \"-981606721\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Gitea_faviconhash
+info:
+  name: Gitea_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Gitea"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1969970750\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Icecast_Streaming_Media_Server_faviconhash
+info:
+  name: Icecast Streaming Media Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Icecast Streaming Media Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1424295654\""
+        condition: or

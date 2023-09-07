@@ -1,0 +1,20 @@
+id: JAWS_Web_Server_IP_Camera_faviconhash
+info:
+  name: JAWS Web Server (IP Camera)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "JAWS Web Server (IP Camera)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"90066852\""
+          - "mmh3(base64_py(body)) == \"768231242\""
+        condition: or

@@ -1,0 +1,19 @@
+id: ServiceNow_faviconhash
+info:
+  name: ServiceNow_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "ServiceNow"
+        dsl:
+          - "mmh3(base64_py(body)) == \"86919334\""
+        condition: or

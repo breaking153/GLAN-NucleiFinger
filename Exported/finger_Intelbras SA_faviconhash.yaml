@@ -1,0 +1,21 @@
+id: Intelbras_SA_faviconhash
+info:
+  name: Intelbras SA_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Intelbras SA"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2006716043\""
+          - "mmh3(base64_py(body)) == \"283740897\""
+          - "mmh3(base64_py(body)) == \"-1343070146\""
+        condition: or

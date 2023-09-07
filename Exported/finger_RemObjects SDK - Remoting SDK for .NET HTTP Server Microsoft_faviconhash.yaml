@@ -1,0 +1,19 @@
+id: RemObjects_SDK_Remoting_SDK_for_NET_HTTP_Server_Microsoft_faviconhash
+info:
+  name: RemObjects SDK - Remoting SDK for .NET HTTP Server Microsoft_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "RemObjects SDK - Remoting SDK for .NET HTTP Server Microsoft"
+        dsl:
+          - "mmh3(base64_py(body)) == \"72005642\""
+        condition: or

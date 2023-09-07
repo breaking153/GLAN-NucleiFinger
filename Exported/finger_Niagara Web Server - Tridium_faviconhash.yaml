@@ -1,0 +1,19 @@
+id: Niagara_Web_Server_Tridium_faviconhash
+info:
+  name: Niagara Web Server - Tridium_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Niagara Web Server - Tridium"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1991562061\""
+        condition: or

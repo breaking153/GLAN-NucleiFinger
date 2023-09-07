@@ -1,0 +1,30 @@
+id: rui_jie_SSLVPN_keyword
+info:
+  name: 锐捷 SSLVPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "锐捷 SSLVPN"
+        words:
+          - "SSLVPN"
+          - "rjweb"
+          - "login"
+        condition: and
+      - type: word
+        part: body
+        name: "锐捷 SSLVPN"
+        words:
+          - "SSLVPN"
+          - "rjsslvpn_encookie"
+          - "login"
+        condition: and

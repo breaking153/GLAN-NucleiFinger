@@ -1,0 +1,21 @@
+id: hua_tian_dong_li_OA_keyword
+info:
+  name: 华天动力OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "华天动力OA"
+        words:
+          - "OAapp/WebObjects/OAapp.woa"
+          - "window.location"
+        condition: and

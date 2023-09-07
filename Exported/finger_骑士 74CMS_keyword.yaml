@@ -1,0 +1,22 @@
+id: qi_shi_74CMS_keyword
+info:
+  name: 骑士 74CMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "骑士 74CMS"
+        words:
+          - "74cms"
+          - "qscms.root"
+          - "index.php"
+        condition: and

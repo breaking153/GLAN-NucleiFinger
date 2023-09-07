@@ -1,0 +1,21 @@
+id: Apache2_Ubuntu_mo_ren_ye_keyword
+info:
+  name: Apache2 Ubuntu 默认页_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache2 Ubuntu 默认页"
+        words:
+          - "Apache2 Ubuntu Default Page"
+          - "ubuntu-logo.png"
+        condition: and

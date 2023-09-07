@@ -1,0 +1,19 @@
+id: Microsoft_OWA_faviconhash
+info:
+  name: Microsoft OWA_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Microsoft OWA"
+        dsl:
+          - "mmh3(base64_py(body)) == \"442749392\""
+        condition: or

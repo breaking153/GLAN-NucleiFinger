@@ -1,0 +1,19 @@
+id: OpenERP_now_known_as_Odoo_faviconhash
+info:
+  name: OpenERP (now known as Odoo)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "OpenERP (now known as Odoo)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1966198264\""
+        condition: or

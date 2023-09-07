@@ -1,0 +1,19 @@
+id: Checkpoint_Gaia_faviconhash
+info:
+  name: Checkpoint (Gaia)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Checkpoint (Gaia)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1822098181\""
+        condition: or

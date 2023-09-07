@@ -1,0 +1,19 @@
+id: BOMGAR_Support_Portal_faviconhash
+info:
+  name: BOMGAR Support Portal_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "BOMGAR Support Portal"
+        dsl:
+          - "mmh3(base64_py(body)) == \"829321644\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Ferozo_Panel_faviconhash
+info:
+  name: Ferozo Panel_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Ferozo Panel"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2072198544\""
+        condition: or

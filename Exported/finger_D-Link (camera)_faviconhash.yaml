@@ -1,0 +1,20 @@
+id: D_Link_camera_faviconhash
+info:
+  name: D-Link (camera)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "D-Link (camera)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-355305208\""
+          - "mmh3(base64_py(body)) == \"-1897829998\""
+        condition: or

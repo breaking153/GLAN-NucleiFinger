@@ -1,0 +1,19 @@
+id: Odoo_faviconhash
+info:
+  name: Odoo_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Odoo"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-617743584\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Linksys_Smart_Wi_Fi_faviconhash
+info:
+  name: Linksys Smart Wi-Fi_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Linksys Smart Wi-Fi"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-2063036701\""
+        condition: or

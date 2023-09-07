@@ -1,0 +1,19 @@
+id: KeepItSafe_Management_Console_faviconhash
+info:
+  name: KeepItSafe Management Console_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "KeepItSafe Management Console"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1738727418\""
+        condition: or

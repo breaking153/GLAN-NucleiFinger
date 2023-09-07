@@ -1,0 +1,19 @@
+id: Supermicro_Intelligent_Management_IPMI_faviconhash
+info:
+  name: Supermicro Intelligent Management (IPMI)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Supermicro Intelligent Management (IPMI)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1410610129\""
+        condition: or

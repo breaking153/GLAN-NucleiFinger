@@ -1,0 +1,20 @@
+id: WAMPSERVER_faviconhash
+info:
+  name: WAMPSERVER_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "WAMPSERVER"
+        dsl:
+          - "mmh3(base64_py(body)) == \"929825723\""
+          - "mmh3(base64_py(body)) == \"443944613\""
+        condition: or

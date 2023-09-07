@@ -1,0 +1,19 @@
+id: ZTE_Corporation_Gateway_Appliance_faviconhash
+info:
+  name: ZTE Corporation (Gateway-Appliance)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "ZTE Corporation (Gateway-Appliance)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"459900502\""
+        condition: or

@@ -1,0 +1,19 @@
+id: ASP_net_favicon_faviconhash
+info:
+  name: ASP.net favicon_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "ASP.net favicon"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1772087922\""
+        condition: or

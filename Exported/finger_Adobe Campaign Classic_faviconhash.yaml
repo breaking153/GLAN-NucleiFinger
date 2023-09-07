@@ -1,0 +1,19 @@
+id: Adobe_Campaign_Classic_faviconhash
+info:
+  name: Adobe Campaign Classic_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Adobe Campaign Classic"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-333791179\""
+        condition: or

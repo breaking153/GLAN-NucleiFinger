@@ -1,0 +1,22 @@
+id: LanProxy_keyword
+info:
+  name: LanProxy_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LanProxy"
+        words:
+          - "LanProxy"
+          - "password"
+          - "lanproxy-config"
+        condition: and

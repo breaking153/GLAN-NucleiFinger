@@ -1,0 +1,19 @@
+id: HeroSpeed_Digital_Technology_Co_NVR_IPC_XVR_faviconhash
+info:
+  name: HeroSpeed Digital Technology Co. (NVR-IPC-XVR)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "HeroSpeed Digital Technology Co. (NVR-IPC-XVR)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-873627015\""
+        condition: or

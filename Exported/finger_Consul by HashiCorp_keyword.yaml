@@ -1,0 +1,19 @@
+id: Consul_by_HashiCorp_keyword
+info:
+  name: Consul by HashiCorp_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Consul by HashiCorp"
+        words:
+          - "<title>Consul"

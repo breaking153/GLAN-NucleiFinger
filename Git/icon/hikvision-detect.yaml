@@ -1,0 +1,40 @@
+id: hikvision-camera-detect
+
+info:
+  name: Hikvision Panel
+  author: GLAN
+  severity: info
+  metadata:
+    max-request: 2
+    verified: true
+    shodan-query: http.favicon.hash:999357577
+  tags: tech,hikvision,camera
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+      - "{{RootURL}}/"
+
+    stop-at-first-match: true
+    redirects: true
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Hikvision Digital Technology"
+      - type: word
+        part: body
+        words:
+          - "h-icon-download"
+      - type: word
+        name: server
+        part: header
+        words:
+          - "Hikvision-Webs"
+
+      - type: dsl
+        name: favicon
+        dsl:
+          - "'999357577' == mmh3(base64_py(body))"

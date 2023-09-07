@@ -1,0 +1,19 @@
+id: Node_RED_faviconhash
+info:
+  name: Node-RED_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Node-RED"
+        dsl:
+          - "mmh3(base64_py(body)) == \"321591353\""
+        condition: or

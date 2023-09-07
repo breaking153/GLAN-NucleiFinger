@@ -1,0 +1,35 @@
+id: apache-nifi-detect
+
+info:
+  name: Apache NiFi detect
+  author: dwisiswant0
+  severity: info
+  tags: tech,apache,nifi
+  metadata:
+    max-request: 7
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/access/config"
+      - "{{RootURL}}{{Path}}/controller/config"
+      - "{{RootURL}}{{Path}}/controller/registry-clients"
+      - "{{RootURL}}{{Path}}/counters"
+      - "{{RootURL}}{{Path}}/flow/registries"
+      - "{{RootURL}}{{Path}}/system-diagnostics"
+      - "{{RootURL}}{{Path}}/nifi-api/access/config"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - "supportsLogin"
+          - "disconnectedNodeAcknowledged"
+          - "(aggregate|node)Snapshots?"
+        condition: or
+
+      - type: status
+        status:
+          - 200

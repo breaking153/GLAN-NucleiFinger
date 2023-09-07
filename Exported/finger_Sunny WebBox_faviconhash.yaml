@@ -1,0 +1,19 @@
+id: Sunny_WebBox_faviconhash
+info:
+  name: Sunny WebBox_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Sunny WebBox"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1975413433\""
+        condition: or

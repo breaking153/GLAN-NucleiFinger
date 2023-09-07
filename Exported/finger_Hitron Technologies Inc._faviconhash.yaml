@@ -1,0 +1,19 @@
+id: Hitron_Technologies_Inc_faviconhash
+info:
+  name: Hitron Technologies Inc._faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Hitron Technologies Inc."
+        dsl:
+          - "mmh3(base64_py(body)) == \"711742418\""
+        condition: or

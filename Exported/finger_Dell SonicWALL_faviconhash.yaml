@@ -1,0 +1,19 @@
+id: Dell_SonicWALL_faviconhash
+info:
+  name: Dell SonicWALL_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Dell SonicWALL"
+        dsl:
+          - "mmh3(base64_py(body)) == \"363324987\""
+        condition: or

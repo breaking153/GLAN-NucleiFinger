@@ -1,0 +1,19 @@
+id: NETGEAR_ReadyNAS_faviconhash
+info:
+  name: NETGEAR ReadyNAS_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "NETGEAR ReadyNAS"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-137295400\""
+        condition: or

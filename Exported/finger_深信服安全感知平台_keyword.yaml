@@ -1,0 +1,22 @@
+id: shen_xin_fu_an_quan_gan_zhi_ping_tai_keyword
+info:
+  name: 深信服安全感知平台_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服安全感知平台"
+        words:
+          - "安全感知平台"
+          - "login.js"
+          - "apps"
+        condition: and

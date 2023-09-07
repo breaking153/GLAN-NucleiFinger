@@ -1,0 +1,21 @@
+id: JeecgBoot_keyword
+info:
+  name: JeecgBoot_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JeecgBoot"
+        words:
+          - "JeecgBoot"
+          - "polyfill_"
+        condition: and

@@ -1,0 +1,19 @@
+id: rui_jie_Ruijie_Networks_faviconhash
+info:
+  name: 锐捷 Ruijie Networks_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "锐捷 Ruijie Networks"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-692947551\""
+        condition: or

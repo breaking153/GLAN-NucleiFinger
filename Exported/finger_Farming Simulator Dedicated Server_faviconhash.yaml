@@ -1,0 +1,19 @@
+id: Farming_Simulator_Dedicated_Server_faviconhash
+info:
+  name: Farming Simulator Dedicated Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Farming Simulator Dedicated Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"509789953\""
+        condition: or

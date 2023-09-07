@@ -1,0 +1,22 @@
+id: zhong_xin_jin_dun_xin_xi_an_quan_guan_li_xi_tong_keyword
+info:
+  name: 中新金盾信息安全管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "中新金盾信息安全管理系统"
+        words:
+          - "中新金盾信息安全管理系统"
+          - "login"
+          - "useusbkey"
+        condition: and

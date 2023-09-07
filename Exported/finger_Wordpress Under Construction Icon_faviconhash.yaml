@@ -1,0 +1,19 @@
+id: Wordpress_Under_Construction_Icon_faviconhash
+info:
+  name: Wordpress Under Construction Icon_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Wordpress Under Construction Icon"
+        dsl:
+          - "mmh3(base64_py(body)) == \"191654058\""
+        condition: or

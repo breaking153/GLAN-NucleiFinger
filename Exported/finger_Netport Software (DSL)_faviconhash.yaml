@@ -1,0 +1,19 @@
+id: Netport_Software_DSL_faviconhash
+info:
+  name: Netport Software (DSL)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Netport Software (DSL)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1124868062\""
+        condition: or

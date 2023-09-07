@@ -1,0 +1,20 @@
+id: jin_shan_V8_zhong_duan_an_quan_xi_tong_keyword
+info:
+  name: 金山 V8 终端安全系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "金山 V8 终端安全系统"
+        words:
+          - "iepngfix/iepngfix_tilebg.js"
+        condition: and

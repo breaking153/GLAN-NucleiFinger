@@ -1,0 +1,19 @@
+id: SuperMap_iServer_Web_Manager_faviconhash
+info:
+  name: SuperMap iServer Web Manager_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "SuperMap iServer Web Manager"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1740191553\""
+        condition: or

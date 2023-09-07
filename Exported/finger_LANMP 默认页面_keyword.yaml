@@ -1,0 +1,23 @@
+id: LANMP_mo_ren_ye_mian_keyword
+info:
+  name: LANMP 默认页面_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "LANMP 默认页面"
+        words:
+          - "<title>LANMP"
+          - "<strong>恭喜"
+          - "wdlinux.cn"
+          - "本页可删除"
+        condition: and

@@ -1,0 +1,19 @@
+id: Cisco_eg_Conference_Room_Login_Page_faviconhash
+info:
+  name: Cisco (eg-Conference Room Login Page)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Cisco (eg-Conference Room Login Page)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-646322113\""
+        condition: or

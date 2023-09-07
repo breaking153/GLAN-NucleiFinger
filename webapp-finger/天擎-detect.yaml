@@ -1,0 +1,28 @@
+id: tianQing-detect
+
+info:
+  name: tq-detect
+  author: GLAN
+  severity: info
+  description: Detects tianqing
+  tags: tech,tianqing
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: and
+    extractors:
+      - type: regex
+        name: "version-extract"
+        regex:
+          - "var PRD_VER       = \"(.*)\";"
+        group: 1
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'http://b.360.cn/jump?id=10'

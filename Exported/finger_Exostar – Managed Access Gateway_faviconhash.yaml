@@ -1,0 +1,19 @@
+id: Exostar_Managed_Access_Gateway_faviconhash
+info:
+  name: Exostar – Managed Access Gateway_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Exostar – Managed Access Gateway"
+        dsl:
+          - "mmh3(base64_py(body)) == \"420473080\""
+        condition: or

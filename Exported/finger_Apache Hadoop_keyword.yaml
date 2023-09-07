@@ -1,0 +1,21 @@
+id: Apache_Hadoop_keyword
+info:
+  name: Apache Hadoop_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Apache Hadoop"
+        words:
+          - "static/hadoop-st.png"
+          - "Cluster"
+        condition: and

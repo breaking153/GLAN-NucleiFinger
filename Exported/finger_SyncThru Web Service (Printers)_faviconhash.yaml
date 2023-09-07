@@ -1,0 +1,19 @@
+id: SyncThru_Web_Service_Printers_faviconhash
+info:
+  name: SyncThru Web Service (Printers)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "SyncThru Web Service (Printers)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1483097076\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Juniper_Device_Manager_faviconhash
+info:
+  name: Juniper Device Manager_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Juniper Device Manager"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2141724739\""
+        condition: or

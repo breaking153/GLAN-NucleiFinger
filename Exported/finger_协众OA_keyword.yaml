@@ -1,0 +1,26 @@
+id: xie_zhong_OA_keyword
+info:
+  name: 协众OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "协众OA"
+        words:
+          - "scripts/cnoa.extra.js"
+        condition: and
+      - type: word
+        part: body
+        name: "协众OA"
+        words:
+          - "Powered by 协众OA"
+        condition: and

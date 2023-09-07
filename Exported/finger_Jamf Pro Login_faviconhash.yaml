@@ -1,0 +1,19 @@
+id: Jamf_Pro_Login_faviconhash
+info:
+  name: Jamf Pro Login_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Jamf Pro Login"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1262005940\""
+        condition: or

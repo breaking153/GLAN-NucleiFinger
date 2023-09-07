@@ -1,0 +1,51 @@
+id: InfoLeak_php
+info:
+  name: php-infoleak
+  author: GLAN
+  severity: info
+  tags: tech,infoleak
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/phpinfo.php"
+      - "{{RootURL}}{{Path}}/info.php"
+      - "{{RootURL}}{{Path}}/pi.php"
+      - "{{RootURL}}{{Path}}/i.php"
+      - "{{RootURL}}{{Path}}/p.php"
+      - "{{RootURL}}{{Path}}/php.php"
+    cookie-reuse: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "allow_url_fopen"
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/apc.php"
+    cookie-reuse: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "<title>APC INFO"
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/phpmyadmin/index.php"
+      - "{{RootURL}}{{Path}}/phpMyAdmin/index.php"
+      - "{{RootURL}}{{Path}}/_phpmyadmin/index.php"
+      - "{{RootURL}}{{Path}}/pma/index.php"
+    cookie-reuse: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "alt=\"phpMyAdmin\""

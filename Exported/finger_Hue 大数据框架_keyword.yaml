@@ -1,0 +1,22 @@
+id: Hue_da_shu_ju_kuang_jia_keyword
+info:
+  name: Hue 大数据框架_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Hue 大数据框架"
+        words:
+          - "Welcome to Hue"
+          - "Query. Explore."
+          - "login"
+        condition: and

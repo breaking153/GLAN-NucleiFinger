@@ -1,0 +1,19 @@
+id: Shenzhen_coship_electronics_co_faviconhash
+info:
+  name: Shenzhen coship electronics co._faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Shenzhen coship electronics co."
+        dsl:
+          - "mmh3(base64_py(body)) == \"224536051\""
+        condition: or

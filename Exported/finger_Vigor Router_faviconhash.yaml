@@ -1,0 +1,19 @@
+id: Vigor_Router_faviconhash
+info:
+  name: Vigor Router_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Vigor Router"
+        dsl:
+          - "mmh3(base64_py(body)) == \"104189364\""
+        condition: or

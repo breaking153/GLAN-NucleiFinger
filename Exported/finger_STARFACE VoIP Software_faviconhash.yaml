@@ -1,0 +1,19 @@
+id: STARFACE_VoIP_Software_faviconhash
+info:
+  name: STARFACE VoIP Software_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "STARFACE VoIP Software"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-332324409\""
+        condition: or

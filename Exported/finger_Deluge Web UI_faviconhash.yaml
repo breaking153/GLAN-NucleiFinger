@@ -1,0 +1,19 @@
+id: Deluge_Web_UI_faviconhash
+info:
+  name: Deluge Web UI_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Deluge Web UI"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1589842876\""
+        condition: or

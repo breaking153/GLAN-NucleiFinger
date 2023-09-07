@@ -1,0 +1,19 @@
+id: Prometheus_Time_Series_Collection_and_Processing_Server_faviconhash
+info:
+  name: Prometheus Time Series Collection and Processing Server_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Prometheus Time Series Collection and Processing Server"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1399433489\""
+        condition: or

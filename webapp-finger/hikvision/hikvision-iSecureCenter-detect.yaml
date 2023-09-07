@@ -1,0 +1,31 @@
+id: hikvision-iSecureCenter-detect
+
+info:
+  name: hikvision-iSecureCenter-detect
+  author: GLAN
+  severity: info
+  description: hikvision-iSecureCenter-detect
+  tags: tech,hikvision
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '/portal/ui/static/skin/redblack/skin.css'
+      - type: word
+        part: body
+        words:
+          - "/portal/ui/static/favicon.ico"
+      - type: word
+        part: body
+        words:
+          - "h-form-item el-form-item"
+

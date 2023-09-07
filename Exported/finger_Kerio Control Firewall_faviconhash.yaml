@@ -1,0 +1,20 @@
+id: Kerio_Control_Firewall_faviconhash
+info:
+  name: Kerio Control Firewall_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Kerio Control Firewall"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-631002664\""
+          - "mmh3(base64_py(body)) == \"-466504476\""
+        condition: or

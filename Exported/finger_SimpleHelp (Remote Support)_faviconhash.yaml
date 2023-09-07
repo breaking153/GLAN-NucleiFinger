@@ -1,0 +1,19 @@
+id: SimpleHelp_Remote_Support_faviconhash
+info:
+  name: SimpleHelp (Remote Support)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "SimpleHelp (Remote Support)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1117165781\""
+        condition: or

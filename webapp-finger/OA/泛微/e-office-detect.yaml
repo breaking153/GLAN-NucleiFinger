@@ -1,0 +1,25 @@
+id: e-office-detect
+
+info:
+  name: e-office-detect
+  author: GLAN
+  severity: info
+  metadata:
+    verified: true
+    hunter-query: app.name!="泛微 e-office OA"
+  tags: eoffice,tech,fanwei
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "/general/portal/portal.js"
+      - type: status
+        status:
+          - 200

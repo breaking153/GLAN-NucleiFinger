@@ -1,0 +1,19 @@
+id: Netflix_faviconhash
+info:
+  name: Netflix_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Netflix"
+        dsl:
+          - "mmh3(base64_py(body)) == \"902521196\""
+        condition: or

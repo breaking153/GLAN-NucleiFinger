@@ -1,0 +1,64 @@
+id: swagger_ui_html
+
+info:
+  name: swagger_ui_html
+  severity: low
+  author: ryoma
+  tags: springboot,tech,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/v1.1/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.2/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.3/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.4/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.5/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.6/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.7/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.8/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v1.9/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v2/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v2.0/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v2.1/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v2.2/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/v2.3/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/%20/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/swagger/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/swagger/index.html"
+      - "{{RootURL}}{{Path}}/actuator/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/gateway/actuator/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/swagger/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/api/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/swagger/index.html"
+      - "{{RootURL}}{{Path}}/api/v1.1/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.2/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.3/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.4/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.5/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.6/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.7/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.8/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v1.9/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v2/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v2.0/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v2.1/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v2.2/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/v2.3/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/%20/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/gateway/actuator/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/api/actuator/swagger-ui.html"
+      - "{{RootURL}}{{Path}}/swagger-ui.html"
+
+    cookie-reuse: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<div id=\"swagger-ui\">"
+        condition: and
+      - type: status
+        status:
+          - 200

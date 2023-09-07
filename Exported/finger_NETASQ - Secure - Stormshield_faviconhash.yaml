@@ -1,0 +1,19 @@
+id: NETASQ_Secure_Stormshield_faviconhash
+info:
+  name: NETASQ - Secure - Stormshield_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "NETASQ - Secure - Stormshield"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1929912510\""
+        condition: or

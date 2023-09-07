@@ -1,0 +1,28 @@
+id: fan_ruan_bao_biao_FineReport_keyword
+info:
+  name: 帆软报表-FineReport_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "帆软报表-FineReport"
+        words:
+          - "ReportServer"
+          - "=fs"
+        condition: and
+      - type: word
+        part: body
+        name: "帆软报表-FineReport"
+        words:
+          - "<iframe id=\"reportFrame\""
+          - "name=\"itemslist\""
+        condition: and

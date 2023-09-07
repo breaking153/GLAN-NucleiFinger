@@ -1,0 +1,19 @@
+id: Citrix_Access_Gateway_keyword
+info:
+  name: Citrix Access Gateway_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Citrix Gateway"
+        words:
+          - "class=\"citrixCopyright"

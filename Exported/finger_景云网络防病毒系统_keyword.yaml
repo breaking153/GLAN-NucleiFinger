@@ -1,0 +1,22 @@
+id: jing_yun_wang_luo_fang_bing_du_xi_tong_keyword
+info:
+  name: 景云网络防病毒系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "景云网络防病毒系统"
+        words:
+          - "styles/images/logo.png"
+          - "login_form"
+          - "防病毒"
+        condition: and

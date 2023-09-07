@@ -1,0 +1,21 @@
+id: apache_Solr_keyword
+info:
+  name: apache Solr_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "apache Solr"
+        words:
+          - "SolrCore Initialization Failures"
+          - "Solr Admin"
+        condition: and

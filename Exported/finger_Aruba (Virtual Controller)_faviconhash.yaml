@@ -1,0 +1,19 @@
+id: Aruba_Virtual_Controller_faviconhash
+info:
+  name: Aruba (Virtual Controller)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Aruba (Virtual Controller)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1142227528\""
+        condition: or

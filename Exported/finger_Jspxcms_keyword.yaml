@@ -1,0 +1,21 @@
+id: Jspxcms_keyword
+info:
+  name: Jspxcms_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Jspxcms"
+        words:
+          - "- Powered by Jspxcms"
+          - "template/"
+        condition: and

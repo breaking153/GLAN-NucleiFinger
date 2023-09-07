@@ -1,0 +1,23 @@
+id: smartBi_Path
+
+info:
+  name: smartBi_RMIServlet_Stub
+  author: GLAN
+  severity: info
+  tags: tech,smartbi
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/vision/DataSourceServiceStub.js.stub"
+      - "{{RootURL}}{{Path}}/smartbi/vision/DataSourceServiceStub.js.stub"
+    headers:
+      Content-Type: application/x-www-form-urlencode
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "DataSourceServiceStub"

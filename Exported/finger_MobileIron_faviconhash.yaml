@@ -1,0 +1,22 @@
+id: MobileIron_faviconhash
+info:
+  name: MobileIron_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "MobileIron"
+        dsl:
+          - "mmh3(base64_py(body)) == \"545827989\""
+          - "mmh3(base64_py(body)) == \"967636089\""
+          - "mmh3(base64_py(body)) == \"362091310\""
+          - "mmh3(base64_py(body)) == \"2086228042\""
+        condition: or

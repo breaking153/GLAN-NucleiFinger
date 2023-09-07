@@ -1,0 +1,19 @@
+id: Gargoyle_Router_Management_Utility_faviconhash
+info:
+  name: Gargoyle Router Management Utility_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Gargoyle Router Management Utility"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1862132268\""
+        condition: or

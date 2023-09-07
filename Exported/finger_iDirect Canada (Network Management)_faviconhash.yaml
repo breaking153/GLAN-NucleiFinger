@@ -1,0 +1,19 @@
+id: iDirect_Canada_Network_Management_faviconhash
+info:
+  name: iDirect Canada (Network Management)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "iDirect Canada (Network Management)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-256828986\""
+        condition: or

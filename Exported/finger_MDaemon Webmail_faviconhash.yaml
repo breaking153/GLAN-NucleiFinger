@@ -1,0 +1,19 @@
+id: MDaemon_Webmail_faviconhash
+info:
+  name: MDaemon Webmail_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "MDaemon Webmail"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-766957661\""
+        condition: or

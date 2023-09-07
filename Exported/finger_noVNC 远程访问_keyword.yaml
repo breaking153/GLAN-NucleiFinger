@@ -1,0 +1,22 @@
+id: noVNC_yuan_cheng_fang_wen_keyword
+info:
+  name: noVNC 远程访问_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "noVNC 远程访问"
+        words:
+          - "noVNC"
+          - "<span>no</span>"
+          - "host"
+        condition: and

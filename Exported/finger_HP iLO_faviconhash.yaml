@@ -1,0 +1,19 @@
+id: HP_iLO_faviconhash
+info:
+  name: HP iLO_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "HP iLO"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2059618623\""
+        condition: or

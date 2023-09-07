@@ -1,0 +1,21 @@
+id: Apple_faviconhash
+info:
+  name: Apple_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Apple"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1232159009\""
+          - "mmh3(base64_py(body)) == \"1382324298\""
+          - "mmh3(base64_py(body)) == \"-1498185948\""
+        condition: or

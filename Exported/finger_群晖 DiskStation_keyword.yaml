@@ -1,0 +1,22 @@
+id: qun_hui_DiskStation_keyword
+info:
+  name: 群晖 DiskStation_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "群晖 DiskStation"
+        words:
+          - "DiskStation"
+          - "文件服务器"
+          - "modules"
+        condition: and

@@ -1,0 +1,19 @@
+id: Twonky_Server_Media_Streaming_faviconhash
+info:
+  name: Twonky Server (Media Streaming)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Twonky Server (Media Streaming)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-878891718\""
+        condition: or

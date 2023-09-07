@@ -1,0 +1,21 @@
+id: MessageSolution_Enterprise_Email_Archiving_EEA_keyword
+info:
+  name: MessageSolution Enterprise Email Archiving (EEA)_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "MessageSolution Enterprise Email Archiving (EEA)"
+        words:
+          - "MessageSolution"
+          - "index.jsp"
+        condition: and

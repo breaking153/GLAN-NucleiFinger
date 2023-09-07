@@ -1,0 +1,19 @@
+id: Baidu_IP_error_page_faviconhash
+info:
+  name: Baidu (IP error page)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Baidu (IP error page)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1507567067\""
+        condition: or

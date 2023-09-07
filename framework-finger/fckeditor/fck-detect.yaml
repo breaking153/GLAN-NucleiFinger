@@ -1,0 +1,22 @@
+id: fckeditor-detect
+
+info:
+  name: fckeditor-detect
+  author: GLAN
+  severity: low
+  tags: tech,fckeditor
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/FCKeditor/_whatsnew.html"
+      - "{{RootURL}}{{Path}}/fckeditor/editor/dialog/fck_about.html"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'fckeditor'
+      - type: status
+        status:
+          - 200

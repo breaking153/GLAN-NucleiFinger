@@ -1,0 +1,28 @@
+id: lan_ling_OA_keyword
+info:
+  name: 蓝凌 OA_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "蓝凌 OA"
+        words:
+          - "sys/ui/extend/theme/default/style/icon.css"
+          - "sys/ui/extend/theme/default/style/profile.css"
+        condition: and
+      - type: word
+        part: body
+        name: "蓝凌 OA"
+        words:
+          - "蓝凌软件"
+          - "App_Themes/Login"
+        condition: and

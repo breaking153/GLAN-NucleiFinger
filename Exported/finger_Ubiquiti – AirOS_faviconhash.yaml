@@ -1,0 +1,20 @@
+id: Ubiquiti_AirOS_faviconhash
+info:
+  name: Ubiquiti – AirOS_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Ubiquiti – AirOS"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-697231354\""
+          - "mmh3(base64_py(body)) == \"1020814938\""
+        condition: or

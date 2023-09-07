@@ -1,0 +1,26 @@
+id: Sangfor_SSL_VPN_keyword
+info:
+  name: Sangfor SSL VPN_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Sangfor SSL VPN"
+        words:
+          - "/por/login_psw.csp"
+        condition: and
+      - type: word
+        part: body
+        name: "Sangfor SSL VPN"
+        words:
+          - "loginPageSP/loginPrivacy.js"
+        condition: and

@@ -1,0 +1,20 @@
+id: Huawei_SMC_keyword
+info:
+  name: Huawei SMC_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Huawei SMC"
+        words:
+          - "Script/SmcScript.js?version="
+        condition: and

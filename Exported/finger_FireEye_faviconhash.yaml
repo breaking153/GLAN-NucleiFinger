@@ -1,0 +1,24 @@
+id: FireEye_faviconhash
+info:
+  name: FireEye_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "FireEye"
+        dsl:
+          - "mmh3(base64_py(body)) == \"95271369\""
+          - "mmh3(base64_py(body)) == \"1476335317\""
+          - "mmh3(base64_py(body)) == \"-842192932\""
+          - "mmh3(base64_py(body)) == \"105083909\""
+          - "mmh3(base64_py(body)) == \"240606739\""
+          - "mmh3(base64_py(body)) == \"2121539357\""
+        condition: or

@@ -1,0 +1,19 @@
+id: Mautic_Open_Source_Marketing_Automation_faviconhash
+info:
+  name: Mautic (Open Source Marketing Automation)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Mautic (Open Source Marketing Automation)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1273982002\""
+        condition: or

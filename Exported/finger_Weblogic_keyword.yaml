@@ -1,0 +1,57 @@
+id: Weblogic_keyword
+info:
+  name: Weblogic_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "Error 404--Not Found"
+        condition: and
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "Error 403--"
+        condition: and
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "/console/framework/skins/wlsconsole/images/login_WebLogic_branding.png"
+        condition: and
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "Welcome to Weblogic Application Server"
+        condition: and
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "<i>Hypertext Transfer Protocol -- HTTP/1.1</i>"
+        condition: and
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "<TITLE>Error 404--Not Found</TITLE>"
+          - "<i>Hypertext Transfer Protocol -- HTTP/1.1</i>"
+        condition: and
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "<title>Oracle WebLogic Server 管理控制台</title>"
+        condition: and

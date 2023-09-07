@@ -1,0 +1,20 @@
+id: Askey_Cable_Modem_faviconhash
+info:
+  name: Askey Cable Modem_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Askey Cable Modem"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1710631084\""
+          - "mmh3(base64_py(body)) == \"89321398\""
+        condition: or

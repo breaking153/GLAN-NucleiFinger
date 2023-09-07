@@ -1,0 +1,24 @@
+id: e-mobile-detect
+
+info:
+  name: e-mobile-detect
+  author: GLAN
+  severity: info
+  metadata:
+    verified: true
+  tags: emobile,tech,fanwei
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/"
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "window.apiPrifix = \"/emp"
+      - type: status
+        status:
+          - 200

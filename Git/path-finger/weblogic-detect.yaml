@@ -1,0 +1,37 @@
+id: weblogic-detect
+
+info:
+  name: Detect Weblogic
+  author: pdteam
+  severity: info
+  metadata:
+    max-request: 1
+    shodan-query: product:"Oracle Weblogic"
+  tags: tech,weblogic
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}{{Path}}/{{randstr}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "From RFC 2068"
+          - "Error 404--Not Found"
+        condition: and
+
+      - type: status
+        status:
+          - 404
+  - method: GET
+    path:
+      - "{{RootURL}}/console"
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        name: "Weblogic"
+        words:
+          - "Welcome to Weblogic Application Server"

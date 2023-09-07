@@ -1,0 +1,26 @@
+id: lie_mu_lu_keyword
+info:
+  name: 列目录_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "列目录"
+        words:
+          - "Index of /"
+        condition: and
+      - type: word
+        part: body
+        name: "列目录"
+        words:
+          - " - /</title>"
+        condition: and

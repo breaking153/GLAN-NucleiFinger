@@ -1,0 +1,19 @@
+id: bet365_faviconhash
+info:
+  name: bet365_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "bet365"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-2116540786\""
+        condition: or

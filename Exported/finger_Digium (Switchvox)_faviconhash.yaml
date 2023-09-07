@@ -1,0 +1,19 @@
+id: Digium_Switchvox_faviconhash
+info:
+  name: Digium (Switchvox)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Digium (Switchvox)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"2068154487\""
+        condition: or

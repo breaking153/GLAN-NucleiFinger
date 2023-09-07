@@ -1,0 +1,32 @@
+id: qi_ming_xing_chen_tian_qing_han_ma_USG_fang_huo_qiang_keyword
+info:
+  name: 启明星辰天清汉马USG防火墙_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "启明星辰天清汉马USG防火墙"
+        words:
+          - "/cgi-bin/webui?op=get_product_model"
+        condition: and
+      - type: word
+        part: body
+        name: "启明星辰天清汉马USG防火墙"
+        words:
+          - "天清汉马USG"
+        condition: and
+      - type: word
+        part: body
+        name: "启明星辰天清汉马USG防火墙"
+        words:
+          - "<title>天清汉马USG防火墙</title>"
+        condition: and

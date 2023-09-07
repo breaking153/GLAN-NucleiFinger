@@ -1,0 +1,22 @@
+id: feng_wang_qi_ye_liu_kong_yun_lu_you_qi_keyword
+info:
+  name: 蜂网企业流控云路由器_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "蜂网企业流控云路由器"
+        words:
+          - "ifw8"
+          - "企业级流控云路由器"
+          - "login"
+        condition: and

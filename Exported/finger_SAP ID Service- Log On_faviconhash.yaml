@@ -1,0 +1,19 @@
+id: SAP_ID_Service_Log_On_faviconhash
+info:
+  name: SAP ID Service- Log On_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "SAP ID Service- Log On"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1967743928\""
+        condition: or

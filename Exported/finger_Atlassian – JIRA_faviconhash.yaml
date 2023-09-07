@@ -1,0 +1,21 @@
+id: Atlassian_JIRA_faviconhash
+info:
+  name: Atlassian – JIRA_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Atlassian – JIRA"
+        dsl:
+          - "mmh3(base64_py(body)) == \"981867722\""
+          - "mmh3(base64_py(body)) == \"552727997\""
+          - "mmh3(base64_py(body)) == \"-1581907337\""
+        condition: or

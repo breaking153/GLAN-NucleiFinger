@@ -1,0 +1,22 @@
+id: H3C_Web_wang_guan_keyword
+info:
+  name: H3C Web网管_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "H3C Web网管"
+        words:
+          - "webui"
+          - "Web网管用户登录"
+          - "china_logo.jpg"
+        condition: and

@@ -1,0 +1,19 @@
+id: Blue_Iris_Webcam_faviconhash
+info:
+  name: Blue Iris (Webcam)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Blue Iris (Webcam)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-520888198\""
+        condition: or

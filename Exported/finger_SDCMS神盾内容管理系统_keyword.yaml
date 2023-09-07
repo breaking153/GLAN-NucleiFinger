@@ -1,0 +1,21 @@
+id: SDCMS_shen_dun_nei_rong_guan_li_xi_tong_keyword
+info:
+  name: SDCMS神盾内容管理系统_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "SDCMS神盾内容管理系统"
+        words:
+          - "sdcms"
+          - "login"
+        condition: and

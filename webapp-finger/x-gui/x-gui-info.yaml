@@ -1,0 +1,19 @@
+id: x_gui_info_body
+info:
+  name: x-gui
+  author: GLAN
+  severity: info
+  tags: tech,x-gui
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "x-gui-指纹"
+        words:
+          - "axios.defaults.baseURL = basePath"

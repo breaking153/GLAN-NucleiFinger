@@ -1,0 +1,20 @@
+id: hei_dun_yun_wei_an_quan_wang_guan_keyword
+info:
+  name: 黑盾运维安全网关_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "黑盾运维安全网关"
+        words:
+          - "<title>黑盾运维安全网关 HD-SGS V4.0</title>"
+        condition: and

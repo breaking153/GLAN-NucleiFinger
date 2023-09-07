@@ -1,0 +1,19 @@
+id: bai_ao_rui_da_faviconhash
+info:
+  name: 百傲瑞达_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "百傲瑞达"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1169502834\""
+        condition: or

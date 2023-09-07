@@ -1,0 +1,19 @@
+id: wang_kang_ke_ji_wang_guan_fang_huo_qiang_faviconhash
+info:
+  name: 网康科技网关-防火墙_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "网康科技网关-防火墙"
+        dsl:
+          - "mmh3(base64_py(body)) == \"5471989\""
+        condition: or

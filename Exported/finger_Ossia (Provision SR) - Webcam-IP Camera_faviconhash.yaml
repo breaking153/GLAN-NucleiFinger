@@ -1,0 +1,19 @@
+id: Ossia_Provision_SR_Webcam_IP_Camera_faviconhash
+info:
+  name: Ossia (Provision SR) - Webcam-IP Camera_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Ossia (Provision SR) - Webcam-IP Camera"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-374235895\""
+        condition: or

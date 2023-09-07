@@ -1,0 +1,21 @@
+id: JEECMS_keyword
+info:
+  name: JEECMS_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "JEECMS"
+        words:
+          - "/r/cms/www"
+          - "shortcut icon"
+        condition: and

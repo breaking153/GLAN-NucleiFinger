@@ -1,0 +1,21 @@
+id: Tomcat_mo_ren_ye_mian_keyword
+info:
+  name: Tomcat默认页面_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Tomcat默认页面"
+        words:
+          - "/manager/status"
+          - "/manager/html"
+        condition: and

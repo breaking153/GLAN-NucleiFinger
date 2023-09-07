@@ -1,0 +1,19 @@
+id: Alibaba_Cloud_Block_Page_faviconhash
+info:
+  name: Alibaba Cloud (Block Page)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Alibaba Cloud (Block Page)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1227052603\""
+        condition: or

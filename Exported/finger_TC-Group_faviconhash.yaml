@@ -1,0 +1,19 @@
+id: TC_Group_faviconhash
+info:
+  name: TC-Group_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "TC-Group"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1734573358\""
+        condition: or

@@ -1,0 +1,21 @@
+id: shen_xin_fu_fang_huo_qiang_shu_ju_zhong_xin_keyword
+info:
+  name: 深信服防火墙数据中心_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "深信服防火墙数据中心"
+        words:
+          - "Redirect to..."
+          - "/LogInOut.php"
+        condition: and

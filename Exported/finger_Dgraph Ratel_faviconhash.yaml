@@ -1,0 +1,19 @@
+id: Dgraph_Ratel_faviconhash
+info:
+  name: Dgraph Ratel_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Dgraph Ratel"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1961046099\""
+        condition: or

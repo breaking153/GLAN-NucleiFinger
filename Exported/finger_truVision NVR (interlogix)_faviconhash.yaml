@@ -1,0 +1,19 @@
+id: truVision_NVR_interlogix_faviconhash
+info:
+  name: truVision NVR (interlogix)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "truVision NVR (interlogix)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"1782271534\""
+        condition: or

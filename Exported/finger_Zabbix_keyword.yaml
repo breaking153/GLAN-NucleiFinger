@@ -1,0 +1,21 @@
+id: Zabbix_keyword
+info:
+  name: Zabbix_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "Zabbix"
+        words:
+          - "zabbix"
+          - "Zabbix SIA"
+        condition: and

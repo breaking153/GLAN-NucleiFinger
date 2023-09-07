@@ -1,0 +1,19 @@
+id: Abilis_Network_Automation_faviconhash
+info:
+  name: Abilis (Network-Automation)_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Abilis (Network-Automation)"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-166151761\""
+        condition: or

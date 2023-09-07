@@ -1,0 +1,33 @@
+id: pigcms-detect
+
+info:
+  name: pigcms-detect
+  author: GLAN
+  severity: info
+  description: pigcms-detect[2023]
+  tags: tech,pigcms
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    redirects: true
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        name: searchform
+        words:
+          - 'pigSearch-form'
+      - type: word
+        part: body
+        name: nav
+        words:
+          - "pigNav"
+      - type: word
+        part: body
+        name: js-pigcms
+        words:
+          - "/Public/js/pc/"

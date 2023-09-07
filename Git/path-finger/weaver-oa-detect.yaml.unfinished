@@ -1,0 +1,20 @@
+id: weaver-oa-v9-detect
+
+info:
+  name: weaver-oa-v9-detect
+  author: weaver-oa-v9-detect
+  severity: info
+  description: Detects weaver OA
+  tags: tech,weaver
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/join/ln.jsp"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200

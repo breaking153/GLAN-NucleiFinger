@@ -1,0 +1,20 @@
+id: CoreMail_keyword
+info:
+  name: CoreMail_keyword
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: word
+        part: body
+        name: "CoreMail"
+        words:
+          - "coremail/common"
+        condition: and

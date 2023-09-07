@@ -1,0 +1,19 @@
+id: Endian_Firewall_faviconhash
+info:
+  name: Endian Firewall_faviconhash
+  author: GLAN
+  severity: info
+  tags: tech
+http:
+  - method: GET
+    path:
+      - "{{RootURL}}/favicon.ico"
+    cookie-reuse: true
+    matchers-condition: or
+    redirects: true
+    matchers:
+      - type: dsl
+        name: "Endian Firewall"
+        dsl:
+          - "mmh3(base64_py(body)) == \"-1225484776\""
+        condition: or
