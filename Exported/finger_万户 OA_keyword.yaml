@@ -11,6 +11,7 @@ http:
     cookie-reuse: true
     matchers-condition: or
     redirects: true
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body
@@ -19,4 +20,48 @@ http:
           - "defaultroot"
           - "Logon!logon.action"
           - "domainAccount"
+        condition: and
+      - type: word
+        part: body
+        name: "Whir-OA"
+        words:
+          - "return ajaxForSync[(]whirRootPath"
+        condition: and
+      - type: word
+        part: header
+        name: "Whir-OA"
+        words:
+          - "Set-Cookie: OASESSIONID="
+        condition: and
+      - type: word
+        part: body
+        name: "Wanhu ezOFFICE"
+        words:
+          - "EZOFFICEUSERNAME"
+        condition: and
+      - type: word
+        part: body
+        name: "Wanhu ezOFFICE"
+        words:
+          - "whirRootPath"
+        condition: and
+      - type: word
+        part: body
+        name: "Wanhu ezOFFICE"
+        words:
+          - "/defaultroot/js/cookie.js"
+        condition: and
+      - type: word
+        part: body
+        name: "Whir-ezOFFICE"
+        words:
+          - "ezofficeusername"
+          - "whirrootpath"
+          - "/defaultroot/js/cookie.js"
+        condition: and
+      - type: word
+        part: header
+        name: "Whir-ezOFFICE"
+        words:
+          - "loclan"
         condition: and
